@@ -106,7 +106,7 @@ const Pathophysiology = (() => {
                             <p class="text-xs text-ward-400 italic">${esc(c.summary || '')}</p>
                             <p class="patho-concept-desc">${esc(c.content || '')}</p>
                             ${c.clinical_relevance ? `<div class="patho-clinical-box"><strong>Clinical:</strong> ${esc(c.clinical_relevance)}</div>` : ''}
-                            ${c.nursing_focus ? `<div class="patho-nursing-box"><strong>RN Focus:</strong> ${esc(c.nursing_focus)}</div>` : ''}
+                            ${(c.nursing_focus || (c.nursing_implications || []).length) ? `<div class="patho-nursing-box"><strong>RN Focus:</strong> ${esc(c.nursing_focus || (c.nursing_implications || []).join(' · '))}</div>` : ''}
                             ${c.source_ref ? `<button type="button" class="btn-verify text-xs mt-2" onclick='showSource(${JSON.stringify(c.source_ref)})'>Verify Source</button>` : ''}
                             <button type="button" class="text-xs text-rose-400 hover:underline mt-2 block"
                                     onclick="Pathophysiology.askSocratic('${esc(c.title)}', '${esc((c.content || '').slice(0, 200))}')">
@@ -148,29 +148,43 @@ const Pathophysiology = (() => {
         }
     }
 
+    function diseaseCascade(d) {
+        if (d.patho_cascade?.length) return d.patho_cascade;
+        if (d.pathophysiology) {
+            return d.pathophysiology.split(/→|->/).map(s => s.trim()).filter(Boolean);
+        }
+        return [];
+    }
+
     function renderDiseases(el) {
         if (!el || !diseasesData) return;
         const diseases = diseasesData.diseases || [];
         el.innerHTML = `
             <div class="patho-disease-grid">
-                ${diseases.map(d => `
+                ${diseases.map(d => {
+                    const cascade = diseaseCascade(d);
+                    const manifestations = d.clinical_manifestations || d.manifestations || [];
+                    return `
                     <div class="patho-disease-card">
                         <div class="patho-disease-name">${esc(d.name)}</div>
                         <span class="patho-disease-cat">${esc(d.category || '')}</span>
+                        ${d.etiology || d.pathophysiology ? `
                         <div class="patho-disease-section">
-                            <div class="patho-disease-label">Etiology</div>
-                            <p class="patho-disease-text">${esc(d.etiology || '')}</p>
-                        </div>
+                            <div class="patho-disease-label">${d.etiology ? 'Etiology' : 'Pathophysiology'}</div>
+                            <p class="patho-disease-text">${esc(d.etiology || d.pathophysiology || '')}</p>
+                        </div>` : ''}
+                        ${cascade.length ? `
                         <div class="patho-disease-section">
                             <div class="patho-disease-label">Patho Cascade</div>
                             <ul class="patho-cascade-list">
-                                ${(d.patho_cascade || []).map(step => `<li>${esc(step)}</li>`).join('')}
+                                ${cascade.map(step => `<li>${esc(step)}</li>`).join('')}
                             </ul>
-                        </div>
+                        </div>` : ''}
+                        ${manifestations.length ? `
                         <div class="patho-disease-section">
                             <div class="patho-disease-label">Clinical Manifestations</div>
-                            <p class="patho-disease-text">${(d.clinical_manifestations || []).map(m => esc(m)).join(' · ')}</p>
-                        </div>
+                            <p class="patho-disease-text">${manifestations.map(m => esc(m)).join(' · ')}</p>
+                        </div>` : ''}
                         <div class="patho-disease-section">
                             <div class="patho-disease-label">Nursing Priorities</div>
                             <ul class="patho-cascade-list">
@@ -178,8 +192,8 @@ const Pathophysiology = (() => {
                             </ul>
                         </div>
                         ${d.source_ref ? `<button type="button" class="btn-verify text-xs mt-2" onclick='showSource(${JSON.stringify(d.source_ref)})'>Verify Source</button>` : ''}
-                    </div>
-                `).join('')}
+                    </div>`;
+                }).join('')}
             </div>`;
         reportProgress(1, 'diseases');
     }
@@ -197,33 +211,53 @@ const Pathophysiology = (() => {
         }
     }
 
+    function compareCondition(cond, fallback) {
+        if (typeof cond === 'string') return { name: cond, key_features: [] };
+        if (cond && typeof cond === 'object') return cond;
+        return { name: fallback, key_features: [] };
+    }
+
     function renderCompare(el) {
         if (!el || !compareData) return;
         const pairs = compareData.pairs || [];
         el.innerHTML = `
             <div class="patho-compare-grid">
-                ${pairs.map(p => `
+                ${pairs.map(p => {
+                    const condA = compareCondition(p.condition_a, 'Condition A');
+                    const condB = compareCondition(p.condition_b, 'Condition B');
+                    const diffs = p.key_differences || [];
+                    const pearls = Array.isArray(p.clinical_pearls)
+                        ? p.clinical_pearls.join(' ')
+                        : (p.clinical_pearls || '');
+                    return `
                     <div class="patho-compare-card">
                         <div class="patho-compare-title">${esc(p.title)}</div>
                         <div class="patho-compare-columns">
                             <div class="patho-compare-col patho-compare-col-a">
-                                <div class="patho-compare-col-name">${esc(p.condition_a?.name || 'A')}</div>
+                                <div class="patho-compare-col-name">${esc(condA.name || 'A')}</div>
                                 <ul class="patho-compare-features">
-                                    ${(p.condition_a?.key_features || []).map(f => `<li>${esc(f)}</li>`).join('')}
+                                    ${(condA.key_features || []).map(f => `<li>${esc(f)}</li>`).join('')}
                                 </ul>
                             </div>
                             <div class="patho-compare-col patho-compare-col-b">
-                                <div class="patho-compare-col-name">${esc(p.condition_b?.name || 'B')}</div>
+                                <div class="patho-compare-col-name">${esc(condB.name || 'B')}</div>
                                 <ul class="patho-compare-features">
-                                    ${(p.condition_b?.key_features || []).map(f => `<li>${esc(f)}</li>`).join('')}
+                                    ${(condB.key_features || []).map(f => `<li>${esc(f)}</li>`).join('')}
                                 </ul>
                             </div>
                         </div>
-                        ${p.clinical_pearls ? `<div class="patho-pearl"><strong>Pearl:</strong> ${esc(p.clinical_pearls)}</div>` : ''}
+                        ${diffs.length ? `
+                        <div class="patho-compare-diff mt-3">
+                            <strong class="text-xs text-ward-purple uppercase">Key Differences</strong>
+                            <ul class="patho-compare-features mt-1">
+                                ${diffs.map(f => `<li>${esc(f)}</li>`).join('')}
+                            </ul>
+                        </div>` : ''}
+                        ${pearls ? `<div class="patho-pearl"><strong>Pearl:</strong> ${esc(pearls)}</div>` : ''}
                         ${p.nclex_tip ? `<div class="patho-pearl mt-2"><strong>NCLEX:</strong> ${esc(p.nclex_tip)}</div>` : ''}
                         ${p.source_ref ? `<button type="button" class="btn-verify text-xs mt-2" onclick='showSource(${JSON.stringify(p.source_ref)})'>Verify Source</button>` : ''}
-                    </div>
-                `).join('')}
+                    </div>`;
+                }).join('')}
             </div>`;
         reportProgress(1, 'compare');
     }
@@ -474,7 +508,7 @@ const Pathophysiology = (() => {
             feedback.innerHTML = `
                 <div class="p-3 rounded-lg text-sm ${isCorrect ? 'bg-ward-success/10 border border-ward-success/30' : 'bg-ward-danger/10 border border-ward-danger/30'}">
                     <p class="font-medium ${isCorrect ? 'text-ward-success' : 'text-ward-danger'}">${isCorrect ? 'Correct!' : 'Incorrect.'}</p>
-                    <p class="text-ward-300 mt-1">${esc(q.rationale || '')}</p>
+                    <p class="text-ward-300 mt-1">${esc(q.rationale || q.explanation || '')}</p>
                     ${q.nclex_category ? `<p class="text-xs text-ward-500 mt-2">${esc(q.nclex_category)}</p>` : ''}
                     ${src}
                 </div>

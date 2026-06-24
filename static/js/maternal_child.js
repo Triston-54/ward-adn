@@ -109,29 +109,45 @@ const MaternalChild = (() => {
         }
     }
 
+    function refCardSummary(t) {
+        return t.summary || t.content || '';
+    }
+
+    function refCardNursingAction(t) {
+        if (t.nursing_action) return t.nursing_action;
+        if (Array.isArray(t.nursing_actions) && t.nursing_actions.length) {
+            return t.nursing_actions.join(' · ');
+        }
+        return '';
+    }
+
     function renderRefCards(topics, el, tabName) {
         if (!el || !topics?.length) return;
-        const cards = topics.map(t => `
+        const cards = topics.map(t => {
+            const summary = refCardSummary(t);
+            const nursingAction = refCardNursingAction(t);
+            const keyPoints = t.key_points || t.nursing_actions || [];
+            return `
             <details class="mc-ref-card" data-id="${esc(t.id)}">
                 <summary class="mc-ref-summary">
                     <span class="mc-ref-name">${esc(t.title)}</span>
                     <span class="mc-ref-cat">${esc(t.category || '')}</span>
                 </summary>
                 <div class="mc-ref-body">
-                    <p class="mc-ref-desc">${esc(t.summary)}</p>
-                    ${(t.key_points || []).length ? `
+                    ${summary ? `<p class="mc-ref-desc">${esc(summary)}</p>` : ''}
+                    ${keyPoints.length ? `
                         <ul class="mc-ref-points">
-                            ${t.key_points.map(p => `<li>${esc(p)}</li>`).join('')}
+                            ${keyPoints.map(p => `<li>${esc(p)}</li>`).join('')}
                         </ul>` : ''}
-                    ${t.nursing_action ? `<div class="mc-callout-action"><strong>RN Action:</strong> ${esc(t.nursing_action)}</div>` : ''}
+                    ${nursingAction ? `<div class="mc-callout-action"><strong>RN Action:</strong> ${esc(nursingAction)}</div>` : ''}
                     ${t.clinical_why ? `<p class="mc-clinical-why"><em>${esc(t.clinical_why)}</em></p>` : ''}
                     <button type="button" class="text-xs text-pink-400 hover:underline mt-2"
-                            onclick="MaternalChild.askSocratic('${esc(t.title)}', '${esc((t.summary || '').slice(0, 200))}', '${tabName}')">
+                            onclick="MaternalChild.askSocratic('${esc(t.title)}', '${esc(summary.slice(0, 200))}', '${tabName}')">
                         Ask Socratic tutor →
                     </button>
                 </div>
-            </details>
-        `).join('');
+            </details>`;
+        }).join('');
 
         el.innerHTML = `
             <section class="mc-section">

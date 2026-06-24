@@ -364,10 +364,34 @@ const Microbiology = (() => {
         </div>`;
     }
 
+    function formatListField(value) {
+        if (Array.isArray(value)) return value.join(', ');
+        return value || '';
+    }
+
+    function normalizeBreakChainOptions(scenario) {
+        const opts = scenario.options || [];
+        return opts.map((opt, i) => {
+            if (typeof opt === 'string') {
+                return {
+                    text: opt,
+                    correct: i === (scenario.correct_index ?? -1),
+                    explanation: scenario.explanation || '',
+                };
+            }
+            return {
+                text: opt.text || opt.label || String(opt),
+                correct: !!opt.correct || i === (scenario.correct_index ?? -1),
+                explanation: opt.explanation || scenario.explanation || '',
+            };
+        });
+    }
+
     function renderGramStain() {
         const gs = learnData.gramStain;
         const pos = gs.interpretation?.gram_positive || {};
         const neg = gs.interpretation?.gram_negative || {};
+        const note = gs.interpretation?.clinical_note || gs.clinical_note || '';
         return `
             <div class="grid lg:grid-cols-2 gap-5">
                 <div class="card p-5">
@@ -381,57 +405,64 @@ const Microbiology = (() => {
                         <h4 class="text-sm font-semibold text-purple-300 mb-2">Gram-Positive</h4>
                         <p class="text-xs text-ward-400"><strong>Appearance:</strong> ${pos.appearance || ''}</p>
                         <p class="text-xs text-ward-400 mt-1"><strong>Cell wall:</strong> ${pos.cell_wall || ''}</p>
-                        <p class="text-xs text-ward-500 mt-2">${pos.examples || ''}</p>
-                        <p class="text-xs text-ward-accent mt-2">${pos.antibiotics || ''}</p>
+                        <p class="text-xs text-ward-500 mt-2"><strong>Examples:</strong> ${formatListField(pos.examples)}</p>
+                        ${pos.antibiotics ? `<p class="text-xs text-ward-accent mt-2"><strong>Empiric therapy:</strong> ${pos.antibiotics}</p>` : ''}
                     </div>
                     <div class="card p-4 gram-negative">
                         <h4 class="text-sm font-semibold text-pink-300 mb-2">Gram-Negative</h4>
                         <p class="text-xs text-ward-400"><strong>Appearance:</strong> ${neg.appearance || ''}</p>
                         <p class="text-xs text-ward-400 mt-1"><strong>Cell wall:</strong> ${neg.cell_wall || ''}</p>
-                        <p class="text-xs text-ward-500 mt-2">${neg.examples || ''}</p>
-                        <p class="text-xs text-ward-accent mt-2">${neg.antibiotics || ''}</p>
+                        <p class="text-xs text-ward-500 mt-2"><strong>Examples:</strong> ${formatListField(neg.examples)}</p>
+                        ${neg.antibiotics ? `<p class="text-xs text-ward-accent mt-2"><strong>Empiric therapy:</strong> ${neg.antibiotics}</p>` : ''}
                     </div>
                 </div>
-            </div>`;
+            </div>
+            ${note ? `<p class="text-xs text-ward-accent mt-3 italic">${note}</p>` : ''}`;
     }
 
     function renderClinical() {
         const c = learnData.clinical;
         const hh = c.hand_hygiene || {};
         const ppe = c.ppe || c.ppe_guide || {};
+        const when = hh.when || hh.who_five_moments || [];
+        const soapWater = hh.soap_and_water || hh.soap_and_water_required || [];
+        const alcoholGel = hh.alcohol_gel
+            || (hh.alcohol_rub ? [hh.alcohol_rub] : []);
+        const hhWhy = hh.clinical_why || hh.nursing_priority || '';
+        const ppeWhy = ppe.clinical_why || ppe.sequence || '';
         return `
             <div class="grid lg:grid-cols-2 gap-5">
                 <div class="card p-5">
                     <h3 class="text-sm font-semibold text-ward-100 mb-3">Hand Hygiene — WHO 5 Moments</h3>
                     <ul class="text-sm text-ward-300 space-y-1 list-disc list-inside">
-                        ${(hh.when || []).map(w => `<li>${w}</li>`).join('')}
+                        ${when.map(w => `<li>${w}</li>`).join('')}
                     </ul>
                     <div class="mt-4 grid sm:grid-cols-2 gap-3">
                         <div class="p-3 bg-ward-900 rounded-lg">
                             <div class="text-xs font-semibold text-ward-success mb-1">Soap &amp; Water</div>
                             <ul class="text-xs text-ward-500 space-y-0.5">
-                                ${(hh.soap_and_water || []).map(s => `<li>• ${s}</li>`).join('')}
+                                ${soapWater.map(s => `<li>• ${s}</li>`).join('')}
                             </ul>
                         </div>
                         <div class="p-3 bg-ward-900 rounded-lg">
                             <div class="text-xs font-semibold text-ward-accent mb-1">Alcohol Gel</div>
                             <ul class="text-xs text-ward-500 space-y-0.5">
-                                ${(hh.alcohol_gel || []).map(s => `<li>• ${s}</li>`).join('')}
+                                ${alcoholGel.map(s => `<li>• ${s}</li>`).join('')}
                             </ul>
                         </div>
                     </div>
-                    <p class="text-xs text-ward-accent mt-3">${hh.clinical_why || ''}</p>
+                    ${hhWhy ? `<p class="text-xs text-ward-accent mt-3">${hhWhy}</p>` : ''}
                 </div>
                 <div class="card p-5">
                     <h3 class="text-sm font-semibold text-ward-100 mb-3">PPE Guide</h3>
                     <dl class="ppe-list">
                         <dt>Gloves</dt><dd>${ppe.gloves || ''}</dd>
                         <dt>Gown</dt><dd>${ppe.gown || ''}</dd>
-                        <dt>Surgical Mask</dt><dd>${ppe.mask_surgical || ''}</dd>
+                        <dt>Surgical Mask</dt><dd>${ppe.mask_surgical || ppe.mask || ''}</dd>
                         <dt>N95 Respirator</dt><dd>${ppe.n95 || ''}</dd>
                         <dt>Eye Protection</dt><dd>${ppe.eye_protection || ''}</dd>
                     </dl>
-                    <p class="text-xs text-ward-accent mt-3">${ppe.clinical_why || ''}</p>
+                    ${ppeWhy ? `<p class="text-xs text-ward-accent mt-3">${ppeWhy}</p>` : ''}
                 </div>
             </div>
             <div class="mt-5">
@@ -439,10 +470,11 @@ const Microbiology = (() => {
                 <div class="hai-grid">
                     ${(c.hai_types || []).map(h => `
                         <div class="hai-card">
-                            <div class="hai-abbrev">${h.abbrev}</div>
+                            <div class="hai-abbrev">${h.abbrev || h.id || h.name}</div>
                             <div class="text-xs text-ward-400 mt-1">${h.name}</div>
-                            <p class="text-xs text-ward-500 mt-2"><strong>Bundle:</strong> ${h.bundle}</p>
-                            <p class="text-xs text-ward-accent mt-1">${h.clinical_why}</p>
+                            ${h.definition ? `<p class="text-xs text-ward-500 mt-1">${h.definition}</p>` : ''}
+                            <p class="text-xs text-ward-500 mt-2"><strong>Bundle:</strong> ${formatListField(h.bundle)}</p>
+                            ${h.clinical_why ? `<p class="text-xs text-ward-accent mt-1">${h.clinical_why}</p>` : ''}
                         </div>
                     `).join('')}
                 </div>
@@ -489,6 +521,7 @@ const Microbiology = (() => {
         }
 
         const s = breakChainScenarios[breakChainIndex];
+        const bcOptions = normalizeBreakChainOptions(s);
         if (scoreEl) scoreEl.textContent = `${breakChainCorrect}/${breakChainIndex}`;
 
         const linkLabel = getLinkName(s.target_link) || s.target_link;
@@ -498,7 +531,7 @@ const Microbiology = (() => {
                 <span class="scenario-target">Target link: ${linkLabel}</span>
                 <p class="scenario-setup">${s.scenario}</p>
                 <div class="space-y-2" id="bc-options">
-                    ${s.options.map((opt, i) => `
+                    ${bcOptions.map((opt, i) => `
                         <button type="button" class="practice-option" onclick="Microbiology.answerBreakChain(${i})">
                             <span class="text-ward-500 mr-2">${String.fromCharCode(65 + i)}.</span>${opt.text}
                         </button>
@@ -512,14 +545,15 @@ const Microbiology = (() => {
 
     function answerBreakChain(selected) {
         const s = breakChainScenarios[breakChainIndex];
-        const opt = s.options[selected];
+        const bcOptions = normalizeBreakChainOptions(s);
+        const opt = bcOptions[selected];
         const isCorrect = opt.correct;
 
         if (isCorrect) breakChainCorrect++;
 
         document.querySelectorAll('#bc-options .practice-option').forEach((btn, i) => {
             btn.disabled = true;
-            if (s.options[i].correct) btn.classList.add('correct');
+            if (bcOptions[i].correct) btn.classList.add('correct');
             else if (i === selected) btn.classList.add('incorrect');
         });
 
@@ -584,7 +618,7 @@ const Microbiology = (() => {
         area.innerHTML = `
             <div class="scenario-card">
                 <div class="scenario-title">${s.title}</div>
-                <p class="scenario-setup">${s.setup}</p>
+                <p class="scenario-setup">${s.setup || s.scenario || ''}</p>
                 <p class="text-sm font-medium text-ward-200 mb-3">${s.question}</p>
                 <div class="space-y-2" id="wi-options">
                     ${s.options.map((opt, i) => `

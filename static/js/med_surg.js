@@ -240,7 +240,7 @@ const MedSurg = (() => {
         const area = document.getElementById('ms-practice-area');
         const rat = document.createElement('div');
         rat.className = 'ms-rationale';
-        rat.innerHTML = `<strong>Rationale:</strong> ${esc(q.rationale)}`;
+        rat.innerHTML = `<strong>Rationale:</strong> ${esc(q.rationale || q.explanation || '')}`;
         area.appendChild(rat);
         setTimeout(() => { practiceIndex++; renderPracticeQuestion(); }, 2000);
     }

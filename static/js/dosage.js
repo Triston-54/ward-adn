@@ -404,7 +404,7 @@ const Dosage = (() => {
             <div class="dose-trap-card">
                 <div class="dose-trap-title">${esc(t.title)}</div>
                 <div class="dose-trap-trap"><strong class="text-ward-danger">Trap:</strong> ${esc(t.trap)}</div>
-                <div class="dose-trap-avoid"><strong>Avoid:</strong> ${esc(t.avoid)}</div>
+                <div class="dose-trap-avoid"><strong>Avoid:</strong> ${esc(t.avoid || t.fix || '')}</div>
                 <div class="dose-trap-example">Example: ${esc(t.example)}</div>
             </div>
         `).join('');
@@ -463,7 +463,7 @@ const Dosage = (() => {
                     ${prototypes ? `<div class="dose-drug-prototypes">${prototypes}</div>` : ''}
                     <div class="dose-drug-block">
                         <h4>Mechanism of Action</h4>
-                        <p>${esc(dc.mechanism)}</p>
+                        <p>${esc(dc.mechanism || dc.mechanism_of_action || '')}</p>
                     </div>
                     ${dc.indications ? `
                         <div class="dose-drug-block">

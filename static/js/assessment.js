@@ -152,13 +152,17 @@ const Assessment = (() => {
         const detail = document.getElementById('ha-step-detail');
         if (!detail || !step) return;
 
+        const rationale = step.rationale
+            || (step.tips?.length ? step.tips.join(' ') : '')
+            || (step.technique ? `Assessment technique: ${step.technique}` : '');
         detail.innerHTML = `
             <div class="ha-step-detail-card">
                 <h3>Step ${step.order}: ${step.step}</h3>
                 <p class="text-sm text-ward-300">${step.description}</p>
+                ${rationale ? `
                 <div class="ha-rationale">
-                    <strong class="text-ward-purple">Clinical Reasoning:</strong> ${step.rationale}
-                </div>
+                    <strong class="text-ward-purple">Clinical Reasoning:</strong> ${rationale}
+                </div>` : ''}
                 ${verifyBtn(step.source)}
             </div>
         `;
@@ -240,12 +244,12 @@ const Assessment = (() => {
                 <ul>${red}</ul>
             </div>
 
-            ${sys.clinical_reasoning ? `
+            ${(sys.clinical_reasoning || sys.overview || (sys.nursing_implications || []).length) ? `
                 <div class="ha-clinical-reasoning">
-                    <strong>Clinical Reasoning:</strong> ${sys.clinical_reasoning}
+                    <strong>Clinical Reasoning:</strong> ${sys.clinical_reasoning || sys.overview || (sys.nursing_implications || []).join(' ')}
                 </div>
             ` : ''}
-            ${verifyBtn(sys.source)}
+            ${verifyBtn(sys.source || sys.source_ref)}
         `;
         window.WardSocratic?.setModuleContext({
             module: 'assessment',
@@ -928,7 +932,12 @@ const Assessment = (() => {
         const pop = data.population;
         detail.classList.remove('hidden');
 
-        const considerations = (pop.assessment_considerations || []).map(c => `<li>${c}</li>`).join('');
+        const overview = pop.overview
+            || (pop.considerations?.length ? pop.considerations.join(' · ') : '');
+        const considerations = (pop.assessment_considerations
+            || pop.assessment_modifications
+            || pop.considerations
+            || []).map(c => `<li>${c}</li>`).join('');
         const nva = (pop.normal_vs_abnormal || []).map(row => `
             <tr>
                 <td class="ha-nva-finding">${row.finding}</td>
@@ -940,14 +949,16 @@ const Assessment = (() => {
 
         detail.innerHTML = `
             <h2 class="text-lg font-semibold text-ward-100 mb-1">${pop.name}</h2>
-            <p class="text-xs text-ward-500 mb-3">${pop.age_range}</p>
-            <p class="text-sm text-ward-400 mb-4">${pop.overview}</p>
+            <p class="text-xs text-ward-500 mb-3">${pop.age_range || ''}</p>
+            ${overview ? `<p class="text-sm text-ward-400 mb-4">${overview}</p>` : ''}
 
+            ${considerations ? `
             <div class="mb-4">
                 <h4 class="text-xs font-semibold text-ward-purple uppercase mb-2">Assessment Considerations</h4>
                 <ul class="text-sm text-ward-400 space-y-1 list-disc list-inside">${considerations}</ul>
-            </div>
+            </div>` : ''}
 
+            ${nva ? `
             <div class="ha-nva-table-wrap mb-4">
                 <h4 class="text-xs font-semibold text-ward-purple uppercase mb-2">Normal vs. Abnormal</h4>
                 <table class="ha-nva-table">
@@ -960,12 +971,13 @@ const Assessment = (() => {
                     </thead>
                     <tbody>${nva}</tbody>
                 </table>
-            </div>
+            </div>` : ''}
 
+            ${red ? `
             <div class="ha-findings-col red mb-4">
                 <h4>Red Flags</h4>
                 <ul>${red}</ul>
-            </div>
+            </div>` : ''}
 
             ${pop.clinical_reasoning ? `
                 <div class="ha-clinical-reasoning">

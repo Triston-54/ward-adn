@@ -76,6 +76,8 @@ const MentalHealth = (() => {
         const techniques = commData.techniques || [];
         const barriers = commData.barriers || [];
 
+        const formatAvoid = (v) => Array.isArray(v) ? v.join(' · ') : (v || '');
+
         const techCards = techniques.map(t => `
             <details class="mh-comm-card" data-id="${esc(t.id)}">
                 <summary class="mh-comm-summary">
@@ -85,8 +87,8 @@ const MentalHealth = (() => {
                 <div class="mh-comm-body">
                     <p class="mh-comm-desc">${esc(t.description)}</p>
                     ${t.example ? `<div class="mh-callout mh-callout-example"><strong>Example:</strong> ${esc(t.example)}</div>` : ''}
-                    ${t.nursing_action ? `<div class="mh-callout mh-callout-action"><strong>RN Action:</strong> ${esc(t.nursing_action)}</div>` : ''}
-                    ${t.avoid ? `<div class="mh-callout mh-callout-avoid"><strong>Avoid:</strong> ${esc(t.avoid)}</div>` : ''}
+                    ${(t.nursing_action || t.when_to_use) ? `<div class="mh-callout mh-callout-action"><strong>RN Action:</strong> ${esc(t.nursing_action || t.when_to_use)}</div>` : ''}
+                    ${formatAvoid(t.avoid) ? `<div class="mh-callout mh-callout-avoid"><strong>Avoid:</strong> ${esc(formatAvoid(t.avoid))}</div>` : ''}
                     ${t.clinical_why ? `<p class="mh-clinical-why"><em>${esc(t.clinical_why)}</em></p>` : ''}
                     <button type="button" class="text-xs text-ward-purple hover:underline mt-2"
                             onclick="MentalHealth.askSocratic('${esc(t.technique)}', '${esc((t.description || '').slice(0, 200))}')">
@@ -101,7 +103,7 @@ const MentalHealth = (() => {
                 <div class="mh-barrier-name">${esc(b.barrier)}</div>
                 <p class="mh-barrier-desc">${esc(b.description)}</p>
                 ${b.example ? `<p class="mh-barrier-example"><strong class="text-ward-danger">Don't:</strong> ${esc(b.example)}</p>` : ''}
-                ${b.instead ? `<p class="mh-barrier-instead"><strong class="text-ward-success">Instead:</strong> ${esc(b.instead)}</p>` : ''}
+                ${(b.instead || b.therapeutic_alternative) ? `<p class="mh-barrier-instead"><strong class="text-ward-success">Instead:</strong> ${esc(b.instead || b.therapeutic_alternative)}</p>` : ''}
             </div>
         `).join('');
 

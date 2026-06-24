@@ -550,7 +550,8 @@
         "Staphylococcus",
         "Streptococcus",
         "Clostridioides difficile"
-      ]
+      ],
+      "antibiotics": "Empiric: penicillins, cephalosporins, vancomycin for MRSA; narrow per culture when available."
     },
     "gram_negative": {
       "appearance": "Pink/red rods or cocci",
@@ -559,7 +560,8 @@
         "E. coli",
         "Pseudomonas",
         "Klebsiella"
-      ]
+      ],
+      "antibiotics": "Empiric: aminoglycosides, fluoroquinolones, antipseudomonal beta-lactams — LPS drives sepsis risk."
     },
     "clinical_note": "Gram stain guides empiric antibiotics before culture sensitivities return."
   },
@@ -598,7 +600,8 @@
         "Maximal barrier on insertion",
         "Chlorhexidine skin prep",
         "Daily line necessity review"
-      ]
+      ],
+      "clinical_why": "Central lines bypass skin barrier — sterile insertion and daily necessity review prevent bloodstream infection."
     },
     {
       "id": "cauti",
@@ -609,7 +612,8 @@
         "Maintain closed drainage",
         "Remove ASAP",
         "Perineal care"
-      ]
+      ],
+      "clinical_why": "Indwelling catheters are the leading pathway for ascending UTI — remove as soon as clinically appropriate."
     },
     {
       "id": "vap",
@@ -620,7 +624,8 @@
         "Oral care",
         "Sedation vacation per protocol",
         "DVT prophylaxis"
-      ]
+      ],
+      "clinical_why": "Aspiration of oropharyngeal secretions drives VAP — head-of-bed elevation and oral hygiene reduce risk."
     },
     {
       "id": "ssi",
@@ -631,7 +636,8 @@
         "Glucose control",
         "Hair removal with clippers",
         "Normothermia"
-      ]
+      ],
+      "clinical_why": "Perioperative bundles reduce wound contamination — glucose control and normothermia support healing."
     },
     {
       "id": "cdi",
@@ -642,7 +648,8 @@
         "Contact precautions",
         "Soap-and-water HH",
         "Bleach cleaning"
-      ]
+      ],
+      "clinical_why": "C. diff spores survive alcohol gel — contact precautions plus soap-and-water hand hygiene and bleach cleaning are required."
     }
   ],
   "break_chain_scenarios": [
