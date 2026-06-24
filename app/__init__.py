@@ -1,0 +1,1 @@
+"""The Ward — ADN Nursing Study Suite."""

@@ -1,0 +1,80 @@
+{
+  "agent": "Pathophysiology Full Content Audit \u2014 2026-06",
+  "catalog_items_reviewed": 76,
+  "verified": 75,
+  "flagged": 1,
+  "content_counts": {
+    "core_concepts": 10,
+    "disease_processes": 12,
+    "compare_contrast_pairs": 5,
+    "what_breaks_down_scenarios": 6,
+    "flashcards": 25,
+    "practice_questions": 18
+  },
+  "breakdown_by_section": {
+    "core_concepts": {
+      "total": 10,
+      "verified": 9,
+      "flagged": 1
+    },
+    "disease_processes": {
+      "total": 12,
+      "verified": 12,
+      "flagged": 0
+    },
+    "compare_contrast": {
+      "total": 5,
+      "verified": 5,
+      "flagged": 0
+    },
+    "what_breaks_down": {
+      "total": 6,
+      "verified": 6,
+      "flagged": 0
+    },
+    "flashcards": {
+      "total": 25,
+      "verified": 25,
+      "flagged": 0
+    },
+    "practice": {
+      "total": 18,
+      "verified": 18,
+      "flagged": 0
+    }
+  },
+  "content_fixes_applied": [
+    "concept:inflammation-stages \u2014 Sepsis-3 organ dysfunction language replaced outdated SIRS-only framing",
+    "disease:copd \u2014 clinical manifestation corrected to compensated chronic respiratory acidosis (not primary metabolic alkalosis)",
+    "disease:copd \u2014 nursing O\u2082 priorities updated to SpO\u2082 88\u201392% titration with ABG baseline monitoring",
+    "disease:cardiogenic-shock \u2014 urine output description corrected (poor forward flow, not volume depletion)",
+    "disease:pneumonia \u2014 positioning priority clarified (reposition q2h; affected-side-up only for abscess/effusion)",
+    "disease:sepsis \u2014 patho cascade updated from SIRS terminology to dysregulated cytokine response",
+    "compare:prerenal-vs-intrarenal \u2014 diuretic/bicarbonate/GI bleed confounder caveat added to clinical_pearls",
+    "flashcard:fc-7 \u2014 COPD O\u2082 caution updated (removed hypoxic-drive oversimplification; ABG baseline emphasis)",
+    "flashcard:fc-19 \u2014 Berlin ARDS P/F ratio includes PEEP \u22655 requirement"
+  ],
+  "flagged_items": [
+    {
+      "item_key": "concept:immune-response",
+      "section": "core_concepts",
+      "review_note": "[Core Concepts] Clinical content is accurate (innate vs adaptive immunity, neutropenic precautions). source_ref cites 'Open RN \u2014 Microbiology' Ch. 7 rather than Pathophysiology module source \u2014 cross-module citation inconsistency for content inventory. Fix: align source_ref to Pathophysiology OER chapter or document intentional cross-link in manifest."
+    }
+  ],
+  "errors": [],
+  "module_audit_summary": {
+    "verified": 75,
+    "needs_review": 1,
+    "unreviewed": 0,
+    "total": 76
+  },
+  "focus_areas_reviewed": [
+    "Shock types (hypovolemic, cardiogenic, septic/distributive) \u2014 differentiation and treatment",
+    "Heart failure \u2014 RAAS cascade, compensation/decompensation, daily weights",
+    "COPD \u2014 chronic hypercapnia, O\u2082 titration, ABG baseline interpretation",
+    "Diabetes \u2014 DKA vs HHNS, K\u207a management before insulin",
+    "Electrolytes and acid-base \u2014 ABG interpretation, anion gap, Kussmaul respirations",
+    "Renal failure \u2014 prerenal vs intrarenal AKI, hyperkalemia ECG progression",
+    "Scenarios and practice \u2014 correct_index, rationale, NCLEX prioritization"
+  ]
+}

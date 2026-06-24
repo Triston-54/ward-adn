@@ -1,0 +1,85 @@
+{
+  "agent": "Final Polish & Consistency Pass",
+  "completed_at": "2026-06-24",
+  "summary": "Cross-module UI/UX polish completing pathophysiology, maternal-child, and audit parity with established nursing modules. Fixed command palette tab IDs, flashcard exports, progress tracking, mobile tab scroll, PWA cache, and shared visual chrome.",
+  "files_changed": [
+    "app/templates/modules/pathophysiology.html",
+    "app/templates/modules/maternal_child.html",
+    "app/templates/audit.html",
+    "app/templates/base.html",
+    "app/templates/dashboard.html",
+    "app/services/pathophysiology_service.py",
+    "app/services/maternal_child_service.py",
+    "app/routers/pathophysiology.py",
+    "app/routers/maternal_child.py",
+    "static/css/ward.css",
+    "static/css/pathophysiology.css",
+    "static/css/maternal_child.css",
+    "static/js/ward-tabs.js",
+    "static/js/ward.js",
+    "static/js/pathophysiology.js",
+    "static/js/maternal_child.js",
+    "static/sw.js",
+    "data/polish_pass_report.json"
+  ],
+  "improvements": {
+    "visual_consistency": [
+      "Pathophysiology and maternal-child now use shared module-header, module-progress-strip, module-breadcrumb, and badge-new patterns",
+      "ward.css extended: patho-tabs/mc-tabs, patho/mc progress strips, audit-summary-strip mobile stacking, rose/pink tab accent colors",
+      "Removed duplicate tab-bar CSS from pathophysiology.css and maternal_child.css (ward.css is canonical)",
+      "Dashboard pharmacy track badge uses badge-pharm utility instead of inline style"
+    ],
+    "navigation_consistency": [
+      "Breadcrumb + topbar Dashboard return link added to pathophysiology, maternal-child, and audit pages",
+      "Sidebar now lists Pathophysiology and NURS 148 — Maternal-Child under Nursing Modules",
+      "Audit page uses module-header chrome and data-module=audit"
+    ],
+    "command_palette": [
+      "Pathophysiology tab commands use correct hash IDs: core-concepts, disease-processes, compare-contrast, what-breaks-down",
+      "MODULE_TAB_DEFAULTS pathophysiology fixed to core-concepts",
+      "Export flashcards (MD) commands added for pathophysiology and maternal-child",
+      "Audit palette extended: pathophysiology, maternal_child, pharmacy_calculations filters",
+      "exportFlashcardsGlobal() supports pathophysiology and maternal_child API endpoints"
+    ],
+    "export_features": [
+      "New /api/pathophysiology/export/flashcards and /api/maternal-child/export/flashcards endpoints",
+      "build_flashcards_markdown() in pathophysiology_service and maternal_child_service",
+      "Export Deck buttons on flashcard tabs; Pathophysiology.exportFlashcardDeck() and MaternalChild.exportFlashcardDeck()"
+    ],
+    "progress_tracking_ui": [
+      "MaternalChild.refreshModuleProgress() fetches /api/maternal-child/stats and updates progress bar after study actions",
+      "Replaced broken refreshProgressBar() dependency in maternal_child reportProgress"
+    ],
+    "tab_navigation_mobile": [
+      "ward-tabs.js: active tab scrollIntoView on ARIA sync for horizontal tab bars on small screens",
+      "patho-tabs and mc-tabs included in ward.css mobile overflow and touch-scroll rules"
+    ],
+    "accessibility": [
+      "aria-label on pathophysiology and maternal-child tablists",
+      "loading-state + aria-live on pathophysiology concept/disease/compare loaders and audit catalog",
+      "Audit loading placeholder uses shared loading-spinner component"
+    ],
+    "pwa_polish": [
+      "Service worker bumped to ward-v7",
+      "Cache list includes audit.css and audit.js for offline audit shell"
+    ]
+  },
+  "before_after": {
+    "patho_mc_chrome": "Custom headers/strips only → breadcrumb + topbar return + shared module-* classes",
+    "audit_navigation": "No breadcrumb/topbar return → matches all nursing module pages",
+    "command_palette_patho": "Wrong tab hashes (concepts, diseases) → correct IDs matching WardTabs registry",
+    "exports": "Patho/MC flashcards UI-only → API + command palette + in-tab Export Deck buttons",
+    "mc_progress": "reportProgress called undefined refreshProgressBar → dedicated refreshModuleProgress",
+    "pwa_cache": "Missing audit assets → full module CSS/JS including audit.js"
+  },
+  "remaining_inconsistencies": [
+    "Per-module CSS still duplicates module-header/progress-strip rules in patho/mc files (harmless; ward.css canonical)",
+    "Mental health has no dedicated export tab (Phase 1 scaffold — safety drill only)",
+    "Some maternal-child tab loaders still plain text (antepartum/intrapartum containers)",
+    "Pathophysiology and maternal-child callout banners use module-specific styles (intentional accent colors)"
+  ],
+  "verification": {
+    "test_startup_py": "passed",
+    "routes_smoke": "12 critical routes OK including /modules/pathophysiology and /modules/maternal-child"
+  }
+}

@@ -1,0 +1,1562 @@
+{
+  "module_id": "maternal_child",
+  "title": "Maternal-Newborn & Pediatric Nursing",
+  "pregnancy_stages": [
+    {
+      "id": "tri1-overview",
+      "title": "First Trimester Overview",
+      "category": "Antepartum",
+      "content": "Weeks 1–12: organogenesis, highest teratogen sensitivity.",
+      "nursing_actions": [
+        "Folic acid 400–800 mcg",
+        "Assess pregnancy symptoms",
+        "Dating ultrasound"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "tri1-milestones",
+      "title": "First Trimester Milestones",
+      "category": "Antepartum",
+      "content": "Heart begins beating ~6 weeks; limbs form by 8 weeks.",
+      "nursing_actions": [
+        "Avoid teratogens",
+        "Review medications with provider"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "tri2-overview",
+      "title": "Second Trimester Overview",
+      "category": "Antepartum",
+      "content": "Weeks 13–27: quickening, fetal growth accelerates.",
+      "nursing_actions": [
+        "Anomaly scan ~20 weeks",
+        "Glucose screening 24–28 weeks"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "tri2-milestones",
+      "title": "Second Trimester Milestones",
+      "category": "Antepartum",
+      "content": "Vernix, lanugo; mother feels fetal movement 18–20 weeks.",
+      "nursing_actions": [
+        "Fundal height assessment",
+        "Educate on fetal movement counts"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "tri3-overview",
+      "title": "Third Trimester Overview",
+      "category": "Antepartum",
+      "content": "Weeks 28–40: fetal maturation, maternal discomfort increases.",
+      "nursing_actions": [
+        "Fetal kick counts",
+        "Signs of labor teaching",
+        "Preeclampsia education"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "tri3-milestones",
+      "title": "Third Trimester Milestones",
+      "category": "Antepartum",
+      "content": "Lung surfactant matures; betamethasone 24–34 weeks if preterm risk.",
+      "nursing_actions": [
+        "Non-stress tests if indicated",
+        "Birth plan discussion"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "edd-naegle",
+      "title": "Estimated Due Date (Naegele)",
+      "category": "Antepartum",
+      "content": "LMP − 3 months + 7 days (280 days).",
+      "nursing_actions": [
+        "Confirm dating with early ultrasound"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "prenatal-visits",
+      "title": "Prenatal Visit Schedule",
+      "category": "Antepartum",
+      "content": "Monthly until 28 weeks, q2 weeks until 36, weekly until delivery.",
+      "nursing_actions": [
+        "BP, weight, urine protein, fundal height"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "fetal-wellbeing",
+      "title": "Fetal Well-Being Assessment",
+      "category": "Antepartum",
+      "content": "Kick counts, NST, BPP when indicated for high-risk.",
+      "nursing_actions": [
+        "Report decreased fetal movement immediately"
+      ],
+      "source_ref": "maternal_child"
+    }
+  ],
+  "labor_delivery": [
+    {
+      "id": "stage-1-labor",
+      "title": "Stage 1 Labor",
+      "category": "Intrapartum",
+      "content": "Onset of contractions to full dilation; active labor ≥6 cm; transition ~8–10 cm intense.",
+      "nursing_actions": [
+        "Monitor FHR and contractions",
+        "Pain management",
+        "Position changes"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "stage-2-labor",
+      "title": "Stage 2 Labor",
+      "category": "Intrapartum",
+      "content": "Full dilation to birth — pushing.",
+      "nursing_actions": [
+        "Coach pushing",
+        "Prepare for shoulder dystocia response",
+        "Perineal care"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "stage-3-labor",
+      "title": "Stage 3 Labor",
+      "category": "Intrapartum",
+      "content": "Birth to placenta delivery.",
+      "nursing_actions": [
+        "Watch for hemorrhage",
+        "Oxytocin per order after birth",
+        "Assess placenta integrity"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "stage-4-labor",
+      "title": "Stage 4 Labor",
+      "category": "Intrapartum",
+      "content": "First 1–2 hours postpartum — recovery.",
+      "nursing_actions": [
+        "Vitals q15min",
+        "Fundal massage",
+        "Breastfeeding support"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "fhr-baseline",
+      "title": "FHR Baseline Assessment",
+      "category": "Intrapartum",
+      "content": "Normal 110–160 bpm; variability moderate; accelerations reassuring.",
+      "nursing_actions": [
+        "Document baseline, variability, accelerations/decelerations"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "fhr-decelerations",
+      "title": "FHR Decelerations",
+      "category": "Intrapartum",
+      "content": "Early: mirror contractions. Variable: cord compression. Late: gradual nadir after contraction peak — uteroplacental insufficiency.",
+      "nursing_actions": [
+        "Late decels: stop oxytocin, left lateral, O₂, IV fluids, notify provider"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "leopold-maneuvers",
+      "title": "Leopold Maneuvers",
+      "category": "Intrapartum",
+      "content": "Palpate fetal lie, presentation, and position.",
+      "nursing_actions": [
+        "Perform before FHR auscultation placement"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "labor-positions",
+      "title": "Labor Positioning",
+      "category": "Intrapartum",
+      "content": "Upright positions aid descent; left lateral improves placental perfusion.",
+      "nursing_actions": [
+        "Encourage position changes",
+        "Birth ball, squat bar as available"
+      ],
+      "source_ref": "maternal_child"
+    }
+  ],
+  "postpartum_newborn": [
+    {
+      "id": "bubble-assessment",
+      "title": "Postpartum Bubble Assessment",
+      "category": "Postpartum",
+      "content": "B — bonding; U — uterus firm/fundal height; B — breasts; B — bowel/bladder; L — lochia; E — episiotomy/edema.",
+      "nursing_actions": [
+        "Fundal massage if boggy",
+        "Assess lochia amount/color"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "lochia-assessment",
+      "title": "Lochia Assessment",
+      "category": "Postpartum",
+      "content": "Rubra days 1–3; serosa 4–10; alba up to 6 weeks. Foul odor or heavy bleeding abnormal.",
+      "nursing_actions": [
+        "Pad counts",
+        "Report saturation >1 pad/hr"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "postpartum-maternal-flags",
+      "title": "Postpartum Maternal Warning Signs",
+      "category": "Postpartum",
+      "content": "Fever, foul lochia, incision erythema, chest pain, leg swelling, mood changes with hallucinations.",
+      "nursing_actions": [
+        "Educate before discharge",
+        "Emergency return precautions"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "apgar-scoring",
+      "title": "APGAR Scoring",
+      "category": "Newborn",
+      "content": "1 and 5 minutes: Appearance, Pulse, Grimace, Activity, Respiration. <7 needs intervention.",
+      "nursing_actions": [
+        "Resuscitation per NRP",
+        "Document scores"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "immediate-newborn-care",
+      "title": "Immediate Newborn Care",
+      "category": "Newborn",
+      "content": "Dry, warm, stimulate, delay cord clamp per policy, skin-to-skin, vitamin K and eye prophylaxis per order.",
+      "nursing_actions": [
+        "Assess airway",
+        "Prevent hypothermia"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "newborn-physical-assessment",
+      "title": "Newborn Physical Assessment",
+      "category": "Newborn",
+      "content": "Vitals, reflexes, skin, fontanelles, hips, heart/lung auscultation.",
+      "nursing_actions": [
+        "Red reflex eye exam",
+        "Weight and measurements"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "bonding-kangaroo",
+      "title": "Bonding & Kangaroo Care",
+      "category": "Newborn",
+      "content": "Skin-to-skin stabilizes temperature and glucose; promotes attachment.",
+      "nursing_actions": [
+        "Encourage early breastfeeding"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "breastfeeding-basics",
+      "title": "Breastfeeding Basics",
+      "category": "Newborn",
+      "content": "Latch, frequency 8–12 feeds/24 hr, wet diapers day 4+.",
+      "nursing_actions": [
+        "Assess latch and maternal nipple pain",
+        "IBCLC referral"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "newborn-warning-signs",
+      "title": "Newborn Warning Signs",
+      "category": "Newborn",
+      "content": "Poor feeding, lethargy, respiratory distress, circumoral cyanosis, fever ≥38°C.",
+      "nursing_actions": [
+        "Report immediately",
+        "Sepsis workup in young infant"
+      ],
+      "source_ref": "maternal_child"
+    }
+  ],
+  "pediatric_essentials": [
+    {
+      "id": "growth-percentiles",
+      "title": "Growth Percentiles",
+      "category": "Pediatrics",
+      "content": "Weight, length, head circumference plotted on WHO/CDC charts.",
+      "nursing_actions": [
+        "Trend over time more important than single point"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "milestone-infant",
+      "title": "Infant Milestones",
+      "category": "Pediatrics",
+      "content": "Social smile ~2 mo, rolls ~4–6 mo, sits ~6 mo, crawls ~9 mo.",
+      "nursing_actions": [
+        "Refer delays per Early Intervention"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "milestone-toddler",
+      "title": "Toddler Milestones",
+      "category": "Pediatrics",
+      "content": "Walks ~12 mo, 50 words ~18 mo, parallel play.",
+      "nursing_actions": [
+        "Safety: gates, poison prevention"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "milestone-preschool",
+      "title": "Preschool Milestones",
+      "category": "Pediatrics",
+      "content": "Tricycle, sentences, cooperative play.",
+      "nursing_actions": [
+        "Vision/hearing screening"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "immunization-basics",
+      "title": "Immunization Schedule",
+      "category": "Pediatrics",
+      "content": "CDC schedule — DTaP, IPV, MMR, varicella, Hep B series.",
+      "nursing_actions": [
+        "Document lot and site",
+        "VIS sheets"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "pediatric-fever",
+      "title": "Pediatric Fever",
+      "category": "Pediatrics",
+      "content": "Context matters — behavior, hydration, age. Infant ≤28 days with ≥38°C = emergency workup.",
+      "nursing_actions": [
+        "Antipyretics weight-based",
+        "Never aspirin — Reye syndrome"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "dehydration-peds",
+      "title": "Pediatric Dehydration",
+      "category": "Pediatrics",
+      "content": "Assess fontanel, mucous membranes, urine output, cap refill.",
+      "nursing_actions": [
+        "Oral rehydration if mild; IV if severe"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "pain-assessment-peds",
+      "title": "Pediatric Pain Assessment",
+      "category": "Pediatrics",
+      "content": "FLACC infant; FACES/Wong-Baker child; self-report when able.",
+      "nursing_actions": [
+        "Believe child's report"
+      ],
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "peds-vitals-infant",
+      "title": "Pediatric Vital Sign Norms — Infant (0–12 mo)",
+      "category": "Growth & Vitals",
+      "content": "HR 100–160, RR 30–60, BP ~70–100/50–65 systolic. Temperature: rectal most accurate in infants.",
+      "key_points": [
+        "Bradycardia in infant often signals hypoxia — assess ABCs before assuming sleep",
+        "Cap refill >2 sec suggests poor perfusion",
+        "Pulse ox on right hand pre-ductal in newborn if concern for CHD"
+      ],
+      "nursing_actions": [
+        "Use length-based resuscitation tape (Broselow) for weight-based dosing",
+        "Trend vitals; single reading less meaningful than pattern"
+      ],
+      "clinical_why": "Age-specific norms prevent mislabeling normal infant tachycardia as emergency or missing true decompensation.",
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "peds-vitals-toddler",
+      "title": "Pediatric Vital Sign Norms — Toddler (1–3 yr)",
+      "category": "Growth & Vitals",
+      "content": "HR 90–150, RR 24–40. Fear and crying elevate HR/RR — allow calm period before reassessment.",
+      "key_points": [
+        "Communicate at eye level; use simple words",
+        "Parent presence reduces anxiety and improves cooperation",
+        "Weight in kg required for all pediatric medication calculations"
+      ],
+      "nursing_actions": [
+        "Explain procedures in developmentally appropriate language",
+        "Offer choices when safe (which arm for BP)"
+      ],
+      "clinical_why": "Toddlers cannot articulate symptoms — behavioral cues and parent report are primary assessment data.",
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "peds-vitals-schoolage",
+      "title": "Pediatric Vital Sign Norms — School Age (6–12 yr)",
+      "category": "Growth & Vitals",
+      "content": "HR 70–120, RR 18–30, BP approaching adult ranges by adolescence.",
+      "key_points": [
+        "Children may minimize pain — observe gait, activity, facial expression",
+        "School-age children understand cause-effect; brief honest explanations build trust"
+      ],
+      "nursing_actions": [
+        "Involve child in care when appropriate",
+        "Screen for anxiety about procedures"
+      ],
+      "clinical_why": "Normal ranges widen with age — applying adult vital sign alarms causes false emergencies.",
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "peds-communication",
+      "title": "Family-Centered & Developmental Communication",
+      "category": "Pediatric Safety",
+      "content": "Assess the child within the context of family; include caregivers in teaching. Use therapeutic touch, distraction, and play for younger children.",
+      "key_points": [
+        "Infants: nonverbal cues (tone, touch, feeding)",
+        "Toddlers: short sentences, concrete terms, avoid 'don't hurt'",
+        "Adolescents: confidential time; assess risk behaviors respectfully"
+      ],
+      "nursing_actions": [
+        "Ask parent what calms the child",
+        "Use Child Life services when available"
+      ],
+      "clinical_why": "NCLEX Psychosocial Integrity emphasizes family-centered care and age-appropriate interaction.",
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "peds-sids",
+      "title": "SIDS Prevention & Safe Sleep",
+      "category": "Pediatric Safety",
+      "content": "ABC: Alone, on Back, in Crib. Firm flat surface, no soft bedding, smoke-free environment.",
+      "key_points": [
+        "Supine sleeping every sleep period until 1 year",
+        "Room-sharing without bed-sharing recommended first 6 months",
+        "Pacifier at nap/bedtime after breastfeeding established"
+      ],
+      "nursing_actions": [
+        "Model safe sleep in hospital",
+        "Teach parents to avoid overlays, bumpers, inclined sleepers"
+      ],
+      "clinical_why": "Safe sleep teaching is a high-yield NCLEX Health Promotion item linked to sudden unexpected infant death reduction.",
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "peds-choking",
+      "title": "Choking & Foreign Body Aspiration",
+      "category": "Pediatric Safety",
+      "content": "Toddlers explore orally — coins, grapes, hot dogs are common aspirated objects. Partial obstruction may have stridor and cough; complete obstruction is silent with ineffective cough.",
+      "key_points": [
+        "Infant: 5 back blows + 5 chest thrusts",
+        "Child >1 yr: abdominal thrusts (Heimlich)",
+        "Cut food to <½ inch; avoid round firm foods for toddlers"
+      ],
+      "nursing_actions": [
+        "Assess airway before any other intervention",
+        "Call code/respond per facility BLS protocol"
+      ],
+      "clinical_why": "Airway obstruction is an immediate life threat — NCLEX prioritization favors airway interventions first.",
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "peds-medication-safety",
+      "title": "Pediatric Medication Safety",
+      "category": "Pediatric Safety",
+      "content": "Always verify weight in kg. Never use 'teaspoon' household measures. Liquid concentrations vary — read label every time.",
+      "key_points": [
+        "mg/kg dosing — double-check with another nurse",
+        "Never administer adult tablets split without pharmacy approval",
+        "Topical medications absorb faster in infants — systemic toxicity risk"
+      ],
+      "nursing_actions": [
+        "Use oral syringe not kitchen spoon",
+        "Document site for topical meds; teach parents"
+      ],
+      "clinical_why": "Pediatric dosing errors are a leading cause of preventable harm — dimensional analysis and weight verification are NCLEX staples.",
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "peds-lead-poisoning",
+      "title": "Lead Poisoning Screening",
+      "category": "Growth & Development",
+      "content": "CDC: screen all children at 12 and 24 months; high-risk areas may need earlier/more frequent screening.",
+      "key_points": [
+        "Pica, developmental delay, irritability may present",
+        "Old paint, imported toys, water pipes are exposure sources"
+      ],
+      "nursing_actions": [
+        "Refer elevated BLL per local health department protocol",
+        "Teach handwashing and wet-mop dust control"
+      ],
+      "clinical_why": "Environmental health screening is Health Promotion — anticipatory guidance prevents irreversible neurodevelopmental injury.",
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "peds-adolescent-confidentiality",
+      "title": "Adolescent Health & Confidentiality",
+      "category": "Pediatric Safety",
+      "content": "Assess STI risk, substance use, depression, and safety confidentially when state law permits. Balance autonomy with mandatory reporting for abuse/harm.",
+      "key_points": [
+        "HEADSS assessment: Home, Education, Activities, Drugs, Sexuality, Suicide",
+        "HPV, meningococcal, Tdap boosters per adolescent schedule"
+      ],
+      "nursing_actions": [
+        "Provide private interview time",
+        "Know mandatory reporting obligations"
+      ],
+      "clinical_why": "Adolescents disclose sensitive information only when trust and privacy are protected.",
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "peds-croup",
+      "title": "Croup (Laryngotracheobronchitis)",
+      "category": "Pediatric Respiratory",
+      "content": "Barking cough, inspiratory stridor, hoarseness — often worse at night. Mild: cool mist; severe: racemic epinephrine and steroids per order.",
+      "key_points": [
+        "Stridor at rest = severe — continuous monitoring",
+        "Avoid agitating child; stress worsens obstruction"
+      ],
+      "nursing_actions": [
+        "Position of comfort; humidified air",
+        "Notify provider for stridor at rest or retractions"
+      ],
+      "clinical_why": "Pediatric airway edema can progress rapidly — early escalation prevents respiratory arrest.",
+      "source_ref": "maternal_child"
+    }
+  ],
+  "safety_red_flags": [
+    {
+      "id": "rf-preeclampsia",
+      "finding": "BP ≥140/90 after 20 weeks with proteinuria OR systemic symptoms (headache, RUQ pain, vision changes)",
+      "category": "OB emergency",
+      "action": "Notify provider; assess HELLP; seizure precautions; magnesium per order",
+      "escalation": "Magnesium sulfate for severe features; delivery may be indicated"
+    },
+    {
+      "id": "rf-eclampsia",
+      "finding": "Seizure in preeclamptic patient",
+      "category": "OB emergency",
+      "action": "Side-lying, airway, magnesium per protocol, notify provider, prepare for delivery"
+    },
+    {
+      "id": "rf-hemorrhage",
+      "finding": "Postpartum hemorrhage — fundus boggy, soaking >1 pad/hr",
+      "category": "Postpartum",
+      "action": "Fundal massage, IV access, oxytocin per order, notify provider, blood products"
+    },
+    {
+      "id": "rf-cord-prolapse",
+      "finding": "Umbilical cord prolapse with fetal bradycardia",
+      "category": "Labor emergency",
+      "action": "Knee-chest or exaggerated Sims; elevate presenting part; emergency cesarean"
+    },
+    {
+      "id": "rf-shoulder-dystocia",
+      "finding": "Turtle sign — head delivered, shoulders stuck",
+      "category": "Labor emergency",
+      "action": "McRoberts + suprapubic pressure; NO fundal pressure; notify team"
+    },
+    {
+      "id": "rf-placental-abruption",
+      "finding": "Painful rigid abdomen, dark bleeding, nonreassuring FHR",
+      "category": "OB emergency",
+      "action": "Left lateral, O₂, IV access, notify provider, prepare for emergency delivery"
+    },
+    {
+      "id": "rf-postpartum-psychosis",
+      "finding": "Hallucinations, delusions, bizarre behavior days–4 weeks postpartum",
+      "category": "Psychiatric emergency",
+      "action": "Constant observation; infant safety; psychiatry; do not leave alone with baby"
+    },
+    {
+      "id": "rf-neonatal-fever",
+      "finding": "Infant ≤28 days rectal temp ≥38°C (100.4°F)",
+      "category": "Neonatal emergency",
+      "action": "Full sepsis workup per protocol; notify provider; NPO for procedures"
+    },
+    {
+      "id": "rf-resp-distress-newborn",
+      "finding": "Nasal flaring, grunting, retractions, circumoral cyanosis",
+      "category": "Neonatal",
+      "action": "Position; O₂; notify provider/NRP team"
+    },
+    {
+      "id": "rf-late-decel",
+      "finding": "Repetitive late decelerations with decreased variability",
+      "category": "Fetal distress",
+      "action": "Stop oxytocin, left lateral, O₂, IV fluids, notify provider"
+    },
+    {
+      "id": "rf-magnesium-toxicity",
+      "finding": "Absent DTRs, RR <12, urine output <30 mL/hr on magnesium",
+      "category": "Medication",
+      "action": "Stop magnesium; notify provider; calcium gluconate per order"
+    },
+    {
+      "id": "rf-pp-endometritis",
+      "finding": "Fever, foul lochia, uterine tenderness postpartum",
+      "category": "Postpartum infection",
+      "action": "Cultures; antibiotics per order; monitor vitals"
+    },
+    {
+      "id": "rf-jaundice-newborn",
+      "finding": "Jaundice <24 hr of life or rapidly rising bilirubin",
+      "category": "Neonatal",
+      "action": "Bilirubin level; phototherapy per order; breastfeeding support"
+    },
+    {
+      "id": "rf-croup-stridor",
+      "finding": "Barking cough, stridor at rest in toddler",
+      "category": "Pediatric airway",
+      "action": "Comfort; nebulized epinephrine/steroids per order; airway monitoring"
+    },
+    {
+      "id": "rf-nonaccidental-trauma",
+      "finding": "Injuries inconsistent with history in child",
+      "category": "Child safety",
+      "action": "Mandatory reporting; separate interviews; document objectively"
+    }
+  ],
+  "complications_drill": [
+    {
+      "id": "mc-drill-01",
+      "finding": "Sudden heavy lochia with boggy fundus 1 hr postpartum",
+      "category": "OB/Peds",
+      "options": [
+        "Fundal massage and notify provider — PPH",
+        "Continue routine care and document",
+        "Administer PRN acetaminophen only",
+        "Discharge teaching"
+      ],
+      "correct_index": 0,
+      "explanation": "Priority action: Fundal massage and notify provider — PPH",
+      "clinical_why": "Maternal-fetal and neonatal safety prioritization per NCLEX.",
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "mc-drill-02",
+      "finding": "BP 168/112, RUQ pain, 3+ protein at 34 weeks",
+      "category": "OB/Peds",
+      "options": [
+        "Preeclampsia protocol — notify provider, assess HELLP",
+        "Continue routine care and document",
+        "Administer PRN acetaminophen only",
+        "Discharge teaching"
+      ],
+      "correct_index": 0,
+      "explanation": "Priority action: Preeclampsia protocol — notify provider, assess HELLP",
+      "clinical_why": "Maternal-fetal and neonatal safety prioritization per NCLEX.",
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "mc-drill-03",
+      "finding": "Late decelerations with oxytocin infusion",
+      "category": "OB/Peds",
+      "options": [
+        "Stop oxytocin, intrauterine resuscitation, notify provider",
+        "Continue routine care and document",
+        "Administer PRN acetaminophen only",
+        "Discharge teaching"
+      ],
+      "correct_index": 0,
+      "explanation": "Priority action: Stop oxytocin, intrauterine resuscitation, notify provider",
+      "clinical_why": "Maternal-fetal and neonatal safety prioritization per NCLEX.",
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "mc-drill-04",
+      "finding": "Prolapsed cord visible with bradycardia",
+      "category": "OB/Peds",
+      "options": [
+        "Knee-chest, elevate presenting part, emergency delivery prep",
+        "Continue routine care and document",
+        "Administer PRN acetaminophen only",
+        "Discharge teaching"
+      ],
+      "correct_index": 0,
+      "explanation": "Priority action: Knee-chest, elevate presenting part, emergency delivery prep",
+      "clinical_why": "Maternal-fetal and neonatal safety prioritization per NCLEX.",
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "mc-drill-05",
+      "finding": "Newborn axillary temp 38.5°C at 10 days old",
+      "category": "OB/Peds",
+      "options": [
+        "Sepsis workup per neonatal fever protocol",
+        "Continue routine care and document",
+        "Administer PRN acetaminophen only",
+        "Discharge teaching"
+      ],
+      "correct_index": 0,
+      "explanation": "Priority action: Sepsis workup per neonatal fever protocol",
+      "clinical_why": "Maternal-fetal and neonatal safety prioritization per NCLEX.",
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "mc-drill-06",
+      "finding": "Mother reports auditory hallucinations 5 days postpartum",
+      "category": "OB/Peds",
+      "options": [
+        "1:1, infant safety, psychiatry — postpartum psychosis",
+        "Continue routine care and document",
+        "Administer PRN acetaminophen only",
+        "Discharge teaching"
+      ],
+      "correct_index": 0,
+      "explanation": "Priority action: 1:1, infant safety, psychiatry — postpartum psychosis",
+      "clinical_why": "Maternal-fetal and neonatal safety prioritization per NCLEX.",
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "mc-drill-07",
+      "finding": "Absent DTRs on magnesium sulfate",
+      "category": "OB/Peds",
+      "options": [
+        "Stop magnesium, notify provider, check RR and urine output",
+        "Continue routine care and document",
+        "Administer PRN acetaminophen only",
+        "Discharge teaching"
+      ],
+      "correct_index": 0,
+      "explanation": "Priority action: Stop magnesium, notify provider, check RR and urine output",
+      "clinical_why": "Maternal-fetal and neonatal safety prioritization per NCLEX.",
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "mc-drill-08",
+      "finding": "14-day-old fever 38.2°C — lethargic",
+      "category": "OB/Peds",
+      "options": [
+        "Emergency workup — infant ≤28 days standard",
+        "Continue routine care and document",
+        "Administer PRN acetaminophen only",
+        "Discharge teaching"
+      ],
+      "correct_index": 0,
+      "explanation": "Priority action: Emergency workup — infant ≤28 days standard",
+      "clinical_why": "Maternal-fetal and neonatal safety prioritization per NCLEX.",
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "mc-drill-09",
+      "finding": "Variable decelerations with cord visible at introitus",
+      "category": "OB/Peds",
+      "options": [
+        "Amnioinfusion per order or position change; prepare for cesarean if nonreassuring",
+        "Continue routine care and document",
+        "Administer PRN acetaminophen only",
+        "Discharge teaching"
+      ],
+      "correct_index": 0,
+      "explanation": "Priority action: Amnioinfusion per order or position change; prepare for cesarean if nonreassuring",
+      "clinical_why": "Maternal-fetal and neonatal safety prioritization per NCLEX.",
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "mc-drill-10",
+      "finding": "Toddler not walking at 18 months",
+      "category": "OB/Peds",
+      "options": [
+        "Referral for developmental evaluation — not normal variant",
+        "Continue routine care and document",
+        "Administer PRN acetaminophen only",
+        "Discharge teaching"
+      ],
+      "correct_index": 0,
+      "explanation": "Priority action: Referral for developmental evaluation — not normal variant",
+      "clinical_why": "Maternal-fetal and neonatal safety prioritization per NCLEX.",
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "mc-drill-11",
+      "finding": "Shoulder dystocia during delivery",
+      "category": "OB/Peds",
+      "options": [
+        "McRoberts and suprapubic pressure — no fundal pressure",
+        "Continue routine care and document",
+        "Administer PRN acetaminophen only",
+        "Discharge teaching"
+      ],
+      "correct_index": 0,
+      "explanation": "Priority action: McRoberts and suprapubic pressure — no fundal pressure",
+      "clinical_why": "Maternal-fetal and neonatal safety prioritization per NCLEX.",
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "mc-drill-12",
+      "finding": "RUQ pain, platelets 68k, AST elevated postpartum with confusion",
+      "category": "OB/Peds",
+      "options": [
+        "HELLP vs psychosis overlap — labs and psych eval; notify provider",
+        "Continue routine care and document",
+        "Administer PRN acetaminophen only",
+        "Discharge teaching"
+      ],
+      "correct_index": 0,
+      "explanation": "Priority action: HELLP vs psychosis overlap — labs and psych eval; notify provider",
+      "clinical_why": "Maternal-fetal and neonatal safety prioritization per NCLEX.",
+      "source_ref": "maternal_child"
+    },
+    {
+      "id": "mc-drill-13",
+      "finding": "Late decels at 8 cm dilation",
+      "category": "OB/Peds",
+      "options": [
+        "Intrauterine resuscitation before pushing — fetal status priority",
+        "Continue routine care and document",
+        "Administer PRN acetaminophen only",
+        "Discharge teaching"
+      ],
+      "correct_index": 0,
+      "explanation": "Priority action: Intrauterine resuscitation before pushing — fetal status priority",
+      "clinical_why": "Maternal-fetal and neonatal safety prioritization per NCLEX.",
+      "source_ref": "maternal_child"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "mc-fc-01",
+      "front": "APGAR 1 min",
+      "back": "Assess at 1 and 5 min — <7 needs help",
+      "category": "Newborn"
+    },
+    {
+      "id": "mc-fc-02",
+      "front": "Fundal height mid-pregnancy",
+      "back": "~cm equals weeks gestation ±2",
+      "category": "Antepartum"
+    },
+    {
+      "id": "mc-fc-03",
+      "front": "Preeclampsia BP",
+      "back": "≥140/90 after 20 wks with proteinuria or systemic symptoms",
+      "category": "OB"
+    },
+    {
+      "id": "mc-fc-04",
+      "front": "Magnesium antidote",
+      "back": "Calcium gluconate for toxicity",
+      "category": "OB"
+    },
+    {
+      "id": "mc-fc-05",
+      "front": "Late deceleration",
+      "back": "Uteroplacental insufficiency — stop pitocin, O₂, fluids",
+      "category": "FHR"
+    },
+    {
+      "id": "mc-fc-06",
+      "front": "Early deceleration",
+      "back": "Head compression — usually benign",
+      "category": "FHR"
+    },
+    {
+      "id": "mc-fc-07",
+      "front": "Variable decel",
+      "back": "Cord compression — position change, amnioinfusion",
+      "category": "FHR"
+    },
+    {
+      "id": "mc-fc-08",
+      "front": "Preeclampsia/HELLP",
+      "back": "Hemolysis, Elevated Liver enzymes, Low Platelets + RUQ pain",
+      "category": "OB"
+    },
+    {
+      "id": "mc-fc-09",
+      "front": "McRoberts",
+      "back": "Hyperflex hips for shoulder dystocia",
+      "category": "Labor"
+    },
+    {
+      "id": "mc-fc-10",
+      "front": "No fundal pressure",
+      "back": "Contraindicated in shoulder dystocia",
+      "category": "Labor"
+    },
+    {
+      "id": "mc-fc-11",
+      "front": "Kangaroo care",
+      "back": "Skin-to-skin thermoregulation and bonding",
+      "category": "Newborn"
+    },
+    {
+      "id": "mc-fc-12",
+      "front": "Physiologic jaundice",
+      "back": "Days 2–3 term infant; pathologic if <24 hr",
+      "category": "Newborn"
+    },
+    {
+      "id": "mc-fc-13",
+      "front": "Lochia rubra",
+      "back": "Days 1–3 bright red",
+      "category": "Postpartum"
+    },
+    {
+      "id": "mc-fc-14",
+      "front": "PPH boggy fundus",
+      "back": "Massage first-line before medications",
+      "category": "Postpartum"
+    },
+    {
+      "id": "mc-fc-15",
+      "front": "Neonatal fever ≤28d",
+      "back": "Full sepsis workup mandatory",
+      "category": "Neonatal"
+    },
+    {
+      "id": "mc-fc-16",
+      "front": "Betamethasone window",
+      "back": "24–34 weeks for fetal lung maturity",
+      "category": "Antepartum"
+    },
+    {
+      "id": "mc-fc-17",
+      "front": "FHR baseline",
+      "back": "110–160 bpm normal",
+      "category": "FHR"
+    },
+    {
+      "id": "mc-fc-18",
+      "front": "Cord prolapse position",
+      "back": "Knee-chest preferred over Trendelenburg in pregnancy",
+      "category": "Emergency"
+    },
+    {
+      "id": "mc-fc-19",
+      "front": "Breastfeeding frequency",
+      "back": "8–12 feeds/24 hr newborn",
+      "category": "Newborn"
+    },
+    {
+      "id": "mc-fc-20",
+      "front": "Immunization documentation",
+      "back": "Lot number, site, VIS given",
+      "category": "Pediatrics"
+    },
+    {
+      "id": "mc-fc-21",
+      "front": "FLACC scale",
+      "back": "Face Legs Activity Cry Consolability — infant pain",
+      "category": "Pediatrics"
+    },
+    {
+      "id": "mc-fc-22",
+      "front": "Toddler safety",
+      "back": "Poison control, gates, water safety",
+      "category": "Pediatrics"
+    },
+    {
+      "id": "mc-fc-23",
+      "front": "Postpartum psychosis timing",
+      "back": "Days to 4 weeks — psychiatric emergency",
+      "category": "Postpartum"
+    },
+    {
+      "id": "mc-fc-24",
+      "front": "HELLP platelets",
+      "back": "Thrombocytopenia <100k component",
+      "category": "OB"
+    },
+    {
+      "id": "mc-fc-25",
+      "front": "Variability moderate",
+      "back": "6–25 bpm reassuring",
+      "category": "FHR"
+    },
+    {
+      "id": "mc-fc-26",
+      "front": "Supine hypotension",
+      "back": "Left lateral tilt after 20 weeks",
+      "category": "Antepartum"
+    },
+    {
+      "id": "mc-fc-27",
+      "front": "Naegele rule",
+      "back": "LMP −3 mo +7 days",
+      "category": "Antepartum"
+    },
+    {
+      "id": "mc-fc-28",
+      "front": "Vitamin K newborn",
+      "back": "IM per protocol — prevents hemorrhagic disease",
+      "category": "Newborn"
+    },
+    {
+      "id": "mc-fc-29",
+      "front": "Erythromycin eye prophylaxis",
+      "back": "Prevents gonorrheal ophthalmia neonatorum",
+      "category": "Newborn"
+    },
+    {
+      "id": "mc-fc-30",
+      "front": "Dehydration infant",
+      "back": "Sunken fontanel, dry mucosa, decreased urine",
+      "category": "Pediatrics"
+    },
+    {
+      "id": "mc-fc-31",
+      "front": "Shoulder dystocia sign",
+      "back": "Turtle sign — head retracts against perineum",
+      "category": "Labor"
+    },
+    {
+      "id": "mc-fc-32",
+      "front": "Placental abruption",
+      "back": "Painful bleeding, rigid abdomen",
+      "category": "OB"
+    },
+    {
+      "id": "peds-fc-01",
+      "front": "Infant HR normal range",
+      "back": "100–160 bpm — bradycardia may signal hypoxia",
+      "category": "Pediatric"
+    },
+    {
+      "id": "peds-fc-02",
+      "front": "Neonatal fever emergency",
+      "back": "≤28 days with rectal temp ≥38°C (100.4°F) = full sepsis workup",
+      "category": "Pediatric"
+    },
+    {
+      "id": "peds-fc-03",
+      "front": "Safe sleep (SIDS)",
+      "back": "Alone, on Back, in Crib — firm surface, no soft bedding",
+      "category": "Pediatric Safety"
+    },
+    {
+      "id": "peds-fc-04",
+      "front": "4-month milestones",
+      "back": "Rolls back→side, social smile, reaches for objects, improved head control",
+      "category": "Pediatric Milestones"
+    },
+    {
+      "id": "peds-fc-05",
+      "front": "12-month milestones",
+      "back": "Walks with support/first steps, single words, object permanence",
+      "category": "Pediatric Milestones"
+    },
+    {
+      "id": "peds-fc-06",
+      "front": "Pediatric pain — infant",
+      "back": "FLACC scale: Face, Legs, Activity, Cry, Consolability",
+      "category": "Pediatric"
+    },
+    {
+      "id": "peds-fc-07",
+      "front": "Never give children",
+      "back": "Aspirin — Reye syndrome risk with viral illness",
+      "category": "Pediatric Safety"
+    },
+    {
+      "id": "peds-fc-08",
+      "front": "Choking infant",
+      "back": "5 back blows + 5 chest thrusts — do not blind finger sweep",
+      "category": "Pediatric Safety"
+    },
+    {
+      "id": "peds-fc-09",
+      "front": "Varicella precautions",
+      "back": "Airborne AND contact until lesions crusted (CDC)",
+      "category": "Pediatric"
+    },
+    {
+      "id": "peds-fc-10",
+      "front": "Weight-based dosing",
+      "back": "Always kg; oral syringe; verify concentration (mg/mL)",
+      "category": "Pediatric Safety"
+    }
+  ],
+  "practice_questions": [
+    {
+      "id": "mc-q01",
+      "question": "Late decelerations during labor — first action?",
+      "options": [
+        "Stop oxytocin and intrauterine resuscitation",
+        "Increase oxytocin",
+        "Prepare for immediate discharge",
+        "Turn off monitor"
+      ],
+      "correct_index": 0,
+      "explanation": "Late decelerations are uniform, gradual decreases below baseline after contraction peak — uteroplacental insufficiency. Stop oxytocin, left lateral position, O₂, IV fluids, notify provider.",
+      "clinical_why": "Persistent late decels with absent variability require fetal scalp stimulation or scalp pH/lactate and possible expedited delivery.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Maternal-Newborn Nursing",
+        "citation": "Open RN OER — Maternal-Newborn; NCSBN Health Promotion",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "mc-q02",
+      "question": "Postpartum fundus boggy — intervene with:",
+      "options": [
+        "Fundal massage",
+        "Ice pack only",
+        "Encourage bed rest 24 hr",
+        "Discharge"
+      ],
+      "correct_index": 0,
+      "explanation": "Boggy uterus indicates atony — massage fundus firmly until firm, then assess lochia and VS. Prepare uterotonics (oxytocin, methylergonovine, carboprost) per order.",
+      "clinical_why": "Postpartum hemorrhage from atony is leading cause of maternal mortality — first minutes determine blood loss.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Maternal-Newborn Nursing",
+        "citation": "Open RN OER — Maternal-Newborn; NCSBN Health Promotion",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "mc-q03",
+      "question": "Preeclampsia severe feature includes:",
+      "options": [
+        "RUQ epigastric pain",
+        "Mild ankle edema only",
+        "Braxton Hicks",
+        "Fetal hiccups"
+      ],
+      "correct_index": 0,
+      "explanation": "Severe preeclampsia features: BP ≥160/110, platelets <100k, creatinine >1.1, pulmonary edema, RUQ/epigastric pain (liver capsule distension), cerebral symptoms.",
+      "clinical_why": "RUQ pain may signal HELLP syndrome — hepatic rupture and DIC risk require magnesium and delivery planning.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Maternal-Newborn Nursing",
+        "citation": "Open RN OER — Maternal-Newborn; NCSBN Health Promotion",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "mc-q04",
+      "question": "Shoulder dystocia maneuver:",
+      "options": [
+        "McRoberts + suprapubic pressure",
+        "Fundal pressure",
+        "Trendelenburg",
+        "Forceps from abdomen"
+      ],
+      "correct_index": 0,
+      "explanation": "McRoberts (hyperflex hips) and suprapubic pressure free the anterior shoulder; fundal pressure worsens impaction and is contraindicated.",
+      "clinical_why": "Shoulder dystocia causes brachial plexus injury and asphyxia — mnemonic HELPERR guides sequential maneuvers.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Maternal-Newborn Nursing",
+        "citation": "Open RN OER — Maternal-Newborn; NCSBN Health Promotion",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "mc-q05",
+      "question": "Newborn APGAR 4 at 1 minute — nurse:",
+      "options": [
+        "Continue resuscitation per NRP and reassess at 5 min",
+        "Stop all intervention",
+        "Discharge to mother only",
+        "Document only"
+      ],
+      "correct_index": 0,
+      "explanation": "APGAR 4 at 1 minute indicates moderate depression — continue PPV, stimulation, and NRP algorithm; reassess at 5 and 10 minutes.",
+      "clinical_why": "Low 5-minute APGAR correlates with neonatal encephalopathy — document interventions for NICU handoff.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Maternal-Newborn Nursing",
+        "citation": "Open RN OER — Maternal-Newborn; NCSBN Health Promotion",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "mc-q06",
+      "question": "Magnesium toxicity sign:",
+      "options": [
+        "Absent deep tendon reflexes",
+        "Increased reflexes",
+        "Hypertension",
+        "Tachycardia only"
+      ],
+      "correct_index": 0,
+      "explanation": "Magnesium toxicity: absent DTRs (first sign), RR <12, urine output <30 mL/hr, flushing — stop Mg, give calcium gluconate, support respirations.",
+      "clinical_why": "Magnesium is antidote for eclampsia but narrow margin — therapeutic level 4–7 mEq/L; >10 can arrest breathing.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Maternal-Newborn Nursing",
+        "citation": "Open RN OER — Maternal-Newborn; NCSBN Health Promotion",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "mc-q07",
+      "question": "14-day-old with 38.3°C fever — priority:",
+      "options": [
+        "Full sepsis evaluation per neonatal protocol",
+        "Acetaminophen and home",
+        "Wait 24 hours",
+        "Cool bath only"
+      ],
+      "correct_index": 0,
+      "explanation": "Fever ≥38°C (100.4°F) in infant ≤28 days requires full sepsis workup: blood culture, UA/UCx, LP, empiric IV antibiotics — never outpatient management alone.",
+      "clinical_why": "Neonatal sepsis progresses rapidly — E. coli and GBS are common pathogens with high mortality if delayed.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Maternal-Newborn Nursing",
+        "citation": "Open RN OER — Maternal-Newborn; NCSBN Health Promotion",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "mc-q08",
+      "question": "Cord prolapse nursing action:",
+      "options": [
+        "Knee-chest, elevate presenting part, notify for emergency delivery",
+        "Push cord back into vagina repeatedly",
+        "Place patient supine flat only",
+        "Stop monitoring FHR"
+      ],
+      "correct_index": 0,
+      "explanation": "Cord prolapse: call for help, knee-chest or exaggerated Trendelenburg, elevate presenting part off cord with sterile gloved hand, O₂, prepare emergency cesarean.",
+      "clinical_why": "Fetal bradycardia from cord compression causes hypoxic-ischemic injury within minutes.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Maternal-Newborn Nursing",
+        "citation": "Open RN OER — Maternal-Newborn; NCSBN Health Promotion",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "mc-q09",
+      "question": "Physiologic jaundice typically appears:",
+      "options": [
+        "Day 2–3 in term newborn",
+        "First hour of life",
+        "Never in breastfed infants",
+        "Only in preterm"
+      ],
+      "correct_index": 0,
+      "explanation": "Physiologic jaundice peaks days 2–3 in term infants from immature hepatic conjugation; pathologic if <24 hr, rapid rise, or bilirubin crosses exchange transfusion thresholds.",
+      "clinical_why": "Kernicterus from untreated hyperbilirubinemia causes permanent neurologic damage.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Maternal-Newborn Nursing",
+        "citation": "Open RN OER — Maternal-Newborn; NCSBN Health Promotion",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "mc-q10",
+      "question": "Postpartum psychosis requires:",
+      "options": [
+        "Immediate psychiatric care and infant safety measures",
+        "Routine outpatient follow-up only",
+        "Ignore unless violent",
+        "Sedation at home without supervision"
+      ],
+      "correct_index": 0,
+      "explanation": "Postpartum psychosis (days to 4 weeks): delusions, hallucinations, bizarre behavior — psychiatric emergency; never leave mother alone with infant.",
+      "clinical_why": "Infanticide and suicide risk are elevated — inpatient psychiatric care with infant safety planning.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Maternal-Newborn Nursing",
+        "citation": "Open RN OER — Maternal-Newborn; NCSBN Health Promotion",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "mc-q11",
+      "question": "Variable decelerations on FHR tracing — first nursing action?",
+      "options": [
+        "Change maternal position, stop oxytocin if running, O₂, IV fluid bolus if ordered",
+        "Immediate cesarean without assessment",
+        "Turn off monitor",
+        "Increase oxytocin"
+      ],
+      "correct_index": 0,
+      "explanation": "Variable decels suggest cord compression — intrauterine resuscitation: position change (side-lying), O₂, fluids, amnioinfusion if ordered.",
+      "clinical_why": "Repetitive severe variables with late decels indicate nonreassuring tracing requiring provider escalation.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Maternal-Newborn Nursing",
+        "citation": "Open RN OER — Maternal-Newborn; NCSBN Health Promotion",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "mc-q12",
+      "question": "Eclamptic seizure in labor — priority after ensuring safety?",
+      "options": [
+        "Magnesium sulfate per protocol and notify provider",
+        "Phenobarbital first line always",
+        "Immediate delivery without stabilization",
+        "Hold all medications"
+      ],
+      "correct_index": 0,
+      "explanation": "Magnesium sulfate is anticonvulsant of choice in eclampsia — monitor RR, reflexes, urine output for toxicity.",
+      "clinical_why": "Recurrent seizures cause maternal hypoxia and fetal bradycardia — magnesium prevents recurrence.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Maternal-Newborn Nursing",
+        "citation": "Open RN OER — Maternal-Newborn; NCSBN Health Promotion",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "mc-q13",
+      "question": "Placenta previa is suspected when a pregnant patient has:",
+      "options": [
+        "Painless bright red bleeding in third trimester",
+        "Painful rigid abdomen with bleeding",
+        "Foul lochia only",
+        "No bleeding ever"
+      ],
+      "correct_index": 0,
+      "explanation": "Placenta previa: painless bleeding — no vaginal exams; ultrasound confirms; prepare for cesarean if complete previa.",
+      "clinical_why": "Digital cervical exam can cause catastrophic hemorrhage in previa.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Maternal-Newborn Nursing",
+        "citation": "Open RN OER — Maternal-Newborn; NCSBN Health Promotion",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "mc-q14",
+      "question": "A newborn has acrocyanosis (blue hands/feet) with pink trunk. The nurse:",
+      "options": [
+        "Documents as common transitional finding if breathing and tone normal",
+        "Starts chest compressions",
+        "Applies heat lamp to trunk only",
+        "Discharges immediately"
+      ],
+      "correct_index": 0,
+      "explanation": "Acrocyanosis is normal transition in first hours — assess respiratory effort, heart rate, and central color.",
+      "clinical_why": "Central cyanosis (trunk/mucosa) is abnormal and requires immediate intervention.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Maternal-Newborn Nursing",
+        "citation": "Open RN OER — Maternal-Newborn; NCSBN Health Promotion",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "mc-q15",
+      "question": "Breastfeeding mother reports cracked nipples and engorgement on day 3. Best teaching?",
+      "options": [
+        "Ensure deep latch, frequent feeding, hand express for relief",
+        "Stop breastfeeding permanently",
+        "Use bottle exclusively",
+        "Apply ice only between all feeds"
+      ],
+      "correct_index": 0,
+      "explanation": "Latch correction prevents further trauma; frequent emptying reduces engorgement; lanolin or breast milk on nipples.",
+      "clinical_why": "Poor latch leads to mastitis, inadequate infant intake, and early weaning.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Maternal-Newborn Nursing",
+        "citation": "Open RN OER — Maternal-Newborn; NCSBN Health Promotion",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "mc-q16",
+      "question": "A 2-month-old receives first routine vaccines per CDC schedule. The nurse documents:",
+      "options": [
+        "Lot number, site, route, VIS date, patient reaction",
+        "Only 'vaccines given'",
+        "No documentation needed",
+        "Parent refusal without discussion"
+      ],
+      "correct_index": 0,
+      "explanation": "Document each vaccine with lot, expiration, site (vastus lateralis IM for infants), and Vaccine Information Statement provided.",
+      "clinical_why": "Accurate immunization records prevent duplicate doses and support public health tracking.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Maternal-Newborn Nursing",
+        "citation": "Open RN OER — Maternal-Newborn; NCSBN Health Promotion",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "mc-q17",
+      "question": "Postpartum patient with foul-smelling lochia, temp 38.5°C, uterine tenderness — suspect:",
+      "options": [
+        "Endometritis — notify provider, cultures, antibiotics per order",
+        "Normal lochia",
+        "Breast engorgement only",
+        "Urinary retention only"
+      ],
+      "correct_index": 0,
+      "explanation": "Endometritis: fever, fundal tenderness, foul lochia — usually after cesarean or prolonged labor; broad-spectrum antibiotics.",
+      "clinical_why": "Untreated endometritis progresses to sepsis — early recognition reduces ICU admission.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Maternal-Newborn Nursing",
+        "citation": "Open RN OER — Maternal-Newborn; NCSBN Health Promotion",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "mc-q18",
+      "question": "Toddler (18 months) developmental milestone expected:",
+      "options": [
+        "Walks independently, 10–25 word vocabulary",
+        "Rides bicycle",
+        "Reads sentences",
+        "Full toilet training always complete"
+      ],
+      "correct_index": 0,
+      "explanation": "18-month toddler walks well, may run, uses simple words, feeds self — assess safety (gates, poison control).",
+      "clinical_why": "Delayed walking or speech warrants early intervention referral.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Maternal-Newborn Nursing",
+        "citation": "Open RN OER — Maternal-Newborn; NCSBN Health Promotion",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "mc-q19",
+      "question": "Gestational diabetes screening with 1-hour glucose challenge 165 mg/dL — next step?",
+      "options": [
+        "3-hour oral glucose tolerance test per protocol",
+        "Diagnose GDM immediately",
+        "No follow-up needed",
+        "Start insulin today"
+      ],
+      "correct_index": 0,
+      "explanation": "Abnormal 50-g screen (typically ≥140 mg/dL) requires 100-g 3-hour OGTT for GDM diagnosis.",
+      "clinical_why": "Untreated GDM increases macrosomia, shoulder dystocia, and neonatal hypoglycemia risk.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Maternal-Newborn Nursing",
+        "citation": "Open RN OER — Maternal-Newborn; NCSBN Health Promotion",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "mc-q20",
+      "question": "Newborn of mother with active genital HSV lesions at delivery requires:",
+      "options": [
+        "Cesarean delivery to reduce neonatal herpes transmission",
+        "Vaginal delivery always",
+        "No precautions",
+        "Hepatitis B vaccine only"
+      ],
+      "correct_index": 0,
+      "explanation": "Active genital HSV at delivery — cesarean recommended; neonatal herpes has high mortality even with treatment.",
+      "clinical_why": "Neonatal herpes causes encephalitis — prevention is critical when lesions present.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Maternal-Newborn Nursing",
+        "citation": "Open RN OER — Maternal-Newborn; NCSBN Health Promotion",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "mc-q21",
+      "question": "A school-age child with asthma reports daily symptoms and nighttime cough twice weekly. Classification is:",
+      "options": [
+        "Moderate persistent — step-up therapy per NAEPP guidelines",
+        "Mild intermittent",
+        "No asthma",
+        "Exercise-induced only"
+      ],
+      "correct_index": 0,
+      "explanation": "Moderate persistent: daily symptoms, nighttime >1×/week but not nightly, FEV1 60–80% — needs daily controller.",
+      "clinical_why": "Under-treated persistent asthma causes missed school and status asthmaticus.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Maternal-Newborn Nursing",
+        "citation": "Open RN OER — Maternal-Newborn; NCSBN Health Promotion",
+        "verified_date": "2026-06"
+      }
+    }
+  ],
+  "source": {
+    "title": "Open RN — Maternal-Newborn Nursing",
+    "citation": "Open RN OER — Maternal-Newborn; NCSBN Health Promotion",
+    "verified_date": "2026-06"
+  },
+  "immunization_schedule": [
+    {
+      "vaccine": "Hepatitis B",
+      "age": "Birth, 1–2 mo, 6–18 mo",
+      "nursing_considerations": "Birth dose within 24 hr; document lot and site. Screen maternal HBsAg status."
+    },
+    {
+      "vaccine": "DTaP",
+      "age": "2, 4, 6, 15–18 mo; 4–6 yr",
+      "nursing_considerations": "Local reaction common; fever — antipyretic per order. Contraindicated if encephalopathy within 7 days of prior dose."
+    },
+    {
+      "vaccine": "IPV (Polio)",
+      "age": "2, 4, 6–18 mo; 4–6 yr",
+      "nursing_considerations": "IM or SQ per product; observe 15 min post-vaccination."
+    },
+    {
+      "vaccine": "Hib",
+      "age": "2, 4, 6, 12–15 mo",
+      "nursing_considerations": "Protects against Haemophilus influenzae type b meningitis/epiglottitis."
+    },
+    {
+      "vaccine": "PCV13/15",
+      "age": "2, 4, 6, 12–15 mo",
+      "nursing_considerations": "Pneumococcal conjugate — reduces otitis, pneumonia, bacteremia."
+    },
+    {
+      "vaccine": "Rotavirus",
+      "age": "2, 4 mo (series)",
+      "nursing_considerations": "Oral vaccine; latex allergy caution with some applicators."
+    },
+    {
+      "vaccine": "MMR",
+      "age": "12–15 mo; 4–6 yr",
+      "nursing_considerations": "Live attenuated — avoid in severe immunocompromise; give VIS sheet."
+    },
+    {
+      "vaccine": "Varicella",
+      "age": "12–15 mo; 4–6 yr",
+      "nursing_considerations": "Airborne + contact precautions if active varicella in susceptible contacts."
+    },
+    {
+      "vaccine": "Hepatitis A",
+      "age": "12–23 mo (2-dose series)",
+      "nursing_considerations": "Recommended for all children; travel/endemic exposure teaching."
+    },
+    {
+      "vaccine": "Influenza",
+      "age": "Annual ≥6 mo",
+      "nursing_considerations": "First season: 2 doses if <8 yr and previously unvaccinated."
+    },
+    {
+      "vaccine": "HPV",
+      "age": "11–12 yr (2-dose if started <15)",
+      "nursing_considerations": "Cancer prevention; counsel on syncope after injection in adolescents."
+    },
+    {
+      "vaccine": "Tdap",
+      "age": "11–12 yr booster",
+      "nursing_considerations": "Pertussis protection wanes — adolescent booster protects infants via cocooning."
+    },
+    {
+      "vaccine": "Meningococcal ACWY",
+      "age": "11–12 yr; booster 16 yr",
+      "nursing_considerations": "Required for college/military in many states; MenB separate series for high risk."
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "agent": "Content Correctness Audit \u2014 Final Verification \u2014 2026-06",
+  "generated_at": "2026-06-24T16:34:19.991153+00:00",
+  "verified_date": "2026-06",
+  "focus_modules": [
+    "assessment",
+    "dosage",
+    "mental_health",
+    "microbiology",
+    "terminology"
+  ],
+  "stats": {
+    "verified": 573,
+    "flagged": 0,
+    "errors": []
+  },
+  "db_summary": {
+    "total": 809,
+    "verified": 763,
+    "needs_review": 1,
+    "unreviewed": 45,
+    "by_module": {
+      "terminology": {
+        "verified": 220,
+        "needs_review": 0,
+        "unreviewed": 0,
+        "total": 220
+      },
+      "microbiology": {
+        "verified": 47,
+        "needs_review": 0,
+        "unreviewed": 0,
+        "total": 47
+      },
+      "dosage": {
+        "verified": 53,
+        "needs_review": 0,
+        "unreviewed": 0,
+        "total": 53
+      },
+      "assessment": {
+        "verified": 198,
+        "needs_review": 0,
+        "unreviewed": 0,
+        "total": 198
+      },
+      "mental_health": {
+        "verified": 55,
+        "needs_review": 0,
+        "unreviewed": 0,
+        "total": 55
+      },
+      "pathophysiology": {
+        "verified": 75,
+        "needs_review": 1,
+        "unreviewed": 0,
+        "total": 76
+      },
+      "maternal_child": {
+        "verified": 115,
+        "needs_review": 0,
+        "unreviewed": 0,
+        "total": 115
+      },
+      "pharmacy_calculations": {
+        "verified": 0,
+        "needs_review": 0,
+        "unreviewed": 45,
+        "total": 45
+      }
+    },
+    "modules": {
+      "terminology": "Medical Terminology",
+      "microbiology": "Microbiology",
+      "dosage": "NURS 145 \u2014 Dosage",
+      "assessment": "NURS 146 \u2014 Health Assessment",
+      "mental_health": "NURS 147 \u2014 Mental Health",
+      "pathophysiology": "Pathophysiology",
+      "maternal_child": "NURS 148 \u2014 Maternal-Child",
+      "pharmacy_calculations": "Pharmacy Calculations"
+    }
+  },
+  "modules": {
+    "assessment": {
+      "verified": 198,
+      "needs_review": 0,
+      "total": 198,
+      "key_issues_fixed": [
+        "Trendelenburg removed from hypotension red flag",
+        "Epiglottitis oropharynx exam contraindication",
+        "FAST stroke inpatient vs community escalation",
+        "CHF flashcard unsafe leg elevation removed",
+        "CIWA-Ar severity bands in mental-health population",
+        "Newborn axillary vs rectal temperature harmonized",
+        "Anaphylaxis scenario priority action (an-12)",
+        "Trach scenario an-09 differentiated \u2014 mucus plug vs an-07 routine suction",
+        "SOAP soap-02 duplicate incentive spirometry removed from Plan"
+      ],
+      "remaining_human_review": [],
+      "fixes_applied_count": 18
+    },
+    "dosage": {
+      "verified": 53,
+      "needs_review": 0,
+      "total": 53,
+      "key_issues_fixed": [
+        "Geriatric calc card teaching-estimate disclaimer",
+        "Narrow-index drug safety (insulin practice problem d011)",
+        "geriatric_blanket error trap added"
+      ],
+      "remaining_human_review": [],
+      "fixes_applied_count": 1
+    },
+    "mental_health": {
+      "verified": 55,
+      "needs_review": 0,
+      "total": 55,
+      "key_issues_fixed": [
+        "All 29 scaffold items verified \u2014 suicide/violence red flags, CIWA/COWS tools, safety drill",
+        "No clinical inaccuracies found in Phase 1 scaffold audit"
+      ],
+      "remaining_human_review": [],
+      "fixes_applied_count": 0
+    },
+    "microbiology": {
+      "verified": 47,
+      "needs_review": 0,
+      "total": 47,
+      "key_issues_fixed": [
+        "Infection chain agent/host/reservoir interventions corrected",
+        "Varicella airborne + contact precautions",
+        "C. auris EPA disinfectant and infection control notification",
+        "Pseudomonas MDR precautions and VAP bundle",
+        "Antimicrobial stewardship \u2014 shortest effective course"
+      ],
+      "remaining_human_review": [],
+      "fixes_applied_count": 7
+    },
+    "terminology": {
+      "verified": 220,
+      "needs_review": 0,
+      "total": 220,
+      "key_issues_fixed": [
+        "18 word-part/definition corrections (agent-class terms, anuria threshold, Fowler tiers, gastroenterology fields)",
+        "hypotension/oliguria cross-module thresholds aligned with assessment red flags",
+        "quarantine vs isolation per CDC"
+      ],
+      "remaining_human_review": [],
+      "fixes_applied_count": 24
+    }
+  }
+}

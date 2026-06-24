@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% from "partials/module_breadcrumb.html" import module_breadcrumb %}
+{% block title %}Content Audit{% endblock %}
+{% block page_title %}Content Audit{% endblock %}
+{% block page_subtitle %}Correctness review prep · verify sources · flag for review{% endblock %}
+
+{% block topbar_actions %}
+<a href="/" class="nursing-return-link hidden sm:inline-flex" title="Back to Nursing Dashboard">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+    Dashboard
+</a>
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/css/audit.css">
+{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto" data-module="audit">
+    {{ module_breadcrumb('Content Audit') }}
+
+    <div class="module-header audit-header">
+        <div>
+            <h1 class="text-xl sm:text-2xl font-bold text-ward-100">Content Audit</h1>
+            <p class="text-sm text-ward-500 mt-1">Mark concepts and calculations as verified, or flag items needing review before the correctness audit phase.</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+            <button onclick="verifySource('general')" class="btn-verify text-sm">Verify Source</button>
+        </div>
+    </div>
+
+    <!-- Summary strip -->
+    <div class="audit-summary-strip" id="audit-summary-strip">
+        <div class="audit-stat">
+            <span class="audit-stat-label">Catalog</span>
+            <span class="audit-stat-value" id="audit-stat-total">{{ catalog_stats.total_catalog }}</span>
+        </div>
+        <div class="audit-stat verified">
+            <span class="audit-stat-label">Verified</span>
+            <span class="audit-stat-value" id="audit-stat-verified">—</span>
+        </div>
+        <div class="audit-stat flagged">
+            <span class="audit-stat-label">Needs Review</span>
+            <span class="audit-stat-value" id="audit-stat-flagged">—</span>
+        </div>
+        <div class="audit-stat pending">
+            <span class="audit-stat-label">Unreviewed</span>
+            <span class="audit-stat-value" id="audit-stat-unreviewed">—</span>
+        </div>
+        <div class="audit-progress-wrap">
+            <div class="text-xs text-ward-500 mb-1">Audit coverage</div>
+            <div class="progress-bar">
+                <div id="audit-coverage-bar" class="progress-bar-fill bg-ward-success" style="width:0%"></div>
+            </div>
+            <span id="audit-coverage-pct" class="text-xs text-ward-success font-mono">0%</span>
+        </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="audit-filters card p-4 mb-4">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <div>
+                <label class="label" for="audit-filter-module">Module</label>
+                <select id="audit-filter-module" class="input-field text-sm" onchange="ContentAudit.loadItems()">
+                    <option value="">All modules</option>
+                    {% for mid, label in modules.items() %}
+                    <option value="{{ mid }}">{{ label }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <label class="label" for="audit-filter-status">Status</label>
+                <select id="audit-filter-status" class="input-field text-sm" onchange="ContentAudit.loadItems()">
+                    <option value="">All statuses</option>
+                    <option value="unreviewed">Unreviewed</option>
+                    <option value="verified">Verified</option>
+                    <option value="needs_review">Needs Review</option>
+                </select>
+            </div>
+            <div>
+                <label class="label" for="audit-filter-type">Type</label>
+                <select id="audit-filter-type" class="input-field text-sm" onchange="ContentAudit.loadItems()">
+                    <option value="">All types</option>
+                    <option value="concept">Concept</option>
+                    <option value="calculation">Calculation</option>
+                    <option value="practice">Practice</option>
+                    <option value="scenario">Scenario</option>
+                </select>
+            </div>
+            <div>
+                <label class="label" for="audit-filter-search">Search</label>
+                <input type="search" id="audit-filter-search" class="input-field text-sm" placeholder="Title or key…"
+                       oninput="ContentAudit.debounceSearch()">
+            </div>
+        </div>
+    </div>
+
+    <!-- Items table -->
+    <div class="card overflow-hidden">
+        <div id="audit-items-list" class="audit-items-list">
+            <div class="loading-state p-5" role="status" aria-live="polite"><span class="loading-spinner" aria-hidden="true"></span>Loading audit catalog…</div>
+        </div>
+        <div class="audit-pagination flex flex-wrap justify-between items-center gap-3 p-4 border-t border-ward-800">
+            <span id="audit-page-info" class="text-xs text-ward-500">—</span>
+            <div class="flex gap-2">
+                <button type="button" onclick="ContentAudit.prevPage()" class="btn-secondary text-sm" id="audit-prev-btn" disabled>Previous</button>
+                <button type="button" onclick="ContentAudit.nextPage()" class="btn-secondary text-sm" id="audit-next-btn">Next</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Verify modal -->
+<div id="audit-verify-modal" class="hidden fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+    <div class="w-full max-w-md bg-ward-800 border border-ward-600 rounded-xl shadow-2xl overflow-hidden">
+        <div class="px-5 py-4 border-b border-ward-700 flex justify-between items-center">
+            <h3 class="text-base font-semibold text-ward-success">Mark Verified</h3>
+            <button type="button" onclick="ContentAudit.closeVerifyModal()" class="text-ward-500 hover:text-ward-200 text-xl">&times;</button>
+        </div>
+        <div class="p-5 space-y-3">
+            <p id="audit-verify-title" class="text-sm text-ward-300 font-medium"></p>
+            <div>
+                <label class="label" for="audit-verify-date">Verified date (YYYY-MM)</label>
+                <input type="text" id="audit-verify-date" class="input-field text-sm" value="2026-06" placeholder="2026-06">
+            </div>
+            <div>
+                <label class="label" for="audit-verify-source">Source note</label>
+                <textarea id="audit-verify-source" class="input-field text-sm min-h-[72px]" placeholder="Citation, textbook page, or OER reference…"></textarea>
+            </div>
+            <button type="button" onclick="ContentAudit.submitVerify()" class="btn-primary w-full text-sm">Save Verified</button>
+        </div>
+    </div>
+</div>
+
+<!-- Flag modal -->
+<div id="audit-flag-modal" class="hidden fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+    <div class="w-full max-w-md bg-ward-800 border border-ward-600 rounded-xl shadow-2xl overflow-hidden">
+        <div class="px-5 py-4 border-b border-ward-700 flex justify-between items-center">
+            <h3 class="text-base font-semibold text-ward-warning">Flag for Review</h3>
+            <button type="button" onclick="ContentAudit.closeFlagModal()" class="text-ward-500 hover:text-ward-200 text-xl">&times;</button>
+        </div>
+        <div class="p-5 space-y-3">
+            <p id="audit-flag-title" class="text-sm text-ward-300 font-medium"></p>
+            <div>
+                <label class="label" for="audit-flag-note">Review note <span class="text-ward-danger">*</span></label>
+                <textarea id="audit-flag-note" class="input-field text-sm min-h-[80px]" placeholder="What's wrong or needs checking? e.g. dose range outdated, citation missing…" required></textarea>
+            </div>
+            <button type="button" onclick="ContentAudit.submitFlag()" class="btn-primary w-full text-sm" style="background:linear-gradient(135deg,#d97706,#f59e0b)">Flag Item</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/audit.js"></script>
+{% endblock %}

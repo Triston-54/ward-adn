@@ -1,0 +1,49 @@
+{
+  "terms_patched": 21,
+  "audit_verified": 23,
+  "audit_errors": [],
+  "terminology_summary": {
+    "verified": 220,
+    "needs_review": 0,
+    "unreviewed": 0,
+    "total": 220
+  },
+  "total_summary": {
+    "total": 358,
+    "verified": 358,
+    "needs_review": 0,
+    "unreviewed": 0,
+    "by_module": {
+      "terminology": {
+        "verified": 220,
+        "needs_review": 0,
+        "unreviewed": 0,
+        "total": 220
+      },
+      "microbiology": {
+        "verified": 47,
+        "needs_review": 0,
+        "unreviewed": 0,
+        "total": 47
+      },
+      "dosage": {
+        "verified": 29,
+        "needs_review": 0,
+        "unreviewed": 0,
+        "total": 29
+      },
+      "assessment": {
+        "verified": 62,
+        "needs_review": 0,
+        "unreviewed": 0,
+        "total": 62
+      }
+    },
+    "modules": {
+      "terminology": "Medical Terminology",
+      "microbiology": "Microbiology",
+      "dosage": "NURS 145 \u2014 Dosage",
+      "assessment": "NURS 146 \u2014 Health Assessment"
+    }
+  }
+}

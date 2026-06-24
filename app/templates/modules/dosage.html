@@ -1,0 +1,213 @@
+{% extends "base.html" %}
+{% from "partials/module_breadcrumb.html" import module_breadcrumb %}
+{% block title %}NURS 145 — Dosage Calculations{% endblock %}
+{% block page_title %}NURS 145 — Dosage{% endblock %}
+{% block page_subtitle %}Step-by-step calculators · Practice · Safety{% endblock %}
+
+{% block topbar_actions %}
+<a href="/" class="nursing-return-link hidden sm:inline-flex" title="Back to Nursing Dashboard">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+    Dashboard
+</a>
+{% endblock %}
+
+{% block katex_head %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/css/dosage.css">
+{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto" data-module="dosage">
+    {{ module_breadcrumb('NURS 145 — Dosage', badge='starter') }}
+
+    <!-- Module header -->
+    <div class="module-header dose-module-header">
+        <div>
+            <h1 class="text-xl sm:text-2xl font-bold text-ward-100">Drug &amp; Dosage Calculations</h1>
+            <p class="text-sm text-ward-500 mt-1">NURS 145 — dimensional analysis with clinical reasoning</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+            <button onclick="verifySource('dosage')" class="btn-verify text-sm" title="View verified sources with rationale">Verify Source</button>
+            <button onclick="openSocraticMode('dosage', 'calculation')" class="btn-socratic text-sm">Socratic Mode</button>
+        </div>
+    </div>
+
+    <!-- Progress strip -->
+    <div class="module-progress-strip dose-progress-strip">
+        <div class="text-xs text-ward-500 shrink-0">
+            Module Progress
+            <span id="module-progress-pct" class="text-ward-warning font-semibold ml-1">{{ module_progress.percentage if module_progress else 0 }}%</span>
+        </div>
+        <div class="progress-bar">
+            <div id="module-progress-bar" class="progress-bar-fill bg-ward-warning" style="width: {{ module_progress.percentage if module_progress else 0 }}%"></div>
+        </div>
+        <span class="stat-pill">{{ module_progress.items_completed if module_progress else 0 }}/{{ module_progress.items_total if module_progress else 53 }} studied</span>
+        <span class="stat-pill">{{ practice_count }} practice</span>
+        <span class="stat-pill">{{ error_trap_count }} error traps</span>
+        {% if drug_class_count %}<span class="stat-pill">{{ drug_class_count }} drug classes</span>{% endif %}
+    </div>
+
+    <!-- Safety banner -->
+    <div class="module-banner module-banner--safety dose-safety-banner">
+        <div class="dose-safety-icon" aria-hidden="true">⚠</div>
+        <div>
+            <div class="module-banner-label text-ward-danger">Safety First</div>
+            <p class="text-sm text-ward-300 mt-0.5">Always verify with a second nurse before administration. Right patient, right drug, right dose, right route, right time. When in doubt — clarify.</p>
+        </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="dose-tabs module-tabs" role="tablist" aria-label="Dosage calculation sections">
+        <button class="tab-btn dose-tab-btn active" data-tab="calculator" onclick="Dosage.switchTab('calculator')">Calculator</button>
+        <button class="tab-btn dose-tab-btn" data-tab="practice" onclick="Dosage.switchTab('practice')">Practice</button>
+        <button class="tab-btn dose-tab-btn" data-tab="traps" onclick="Dosage.switchTab('traps')">Error Traps</button>
+        <button class="tab-btn dose-tab-btn" data-tab="pharm" onclick="Dosage.switchTab('pharm')">Pharmacology</button>
+        <button class="tab-btn dose-tab-btn" data-tab="favorites" onclick="Dosage.switchTab('favorites')">Favorites</button>
+        <button class="tab-btn dose-tab-btn" data-tab="export" onclick="Dosage.switchTab('export')">Export</button>
+    </div>
+
+    <!-- ═══ CALCULATOR ═══ -->
+    <div id="tab-calculator" class="tab-panel dose-panel">
+        <div class="grid lg:grid-cols-2 gap-5">
+            <div class="card p-5">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-base font-semibold text-ward-100">Dosage Calculator</h2>
+                    <div class="flex items-center gap-3">
+                        <label class="dose-toggle">
+                            <input type="checkbox" id="first-principles-toggle" checked onchange="Dosage.toggleFirstPrinciples()">
+                            <span class="dose-toggle-slider"></span>
+                            <span class="text-xs text-ward-400 ml-2">First Principles</span>
+                        </label>
+                        <label class="dose-toggle">
+                            <input type="checkbox" id="show-work-toggle" checked onchange="Dosage.toggleShowWork()">
+                            <span class="dose-toggle-slider"></span>
+                            <span class="text-xs text-ward-400 ml-2">Show Work</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div id="first-principles-panel" class="dose-first-principles mb-4"></div>
+
+                <div class="mb-4">
+                    <label class="label">Calculation Type</label>
+                    <select id="calc-type" class="input-field" onchange="Dosage.updateCalcForm()">
+                        {% for ct in calc_types %}
+                        <option value="{{ ct.id }}" data-formula="{{ ct.formula }}">{{ ct.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <p id="calc-formula-hint" class="text-xs text-ward-500 mt-1 font-mono"></p>
+                </div>
+
+                <div id="calc-inputs" class="space-y-3"></div>
+
+                <div class="flex gap-2 mt-4">
+                    <button onclick="Dosage.calculate()" class="btn-primary flex-1">Calculate with Derivation</button>
+                    <button onclick="Dosage.saveFavorite()" id="save-fav-btn" class="btn-secondary" disabled title="Calculate first">★ Save</button>
+                </div>
+            </div>
+
+            <div class="card p-5">
+                <h2 class="text-base font-semibold text-ward-100 mb-4">Step-by-Step Solution</h2>
+                <div id="calc-result">
+                    <p class="text-ward-500 text-sm">Enter values and calculate to see derivation, clinical notes, and safety warnings.</p>
+                    <div class="dose-callout dose-callout-danger mt-4">
+                        <div class="dose-callout-label">Before You Administer</div>
+                        Independent double-check required for high-alert medications (insulin, heparin, opioids, chemotherapy).
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ PRACTICE ═══ -->
+    <div id="tab-practice" class="tab-panel dose-panel hidden">
+        <div class="card p-5">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                <div>
+                    <h2 class="text-base font-semibold text-ward-100">Practice Problems</h2>
+                    <p class="text-xs text-ward-500">Immediate feedback with worked solutions and error trap alerts</p>
+                </div>
+                <div class="flex items-center gap-3 text-sm">
+                    <span class="stat-pill">Score: <strong id="practice-score">0</strong>/<strong id="practice-total">0</strong></span>
+                    <button onclick="Dosage.loadPractice()" class="btn-secondary text-xs">New Set</button>
+                </div>
+            </div>
+            <div id="practice-container">
+                <p class="text-ward-500 text-sm">Loading practice problems…</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ ERROR TRAPS ═══ -->
+    <div id="tab-traps" class="tab-panel dose-panel hidden">
+        <div class="mb-4">
+            <h2 class="text-base font-semibold text-ward-100">Common Error Traps</h2>
+            <p class="text-xs text-ward-500 mt-1">Know these before the exam and before the bedside</p>
+        </div>
+        <div id="traps-container" class="grid sm:grid-cols-2 gap-4"></div>
+    </div>
+
+    <!-- ═══ PHARMACOLOGY ═══ -->
+    <div id="tab-pharm" class="tab-panel dose-panel hidden">
+        <div class="mb-4 flex flex-wrap items-start justify-between gap-3">
+            <div>
+                <h2 class="text-base font-semibold text-ward-100">Pharmacology Reference</h2>
+                <p class="text-xs text-ward-500 mt-1">ADN drug classes · MOA · nursing implications · monitoring · interactions</p>
+            </div>
+            <button type="button" onclick="openSocraticMode('dosage','pharmacology')" class="btn-socratic text-xs shrink-0">Socratic Mode</button>
+        </div>
+        <div id="pharm-container"></div>
+    </div>
+
+    <!-- ═══ FAVORITES ═══ -->
+    <div id="tab-favorites" class="tab-panel dose-panel hidden">
+        <div class="mb-4">
+            <h2 class="text-base font-semibold text-ward-100">Saved Calculations</h2>
+            <p class="text-xs text-ward-500 mt-1">Your favorite calculations for quick review</p>
+        </div>
+        <div id="favorites-container">
+            <p class="text-ward-500 text-sm">No saved calculations yet. Use ★ Save after calculating.</p>
+        </div>
+    </div>
+
+    <!-- ═══ EXPORT ═══ -->
+    <div id="tab-export" class="tab-panel dose-panel hidden">
+        <div class="card p-5 max-w-2xl mx-auto">
+            <h2 class="text-base font-semibold text-ward-100 mb-1">Export Study Materials</h2>
+            <p class="text-xs text-ward-500 mb-5">Printable sheets for NURS 145 review — use Print → Save as PDF</p>
+            <div class="export-grid">
+                <div class="export-card" onclick="Dosage.exportPracticeSheet()">
+                    <div class="export-card-icon">📋</div>
+                    <div class="export-card-title">Practice Problems</div>
+                    <div class="export-card-desc">Printable problem set with work space</div>
+                </div>
+                <div class="export-card" onclick="Dosage.exportTrapsCheatSheet()">
+                    <div class="export-card-icon">⚠️</div>
+                    <div class="export-card-title">Error Traps Cheat Sheet</div>
+                    <div class="export-card-desc">Common mistakes &amp; how to avoid them</div>
+                </div>
+                <div class="export-card" onclick="Dosage.exportLastCalculation()">
+                    <div class="export-card-icon">🧮</div>
+                    <div class="export-card-title">Last Calculation</div>
+                    <div class="export-card-desc">Export most recent result with work steps</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block katex_scripts %}
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="/static/js/katex-render.js"></script>
+{% endblock %}
+
+{% block scripts %}
+<script defer src="/static/js/dosage.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() { Dosage.init(); });
+</script>
+{% endblock %}

@@ -1,0 +1,676 @@
+/* NURS 145 Dosage module */
+
+.dose-module-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.dose-progress-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.875rem 1rem;
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(51, 65, 85, 0.6);
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+}
+.dose-progress-strip .progress-bar { flex: 1; min-width: 120px; height: 6px; }
+
+.dose-safety-banner {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    border-radius: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+.dose-safety-icon {
+    font-size: 1.25rem;
+    line-height: 1;
+    color: #f87171;
+}
+
+.dose-tabs {
+    display: flex;
+    gap: 0.25rem;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid #1e293b;
+    margin-bottom: 1.25rem;
+    -webkit-overflow-scrolling: touch;
+}
+
+.dose-panel { animation: doseFadeIn 0.2s ease; }
+@keyframes doseFadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+/* Show Work toggle */
+.dose-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+.dose-toggle input { display: none; }
+.dose-toggle-slider {
+    width: 36px;
+    height: 20px;
+    background: #334155;
+    border-radius: 9999px;
+    position: relative;
+    transition: background 0.2s;
+}
+.dose-toggle-slider::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #94a3b8;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.2s, background 0.2s;
+}
+.dose-toggle input:checked + .dose-toggle-slider {
+    background: rgba(251, 191, 36, 0.35);
+}
+.dose-toggle input:checked + .dose-toggle-slider::after {
+    transform: translateX(16px);
+    background: #fbbf24;
+}
+
+/* First Principles panel */
+.dose-first-principles {
+    padding: 0.875rem 1rem;
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.08), rgba(167, 139, 250, 0.05));
+    border: 1px solid rgba(251, 191, 36, 0.25);
+    border-radius: 0.625rem;
+}
+.dose-first-principles.hidden { display: none; }
+.dose-fp-header {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    margin-bottom: 0.5rem;
+}
+.dose-fp-icon {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    color: #fbbf24;
+}
+.dose-fp-core {
+    font-size: 0.8125rem;
+    color: #e2e8f0;
+    font-weight: 500;
+    line-height: 1.5;
+}
+.dose-fp-question {
+    font-size: 0.75rem;
+    color: #a78bfa;
+    margin-top: 0.375rem;
+}
+.dose-fp-setup {
+    margin: 0.5rem 0 0 1.25rem;
+    padding: 0;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+.dose-fp-unit, .dose-fp-safety, .dose-fp-why {
+    font-size: 0.6875rem;
+    color: #64748b;
+    margin-top: 0.375rem;
+    line-height: 1.5;
+}
+.dose-fp-safety { color: #fca5a5; }
+.dose-fp-why { color: #6ee7b7; }
+
+/* Result display */
+.dose-answer {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fbbf24;
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 1rem;
+}
+
+.dose-step {
+    padding: 0.5rem 0.75rem;
+    background: #0f172a;
+    border-left: 2px solid #334155;
+    border-radius: 0 0.375rem 0.375rem 0;
+    font-size: 0.8125rem;
+    color: #cbd5e1;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.dose-work-card {
+    padding: 0.875rem 1rem;
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.06), rgba(56, 189, 248, 0.04));
+    border: 1px solid rgba(251, 191, 36, 0.2);
+    border-radius: 0.625rem;
+    margin-bottom: 0.5rem;
+}
+.dose-work-step-num {
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #fbbf24;
+}
+.dose-work-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin: 0.25rem 0;
+}
+.dose-work-formula {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    color: #38bdf8;
+    margin: 0.25rem 0;
+}
+.dose-work-reasoning {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+.dose-work-result {
+    font-size: 0.75rem;
+    color: #34d399;
+    margin-top: 0.375rem;
+    font-weight: 500;
+}
+
+.dose-derivation {
+    padding: 0.75rem 1rem;
+    background: #0f172a;
+    border-radius: 0.5rem;
+    margin: 0.75rem 0;
+    overflow-x: auto;
+}
+.dose-derivation-label {
+    display: block;
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    margin-bottom: 0.375rem;
+}
+
+/* KaTeX math rendering */
+.math-latex {
+    display: inline-block;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    vertical-align: middle;
+    -webkit-overflow-scrolling: touch;
+}
+.math-latex.math-display,
+.dose-derivation .math-latex {
+    display: block;
+    text-align: center;
+    margin: 0.25rem 0;
+    padding: 0.25rem 0;
+}
+.dose-derivation-math {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+}
+.dose-derivation-result {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.1rem;
+    color: #7dd3fc;
+    font-weight: 600;
+}
+.math-latex .katex {
+    font-size: 1.05em;
+    color: #7dd3fc;
+}
+.math-latex.math-display .katex {
+    font-size: 1.15em;
+}
+.dose-work-formula .math-latex .katex {
+    font-size: 0.95em;
+}
+.math-latex .katex .mord,
+.math-latex .katex .mop,
+.math-latex .katex .mbin,
+.math-latex .katex .mrel,
+.math-latex .katex .mopen,
+.math-latex .katex .mclose,
+.math-latex .katex .mpunct {
+    color: inherit;
+}
+.math-fallback {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    color: #94a3b8;
+    background: rgba(15, 23, 42, 0.6);
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.dose-callout {
+    padding: 0.75rem 1rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    font-size: 0.8125rem;
+    color: #cbd5e1;
+    margin-top: 0.75rem;
+}
+.dose-callout-label {
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+.dose-callout-clinical {
+    background: rgba(56, 189, 248, 0.08);
+    border-left: 3px solid #38bdf8;
+}
+.dose-callout-clinical .dose-callout-label { color: #38bdf8; }
+.dose-callout-danger {
+    background: rgba(239, 68, 68, 0.08);
+    border-left: 3px solid #f87171;
+}
+.dose-callout-danger .dose-callout-label { color: #f87171; }
+.dose-callout-pharm {
+    background: rgba(167, 139, 250, 0.08);
+    border-left: 3px solid #a78bfa;
+}
+.dose-callout-pharm .dose-callout-label { color: #a78bfa; }
+.dose-callout-nursing {
+    background: rgba(52, 211, 153, 0.08);
+    border-left: 3px solid #34d399;
+}
+.dose-callout-nursing .dose-callout-label { color: #34d399; }
+
+.dose-warning-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.dose-warning-list li {
+    font-size: 0.75rem;
+    color: #fca5a5;
+    padding: 0.25rem 0 0.25rem 1.25rem;
+    position: relative;
+}
+.dose-warning-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #f87171;
+}
+
+/* Practice */
+.dose-practice-card {
+    padding: 1.25rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid #1e293b;
+    border-radius: 0.75rem;
+}
+.dose-practice-q {
+    font-size: 0.9375rem;
+    color: #e2e8f0;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+.dose-option {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.625rem 0.875rem;
+    margin-bottom: 0.375rem;
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 0.5rem;
+    font-size: 0.8125rem;
+    color: #cbd5e1;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+}
+.dose-option:hover:not(:disabled) {
+    border-color: #fbbf24;
+    background: rgba(251, 191, 36, 0.05);
+}
+.dose-option.correct {
+    border-color: #34d399;
+    background: rgba(52, 211, 153, 0.1);
+    color: #6ee7b7;
+}
+.dose-option.incorrect {
+    border-color: #f87171;
+    background: rgba(239, 68, 68, 0.1);
+    color: #fca5a5;
+}
+.dose-option:disabled { cursor: default; opacity: 0.9; }
+
+.dose-feedback {
+    margin-top: 1rem;
+    padding: 0.875rem;
+    border-radius: 0.5rem;
+    font-size: 0.8125rem;
+}
+.dose-feedback.correct-fb {
+    background: rgba(52, 211, 153, 0.1);
+    border: 1px solid rgba(52, 211, 153, 0.3);
+    color: #a7f3d0;
+}
+.dose-feedback.incorrect-fb {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #fecaca;
+}
+
+/* Error traps */
+.dose-trap-card {
+    padding: 1rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid #1e293b;
+    border-radius: 0.75rem;
+    border-top: 3px solid #f87171;
+}
+.dose-trap-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #fca5a5;
+    margin-bottom: 0.5rem;
+}
+.dose-trap-trap {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-bottom: 0.5rem;
+}
+.dose-trap-avoid {
+    font-size: 0.75rem;
+    color: #6ee7b7;
+    padding: 0.5rem;
+    background: rgba(52, 211, 153, 0.06);
+    border-radius: 0.375rem;
+}
+.dose-trap-example {
+    font-size: 0.6875rem;
+    color: #64748b;
+    margin-top: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Pharmacology */
+.dose-pharm-card {
+    padding: 1rem 1.25rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid #1e293b;
+    border-radius: 0.75rem;
+    border-left: 3px solid #a78bfa;
+}
+.dose-pharm-title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #c4b5fd;
+}
+.dose-pharm-concept {
+    font-size: 0.8125rem;
+    color: #94a3b8;
+    margin: 0.5rem 0;
+}
+.dose-pharm-action {
+    font-size: 0.75rem;
+    color: #cbd5e1;
+    padding: 0.5rem 0.75rem;
+    background: rgba(167, 139, 250, 0.06);
+    border-radius: 0.375rem;
+}
+.dose-pharm-examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-top: 0.5rem;
+}
+.dose-pharm-tag {
+    font-size: 0.625rem;
+    padding: 0.15rem 0.5rem;
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 9999px;
+    color: #94a3b8;
+}
+
+/* Pharmacology explorer */
+.dose-pharm-explorer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.dose-pharm-section-title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+.dose-pharm-section-desc {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+}
+.dose-pharm-section-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+.dose-pharm-safety-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+}
+.dose-pharm-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-bottom: 1rem;
+}
+.dose-pharm-filter-btn {
+    font-size: 0.6875rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    border: 1px solid #334155;
+    background: #0f172a;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.dose-pharm-filter-btn:hover {
+    border-color: #a78bfa;
+    color: #c4b5fd;
+}
+.dose-pharm-filter-btn.active {
+    background: rgba(167, 139, 250, 0.12);
+    border-color: #a78bfa;
+    color: #c4b5fd;
+}
+.dose-drug-class-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.dose-drug-class-card {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid #1e293b;
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+.dose-drug-class-card[open] {
+    border-color: #334155;
+}
+.dose-drug-class-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.875rem 1rem;
+    cursor: pointer;
+    list-style: none;
+    border-left: 3px solid #a78bfa;
+}
+.dose-drug-class-summary::-webkit-details-marker { display: none; }
+.dose-drug-class-summary::marker { content: ''; }
+.dose-cat-warning { border-left-color: #fbbf24; }
+.dose-cat-success { border-left-color: #34d399; }
+.dose-cat-accent { border-left-color: #22d3ee; }
+.dose-cat-danger { border-left-color: #f87171; }
+.dose-cat-purple { border-left-color: #a78bfa; }
+.dose-drug-class-head {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+}
+.dose-drug-class-name {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+.dose-drug-class-cat {
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #64748b;
+}
+.dose-drug-class-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+.dose-drug-alert {
+    font-size: 0.5625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.15rem 0.45rem;
+    border-radius: 9999px;
+    background: rgba(248, 113, 113, 0.15);
+    border: 1px solid rgba(248, 113, 113, 0.4);
+    color: #fca5a5;
+}
+.dose-drug-class-toggle {
+    font-size: 0.625rem;
+    color: #64748b;
+}
+.dose-drug-class-card[open] .dose-drug-class-toggle::before { content: '▾ '; }
+.dose-drug-class-card:not([open]) .dose-drug-class-toggle::before { content: '▸ '; }
+.dose-drug-class-body {
+    padding: 0 1rem 1rem;
+    border-top: 1px solid #1e293b;
+}
+.dose-drug-prototypes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    padding: 0.75rem 0 0.5rem;
+}
+.dose-drug-block {
+    margin-top: 0.75rem;
+}
+.dose-drug-block h4 {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #94a3b8;
+    margin-bottom: 0.35rem;
+}
+.dose-drug-block p {
+    font-size: 0.8125rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+}
+.dose-drug-block-nursing {
+    padding: 0.625rem 0.75rem;
+    background: rgba(167, 139, 250, 0.06);
+    border-radius: 0.5rem;
+}
+.dose-drug-block-warn h4 { color: #fbbf24; }
+.dose-drug-block-danger h4 { color: #f87171; }
+.dose-drug-block-interact h4 { color: #22d3ee; }
+.dose-drug-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+@media (max-width: 640px) {
+    .dose-drug-grid { grid-template-columns: 1fr; }
+}
+.dose-pharm-list {
+    font-size: 0.8125rem;
+    color: #cbd5e1;
+    padding-left: 1.1rem;
+    margin: 0;
+    line-height: 1.45;
+}
+.dose-pharm-list-compact li + li { margin-top: 0.2rem; }
+.dose-drug-nclex {
+    font-size: 0.75rem;
+    color: #c4b5fd;
+    margin-top: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(167, 139, 250, 0.08);
+    border-radius: 0.375rem;
+    border-left: 2px solid #a78bfa;
+}
+.dose-drug-clinical-why {
+    font-size: 0.75rem;
+    color: #6ee7b7;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+.dose-drug-actions {
+    margin-top: 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #1e293b;
+}
+
+/* Favorites */
+.dose-fav-card {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.875rem 1rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid #1e293b;
+    border-radius: 0.625rem;
+    margin-bottom: 0.5rem;
+}
+.dose-fav-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #e2e8f0;
+}
+.dose-fav-meta {
+    font-size: 0.6875rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+}
+.dose-fav-answer {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    color: #fbbf24;
+}

@@ -1,0 +1,106 @@
+{% extends "base_static.html" %}
+{% block title %}How to Use The Ward{% endblock %}
+{% block page_title %}How to Use The Ward{% endblock %}
+{% block page_subtitle %}Study workflow for ADN coursework and NCLEX preparation{% endblock %}
+
+{% block topbar_actions %}
+<a href="/index.html" class="nursing-return-link hidden sm:inline-flex" title="Back to Dashboard">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+    Dashboard
+</a>
+{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto dashboard-page">
+    <div class="welcome-banner mb-8">
+        <div>
+            <h1 class="text-xl sm:text-2xl font-bold text-ward-100">How to Use The Ward</h1>
+            <p class="text-sm text-ward-400 mt-1">
+                A practical study workflow for ADN nursing students — aligned with a traditional four-semester program and NCLEX-RN preparation.
+            </p>
+        </div>
+        <span class="badge badge-mvp">Student Guide</span>
+    </div>
+
+    <section class="card p-5 sm:p-6 mb-6">
+        <h2 class="text-base font-semibold text-ward-accent mb-3">1. Start with Your Semester</h2>
+        <p class="text-sm text-ward-300 leading-relaxed mb-4">
+            Open the <a href="/index.html" class="text-ward-accent hover:underline">Dashboard</a> and review the <strong>ADN Curriculum Map</strong>.
+            Each semester links directly to the module that matches your current coursework — Fundamentals and Microbiology in Semester 1,
+            Dosage and Assessment in Semester 2, Med-Surg and Mental Health in Semester 3, and NCLEX Prep in Semester 4.
+        </p>
+        <p class="text-sm text-ward-400">
+            You do not need to complete modules in order, but following the curriculum map keeps your study aligned with clinical rotations and exams.
+        </p>
+    </section>
+
+    <section class="card p-5 sm:p-6 mb-6">
+        <h2 class="text-base font-semibold text-ward-accent mb-3">2. Study Inside Each Module</h2>
+        <p class="text-sm text-ward-300 mb-4">Every module follows the same teaching-first pattern:</p>
+        <ul class="text-sm text-ward-300 space-y-3 list-none">
+            <li class="flex gap-3"><span class="text-ward-accent font-mono shrink-0">Learn</span><span>Read concepts, disease processes, or reference material. Click <strong>Verify Source</strong> to see textbook and NCLEX citations.</span></li>
+            <li class="flex gap-3"><span class="text-ward-accent font-mono shrink-0">Practice</span><span>Work through NCLEX-style questions with rationales. Read the explanation even when you answer correctly — that is where the teaching happens.</span></li>
+            <li class="flex gap-3"><span class="text-ward-accent font-mono shrink-0">Drill</span><span>Use scenario drills (red flags, break-the-chain, complications) to build prioritization and clinical judgment.</span></li>
+            <li class="flex gap-3"><span class="text-ward-accent font-mono shrink-0">Flashcards</span><span>Flip cards, rate them Know / Need Review, and revisit weak areas. Progress saves in your browser automatically.</span></li>
+            <li class="flex gap-3"><span class="text-ward-accent font-mono shrink-0">Export</span><span>Download Markdown or printable sheets for offline review before exams.</span></li>
+        </ul>
+    </section>
+
+    <section class="card p-5 sm:p-6 mb-6">
+        <h2 class="text-base font-semibold text-ward-accent mb-3">3. NCLEX Prep Strategy</h2>
+        <p class="text-sm text-ward-300 leading-relaxed mb-4">
+            Use the <a href="/nclex-prep.html" class="text-ward-accent hover:underline">NCLEX-RN Prep Center</a> once you have covered at least two content areas.
+            Start with <strong>By Topic</strong> to focus on weak categories, then switch to <strong>Mixed Practice</strong> to simulate exam conditions.
+            After each session, review missed questions in <strong>Review Missed</strong> — those IDs are stored in your browser until you answer them correctly.
+        </p>
+        <p class="text-sm text-ward-400">
+            Pay attention to the <strong>Clinical Judgment</strong> notes under each rationale. They map to the NCSBN Clinical Judgment Model steps shown on the NCLEX page.
+        </p>
+    </section>
+
+    <section class="card p-5 sm:p-6 mb-6">
+        <h2 class="text-base font-semibold text-ward-accent mb-3">4. Recommended Weekly Rhythm</h2>
+        <div class="grid sm:grid-cols-2 gap-4 text-sm">
+            <div class="p-4 bg-ward-900/50 rounded-lg border border-ward-800">
+                <div class="font-semibold text-ward-200 mb-2">During the semester</div>
+                <ul class="text-ward-400 space-y-1 list-disc list-inside">
+                    <li>20–30 min: active module for current class</li>
+                    <li>10 min: flashcards from the same module</li>
+                    <li>5 min: one dosage calculation (if in NURS 145)</li>
+                </ul>
+            </div>
+            <div class="p-4 bg-ward-900/50 rounded-lg border border-ward-800">
+                <div class="font-semibold text-ward-200 mb-2">Before exams / NCLEX</div>
+                <ul class="text-ward-400 space-y-1 list-disc list-inside">
+                    <li>25-question NCLEX mixed session</li>
+                    <li>Review Missed questions until clear</li>
+                    <li>Export cheat sheets for final review</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="card p-5 sm:p-6 mb-6">
+        <h2 class="text-base font-semibold text-ward-accent mb-3">5. Navigation Tips</h2>
+        <ul class="text-sm text-ward-300 space-y-2">
+            <li><kbd class="text-xs bg-ward-900 px-1.5 py-0.5 rounded border border-ward-700">Ctrl+K</kbd> — open the command palette to jump to any module or tab</li>
+            <li>Module tabs support deep links — bookmark <code class="text-ward-accent text-xs">/modules/assessment.html#flashcards</code> for quick access</li>
+            <li>On mobile, use the menu icon to open the sidebar; tabs scroll horizontally on small screens</li>
+            <li>Install the site as an app (PWA) from your browser for faster access and offline shell caching</li>
+        </ul>
+    </section>
+
+    <section class="card p-5 sm:p-6">
+        <h2 class="text-base font-semibold text-ward-accent mb-3">6. What Gets Saved</h2>
+        <p class="text-sm text-ward-300 leading-relaxed mb-3">
+            The static site stores flashcard ratings, NCLEX missed-question lists, and custom terms in <strong>localStorage</strong> on your device.
+            Clearing browser data will reset progress. Export study materials if you need a permanent copy.
+        </p>
+        <div class="flex flex-wrap gap-3 mt-4">
+            <a href="/index.html" class="btn-primary text-sm">Go to Dashboard</a>
+            <a href="/nclex-prep.html" class="btn-secondary text-sm">NCLEX Prep</a>
+            <a href="/modules/terminology.html" class="btn-secondary text-sm">Start: Terminology</a>
+        </div>
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,165 @@
+{% extends "base_static.html" %}
+{% from "partials/module_breadcrumb.html" import module_breadcrumb %}
+{% block title %}Medical-Surgical Nursing{% endblock %}
+{% block page_title %}Medical-Surgical Nursing{% endblock %}
+{% block page_subtitle %}Body systems · Procedures · Priority actions · NCLEX Physiological Integrity{% endblock %}
+
+{% block topbar_actions %}
+<a href="/index.html" class="nursing-return-link hidden sm:inline-flex" title="Back to Dashboard">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+    Dashboard
+</a>
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/css/med_surg.css">
+{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto" data-module="med_surg" data-nav="med_surg">
+    {{ module_breadcrumb('Medical-Surgical Nursing', parent_url='/index.html', badge='new') }}
+
+    <div class="module-header ms-module-header">
+        <div>
+            <h1 class="text-xl sm:text-2xl font-bold text-ward-100">Medical-Surgical Nursing</h1>
+            <p class="text-sm text-ward-500 mt-1">Adult health across body systems — pathophysiology, nursing care, safety, and clinical judgment</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+            <button onclick="verifySource('med_surg')" class="btn-verify text-sm" title="View verified sources">Verify Source</button>
+        </div>
+    </div>
+
+    <div class="ms-stats-strip">
+        <span class="stat-pill">{{ summary.body_system_count }} body systems</span>
+        <span class="stat-pill">{{ summary.procedure_count }} procedures</span>
+        <span class="stat-pill">{{ summary.priority_count }} priority actions</span>
+        <span class="stat-pill">{{ summary.flashcard_count }} flashcards</span>
+        <span class="stat-pill">{{ summary.practice_count }} NCLEX items</span>
+    </div>
+
+    <div class="ms-callout">
+        <div class="ms-callout-icon">+</div>
+        <div>
+            <div class="text-xs font-semibold text-sky-400 uppercase tracking-wide">NCLEX Focus — Physiological Integrity</div>
+            <p class="text-sm text-ward-300 mt-0.5">Assess → Analyze cues → Prioritize hypotheses → Generate solutions → Take action → Evaluate outcomes. Med-surg is the foundation of NCLEX clinical judgment.</p>
+        </div>
+    </div>
+
+    <div class="ms-tabs module-tabs" role="tablist" aria-label="Medical-surgical nursing sections">
+        <button class="tab-btn ms-tab-btn active" data-tab="core-concepts" onclick="MedSurg.switchTab('core-concepts')">Core Concepts</button>
+        <button class="tab-btn ms-tab-btn" data-tab="body-systems" onclick="MedSurg.switchTab('body-systems')">Body Systems</button>
+        <button class="tab-btn ms-tab-btn" data-tab="procedures" onclick="MedSurg.switchTab('procedures')">Procedures</button>
+        <button class="tab-btn ms-tab-btn" data-tab="priority-actions" onclick="MedSurg.switchTab('priority-actions')">Priority Actions</button>
+        <button class="tab-btn ms-tab-btn" data-tab="flashcards" onclick="MedSurg.switchTab('flashcards')">Flashcards</button>
+        <button class="tab-btn ms-tab-btn" data-tab="practice" onclick="MedSurg.switchTab('practice')">Practice</button>
+        <button class="tab-btn ms-tab-btn" data-tab="export" onclick="MedSurg.switchTab('export')">Export</button>
+    </div>
+
+    <div id="tab-core-concepts" class="tab-panel ms-panel">
+        <div class="mb-4">
+            <h2 class="text-base font-semibold text-ward-100">Core Med-Surg Concepts</h2>
+            <p class="text-xs text-ward-500 mt-1">Foundational principles for adult acute and chronic care</p>
+        </div>
+        <div id="ms-concepts-container">
+            <div class="loading-state" role="status"><span class="loading-spinner" aria-hidden="true"></span>Loading concepts…</div>
+        </div>
+    </div>
+
+    <div id="tab-body-systems" class="tab-panel ms-panel hidden">
+        <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+            <div>
+                <h2 class="text-base font-semibold text-ward-100">Body Systems</h2>
+                <p class="text-xs text-ward-500 mt-1">Pathophysiology, nursing care, safety, and priority actions by system</p>
+            </div>
+            <select id="ms-system-filter" class="ms-select" onchange="MedSurg.filterBodySystem(this.value)" aria-label="Filter body system">
+                <option value="all">All systems</option>
+            </select>
+        </div>
+        <div id="ms-systems-container">
+            <div class="loading-state" role="status"><span class="loading-spinner" aria-hidden="true"></span>Loading body systems…</div>
+        </div>
+    </div>
+
+    <div id="tab-procedures" class="tab-panel ms-panel hidden">
+        <div class="mb-4">
+            <h2 class="text-base font-semibold text-ward-100">Common Procedures</h2>
+            <p class="text-xs text-ward-500 mt-1">Pre-procedure, intra-procedure, and post-procedure nursing care</p>
+        </div>
+        <div id="ms-procedures-container">
+            <div class="loading-state" role="status"><span class="loading-spinner" aria-hidden="true"></span>Loading procedures…</div>
+        </div>
+    </div>
+
+    <div id="tab-priority-actions" class="tab-panel ms-panel hidden">
+        <div class="mb-4">
+            <h2 class="text-base font-semibold text-ward-100">Priority Actions Drill</h2>
+            <p class="text-xs text-ward-500 mt-1">Given a clinical scenario — select the highest-priority nursing action first</p>
+        </div>
+        <div class="flex items-center gap-3 mb-4">
+            <span class="stat-pill">Score: <strong id="ms-priority-score">0</strong>/<strong id="ms-priority-total">0</strong></span>
+        </div>
+        <div id="ms-priority-container">
+            <div class="loading-state" role="status"><span class="loading-spinner" aria-hidden="true"></span>Loading priority drill…</div>
+        </div>
+    </div>
+
+    <div id="tab-flashcards" class="tab-panel ms-panel hidden">
+        <div class="max-w-lg mx-auto">
+            <div id="ms-flashcard-stage" class="ms-flashcard-stage">
+                <div id="ms-flashcard-inner" class="ms-flashcard-inner" onclick="MedSurg.flipCard()" role="button" tabindex="0" aria-label="Flip flashcard">
+                    <div id="msfc-front-view">
+                        <p class="text-xs text-ward-500 mb-2 text-center">Tap or press Space to reveal</p>
+                        <p id="msfc-front" class="ms-flashcard-front">Loading…</p>
+                        <span id="msfc-category" class="ms-fc-category mt-3"></span>
+                    </div>
+                    <div id="msfc-back-view" class="hidden">
+                        <p id="msfc-back" class="ms-flashcard-back"></p>
+                        <p id="msfc-clinical" class="text-xs text-ward-accent mt-3"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-between items-center mt-4">
+                <button onclick="MedSurg.prevCard()" class="btn-secondary text-sm">← Previous</button>
+                <span id="msfc-counter" class="text-xs text-ward-500 font-mono">0/0</span>
+                <button onclick="MedSurg.nextCard()" class="btn-secondary text-sm">Next →</button>
+            </div>
+            <button onclick="MedSurg.loadFlashcards(15)" class="btn-primary w-full mt-3 text-sm">Shuffle Deck</button>
+        </div>
+    </div>
+
+    <div id="tab-practice" class="tab-panel ms-panel hidden">
+        <div class="max-w-2xl mx-auto">
+            <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
+                <h2 class="text-base font-semibold text-ward-100">NCLEX Practice</h2>
+                <span id="ms-practice-score" class="text-sm font-mono text-ward-500">0/0</span>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-4">
+                <button onclick="MedSurg.startPractice(5)" class="btn-secondary text-sm">5 Questions</button>
+                <button onclick="MedSurg.startPractice(10)" class="btn-secondary text-sm">10 Questions</button>
+                <button onclick="MedSurg.startPractice(20)" class="btn-primary text-sm">20 Questions</button>
+            </div>
+            <div id="ms-practice-area">
+                <p class="text-ward-500 text-sm">Choose a session size above.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab-export" class="tab-panel ms-panel hidden">
+        <div class="max-w-lg mx-auto card p-5 sm:p-6">
+            <h2 class="text-base font-semibold text-ward-100 mb-2">Export Study Materials</h2>
+            <p class="text-xs text-ward-500 mb-4">Download flashcards and body system summaries for offline study.</p>
+            <div class="space-y-3">
+                <button onclick="MedSurg.exportFlashcards()" class="btn-primary w-full text-sm">Export Flashcards (Markdown)</button>
+                <button onclick="MedSurg.exportBodySystems()" class="btn-secondary w-full text-sm">Export Body Systems Summary (Markdown)</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script defer src="/static/js/med_surg.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() { MedSurg.init(); });
+</script>
+{% endblock %}

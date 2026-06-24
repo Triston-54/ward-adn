@@ -1,0 +1,272 @@
+{
+  "verified": [
+    {
+      "module_id": "assessment",
+      "item_key": "redflag:systolic-bp-90-with-symptoms"
+    },
+    {
+      "module_id": "terminology",
+      "item_key": "term:hypotension"
+    },
+    {
+      "module_id": "microbiology",
+      "item_key": "concept:transmission-based-precautions"
+    },
+    {
+      "module_id": "microbiology",
+      "item_key": "pathogen:candida-auris"
+    },
+    {
+      "module_id": "dosage",
+      "item_key": "calc:geriatric"
+    },
+    {
+      "module_id": "assessment",
+      "item_key": "scenario:an-03"
+    },
+    {
+      "module_id": "microbiology",
+      "item_key": "chain:agent"
+    },
+    {
+      "module_id": "microbiology",
+      "item_key": "chain:host"
+    },
+    {
+      "module_id": "microbiology",
+      "item_key": "chain:reservoir"
+    },
+    {
+      "module_id": "microbiology",
+      "item_key": "pathogen:pseudomonas"
+    },
+    {
+      "module_id": "terminology",
+      "item_key": "term:quarantine"
+    },
+    {
+      "module_id": "assessment",
+      "item_key": "system:heent"
+    },
+    {
+      "module_id": "microbiology",
+      "item_key": "concept:antimicrobial-stewardship"
+    },
+    {
+      "module_id": "assessment",
+      "item_key": "redflag:oliguria-30-ml-hr-for-2-hours"
+    },
+    {
+      "module_id": "terminology",
+      "item_key": "term:oliguria"
+    },
+    {
+      "module_id": "terminology",
+      "item_key": "term:antibiotic"
+    },
+    {
+      "module_id": "terminology",
+      "item_key": "term:anuria"
+    },
+    {
+      "module_id": "terminology",
+      "item_key": "term:bronchodilator"
+    },
+    {
+      "module_id": "terminology",
+      "item_key": "term:diaphragm"
+    },
+    {
+      "module_id": "terminology",
+      "item_key": "term:diuretic"
+    },
+    {
+      "module_id": "terminology",
+      "item_key": "term:etiology"
+    },
+    {
+      "module_id": "terminology",
+      "item_key": "term:fowler-s"
+    },
+    {
+      "module_id": "terminology",
+      "item_key": "term:gastroenterology"
+    },
+    {
+      "module_id": "terminology",
+      "item_key": "term:hypodermic"
+    },
+    {
+      "module_id": "terminology",
+      "item_key": "term:ketoacidosis"
+    },
+    {
+      "module_id": "terminology",
+      "item_key": "term:laparotomy"
+    },
+    {
+      "module_id": "terminology",
+      "item_key": "term:lateral"
+    },
+    {
+      "module_id": "terminology",
+      "item_key": "term:leukocytosis"
+    },
+    {
+      "module_id": "terminology",
+      "item_key": "term:nephrectomy"
+    },
+    {
+      "module_id": "terminology",
+      "item_key": "term:thrombocytopenia"
+    },
+    {
+      "module_id": "terminology",
+      "item_key": "term:vasoconstrictor"
+    },
+    {
+      "module_id": "terminology",
+      "item_key": "term:vasodilator"
+    },
+    {
+      "module_id": "terminology",
+      "item_key": "term:carcinoma"
+    },
+    {
+      "module_id": "terminology",
+      "item_key": "term:sign"
+    },
+    {
+      "module_id": "terminology",
+      "item_key": "term:contraindication"
+    },
+    {
+      "module_id": "terminology",
+      "item_key": "term:carotid"
+    },
+    {
+      "module_id": "assessment",
+      "item_key": "sequence:9"
+    },
+    {
+      "module_id": "assessment",
+      "item_key": "system:respiratory"
+    },
+    {
+      "module_id": "assessment",
+      "item_key": "skill:orthostatic_vitals"
+    },
+    {
+      "module_id": "assessment",
+      "item_key": "skill:fast_stroke"
+    },
+    {
+      "module_id": "assessment",
+      "item_key": "redflag:temperature-103-f-39-4-c-or-95-f-35-c"
+    },
+    {
+      "module_id": "assessment",
+      "item_key": "redflag:stridor-muffled-voice-or-drooling-with-sore-thro"
+    },
+    {
+      "module_id": "assessment",
+      "item_key": "redflag:severe-epigastric-ruq-pain-radiating-to-back-with"
+    },
+    {
+      "module_id": "assessment",
+      "item_key": "population:mental-health"
+    },
+    {
+      "module_id": "assessment",
+      "item_key": "population:newborn"
+    },
+    {
+      "module_id": "assessment",
+      "item_key": "scenario:an-12"
+    },
+    {
+      "module_id": "assessment",
+      "item_key": "soap:soap-06"
+    },
+    {
+      "module_id": "assessment",
+      "item_key": "flashcard:fc-card-02"
+    },
+    {
+      "module_id": "assessment",
+      "item_key": "scenario:an-09"
+    },
+    {
+      "module_id": "assessment",
+      "item_key": "soap:soap-02"
+    }
+  ],
+  "needs_review": [],
+  "errors": [],
+  "summary": {
+    "total": 809,
+    "verified": 763,
+    "needs_review": 1,
+    "unreviewed": 45,
+    "by_module": {
+      "terminology": {
+        "verified": 220,
+        "needs_review": 0,
+        "unreviewed": 0,
+        "total": 220
+      },
+      "microbiology": {
+        "verified": 47,
+        "needs_review": 0,
+        "unreviewed": 0,
+        "total": 47
+      },
+      "dosage": {
+        "verified": 53,
+        "needs_review": 0,
+        "unreviewed": 0,
+        "total": 53
+      },
+      "assessment": {
+        "verified": 198,
+        "needs_review": 0,
+        "unreviewed": 0,
+        "total": 198
+      },
+      "mental_health": {
+        "verified": 55,
+        "needs_review": 0,
+        "unreviewed": 0,
+        "total": 55
+      },
+      "pathophysiology": {
+        "verified": 75,
+        "needs_review": 1,
+        "unreviewed": 0,
+        "total": 76
+      },
+      "maternal_child": {
+        "verified": 115,
+        "needs_review": 0,
+        "unreviewed": 0,
+        "total": 115
+      },
+      "pharmacy_calculations": {
+        "verified": 0,
+        "needs_review": 0,
+        "unreviewed": 45,
+        "total": 45
+      }
+    },
+    "modules": {
+      "terminology": "Medical Terminology",
+      "microbiology": "Microbiology",
+      "dosage": "NURS 145 \u2014 Dosage",
+      "assessment": "NURS 146 \u2014 Health Assessment",
+      "mental_health": "NURS 147 \u2014 Mental Health",
+      "pathophysiology": "Pathophysiology",
+      "maternal_child": "NURS 148 \u2014 Maternal-Child",
+      "pharmacy_calculations": "Pharmacy Calculations"
+    }
+  }
+}

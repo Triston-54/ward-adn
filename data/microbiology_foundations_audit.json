@@ -1,0 +1,59 @@
+{
+  "agent": "Sub-Agent 3 \u2014 Microbiology Chain & Foundations",
+  "catalog_items_reviewed": 47,
+  "verified": 42,
+  "flagged": 5,
+  "breakdown": {
+    "chain_links": 6,
+    "concepts": 6,
+    "pathogens": 8,
+    "practice_questions": 15
+  },
+  "ancillary_content_verified": [
+    "microbe_classification (5 types: prokaryote bacteria vs eukaryote fungi/parasites, acellular viruses, prions)",
+    "gram_stain_procedure (6 steps)",
+    "gram_stain_interpretation (Gram+/- cell wall, examples including C. diff as Gram+)",
+    "hand_hygiene (WHO 5 moments; soap-and-water for C. diff/norovirus/spores)",
+    "ppe_guide",
+    "break_points (5 chain break teaching bullets)",
+    "chain_interventions interactive (agent/reservoir/exit/transmission/entry/host)",
+    "break_chain_scenarios (4 scenarios)",
+    "what_if_scenarios (4 scenarios)",
+    "hai_types (CLABSI, CAUTI, VAP, SSI, CDI bundles)"
+  ],
+  "recommended_catalog_additions": [
+    "microbe_classification entries (prokaryote vs eukaryote foundational principle)",
+    "gram_stain_procedure / gram_stain_interpretation",
+    "hand_hygiene and ppe_guide blocks",
+    "break_chain_scenarios and what_if_scenarios"
+  ],
+  "flagged_items": [
+    {
+      "item_key": "chain:agent",
+      "review_note": "[Chain of Infection] Intervention lists 'vaccination' under the infectious agent link, but vaccination targets the susceptible host (builds immunity), not the pathogen itself. This contradicts chain_interventions.agent in the same JSON file (vaccine_host marked incorrect). Fix intervention: 'Antimicrobial/antiviral therapy, sterilization/disinfection, proper specimen handling' \u2014 remove vaccination."
+    },
+    {
+      "item_key": "chain:host",
+      "review_note": "[Chain of Infection] Intervention includes 'prophylactic antibiotics' as a primary host strategy \u2014 oversimplified and conflicts with antimicrobial stewardship teaching (contributes to CDI/resistance). Fix: emphasize vaccination, nutrition, rest, protective/neutropenic precautions; note prophylactic antibiotics only for specific ordered indications (e.g., surgical prophylaxis)."
+    },
+    {
+      "item_key": "chain:reservoir",
+      "review_note": "[Chain of Infection] 'Patient isolation' listed as reservoir intervention \u2014 pedagogically imprecise. Isolation primarily breaks mode of transmission; environmental cleaning/food safety correctly target reservoir. Fix: clarify isolation reduces exposure from human reservoir but pair with explicit transmission interventions."
+    },
+    {
+      "item_key": "concept:transmission-based-precautions",
+      "review_note": "[Infection control] Varicella (chickenpox) listed under airborne precautions only. Per CDC 2007 isolation guidelines, varicella/zoster require BOTH airborne isolation (N95, negative-pressure AIIR) AND contact precautions until lesions crusted. Also note droplet distance: CDC uses ~3 ft; many facilities teach 3\u20136 ft \u2014 harmonize with influenza pathogen entry (3\u20136 ft)."
+    },
+    {
+      "item_key": "concept:antimicrobial-stewardship",
+      "review_note": "[Foundational] 'Completing full courses' oversimplifies modern stewardship \u2014 duration should be shortest effective course per culture/sensitivity and guideline (avoid unnecessary prolonged antibiotics). Fix: 'Use shortest effective course per guideline; patient education on not sharing antibiotics and not saving leftovers.'"
+    }
+  ],
+  "errors": [],
+  "module_summary": {
+    "verified": 42,
+    "needs_review": 5,
+    "unreviewed": 0,
+    "total": 47
+  }
+}

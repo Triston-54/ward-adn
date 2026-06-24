@@ -1,0 +1,226 @@
+/* Maternal-Child Nursing module — rose accent study UI */
+
+.mc-module-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.mc-stats-strip,
+.mc-progress-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.875rem 1rem;
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(51, 65, 85, 0.6);
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+}
+.mc-progress-strip .progress-bar { flex: 1; min-width: 120px; height: 6px; }
+
+.mc-callout {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    background: rgba(244, 114, 182, 0.06);
+    border: 1px solid rgba(244, 114, 182, 0.2);
+    border-left: 3px solid #f472b6;
+    border-radius: 0.625rem;
+    margin-bottom: 1.25rem;
+}
+.mc-callout-icon {
+    font-size: 1.25rem;
+    color: #f472b6;
+    flex-shrink: 0;
+}
+
+/* Tab bar layout — canonical rules in ward.css (.mc-tabs, .module-tabs) */
+
+.mc-section { margin-bottom: 1.5rem; }
+.mc-section-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #f1f5f9;
+    margin-bottom: 0.25rem;
+}
+.mc-section-desc {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-bottom: 0.75rem;
+}
+
+.mc-stats-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1rem;
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(51, 65, 85, 0.6);
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.mc-topic-card {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(51, 65, 85, 0.5);
+    border-radius: 0.625rem;
+    margin-bottom: 0.5rem;
+}
+.mc-topic-card summary { padding: 0.75rem 1rem; cursor: pointer; list-style: none; }
+.mc-topic-card summary::-webkit-details-marker { display: none; }
+
+.mc-ref-card {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(51, 65, 85, 0.5);
+    border-radius: 0.625rem;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+}
+.mc-ref-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.875rem 1rem;
+    cursor: pointer;
+    list-style: none;
+}
+.mc-ref-summary::-webkit-details-marker { display: none; }
+.mc-ref-name { font-weight: 600; color: #e2e8f0; font-size: 0.875rem; }
+.mc-ref-cat {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #f472b6;
+    background: rgba(244, 114, 182, 0.1);
+    padding: 0.15rem 0.5rem;
+    border-radius: 9999px;
+}
+.mc-ref-body { padding: 0 1rem 1rem; }
+.mc-ref-desc { font-size: 0.8125rem; color: #94a3b8; line-height: 1.5; }
+.mc-ref-points {
+    margin-top: 0.5rem;
+    padding-left: 1.25rem;
+    font-size: 0.8125rem;
+    color: #cbd5e1;
+}
+.mc-ref-points li { margin-bottom: 0.25rem; }
+
+.mc-callout-action,
+.mc-callout-example {
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.8125rem;
+}
+.mc-callout-action {
+    background: rgba(244, 114, 182, 0.08);
+    border: 1px solid rgba(244, 114, 182, 0.2);
+    color: #fbcfe8;
+}
+.mc-clinical-why {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.mc-flag-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0.75rem;
+}
+.mc-flag-card {
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(51, 65, 85, 0.5);
+    border-left: 3px solid #f472b6;
+    border-radius: 0.625rem;
+    padding: 0.875rem;
+}
+.mc-flag-card.mc-cat-maternal { border-left-color: #f472b6; }
+.mc-flag-card.mc-cat-intrapartum { border-left-color: #fb7185; }
+.mc-flag-card.mc-cat-newborn { border-left-color: #fda4af; }
+.mc-flag-card.mc-cat-pediatrics { border-left-color: #e879f9; }
+.mc-flag-card.mc-cat-antepartum { border-left-color: #f9a8d4; }
+.mc-flag-priority {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #f87171;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+}
+.mc-flag-finding { font-size: 0.875rem; color: #e2e8f0; font-weight: 500; margin-bottom: 0.5rem; }
+.mc-flag-action { font-size: 0.8125rem; color: #94a3b8; }
+.mc-flag-escalation {
+    font-size: 0.75rem;
+    color: #f472b6;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(51, 65, 85, 0.4);
+}
+
+.mc-drill-card .mc-drill-finding {
+    font-size: 0.9375rem;
+    color: #e2e8f0;
+    line-height: 1.5;
+}
+
+/* Flashcards */
+.mc-flashcard {
+    min-height: 200px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+.mc-flashcard-inner {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    transition: transform 0.4s;
+    transform-style: preserve-3d;
+}
+.mc-flashcard.flipped .mc-flashcard-inner { transform: rotateY(180deg); }
+.mc-flashcard-front,
+.mc-flashcard-back {
+    position: absolute;
+    width: 100%;
+    min-height: 200px;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    text-align: center;
+}
+.mc-flashcard-front {
+    background: rgba(244, 114, 182, 0.08);
+    border: 1px solid rgba(244, 114, 182, 0.25);
+}
+.mc-flashcard-back {
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(51, 65, 85, 0.6);
+    transform: rotateY(180deg);
+}
+.mc-fc-dots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    justify-content: center;
+    margin-top: 0.75rem;
+}
+.mc-fc-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #334155;
+}
+.mc-fc-dot.active { background: #f472b6; }
+.mc-fc-dot.known { background: #34d399; }
+.mc-fc-dot.review { background: #fbbf24; }

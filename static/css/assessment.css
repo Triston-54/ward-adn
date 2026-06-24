@@ -1,0 +1,975 @@
+/* Health Assessment module — purple accent study UI */
+
+.ha-module-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.ha-progress-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.875rem 1rem;
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(51, 65, 85, 0.6);
+    border-radius: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+.ha-progress-strip .progress-bar { flex: 1; min-width: 120px; height: 6px; }
+
+.ha-tabs {
+    display: flex;
+    gap: 0.25rem;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid #1e293b;
+    margin-bottom: 1.25rem;
+    -webkit-overflow-scrolling: touch;
+}
+
+.ha-tab-btn.active {
+    border-color: #a78bfa !important;
+    color: #a78bfa !important;
+    background: rgba(167, 139, 250, 0.12) !important;
+}
+
+.ha-panel { animation: haFadeIn 0.2s ease; }
+@keyframes haFadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+.ha-safety-callout {
+    padding: 1rem 1.25rem;
+    background: rgba(167, 139, 250, 0.08);
+    border: 1px solid rgba(167, 139, 250, 0.25);
+    border-left: 4px solid #a78bfa;
+    border-radius: 0.625rem;
+}
+.ha-safety-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #a78bfa;
+    margin-bottom: 0.375rem;
+}
+
+.ha-red-callout {
+    border-left-color: #f87171 !important;
+    background: rgba(248, 113, 113, 0.06) !important;
+}
+
+/* Head-to-toe sequence */
+.ha-sequence-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.ha-sequence-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid #334155;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    transition: border-color 0.15s, background 0.15s;
+}
+.ha-sequence-step:hover { border-color: rgba(167, 139, 250, 0.5); }
+.ha-sequence-step.active {
+    border-color: #a78bfa;
+    background: rgba(167, 139, 250, 0.1);
+}
+.ha-step-num {
+    flex-shrink: 0;
+    width: 1.75rem;
+    height: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 9999px;
+    background: rgba(167, 139, 250, 0.2);
+    color: #a78bfa;
+}
+.ha-step-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+.ha-step-desc {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-top: 0.125rem;
+}
+
+.ha-step-detail-card {
+    padding: 1rem;
+    background: rgba(167, 139, 250, 0.06);
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    border-radius: 0.625rem;
+}
+.ha-step-detail-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #c4b5fd;
+    margin-bottom: 0.5rem;
+}
+.ha-rationale {
+    font-size: 0.8125rem;
+    color: #94a3b8;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #334155;
+}
+
+/* Vitals table */
+.ha-vitals-row {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+    font-size: 0.75rem;
+}
+.ha-vitals-row:last-child { border-bottom: none; }
+.ha-vitals-param { font-weight: 600; color: #c4b5fd; }
+.ha-vitals-normal { color: #cbd5e1; }
+.ha-vitals-notes { color: #64748b; font-size: 0.6875rem; margin-top: 0.125rem; }
+
+/* Body systems grid */
+.ha-system-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.75rem;
+}
+.ha-system-card {
+    padding: 1rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid #334155;
+    border-radius: 0.625rem;
+    cursor: pointer;
+    text-align: left;
+    transition: border-color 0.15s, background 0.15s;
+}
+.ha-system-card:hover { border-color: rgba(167, 139, 250, 0.5); }
+.ha-system-card.selected {
+    border-color: #a78bfa;
+    background: rgba(167, 139, 250, 0.1);
+}
+.ha-system-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+.ha-system-meta {
+    font-size: 0.6875rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+}
+
+.ha-findings-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+@media (max-width: 640px) {
+    .ha-findings-grid { grid-template-columns: 1fr; }
+}
+.ha-findings-col h4 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.5rem;
+}
+.ha-findings-col.normal h4 { color: #34d399; }
+.ha-findings-col.abnormal h4 { color: #fbbf24; }
+.ha-findings-col.red h4 { color: #f87171; }
+.ha-findings-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.ha-findings-col li {
+    font-size: 0.8125rem;
+    color: #94a3b8;
+    padding: 0.375rem 0;
+    padding-left: 1rem;
+    position: relative;
+}
+.ha-findings-col li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #475569;
+}
+
+.ha-clinical-reasoning {
+    margin-top: 1rem;
+    padding: 0.875rem;
+    background: rgba(56, 189, 248, 0.06);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 0.5rem;
+    font-size: 0.8125rem;
+    color: #94a3b8;
+}
+.ha-clinical-reasoning strong { color: #38bdf8; }
+
+/* Red flags */
+.ha-red-flags-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+.ha-red-flag-card {
+    padding: 1rem 1.25rem;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid #334155;
+    border-left: 4px solid #f87171;
+    border-radius: 0.625rem;
+}
+.ha-red-flag-finding {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #fca5a5;
+    margin-bottom: 0.375rem;
+}
+.ha-red-flag-action {
+    font-size: 0.8125rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+}
+.ha-red-flag-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.625rem;
+}
+.ha-priority-badge {
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border-radius: 9999px;
+    background: rgba(248, 113, 113, 0.15);
+    border: 1px solid rgba(248, 113, 113, 0.35);
+    color: #f87171;
+}
+.ha-system-badge {
+    font-size: 0.625rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 9999px;
+    background: rgba(167, 139, 250, 0.12);
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    color: #a78bfa;
+}
+
+/* Skills */
+.ha-learn-subtabs .ha-learn-subtab.active {
+    background: rgba(167, 139, 250, 0.15);
+    border-color: #a78bfa;
+    color: #a78bfa;
+}
+
+.ha-skill-card {
+    padding: 1rem 1.25rem;
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid #334155;
+    border-top: 3px solid #a78bfa;
+    border-radius: 0.625rem;
+    margin-bottom: 0.75rem;
+}
+.ha-skill-title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #c4b5fd;
+    margin-bottom: 0.375rem;
+}
+.ha-skill-content {
+    font-size: 0.8125rem;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+.ha-skill-tip {
+    font-size: 0.75rem;
+    color: #a78bfa;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.ha-pqrst-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+.ha-pqrst-card {
+    padding: 0.875rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid #334155;
+    border-radius: 0.5rem;
+}
+.ha-pqrst-letter {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #a78bfa;
+    font-family: 'JetBrains Mono', monospace;
+}
+.ha-pqrst-element {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin-top: 0.25rem;
+}
+
+.ha-mode-pill.active {
+    background: rgba(167, 139, 250, 0.15) !important;
+    border-color: #a78bfa !important;
+    color: #a78bfa !important;
+}
+
+/* Practice options — purple hover */
+.ha-panel .practice-option:hover:not(:disabled) {
+    border-color: #a78bfa;
+}
+
+.stat-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.6875rem;
+    padding: 0.25rem 0.625rem;
+    border-radius: 9999px;
+    background: #1e293b;
+    color: #94a3b8;
+}
+
+.ha-interview-card {
+    padding: 1rem;
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid #334155;
+    border-radius: 0.625rem;
+    margin-bottom: 0.75rem;
+}
+.ha-interview-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #c4b5fd;
+}
+.ha-interview-example {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-style: italic;
+    margin-top: 0.375rem;
+    padding-left: 0.75rem;
+    border-left: 2px solid #a78bfa;
+}
+
+/* Red Flag Triage Drill */
+.ha-red-flag-drill-card .ha-red-flag-drill-finding {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fca5a5;
+    line-height: 1.45;
+}
+.ha-red-flag-drill-meta {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+.ha-escalation-path {
+    padding: 0.625rem 0.75rem;
+    background: rgba(248, 113, 113, 0.08);
+    border: 1px solid rgba(248, 113, 113, 0.2);
+    border-radius: 0.5rem;
+}
+
+/* Scenarios (Assess Next) */
+.ha-panel .scenario-card {
+    padding: 1rem 1.25rem;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid #334155;
+    border-radius: 0.625rem;
+}
+.ha-panel .scenario-title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #c4b5fd;
+    margin-bottom: 0.5rem;
+}
+.ha-panel .scenario-setup {
+    font-size: 0.8125rem;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+.ha-findings-so-far {
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    background: rgba(167, 139, 250, 0.06);
+    border: 1px solid rgba(167, 139, 250, 0.15);
+    border-radius: 0.5rem;
+}
+.ha-findings-so-far ul {
+    list-style: disc;
+    padding-left: 1.25rem;
+    margin: 0;
+}
+
+/* Checklists */
+.ha-checklist-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.ha-checklist-card {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid #334155;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+}
+.ha-checklist-card:hover { border-color: rgba(167, 139, 250, 0.5); }
+.ha-checklist-card.active {
+    border-color: #a78bfa;
+    background: rgba(167, 139, 250, 0.1);
+}
+.ha-checklist-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+.ha-checklist-meta {
+    font-size: 0.6875rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+}
+.ha-checklist-progress {
+    height: 3px;
+    background: #1e293b;
+    border-radius: 9999px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+.ha-checklist-progress-fill {
+    height: 100%;
+    background: #a78bfa;
+    border-radius: 9999px;
+    transition: width 0.2s ease;
+}
+.ha-checklist-counter {
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: #a78bfa;
+    padding: 0.25rem 0.625rem;
+    background: rgba(167, 139, 250, 0.12);
+    border-radius: 9999px;
+}
+.ha-checklist-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.ha-checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid #334155;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+}
+.ha-checklist-item:hover { border-color: rgba(167, 139, 250, 0.4); }
+.ha-checklist-item.checked {
+    border-color: rgba(52, 211, 153, 0.4);
+    background: rgba(52, 211, 153, 0.06);
+}
+.ha-checklist-item input[type="checkbox"] {
+    margin-top: 0.2rem;
+    accent-color: #a78bfa;
+    flex-shrink: 0;
+}
+.ha-checklist-item-text {
+    font-size: 0.8125rem;
+    color: #e2e8f0;
+}
+.ha-checklist-item.checked .ha-checklist-item-text {
+    text-decoration: line-through;
+    color: #64748b;
+}
+.ha-checklist-item-note {
+    font-size: 0.6875rem;
+    color: #a78bfa;
+    margin-top: 0.25rem;
+    font-style: italic;
+}
+.ha-checklist-complete {
+    padding: 0.75rem 1rem;
+    background: rgba(52, 211, 153, 0.08);
+    border: 1px solid rgba(52, 211, 153, 0.25);
+    border-radius: 0.5rem;
+}
+
+/* SOAP documentation */
+.ha-soap-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.ha-soap-card {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid #334155;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: border-color 0.15s;
+}
+.ha-soap-card:hover { border-color: rgba(167, 139, 250, 0.5); }
+.ha-soap-card.active {
+    border-color: #a78bfa;
+    background: rgba(167, 139, 250, 0.1);
+}
+.ha-soap-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+.ha-soap-preview {
+    font-size: 0.6875rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+}
+.ha-soap-findings {
+    padding: 0.875rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid #334155;
+    border-radius: 0.5rem;
+}
+.ha-soap-finding {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 0.5rem;
+    padding: 0.375rem 0;
+    border-bottom: 1px solid rgba(51, 65, 85, 0.4);
+    font-size: 0.75rem;
+}
+.ha-soap-finding:last-child { border-bottom: none; }
+.ha-soap-finding-label {
+    font-weight: 600;
+    color: #a78bfa;
+    text-transform: capitalize;
+}
+.ha-soap-finding-value { color: #cbd5e1; }
+.ha-soap-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+.ha-soap-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #a78bfa;
+    margin-bottom: 0.375rem;
+    font-family: 'JetBrains Mono', monospace;
+}
+.ha-soap-textarea {
+    width: 100%;
+    padding: 0.625rem 0.875rem;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid #334155;
+    border-radius: 0.5rem;
+    color: #e2e8f0;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    resize: vertical;
+}
+.ha-soap-textarea:focus {
+    outline: none;
+    border-color: #a78bfa;
+    box-shadow: 0 0 0 2px rgba(167, 139, 250, 0.15);
+}
+.ha-soap-model-card {
+    padding: 1rem 1.25rem;
+    background: rgba(52, 211, 153, 0.06);
+    border: 1px solid rgba(52, 211, 153, 0.25);
+    border-radius: 0.625rem;
+}
+.ha-soap-model-section {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+.ha-soap-model-letter {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    color: #34d399;
+    background: rgba(52, 211, 153, 0.15);
+    border-radius: 0.25rem;
+}
+.ha-soap-model-text {
+    font-size: 0.8125rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+}
+.ha-soap-tips ul {
+    list-style: disc;
+    padding-left: 1.25rem;
+    margin: 0;
+}
+
+/* Special populations */
+.ha-pop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.75rem;
+}
+.ha-pop-card {
+    padding: 1rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid #334155;
+    border-radius: 0.625rem;
+    cursor: pointer;
+    text-align: left;
+    transition: border-color 0.15s, background 0.15s;
+}
+.ha-pop-card:hover { border-color: rgba(167, 139, 250, 0.5); }
+.ha-pop-card.active {
+    border-color: #a78bfa;
+    background: rgba(167, 139, 250, 0.1);
+}
+.ha-pop-name {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+.ha-pop-age {
+    font-size: 0.6875rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+}
+.ha-nva-table-wrap { overflow-x: auto; }
+.ha-nva-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.75rem;
+}
+.ha-nva-table th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    background: rgba(167, 139, 250, 0.1);
+    color: #a78bfa;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.625rem;
+    letter-spacing: 0.04em;
+}
+.ha-nva-table td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+    vertical-align: top;
+}
+.ha-nva-finding { font-weight: 600; color: #e2e8f0; }
+.ha-nva-normal { color: #34d399; }
+.ha-nva-abnormal { color: #fbbf24; }
+
+/* Documentation tab — SOAP feedback + SBAR */
+.ha-doc-pane.hidden { display: none; }
+.ha-doc-feedback-card {
+    padding: 1rem 1.25rem;
+    border-radius: 0.625rem;
+    border: 1px solid #334155;
+    background: rgba(15, 23, 42, 0.6);
+}
+.ha-doc-feedback-card.passed {
+    border-color: rgba(52, 211, 153, 0.35);
+    background: rgba(52, 211, 153, 0.05);
+}
+.ha-doc-feedback-card.needs-work {
+    border-color: rgba(251, 191, 36, 0.35);
+    background: rgba(251, 191, 36, 0.04);
+}
+.ha-doc-overall-score {
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+}
+.ha-doc-score-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.ha-doc-score-row {
+    display: grid;
+    grid-template-columns: 90px 1fr 48px;
+    align-items: center;
+    gap: 0.5rem;
+}
+.ha-doc-score-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: capitalize;
+}
+.ha-doc-score-bar-wrap {
+    height: 6px;
+    background: rgba(51, 65, 85, 0.6);
+    border-radius: 3px;
+    overflow: hidden;
+}
+.ha-doc-score-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #a78bfa, #34d399);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+.ha-doc-score-value {
+    font-size: 0.75rem;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    text-align: right;
+}
+
+/* SBAR handoff */
+.ha-sbar-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.ha-sbar-card {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid #334155;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: border-color 0.15s;
+}
+.ha-sbar-card:hover { border-color: rgba(167, 139, 250, 0.5); }
+.ha-sbar-card.active {
+    border-color: #a78bfa;
+    background: rgba(167, 139, 250, 0.1);
+}
+.ha-sbar-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+.ha-sbar-preview {
+    font-size: 0.6875rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+}
+.ha-sbar-context {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.875rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid #334155;
+    border-radius: 0.5rem;
+}
+.ha-sbar-context-block {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+}
+.ha-sbar-letter {
+    flex-shrink: 0;
+    width: 1.75rem;
+    height: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    color: #a78bfa;
+    background: rgba(167, 139, 250, 0.15);
+    border-radius: 0.375rem;
+}
+.ha-sbar-context-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    color: #a78bfa;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 0.25rem;
+}
+.ha-sbar-model-card {
+    padding: 1rem 1.25rem;
+    background: rgba(52, 211, 153, 0.06);
+    border: 1px solid rgba(52, 211, 153, 0.25);
+    border-radius: 0.625rem;
+}
+.ha-sbar-model-section {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+.ha-sbar-model-section:last-child { margin-bottom: 0; }
+.ha-sbar-model-text {
+    font-size: 0.8125rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+}
+
+/* Flashcards — mirrors microbiology deck UX with purple accent */
+.ha-flashcard-stage {
+    min-height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ha-flashcard-inner {
+    width: 100%;
+    min-height: 240px;
+    padding: 1.5rem;
+    background: rgba(15, 23, 42, 0.8);
+    border: 2px solid #334155;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+}
+.ha-flashcard-inner:hover {
+    border-color: rgba(167, 139, 250, 0.5);
+    box-shadow: 0 4px 20px rgba(167, 139, 250, 0.08);
+}
+.ha-flashcard-inner.flipped {
+    border-color: #a78bfa;
+    background: rgba(167, 139, 250, 0.06);
+}
+.ha-flashcard-inner:focus-visible {
+    outline: 2px solid #a78bfa;
+    outline-offset: 2px;
+}
+.ha-flashcard-front {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #f1f5f9;
+    line-height: 1.4;
+}
+.ha-fc-face { width: 100%; }
+.ha-fc-back { text-align: left; }
+.ha-fc-field { margin-top: 0.625rem; }
+.ha-fc-label {
+    display: block;
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #a78bfa;
+    margin-bottom: 0.125rem;
+}
+.ha-fc-badge {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    padding: 0.25rem 0.625rem;
+    border-radius: 9999px;
+    background: rgba(167, 139, 250, 0.15);
+    color: #a78bfa;
+}
+.ha-fc-badge.red-flag {
+    background: rgba(248, 113, 113, 0.15);
+    color: #f87171;
+}
+.ha-fc-dots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.375rem;
+    margin: 0.75rem auto 0;
+    max-width: 20rem;
+}
+.ha-fc-dot {
+    width: 0.625rem;
+    height: 0.625rem;
+    padding: 0;
+    border: none;
+    border-radius: 9999px;
+    background: #334155;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.15s;
+}
+.ha-fc-dot:hover { transform: scale(1.15); }
+.ha-fc-dot.active { background: #a78bfa; transform: scale(1.2); }
+.ha-fc-complete {
+    padding: 1rem;
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid #334155;
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+}
+.ha-fc-rating {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    max-width: 32rem;
+    margin: 1rem auto 0;
+}
+.ha-fc-rate {
+    padding: 0.75rem 0.5rem;
+    min-height: 2.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    border: 1px solid;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+.ha-fc-rate:disabled { opacity: 0.35; cursor: not-allowed; }
+.ha-fc-rate.review {
+    color: #fbbf24;
+    border-color: rgba(251, 191, 36, 0.35);
+    background: rgba(251, 191, 36, 0.08);
+}
+.ha-fc-rate.know {
+    color: #a78bfa;
+    border-color: rgba(167, 139, 250, 0.35);
+    background: rgba(167, 139, 250, 0.08);
+}
+
+/* Export tab — purple accent to match module theme */
+#tab-export .export-card-accent {
+    border-color: rgba(167, 139, 250, 0.35);
+    background: rgba(167, 139, 250, 0.06);
+}
+#tab-export .export-card-accent:hover {
+    border-color: #a78bfa;
+    background: rgba(167, 139, 250, 0.12);
+}
+#tab-export .export-card:hover {
+    border-color: #a78bfa;
+}

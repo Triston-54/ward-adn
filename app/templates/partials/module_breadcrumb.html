@@ -1,0 +1,14 @@
+{# Shared breadcrumb for nursing & pharmacy module pages #}
+{% macro module_breadcrumb(current, parent_url='/', parent_label='Dashboard', badge=None) %}
+<nav class="module-breadcrumb" aria-label="Breadcrumb">
+    <a href="{{ parent_url }}" class="module-breadcrumb-link">
+        <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        {{ parent_label }}
+    </a>
+    <span class="module-breadcrumb-sep" aria-hidden="true">/</span>
+    <span class="module-breadcrumb-current" aria-current="page">{{ current }}</span>
+    {% if badge %}
+    <span class="badge badge-{{ badge }}">{% if badge == 'mvp' %}MVP{% elif badge == 'new' %}New{% else %}{{ badge | capitalize }}{% endif %}</span>
+    {% endif %}
+</nav>
+{% endmacro %}

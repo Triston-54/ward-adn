@@ -1,0 +1,122 @@
+{
+  "agent": "Maternal-Child Full Content Audit \u2014 2026-06",
+  "verified_date": "2026-06",
+  "catalog_items_reviewed": 115,
+  "verified": 115,
+  "flagged": 0,
+  "content_counts": {
+    "pregnancy_stages": 9,
+    "labor_delivery": 8,
+    "postpartum_newborn": 9,
+    "pediatric_essentials": 8,
+    "safety_red_flags": 15,
+    "complications_drill": 13,
+    "flashcards": 32,
+    "practice_questions": 21
+  },
+  "breakdown_by_section": {
+    "antepartum": {
+      "total": 9,
+      "verified": 9,
+      "flagged": 0
+    },
+    "intrapartum": {
+      "total": 8,
+      "verified": 8,
+      "flagged": 0
+    },
+    "newborn": {
+      "total": 6,
+      "verified": 6,
+      "flagged": 0
+    },
+    "postpartum": {
+      "total": 3,
+      "verified": 3,
+      "flagged": 0
+    },
+    "pediatrics": {
+      "total": 8,
+      "verified": 8,
+      "flagged": 0
+    },
+    "safety": {
+      "total": 15,
+      "verified": 15,
+      "flagged": 0
+    },
+    "scenarios": {
+      "total": 13,
+      "verified": 13,
+      "flagged": 0
+    },
+    "practice": {
+      "total": 21,
+      "verified": 21,
+      "flagged": 0
+    },
+    "flashcards": {
+      "total": 32,
+      "verified": 32,
+      "flagged": 0
+    }
+  },
+  "content_fixes_applied": [
+    {
+      "item": "redflag:rf-preeclampsia",
+      "fix": "Updated criteria to proteinuria OR systemic symptoms; added HELLP assessment to action/escalation."
+    },
+    {
+      "item": "redflag:rf-postpartum-psychosis",
+      "fix": "Corrected onset timing from 'within first year' to days\u20134 weeks postpartum (psychiatric emergency)."
+    },
+    {
+      "item": "redflag:rf-cord-prolapse",
+      "fix": "Preferred knee-chest/exaggerated Sims over Trendelenburg in pregnancy for cord prolapse."
+    },
+    {
+      "item": "topic:tri3-milestones",
+      "fix": "Specified betamethasone window 24\u201334 weeks (ACOG-aligned)."
+    },
+    {
+      "item": "topic:stage-1-labor",
+      "fix": "Clarified transition as final intense phase ~8\u201310 cm within active stage."
+    },
+    {
+      "item": "topic:fhr-decelerations",
+      "fix": "Strengthened late decel definition: gradual onset, nadir after contraction peak."
+    },
+    {
+      "item": "drill:mc-drill-12",
+      "fix": "Separated HELLP lab findings from hallucination symptom in explanation."
+    },
+    {
+      "item": "drill:mc-drill-08",
+      "fix": "Tightened neonatal fever explanation to \u226428-day NCLEX priority with 60-day protocol note."
+    },
+    {
+      "item": "practice:mc-q07",
+      "fix": "Aligned neonatal fever explanation with \u226428-day mandatory workup standard."
+    },
+    {
+      "item": "flashcard:mc-fc-08",
+      "fix": "Expanded to Preeclampsia/HELLP criteria with HELLP mnemonic."
+    }
+  ],
+  "flagged_items": [],
+  "focus_areas_reviewed": [
+    "HELLP syndrome (preeclampsia red flag, drill-12, flashcard mc-fc-08)",
+    "Shoulder dystocia (stage-2, red flag, drill-11, flashcard mc-fc-32)",
+    "Postpartum psychosis (red flag timing correction)",
+    "Late decelerations (FHR topic, drills 03/13, practice mc-q01, flashcard mc-fc-10)",
+    "Safety red flags and escalation scenarios",
+    "NCLEX-style practice questions (21 items)"
+  ],
+  "errors": [],
+  "module_audit_summary": {
+    "verified": 115,
+    "needs_review": 0,
+    "unreviewed": 0,
+    "total": 115
+  }
+}

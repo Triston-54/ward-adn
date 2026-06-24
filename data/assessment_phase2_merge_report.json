@@ -1,0 +1,74 @@
+{
+  "merged_counts": {
+    "assessment_checklists": 5,
+    "red_flags_master": 10,
+    "special_populations": 3,
+    "skills": 7,
+    "practice_questions": 20,
+    "assess_next_scenarios": 8,
+    "soap_exercises": 5
+  },
+  "live_summary": {
+    "sequence_steps": 10,
+    "body_systems": 9,
+    "red_flags": 20,
+    "skills": 12,
+    "practice_total": 40,
+    "interview_techniques": 4,
+    "special_populations": 6,
+    "checklists": 8,
+    "soap_exercises": 10,
+    "assess_next_scenarios": 16,
+    "items_total": 55
+  },
+  "items_total": 131,
+  "audit": {
+    "verified": 69,
+    "skipped": 62,
+    "errors": [],
+    "assessment_audit": {
+      "verified": 131,
+      "needs_review": 0,
+      "unreviewed": 0,
+      "total": 131
+    },
+    "total_audit": {
+      "total": 427,
+      "verified": 427,
+      "needs_review": 0,
+      "unreviewed": 0,
+      "by_module": {
+        "terminology": {
+          "verified": 220,
+          "needs_review": 0,
+          "unreviewed": 0,
+          "total": 220
+        },
+        "microbiology": {
+          "verified": 47,
+          "needs_review": 0,
+          "unreviewed": 0,
+          "total": 47
+        },
+        "dosage": {
+          "verified": 29,
+          "needs_review": 0,
+          "unreviewed": 0,
+          "total": 29
+        },
+        "assessment": {
+          "verified": 131,
+          "needs_review": 0,
+          "unreviewed": 0,
+          "total": 131
+        }
+      },
+      "modules": {
+        "terminology": "Medical Terminology",
+        "microbiology": "Microbiology",
+        "dosage": "NURS 145 \u2014 Dosage",
+        "assessment": "NURS 146 \u2014 Health Assessment"
+      }
+    }
+  }
+}

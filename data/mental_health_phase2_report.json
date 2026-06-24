@@ -1,0 +1,179 @@
+{
+  "agent": "Mental Health Phase 2 Expansion — Sub-Agent 5 — 2026-06",
+  "module_id": "mental_health",
+  "phase": 2,
+  "status": "in_progress",
+  "previous_total": 29,
+  "new_total": 55,
+  "items_added": 26,
+  "section_counts": {
+    "therapeutic_communication": 8,
+    "communication_barriers": 4,
+    "communication_scenarios": 2,
+    "safety_risk_flags": 8,
+    "screening_tools": 4,
+    "safety_drill": 9,
+    "disorders": 6,
+    "de_escalation": 6,
+    "practice_questions": 8
+  },
+  "phase2_deliverables": {
+    "common_disorders": {
+      "required_minimum": 6,
+      "delivered": 6,
+      "ids": [
+        "major-depressive-disorder",
+        "bipolar-disorder",
+        "generalized-anxiety-disorder",
+        "ptsd",
+        "schizophrenia-spectrum",
+        "eating-disorders-overview"
+      ]
+    },
+    "de_escalation": {
+      "required_minimum": 4,
+      "delivered": 6,
+      "techniques": 4,
+      "scenarios": 2,
+      "ids": [
+        "calm-voice-safe-distance",
+        "offer-choices-control",
+        "environmental-modification",
+        "least-restrictive-principle",
+        "deesc-scenario-01",
+        "deesc-scenario-02"
+      ]
+    },
+    "nclex_practice_questions": {
+      "required_minimum": 8,
+      "delivered": 8,
+      "ids": [
+        "mh-q01",
+        "mh-q02",
+        "mh-q03",
+        "mh-q04",
+        "mh-q05",
+        "mh-q06",
+        "mh-q07",
+        "mh-q08"
+      ]
+    },
+    "safety_drill_expansion": {
+      "required_minimum": 4,
+      "delivered": 4,
+      "previous_count": 5,
+      "new_count": 9,
+      "new_ids": [
+        "mh-drill-06",
+        "mh-drill-07",
+        "mh-drill-08",
+        "mh-drill-09"
+      ]
+    },
+    "therapeutic_communication_scenarios": {
+      "required_minimum": 2,
+      "delivered": 2,
+      "ids": [
+        "comm-scenario-01",
+        "comm-scenario-02"
+      ]
+    }
+  },
+  "manifest_updates": {
+    "version": "0.2",
+    "status": "phase2",
+    "tabs_implemented": 5,
+    "tabs_total": 6,
+    "topics_implemented": [
+      "therapeutic-communication",
+      "safety-risk",
+      "common-disorders",
+      "de-escalation",
+      "practice"
+    ],
+    "topics_planned": [
+      "psychopharmacology"
+    ],
+    "build_phases": {
+      "phase_1": "completed",
+      "phase_2": "in_progress",
+      "phase_3": "planned"
+    },
+    "new_content_inventory_key": "communication_scenarios"
+  },
+  "service_changes": {
+    "file": "app/services/mental_health_service.py",
+    "ITEMS_TOTAL": "computed dynamically from all content sections (55)",
+    "new_getters": [
+      "get_communication_scenarios",
+      "get_disorders",
+      "get_de_escalation",
+      "get_de_escalation_techniques",
+      "get_de_escalation_scenarios",
+      "get_practice_questions"
+    ],
+    "new_checkers": [
+      "check_communication_scenario_answer",
+      "check_de_escalation_scenario_answer"
+    ],
+    "summary_keys_added": [
+      "communication_scenario_count",
+      "disorder_count",
+      "de_escalation_count",
+      "practice_count"
+    ]
+  },
+  "router_changes": {
+    "file": "app/routers/mental_health.py",
+    "new_endpoints": [
+      "GET /api/mental-health/communication-scenarios",
+      "POST /api/mental-health/communication-scenarios/check",
+      "GET /api/mental-health/disorders",
+      "GET /api/mental-health/de-escalation",
+      "POST /api/mental-health/de-escalation/check",
+      "GET /api/mental-health/practice"
+    ]
+  },
+  "audit_catalog": {
+    "previous_count": 29,
+    "new_count": 55,
+    "new_item_prefixes": [
+      "scenario:",
+      "disorder:",
+      "deesc:",
+      "practice:"
+    ],
+    "file_updated": "app/services/audit_service.py"
+  },
+  "progress_service": {
+    "mental_health_total": 55
+  },
+  "build_status_sections": {
+    "de_escalation": { "current": 6, "target": 6, "complete_pct": 100 },
+    "disorders": { "current": 6, "target": 8, "complete_pct": 75 },
+    "practice_questions": { "current": 8, "target": 15, "complete_pct": 53 },
+    "safety_drill": { "current": 9, "target": 10, "complete_pct": 90 },
+    "communication_scenarios": { "current": 2, "target": 4, "complete_pct": 50 }
+  },
+  "remaining_phase2_phase3_work": [
+    "Psychopharmacology content (psych_medications) — 8 items planned",
+    "Additional NCLEX practice questions (7 more to reach target 15)",
+    "2 more communication scenarios (target 4)",
+    "1 more safety drill (target 10)",
+    "2 more disorders (target 8)",
+    "Flashcards (Phase 3)",
+    "Frontend tabs for disorders, de-escalation, and practice in mental_health.html"
+  ],
+  "module_summary": {
+    "communication_count": 8,
+    "barrier_count": 4,
+    "communication_scenario_count": 2,
+    "safety_flag_count": 8,
+    "screening_tool_count": 4,
+    "safety_drill_count": 9,
+    "disorder_count": 6,
+    "de_escalation_count": 6,
+    "practice_count": 8,
+    "items_total": 55
+  }
+}

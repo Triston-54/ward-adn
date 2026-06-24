@@ -1,0 +1,932 @@
+{
+  "module_id": "med_surg",
+  "title": "Medical-Surgical Nursing",
+  "core_concepts": [
+    {
+      "id": "nursing-process",
+      "title": "Nursing Process (ADPIE)",
+      "summary": "Assessment → Diagnosis → Planning → Implementation → Evaluation",
+      "content": "Systematic framework for patient-centered care used throughout med-surg practice.",
+      "clinical_relevance": "NCLEX tests each step — especially prioritization during implementation."
+    },
+    {
+      "id": "prioritization",
+      "title": "Prioritization Frameworks",
+      "summary": "ABCs, Maslow, acute vs chronic, unstable vs stable",
+      "content": "Use ABCs for emergencies. Maslow for psychosocial vs physiological conflicts.",
+      "clinical_relevance": "Most NCLEX med-surg questions test prioritization."
+    },
+    {
+      "id": "infection-control",
+      "title": "Infection Prevention & Control",
+      "summary": "Standard and transmission-based precautions",
+      "content": "Standard precautions for all. Contact for C. diff (soap and water). Airborne for TB.",
+      "clinical_relevance": "Know precaution types — C. diff is contact + soap/water."
+    },
+    {
+      "id": "fluid-electrolytes",
+      "title": "Fluid & Electrolyte Balance",
+      "summary": "Isotonic, hypotonic, hypertonic fluids and electrolyte disturbances",
+      "content": "Assess renal and cardiac status before aggressive replacement.",
+      "clinical_relevance": "Hypo/hyperkalemia ECG changes are high-yield NCLEX content."
+    },
+    {
+      "id": "pain-management",
+      "title": "Pain Assessment & Management",
+      "summary": "Multimodal analgesia with opioid safety",
+      "content": "Assess respiratory rate before additional opioid dosing.",
+      "clinical_relevance": "Respiratory depression assessment takes priority over pain score."
+    }
+  ],
+  "body_systems": [
+    {
+      "id": "cardiovascular",
+      "title": "Cardiovascular System",
+      "pathophysiology": "The cardiovascular system delivers oxygenated blood via the heart and vasculature. Heart failure occurs when the pump cannot meet metabolic demands — left-sided failure backs up into lungs (pulmonary edema, crackles, orthopnea); right-sided failure backs up systemically (JVD, peripheral edema, hepatomegaly). ACS results from plaque rupture and thrombus formation. Hypertension damages vessel endothelium. Dysrhythmias alter cardiac output through rate, rhythm, or conduction disturbances.",
+      "nursing_care": [
+        "Monitor vital signs, heart sounds, lung sounds, and daily weights",
+        "Assess pain using PQRST; administer nitroglycerin and morphine for ACS per protocol",
+        "Maintain IV access; prepare for cardiac catheterization when indicated",
+        "Position HF patients upright with legs dependent to reduce preload",
+        "Strict I&O; limit sodium and fluids per provider order",
+        "Educate on low-sodium diet, medication adherence, and daily weight monitoring"
+      ],
+      "safety": [
+        "Never give nitroglycerin if SBP < 90 mmHg or PDE-5 inhibitor within 24–48 hours",
+        "Continuous cardiac monitoring for dysrhythmias and electrolyte imbalances",
+        "Fall precautions with orthostatic hypotension from diuretics",
+        "Bleeding precautions with anticoagulants"
+      ],
+      "priority_actions": [
+        "Chest pain with diaphoresis and ST elevation → activate emergency response",
+        "Acute pulmonary edema → high Fowler position, O2, notify provider",
+        "Symptomatic bradycardia with hypotension → atropine per ACLS",
+        "New atrial fibrillation with rapid ventricular response → assess stability first"
+      ],
+      "key_conditions": [
+        "Heart failure",
+        "ACS/MI",
+        "Hypertension",
+        "Atrial fibrillation",
+        "PVD"
+      ]
+    },
+    {
+      "id": "respiratory",
+      "title": "Respiratory System",
+      "pathophysiology": "Gas exchange occurs at the alveolar-capillary membrane. COPD involves chronic inflammation and airflow limitation. Asthma is reversible bronchospasm. Pneumonia is alveolar consolidation. Pulmonary embolism obstructs pulmonary vasculature. ARDS is diffuse alveolar damage with refractory hypoxemia.",
+      "nursing_care": [
+        "Assess RR, effort, SpO2, lung sounds, and work of breathing",
+        "Position for maximum lung expansion — tripod for COPD, high Fowler for dyspnea",
+        "Administer bronchodilators and oxygen — target SpO2 88–92% in COPD",
+        "Encourage coughing, deep breathing, incentive spirometry post-operatively",
+        "Chest physiotherapy and suctioning for retained secretions",
+        "Monitor ABGs — avoid over-oxygenating chronic CO2 retainers"
+      ],
+      "safety": [
+        "High-flow O2 in COPD may suppress hypoxic drive",
+        "NPO before thoracentesis or bronchoscopy per protocol",
+        "Fall risk with sedating respiratory medications",
+        "Isolation precautions for TB and certain pneumonias"
+      ],
+      "priority_actions": [
+        "SpO2 < 90% with altered mental status → airway assessment first",
+        "Sudden pleuritic chest pain and tachycardia → suspect PE",
+        "Stridor or silent chest in asthma → impending respiratory failure",
+        "Pink frothy sputum → pulmonary edema"
+      ],
+      "key_conditions": [
+        "COPD",
+        "Asthma",
+        "Pneumonia",
+        "Pulmonary embolism",
+        "ARDS"
+      ]
+    },
+    {
+      "id": "neurological",
+      "title": "Neurological System",
+      "pathophysiology": "Neurological function depends on cerebral perfusion and intact neurons. Stroke causes focal deficits by vascular territory. Increased ICP reduces CPP (MAP − ICP). Seizures result from uncontrolled neuronal discharge. Parkinson involves dopamine depletion. MS is CNS demyelination.",
+      "nursing_care": [
+        "Serial neurologic assessments — GCS, pupils, motor strength, speech",
+        "HOB 30° for ICP management unless contraindicated",
+        "Stroke protocol: last known well time, glucose check, NPO for swallow eval",
+        "Seizure precautions — padded rails, suction and O2 at bedside",
+        "Assist with ADLs while promoting independence in Parkinson patients",
+        "Levodopa on schedule — never delay Parkinson medications"
+      ],
+      "safety": [
+        "NPO until swallow assessment after stroke",
+        "Avoid Valsalva and extreme neck flexion with elevated ICP",
+        "Fall precautions for altered mentation",
+        "Aspiration risk — upright positioning for meals"
+      ],
+      "priority_actions": [
+        "Sudden worst headache → suspect subarachnoid hemorrhage",
+        "Decreasing GCS or unequal pupils → notify provider immediately",
+        "Active seizure → protect head, time seizure, do not restrain",
+        "Cushing triad → herniation risk"
+      ],
+      "key_conditions": [
+        "Ischemic stroke",
+        "Hemorrhagic stroke",
+        "Seizures",
+        "Increased ICP",
+        "Parkinson"
+      ]
+    },
+    {
+      "id": "gastrointestinal",
+      "title": "Gastrointestinal System",
+      "pathophysiology": "The GI tract digests and absorbs nutrients. PUD involves mucosal erosion. IBD causes chronic inflammation. Bowel obstruction prevents luminal passage. Cirrhosis leads to portal hypertension, ascites, varices, and hepatic encephalopathy. Pancreatitis involves autodigestion by pancreatic enzymes.",
+      "nursing_care": [
+        "Assess bowel sounds, distension, pain, and last BM",
+        "NPO with NG decompression for obstruction or acute pancreatitis",
+        "Monitor for GI bleeding — hemoglobin, stool color, orthostatic vitals",
+        "Administer PPIs, antiemetics, and pain management per protocol",
+        "Lactulose for hepatic encephalopathy — goal 2–3 soft stools daily",
+        "Pre- and post-op ostomy teaching and stoma assessment"
+      ],
+      "safety": [
+        "NPO verification before procedures and surgery",
+        "Bleeding precautions with varices",
+        "Confirm NG tube placement with X-ray before feeding",
+        "Monitor magnesium with prolonged NG suctioning"
+      ],
+      "priority_actions": [
+        "Hematemesis or melena with hypotension → IV access, fluids, notify provider",
+        "Rigid abdomen with rebound tenderness → suspect perforation",
+        "Absent bowel sounds with distension → obstruction workup",
+        "Asterixis and confusion in cirrhosis → hepatic encephalopathy"
+      ],
+      "key_conditions": [
+        "PUD/GI bleed",
+        "Bowel obstruction",
+        "Cirrhosis",
+        "Pancreatitis",
+        "IBD"
+      ]
+    },
+    {
+      "id": "renal",
+      "title": "Renal & Genitourinary System",
+      "pathophysiology": "Kidneys regulate fluid, electrolytes, acid-base, and waste. AKI is prerenal, intrarenal, or postrenal. CKD progresses to ESRD requiring dialysis. Glomerulonephritis causes hematuria. UTI ascends from urethra. BPH obstructs urine outflow in older males.",
+      "nursing_care": [
+        "Monitor I&O, daily weights, BUN/creatinine, and electrolytes",
+        "Assess urine — report oliguria < 30 mL/hr",
+        "Fluid restriction or diuresis per renal function",
+        "Dialysis access care — thrill and bruit for AV fistula",
+        "Medication dose adjustments for renally excreted drugs",
+        "Minimize indwelling catheter duration"
+      ],
+      "safety": [
+        "Contrast dye nephrotoxicity — hydrate and monitor creatinine",
+        "Hyperkalemia cardiac precautions",
+        "No BP or venipuncture in dialysis fistula arm",
+        "Strict aseptic technique with urinary catheters"
+      ],
+      "priority_actions": [
+        "K+ > 6.0 with ECG changes → calcium gluconate, notify provider",
+        "Anuria or sudden severe flank pain → renal emergency",
+        "Fever with CVA tenderness → pyelonephritis workup",
+        "Dialysis disequilibrium → slow ultrafiltration"
+      ],
+      "key_conditions": [
+        "AKI",
+        "CKD/ESRD",
+        "UTI/Pyelonephritis",
+        "Glomerulonephritis",
+        "BPH"
+      ]
+    },
+    {
+      "id": "endocrine",
+      "title": "Endocrine System",
+      "pathophysiology": "Endocrine glands regulate metabolism and homeostasis. Type 1 DM is autoimmune beta-cell destruction. Type 2 involves insulin resistance. DKA is insulin deficiency with ketogenesis. HHNS is profound hyperglycemia without significant ketosis. Hypo/hyperthyroidism alter metabolic rate. Adrenal disorders affect cortisol balance.",
+      "nursing_care": [
+        "Blood glucose monitoring — hypoglycemia < 70 mg/dL treat immediately",
+        "Insulin per protocol — never mix without verification",
+        "DKA/HHNS: IV fluids, insulin infusion, hourly monitoring",
+        "Thyroid storm or myxedema coma — ICU-level monitoring",
+        "Never abruptly stop corticosteroids",
+        "Foot exams and neuropathy screening for diabetic patients"
+      ],
+      "safety": [
+        "Insulin name and dose double-check",
+        "Hypoglycemia: 15 g fast-acting carb, recheck in 15 minutes",
+        "Hold metformin before contrast per protocol",
+        "Sick-day rules education"
+      ],
+      "priority_actions": [
+        "Glucose < 54 with altered mental status → glucagon or IV dextrose",
+        "DKA: pH < 7.1 → insulin drip and potassium replacement",
+        "Thyroid storm → beta-blockers, antithyroid meds",
+        "Addisonian crisis → hydrocortisone IV"
+      ],
+      "key_conditions": [
+        "Type 1 & 2 DM",
+        "DKA",
+        "HHNS",
+        "Thyroid disorders",
+        "Adrenal disorders"
+      ]
+    },
+    {
+      "id": "musculoskeletal",
+      "title": "Musculoskeletal System",
+      "pathophysiology": "Provides structure, movement, and hematopoiesis. Osteoporosis reduces bone density. OA is degenerative; RA is autoimmune synovitis. Hip fractures carry high morbidity. Compartment syndrome compromises perfusion. SCI disrupts motor and sensory pathways below the lesion.",
+      "nursing_care": [
+        "Assess ROM, strength, pain, and neurovascular status (5 Ps)",
+        "Post-op orthopedic: early mobilization, DVT prophylaxis",
+        "Fall prevention — clear pathways, assistive devices",
+        "Cast care — neurovascular checks, keep dry",
+        "SCI: log-roll, skin integrity, autonomic dysreflexia monitoring",
+        "Verify weight-bearing restrictions before ambulation"
+      ],
+      "safety": [
+        "Compartment syndrome — pain out of proportion",
+        "Fat embolism after long bone fracture",
+        "Autonomic dysreflexia in SCI above T6",
+        "DVT prophylaxis — SCDs, anticoagulants, early ambulation"
+      ],
+      "priority_actions": [
+        "5 Ps abnormal after cast → bivalve cast, notify provider",
+        "SCI BP > 160 with headache → autonomic dysreflexia",
+        "Hip fracture post-op sudden SOB → suspect PE",
+        "Open fracture → sterile dressing, antibiotics"
+      ],
+      "key_conditions": [
+        "Osteoporosis/fractures",
+        "OA/RA",
+        "Hip fracture",
+        "Compartment syndrome",
+        "SCI"
+      ]
+    },
+    {
+      "id": "hematologic",
+      "title": "Hematologic & Immunologic System",
+      "pathophysiology": "Blood transports oxygen, provides immunity, and hemostasis. Anemia reduces oxygen-carrying capacity. Sickle cell causes vaso-occlusive crises. Leukemia is malignant WBC proliferation. Thrombocytopenia increases bleeding risk. DIC consumes clotting factors. HIV/AIDS compromises cell-mediated immunity.",
+      "nursing_care": [
+        "Monitor CBC trends, bleeding signs, and infection indicators",
+        "Neutropenic precautions when ANC < 500",
+        "Transfusion protocol — two-nurse verification",
+        "Bleeding precautions with low platelets",
+        "Sickle cell crisis: hydration, pain management, O2",
+        "Chemo safety — PPE, double-check doses"
+      ],
+      "safety": [
+        "Febrile transfusion reaction — stop transfusion",
+        "Reverse isolation for neutropenia",
+        "No aspirin with thrombocytopenia",
+        "Chemotherapy hazardous drug handling"
+      ],
+      "priority_actions": [
+        "ANC < 500 with fever → sepsis workup, antibiotics",
+        "Platelets < 10,000 or active bleeding → transfusion",
+        "Acute chest syndrome in sickle cell → O2, antibiotics",
+        "Anaphylaxis during transfusion → stop, epinephrine"
+      ],
+      "key_conditions": [
+        "Anemia",
+        "Sickle cell",
+        "Leukemia",
+        "Thrombocytopenia/DIC",
+        "HIV/AIDS"
+      ]
+    }
+  ],
+  "procedures": [
+    {
+      "id": "ng-tube",
+      "title": "Nasogastric Tube Insertion & Care",
+      "category": "GI",
+      "pre_procedure": [
+        "Verify order",
+        "Assess nasal patency",
+        "Explain and obtain consent"
+      ],
+      "intra_procedure": [
+        "Measure nose-earlobe-xiphoid",
+        "Confirm with X-ray before feeding",
+        "Secure tube"
+      ],
+      "post_procedure": [
+        "Irrigate per order",
+        "Oral care q2–4h",
+        "Monitor for aspiration"
+      ]
+    },
+    {
+      "id": "foley",
+      "title": "Urinary Catheter Insertion",
+      "category": "GU",
+      "pre_procedure": [
+        "Assess indication",
+        "Gather sterile kit",
+        "Position patient"
+      ],
+      "intra_procedure": [
+        "Sterile technique",
+        "Inflate balloon per manufacturer",
+        "Closed drainage"
+      ],
+      "post_procedure": [
+        "Daily meatal care",
+        "Remove ASAP to reduce CAUTI"
+      ]
+    },
+    {
+      "id": "central-line",
+      "title": "Central Venous Access Care",
+      "category": "Vascular",
+      "pre_procedure": [
+        "Verify line type and dressing date",
+        "Gather CHG supplies"
+      ],
+      "intra_procedure": [
+        "Scrub hub 15 seconds",
+        "Needleless connectors per policy"
+      ],
+      "post_procedure": [
+        "Assess site daily",
+        "CLABSI prevention bundle"
+      ]
+    },
+    {
+      "id": "trach-care",
+      "title": "Tracheostomy Care & Suctioning",
+      "category": "Respiratory",
+      "pre_procedure": [
+        "Gather sterile kit",
+        "Pre-oxygenate"
+      ],
+      "intra_procedure": [
+        "Suction ≤ 15 seconds",
+        "Sterile technique"
+      ],
+      "post_procedure": [
+        "Humidification",
+        "Emergency trach equipment at bedside"
+      ]
+    },
+    {
+      "id": "wound-vac",
+      "title": "Negative Pressure Wound Therapy",
+      "category": "Integumentary",
+      "pre_procedure": [
+        "Assess wound bed",
+        "Pain management"
+      ],
+      "intra_procedure": [
+        "Seal per manufacturer",
+        "Set pressure per order"
+      ],
+      "post_procedure": [
+        "Monitor seal and canister",
+        "Report bleeding in canister"
+      ]
+    },
+    {
+      "id": "post-op",
+      "title": "General Post-Operative Nursing Care",
+      "category": "Perioperative",
+      "pre_procedure": [
+        "Review surgical report and orders"
+      ],
+      "intra_procedure": [
+        "ABC assessment in PACU",
+        "Pain and surgical site assessment"
+      ],
+      "post_procedure": [
+        "Incentive spirometry",
+        "DVT prophylaxis",
+        "Monitor for complications"
+      ]
+    }
+  ],
+  "priority_drill": [
+    {
+      "id": "pd-1",
+      "scenario": "Post-op patient RR 8, SpO2 88%, difficult to arouse after IV morphine.",
+      "options": [
+        "Notify provider and prepare naloxone",
+        "Reposition and encourage deep breathing",
+        "Administer PRN acetaminophen",
+        "Document and recheck in 30 minutes"
+      ],
+      "correct_index": 0,
+      "rationale": "Opioid respiratory depression: RR <12, hypoxemia, sedation — naloxone per protocol, stimulate, airway support, reduce/stop opioid. Morphine peak effect may be delayed.",
+      "ncj_step": "Take Action",
+      "clinical_why": "Post-op opioid oversedation is preventable with sedation scales and capnography when available."
+    },
+    {
+      "id": "pd-2",
+      "scenario": "CHF patient with confusion, K+ 6.2, widened QRS on tele.",
+      "options": [
+        "Administer calcium gluconate IV",
+        "Give furosemide IV push",
+        "Encourage potassium-rich foods",
+        "Trendelenburg position"
+      ],
+      "correct_index": 0,
+      "rationale": "Hyperkalemia K⁺ 6.2 with widened QRS: calcium gluconate first for cardiac protection, then insulin/D50, kayexalate, dialysis if refractory. Furosemide alone insufficient acutely.",
+      "ncj_step": "Take Action",
+      "clinical_why": "CHF patient may be on ACEi/spironolactone worsening hyperkalemia — continuous monitoring essential."
+    },
+    {
+      "id": "pd-3",
+      "scenario": "Diabetic patient diaphoretic, tremulous, BG 48 mg/dL, awake.",
+      "options": [
+        "Give 15 g fast-acting carbohydrate",
+        "Administer 10 units regular insulin",
+        "Start D5W infusion",
+        "Obtain HbA1c first"
+      ],
+      "correct_index": 0,
+      "rationale": "Alert hypoglycemia BG 48: Rule of 15 — oral fast carbs, recheck 15 min. IV dextrose if NPO or altered; glucagon IM if no IV.",
+      "ncj_step": "Take Action",
+      "clinical_why": "Treating with insulin would be fatal — always verify glucose before insulin administration."
+    },
+    {
+      "id": "pd-4",
+      "scenario": "2 hours post-thyroidectomy: neck swelling, stridor, restlessness.",
+      "options": [
+        "Open surgical incision at bedside",
+        "Apply ice to neck",
+        "Administer PO acetaminophen",
+        "Place in prone position"
+      ],
+      "correct_index": 0,
+      "rationale": "Post-thyroidectomy neck swelling with stridor: expanding hematoma compressing airway — open incision at bedside to evacuate clot while calling for surgical airway support.",
+      "ncj_step": "Take Action",
+      "clinical_why": "Minutes to airway loss — this is one of few times nurse opens surgical wound at bedside."
+    },
+    {
+      "id": "pd-5",
+      "scenario": "Platelet count 18,000 with gum bleeding and blood in stool.",
+      "options": [
+        "Bleeding precautions and notify provider",
+        "Administer aspirin",
+        "Start heparin drip",
+        "Apply heat to joints"
+      ],
+      "correct_index": 0,
+      "rationale": "Platelets 18,000 with active bleeding: bleeding precautions (no IM, soft toothbrush), platelet transfusion per order, monitor for intracranial bleed. No aspirin or heparin.",
+      "ncj_step": "Prioritize Hypotheses",
+      "clinical_why": "Spontaneous bleeding risk increases below 20,000 — intracranial hemorrhage is life-threatening."
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "Priority action for Cardiovascular System emergency?",
+      "back": "Chest pain with diaphoresis and ST elevation → activate emergency response",
+      "category": "Cardiovascular System",
+      "clinical_why": "Left-sided failure causes pulmonary edema — crackles and hypoxemia precede cardiogenic shock."
+    },
+    {
+      "front": "Key safety concern in Cardiovascular System?",
+      "back": "Never give nitroglycerin if SBP < 90 mmHg or PDE-5 inhibitor within 24–48 hours",
+      "category": "Cardiovascular System",
+      "clinical_why": "Nitroglycerin vasodilation in hypotension causes syncope and MI extension — verify SBP and PDE-5 use."
+    },
+    {
+      "front": "Priority action for Respiratory System emergency?",
+      "back": "SpO2 < 90% with altered mental status → airway assessment first",
+      "category": "Respiratory System",
+      "clinical_why": "Airway always first — hypoxemia with AMS may need assisted ventilation before full workup."
+    },
+    {
+      "front": "Key safety concern in Respiratory System?",
+      "back": "High-flow O2 in COPD may suppress hypoxic drive",
+      "category": "Respiratory System",
+      "clinical_why": "COPD retainers need titrated O₂ — monitor ABG for rising PaCO₂ and acidosis."
+    },
+    {
+      "front": "Priority action for Neurological System emergency?",
+      "back": "Sudden worst headache → suspect subarachnoid hemorrhage",
+      "category": "Neurological System",
+      "clinical_why": "Thunderclap headache suggests SAH — non-contrast CT, then LP if CT negative per protocol."
+    },
+    {
+      "front": "Key safety concern in Neurological System?",
+      "back": "NPO until swallow assessment after stroke",
+      "category": "Neurological System",
+      "clinical_why": "Aspiration pneumonia is leading killer after stroke — speech-language pathology swallow eval before oral intake."
+    },
+    {
+      "front": "Priority action for Gastrointestinal System emergency?",
+      "back": "Hematemesis or melena with hypotension → IV access, fluids, notify provider",
+      "category": "Gastrointestinal System",
+      "clinical_why": "Upper GI bleed with hypotension needs two large-bore IVs, type & screen, PPI, possible endoscopy."
+    },
+    {
+      "front": "Key safety concern in Gastrointestinal System?",
+      "back": "NPO verification before procedures and surgery",
+      "category": "Gastrointestinal System",
+      "clinical_why": "Aspiration during procedures causes pneumonia — verify NPO status and sedation level."
+    },
+    {
+      "front": "Priority action for Renal & Genitourinary System emergency?",
+      "back": "K+ > 6.0 with ECG changes → calcium gluconate, notify provider",
+      "category": "Renal & Genitourinary System",
+      "clinical_why": "Hyperkalemia with ECG changes is treated before dialysis — calcium first, then K⁺ lowering."
+    },
+    {
+      "front": "Key safety concern in Renal & Genitourinary System?",
+      "back": "Contrast dye nephrotoxicity — hydrate and monitor creatinine",
+      "category": "Renal & Genitourinary System",
+      "clinical_why": "Contrast nephropathy preventable with hydration — hold nephrotoxic meds, monitor creatinine 48–72 hr."
+    },
+    {
+      "front": "Priority action for Endocrine System emergency?",
+      "back": "Glucose < 54 with altered mental status → glucagon or IV dextrose",
+      "category": "Endocrine System",
+      "clinical_why": "Severe hypoglycemia (<54) with AMS needs IV dextrose or IM glucagon — cannot rely on oral if unconscious."
+    },
+    {
+      "front": "Key safety concern in Endocrine System?",
+      "back": "Insulin name and dose double-check",
+      "category": "Endocrine System",
+      "clinical_why": "Insulin name/dose errors are ISMP top hazard — independent double-check with second nurse."
+    },
+    {
+      "front": "Priority action for Musculoskeletal System emergency?",
+      "back": "5 Ps abnormal after cast → bivalve cast, notify provider",
+      "category": "Musculoskeletal System",
+      "clinical_why": "5 P's of compartment syndrome — pain with passive stretch is earliest reliable sign."
+    },
+    {
+      "front": "Key safety concern in Musculoskeletal System?",
+      "back": "Compartment syndrome — pain out of proportion",
+      "category": "Musculoskeletal System",
+      "clinical_why": "Compartment syndrome is surgical emergency — fasciotomy within 6 hours saves limb function."
+    },
+    {
+      "front": "Priority action for Hematologic & Immunologic System emergency?",
+      "back": "ANC < 500 with fever → sepsis workup, antibiotics",
+      "category": "Hematologic & Immunologic System",
+      "clinical_why": "Febrile neutropenia needs empiric antibiotics within 60 minutes — fever may be only sign of bacteremia."
+    },
+    {
+      "front": "Key safety concern in Hematologic & Immunologic System?",
+      "back": "Febrile transfusion reaction — stop transfusion",
+      "category": "Hematologic & Immunologic System",
+      "clinical_why": "Hemolytic transfusion reaction — stop blood, maintain IV access, support BP, return unit to blood bank."
+    }
+  ],
+  "practice_questions": [
+    {
+      "id": "ms-q1",
+      "question": "Left-sided heart failure — which finding is most consistent?",
+      "options": [
+        "JVD and peripheral edema",
+        "Crackles and pink frothy sputum",
+        "Hepatomegaly and ascites",
+        "Bounding peripheral pulses"
+      ],
+      "correct_index": 1,
+      "rationale": "Left-sided HF reduces LV output, causing blood to back up into pulmonary circulation — crackles, orthopnea, pink frothy sputum, and S₃ gallop. JVD and peripheral edema suggest right-sided failure.",
+      "category": "Cardiovascular",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "medium",
+      "clinical_why": "Differentiating left vs right HF guides diuretic use, positioning (high Fowler's), and monitoring (daily weights, I&O)."
+    },
+    {
+      "id": "ms-q2",
+      "question": "Appropriate SpO2 target for COPD on supplemental O2?",
+      "options": [
+        "98–100%",
+        "94–98%",
+        "88–92%",
+        "Below 85%"
+      ],
+      "correct_index": 2,
+      "rationale": "COPD patients are chronic CO₂ retainers; hypoxic drive maintains ventilation. Target SpO₂ 88–92% to prevent CO₂ narcosis while treating exacerbation.",
+      "category": "Respiratory",
+      "ncj_step": "Generate Solutions",
+      "difficulty": "medium",
+      "clinical_why": "Titrate O₂ to lowest saturation meeting target — ABG confirms pH and PaCO₂ trends."
+    },
+    {
+      "id": "ms-q3",
+      "question": "Suspected stroke within 45 minutes — first priority?",
+      "options": [
+        "Give tPA immediately",
+        "IV access and blood glucose",
+        "Carotid endarterectomy",
+        "Insert NG tube"
+      ],
+      "correct_index": 1,
+      "rationale": "Stroke protocol: establish last known well, ABCs, IV access, blood glucose (hypoglycemia mimics stroke), CT head, then consider tPA if ischemic and within window.",
+      "category": "Neurological",
+      "ncj_step": "Recognize Cues",
+      "difficulty": "hard",
+      "clinical_why": "Giving tPA before ruling out hemorrhage or hypoglycemia causes catastrophic harm."
+    },
+    {
+      "id": "ms-q4",
+      "question": "Cirrhosis with confusion and asterixis — priority intervention?",
+      "options": [
+        "Administer lactulose",
+        "Restrict all protein permanently",
+        "Insert urinary catheter",
+        "Abdominal binder"
+      ],
+      "correct_index": 0,
+      "rationale": "Hepatic encephalopathy from ammonia accumulation — lactulose acidifies colon, traps ammonia, increases bowel movements. Protein restriction is temporary, not permanent.",
+      "category": "Gastrointestinal",
+      "ncj_step": "Take Action",
+      "difficulty": "medium",
+      "clinical_why": "Asterixis and confusion can progress to coma — monitor mental status and hold sedatives that worsen encephalopathy."
+    },
+    {
+      "id": "ms-q5",
+      "question": "K+ 6.8 with peaked T waves — prepare first?",
+      "options": [
+        "Calcium gluconate IV",
+        "Kayexalate oral",
+        "Furosemide IV",
+        "Insulin with D50"
+      ],
+      "correct_index": 0,
+      "rationale": "Severe hyperkalemia (K⁺ >6.5 with ECG changes): calcium gluconate IV first to stabilize myocardium — does not lower K⁺ but protects against arrhythmia while insulin/D50, kayexalate, or dialysis are prepared.",
+      "category": "Renal",
+      "ncj_step": "Take Action",
+      "difficulty": "hard",
+      "clinical_why": "Peaked T waves progress to widened QRS and sine wave arrest — continuous tele required."
+    },
+    {
+      "id": "ms-q6",
+      "question": "Type 1 diabetic BG 42 mg/dL, alert but confused — first action?",
+      "options": [
+        "4 oz orange juice",
+        "10 units NPH insulin",
+        "Normal saline bolus",
+        "Urine ketones first"
+      ],
+      "correct_index": 0,
+      "rationale": "Conscious hypoglycemia (Rule of 15): 15 g fast carbohydrate (4 oz juice, glucose tabs), recheck in 15 min, repeat if still <70; glucagon or IV dextrose if unable to swallow.",
+      "category": "Endocrine",
+      "ncj_step": "Take Action",
+      "difficulty": "easy",
+      "clinical_why": "Never give insulin to hypoglycemic patient — seizure and death risk within minutes."
+    },
+    {
+      "id": "ms-q7",
+      "question": "Post total hip arthroplasty — which finding needs immediate action?",
+      "options": [
+        "Pain 6/10",
+        "SOB and tachycardia",
+        "Serous incision drainage",
+        "Temp 99.1°F"
+      ],
+      "correct_index": 1,
+      "rationale": "Sudden SOB and tachycardia after orthopedic surgery suggests pulmonary embolism — immobilization and hypercoagulability. Assess SpO₂, prepare heparin/CT angiography per order.",
+      "category": "Musculoskeletal",
+      "ncj_step": "Recognize Cues",
+      "difficulty": "medium",
+      "clinical_why": "PE is a leading cause of post-op death — don't attribute SOB to pain alone."
+    },
+    {
+      "id": "ms-q8",
+      "question": "Neutropenic patient temp 100.8°F — priority?",
+      "options": [
+        "Blood cultures and notify for antibiotics",
+        "Cooling blanket only",
+        "Fluids and recheck in 4 hours",
+        "Influenza vaccine"
+      ],
+      "correct_index": 0,
+      "rationale": "Febrile neutropenia (ANC <500 with temp ≥38.3°C): medical emergency — blood cultures ×2, broad-spectrum antibiotics within 1 hour, avoid rectal temps and fresh flowers.",
+      "category": "Hematologic",
+      "ncj_step": "Take Action",
+      "difficulty": "hard",
+      "clinical_why": "Neutropenic patients lack inflammatory response — fever may be only sign of sepsis."
+    },
+    {
+      "id": "ms-q9",
+      "question": "Which patient should the nurse see first?",
+      "options": [
+        "Post-op pain 5/10",
+        "CHF with new dyspnea SpO2 89%",
+        "Routine BG check due in 30 min",
+        "Discharge teaching stable patient"
+      ],
+      "correct_index": 1,
+      "rationale": "Prioritize unstable over stable: new dyspnea with SpO₂ 89% in CHF patient risks respiratory failure; post-op pain 5/10 and routine tasks can wait.",
+      "category": "Prioritization",
+      "ncj_step": "Prioritize Hypotheses",
+      "difficulty": "medium",
+      "clinical_why": "NCLEX and clinical practice use ABCs and acute vs chronic/unstable vs stable frameworks."
+    },
+    {
+      "id": "ms-q10",
+      "question": "DKA: pH 7.18, K+ 3.2, glucose 480 — before insulin drip?",
+      "options": [
+        "Replace potassium",
+        "Sodium bicarbonate routinely",
+        "Hold all IV fluids",
+        "Subcutaneous insulin only"
+      ],
+      "correct_index": 0,
+      "rationale": "DKA: total body K⁺ depleted despite serum level — insulin drives K⁺ intracellularly. Replace K⁺ to ≥3.3 mEq/L before insulin infusion to prevent life-threatening hypokalemia.",
+      "category": "Endocrine",
+      "ncj_step": "Generate Solutions",
+      "difficulty": "hard",
+      "clinical_why": "Insulin without K⁺ replacement can cause cardiac arrest from hypokalemia."
+    },
+    {
+      "id": "ms-q11",
+      "question": "Cast pain unrelieved by opioids with passive toe pain — suspect?",
+      "options": [
+        "Compartment syndrome",
+        "Normal discomfort",
+        "Cast infection",
+        "DVT"
+      ],
+      "correct_index": 0,
+      "rationale": "Compartment syndrome: pain out of proportion, pain with passive stretch of toes, paresthesia, pallor, pulselessness (late). Elevate cast to heart level, bivalve cast, notify surgeon immediately.",
+      "category": "Musculoskeletal",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "medium",
+      "clinical_why": "Fasciotomy within 6 hours prevents permanent nerve and muscle necrosis."
+    },
+    {
+      "id": "ms-q12",
+      "question": "Most important warfarin teaching?",
+      "options": [
+        "Consistent vitamin K intake",
+        "Take with NSAIDs",
+        "Double dose if missed",
+        "Avoid all lab draws"
+      ],
+      "correct_index": 0,
+      "rationale": "Warfarin inhibits vitamin K-dependent clotting factors — consistent dietary vitamin K prevents INR swings; teach bleeding precautions and avoid NSAIDs without provider approval.",
+      "category": "Cardiovascular",
+      "ncj_step": "Evaluate Outcomes",
+      "difficulty": "easy",
+      "clinical_why": "Supratherapeutic INR causes GI and intracranial bleeding — subtherapeutic INR fails anticoagulation."
+    },
+    {
+      "id": "ms-q13",
+      "question": "Asthma with silent chest and exhaustion indicates?",
+      "options": [
+        "Improving bronchospasm",
+        "Impending respiratory failure",
+        "Successful treatment",
+        "Mild exacerbation"
+      ],
+      "correct_index": 1,
+      "rationale": "Silent chest in asthma means minimal air movement despite obstruction — exhaustion and impending respiratory failure, not improvement. Prepare epinephrine, assisted ventilation.",
+      "category": "Respiratory",
+      "ncj_step": "Recognize Cues",
+      "difficulty": "hard",
+      "clinical_why": "Wheezing may decrease as patient fatigues — worsening obstruction, not resolution."
+    },
+    {
+      "id": "ms-q14",
+      "question": "SCI T4: pounding headache, BP 210/118 — first action?",
+      "options": [
+        "Sit upright, loosen clothing",
+        "Rapid IV fluid bolus",
+        "Trendelenburg",
+        "Tight abdominal binder"
+      ],
+      "correct_index": 0,
+      "rationale": "Autonomic dysreflexia (T6 and above): pounding headache, hypertension, bradycardia — sit upright, loosen constrictive clothing, identify trigger (full bladder, fecal impaction), notify provider.",
+      "category": "Neurological",
+      "ncj_step": "Take Action",
+      "difficulty": "hard",
+      "clinical_why": "BP can exceed 300 mmHg causing stroke — never place flat (increases cerebral perfusion pressure)."
+    },
+    {
+      "id": "ms-q15",
+      "question": "Acute pancreatitis initial management?",
+      "options": [
+        "NPO with IV fluids",
+        "Clear liquid diet ad lib",
+        "High-fat enteral feeds",
+        "Encourage eating"
+      ],
+      "correct_index": 0,
+      "rationale": "Acute pancreatitis: NPO to rest pancreas, aggressive IV fluids (third-spacing), pain control, monitor for ARDS and hypocalcemia. Oral intake resumes when lipase trends down and pain resolves.",
+      "category": "Gastrointestinal",
+      "ncj_step": "Generate Solutions",
+      "difficulty": "easy",
+      "clinical_why": "Early feeding in severe pancreatitis can worsen inflammation — follow enteral protocol when stable."
+    },
+    {
+      "id": "ms-q16",
+      "question": "ESRD on hemodialysis — which finding is urgent?",
+      "options": [
+        "Absent thrill and bruit at fistula",
+        "Weight gain 1 kg",
+        "Mild itching",
+        "Post-dialysis fatigue"
+      ],
+      "correct_index": 0,
+      "rationale": "Hemodialysis fistula requires thrill (palpable vibration) and bruit (audible whoosh) — absent both suggests thrombosis. Never BP or venipuncture on fistula arm.",
+      "category": "Renal",
+      "ncj_step": "Recognize Cues",
+      "difficulty": "medium",
+      "clinical_why": "Clotted fistula loses dialysis access — surgical thrombectomy time-sensitive."
+    },
+    {
+      "id": "ms-q17",
+      "question": "C. difficile care — nurse should?",
+      "options": [
+        "Soap and water hand hygiene",
+        "Alcohol rub only",
+        "Airborne isolation",
+        "N95 for all contact"
+      ],
+      "correct_index": 0,
+      "rationale": "C. difficile spores resist alcohol-based hand rub — soap and water with friction removes spores. Contact precautions, dedicated equipment, bleach cleaning.",
+      "category": "Infection Control",
+      "ncj_step": "Take Action",
+      "difficulty": "easy",
+      "clinical_why": "Alcohol gel gives false security — spores spread room-to-room causing outbreaks."
+    },
+    {
+      "id": "ms-q18",
+      "question": "Sickle cell: chest pain, fever, hypoxia — priority?",
+      "options": [
+        "Oxygen and notify provider",
+        "Cold compresses to joints",
+        "Vigorous exercise",
+        "Withhold fluids"
+      ],
+      "correct_index": 0,
+      "rationale": "Acute chest syndrome in sickle cell: new pulmonary infiltrate, chest pain, fever, hypoxia — O₂, fluids, antibiotics, exchange transfusion may be needed. Mimics pneumonia.",
+      "category": "Hematologic",
+      "ncj_step": "Take Action",
+      "difficulty": "medium",
+      "clinical_why": "Leading cause of death in sickle cell adults — early recognition reduces respiratory failure."
+    },
+    {
+      "id": "ms-q19",
+      "question": "Post-op urine 15 mL/hr × 3 hr, BP 88/54, HR 118 — suspect?",
+      "options": [
+        "Hypovolemia",
+        "Fluid overload",
+        "Urinary retention",
+        "Normal diuresis"
+      ],
+      "correct_index": 0,
+      "rationale": "Oliguria (<30 mL/hr) with hypotension and tachycardia post-op indicates hypovolemia — assess bleeding, IV access, fluid bolus per order, trend hemoglobin.",
+      "category": "Renal",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "medium",
+      "clinical_why": "Undetected hemorrhage leads to shock and cardiac arrest — I&O and VS every 15 min early post-op."
+    },
+    {
+      "id": "ms-q20",
+      "question": "Highest lactic acidosis risk pair?",
+      "options": [
+        "Metformin with IV contrast",
+        "Lisinopril with HCTZ",
+        "Statin with aspirin",
+        "Levothyroxine with calcium"
+      ],
+      "correct_index": 0,
+      "rationale": "Metformin with IV iodinated contrast increases lactic acidosis risk — hold metformin 48 hr before and after contrast, verify renal function (eGFR).",
+      "category": "Endocrine",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "medium",
+      "clinical_why": "Contrast-induced nephropathy plus metformin accumulation causes lethal lactic acidosis."
+    },
+    {
+      "id": "ms-q21",
+      "question": "Transfusion: chills, fever, back pain — nurse should?",
+      "options": [
+        "Stop transfusion, notify provider",
+        "Slow rate and continue",
+        "Antihistamine and resume",
+        "Document and continue"
+      ],
+      "correct_index": 0,
+      "rationale": "Acute hemolytic transfusion reaction: fever, chills, flank/back pain, hypotension during transfusion — stop immediately, keep IV open with NS, return blood to lab, notify provider.",
+      "category": "Hematologic",
+      "ncj_step": "Take Action",
+      "difficulty": "medium",
+      "clinical_why": "Continuing transfusion causes DIC, renal failure, and death — verify patient ID and blood unit at bedside."
+    },
+    {
+      "id": "ms-q22",
+      "question": "Appropriate task to delegate to UAP?",
+      "options": [
+        "Ambulate stable post-op with PT clearance",
+        "Assess new chest pain",
+        "Teach insulin administration",
+        "CHF discharge planning"
+      ],
+      "correct_index": 0,
+      "rationale": "Delegate stable, routine tasks with clear parameters to UAP — ambulation after PT clearance. Never delegate assessment, teaching, evaluation, or unstable patients.",
+      "category": "Leadership",
+      "ncj_step": "Generate Solutions",
+      "difficulty": "easy",
+      "clinical_why": "RN retains accountability — inappropriate delegation is a leading cause of nursing malpractice."
+    }
+  ]
+}

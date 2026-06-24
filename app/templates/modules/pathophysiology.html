@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+{% from "partials/module_breadcrumb.html" import module_breadcrumb %}
+{% block title %}Pathophysiology{% endblock %}
+{% block page_title %}Pathophysiology{% endblock %}
+{% block page_subtitle %}Cellular injury · Disease processes · NCLEX Physiological Integrity{% endblock %}
+
+{% block topbar_actions %}
+<a href="/" class="nursing-return-link hidden sm:inline-flex" title="Back to Nursing Dashboard">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+    Dashboard
+</a>
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/css/pathophysiology.css">
+{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto" data-module="pathophysiology">
+    {{ module_breadcrumb('Pathophysiology', badge='new') }}
+
+    <div class="module-header patho-module-header">
+        <div>
+            <h1 class="text-xl sm:text-2xl font-bold text-ward-100">Pathophysiology for Nursing</h1>
+            <p class="text-sm text-ward-500 mt-1">Cellular injury, inflammation, fluid/electrolytes, and common disease processes</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+            <button onclick="verifySource('pathophysiology')" class="btn-verify text-sm" title="View verified sources">Verify Source</button>
+            <button onclick="openSocraticMode('pathophysiology', 'pathophysiology')" class="btn-socratic text-sm">Socratic Mode</button>
+        </div>
+    </div>
+
+    <div class="module-progress-strip patho-progress-strip">
+        <div class="text-xs text-ward-500 shrink-0">
+            Module Progress
+            <span id="module-progress-pct" class="text-rose-400 font-semibold ml-1">{{ module_progress.percentage if module_progress else 0 }}%</span>
+        </div>
+        <div class="progress-bar">
+            <div id="module-progress-bar" class="progress-bar-fill bg-rose-400" style="width: {{ module_progress.percentage if module_progress else 0 }}%"></div>
+        </div>
+        <span class="stat-pill">{{ module_progress.items_completed if module_progress else 0 }}/{{ module_progress.items_total if module_progress else summary.items_total }} studied</span>
+        <span class="stat-pill">{{ summary.concepts_count }} concepts</span>
+        <span class="stat-pill">{{ summary.disease_count }} diseases</span>
+        <span class="stat-pill">{{ summary.practice_count }} questions</span>
+    </div>
+
+    <div class="patho-callout">
+        <div class="patho-callout-icon">◉</div>
+        <div>
+            <div class="text-xs font-semibold text-rose-400 uppercase tracking-wide">NCLEX Focus — Physiological Adaptation</div>
+            <p class="text-sm text-ward-300 mt-0.5">Normal function → disruption → compensatory response → clinical signs. Know the cascade before you prioritize nursing actions.</p>
+        </div>
+    </div>
+
+    <div class="patho-tabs module-tabs" role="tablist" aria-label="Pathophysiology sections">
+        <button class="tab-btn patho-tab-btn active" data-tab="core-concepts" onclick="Pathophysiology.switchTab('core-concepts')">Core Concepts</button>
+        <button class="tab-btn patho-tab-btn" data-tab="disease-processes" onclick="Pathophysiology.switchTab('disease-processes')">Disease Processes</button>
+        <button class="tab-btn patho-tab-btn" data-tab="compare-contrast" onclick="Pathophysiology.switchTab('compare-contrast')">Compare &amp; Contrast</button>
+        <button class="tab-btn patho-tab-btn" data-tab="what-breaks-down" onclick="Pathophysiology.switchTab('what-breaks-down')">What Breaks Down</button>
+        <button class="tab-btn patho-tab-btn" data-tab="flashcards" onclick="Pathophysiology.switchTab('flashcards')">Flashcards</button>
+        <button class="tab-btn patho-tab-btn" data-tab="practice" onclick="Pathophysiology.switchTab('practice')">Practice</button>
+    </div>
+
+    <!-- ═══ CORE CONCEPTS ═══ -->
+    <div id="tab-core-concepts" class="tab-panel patho-panel">
+        <div class="mb-4">
+            <h2 class="text-base font-semibold text-ward-100">Core Pathophysiology Concepts</h2>
+            <p class="text-xs text-ward-500 mt-1">Cellular adaptation, inflammation, fluids, electrolytes, and acid-base fundamentals</p>
+        </div>
+        <div id="patho-concepts-container">
+            <div class="loading-state" role="status" aria-live="polite"><span class="loading-spinner" aria-hidden="true"></span>Loading concepts…</div>
+        </div>
+    </div>
+
+    <!-- ═══ DISEASE PROCESSES ═══ -->
+    <div id="tab-disease-processes" class="tab-panel patho-panel hidden">
+        <div class="mb-4">
+            <h2 class="text-base font-semibold text-ward-100">Common Disease Processes</h2>
+            <p class="text-xs text-ward-500 mt-1">Etiology, patho cascade, clinical manifestations, and nursing priorities</p>
+        </div>
+        <div id="patho-diseases-container">
+            <div class="loading-state" role="status" aria-live="polite"><span class="loading-spinner" aria-hidden="true"></span>Loading disease processes…</div>
+        </div>
+    </div>
+
+    <!-- ═══ COMPARE & CONTRAST ═══ -->
+    <div id="tab-compare-contrast" class="tab-panel patho-panel hidden">
+        <div class="mb-4">
+            <h2 class="text-base font-semibold text-ward-100">Compare &amp; Contrast</h2>
+            <p class="text-xs text-ward-500 mt-1">High-yield differentials for NCLEX clinical judgment</p>
+        </div>
+        <div id="patho-compare-container">
+            <div class="loading-state" role="status" aria-live="polite"><span class="loading-spinner" aria-hidden="true"></span>Loading compare/contrast pairs…</div>
+        </div>
+    </div>
+
+    <!-- ═══ WHAT BREAKS DOWN ═══ -->
+    <div id="tab-what-breaks-down" class="tab-panel patho-panel hidden">
+        <div class="max-w-2xl mx-auto card p-5 sm:p-6">
+            <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
+                <h2 class="text-base font-semibold text-ward-100">What Breaks Down When…</h2>
+                <span id="patho-scenario-score" class="text-sm font-mono text-ward-500">0/0</span>
+            </div>
+            <p class="text-xs text-ward-500 mb-4">Trace the pathophysiologic cascade, then answer the application question.</p>
+            <div id="patho-scenario-area">
+                <p class="text-ward-500 text-sm">Loading scenarios…</p>
+            </div>
+            <button onclick="Pathophysiology.loadBreakdownScenarios()" class="btn-secondary w-full mt-4 text-sm">Reload Scenarios</button>
+        </div>
+    </div>
+
+    <!-- ═══ FLASHCARDS ═══ -->
+    <div id="tab-flashcards" class="tab-panel patho-panel hidden">
+        <div class="max-w-lg mx-auto">
+            <div id="patho-flashcard-stage" class="patho-flashcard-stage">
+                <div id="patho-flashcard-inner" class="patho-flashcard-inner" onclick="Pathophysiology.flipCard()" role="button" tabindex="0" aria-label="Flip flashcard">
+                    <div id="pfc-front-view">
+                        <p class="text-xs text-ward-500 mb-2 text-center">Tap or press Space to reveal</p>
+                        <p id="pfc-front" class="patho-flashcard-front">Loading…</p>
+                        <span id="pfc-category" class="patho-fc-category mt-3"></span>
+                    </div>
+                    <div id="pfc-back-view" class="hidden">
+                        <p id="pfc-back" class="text-sm text-ward-300 text-center"></p>
+                        <p id="pfc-clinical" class="text-xs text-ward-accent mt-3 text-center"></p>
+                        <button type="button" class="btn-verify text-xs mt-3 mx-auto block" onclick="event.stopPropagation(); verifySource('pathophysiology')">Verify Source</button>
+                    </div>
+                </div>
+            </div>
+            <div id="patho-fc-dots" class="patho-fc-dots"></div>
+            <div class="flex justify-between items-center mt-4">
+                <button onclick="Pathophysiology.prevCard()" class="btn-secondary text-sm" aria-label="Previous card">← Prev</button>
+                <span id="patho-flashcard-counter" class="text-sm text-ward-500 font-mono">0 / 0</span>
+                <button onclick="Pathophysiology.nextCard()" class="btn-secondary text-sm" aria-label="Next card">Next →</button>
+            </div>
+            <div class="flex flex-wrap justify-center gap-2 mt-3">
+                <button onclick="Pathophysiology.loadFlashcards(10)" class="btn-primary text-sm">Study 10</button>
+                <button onclick="Pathophysiology.loadFlashcards(10, true)" class="btn-secondary text-sm">Shuffle 10</button>
+                <button onclick="Pathophysiology.loadFlashcards()" class="btn-secondary text-sm">All Cards</button>
+                <button type="button" onclick="Pathophysiology.exportFlashcardDeck()" class="btn-secondary text-sm">Export Deck</button>
+            </div>
+            <p class="text-center text-xs text-ward-600 mt-3">← → navigate · Space flips</p>
+        </div>
+    </div>
+
+    <!-- ═══ PRACTICE ═══ -->
+    <div id="tab-practice" class="tab-panel patho-panel hidden">
+        <div class="max-w-2xl mx-auto card p-5 sm:p-6">
+            <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
+                <h2 class="text-base font-semibold text-ward-100">NCLEX Practice</h2>
+                <span id="patho-practice-score" class="text-sm font-mono text-ward-500">0/0</span>
+            </div>
+            <div id="patho-practice-area">
+                <p class="text-ward-500 text-sm">Start a practice session below.</p>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-4">
+                <button onclick="Pathophysiology.startPractice(10)" class="btn-primary text-sm">Start (10)</button>
+                <button onclick="Pathophysiology.startPractice(15)" class="btn-secondary text-sm">Extended (15)</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script defer src="/static/js/pathophysiology.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() { Pathophysiology.init(); });
+</script>
+{% endblock %}

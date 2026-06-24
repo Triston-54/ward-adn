@@ -1,0 +1,3259 @@
+{
+  "terms": [
+    {
+      "term": "tachycardia",
+      "definition": "Abnormally rapid heart rate (>100 bpm at rest)",
+      "category": "disease",
+      "prefix": "tachy-",
+      "root": "cardi",
+      "suffix": "-ia",
+      "breakdown": "tachy (fast) + cardi (heart) + -ia",
+      "clinical_relevance": "Monitor vitals; assess chest pain, fever, dehydration.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "bradycardia",
+      "definition": "Abnormally slow heart rate (<60 bpm at rest)",
+      "category": "disease",
+      "prefix": "brady-",
+      "root": "cardi",
+      "suffix": "-ia",
+      "breakdown": "brady (slow) + cardi + -ia",
+      "clinical_relevance": "May be normal in athletes; symptomatic bradycardia needs intervention.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "hypertension",
+      "definition": "Persistently elevated BP above 130/80 mmHg",
+      "category": "disease",
+      "prefix": "hyper-",
+      "root": "tens",
+      "suffix": "-ion",
+      "breakdown": "hyper (excessive) + tens (pressure)",
+      "clinical_relevance": "Leading risk for stroke and MI; often asymptomatic.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "hypotension",
+      "definition": "Abnormally low blood pressure",
+      "category": "disease",
+      "prefix": "hypo-",
+      "root": "tens",
+      "suffix": "-ion",
+      "breakdown": "hypo (low) + tens (pressure)",
+      "clinical_relevance": "Assess for shock; check orthostatics and fluid status.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "dyspnea",
+      "definition": "Difficult or labored breathing",
+      "category": "disease",
+      "prefix": "dys-",
+      "root": "pnea",
+      "suffix": null,
+      "breakdown": "dys (difficult) + pnea (breathing)",
+      "clinical_relevance": "Check SpO2, lung sounds; position upright.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "apnea",
+      "definition": "Temporary cessation of breathing",
+      "category": "disease",
+      "prefix": "a-",
+      "root": "pnea",
+      "suffix": null,
+      "breakdown": "a (without) + pnea",
+      "clinical_relevance": "Sleep apnea increases cardiovascular risk; monitor post-op.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "tachypnea",
+      "definition": "Abnormally rapid respirations",
+      "category": "disease",
+      "prefix": "tachy-",
+      "root": "pnea",
+      "suffix": null,
+      "breakdown": "tachy + pnea",
+      "clinical_relevance": "Early sign of respiratory distress or metabolic acidosis.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "bradypnea",
+      "definition": "Abnormally slow respirations",
+      "category": "disease",
+      "prefix": "brady-",
+      "root": "pnea",
+      "suffix": null,
+      "breakdown": "brady + pnea",
+      "clinical_relevance": "May indicate CNS depression from opioids or head injury.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "hematuria",
+      "definition": "Blood in the urine",
+      "category": "disease",
+      "prefix": null,
+      "root": "hemat",
+      "suffix": "-uria",
+      "breakdown": "hemat (blood) + -uria",
+      "clinical_relevance": "Report gross or microscopic hematuria to provider.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "proteinuria",
+      "definition": "Excess protein in the urine",
+      "category": "disease",
+      "prefix": null,
+      "root": "protein",
+      "suffix": "-uria",
+      "breakdown": "protein + -uria",
+      "clinical_relevance": "Key indicator of kidney damage; common in diabetes.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "polyuria",
+      "definition": "Excessive urination",
+      "category": "disease",
+      "prefix": "poly-",
+      "root": "ur",
+      "suffix": "-ia",
+      "breakdown": "poly (many) + ur + -ia",
+      "clinical_relevance": "Classic sign of hyperglycemia and diabetes.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "oliguria",
+      "definition": "Scant urine output",
+      "category": "disease",
+      "prefix": "olig/o",
+      "root": "ur",
+      "suffix": "-ia",
+      "breakdown": "oligo (scant) + ur + -ia",
+      "clinical_relevance": "Output <400 mL/day signals acute kidney injury.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "anuria",
+      "definition": "Absence of urine output",
+      "category": "disease",
+      "prefix": "an-",
+      "root": "ur",
+      "suffix": "-ia",
+      "breakdown": "an (without) + ur + -ia",
+      "clinical_relevance": "Medical emergency; assess for obstruction or renal failure.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "gastritis",
+      "definition": "Inflammation of the stomach lining",
+      "category": "disease",
+      "prefix": null,
+      "root": "gastr",
+      "suffix": "-itis",
+      "breakdown": "gastr + -itis",
+      "clinical_relevance": "NSAIDs and H. pylori are common causes.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "hepatitis",
+      "definition": "Inflammation of the liver",
+      "category": "disease",
+      "prefix": null,
+      "root": "hepat",
+      "suffix": "-itis",
+      "breakdown": "hepat + -itis",
+      "clinical_relevance": "Monitor liver enzymes; types A\u2013E differ in transmission.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "nephritis",
+      "definition": "Inflammation of the kidney",
+      "category": "disease",
+      "prefix": null,
+      "root": "nephr",
+      "suffix": "-itis",
+      "breakdown": "nephr + -itis",
+      "clinical_relevance": "Monitor BUN, creatinine, and fluid balance.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "dermatitis",
+      "definition": "Inflammation of the skin",
+      "category": "disease",
+      "prefix": null,
+      "root": "derm",
+      "suffix": "-itis",
+      "breakdown": "derm + -itis",
+      "clinical_relevance": "Assess triggers; contact vs atopic patterns differ.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "arthritis",
+      "definition": "Inflammation of joints",
+      "category": "disease",
+      "prefix": null,
+      "root": "arthr",
+      "suffix": "-itis",
+      "breakdown": "arthr (joint) + -itis",
+      "clinical_relevance": "Assess pain, ROM, and morning stiffness.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "meningitis",
+      "definition": "Inflammation of the meninges",
+      "category": "disease",
+      "prefix": null,
+      "root": "mening",
+      "suffix": "-itis",
+      "breakdown": "mening + -itis",
+      "clinical_relevance": "Nuchal rigidity and photophobia are classic signs.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "pneumonia",
+      "definition": "Infection of lung parenchyma",
+      "category": "disease",
+      "prefix": null,
+      "root": "pneumon",
+      "suffix": "-ia",
+      "breakdown": "pneumon (lung) + -ia",
+      "clinical_relevance": "Assess O2, crackles; incentive spirometry helps.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "sepsis",
+      "definition": "Life-threatening organ dysfunction from infection",
+      "category": "disease",
+      "prefix": null,
+      "root": "sept",
+      "suffix": "-ia",
+      "breakdown": "sept (infection) + -ia",
+      "clinical_relevance": "Time-critical; qSOFA and lactate guide escalation.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "anemia",
+      "definition": "Deficiency of red blood cells or hemoglobin",
+      "category": "disease",
+      "prefix": "an-",
+      "root": "em",
+      "suffix": "-ia",
+      "breakdown": "an (without) + em (blood) + -ia",
+      "clinical_relevance": "Assess fatigue, pallor; iron studies guide treatment.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "leukemia",
+      "definition": "Cancer of blood-forming tissues",
+      "category": "disease",
+      "prefix": null,
+      "root": "leuk",
+      "suffix": "-emia",
+      "breakdown": "leuk (white) + -emia",
+      "clinical_relevance": "Neutropenic precautions during chemotherapy.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "leukopenia",
+      "definition": "Low white blood cell count",
+      "category": "disease",
+      "prefix": null,
+      "root": "leuk",
+      "suffix": "-penia",
+      "breakdown": "leuk + -penia (deficiency)",
+      "clinical_relevance": "ANC <500 requires neutropenic precautions.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "leukocytosis",
+      "definition": "Elevated white blood cell count",
+      "category": "disease",
+      "prefix": null,
+      "root": "leuk",
+      "suffix": "-osis",
+      "breakdown": "leuk + -osis",
+      "clinical_relevance": "Often indicates infection or inflammation.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "thrombocytopenia",
+      "definition": "Low platelet count",
+      "category": "disease",
+      "prefix": null,
+      "root": "thromb/o",
+      "suffix": "-penia",
+      "breakdown": "thromb (clot) + -penia",
+      "clinical_relevance": "Bleeding risk; monitor for petechiae and bruising.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "hypoglycemia",
+      "definition": "Low blood glucose (<70 mg/dL)",
+      "category": "disease",
+      "prefix": "hypo-",
+      "root": "glyc",
+      "suffix": "-emia",
+      "breakdown": "hypo + glyc + -emia",
+      "clinical_relevance": "Treat immediately with 15g fast-acting carbs.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "hyperglycemia",
+      "definition": "Elevated blood glucose",
+      "category": "disease",
+      "prefix": "hyper-",
+      "root": "glyc",
+      "suffix": "-emia",
+      "breakdown": "hyper + glyc + -emia",
+      "clinical_relevance": "Assess for DKA/HHS; verify insulin orders.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "ketoacidosis",
+      "definition": "Metabolic state with ketones and acidosis",
+      "category": "disease",
+      "prefix": null,
+      "root": "keto",
+      "suffix": "-osis",
+      "breakdown": "keto + -osis",
+      "clinical_relevance": "DKA emergency: fluids, insulin, K+ monitoring.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "cyanosis",
+      "definition": "Bluish skin from inadequate oxygenation",
+      "category": "disease",
+      "prefix": null,
+      "root": "cyan",
+      "suffix": "-osis",
+      "breakdown": "cyan (blue) + -osis",
+      "clinical_relevance": "Check SpO2; central cyanosis is more urgent.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "jaundice",
+      "definition": "Yellowing of skin from bilirubin",
+      "category": "disease",
+      "prefix": null,
+      "root": "jaund",
+      "suffix": "-ice",
+      "breakdown": "jaund (yellow)",
+      "clinical_relevance": "Assess sclera; liver vs hemolytic causes differ.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "edema",
+      "definition": "Swelling from fluid accumulation",
+      "category": "disease",
+      "prefix": null,
+      "root": "edem",
+      "suffix": "-a",
+      "breakdown": "edem (swelling)",
+      "clinical_relevance": "Pitting vs non-pitting; assess heart, kidney, liver.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "ascites",
+      "definition": "Abnormal fluid in peritoneal cavity",
+      "category": "disease",
+      "prefix": null,
+      "root": "ascit",
+      "suffix": "-es",
+      "breakdown": "ascit (fluid)",
+      "clinical_relevance": "Common in liver cirrhosis; monitor respiratory status.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "stenosis",
+      "definition": "Abnormal narrowing of a passage",
+      "category": "disease",
+      "prefix": null,
+      "root": "sten",
+      "suffix": "-osis",
+      "breakdown": "sten (narrow) + -osis",
+      "clinical_relevance": "Aortic stenosis affects cardiac output.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "sclerosis",
+      "definition": "Abnormal hardening of tissue",
+      "category": "disease",
+      "prefix": null,
+      "root": "scler",
+      "suffix": "-osis",
+      "breakdown": "scler (hard) + -osis",
+      "clinical_relevance": "Multiple sclerosis affects CNS myelin.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "necrosis",
+      "definition": "Death of cells or tissue",
+      "category": "disease",
+      "prefix": null,
+      "root": "necr",
+      "suffix": "-osis",
+      "breakdown": "necr (death) + -osis",
+      "clinical_relevance": "Pressure injuries can progress to necrosis.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "ischemia",
+      "definition": "Inadequate blood supply to tissue",
+      "category": "disease",
+      "prefix": null,
+      "root": "ischem",
+      "suffix": "-ia",
+      "breakdown": "ischem (hold back blood)",
+      "clinical_relevance": "Chest pain may indicate myocardial ischemia.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "infarction",
+      "definition": "Death of tissue from ischemia",
+      "category": "disease",
+      "prefix": null,
+      "root": "infarct",
+      "suffix": "-ion",
+      "breakdown": "infarct (plugged)",
+      "clinical_relevance": "MI and stroke are infarctions \u2014 time-critical.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "embolism",
+      "definition": "Obstruction by traveling clot/debris",
+      "category": "disease",
+      "prefix": null,
+      "root": "embol",
+      "suffix": "-ism",
+      "breakdown": "embol (plug)",
+      "clinical_relevance": "PE is a leading cause of preventable death.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "thrombosis",
+      "definition": "Formation of a blood clot in a vessel",
+      "category": "disease",
+      "prefix": null,
+      "root": "thromb",
+      "suffix": "-osis",
+      "breakdown": "thromb (clot) + -osis",
+      "clinical_relevance": "DVT prophylaxis is standard for immobile patients.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "phlebitis",
+      "definition": "Inflammation of a vein",
+      "category": "disease",
+      "prefix": null,
+      "root": "phleb",
+      "suffix": "-itis",
+      "breakdown": "phleb + -itis",
+      "clinical_relevance": "Discontinue IV and rotate sites to prevent.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "neuropathy",
+      "definition": "Disease of peripheral nerves",
+      "category": "disease",
+      "prefix": null,
+      "root": "neur",
+      "suffix": "-pathy",
+      "breakdown": "neur + -pathy",
+      "clinical_relevance": "Diabetic neuropathy \u2014 assess foot sensation.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "myopathy",
+      "definition": "Disease of muscle tissue",
+      "category": "disease",
+      "prefix": null,
+      "root": "my/o",
+      "suffix": "-pathy",
+      "breakdown": "myo (muscle) + -pathy",
+      "clinical_relevance": "Statins can cause myopathy; report muscle pain.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "osteoporosis",
+      "definition": "Porous, brittle bones",
+      "category": "disease",
+      "prefix": null,
+      "root": "oste",
+      "suffix": "-porosis",
+      "breakdown": "oste (bone) + porosis",
+      "clinical_relevance": "Fall prevention is critical in older adults.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "osteomyelitis",
+      "definition": "Bone infection",
+      "category": "disease",
+      "prefix": null,
+      "root": "oste",
+      "suffix": "-myelitis",
+      "breakdown": "oste + myel (marrow) + -itis",
+      "clinical_relevance": "Long-term IV antibiotics often required.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "scoliosis",
+      "definition": "Lateral curvature of the spine",
+      "category": "disease",
+      "prefix": null,
+      "root": "scoli",
+      "suffix": "-osis",
+      "breakdown": "scoli (crooked) + -osis",
+      "clinical_relevance": "Assess respiratory impact in severe cases.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "kyphosis",
+      "definition": "Excessive outward curvature of thoracic spine",
+      "category": "disease",
+      "prefix": null,
+      "root": "kyph",
+      "suffix": "-osis",
+      "breakdown": "kyph (hump) + -osis",
+      "clinical_relevance": "Common in osteoporosis compression fractures.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "lordosis",
+      "definition": "Excessive inward lumbar curvature",
+      "category": "disease",
+      "prefix": null,
+      "root": "lord",
+      "suffix": "-osis",
+      "breakdown": "lord (curve) + -osis",
+      "clinical_relevance": "Pregnancy and obesity are common causes.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "hernia",
+      "definition": "Protrusion of organ through wall",
+      "category": "disease",
+      "prefix": null,
+      "root": "herni",
+      "suffix": "-a",
+      "breakdown": "herni (rupture)",
+      "clinical_relevance": "Strangulated hernia is surgical emergency.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "diverticulitis",
+      "definition": "Inflammation of colon diverticula",
+      "category": "disease",
+      "prefix": null,
+      "root": "diverticul",
+      "suffix": "-itis",
+      "breakdown": "diverticul + -itis",
+      "clinical_relevance": "LLQ pain; high-fiber diet for prevention.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "cholecystitis",
+      "definition": "Inflammation of the gallbladder",
+      "category": "disease",
+      "prefix": null,
+      "root": "cholecyst",
+      "suffix": "-itis",
+      "breakdown": "cholecyst + -itis",
+      "clinical_relevance": "Murphy sign positive; often post-fatty meal pain.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "pancreatitis",
+      "definition": "Inflammation of the pancreas",
+      "category": "disease",
+      "prefix": null,
+      "root": "pancreat",
+      "suffix": "-itis",
+      "breakdown": "pancreat + -itis",
+      "clinical_relevance": "Severe epigastric pain radiating to back.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "colitis",
+      "definition": "Inflammation of the colon",
+      "category": "disease",
+      "prefix": null,
+      "root": "col",
+      "suffix": "-itis",
+      "breakdown": "col (colon) + -itis",
+      "clinical_relevance": "C. diff colitis requires contact precautions.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "cystitis",
+      "definition": "Inflammation of the bladder",
+      "category": "disease",
+      "prefix": null,
+      "root": "cyst",
+      "suffix": "-itis",
+      "breakdown": "cyst (bladder) + -itis",
+      "clinical_relevance": "Dysuria and frequency are hallmark symptoms.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "urethritis",
+      "definition": "Inflammation of the urethra",
+      "category": "disease",
+      "prefix": null,
+      "root": "urethr",
+      "suffix": "-itis",
+      "breakdown": "urethr + -itis",
+      "clinical_relevance": "STD screening may be indicated.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "prostatitis",
+      "definition": "Inflammation of the prostate",
+      "category": "disease",
+      "prefix": null,
+      "root": "prostat",
+      "suffix": "-itis",
+      "breakdown": "prostat + -itis",
+      "clinical_relevance": "DRE findings guide diagnosis.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "endometritis",
+      "definition": "Inflammation of uterine lining",
+      "category": "disease",
+      "prefix": "endo-",
+      "root": "metr",
+      "suffix": "-itis",
+      "breakdown": "endo + metr + -itis",
+      "clinical_relevance": "Postpartum infection; monitor lochia and fever.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "mastitis",
+      "definition": "Inflammation of breast tissue",
+      "category": "disease",
+      "prefix": null,
+      "root": "mast",
+      "suffix": "-itis",
+      "breakdown": "mast (breast) + -itis",
+      "clinical_relevance": "Common in breastfeeding; encourage emptying.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "rhinitis",
+      "definition": "Inflammation of nasal mucosa",
+      "category": "disease",
+      "prefix": null,
+      "root": "rhin",
+      "suffix": "-itis",
+      "breakdown": "rhin (nose) + -itis",
+      "clinical_relevance": "Allergic vs infectious management differs.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "sinusitis",
+      "definition": "Inflammation of paranasal sinuses",
+      "category": "disease",
+      "prefix": null,
+      "root": "sinus",
+      "suffix": "-itis",
+      "breakdown": "sinus + -itis",
+      "clinical_relevance": "Facial pain and purulent drainage.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "laryngitis",
+      "definition": "Inflammation of the larynx",
+      "category": "disease",
+      "prefix": null,
+      "root": "laryng",
+      "suffix": "-itis",
+      "breakdown": "laryng + -itis",
+      "clinical_relevance": "Voice rest; assess airway patency.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "bronchitis",
+      "definition": "Inflammation of bronchi",
+      "category": "disease",
+      "prefix": null,
+      "root": "bronch",
+      "suffix": "-itis",
+      "breakdown": "bronch + -itis",
+      "clinical_relevance": "Productive cough; distinguish from pneumonia.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "tracheitis",
+      "definition": "Inflammation of the trachea",
+      "category": "disease",
+      "prefix": null,
+      "root": "trache",
+      "suffix": "-itis",
+      "breakdown": "trache + -itis",
+      "clinical_relevance": "Stridor warrants urgent evaluation.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "cellulitis",
+      "definition": "Skin/subcutaneous tissue infection",
+      "category": "disease",
+      "prefix": null,
+      "root": "cellul",
+      "suffix": "-itis",
+      "breakdown": "cellul + -itis",
+      "clinical_relevance": "Mark borders; elevate extremity.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "conjunctivitis",
+      "definition": "Inflammation of conjunctiva",
+      "category": "disease",
+      "prefix": null,
+      "root": "conjunctiv",
+      "suffix": "-itis",
+      "breakdown": "conjunctiv + -itis",
+      "clinical_relevance": "Bacterial vs viral spread precautions differ.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "keratitis",
+      "definition": "Inflammation of the cornea",
+      "category": "disease",
+      "prefix": null,
+      "root": "kerat",
+      "suffix": "-itis",
+      "breakdown": "kerat (cornea) + -itis",
+      "clinical_relevance": "Contact lens wear is a risk factor.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "gingivitis",
+      "definition": "Inflammation of the gums",
+      "category": "disease",
+      "prefix": null,
+      "root": "gingiv",
+      "suffix": "-itis",
+      "breakdown": "gingiv (gums) + -itis",
+      "clinical_relevance": "Oral hygiene prevents progression to periodontitis.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "periodontitis",
+      "definition": "Inflammation/destruction of periodontium",
+      "category": "disease",
+      "prefix": null,
+      "root": "periodont",
+      "suffix": "-itis",
+      "breakdown": "periodont + -itis",
+      "clinical_relevance": "Linked to cardiovascular disease risk.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "myocarditis",
+      "definition": "Inflammation of heart muscle",
+      "category": "disease",
+      "prefix": null,
+      "root": "my/o",
+      "suffix": "-carditis",
+      "breakdown": "myo + card + -itis",
+      "clinical_relevance": "Post-viral; monitor for heart failure.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "pericarditis",
+      "definition": "Inflammation of the pericardium",
+      "category": "disease",
+      "prefix": "peri-",
+      "root": "card",
+      "suffix": "-itis",
+      "breakdown": "peri + card + -itis",
+      "clinical_relevance": "Pain worse supine, better leaning forward.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "endocarditis",
+      "definition": "Inflammation of endocardium",
+      "category": "disease",
+      "prefix": "endo-",
+      "root": "card",
+      "suffix": "-itis",
+      "breakdown": "endo + card + -itis",
+      "clinical_relevance": "IV drug use is a major risk factor.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "nephrology",
+      "definition": "Study and treatment of kidney disease",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "nephro",
+      "suffix": "-logy",
+      "breakdown": "nephro + -logy",
+      "clinical_relevance": "Nurses track I&O and renal labs.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "cardiology",
+      "definition": "Study and treatment of heart disease",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "cardi",
+      "suffix": "-logy",
+      "breakdown": "cardi + -logy",
+      "clinical_relevance": "Telemetry monitoring is nursing responsibility.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "neurology",
+      "definition": "Study of nervous system disorders",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "neur",
+      "suffix": "-logy",
+      "breakdown": "neur + -logy",
+      "clinical_relevance": "Neuro checks q1-4h in acute settings.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "pulmonology",
+      "definition": "Study of lung disease",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "pulmon",
+      "suffix": "-logy",
+      "breakdown": "pulmon + -logy",
+      "clinical_relevance": "Oxygen titration and weaning protocols.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "gastroenterology",
+      "definition": "Study of digestive system",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "gastr",
+      "suffix": "-entero",
+      "breakdown": "-logy",
+      "clinical_relevance": "gastr + enter + -logy",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "dermatology",
+      "definition": "Study of skin disease",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "derm",
+      "suffix": "-logy",
+      "breakdown": "derm + -logy",
+      "clinical_relevance": "Wound assessment and pressure injury staging.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "hematology",
+      "definition": "Study of blood disorders",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "hemat",
+      "suffix": "-logy",
+      "breakdown": "hemat + -logy",
+      "clinical_relevance": "Transfusion protocols and reaction monitoring.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "oncology",
+      "definition": "Study and treatment of cancer",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "onc",
+      "suffix": "-logy",
+      "breakdown": "onc (tumor) + -logy",
+      "clinical_relevance": "Chemo precautions and neutropenic care.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "urology",
+      "definition": "Study of urinary tract",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "ur",
+      "suffix": "-logy",
+      "breakdown": "ur + -logy",
+      "clinical_relevance": "Catheter care and UTI prevention bundles.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "orthopedics",
+      "definition": "Study of musculoskeletal system",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "orth",
+      "suffix": "-pedics",
+      "breakdown": "orth (straight) + pedics",
+      "clinical_relevance": "Mobility, fall risk, and weight-bearing status.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "intravenous",
+      "definition": "Within or into a vein",
+      "category": "procedure",
+      "prefix": "intra-",
+      "root": "ven",
+      "suffix": null,
+      "breakdown": "intra + ven",
+      "clinical_relevance": "Verify 5 Rights; monitor for infiltration.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "subcutaneous",
+      "definition": "Beneath the skin",
+      "category": "procedure",
+      "prefix": "sub-",
+      "root": "cutane",
+      "suffix": "-ous",
+      "breakdown": "sub + cutane + -ous",
+      "clinical_relevance": "Insulin and heparin route; rotate sites.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "intramuscular",
+      "definition": "Within a muscle",
+      "category": "procedure",
+      "prefix": "intra-",
+      "root": "muscul",
+      "suffix": "-ar",
+      "breakdown": "intra + muscul + -ar",
+      "clinical_relevance": "Aspiration no longer recommended; select site by volume.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "intradermal",
+      "definition": "Within the skin layers",
+      "category": "procedure",
+      "prefix": "intra-",
+      "root": "derm",
+      "suffix": "-al",
+      "breakdown": "intra + derm + -al",
+      "clinical_relevance": "TB and allergy testing route.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "endoscopy",
+      "definition": "Visual exam with flexible scope",
+      "category": "procedure",
+      "prefix": "endo-",
+      "root": "scop",
+      "suffix": "-y",
+      "breakdown": "endo + scop + -y",
+      "clinical_relevance": "NPO prep; post-procedure vitals and bleeding.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "colonoscopy",
+      "definition": "Visual exam of the colon",
+      "category": "procedure",
+      "prefix": "colo-",
+      "root": "scop",
+      "suffix": "-y",
+      "breakdown": "colo + scop + -y",
+      "clinical_relevance": "Bowel prep education is nursing role.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "bronchoscopy",
+      "definition": "Visual exam of bronchi",
+      "category": "procedure",
+      "prefix": null,
+      "root": "bronch",
+      "suffix": "-scopy",
+      "breakdown": "bronch + -scopy",
+      "clinical_relevance": "NPO; assess for hemorrhage post-procedure.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "laparoscopy",
+      "definition": "Visual exam of abdominal cavity",
+      "category": "procedure",
+      "prefix": "lapar/o",
+      "root": "scop",
+      "suffix": "-y",
+      "breakdown": "laparo (abdomen) + scop + -y",
+      "clinical_relevance": "Minimally invasive; shoulder pain from CO2 common.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "thoracentesis",
+      "definition": "Surgical puncture to drain pleural fluid",
+      "category": "procedure",
+      "prefix": "thorac-",
+      "root": "centesis",
+      "suffix": null,
+      "breakdown": "thorac + centesis (puncture)",
+      "clinical_relevance": "Improve breathing; send fluid for analysis.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "paracentesis",
+      "definition": "Surgical puncture to drain peritoneal fluid",
+      "category": "procedure",
+      "prefix": null,
+      "root": "paracentesis",
+      "suffix": null,
+      "breakdown": "para + centesis",
+      "clinical_relevance": "Large-volume para requires albumin replacement.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "amniocentesis",
+      "definition": "Puncture of amnion to withdraw fluid",
+      "category": "procedure",
+      "prefix": null,
+      "root": "amni",
+      "suffix": "-centesis",
+      "breakdown": "amni + centesis",
+      "clinical_relevance": "Genetic testing and lung maturity assessment.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "arthrocentesis",
+      "definition": "Joint aspiration",
+      "category": "procedure",
+      "prefix": null,
+      "root": "arthr",
+      "suffix": "-centesis",
+      "breakdown": "arthr + centesis",
+      "clinical_relevance": "Diagnose septic arthritis vs gout.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "appendectomy",
+      "definition": "Surgical removal of appendix",
+      "category": "procedure",
+      "prefix": null,
+      "root": "append",
+      "suffix": "-ectomy",
+      "breakdown": "append + -ectomy",
+      "clinical_relevance": "McBurney incision or laparoscopic.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "cholecystectomy",
+      "definition": "Surgical removal of gallbladder",
+      "category": "procedure",
+      "prefix": null,
+      "root": "cholecyst",
+      "suffix": "-ectomy",
+      "breakdown": "cholecyst + -ectomy",
+      "clinical_relevance": "Low-fat diet post-op education.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "hysterectomy",
+      "definition": "Surgical removal of uterus",
+      "category": "procedure",
+      "prefix": null,
+      "root": "hyster",
+      "suffix": "-ectomy",
+      "breakdown": "hyster + -ectomy",
+      "clinical_relevance": "Surgical menopause if ovaries removed.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "mastectomy",
+      "definition": "Surgical removal of breast",
+      "category": "procedure",
+      "prefix": null,
+      "root": "mast",
+      "suffix": "-ectomy",
+      "breakdown": "mast + -ectomy",
+      "clinical_relevance": "Body image support and lymphedema education.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "nephrectomy",
+      "definition": "Surgical removal of kidney",
+      "category": "procedure",
+      "prefix": null,
+      "root": "nephr",
+      "suffix": "-ectomy",
+      "breakdown": "nephrr + -ectomy",
+      "clinical_relevance": "Single kidney \u2014 monitor renal function lifelong.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "colostomy",
+      "definition": "Surgical opening into colon",
+      "category": "procedure",
+      "prefix": null,
+      "root": "col",
+      "suffix": "-ostomy",
+      "breakdown": "col + -ostomy",
+      "clinical_relevance": "Stoma assessment and pouching education.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "ileostomy",
+      "definition": "Surgical opening into ileum",
+      "category": "procedure",
+      "prefix": null,
+      "root": "ile",
+      "suffix": "-ostomy",
+      "breakdown": "ile + -ostomy",
+      "clinical_relevance": "High output \u2014 monitor hydration and electrolytes.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "tracheostomy",
+      "definition": "Surgical opening into trachea",
+      "category": "procedure",
+      "prefix": null,
+      "root": "trache",
+      "suffix": "-ostomy",
+      "breakdown": "trache + -ostomy",
+      "clinical_relevance": "Suctioning, humidification, stoma care.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "gastrostomy",
+      "definition": "Surgical opening into stomach",
+      "category": "procedure",
+      "prefix": null,
+      "root": "gastr",
+      "suffix": "-ostomy",
+      "breakdown": "gastr + -ostomy",
+      "clinical_relevance": "Tube feeding administration and site care.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "thoracotomy",
+      "definition": "Incision into the chest wall",
+      "category": "procedure",
+      "prefix": null,
+      "root": "thorac",
+      "suffix": "-otomy",
+      "breakdown": "thorac + -otomy",
+      "clinical_relevance": "Post-op pain impairs deep breathing.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "laparotomy",
+      "definition": "Incision into the abdomen",
+      "category": "procedure",
+      "prefix": "lapar/o",
+      "root": "-tomy",
+      "suffix": null,
+      "breakdown": "laparo + -otomy",
+      "clinical_relevance": "Assess incision and bowel function return.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "craniotomy",
+      "definition": "Incision into the skull",
+      "category": "procedure",
+      "prefix": null,
+      "root": "crani",
+      "suffix": "-otomy",
+      "breakdown": "crani + -otomy",
+      "clinical_relevance": "ICP monitoring; avoid Valsalva.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "biopsy",
+      "definition": "Removal of tissue for examination",
+      "category": "procedure",
+      "prefix": null,
+      "root": "bi/o",
+      "suffix": "-psy",
+      "breakdown": "bio (life) + -psy (view)",
+      "clinical_relevance": "Informed consent; monitor biopsy site bleeding.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "anesthesia",
+      "definition": "Loss of sensation",
+      "category": "pharmacology",
+      "prefix": "an-",
+      "root": "esthes",
+      "suffix": "-ia",
+      "breakdown": "an + esthes (feeling) + -ia",
+      "clinical_relevance": "Pre-op NPO and allergy assessment.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "analgesia",
+      "definition": "Absence of pain sensation",
+      "category": "pharmacology",
+      "prefix": "an-",
+      "root": "alg",
+      "suffix": "-ia",
+      "breakdown": "an + alg (pain) + -ia",
+      "clinical_relevance": "Pain scales guide opioid titration.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "antibiotic",
+      "definition": "Against life (bacteria)",
+      "category": "pharmacology",
+      "prefix": "anti-",
+      "root": "bi/o",
+      "suffix": "-tic",
+      "breakdown": "anti + bio + -tic",
+      "clinical_relevance": "Culture before antibiotics when possible.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "anticoagulant",
+      "definition": "Against clotting",
+      "category": "pharmacology",
+      "prefix": "anti-",
+      "root": "coagul",
+      "suffix": "-ant",
+      "breakdown": "anti + coagul + -ant",
+      "clinical_relevance": "Bleeding precautions; monitor INR for warfarin.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "antihypertensive",
+      "definition": "Against high blood pressure",
+      "category": "pharmacology",
+      "prefix": "anti-",
+      "root": "hypertens",
+      "suffix": "-ive",
+      "breakdown": "anti + hypertens + -ive",
+      "clinical_relevance": "Orthostatic hypotension risk \u2014 rise slowly.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "antipyretic",
+      "definition": "Against fever",
+      "category": "pharmacology",
+      "prefix": "anti-",
+      "root": "pyret",
+      "suffix": "-ic",
+      "breakdown": "anti + pyret (fever) + -ic",
+      "clinical_relevance": "Acetaminophen max 4g/day in adults.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "antiemetic",
+      "definition": "Against vomiting",
+      "category": "pharmacology",
+      "prefix": "anti-",
+      "root": "em",
+      "suffix": "-etic",
+      "breakdown": "anti + em (vomiting) + -etic",
+      "clinical_relevance": "Give before chemotherapy as ordered.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "diuretic",
+      "definition": "Promoting urine production",
+      "category": "pharmacology",
+      "prefix": null,
+      "root": "ur",
+      "suffix": "-etic",
+      "breakdown": "ur + -etic",
+      "clinical_relevance": "Monitor K+ and daily weights.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "bronchodilator",
+      "definition": "Widening of bronchi",
+      "category": "pharmacology",
+      "prefix": null,
+      "root": "bronch",
+      "suffix": "-dilator",
+      "breakdown": "bronch + dilator",
+      "clinical_relevance": "Albuterol first-line for bronchospasm.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "vasodilator",
+      "definition": "Widening of blood vessels",
+      "category": "pharmacology",
+      "prefix": null,
+      "root": "vas",
+      "suffix": "-dilator",
+      "breakdown": "vas + dilator",
+      "clinical_relevance": "Nitroglycerin for angina \u2014 monitor BP.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "vasoconstrictor",
+      "definition": "Narrowing of blood vessels",
+      "category": "pharmacology",
+      "prefix": null,
+      "root": "vas",
+      "suffix": "-constrictor",
+      "breakdown": "vas + constrictor",
+      "clinical_relevance": "Norepinephrine in shock \u2014 tissue perfusion.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "hypodermic",
+      "definition": "Under the skin (needle)",
+      "category": "procedure",
+      "prefix": "hypo-",
+      "root": "derm",
+      "suffix": "-ic",
+      "breakdown": "hypo + derm + -ic",
+      "clinical_relevance": "Correct needle length by body habitus.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "epidural",
+      "definition": "Upon/outside the dura mater",
+      "category": "procedure",
+      "prefix": "epi-",
+      "root": "dur",
+      "suffix": "-al",
+      "breakdown": "epi + dur + -al",
+      "clinical_relevance": "Labor analgesia; monitor for hypotension.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "spinal",
+      "definition": "Pertaining to the spine/canal",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "spin",
+      "suffix": "-al",
+      "breakdown": "spin + -al",
+      "clinical_relevance": "Post-spinal headache from CSF leak.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "pericardium",
+      "definition": "Sac surrounding the heart",
+      "category": "anatomy",
+      "prefix": "peri-",
+      "root": "cardi",
+      "suffix": "-um",
+      "breakdown": "peri + cardi + -um",
+      "clinical_relevance": "Pericardial effusion may cause tamponade.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "endocardium",
+      "definition": "Inner lining of the heart",
+      "category": "anatomy",
+      "prefix": "endo-",
+      "root": "cardi",
+      "suffix": "-um",
+      "breakdown": "endo + cardi + -um",
+      "clinical_relevance": "Endocarditis damages valve leaflets.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "myocardium",
+      "definition": "Heart muscle layer",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "my/o",
+      "suffix": "-cardium",
+      "breakdown": "myo + cardium",
+      "clinical_relevance": "STEMI injures myocardium \u2014 time is muscle.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "peritoneum",
+      "definition": "Membrane lining abdominal cavity",
+      "category": "anatomy",
+      "prefix": "peri-",
+      "root": "tone",
+      "suffix": "-um",
+      "breakdown": "peri + tone + -um",
+      "clinical_relevance": "Peritonitis causes rigid abdomen.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "pleura",
+      "definition": "Membrane surrounding lungs",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "pleur",
+      "suffix": "-a",
+      "breakdown": "pleur + -a",
+      "clinical_relevance": "Pleural effusion dulls percussion.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "mediastinum",
+      "definition": "Central thoracic compartment",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "mediastin",
+      "suffix": "-um",
+      "breakdown": "mediastin + -um",
+      "clinical_relevance": "Widening on CXR may indicate aortic injury.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "diaphragm",
+      "definition": "Primary muscle of respiration",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "phragm",
+      "suffix": null,
+      "breakdown": "phren (mind) \u2014 separates thorax/abdomen",
+      "clinical_relevance": "Paralysis affects weaning from ventilator.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "alveoli",
+      "definition": "Air sacs of the lungs",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "alveol",
+      "suffix": "-i",
+      "breakdown": "alveol + -i",
+      "clinical_relevance": "Gas exchange surface; surfactant prevents collapse.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "trachea",
+      "definition": "Windpipe",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "trache",
+      "suffix": "-a",
+      "breakdown": "trache (rough) + -a",
+      "clinical_relevance": "Midline position; deviation suggests tension pneumo.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "esophagus",
+      "definition": "Tube from pharynx to stomach",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "esophag",
+      "suffix": "-us",
+      "breakdown": "esophag + -us",
+      "clinical_relevance": "NG tube placement confirmed by X-ray.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "duodenum",
+      "definition": "First part of small intestine",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "duoden",
+      "suffix": "-um",
+      "breakdown": "duoden (twelve) + -um",
+      "clinical_relevance": "Peptic ulcers common in bulb.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "jejunum",
+      "definition": "Middle section of small intestine",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "jejun",
+      "suffix": "-um",
+      "breakdown": "jejun (empty) + -um",
+      "clinical_relevance": "Primary site of nutrient absorption.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "ileum",
+      "definition": "Terminal small intestine",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "ile",
+      "suffix": "-um",
+      "breakdown": "ile + -um",
+      "clinical_relevance": "B12 absorption requires intact ileum.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "cecum",
+      "definition": "Blind pouch at colon start",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "cec",
+      "suffix": "-um",
+      "breakdown": "cec + -um",
+      "clinical_relevance": "Appendix attaches at cecum.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "rectum",
+      "definition": "Terminal portion of large intestine",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "rect",
+      "suffix": "-um",
+      "breakdown": "rect (straight) + -um",
+      "clinical_relevance": "Digital rectal exam for prostate and occult blood.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "atrium",
+      "definition": "Upper chamber of the heart",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "atri",
+      "suffix": "-um",
+      "breakdown": "atri + -um",
+      "clinical_relevance": "Left atrium receives oxygenated blood from lungs.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "ventricle",
+      "definition": "Lower pumping chamber of heart",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "ventricul",
+      "suffix": "-e",
+      "breakdown": "ventricul + -e",
+      "clinical_relevance": "LV failure causes pulmonary edema.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "aorta",
+      "definition": "Largest artery in the body",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "aort",
+      "suffix": "-a",
+      "breakdown": "aort + -a",
+      "clinical_relevance": "Dissection presents with tearing chest pain.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "carotid",
+      "definition": "Major neck arteries",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "carotid",
+      "suffix": null,
+      "breakdown": "carotid (stupor)",
+      "clinical_relevance": "Bruit may indicate stenosis.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "femoral",
+      "definition": "Pertaining to the thigh",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "femor",
+      "suffix": "-al",
+      "breakdown": "femor + -al",
+      "clinical_relevance": "Common arterial access for cardiac cath.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "hepatic",
+      "definition": "Pertaining to the liver",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "hepat",
+      "suffix": "-ic",
+      "breakdown": "hepat + -ic",
+      "clinical_relevance": "Hepatic panel guides medication dosing.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "renal",
+      "definition": "Pertaining to the kidney",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "ren",
+      "suffix": "-al",
+      "breakdown": "ren + -al",
+      "clinical_relevance": "Renal dose adjustments for many drugs.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "cerebral",
+      "definition": "Pertaining to the brain",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "cerebr",
+      "suffix": "-al",
+      "breakdown": "cerebr + -al",
+      "clinical_relevance": "Cerebral perfusion pressure in TBI.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "axillary",
+      "definition": "Pertaining to the armpit",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "axill",
+      "suffix": "-ary",
+      "breakdown": "axill + -ary",
+      "clinical_relevance": "Temperature route \u2014 not for accurate core temp.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "buccal",
+      "definition": "Pertaining to the cheek",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "bucc",
+      "suffix": "-al",
+      "breakdown": "bucc + -al",
+      "clinical_relevance": "Some medications given buccal/sublingual.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "lingual",
+      "definition": "Pertaining to the tongue",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "lingu",
+      "suffix": "-al",
+      "breakdown": "lingu + -al",
+      "clinical_relevance": "Airway assessment includes tongue obstruction.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "otic",
+      "definition": "Pertaining to the ear",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "ot",
+      "suffix": "-ic",
+      "breakdown": "ot + -ic",
+      "clinical_relevance": "Otic drops \u2014 warm to body temp before instilling.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "ophthalmic",
+      "definition": "Pertaining to the eye",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "ophthalm",
+      "suffix": "-ic",
+      "breakdown": "ophthalm + -ic",
+      "clinical_relevance": "Do not touch dropper to eye.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "nasal",
+      "definition": "Pertaining to the nose",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "nas",
+      "suffix": "-al",
+      "breakdown": "nas + -al",
+      "clinical_relevance": "Nasal cannula low-flow oxygen delivery.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "oral",
+      "definition": "Pertaining to the mouth",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "or",
+      "suffix": "-al",
+      "breakdown": "or + -al",
+      "clinical_relevance": "Most common medication route.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "parenteral",
+      "definition": "Outside the GI tract",
+      "category": "procedure",
+      "prefix": null,
+      "root": "par",
+      "suffix": "-enteral",
+      "breakdown": "par (beside) + enteral",
+      "clinical_relevance": "IV, IM, SC routes \u2014 sterile technique.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "enteral",
+      "definition": "Within/into the GI tract",
+      "category": "procedure",
+      "prefix": null,
+      "root": "enter",
+      "suffix": "-al",
+      "breakdown": "enter + -al",
+      "clinical_relevance": "NG, OG, PEG tube feeding.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "supine",
+      "definition": "Lying on the back",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "supin",
+      "suffix": "-e",
+      "breakdown": "supin (backward)",
+      "clinical_relevance": "Increases aspiration risk during seizures.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "prone",
+      "definition": "Lying face downward",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "pron",
+      "suffix": "-e",
+      "breakdown": "pron (forward)",
+      "clinical_relevance": "ARDS prone positioning improves oxygenation.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "lateral",
+      "definition": "Side-lying position",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "later",
+      "suffix": "-al",
+      "breakdown": "later (side) + -al",
+      "clinical_relevance": "Recovery position prevents airway obstruction.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "Fowler's",
+      "definition": "Head of bed elevated 45-90 degrees",
+      "category": "procedure",
+      "prefix": null,
+      "root": null,
+      "suffix": null,
+      "breakdown": "Named position",
+      "clinical_relevance": "Reduces aspiration; eases breathing.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "Trendelenburg",
+      "definition": "Head lower than feet",
+      "category": "procedure",
+      "prefix": null,
+      "root": null,
+      "suffix": null,
+      "breakdown": "Named position",
+      "clinical_relevance": "Historically for shock \u2014 limited evidence.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "dorsal",
+      "definition": "Pertaining to the back",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "dors",
+      "suffix": "-al",
+      "breakdown": "dors + -al",
+      "clinical_relevance": "Dorsalis pedis pulse \u2014 peripheral perfusion.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "ventral",
+      "definition": "Pertaining to the front/belly",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "ventr",
+      "suffix": "-al",
+      "breakdown": "ventr (belly) + -al",
+      "clinical_relevance": "Ventral hernias through abdominal wall.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "proximal",
+      "definition": "Nearer to point of origin",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "proxim",
+      "suffix": "-al",
+      "breakdown": "proxim + -al",
+      "clinical_relevance": "Fracture site proximal to wrist is forearm.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "distal",
+      "definition": "Farther from point of origin",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "dist",
+      "suffix": "-al",
+      "breakdown": "dist + -al",
+      "clinical_relevance": "Distal pulse check after cast application.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "medial",
+      "definition": "Toward midline of body",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "medi",
+      "suffix": "-al",
+      "breakdown": "medi + -al",
+      "clinical_relevance": "Malleolus \u2014 medial vs lateral ankle.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "anterior",
+      "definition": "Front of the body",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "anter",
+      "suffix": "-ior",
+      "breakdown": "anter + -ior",
+      "clinical_relevance": "Anterior MI \u2014 LAD artery territory.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "posterior",
+      "definition": "Back of the body",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "poster",
+      "suffix": "-ior",
+      "breakdown": "poster + -ior",
+      "clinical_relevance": "Posterior tongue airway obstruction.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "superior",
+      "definition": "Above or upper",
+      "category": "anatomy",
+      "prefix": "super-",
+      "root": null,
+      "suffix": null,
+      "breakdown": "super (above)",
+      "clinical_relevance": "Superior vena cava returns head/arm blood.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "inferior",
+      "definition": "Below or lower",
+      "category": "anatomy",
+      "prefix": "infer-",
+      "root": null,
+      "suffix": null,
+      "breakdown": "infer (below)",
+      "clinical_relevance": "IVC returns lower body blood to heart.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "bilateral",
+      "definition": "Both sides",
+      "category": "anatomy",
+      "prefix": "bi-",
+      "root": "later",
+      "suffix": "-al",
+      "breakdown": "bi (two) + later + -al",
+      "clinical_relevance": "Bilateral crackles suggest pulmonary edema.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "unilateral",
+      "definition": "One side only",
+      "category": "anatomy",
+      "prefix": "uni-",
+      "root": "later",
+      "suffix": "-al",
+      "breakdown": "uni (one) + later + -al",
+      "clinical_relevance": "Unilateral weakness \u2014 stroke vs Bell palsy.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "chronic",
+      "definition": "Long duration",
+      "category": "disease",
+      "prefix": null,
+      "root": "chron",
+      "suffix": "-ic",
+      "breakdown": "chron (time) + -ic",
+      "clinical_relevance": "Chronic vs acute guides treatment urgency.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "acute",
+      "definition": "Sudden onset, short duration",
+      "category": "disease",
+      "prefix": null,
+      "root": "acut",
+      "suffix": "-e",
+      "breakdown": "acut (sharp)",
+      "clinical_relevance": "Acute coronary syndrome \u2014 ECG within 10 min.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "benign",
+      "definition": "Non-cancerous, mild",
+      "category": "disease",
+      "prefix": null,
+      "root": "benign",
+      "suffix": null,
+      "breakdown": "benign (kind)",
+      "clinical_relevance": "Benign prostatic hyperplasia \u2014 not cancer.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "malignant",
+      "definition": "Cancerous, harmful",
+      "category": "disease",
+      "prefix": null,
+      "root": "malign",
+      "suffix": "-ant",
+      "breakdown": "malign (bad) + -ant",
+      "clinical_relevance": "Malignant hypertension \u2014 organ damage risk.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "metastasis",
+      "definition": "Spread of cancer to distant sites",
+      "category": "disease",
+      "prefix": null,
+      "root": "metastas",
+      "suffix": "-is",
+      "breakdown": "metastas + -is",
+      "clinical_relevance": "Bone metastasis causes pathologic fractures.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "carcinoma",
+      "definition": "Cancer arising from epithelial tissue",
+      "category": "disease",
+      "prefix": null,
+      "root": "carcin",
+      "suffix": "-oma",
+      "breakdown": "carcin + -oma",
+      "clinical_relevance": "Most common cancer type overall.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "sarcoma",
+      "definition": "Cancer of connective tissue",
+      "category": "disease",
+      "prefix": null,
+      "root": "sarc",
+      "suffix": "-oma",
+      "breakdown": "sarc (flesh) + -oma",
+      "clinical_relevance": "Aggressive; often affects bone and muscle.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "lymphoma",
+      "definition": "Cancer of lymphatic tissue",
+      "category": "disease",
+      "prefix": null,
+      "root": "lymph",
+      "suffix": "-oma",
+      "breakdown": "lymph + -oma",
+      "clinical_relevance": "Hodgkin vs non-Hodgkin classification.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "melanoma",
+      "definition": "Cancer of pigment-producing cells",
+      "category": "disease",
+      "prefix": null,
+      "root": "melan",
+      "suffix": "-oma",
+      "breakdown": "melan (black) + -oma",
+      "clinical_relevance": "ABCDE criteria for skin lesion assessment.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "adenoma",
+      "definition": "Benign glandular tumor",
+      "category": "disease",
+      "prefix": null,
+      "root": "aden",
+      "suffix": "-oma",
+      "breakdown": "aden (gland) + -oma",
+      "clinical_relevance": "Colon adenoma may progress to carcinoma.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "polyp",
+      "definition": "Growth projecting from mucous membrane",
+      "category": "disease",
+      "prefix": null,
+      "root": "polyp",
+      "suffix": null,
+      "breakdown": "polyp (foot)",
+      "clinical_relevance": "Removed during colonoscopy.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "atrophy",
+      "definition": "Wasting or decrease in size",
+      "category": "disease",
+      "prefix": "a-",
+      "root": "troph",
+      "suffix": "-y",
+      "breakdown": "a (without) + troph (nourishment)",
+      "clinical_relevance": "Muscle atrophy from immobility.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "hypertrophy",
+      "definition": "Enlargement from cell growth",
+      "category": "disease",
+      "prefix": "hyper-",
+      "root": "troph",
+      "suffix": "-y",
+      "breakdown": "hyper + troph + -y",
+      "clinical_relevance": "LV hypertrophy from chronic HTN.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "dilation",
+      "definition": "Widening or stretching",
+      "category": "procedure",
+      "prefix": null,
+      "root": "dilat",
+      "suffix": "-ion",
+      "breakdown": "dilat + -ion",
+      "clinical_relevance": "Cervical dilation measured in cm during labor.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "constriction",
+      "definition": "Narrowing or tightening",
+      "category": "disease",
+      "prefix": null,
+      "root": "constrict",
+      "suffix": "-ion",
+      "breakdown": "constrict + -ion",
+      "clinical_relevance": "Bronchoconstriction in asthma attack.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "perfusion",
+      "definition": "Passage of blood through vessels",
+      "category": "procedure",
+      "prefix": null,
+      "root": "perfus",
+      "suffix": "-ion",
+      "breakdown": "perfus + -ion",
+      "clinical_relevance": "Poor perfusion \u2014 cold, pale extremities.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "dehydration",
+      "definition": "Excessive fluid loss",
+      "category": "disease",
+      "prefix": "de-",
+      "root": "hydr",
+      "suffix": "-ation",
+      "breakdown": "de + hydr + -ation",
+      "clinical_relevance": "Skin turgor and mucous membranes assess.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "rehydration",
+      "definition": "Restoration of fluid balance",
+      "category": "procedure",
+      "prefix": "re-",
+      "root": "hydr",
+      "suffix": "-ation",
+      "breakdown": "re + hydr + -ation",
+      "clinical_relevance": "Oral rehydration preferred when tolerated.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "homeostasis",
+      "definition": "Stable internal equilibrium",
+      "category": "anatomy",
+      "prefix": null,
+      "root": "homeo",
+      "suffix": "-stasis",
+      "breakdown": "homeo (same) + stasis",
+      "clinical_relevance": "Nursing supports physiologic balance.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "pathogenesis",
+      "definition": "Development of disease",
+      "category": "disease",
+      "prefix": null,
+      "root": "path",
+      "suffix": "-ogenesis",
+      "breakdown": "path + -ogenesis",
+      "clinical_relevance": "Understanding etiology guides prevention.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "etiology",
+      "definition": "Study of disease cause",
+      "category": "disease",
+      "prefix": null,
+      "root": "eti",
+      "suffix": "-ology",
+      "breakdown": "eti + -ology",
+      "clinical_relevance": "Root cause analysis in nursing diagnosis.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "prognosis",
+      "definition": "Predicted course of disease",
+      "category": "disease",
+      "prefix": null,
+      "root": "progn",
+      "suffix": "-osis",
+      "breakdown": "progn + -osis",
+      "clinical_relevance": "Patient education on expected outcomes.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "diagnosis",
+      "definition": "Identification of disease",
+      "category": "procedure",
+      "prefix": null,
+      "root": "diagnos",
+      "suffix": "-is",
+      "breakdown": "diagnos + -is",
+      "clinical_relevance": "NANDA-I nursing diagnoses complement medical.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "symptom",
+      "definition": "Subjective patient experience",
+      "category": "disease",
+      "prefix": null,
+      "root": "symptom",
+      "suffix": null,
+      "breakdown": "symptom (occurrence)",
+      "clinical_relevance": "Pain is a symptom \u2014 subjective data.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "sign",
+      "definition": "Objective clinical finding",
+      "category": "disease",
+      "prefix": null,
+      "root": "sign",
+      "suffix": null,
+      "breakdown": "sign",
+      "clinical_relevance": "Fever is a sign \u2014 objective measurement.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "syndrome",
+      "definition": "Group of symptoms occurring together",
+      "category": "disease",
+      "prefix": null,
+      "root": "syndrom",
+      "suffix": "-e",
+      "breakdown": "syndrom + -e",
+      "clinical_relevance": "Metabolic syndrome \u2014 cluster of risk factors.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "contraindication",
+      "definition": "Reason to avoid a treatment",
+      "category": "pharmacology",
+      "prefix": "contra-",
+      "root": "indic",
+      "suffix": "-ation",
+      "breakdown": "contra + indic + -ation",
+      "clinical_relevance": "Always check before administering.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "indication",
+      "definition": "Reason to use a treatment",
+      "category": "pharmacology",
+      "prefix": null,
+      "root": "indic",
+      "suffix": "-ation",
+      "breakdown": "indic + -ation",
+      "clinical_relevance": "Evidence-based indication guides orders.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "iatrogenic",
+      "definition": "Caused by medical treatment",
+      "category": "disease",
+      "prefix": null,
+      "root": "iatr",
+      "suffix": "-ogenic",
+      "breakdown": "iatr (physician) + -ogenic",
+      "clinical_relevance": "Hospital-acquired conditions are iatrogenic.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "nosocomial",
+      "definition": "Originating in the hospital",
+      "category": "disease",
+      "prefix": null,
+      "root": "nosocom",
+      "suffix": "-ial",
+      "breakdown": "nosocom (hospital) + -ial",
+      "clinical_relevance": "HAIs require infection control bundles.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "idiopathic",
+      "definition": "Unknown cause",
+      "category": "disease",
+      "prefix": null,
+      "root": "idiopath",
+      "suffix": "-ic",
+      "breakdown": "idio (own) + path + -ic",
+      "clinical_relevance": "Idiopathic \u2014 diagnosis of exclusion.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "congenital",
+      "definition": "Present at birth",
+      "category": "disease",
+      "prefix": "con-",
+      "root": "genit",
+      "suffix": "-al",
+      "breakdown": "con + genit + -al",
+      "clinical_relevance": "Congenital heart defects need lifelong follow-up.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "acquired",
+      "definition": "Developed after birth",
+      "category": "disease",
+      "prefix": null,
+      "root": "acquir",
+      "suffix": "-ed",
+      "breakdown": "acquir + -ed",
+      "clinical_relevance": "Acquired immunodeficiency \u2014 HIV/AIDS.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "febrile",
+      "definition": "Having a fever",
+      "category": "disease",
+      "prefix": null,
+      "root": "febr",
+      "suffix": "-ile",
+      "breakdown": "febr (fever) + -ile",
+      "clinical_relevance": "Febrile seizures in young children.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "afebrile",
+      "definition": "Without fever",
+      "category": "disease",
+      "prefix": "a-",
+      "root": "febr",
+      "suffix": "-ile",
+      "breakdown": "a + febr + -ile",
+      "clinical_relevance": "Afebrile 24h often criterion for discharge.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "ambulatory",
+      "definition": "Able to walk",
+      "category": "procedure",
+      "prefix": null,
+      "root": "ambul",
+      "suffix": "-atory",
+      "breakdown": "ambul (walk) + -atory",
+      "clinical_relevance": "Ambulatory surgery \u2014 same-day discharge.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "bedridden",
+      "definition": "Confined to bed",
+      "category": "disease",
+      "prefix": null,
+      "root": "bed",
+      "suffix": "-ridden",
+      "breakdown": "bed + ridden",
+      "clinical_relevance": "Pressure injury prevention q2h turning.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "palliative",
+      "definition": "Relieving without curing",
+      "category": "procedure",
+      "prefix": null,
+      "root": "palli",
+      "suffix": "-ative",
+      "breakdown": "palli (cover) + -ative",
+      "clinical_relevance": "Comfort-focused end-of-life care.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "hospice",
+      "definition": "End-of-life supportive care",
+      "category": "procedure",
+      "prefix": null,
+      "root": "hospic",
+      "suffix": "-e",
+      "breakdown": "hospic + -e",
+      "clinical_relevance": "Six-month prognosis eligibility criterion.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "rehabilitation",
+      "definition": "Restoration of function",
+      "category": "procedure",
+      "prefix": "re-",
+      "root": "habil",
+      "suffix": "-itation",
+      "breakdown": "re + habil + -itation",
+      "clinical_relevance": "PT/OT/ST interdisciplinary approach.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "prophylaxis",
+      "definition": "Disease prevention",
+      "category": "procedure",
+      "prefix": null,
+      "root": "prophylax",
+      "suffix": "-is",
+      "breakdown": "prophylax + -is",
+      "clinical_relevance": "DVT prophylaxis for surgical patients.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "immunization",
+      "definition": "Process of becoming immune",
+      "category": "procedure",
+      "prefix": null,
+      "root": "immun",
+      "suffix": "-ization",
+      "breakdown": "immun + -ization",
+      "clinical_relevance": "CDC schedule guides vaccination timing.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "vaccination",
+      "definition": "Introduction of vaccine",
+      "category": "procedure",
+      "prefix": null,
+      "root": "vaccin",
+      "suffix": "-ation",
+      "breakdown": "vaccin + -ation",
+      "clinical_relevance": "Document lot number and site.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "quarantine",
+      "definition": "Isolation to prevent disease spread",
+      "category": "procedure",
+      "prefix": null,
+      "root": "quarant",
+      "suffix": "-ine",
+      "breakdown": "quarant (forty) + -ine",
+      "clinical_relevance": "Infection control during outbreaks.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "isolation",
+      "definition": "Separation to prevent transmission",
+      "category": "procedure",
+      "prefix": null,
+      "root": "isol",
+      "suffix": "-ation",
+      "breakdown": "isol + -ation",
+      "clinical_relevance": "Standard + transmission-based precautions.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "sterile",
+      "definition": "Free from microorganisms",
+      "category": "procedure",
+      "prefix": null,
+      "root": "steril",
+      "suffix": "-e",
+      "breakdown": "steril + -e",
+      "clinical_relevance": "Sterile field \u2014 1-inch border rule.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "aseptic",
+      "definition": "Free from pathogenic organisms",
+      "category": "procedure",
+      "prefix": "a-",
+      "root": "sept",
+      "suffix": "-ic",
+      "breakdown": "a + sept + -ic",
+      "clinical_relevance": "Medical asepsis vs surgical asepsis.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "antiseptic",
+      "definition": "Against sepsis/infection",
+      "category": "pharmacology",
+      "prefix": "anti-",
+      "root": "sept",
+      "suffix": "-ic",
+      "breakdown": "anti + sept + -ic",
+      "clinical_relevance": "Chlorhexidine skin prep before IV insertion.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "term": "disinfectant",
+      "definition": "Chemical that destroys pathogens",
+      "category": "pharmacology",
+      "prefix": "dis-",
+      "root": "infect",
+      "suffix": "-ant",
+      "breakdown": "dis + infect + -ant",
+      "clinical_relevance": "Bleach for C. diff spores on surfaces.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    }
+  ]
+}

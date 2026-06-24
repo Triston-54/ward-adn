@@ -1,0 +1,96 @@
+[build]
+  command = "python scripts/build_static_html.py"
+  publish = "."
+
+[build.environment]
+  PYTHON_VERSION = "3.11"
+
+# JSON study content — served as static files at /data/content/
+[[redirects]]
+  from = "/data/content/*"
+  to = "/data/content/:splat"
+  status = 200
+
+# Clean URL rewrites (extensionless paths → built HTML)
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/modules/terminology"
+  to = "/modules/terminology.html"
+  status = 200
+
+[[redirects]]
+  from = "/modules/microbiology"
+  to = "/modules/microbiology.html"
+  status = 200
+
+[[redirects]]
+  from = "/modules/dosage"
+  to = "/modules/dosage.html"
+  status = 200
+
+[[redirects]]
+  from = "/modules/assessment"
+  to = "/modules/assessment.html"
+  status = 200
+
+[[redirects]]
+  from = "/modules/mental-health"
+  to = "/modules/mental-health.html"
+  status = 200
+
+[[redirects]]
+  from = "/modules/pathophysiology"
+  to = "/modules/pathophysiology.html"
+  status = 200
+
+[[redirects]]
+  from = "/modules/maternal-child"
+  to = "/modules/maternal-child.html"
+  status = 200
+
+[[redirects]]
+  from = "/modules/med_surg"
+  to = "/modules/med_surg.html"
+  status = 200
+
+[[redirects]]
+  from = "/modules/maternal_newborn"
+  to = "/modules/maternal_newborn.html"
+  status = 200
+
+[[redirects]]
+  from = "/modules/pediatrics"
+  to = "/modules/pediatrics.html"
+  status = 200
+
+[[redirects]]
+  from = "/nclex-prep"
+  to = "/nclex-prep.html"
+  status = 200
+
+[[redirects]]
+  from = "/how-to-use"
+  to = "/how-to-use.html"
+  status = 200
+
+[[headers]]
+  for = "/data/content/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+    Access-Control-Allow-Origin = "*"
+    Content-Type = "application/json; charset=utf-8"
+
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    Service-Worker-Allowed = "/"

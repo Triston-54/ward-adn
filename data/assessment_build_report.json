@@ -1,0 +1,191 @@
+{
+  "manifest_version": "2.2",
+  "module_status": "module_complete",
+  "scaffold_validation": {
+    "valid": true,
+    "error_count": 0,
+    "sections_checked": 9,
+    "entries_checked": 0,
+    "issues": {}
+  },
+  "build_status": {
+    "module_id": "assessment",
+    "version": "2.2",
+    "module_status": "module_complete",
+    "sections": [
+      {
+        "section": "head_to_toe_sequence",
+        "current": 10,
+        "target": 10,
+        "gap": 0,
+        "scaffold_queued": 0,
+        "phase": 1,
+        "status": "complete"
+      },
+      {
+        "section": "body_systems",
+        "current": 10,
+        "target": 10,
+        "gap": 0,
+        "scaffold_queued": 0,
+        "phase": 1,
+        "status": "complete"
+      },
+      {
+        "section": "red_flags_master",
+        "current": 20,
+        "target": 20,
+        "gap": 0,
+        "scaffold_queued": 0,
+        "phase": 2,
+        "status": "complete"
+      },
+      {
+        "section": "skills",
+        "current": 12,
+        "target": 12,
+        "gap": 0,
+        "scaffold_queued": 0,
+        "phase": 2,
+        "status": "complete"
+      },
+      {
+        "section": "practice_questions",
+        "current": 40,
+        "target": 40,
+        "gap": 0,
+        "scaffold_queued": 0,
+        "phase": 2,
+        "status": "complete"
+      },
+      {
+        "section": "special_populations",
+        "current": 6,
+        "target": 6,
+        "gap": 0,
+        "scaffold_queued": 0,
+        "phase": 2,
+        "status": "complete"
+      },
+      {
+        "section": "assessment_checklists",
+        "current": 8,
+        "target": 8,
+        "gap": 0,
+        "scaffold_queued": 0,
+        "phase": 2,
+        "status": "complete"
+      },
+      {
+        "section": "soap_exercises",
+        "current": 10,
+        "target": 10,
+        "gap": 0,
+        "scaffold_queued": 0,
+        "phase": 2,
+        "status": "complete"
+      },
+      {
+        "section": "assess_next_scenarios",
+        "current": 16,
+        "target": 16,
+        "gap": 0,
+        "scaffold_queued": 0,
+        "phase": 2,
+        "status": "complete"
+      },
+      {
+        "section": "flashcards",
+        "current": 60,
+        "target": 60,
+        "gap": 0,
+        "scaffold_queued": 0,
+        "phase": 2,
+        "status": "complete"
+      },
+      {
+        "section": "sbar_exercises",
+        "current": 2,
+        "target": 6,
+        "gap": 4,
+        "scaffold_queued": 0,
+        "phase": 2,
+        "status": "near_complete"
+      },
+      {
+        "section": "interview_techniques",
+        "current": 6,
+        "target": 6,
+        "gap": 0,
+        "scaffold_queued": 0,
+        "phase": 2,
+        "status": "complete"
+      }
+    ],
+    "tabs": {
+      "implemented": 12,
+      "planned": 0,
+      "phase_1": 9,
+      "phase_2": 3
+    },
+    "build_phases": [
+      {
+        "phase": 1,
+        "name": "Core Module (Shipped)",
+        "goal": "Head-to-toe, systems, checklists, scenarios, SOAP study, practice, red flags",
+        "deliverables": [
+          "assessment.json v1",
+          "assessment_service.py",
+          "assessment router",
+          "assessment.html/js/css"
+        ],
+        "audit_items": 62
+      },
+      {
+        "phase": 2,
+        "name": "Content Expansion",
+        "goal": "Double practice/scenarios; add 5 checklists, 5 SOAP, 10 red flags, 7 skills",
+        "deliverables": [
+          "Merge scaffold entries into assessment.json",
+          "Re-run clinical audit"
+        ],
+        "depends_on": [
+          "assessment_scaffold.json review"
+        ]
+      },
+      {
+        "phase": 3,
+        "name": "Interactive Documentation",
+        "goal": "SOAP builder with feedback, SBAR practice, export tab",
+        "deliverables": [
+          "soap/validate API",
+          "sbar endpoints",
+          "export builders",
+          "documentation tab UI"
+        ]
+      },
+      {
+        "phase": 4,
+        "name": "Flashcards & Drills",
+        "goal": "Normal/abnormal flashcards, red-flag triage drill",
+        "deliverables": [
+          "flashcards API",
+          "flashcards tab UI",
+          "deck export"
+        ]
+      }
+    ],
+    "scaffold_meta": {
+      "purpose": "Phase 2 placeholder content for NURS 146 Health Assessment \u2014 merge into assessment.json after clinical review",
+      "status": "merged",
+      "version": "2.0-scaffold",
+      "updated": "2026-06",
+      "do_not_serve_to_students": true,
+      "merged_date": "2026-06"
+    },
+    "totals": {
+      "live_items": 132,
+      "scaffold_entries": 0
+    }
+  }
+}

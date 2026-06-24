@@ -1,0 +1,269 @@
+{% extends "base.html" %}
+{% from "partials/module_breadcrumb.html" import module_breadcrumb %}
+{% block title %}Microbiology{% endblock %}
+{% block page_title %}Microbiology{% endblock %}
+{% block page_subtitle %}Infection chain · Pathogens · NCLEX practice{% endblock %}
+
+{% block topbar_actions %}
+<a href="/" class="nursing-return-link hidden sm:inline-flex" title="Back to Nursing Dashboard">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+    Dashboard
+</a>
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/css/microbiology.css">
+{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto" data-module="microbiology">
+    {{ module_breadcrumb('Microbiology', badge='starter') }}
+
+    <!-- Module header -->
+    <div class="module-header micro-module-header">
+        <div>
+            <h1 class="text-xl sm:text-2xl font-bold text-ward-100">Microbiology for Nursing</h1>
+            <p class="text-sm text-ward-500 mt-1">Pathogens, infection control, immune response &amp; clinical application</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+            <button onclick="verifySource('microbiology')" class="btn-verify text-sm" title="View verified sources with rationale">Verify Source</button>
+            <button onclick="openSocraticMode('microbiology', 'pathophysiology')" class="btn-socratic text-sm">Socratic Mode</button>
+        </div>
+    </div>
+
+    <!-- Progress strip -->
+    <div class="module-progress-strip micro-progress-strip">
+        <div class="text-xs text-ward-500 shrink-0">
+            Module Progress
+            <span id="module-progress-pct" class="text-ward-success font-semibold ml-1">{{ module_progress.percentage if module_progress else 0 }}%</span>
+        </div>
+        <div class="progress-bar">
+            <div id="module-progress-bar" class="progress-bar-fill bg-ward-success" style="width: {{ module_progress.percentage if module_progress else 0 }}%"></div>
+        </div>
+        <span class="stat-pill">{{ module_progress.items_completed if module_progress else 0 }}/{{ module_progress.items_total if module_progress else 47 }} studied</span>
+        <span class="stat-pill">{{ summary.chain_links }} chain links</span>
+        <span class="stat-pill">{{ summary.pathogens }} pathogens</span>
+        <span class="stat-pill">{{ summary.practice_total }} questions</span>
+    </div>
+
+    <!-- Clinical callout -->
+    <div class="module-banner module-banner--info clinical-callout mb-5">
+        <div>
+            <div class="module-banner-label clinical-callout-label">NCLEX Focus — Safety &amp; Infection Control</div>
+            Break any link in the chain of infection to prevent transmission. Hand hygiene is the single most effective nursing intervention.
+        </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="micro-tabs module-tabs" role="tablist" aria-label="Microbiology sections">
+        <button class="tab-btn micro-tab-btn active" data-tab="chain" onclick="Microbiology.switchTab('chain')">Chain Builder</button>
+        <button class="tab-btn micro-tab-btn" data-tab="learn" onclick="Microbiology.switchTab('learn')">Learn</button>
+        <button class="tab-btn micro-tab-btn" data-tab="break-chain" onclick="Microbiology.switchTab('break-chain')">Break Chain</button>
+        <button class="tab-btn micro-tab-btn" data-tab="what-if" onclick="Microbiology.switchTab('what-if')">What-If</button>
+        <button class="tab-btn micro-tab-btn" data-tab="flashcards" onclick="Microbiology.switchTab('flashcards')">Flashcards</button>
+        <button class="tab-btn micro-tab-btn" data-tab="practice" onclick="Microbiology.switchTab('practice')">Practice</button>
+        <button class="tab-btn micro-tab-btn" data-tab="export" onclick="Microbiology.switchTab('export')">Export</button>
+    </div>
+
+    <!-- ═══ CHAIN BUILDER ═══ -->
+    <div id="tab-chain" class="tab-panel micro-panel">
+        <div class="grid lg:grid-cols-2 gap-5">
+            <div class="card p-5">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-base font-semibold text-ward-100">Chain of Infection</h2>
+                    <button onclick="Microbiology.resetChainBuilder()" class="btn-secondary text-xs">Reset</button>
+                </div>
+                <p class="text-xs text-ward-500 mb-4">Select a link, then choose the intervention that best breaks it. Green = broken.</p>
+                <div id="chain-flow" class="chain-flow"></div>
+                <div id="chain-link-detail" class="chain-link-detail"></div>
+            </div>
+
+            <div class="card p-5">
+                <h2 class="text-base font-semibold text-ward-100 mb-4">Break the Chain</h2>
+                <div id="chain-builder-area">
+                    <div id="chain-interventions"></div>
+                </div>
+                <div id="chain-feedback" class="mt-4 hidden"></div>
+                <div id="chain-completion" class="chain-completion hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ LEARN ═══ -->
+    <div id="tab-learn" class="tab-panel micro-panel hidden">
+        <div class="learn-subtabs" role="tablist">
+            <button class="learn-subtab active" data-learn="concepts" onclick="Microbiology.switchLearnSubtab('concepts')">Concepts</button>
+            <button class="learn-subtab" data-learn="pathogens" onclick="Microbiology.switchLearnSubtab('pathogens')">Pathogens</button>
+            <button class="learn-subtab" data-learn="classification" onclick="Microbiology.switchLearnSubtab('classification')">Classification</button>
+            <button class="learn-subtab" data-learn="gram" onclick="Microbiology.switchLearnSubtab('gram')">Gram Stain</button>
+            <button class="learn-subtab" data-learn="clinical" onclick="Microbiology.switchLearnSubtab('clinical')">Clinical / PPE</button>
+        </div>
+        <div id="break-points-callout" class="break-points-callout hidden mb-5">
+            <div class="break-points-label">Key Break Points — Chain of Infection</div>
+            <ul id="break-points-list" class="break-points-list"></ul>
+        </div>
+        <div id="learn-content">
+            <p class="text-ward-500 text-sm py-4">Open this tab to load reference content.</p>
+        </div>
+    </div>
+
+    <!-- ═══ BREAK-CHAIN SCENARIOS ═══ -->
+    <div id="tab-break-chain" class="tab-panel micro-panel hidden">
+        <div class="max-w-2xl mx-auto card p-5 sm:p-6">
+            <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
+                <h2 class="text-base font-semibold text-ward-100">Break the Chain — Clinical Scenarios</h2>
+                <span id="break-chain-score" class="text-sm font-mono text-ward-500">0/0</span>
+            </div>
+            <p class="text-xs text-ward-500 mb-4">Read each scenario and select the nursing action that best breaks the target chain link.</p>
+            <div id="break-chain-area">
+                <p class="text-ward-500 text-sm">Loading scenarios…</p>
+            </div>
+            <button onclick="Microbiology.loadBreakChainScenarios()" class="btn-secondary w-full mt-4 text-sm">Reload Scenarios</button>
+        </div>
+    </div>
+
+    <!-- ═══ WHAT-IF SCENARIOS ═══ -->
+    <div id="tab-what-if" class="tab-panel micro-panel hidden">
+        <div class="max-w-2xl mx-auto card p-5 sm:p-6">
+            <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
+                <h2 class="text-base font-semibold text-ward-100">What-If Scenarios</h2>
+                <span id="what-if-score" class="text-sm font-mono text-ward-500">0/0</span>
+            </div>
+            <p class="text-xs text-ward-500 mb-4">Apply infection control judgment to complex clinical situations.</p>
+            <div id="what-if-area">
+                <p class="text-ward-500 text-sm">Loading scenarios…</p>
+            </div>
+            <button onclick="Microbiology.loadWhatIfScenarios()" class="btn-secondary w-full mt-4 text-sm">Reload Scenarios</button>
+        </div>
+    </div>
+
+    <!-- ═══ FLASHCARDS ═══ -->
+    <div id="tab-flashcards" class="tab-panel micro-panel hidden">
+        <div class="max-w-lg mx-auto">
+            <div class="flex flex-wrap justify-center gap-2 mb-4" id="micro-fc-stats">
+                <span class="stat-pill">Known: <strong id="micro-fc-known">0</strong></span>
+                <span class="stat-pill">Review: <strong id="micro-fc-review">0</strong></span>
+            </div>
+
+            <div id="micro-fc-complete" class="micro-fc-complete hidden"></div>
+
+            <div id="micro-flashcard-stage" class="micro-flashcard-stage">
+                <div id="micro-flashcard-inner" class="micro-flashcard-inner" onclick="Microbiology.flipCard()" role="button" tabindex="0" aria-label="Flip flashcard">
+                    <div id="mfc-front-view" class="micro-fc-face">
+                        <p class="text-xs text-ward-500 mb-2">Tap or press Space to reveal</p>
+                        <p id="mfc-front" class="micro-flashcard-front">Loading…</p>
+                        <span id="mfc-type" class="pathogen-badge mt-3"></span>
+                    </div>
+                    <div id="mfc-back-view" class="micro-fc-face micro-fc-back hidden">
+                        <p id="mfc-back-name" class="text-sm font-semibold text-ward-success mb-2"></p>
+                        <div class="micro-fc-field">
+                            <span class="micro-fc-label">Precautions</span>
+                            <p id="mfc-back-precautions" class="text-sm text-ward-300"></p>
+                        </div>
+                        <div class="micro-fc-field">
+                            <span class="micro-fc-label">Nursing Action</span>
+                            <p id="mfc-back-nursing" class="text-xs text-ward-400"></p>
+                        </div>
+                        <p id="mfc-back-clinical" class="text-xs text-ward-accent mt-2"></p>
+                        <button type="button" id="mfc-verify-btn" class="btn-verify text-xs mt-3 hidden" onclick="event.stopPropagation(); verifySource('microbiology')">Verify Source</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="micro-fc-dots" class="micro-fc-dots"></div>
+
+            <div class="micro-fc-rating">
+                <button type="button" class="micro-fc-rate review" disabled id="mfc-btn-review" onclick="Microbiology.rateCard('review')">Need Review</button>
+                <button type="button" class="micro-fc-rate know" disabled id="mfc-btn-know" onclick="Microbiology.rateCard('know')">Know It</button>
+            </div>
+
+            <div class="flex justify-between items-center mt-4">
+                <button onclick="Microbiology.prevCard()" class="btn-secondary text-sm" aria-label="Previous card">← Prev</button>
+                <span id="micro-flashcard-counter" class="text-sm text-ward-500 font-mono">0 / 0</span>
+                <button onclick="Microbiology.nextCard()" class="btn-secondary text-sm" aria-label="Next card">Next →</button>
+            </div>
+            <div class="flex flex-wrap justify-center gap-2 mt-3">
+                <button onclick="Microbiology.loadFlashcards(8)" class="btn-primary text-sm">Study 8</button>
+                <button onclick="Microbiology.loadFlashcards(8, true)" class="btn-secondary text-sm">Shuffle 8</button>
+                <button onclick="Microbiology.loadFlashcards()" class="btn-secondary text-sm">All Pathogens</button>
+                <button onclick="Microbiology.exportCurrentDeck()" class="btn-secondary text-sm">Export Deck</button>
+            </div>
+            <p class="text-center text-xs text-ward-600 mt-3">← → navigate · Space flips · Dots jump to card · Rate to track progress</p>
+        </div>
+    </div>
+
+    <!-- ═══ PRACTICE ═══ -->
+    <div id="tab-practice" class="tab-panel micro-panel hidden">
+        <div class="max-w-2xl mx-auto card p-5 sm:p-6">
+            <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
+                <h2 class="text-base font-semibold text-ward-100">Practice Mode</h2>
+                <span id="practice-score" class="text-sm font-mono text-ward-500">0/0</span>
+            </div>
+
+            <div class="practice-mode-pills mb-4">
+                <button class="mode-pill active" data-mode="mixed" onclick="Microbiology.setPracticeMode('mixed')">Mixed</button>
+                <button class="mode-pill" data-mode="nclex" onclick="Microbiology.setPracticeMode('nclex')">NCLEX-Style</button>
+                <button class="mode-pill" data-mode="application" onclick="Microbiology.setPracticeMode('application')">Application</button>
+            </div>
+
+            <div id="practice-question-area">
+                <p class="text-ward-500 text-sm">Choose a mode and start practicing.</p>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mt-4">
+                <button onclick="Microbiology.startPractice(10)" class="btn-primary text-sm">Start (10)</button>
+                <button onclick="Microbiology.startPractice(15)" class="btn-secondary text-sm">Extended (15)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ EXPORT ═══ -->
+    <div id="tab-export" class="tab-panel micro-panel hidden">
+        <div class="card p-5 max-w-2xl mx-auto">
+            <h2 class="text-base font-semibold text-ward-100 mb-1">Export Study Materials</h2>
+            <p class="text-xs text-ward-500 mb-5">Copy, print, or download infection control references for offline review</p>
+            <div class="export-grid">
+                <div class="export-card" onclick="Microbiology.exportStudySheet()">
+                    <div class="export-card-icon">📄</div>
+                    <div class="export-card-title">PDF Study Sheet</div>
+                    <div class="export-card-desc">Chain, break points &amp; pathogens — Save as PDF</div>
+                </div>
+                <div class="export-card" onclick="Microbiology.copyToClipboard()">
+                    <div class="export-card-icon">📋</div>
+                    <div class="export-card-title">Copy to Clipboard</div>
+                    <div class="export-card-desc">Chain links + break points + pathogens</div>
+                </div>
+                <div class="export-card" onclick="Microbiology.exportMarkdown()">
+                    <div class="export-card-icon">📝</div>
+                    <div class="export-card-title">Flashcard Markdown</div>
+                    <div class="export-card-desc">Download .md for Anki or notes</div>
+                </div>
+                <div class="export-card export-card-accent" onclick="Microbiology.exportFlashcardsPDF()">
+                    <div class="export-card-icon">🃏</div>
+                    <div class="export-card-title">Flashcard PDF</div>
+                    <div class="export-card-desc">Printable pathogen flashcards</div>
+                </div>
+                <div class="export-card" onclick="Microbiology.exportPathogenCheatSheet()">
+                    <div class="export-card-icon">🦠</div>
+                    <div class="export-card-title">Pathogen Cheat Sheet</div>
+                    <div class="export-card-desc">Transmission, precautions &amp; nursing actions</div>
+                </div>
+                <div class="export-card" onclick="Microbiology.exportInfectionChainSheet()">
+                    <div class="export-card-icon">🔗</div>
+                    <div class="export-card-title">Infection Chain</div>
+                    <div class="export-card-desc">Six links with break-the-chain interventions</div>
+                </div>
+                <div class="export-card" onclick="Microbiology.exportPathogenJSON()">
+                    <div class="export-card-icon">📦</div>
+                    <div class="export-card-title">Pathogens JSON</div>
+                    <div class="export-card-desc">Full pathogen database for offline import</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/microbiology.js"></script>
+{% endblock %}

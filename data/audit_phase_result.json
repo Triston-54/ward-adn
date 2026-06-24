@@ -1,0 +1,39 @@
+{
+  "stats": {
+    "verified": 312,
+    "flagged": 27,
+    "errors": []
+  },
+  "summary": {
+    "total": 339,
+    "verified": 312,
+    "needs_review": 27,
+    "unreviewed": 0,
+    "by_module": {
+      "terminology": {
+        "verified": 197,
+        "needs_review": 20,
+        "unreviewed": 0,
+        "total": 217
+      },
+      "microbiology": {
+        "verified": 31,
+        "needs_review": 2,
+        "unreviewed": 0,
+        "total": 33
+      },
+      "dosage": {
+        "verified": 26,
+        "needs_review": 1,
+        "unreviewed": 0,
+        "total": 27
+      },
+      "assessment": {
+        "verified": 58,
+        "needs_review": 4,
+        "unreviewed": 0,
+        "total": 62
+      }
+    }
+  }
+}

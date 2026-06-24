@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% from "partials/module_breadcrumb.html" import module_breadcrumb %}
+{% block title %}Pharmacy Calculations{% endblock %}
+{% block page_title %}Pharmacy Calculations{% endblock %}
+{% block page_subtitle %}Foundations Review · Stage 1{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/css/pharmacy.css">
+{% endblock %}
+
+{% block topbar_actions %}
+<a href="/pharmacy" class="nursing-return-link hidden sm:inline-flex">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+    Pharmacy Dashboard
+</a>
+{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto" data-module="pharmacy_calculations" data-track="pharmacy">
+    {{ module_breadcrumb('Pharmacy Calculations', parent_url='/pharmacy', parent_label='Pharmacy Dashboard', badge='scaffold') }}
+
+    <div class="module-header pharm-calc-header">
+        <div>
+            <div class="pharmacy-hero-badge mb-2">Foundations Review</div>
+            <h1 class="text-xl sm:text-2xl font-bold text-ward-100">{{ content.title }}</h1>
+            <p class="text-sm text-ward-500 mt-1">{{ content.subtitle }}</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+            <a href="/pharmacy" class="btn-secondary text-sm">Pharmacy Dashboard</a>
+            <button onclick="openSocraticMode('pharmacy_calculations', 'calculation')" class="btn-socratic text-sm">Socratic Mode</button>
+        </div>
+    </div>
+
+    <div class="module-progress-strip pharm-calc-progress-strip">
+        <div class="text-xs text-ward-500 shrink-0">
+            Module Progress
+            <span id="module-progress-pct" class="text-pharm-primary font-semibold ml-1">{{ module_progress.percentage if module_progress else 0 }}%</span>
+        </div>
+        <div class="progress-bar">
+            <div id="module-progress-bar" class="progress-bar-fill" style="width: {{ module_progress.percentage if module_progress else 0 }}%; background: var(--pharm-primary);"></div>
+        </div>
+        <span class="stat-pill">{{ module_progress.items_completed if module_progress else 0 }}/{{ module_progress.items_total if module_progress else summary.items_total }} studied</span>
+        <span class="stat-pill">{{ summary.calc_topic_count }} topics</span>
+        <span class="stat-pill">{{ summary.calc_type_count }} calc types</span>
+        <span class="stat-pill"><span class="badge badge-scaffold">Scaffold</span></span>
+    </div>
+
+    <div class="module-banner module-banner--scaffold pharm-scaffold-banner">
+        <div class="pharmacy-hero-icon" style="width: 2rem; height: 2rem;">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div>
+            <div class="module-banner-label text-pharm-primary">Architecture Scaffold</div>
+            <p class="text-sm text-ward-300 mt-0.5">{{ content.differentiator }} Full lesson content, calculators, and practice banks will be added in Phase 2.</p>
+        </div>
+    </div>
+
+    <div class="pharm-tabs module-tabs" role="tablist" aria-label="Pharmacy calculations sections">
+        <button class="tab-btn active" data-tab="overview" onclick="PharmacyCalc.switchTab('overview')">Overview</button>
+        <button class="tab-btn" data-tab="topics" onclick="PharmacyCalc.switchTab('topics')">Topic Outline</button>
+    </div>
+
+    <!-- Overview -->
+    <div id="tab-overview" class="tab-panel">
+        <div class="mb-4">
+            <h2 class="text-base font-semibold text-ward-100">Module Overview</h2>
+            <p class="text-xs text-ward-500 mt-1">How this module differs from NURS 145 Dosage</p>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-4 mb-6">
+            <div class="card p-4 border-l-4" style="border-left-color: var(--pharm-primary);">
+                <h3 class="text-sm font-semibold text-pharm-primary mb-2">Pharmacy Depth</h3>
+                <ul class="text-xs text-ward-400 space-y-1.5 list-disc list-inside">
+                    <li>Alligation (medial and alternate)</li>
+                    <li>Isotonicity and osmolarity adjustments</li>
+                    <li>mEq / mmol electrolyte conversions</li>
+                    <li>Compounding percentage strength (% w/w, w/v, v/v)</li>
+                </ul>
+            </div>
+            <div class="card p-4 border-l-4 border-l-ward-accent">
+                <h3 class="text-sm font-semibold text-ward-accent mb-2">vs. Nursing Dosage</h3>
+                <ul class="text-xs text-ward-400 space-y-1.5 list-disc list-inside">
+                    <li>NURS 145 focuses on safe administration dosing</li>
+                    <li>This module targets verification and compounding math</li>
+                    <li>Board-style multi-step NAPLEX problem formats</li>
+                    <li>Independent double-check workflows</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mb-4">
+            <h3 class="text-sm font-semibold text-ward-100 mb-2">Planned Calculator Types</h3>
+            <div id="pharm-calc-types" class="flex flex-wrap gap-2">
+                <p class="text-ward-500 text-sm">Loading…</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Topics -->
+    <div id="tab-topics" class="tab-panel hidden">
+        <div class="mb-4">
+            <h2 class="text-base font-semibold text-ward-100">Topic Outline</h2>
+            <p class="text-xs text-ward-500 mt-1">Eight pharmacist-level calculation domains — content coming in Phase 2</p>
+        </div>
+        <div id="pharm-topic-grid" class="grid sm:grid-cols-2 gap-3">
+            <p class="text-ward-500 text-sm">Loading topics…</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script defer src="/static/js/pharmacy_calculations.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() { PharmacyCalc.init(); });
+</script>
+{% endblock %}

@@ -1,0 +1,64 @@
+{
+  "verified": [
+    "microbiology/scenario:bc-1",
+    "microbiology/scenario:bc-2",
+    "microbiology/scenario:bc-3",
+    "microbiology/scenario:bc-4",
+    "microbiology/scenario:wi-1",
+    "microbiology/scenario:wi-2",
+    "microbiology/scenario:wi-3",
+    "microbiology/scenario:wi-4",
+    "terminology/term:colonization",
+    "terminology/term:bacteremia",
+    "terminology/term:mdro",
+    "microbiology/concept:nursing-vital-sign-thresholds-cross-module",
+    "microbiology/concept:hand-hygiene-exceptions-spores-non-enveloped-viruses",
+    "microbiology/practice:micro-q9",
+    "microbiology/practice:app-q6",
+    "microbiology/scenario:bc-5",
+    "microbiology/scenario:wi-5",
+    "dosage/trap:geriatric_blanket",
+    "dosage/practice:d013"
+  ],
+  "skipped": [],
+  "errors": [],
+  "catalog_total": 358,
+  "summary": {
+    "total": 358,
+    "verified": 337,
+    "needs_review": 21,
+    "unreviewed": 0,
+    "by_module": {
+      "terminology": {
+        "verified": 199,
+        "needs_review": 21,
+        "unreviewed": 0,
+        "total": 220
+      },
+      "microbiology": {
+        "verified": 47,
+        "needs_review": 0,
+        "unreviewed": 0,
+        "total": 47
+      },
+      "dosage": {
+        "verified": 29,
+        "needs_review": 0,
+        "unreviewed": 0,
+        "total": 29
+      },
+      "assessment": {
+        "verified": 62,
+        "needs_review": 0,
+        "unreviewed": 0,
+        "total": 62
+      }
+    },
+    "modules": {
+      "terminology": "Medical Terminology",
+      "microbiology": "Microbiology",
+      "dosage": "NURS 145 \u2014 Dosage",
+      "assessment": "NURS 146 \u2014 Health Assessment"
+    }
+  }
+}

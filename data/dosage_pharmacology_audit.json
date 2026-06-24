@@ -1,0 +1,20 @@
+{
+  "agent": "Dosage Pharmacology Content Audit \u2014 2026-06",
+  "catalog_items_reviewed": 24,
+  "verified": 24,
+  "flagged": 0,
+  "breakdown": {
+    "pharm_safety_reviewed": 6,
+    "drug_classes_reviewed": 18,
+    "drug_classes_in_content": 18,
+    "pharm_categories": 7
+  },
+  "flagged_items": [],
+  "errors": [],
+  "module_summary": {
+    "verified": 53,
+    "needs_review": 0,
+    "unreviewed": 0,
+    "total": 53
+  }
+}

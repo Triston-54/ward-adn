@@ -1,0 +1,61 @@
+{
+  "agent": "Sub-Agent 6 \u2014 Health Assessment Interactive & Practice",
+  "interactive_items_reviewed": 140,
+  "verified": 140,
+  "flagged": 0,
+  "content_counts": {
+    "practice_questions": 40,
+    "assess_next_scenarios": 16,
+    "soap_exercises": 10,
+    "sbar_exercises": 6,
+    "assessment_checklists": 8,
+    "flashcards": 60
+  },
+  "breakdown_by_type": {
+    "practice": {
+      "reviewed": 40,
+      "verified": 40,
+      "flagged": 0
+    },
+    "soap": {
+      "reviewed": 10,
+      "verified": 10,
+      "flagged": 0
+    },
+    "sbar": {
+      "reviewed": 6,
+      "verified": 6,
+      "flagged": 0
+    },
+    "scenario": {
+      "reviewed": 16,
+      "verified": 16,
+      "flagged": 0
+    },
+    "checklist": {
+      "reviewed": 8,
+      "verified": 8,
+      "flagged": 0
+    },
+    "flashcard": {
+      "reviewed": 60,
+      "verified": 60,
+      "flagged": 0
+    }
+  },
+  "flagged_items": [],
+  "new_flags_this_agent": [],
+  "ancillary_notes": [
+    "assess_next_scenarios an-07 and an-09 both cover early trach airway management \u2014 clinically correct but pedagogically redundant.",
+    "audit_service.build_content_catalog duplicates sbar_exercises entries (catalog quirk \u2014 not modified per task scope).",
+    "scenario:an-03 was previously flagged in apply_audit_phase for age mismatch; current JSON includes 4-month pathway clarification \u2014 verified.",
+    "SOAP exercises soap-02 plan lists incentive spirometry twice \u2014 minor editorial duplication, not a clinical accuracy issue."
+  ],
+  "errors": [],
+  "module_summary": {
+    "verified": 204,
+    "needs_review": 0,
+    "unreviewed": 0,
+    "total": 204
+  }
+}

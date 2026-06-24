@@ -1,0 +1,99 @@
+{
+  "agent": "Sub-Agent 1 \u2014 Medical Terminology Word Parts",
+  "terms_reviewed": 220,
+  "terms_verified": 202,
+  "terms_flagged": 18,
+  "word_parts_reviewed": {
+    "prefixes": 20,
+    "roots": 20,
+    "suffixes": 15,
+    "word_parts_verified": 55,
+    "word_parts_flagged": 0,
+    "notes": {
+      "prefixes": "20 prefixes verified \u2014 meanings align with Ehrlich 8th Ed. (a-/an-, brady-, dys-, hyper-, hypo-, etc.)",
+      "roots": "20 roots verified \u2014 cardi, derm, gastr, nephr, neur, oste, path, etc. clinically accurate",
+      "suffixes": "15 suffixes verified \u2014 -itis, -ectomy, -emia, -logy, -osis, -penia, etc.; note: -oma example uses carcinoma (malignant exception to benign -oma teaching)"
+    }
+  },
+  "flagged_items": [
+    {
+      "item_key": "term:antibiotic",
+      "review_note": "Breakdown (anti + bio + -tic) is correct, but definition 'Against life (bacteria)' is etymology only\u2014not the constructed clinical meaning. Fix definition: 'Drug that inhibits or destroys bacteria.'"
+    },
+    {
+      "item_key": "term:anuria",
+      "review_note": "Word parts (an- without + ur + -ia) are correct, but constructed clinical meaning is wrong: anuria is severely decreased output (~<50\u2013100 mL/24 h), not literal absence of all urine. Fix definition to match standard clinical usage."
+    },
+    {
+      "item_key": "term:bronchodilator",
+      "review_note": "Breakdown implies agent, but definition 'Promoting/widening bronchi' describes the process (bronchodilation), not the drug class. Fix: 'Medication/agent that causes bronchodilation.'"
+    },
+    {
+      "item_key": "term:diaphragm",
+      "review_note": "Breakdown incorrectly uses phren (mind). Diaphragm derives from Greek diaphragma (partition/barrier)\u2014the muscle separating thorax and abdomen. Fix breakdown: 'diaphragma (partition) \u2014 primary muscle of respiration.'"
+    },
+    {
+      "item_key": "term:diuretic",
+      "review_note": "Breakdown omits dia- (through) combining form; shows only ur + -etic. Definition describes action (promoting urine) not agent class. Fix breakdown: 'dia (through) + ur (urine) + -etic'; definition: 'Agent that promotes diuresis.'"
+    },
+    {
+      "item_key": "term:etiology",
+      "review_note": "Breakdown eti + -ology is structurally fine, but definition 'Study of disease cause' describes the field of inquiry\u2014not etiology itself. Etiology = cause/origin of disease. Fix definition accordingly."
+    },
+    {
+      "item_key": "term:fowler-s",
+      "review_note": "Named position\u2014not a constructed term\u2014but definition '45\u201390\u00b0' conflates Fowler (45\u201360\u00b0), Semi-Fowler (30\u201345\u00b0), and High Fowler (60\u201390\u00b0). Fix with tiered angle definitions for clarity."
+    },
+    {
+      "item_key": "term:gastroenterology",
+      "review_note": "Word-part fields corrupted: suffix shows '-entero' (a root), breakdown shows only '-logy', and clinical_relevance holds the actual breakdown 'gastr + enter + -logy'. Swap/fix fields: root='gastr/o + enter/o', suffix='-logy', breakdown='gastr (stomach) + enter/o (intestine) + -logy (study of)'."
+    },
+    {
+      "item_key": "term:hypodermic",
+      "review_note": "Prefix labeled hypo- (below/deficient) but hypodermic uses hyp- meaning under/below the dermis. Per Ehrlich 8th Ed., hyp- \u2260 hypo-. Fix: prefix='hyp-', breakdown='hyp- (under) + derm (skin) + -ic'."
+    },
+    {
+      "item_key": "term:ketoacidosis",
+      "review_note": "Constructed term = ket/o (ketone) + acid + -osis, but breakdown omits 'acid' combining form. Fix: 'ket/o (ketone) + acid + -osis (condition)'."
+    },
+    {
+      "item_key": "term:laparotomy",
+      "review_note": "Root field incorrectly set to '-tomy' (a suffix). Prefix lapar/o is correct. Fix: root='lapar/o', suffix='-tomy', breakdown='lapar/o (abdomen) + -tomy (surgical incision)'."
+    },
+    {
+      "item_key": "term:lateral",
+      "review_note": "Constructed anatomical meaning wrong: lateral = pertaining to the side/away from midline, not 'side-lying position' (that is lateral recumbent). Fix definition; note position separately if needed."
+    },
+    {
+      "item_key": "term:leukocytosis",
+      "review_note": "Breakdown omits cyt (cell): leukocytosis = elevated white blood cells. Fix: 'leuk/o (white) + cyt (cell) + -osis (condition)'."
+    },
+    {
+      "item_key": "term:nephrectomy",
+      "review_note": "Breakdown typo 'nephrr' and root labeling inconsistent. Fix: 'nephr (kidney) + -ectomy (surgical removal)'."
+    },
+    {
+      "item_key": "term:quarantine",
+      "review_note": "Etymology breakdown (quarant + -ine) is fine, but constructed/public-health meaning conflates quarantine (restricts exposed/asymptomatic persons) with isolation (separates confirmed infection). Fix definition per CDC distinction."
+    },
+    {
+      "item_key": "term:thrombocytopenia",
+      "review_note": "Breakdown omits cyt/o (cell/platelet): thrombocytopenia = low platelet count. Fix: 'thromb/o (clotting) + cyt/o (cell) + -penia (deficiency)'."
+    },
+    {
+      "item_key": "term:vasoconstrictor",
+      "review_note": "Definition describes vasoconstriction (process), not the agent. Fix: 'Medication/agent that causes vasoconstriction (narrows blood vessels).'"
+    },
+    {
+      "item_key": "term:vasodilator",
+      "review_note": "Definition describes vasodilation (process), not the agent. Fix: 'Medication/agent that causes vasodilation (widens blood vessels).'"
+    }
+  ],
+  "errors": [],
+  "module_summary": {
+    "verified": 202,
+    "needs_review": 18,
+    "unreviewed": 0,
+    "total": 220
+  }
+}

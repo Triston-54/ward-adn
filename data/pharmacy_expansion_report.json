@@ -1,0 +1,167 @@
+{
+  "report_id": "pharmacy_calculations_expansion_2026-06",
+  "generated": "2026-06-24",
+  "agent": "Sub-Agent 4",
+  "module_id": "pharmacy_calculations",
+  "baseline": {
+    "status": "scaffold",
+    "version": "0.1",
+    "items_live": 14,
+    "breakdown": {
+      "calc_types": 6,
+      "topic_outline": 8,
+      "practice_problems": 0,
+      "error_traps": 0,
+      "clinical_scenarios": 0
+    },
+    "notes": "14 items were outline/scaffold entries only — calc types and topics existed but practice, traps, and clinical content were empty."
+  },
+  "expansion": {
+    "status": "in_progress",
+    "version": "0.2",
+    "items_live": 41,
+    "items_added": 27,
+    "items_total_target": 48,
+    "completion_pct": 85,
+    "breakdown": {
+      "calc_types": 10,
+      "topic_outline": 8,
+      "practice_problems": 11,
+      "error_traps": 12,
+      "clinical_scenarios": 4
+    }
+  },
+  "items_added_detail": {
+    "calc_types_added": [
+      "weight_based_dosing",
+      "renal_crcl_adjustment",
+      "osmolarity_iv",
+      "qs_compounding"
+    ],
+    "calc_types_promoted_to_live": [
+      "alligation_medial",
+      "alligation_alternate",
+      "meq_conversion",
+      "isotonicity_nacl",
+      "iv_flow_mcgkgmin",
+      "percent_strength"
+    ],
+    "topics_promoted_to_live": 8,
+    "practice_problems_added": 11,
+    "error_traps_added": 12,
+    "clinical_scenarios_added": 4
+  },
+  "content_sections_expanded": [
+    {
+      "section": "calc_types",
+      "before": 6,
+      "after": 10,
+      "new_topics": ["weight-based dosing", "renal CrCl adjustment", "osmolarity IV", "QS compounding"]
+    },
+    {
+      "section": "topic_outline",
+      "before": 8,
+      "after": 8,
+      "change": "All 8 topics promoted from planned → live"
+    },
+    {
+      "section": "practice_problems",
+      "before": 0,
+      "after": 11,
+      "coverage": [
+        "alligation_alternate",
+        "alligation_medial",
+        "meq_conversion",
+        "isotonicity_nacl",
+        "iv_flow_mcgkgmin",
+        "percent_strength",
+        "weight_based_dosing",
+        "renal_crcl_adjustment",
+        "qs_compounding",
+        "osmolarity_iv"
+      ]
+    },
+    {
+      "section": "error_traps",
+      "before": 0,
+      "after": 12,
+      "themes": [
+        "mEq valence and salt vs elemental",
+        "alligation part reversal",
+        "% w/v vs w/w",
+        "mcg/kg/min unit chain",
+        "CrCl weight selection",
+        "isotonicity E-value",
+        "QS diluent arithmetic",
+        "pediatric electrolyte safety",
+        "stock strength misread",
+        "osmolarity per-liter",
+        "independent double-check"
+      ]
+    },
+    {
+      "section": "clinical_scenarios",
+      "before": 0,
+      "after": 4,
+      "settings": ["ICU vasopressor", "renal vancomycin", "ophthalmic compounding", "pediatric dispensing"]
+    }
+  ],
+  "pharmacist_level_content": {
+    "weight_based_dosing": true,
+    "renal_adjustment": true,
+    "compounding_math": true,
+    "alligation": true,
+    "meq_conversions": true,
+    "isotonicity": true,
+    "safety_error_traps": true,
+    "clinical_application_problems": true
+  },
+  "service_changes": {
+    "pharmacy_calculations_service.py": [
+      "Added get_practice_problems(), get_practice_problem(), get_error_traps(), get_clinical_scenarios(), get_calc_type()",
+      "Added check_practice_answer() for practice API",
+      "Extended get_module_summary() with items_live and clinical_scenario_count",
+      "get_module_content() now returns practice_problems, error_traps, clinical_scenarios"
+    ],
+    "audit_service.py": [
+      "Added pharmacy_calculations section to build_content_catalog() — calc types, topics, traps, practice, scenarios"
+    ],
+    "pharmacy.py": [
+      "GET /api/pharmacy/calculations/practice",
+      "GET /api/pharmacy/calculations/traps",
+      "GET /api/pharmacy/calculations/scenarios",
+      "POST /api/pharmacy/calculations/practice/check"
+    ],
+    "pharmacy_manifest.json": [
+      "Module status: scaffold → in_progress"
+    ]
+  },
+  "audit_integration": {
+    "catalog_items": 45,
+    "by_type": {
+      "calculation": 10,
+      "concept": 20,
+      "practice": 11,
+      "scenario": 4
+    },
+    "verified": true
+  },
+  "validation": {
+    "command": "python scripts/pharmacy_expansion_validate.py",
+    "module_summary": {
+      "calc_type_count": 10,
+      "calc_topic_count": 8,
+      "practice_count": 11,
+      "error_trap_count": 12,
+      "clinical_scenario_count": 4,
+      "items_total": 48,
+      "items_live": 41
+    }
+  },
+  "remaining_for_phase_2": {
+    "practice_problems_target": 40,
+    "practice_gap": 29,
+    "interactive_calculator_tab": "planned",
+    "practice_tab_ui": "in_progress — API ready, frontend tab not yet wired"
+  }
+}

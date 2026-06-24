@@ -1,0 +1,193 @@
+{% extends "base.html" %}
+{% from "partials/module_breadcrumb.html" import module_breadcrumb %}
+{% block title %}NURS 148 — Maternal-Child Nursing{% endblock %}
+{% block page_title %}NURS 148 — Maternal-Child{% endblock %}
+{% block page_subtitle %}OB · Newborn · Pediatrics · NCLEX Health Promotion &amp; Physiological Integrity{% endblock %}
+
+{% block topbar_actions %}
+<a href="/" class="nursing-return-link hidden sm:inline-flex" title="Back to Nursing Dashboard">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+    Dashboard
+</a>
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/css/maternal_child.css">
+{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto" data-module="maternal_child">
+    {{ module_breadcrumb('NURS 148 — Maternal-Child', badge='new') }}
+
+    <div class="module-header mc-module-header">
+        <div>
+            <h1 class="text-xl sm:text-2xl font-bold text-ward-100">Maternal-Child Nursing</h1>
+            <p class="text-sm text-ward-500 mt-1">NURS 148 — Antepartum through pediatrics for ADN clinical judgment</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+            <button onclick="verifySource('maternal_child')" class="btn-verify text-sm" title="View verified sources">Verify Source</button>
+            <button onclick="openSocraticMode('maternal_child', 'assessment_finding')" class="btn-socratic text-sm">Socratic Mode</button>
+        </div>
+    </div>
+
+    <div class="module-progress-strip mc-progress-strip">
+        <div class="text-xs text-ward-500 shrink-0">
+            Module Progress
+            <span id="module-progress-pct" class="text-pink-400 font-semibold ml-1">{{ module_progress.percentage if module_progress else 0 }}%</span>
+        </div>
+        <div class="progress-bar">
+            <div id="module-progress-bar" class="progress-bar-fill bg-pink-400" style="width: {{ module_progress.percentage if module_progress else 0 }}%"></div>
+        </div>
+        <span class="stat-pill">{{ module_progress.items_completed if module_progress else 0 }}/{{ module_progress.items_total if module_progress else summary.items_total }} studied</span>
+        <span class="stat-pill">{{ summary.safety_flag_count }} red flags</span>
+        <span class="stat-pill">{{ summary.practice_count }} NCLEX items</span>
+        <span class="stat-pill">{{ summary.flashcard_count }} flashcards</span>
+    </div>
+
+    <div class="mc-callout">
+        <div class="mc-callout-icon">♡</div>
+        <div>
+            <div class="text-xs font-semibold text-pink-400 uppercase tracking-wide">NCLEX Focus</div>
+            <p class="text-sm text-ward-300 mt-0.5">Two patients: mother and fetus/child. Prioritize fetal well-being, hemorrhage prevention, preeclampsia screening, and age-specific pediatric assessment.</p>
+        </div>
+    </div>
+
+    <div class="mc-tabs module-tabs" role="tablist" aria-label="Maternal-child nursing sections">
+        <button class="tab-btn mc-tab-btn active" data-tab="antepartum" onclick="MaternalChild.switchTab('antepartum')">Antepartum</button>
+        <button class="tab-btn mc-tab-btn" data-tab="intrapartum" onclick="MaternalChild.switchTab('intrapartum')">Labor &amp; Delivery</button>
+        <button class="tab-btn mc-tab-btn" data-tab="postpartum-newborn" onclick="MaternalChild.switchTab('postpartum-newborn')">Postpartum &amp; Newborn</button>
+        <button class="tab-btn mc-tab-btn" data-tab="pediatrics" onclick="MaternalChild.switchTab('pediatrics')">Pediatrics</button>
+        <button class="tab-btn mc-tab-btn" data-tab="safety" onclick="MaternalChild.switchTab('safety')">Safety Red Flags</button>
+        <button class="tab-btn mc-tab-btn" data-tab="complications-drill" onclick="MaternalChild.switchTab('complications-drill')">Complications Drill</button>
+        <button class="tab-btn mc-tab-btn" data-tab="flashcards" onclick="MaternalChild.switchTab('flashcards')">Flashcards</button>
+        <button class="tab-btn mc-tab-btn" data-tab="practice" onclick="MaternalChild.switchTab('practice')">NCLEX Practice</button>
+    </div>
+
+    <!-- ═══ ANTEPARTUM ═══ -->
+    <div id="tab-antepartum" class="tab-panel mc-panel">
+        <div class="mb-4">
+            <h2 class="text-base font-semibold text-ward-100">Antepartum &amp; Fetal Development</h2>
+            <p class="text-xs text-ward-500 mt-1">Trimester milestones, prenatal care, and fetal well-being</p>
+        </div>
+        <div id="mc-antepartum-container">
+            <p class="text-ward-500 text-sm">Loading antepartum content…</p>
+        </div>
+    </div>
+
+    <!-- ═══ INTRAPARTUM ═══ -->
+    <div id="tab-intrapartum" class="tab-panel mc-panel hidden">
+        <div class="mb-4">
+            <h2 class="text-base font-semibold text-ward-100">Labor &amp; Delivery</h2>
+            <p class="text-xs text-ward-500 mt-1">Stages of labor, FHR patterns, Leopold's maneuvers</p>
+        </div>
+        <div id="mc-intrapartum-container">
+            <p class="text-ward-500 text-sm">Loading intrapartum content…</p>
+        </div>
+    </div>
+
+    <!-- ═══ POSTPARTUM & NEWBORN ═══ -->
+    <div id="tab-postpartum-newborn" class="tab-panel mc-panel hidden">
+        <div class="mb-4">
+            <h2 class="text-base font-semibold text-ward-100">Postpartum &amp; Newborn Care</h2>
+            <p class="text-xs text-ward-500 mt-1">APGAR, BUBBLE assessment, breastfeeding, parent education</p>
+        </div>
+        <div id="mc-postpartum-container">
+            <p class="text-ward-500 text-sm">Loading postpartum content…</p>
+        </div>
+    </div>
+
+    <!-- ═══ PEDIATRICS ═══ -->
+    <div id="tab-pediatrics" class="tab-panel mc-panel hidden">
+        <div class="mb-4">
+            <h2 class="text-base font-semibold text-ward-100">Pediatric Essentials</h2>
+            <p class="text-xs text-ward-500 mt-1">Growth, milestones, immunizations, fever protocols</p>
+        </div>
+        <div id="mc-pediatrics-container">
+            <p class="text-ward-500 text-sm">Loading pediatric content…</p>
+        </div>
+    </div>
+
+    <!-- ═══ SAFETY RED FLAGS ═══ -->
+    <div id="tab-safety" class="tab-panel mc-panel hidden">
+        <div class="mb-4">
+            <h2 class="text-base font-semibold text-ward-100">Safety Red Flags</h2>
+            <p class="text-xs text-ward-500 mt-1">Maternal, newborn, and pediatric emergencies with escalation actions</p>
+        </div>
+        <div id="mc-safety-container">
+            <p class="text-ward-500 text-sm">Loading safety content…</p>
+        </div>
+    </div>
+
+    <!-- ═══ COMPLICATIONS DRILL ═══ -->
+    <div id="tab-complications-drill" class="tab-panel mc-panel hidden">
+        <div class="max-w-2xl mx-auto">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                <div>
+                    <h2 class="text-base font-semibold text-ward-100">Complications Priority Drill</h2>
+                    <p class="text-xs text-ward-500">Given a clinical finding — choose the correct immediate nursing action</p>
+                </div>
+                <span class="stat-pill">Score: <strong id="mc-drill-score">0</strong>/<strong id="mc-drill-total">0</strong></span>
+            </div>
+            <div id="mc-drill-area">
+                <p class="text-ward-500 text-sm">Loading drill…</p>
+            </div>
+            <button onclick="MaternalChild.loadComplicationsDrill()" class="btn-secondary w-full mt-4 text-sm">New Drill</button>
+        </div>
+    </div>
+
+    <!-- ═══ FLASHCARDS ═══ -->
+    <div id="tab-flashcards" class="tab-panel mc-panel hidden">
+        <div class="max-w-xl mx-auto card p-5 sm:p-6">
+            <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
+                <h2 class="text-base font-semibold text-ward-100">OB &amp; Peds Flashcards</h2>
+                <div class="flex gap-3 text-xs text-ward-500">
+                    <span>Know: <strong id="mc-fc-known" class="text-ward-success">0</strong></span>
+                    <span>Review: <strong id="mc-fc-review" class="text-ward-warning">0</strong></span>
+                </div>
+            </div>
+            <div id="mc-flashcard-area" class="mb-4">
+                <p class="text-ward-500 text-sm text-center py-8">Loading flashcards…</p>
+            </div>
+            <div id="mc-fc-dots" class="mc-fc-dots"></div>
+            <div class="flex flex-wrap gap-2 mt-4 justify-center">
+                <button onclick="MaternalChild.prevCard()" class="btn-secondary text-sm">← Prev</button>
+                <button onclick="MaternalChild.flipCard()" class="btn-primary text-sm">Flip</button>
+                <button onclick="MaternalChild.rateCard('know')" class="btn-secondary text-sm text-ward-success">Know it</button>
+                <button onclick="MaternalChild.rateCard('review')" class="btn-secondary text-sm text-ward-warning">Review</button>
+                <button onclick="MaternalChild.nextCard()" class="btn-secondary text-sm">Next →</button>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-4 justify-center">
+                <button onclick="MaternalChild.loadFlashcards(15)" class="btn-secondary text-xs">Study 15</button>
+                <button onclick="MaternalChild.loadFlashcards(30, true)" class="btn-secondary text-xs">Full Deck (Shuffle)</button>
+                <button type="button" onclick="MaternalChild.exportFlashcardDeck()" class="btn-secondary text-xs">Export Deck</button>
+            </div>
+            <button type="button" id="mc-fc-verify-btn" class="btn-verify text-xs mt-4 mx-auto block hidden" onclick="event.stopPropagation(); verifySource('maternal_child')">Verify Source</button>
+        </div>
+    </div>
+
+    <!-- ═══ NCLEX PRACTICE ═══ -->
+    <div id="tab-practice" class="tab-panel mc-panel hidden">
+        <div class="max-w-2xl mx-auto card p-5 sm:p-6">
+            <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
+                <h2 class="text-base font-semibold text-ward-100">NCLEX Practice</h2>
+                <span id="mc-practice-score" class="text-sm font-mono text-ward-500">0/0</span>
+            </div>
+            <p class="text-xs text-ward-500 mb-4">Health Promotion and Physiological Integrity — maternal-child scenarios with rationales.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+                <button onclick="MaternalChild.startPractice(10)" class="btn-primary text-sm">10 Questions</button>
+                <button onclick="MaternalChild.startPractice(20)" class="btn-secondary text-sm">20 Questions</button>
+            </div>
+            <div id="mc-practice-area">
+                <p class="text-ward-500 text-sm">Select a question set to begin.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script defer src="/static/js/maternal_child.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() { MaternalChild.init(); });
+</script>
+{% endblock %}

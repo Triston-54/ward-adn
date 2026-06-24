@@ -1,0 +1,83 @@
+{
+  "agent": "Sub-Agent 4 \u2014 Microbiology Pathogens & Clinical Application",
+  "catalog_items_reviewed": 47,
+  "verified": 40,
+  "flagged": 7,
+  "breakdown": {
+    "pathogens_reviewed": 8,
+    "pathogens_verified": 6,
+    "pathogens_flagged": 2,
+    "practice_questions_reviewed": 15,
+    "practice_verified": 15,
+    "practice_flagged": 0,
+    "foundation_items_carried": 5
+  },
+  "ancillary_scenarios_reviewed": {
+    "break_chain_scenarios": 5,
+    "what_if_scenarios": 5,
+    "status": "all_verified",
+    "items": [
+      "break_chain_scenarios/bc-1 (C. diff diarrhea): contact precautions + soap-and-water \u2014 correct transmission break",
+      "break_chain_scenarios/bc-2 (CLABSI dressing): sterile dressing replacement protects portal of entry",
+      "break_chain_scenarios/bc-3 (influenza roommate): droplet precautions + private room \u2014 not airborne",
+      "break_chain_scenarios/bc-4 (CAUTI Foley day 5): advocate removal when no indication \u2014 CAUTI prevention",
+      "what_if_scenarios/wi-1 (neutropenia ANC 350): protective precautions + restrict ill visitors",
+      "what_if_scenarios/wi-2 (pregnant HCW + C. diff): contact PPE + soap-and-water; pregnancy not contraindication",
+      "what_if_scenarios/wi-3 (MRSA colonization): contact precautions per policy; colonization transmits",
+      "what_if_scenarios/wi-4 (suspected TB ED): immediate airborne isolation \u2014 do not wait for culture",
+      "hai_types bundles (CLABSI, CAUTI, VAP, SSI, CDI): nursing-relevant chain-link mapping verified",
+      "hand_hygiene + ppe_guide: WHO 5 moments; soap-and-water for spores \u2014 supports scenario teaching"
+    ],
+    "notes": [
+      "chain_interventions/reservoir marks 'patient isolation' as correct \u2014 consistent with nursing practice but pedagogically overlaps with transmission link (see chain:reservoir flag).",
+      "Influenza droplet distance: pathogen/scenarios use 3\u20136 ft; transmission-based-precautions concept uses 3 ft (flagged under concept:transmission-based-precautions)."
+    ]
+  },
+  "flagged_items": [
+    {
+      "item_key": "chain:agent",
+      "review_note": "[Chain of Infection] Intervention lists 'vaccination' under the infectious agent link, but vaccination targets the susceptible host (builds immunity), not the pathogen itself. This contradicts chain_interventions.agent in the same JSON file (vaccine_host marked incorrect). Fix intervention: 'Antimicrobial/antiviral therapy, sterilization/disinfection, proper specimen handling' \u2014 remove vaccination."
+    },
+    {
+      "item_key": "chain:host",
+      "review_note": "[Chain of Infection] Intervention includes 'prophylactic antibiotics' as a primary host strategy \u2014 oversimplified and conflicts with antimicrobial stewardship teaching (contributes to CDI/resistance). Fix: emphasize vaccination, nutrition, rest, protective/neutropenic precautions; note prophylactic antibiotics only for specific ordered indications (e.g., surgical prophylaxis)."
+    },
+    {
+      "item_key": "chain:reservoir",
+      "review_note": "[Chain of Infection] 'Patient isolation' listed as reservoir intervention \u2014 pedagogically imprecise. Isolation primarily breaks mode of transmission; environmental cleaning/food safety correctly target reservoir. Fix: clarify isolation reduces exposure from human reservoir but pair with explicit transmission interventions."
+    },
+    {
+      "item_key": "concept:transmission-based-precautions",
+      "review_note": "[Infection control] Varicella (chickenpox) listed under airborne precautions only. Per CDC 2007 isolation guidelines, varicella/zoster require BOTH airborne isolation (N95, negative-pressure AIIR) AND contact precautions until lesions crusted. Also note droplet distance: CDC uses ~3 ft; many facilities teach 3\u20136 ft \u2014 harmonize with influenza pathogen entry (3\u20136 ft)."
+    },
+    {
+      "item_key": "concept:antimicrobial-stewardship",
+      "review_note": "[Foundational] 'Completing full courses' oversimplifies modern stewardship \u2014 duration should be shortest effective course per culture/sensitivity and guideline (avoid unnecessary prolonged antibiotics). Fix: 'Use shortest effective course per guideline; patient education on not sharing antibiotics and not saving leftovers.'"
+    },
+    {
+      "item_key": "pathogen:pseudomonas",
+      "review_note": "[Pathogen] Precautions listed as 'Contact (if MDR)' without defining MDR criteria or naming carbapenem-resistant Pseudomonas (CP-CRPA) \u2014 nursing students may omit needed precautions or over-isolate routine isolates. 'Aspiration precautions' is non-standard terminology; replace with VAP bundle elements (HOB 30\u201345\u00b0, oral care, closed suction, circuit maintenance). Add: standard precautions for non-MDR; contact precautions for MDR/colonization per facility policy; strict moist-environment and water-system controls."
+    },
+    {
+      "item_key": "pathogen:candida-auris",
+      "review_note": "[Pathogen] Nursing action cites generic 'EPA-registered disinfectant' \u2014 insufficient for C. auris safety. CDC requires disinfectants with EPA claim for C. auris (or C. diff) because many routine hospital disinfectants are ineffective against this organism on surfaces. Fix: 'Use EPA-registered disinfectant with demonstrated activity against C. auris; notify infection control immediately; screen/cohort contacts per facility protocol.'"
+    }
+  ],
+  "new_flags_this_agent": [
+    {
+      "item_key": "pathogen:pseudomonas",
+      "review_note": "[Pathogen] Precautions listed as 'Contact (if MDR)' without defining MDR criteria or naming carbapenem-resistant Pseudomonas (CP-CRPA) \u2014 nursing students may omit needed precautions or over-isolate routine isolates. 'Aspiration precautions' is non-standard terminology; replace with VAP bundle elements (HOB 30\u201345\u00b0, oral care, closed suction, circuit maintenance). Add: standard precautions for non-MDR; contact precautions for MDR/colonization per facility policy; strict moist-environment and water-system controls."
+    },
+    {
+      "item_key": "pathogen:candida-auris",
+      "review_note": "[Pathogen] Nursing action cites generic 'EPA-registered disinfectant' \u2014 insufficient for C. auris safety. CDC requires disinfectants with EPA claim for C. auris (or C. diff) because many routine hospital disinfectants are ineffective against this organism on surfaces. Fix: 'Use EPA-registered disinfectant with demonstrated activity against C. auris; notify infection control immediately; screen/cohort contacts per facility protocol.'"
+    }
+  ],
+  "errors": [],
+  "module_summary": {
+    "verified": 40,
+    "needs_review": 7,
+    "unreviewed": 0,
+    "total": 47
+  }
+}

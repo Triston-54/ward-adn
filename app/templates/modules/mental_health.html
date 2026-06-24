@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% from "partials/module_breadcrumb.html" import module_breadcrumb %}
+{% block title %}NURS 147 — Mental Health Nursing{% endblock %}
+{% block page_title %}NURS 147 — Mental Health{% endblock %}
+{% block page_subtitle %}Therapeutic communication · Safety screening · Psychosocial judgment{% endblock %}
+
+{% block topbar_actions %}
+<a href="/" class="nursing-return-link hidden sm:inline-flex" title="Back to Nursing Dashboard">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+    Dashboard
+</a>
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/css/mental_health.css">
+{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto" data-module="mental_health">
+    {{ module_breadcrumb('NURS 147 — Mental Health', badge='new') }}
+
+    <div class="module-header mh-module-header">
+        <div>
+            <h1 class="text-xl sm:text-2xl font-bold text-ward-100">Mental Health Nursing</h1>
+            <p class="text-sm text-ward-500 mt-1">NURS 147 — Psychosocial Integrity &amp; safe behavioral health practice</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+            <button onclick="verifySource('mental_health')" class="btn-verify text-sm" title="View verified sources">Verify Source</button>
+            <button onclick="openSocraticMode('mental_health', 'psychosocial')" class="btn-socratic text-sm">Socratic Mode</button>
+        </div>
+    </div>
+
+    <div class="module-progress-strip mh-progress-strip">
+        <div class="text-xs text-ward-500 shrink-0">
+            Module Progress
+            <span id="module-progress-pct" class="text-ward-purple font-semibold ml-1">{{ module_progress.percentage if module_progress else 0 }}%</span>
+        </div>
+        <div class="progress-bar">
+            <div id="module-progress-bar" class="progress-bar-fill bg-ward-purple" style="width: {{ module_progress.percentage if module_progress else 0 }}%"></div>
+        </div>
+        <span class="stat-pill">{{ module_progress.items_completed if module_progress else 0 }}/{{ module_progress.items_total if module_progress else summary.items_total }} studied</span>
+        <span class="stat-pill">{{ summary.communication_count }} techniques</span>
+        <span class="stat-pill">{{ summary.safety_flag_count }} risk flags</span>
+        <span class="stat-pill"><span class="badge badge-scaffold">Phase 1</span></span>
+    </div>
+
+    <div class="module-banner module-banner--scaffold mh-scaffold-banner">
+        <div class="mh-scaffold-icon" aria-hidden="true">◈</div>
+        <div>
+            <div class="module-banner-label">Foundation Build</div>
+            <p class="text-sm text-ward-300 mt-0.5">Therapeutic Communication and Safety &amp; Risk are live. Disorders, psychopharmacology, and de-escalation tabs coming in Phase 2.</p>
+        </div>
+    </div>
+
+    <div class="mh-tabs module-tabs" role="tablist" aria-label="Mental health nursing sections">
+        <button class="tab-btn mh-tab-btn active" data-tab="therapeutic-communication" onclick="MentalHealth.switchTab('therapeutic-communication')">Therapeutic Communication</button>
+        <button class="tab-btn mh-tab-btn" data-tab="safety-risk" onclick="MentalHealth.switchTab('safety-risk')">Safety &amp; Risk</button>
+    </div>
+
+    <!-- ═══ THERAPEUTIC COMMUNICATION ═══ -->
+    <div id="tab-therapeutic-communication" class="tab-panel mh-panel">
+        <div class="mb-4">
+            <h2 class="text-base font-semibold text-ward-100">Therapeutic Communication</h2>
+            <p class="text-xs text-ward-500 mt-1">Techniques that build trust — and barriers that shut patients down</p>
+        </div>
+        <div id="mh-comm-container">
+            <div class="loading-state" role="status" aria-live="polite"><span class="loading-spinner" aria-hidden="true"></span>Loading communication content…</div>
+        </div>
+    </div>
+
+    <!-- ═══ SAFETY & RISK ═══ -->
+    <div id="tab-safety-risk" class="tab-panel mh-panel hidden">
+        <div class="mb-4">
+            <h2 class="text-base font-semibold text-ward-100">Safety &amp; Risk Assessment</h2>
+            <p class="text-xs text-ward-500 mt-1">Red flags, screening tools, and priority-action drill</p>
+        </div>
+        <div id="mh-safety-container">
+            <div class="loading-state" role="status" aria-live="polite"><span class="loading-spinner" aria-hidden="true"></span>Loading safety content…</div>
+        </div>
+        <div class="mt-6">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+                <div>
+                    <h3 class="text-sm font-semibold text-ward-100">Safety Priority Drill</h3>
+                    <p class="text-xs text-ward-500">Given a finding — choose the correct immediate nursing action</p>
+                </div>
+                <span class="stat-pill">Score: <strong id="mh-drill-score">0</strong>/<strong id="mh-drill-total">0</strong></span>
+            </div>
+            <div id="mh-drill-area">
+                <div class="loading-state" role="status" aria-live="polite"><span class="loading-spinner" aria-hidden="true"></span>Loading drill…</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script defer src="/static/js/mental_health.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() { MentalHealth.init(); });
+</script>
+{% endblock %}

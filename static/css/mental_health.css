@@ -1,0 +1,267 @@
+/* Mental Health Nursing module — purple accent study UI */
+
+.mh-module-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.mh-progress-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.875rem 1rem;
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(51, 65, 85, 0.6);
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+}
+.mh-progress-strip .progress-bar { flex: 1; min-width: 120px; height: 6px; }
+
+.mh-scaffold-banner {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    background: rgba(167, 139, 250, 0.06);
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    border-left: 3px solid #a78bfa;
+    border-radius: 0.625rem;
+    margin-bottom: 1.25rem;
+}
+.mh-scaffold-icon {
+    font-size: 1.25rem;
+    color: #a78bfa;
+    flex-shrink: 0;
+}
+
+.mh-tabs {
+    display: flex;
+    gap: 0.25rem;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid #1e293b;
+    margin-bottom: 1.25rem;
+}
+.mh-tab-btn.active {
+    border-color: #a78bfa !important;
+    color: #a78bfa !important;
+    background: rgba(167, 139, 250, 0.12) !important;
+}
+
+@media (max-width: 640px) {
+    .mh-module-header { flex-direction: column; gap: 0.75rem; }
+    .mh-comm-summary { padding: 0.75rem; }
+    .mh-safety-grid { grid-template-columns: 1fr; }
+    #mh-drill-options { display: flex; flex-direction: column; gap: 0.5rem; }
+}
+
+.mh-panel { animation: mhFadeIn 0.2s ease; }
+@keyframes mhFadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+.mh-section-title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+.mh-section-desc {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Communication cards */
+.mh-comm-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.mh-comm-card {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid #1e293b;
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+.mh-comm-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.875rem 1rem;
+    cursor: pointer;
+    list-style: none;
+    border-left: 3px solid #a78bfa;
+}
+.mh-comm-summary::-webkit-details-marker { display: none; }
+.mh-comm-name {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #c4b5fd;
+}
+.mh-comm-toggle {
+    font-size: 0.625rem;
+    color: #64748b;
+}
+.mh-comm-body {
+    padding: 0 1rem 1rem;
+    border-top: 1px solid #1e293b;
+}
+.mh-comm-desc {
+    font-size: 0.8125rem;
+    color: #cbd5e1;
+    margin-top: 0.75rem;
+    line-height: 1.5;
+}
+
+.mh-callout {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    margin-top: 0.5rem;
+    line-height: 1.45;
+}
+.mh-callout-example {
+    background: rgba(34, 211, 238, 0.06);
+    color: #94a3b8;
+    border-left: 2px solid #22d3ee;
+}
+.mh-callout-action {
+    background: rgba(167, 139, 250, 0.08);
+    color: #cbd5e1;
+    border-left: 2px solid #a78bfa;
+}
+.mh-callout-avoid {
+    background: rgba(248, 113, 113, 0.06);
+    color: #fca5a5;
+    border-left: 2px solid #f87171;
+}
+.mh-clinical-why {
+    font-size: 0.75rem;
+    color: #6ee7b7;
+    margin-top: 0.5rem;
+}
+
+/* Barriers */
+.mh-barrier-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0.75rem;
+}
+.mh-barrier-card {
+    padding: 0.875rem 1rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid #334155;
+    border-radius: 0.625rem;
+    border-top: 2px solid #f87171;
+}
+.mh-barrier-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #fca5a5;
+}
+.mh-barrier-desc {
+    font-size: 0.8125rem;
+    color: #94a3b8;
+    margin-top: 0.35rem;
+}
+.mh-barrier-example, .mh-barrier-instead {
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    color: #cbd5e1;
+}
+
+/* Safety flags */
+.mh-flag-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0.75rem;
+}
+.mh-flag-card {
+    padding: 0.875rem 1rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid #1e293b;
+    border-radius: 0.625rem;
+    border-left: 3px solid #f87171;
+    position: relative;
+}
+.mh-cat-violence { border-left-color: #fb923c; }
+.mh-cat-substance { border-left-color: #fbbf24; }
+.mh-cat-psychopharm { border-left-color: #22d3ee; }
+.mh-cat-de_escalation { border-left-color: #a78bfa; }
+.mh-flag-priority {
+    font-size: 0.5625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #f87171;
+    margin-bottom: 0.35rem;
+}
+.mh-flag-finding {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #e2e8f0;
+    line-height: 1.4;
+}
+.mh-flag-action {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(248, 113, 113, 0.06);
+    border-radius: 0.375rem;
+}
+.mh-flag-cat {
+    font-size: 0.5625rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #64748b;
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+
+/* Screening tools */
+.mh-tool-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.mh-tool-card {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid #1e293b;
+    border-radius: 0.625rem;
+}
+.mh-tool-summary {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    list-style: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #c4b5fd;
+}
+.mh-tool-summary::-webkit-details-marker { display: none; }
+.mh-tool-body {
+    padding: 0 1rem 1rem;
+    font-size: 0.8125rem;
+    color: #cbd5e1;
+    border-top: 1px solid #1e293b;
+}
+.mh-tool-points {
+    margin: 0.5rem 0 0;
+    padding-left: 1.1rem;
+    font-size: 0.8125rem;
+    color: #94a3b8;
+    line-height: 1.45;
+}
+
+/* Safety drill */
+.mh-drill-card {
+    padding: 1.25rem;
+}
+.mh-drill-finding {
+    font-size: 0.9375rem;
+    color: #e2e8f0;
+    line-height: 1.5;
+}

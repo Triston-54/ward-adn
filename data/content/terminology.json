@@ -1,0 +1,1816 @@
+{
+  "module_id": "terminology",
+  "title": "Medical Terminology",
+  "prefixes": [
+    {
+      "element": "a-",
+      "meaning": "without, not",
+      "examples": [
+        "apnea",
+        "anuria",
+        "asystole"
+      ],
+      "clinical_note": "Absence or lack — e.g., apnea = without breathing.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "an-",
+      "meaning": "without, not",
+      "examples": [
+        "anemia",
+        "anesthesia"
+      ],
+      "clinical_note": "Same as a- before vowels.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "anti-",
+      "meaning": "against",
+      "examples": [
+        "antibiotic",
+        "anticoagulant",
+        "antipyretic"
+      ],
+      "clinical_note": "Drug classes often use anti- prefix.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "bi-",
+      "meaning": "two, double",
+      "examples": [
+        "bilateral",
+        "bicuspid"
+      ],
+      "clinical_note": "Bilateral findings compare both sides.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "brady-",
+      "meaning": "slow",
+      "examples": [
+        "bradycardia",
+        "bradypnea"
+      ],
+      "clinical_note": "Bradycardia <60 bpm — assess symptoms.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "contra-",
+      "meaning": "against, opposite",
+      "examples": [
+        "contraindication"
+      ],
+      "clinical_note": "Contraindication = reason to avoid treatment.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "de-",
+      "meaning": "down, removal",
+      "examples": [
+        "dehydration",
+        "debridement"
+      ],
+      "clinical_note": "Dehydration = fluid deficit.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "dia-",
+      "meaning": "through, across",
+      "examples": [
+        "diagnosis",
+        "diuretic"
+      ],
+      "clinical_note": "Diuretic promotes urine flow through kidneys.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "dis-",
+      "meaning": "apart, reversal",
+      "examples": [
+        "dislocation",
+        "disinfectant"
+      ],
+      "clinical_note": "Dis- indicates separation or negation.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "dys-",
+      "meaning": "difficult, painful, abnormal",
+      "examples": [
+        "dyspnea",
+        "dysphagia",
+        "dysuria"
+      ],
+      "clinical_note": "Dys- symptoms warrant focused assessment.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "ecto-",
+      "meaning": "outside",
+      "examples": [
+        "ectopic pregnancy"
+      ],
+      "clinical_note": "Ectopic = outside normal location.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "endo-",
+      "meaning": "within, inner",
+      "examples": [
+        "endocardium",
+        "endoscopy"
+      ],
+      "clinical_note": "Endoscopy visualizes internal structures.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "epi-",
+      "meaning": "upon, over",
+      "examples": [
+        "epidural",
+        "epistaxis"
+      ],
+      "clinical_note": "Epidural = outside dura mater.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "hemi-",
+      "meaning": "half",
+      "examples": [
+        "hemiplegia",
+        "hemisphere"
+      ],
+      "clinical_note": "Hemiplegia = paralysis on one side.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "hyper-",
+      "meaning": "excessive, above",
+      "examples": [
+        "hypertension",
+        "hyperglycemia"
+      ],
+      "clinical_note": "Hyper- states often need monitoring and treatment.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "hypo-",
+      "meaning": "deficient, below",
+      "examples": [
+        "hypotension",
+        "hypoglycemia"
+      ],
+      "clinical_note": "Hypoglycemia <70 mg/dL — treat immediately.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "intra-",
+      "meaning": "within",
+      "examples": [
+        "intravenous",
+        "intramuscular"
+      ],
+      "clinical_note": "Parenteral routes use intra- prefixes.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "macro-",
+      "meaning": "large",
+      "examples": [
+        "macrocephaly",
+        "macrocytic"
+      ],
+      "clinical_note": "Macro- describes enlarged structures.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "micro-",
+      "meaning": "small",
+      "examples": [
+        "microcephaly",
+        "microorganism"
+      ],
+      "clinical_note": "Micro- used in microbiology and lab terms.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "neo-",
+      "meaning": "new",
+      "examples": [
+        "neonatal",
+        "neoplasm"
+      ],
+      "clinical_note": "Neonatal = newborn period.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "peri-",
+      "meaning": "around, surrounding",
+      "examples": [
+        "pericardium",
+        "perioperative"
+      ],
+      "clinical_note": "Perioperative care spans before/during/after surgery.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "poly-",
+      "meaning": "many, much",
+      "examples": [
+        "polyuria",
+        "polycythemia"
+      ],
+      "clinical_note": "Polyuria classic in hyperglycemia.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "post-",
+      "meaning": "after",
+      "examples": [
+        "postoperative",
+        "postpartum"
+      ],
+      "clinical_note": "Postpartum = after delivery.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "pre-",
+      "meaning": "before",
+      "examples": [
+        "prenatal",
+        "premedication"
+      ],
+      "clinical_note": "Prenatal care supports maternal-fetal health.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "sub-",
+      "meaning": "under, below",
+      "examples": [
+        "subcutaneous",
+        "sublingual"
+      ],
+      "clinical_note": "Subcutaneous = beneath skin.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "super-",
+      "meaning": "above, excessive",
+      "examples": [
+        "superior",
+        "superficial"
+      ],
+      "clinical_note": "Superior = toward head (anatomical).",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "tachy-",
+      "meaning": "fast, rapid",
+      "examples": [
+        "tachycardia",
+        "tachypnea"
+      ],
+      "clinical_note": "Tachycardia >100 bpm at rest.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "trans-",
+      "meaning": "across, through",
+      "examples": [
+        "transfusion",
+        "transdermal"
+      ],
+      "clinical_note": "Transdermal patches deliver drug through skin.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "uni-",
+      "meaning": "one",
+      "examples": [
+        "unilateral",
+        "unipolar"
+      ],
+      "clinical_note": "Unilateral weakness suggests focal neuro deficit.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    }
+  ],
+  "roots": [
+    {
+      "element": "cardi",
+      "meaning": "heart",
+      "examples": [
+        "cardiology",
+        "cardiomegaly",
+        "tachycardia"
+      ],
+      "clinical_note": "Cardiac terms link to hemodynamics and ECG.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "cerebr",
+      "meaning": "brain",
+      "examples": [
+        "cerebral",
+        "cerebrovascular"
+      ],
+      "clinical_note": "Cerebral perfusion critical in stroke/TBI.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "col",
+      "meaning": "colon",
+      "examples": [
+        "colitis",
+        "colonoscopy"
+      ],
+      "clinical_note": "Col- terms relate to large intestine.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "crani",
+      "meaning": "skull",
+      "examples": [
+        "craniotomy"
+      ],
+      "clinical_note": "Craniotomy accesses brain — ICP precautions.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "cyan",
+      "meaning": "blue",
+      "examples": [
+        "cyanosis"
+      ],
+      "clinical_note": "Cyanosis signals hypoxemia.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "derm",
+      "meaning": "skin",
+      "examples": [
+        "dermatitis",
+        "epidermis"
+      ],
+      "clinical_note": "Integumentary assessment uses derm roots.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "enter",
+      "meaning": "intestine",
+      "examples": [
+        "gastroenterology",
+        "enteral"
+      ],
+      "clinical_note": "Enteral feeding uses GI tract.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "gastr",
+      "meaning": "stomach",
+      "examples": [
+        "gastritis",
+        "gastroscopy"
+      ],
+      "clinical_note": "Gastric emptying affects oral meds.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "hemat",
+      "meaning": "blood",
+      "examples": [
+        "hematuria",
+        "hematology"
+      ],
+      "clinical_note": "Hemat- terms involve CBC and transfusion.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "hepat",
+      "meaning": "liver",
+      "examples": [
+        "hepatitis",
+        "hepatic"
+      ],
+      "clinical_note": "Hepatic function guides drug dosing.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "laryng",
+      "meaning": "larynx (voice box)",
+      "examples": [
+        "laryngitis",
+        "laryngoscope"
+      ],
+      "clinical_note": "Laryng- relates to airway patency.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "leuk",
+      "meaning": "white",
+      "examples": [
+        "leukemia",
+        "leukocytosis"
+      ],
+      "clinical_note": "Leukocytes fight infection.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "mening",
+      "meaning": "membrane (often meninges)",
+      "examples": [
+        "meningitis"
+      ],
+      "clinical_note": "Meningitis = meningeal inflammation — neuro emergency.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "my/o",
+      "meaning": "muscle",
+      "examples": [
+        "myopathy",
+        "myocardium"
+      ],
+      "clinical_note": "My/o used in cardiac and musculoskeletal terms.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "nephr",
+      "meaning": "kidney",
+      "examples": [
+        "nephritis",
+        "nephrology"
+      ],
+      "clinical_note": "Renal function affects fluid and electrolytes.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "neur",
+      "meaning": "nerve",
+      "examples": [
+        "neurology",
+        "neuropathy"
+      ],
+      "clinical_note": "Neuro checks use neur- vocabulary.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "onc",
+      "meaning": "tumor, mass",
+      "examples": [
+        "oncology",
+        "oncologist"
+      ],
+      "clinical_note": "Onc- terms in cancer care pathways.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "oste",
+      "meaning": "bone",
+      "examples": [
+        "osteoporosis",
+        "osteomyelitis"
+      ],
+      "clinical_note": "Osteoporosis increases fracture risk.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "path",
+      "meaning": "disease",
+      "examples": [
+        "pathology",
+        "pathogenesis"
+      ],
+      "clinical_note": "Pathophysiology = disease + function.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "phleb",
+      "meaning": "vein",
+      "examples": [
+        "phlebitis",
+        "phlebotomy"
+      ],
+      "clinical_note": "Phlebitis at IV site — rotate sites.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "pneumon",
+      "meaning": "lung",
+      "examples": [
+        "pneumonia",
+        "pneumothorax"
+      ],
+      "clinical_note": "Pneumon- terms in respiratory disorders.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "psych",
+      "meaning": "mind",
+      "examples": [
+        "psychiatry",
+        "psychosis"
+      ],
+      "clinical_note": "Psychosocial integrity on NCLEX.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "pulmon",
+      "meaning": "lung",
+      "examples": [
+        "pulmonology",
+        "pulmonary"
+      ],
+      "clinical_note": "Pulmonary = pertaining to lungs.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "ren",
+      "meaning": "kidney",
+      "examples": [
+        "renal",
+        "renin"
+      ],
+      "clinical_note": "Renal dose adjustments common.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "rhin",
+      "meaning": "nose",
+      "examples": [
+        "rhinitis",
+        "rhinorrhea"
+      ],
+      "clinical_note": "Rhinorrhea = runny nose.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "thorac",
+      "meaning": "chest",
+      "examples": [
+        "thoracentesis",
+        "thoracotomy"
+      ],
+      "clinical_note": "Thoracic procedures need respiratory monitoring.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "thromb",
+      "meaning": "clot",
+      "examples": [
+        "thrombosis",
+        "thrombocytopenia"
+      ],
+      "clinical_note": "Thrombocytopenia increases bleeding risk.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "trache",
+      "meaning": "trachea",
+      "examples": [
+        "tracheostomy",
+        "tracheitis"
+      ],
+      "clinical_note": "Tracheostomy requires airway suctioning skills.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "ur",
+      "meaning": "urine, urinary",
+      "examples": [
+        "urinalysis",
+        "urology"
+      ],
+      "clinical_note": "Ur- terms in GU assessment.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "vas",
+      "meaning": "vessel",
+      "examples": [
+        "vasodilator",
+        "vascular"
+      ],
+      "clinical_note": "Vascular terms in cardiovascular pharmacology.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    }
+  ],
+  "suffixes": [
+    {
+      "element": "-algia",
+      "meaning": "pain",
+      "examples": [
+        "neuralgia",
+        "myalgia"
+      ],
+      "clinical_note": "Algia suffix = pain condition.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "-cele",
+      "meaning": "hernia, swelling, sac",
+      "examples": [
+        "hydrocele",
+        "meningocele"
+      ],
+      "clinical_note": "Cele indicates protrusion or fluid sac.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "-centesis",
+      "meaning": "surgical puncture to remove fluid",
+      "examples": [
+        "thoracentesis",
+        "amniocentesis"
+      ],
+      "clinical_note": "Informed consent required.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "-ectomy",
+      "meaning": "surgical removal",
+      "examples": [
+        "appendectomy",
+        "mastectomy"
+      ],
+      "clinical_note": "Post-op nursing priorities after -ectomy.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "-emia",
+      "meaning": "blood condition",
+      "examples": [
+        "anemia",
+        "bacteremia",
+        "hyperglycemia"
+      ],
+      "clinical_note": "-emia often appears on lab reports.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "-genic",
+      "meaning": "producing, originating",
+      "examples": [
+        "carcinogenic",
+        "iatrogenic"
+      ],
+      "clinical_note": "Iatrogenic = caused by medical treatment.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "-gram",
+      "meaning": "record, image",
+      "examples": [
+        "electrocardiogram",
+        "mammogram"
+      ],
+      "clinical_note": "Diagnostic imaging and tracings.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "-graphy",
+      "meaning": "process of recording",
+      "examples": [
+        "mammography",
+        "radiography"
+      ],
+      "clinical_note": "Screening tests use -graphy.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "-itis",
+      "meaning": "inflammation",
+      "examples": [
+        "gastritis",
+        "arthritis",
+        "meningitis"
+      ],
+      "clinical_note": "Most common disease suffix in med-surg.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "-logy",
+      "meaning": "study of",
+      "examples": [
+        "cardiology",
+        "pathology"
+      ],
+      "clinical_note": "-logy denotes medical specialty.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "-lysis",
+      "meaning": "breakdown, separation, destruction",
+      "examples": [
+        "hemodialysis",
+        "paralysis"
+      ],
+      "clinical_note": "Dialysis removes waste via -lysis.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "-malacia",
+      "meaning": "softening",
+      "examples": [
+        "osteomalacia",
+        "tracheomalacia"
+      ],
+      "clinical_note": "Malacia = abnormal softening of tissue.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "-oma",
+      "meaning": "tumor, mass",
+      "examples": [
+        "carcinoma",
+        "hematoma"
+      ],
+      "clinical_note": "Not all -oma are malignant.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "-osis",
+      "meaning": "condition, disease process",
+      "examples": [
+        "cyanosis",
+        "stenosis",
+        "ketoacidosis"
+      ],
+      "clinical_note": "Describes abnormal states.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "-ostomy",
+      "meaning": "surgical opening",
+      "examples": [
+        "colostomy",
+        "tracheostomy"
+      ],
+      "clinical_note": "Stoma care is nursing responsibility.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "-otomy",
+      "meaning": "surgical incision",
+      "examples": [
+        "laparotomy",
+        "craniotomy"
+      ],
+      "clinical_note": "-otomy = cut into; -ectomy = remove.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "-pathy",
+      "meaning": "disease",
+      "examples": [
+        "neuropathy",
+        "cardiomyopathy"
+      ],
+      "clinical_note": "-pathy = disease of an organ/tissue.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "-penia",
+      "meaning": "deficiency",
+      "examples": [
+        "leukopenia",
+        "thrombocytopenia"
+      ],
+      "clinical_note": "Penia = low count — bleeding/infection risk.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "-pexy",
+      "meaning": "surgical fixation",
+      "examples": [
+        "nephropexy"
+      ],
+      "clinical_note": "Pexy stabilizes mobile organs.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "-plasty",
+      "meaning": "surgical repair",
+      "examples": [
+        "angioplasty",
+        "rhinoplasty"
+      ],
+      "clinical_note": "Plasty = reconstructive procedure.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "-rrhage",
+      "meaning": "bursting forth (hemorrhage)",
+      "examples": [
+        "hemorrhage",
+        "menorrhagia"
+      ],
+      "clinical_note": "Hemorrhage = active bleeding — priority.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "-rrhea",
+      "meaning": "flow, discharge",
+      "examples": [
+        "diarrhea",
+        "rhinorrhea"
+      ],
+      "clinical_note": "Rrhea = abnormal flow.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "-scope",
+      "meaning": "instrument for viewing",
+      "examples": [
+        "endoscope",
+        "stethoscope"
+      ],
+      "clinical_note": "-scopy procedures often require NPO.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "-scopy",
+      "meaning": "visual examination",
+      "examples": [
+        "colonoscopy",
+        "bronchoscopy"
+      ],
+      "clinical_note": "Post-procedure monitoring required.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "-stasis",
+      "meaning": "stopping, standing still",
+      "examples": [
+        "hemostasis",
+        "biliary stasis"
+      ],
+      "clinical_note": "Stasis can promote clot or infection.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "element": "-tomy",
+      "meaning": "incision, cutting",
+      "examples": [
+        "laparotomy",
+        "phlebotomy"
+      ],
+      "clinical_note": "Phlebotomy = venipuncture for labs.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    }
+  ],
+  "practice_questions": [
+    {
+      "id": "term-q01",
+      "question": "The prefix 'brady-' in bradycardia means:",
+      "options": [
+        "Fast",
+        "Slow",
+        "Irregular",
+        "Absent"
+      ],
+      "correct_index": 1,
+      "explanation": "Brady- = slow. Bradycardia is heart rate <60 bpm at rest.",
+      "clinical_why": "Symptomatic bradycardia may need atropine per ACLS.",
+      "nclex_category": "Reduction of Risk Potential",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-q02",
+      "question": "Which suffix means inflammation?",
+      "options": [
+        "-osis",
+        "-itis",
+        "-emia",
+        "-logy"
+      ],
+      "correct_index": 1,
+      "explanation": "-itis = inflammation (gastritis, meningitis).",
+      "clinical_why": "Recognizing -itis prompts inflammation workup — fever workup, WBC, source control.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-q03",
+      "question": "Hematuria means:",
+      "options": [
+        "Blood in urine",
+        "Excess protein in urine",
+        "Scant urine output",
+        "Painful urination"
+      ],
+      "correct_index": 0,
+      "explanation": "Hemat (blood) + -uria (urine condition).",
+      "clinical_why": "Report gross or microscopic hematuria to provider.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-q04",
+      "question": "The root 'nephr' refers to the:",
+      "options": [
+        "Liver",
+        "Kidney",
+        "Lung",
+        "Heart"
+      ],
+      "correct_index": 1,
+      "explanation": "Nephr/o = kidney — nephrology, nephritis.",
+      "clinical_why": "Nephro- terms guide renal labs (BUN, creatinine, urinalysis) when kidney disease suspected.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-q05",
+      "question": "Hyperglycemia indicates:",
+      "options": [
+        "Low blood sugar",
+        "High blood sugar",
+        "Low blood pressure",
+        "High heart rate"
+      ],
+      "correct_index": 1,
+      "explanation": "Hyper- (excessive) + glyc (glucose) + -emia.",
+      "clinical_why": "Assess for DKA/HHS; verify insulin orders.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-q06",
+      "question": "An antibiotic is best defined as:",
+      "options": [
+        "Against life (etymology only)",
+        "A drug that inhibits or destroys bacteria",
+        "A drug that widens bronchi",
+        "A drug that promotes urination"
+      ],
+      "correct_index": 1,
+      "explanation": "Anti- + bio + -tic — clinically: antibacterial agent.",
+      "clinical_why": "Understanding antibiotic etymology reinforces spectrum and resistance teaching in pharmacology.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-q07",
+      "question": "Thrombocytopenia means:",
+      "options": [
+        "High platelet count",
+        "Low platelet count",
+        "High white count",
+        "Blood clot in vein"
+      ],
+      "correct_index": 1,
+      "explanation": "Thromb/o (clot/platelet) + cyt (cell) + -penia (deficiency).",
+      "clinical_why": "Bleeding precautions; monitor for petechiae.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-q08",
+      "question": "The prefix 'dys-' in dyspnea means:",
+      "options": [
+        "Without",
+        "Difficult or painful",
+        "Fast",
+        "Above normal"
+      ],
+      "correct_index": 1,
+      "explanation": "Dys- = difficult — dyspnea = labored breathing.",
+      "clinical_why": "Dys- = difficult — dyspnea = labored breathing.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-q09",
+      "question": "Which term means surgical removal?",
+      "options": [
+        "-ostomy",
+        "-ectomy",
+        "-scopy",
+        "-centesis"
+      ],
+      "correct_index": 1,
+      "explanation": "-ectomy = excision (appendectomy).",
+      "clinical_why": "-ectomy = excision (appendectomy).",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-q10",
+      "question": "Leukocytosis indicates:",
+      "options": [
+        "Decreased white blood cells",
+        "Elevated white blood cells",
+        "Low red blood cells",
+        "Clot formation"
+      ],
+      "correct_index": 1,
+      "explanation": "Leuk/o + cyt + -osis — often infection or inflammation.",
+      "clinical_why": "Leuk/o + cyt + -osis — often infection or inflammation.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-q11",
+      "question": "Subcutaneous means:",
+      "options": [
+        "Within a vein",
+        "Beneath the skin",
+        "Within a muscle",
+        "Within the skull"
+      ],
+      "correct_index": 1,
+      "explanation": "Sub- (under) + cutane (skin) + -ous.",
+      "clinical_why": "Sub- (under) + cutane (skin) + -ous.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-q12",
+      "question": "Pathogenesis refers to:",
+      "options": [
+        "Study of disease cause (etiology)",
+        "Development of disease",
+        "Prediction of disease course",
+        "Identification of disease"
+      ],
+      "correct_index": 1,
+      "explanation": "Path/o + -genesis (origin) = how disease develops.",
+      "clinical_why": "Path/o + -genesis (origin) = how disease develops.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-q13",
+      "question": "The root 'psych' relates to:",
+      "options": [
+        "Lungs",
+        "Mind",
+        "Bone",
+        "Stomach"
+      ],
+      "correct_index": 1,
+      "explanation": "Psych/o = mind — psychiatry, psychosis.",
+      "clinical_why": "Psych/o = mind — psychiatry, psychosis.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-q14",
+      "question": "Contraindication means:",
+      "options": [
+        "Reason to use a treatment",
+        "Reason to avoid a treatment",
+        "Side effect of medication",
+        "Normal finding"
+      ],
+      "correct_index": 1,
+      "explanation": "Contra- (against) + indication.",
+      "clinical_why": "Always assess before administering.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-q15",
+      "question": "Oliguria is best defined as:",
+      "options": [
+        "Excessive urination",
+        "Scant urine output",
+        "Blood in urine",
+        "Absence of all urine forever"
+      ],
+      "correct_index": 1,
+      "explanation": "Olig/o (scant) + ur + -ia — output well below normal.",
+      "clinical_why": "<30 mL/hr in adults warrants assessment for AKI.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-q16",
+      "question": "Which prefix means within?",
+      "options": [
+        "Extra-",
+        "Intra-",
+        "Peri-",
+        "Sub-"
+      ],
+      "correct_index": 1,
+      "explanation": "Intra- = within (intravenous, intramuscular).",
+      "clinical_why": "Intra- = within (intravenous, intramuscular).",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-q17",
+      "question": "A bronchodilator is:",
+      "options": [
+        "A medication that causes bronchodilation",
+        "Inflammation of bronchi",
+        "Surgical lung removal",
+        "Rapid breathing"
+      ],
+      "correct_index": 0,
+      "explanation": "Agent class, not the process itself.",
+      "clinical_why": "Agent class, not the process itself.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-q18",
+      "question": "Nosocomial infection originates:",
+      "options": [
+        "In the community",
+        "In the hospital/healthcare setting",
+        "From food only",
+        "From genetics"
+      ],
+      "correct_index": 1,
+      "explanation": "Nosocom- (hospital) + -ial.",
+      "clinical_why": "HAIs require infection control bundles.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "term-fc-01",
+      "front": "tachy-",
+      "back": "fast, rapid",
+      "category": "prefix",
+      "clinical_why": "Tachycardia >100 bpm — assess cause (pain, fever, hypovolemia).",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-fc-02",
+      "front": "brady-",
+      "back": "slow",
+      "category": "prefix",
+      "clinical_why": "Bradycardia may be normal in athletes if asymptomatic.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-fc-03",
+      "front": "hyper-",
+      "back": "excessive, above normal",
+      "category": "prefix",
+      "clinical_why": "Hyperkalemia affects cardiac conduction — ECG changes.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-fc-04",
+      "front": "hypo-",
+      "back": "deficient, below normal",
+      "category": "prefix",
+      "clinical_why": "Hypoglycemia: 15 g fast carbs, recheck in 15 min.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-fc-05",
+      "front": "cardi",
+      "back": "heart",
+      "category": "root",
+      "clinical_why": "Cardiac output = HR × stroke volume.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-fc-06",
+      "front": "pneumon",
+      "back": "lung",
+      "category": "root",
+      "clinical_why": "Pneumonia = alveolar consolidation — O₂ and IS.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-fc-07",
+      "front": "nephr",
+      "back": "kidney",
+      "category": "root",
+      "clinical_why": "Monitor BUN/creatinine and I&O.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-fc-08",
+      "front": "hepat",
+      "back": "liver",
+      "category": "root",
+      "clinical_why": "Hepatic impairment alters drug metabolism.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-fc-09",
+      "front": "-itis",
+      "back": "inflammation",
+      "category": "suffix",
+      "clinical_why": "Assess for infection vs autoimmune cause.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-fc-10",
+      "front": "-ectomy",
+      "back": "surgical removal",
+      "category": "suffix",
+      "clinical_why": "Pre-op verification and post-op complications.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-fc-11",
+      "front": "-emia",
+      "back": "blood condition",
+      "category": "suffix",
+      "clinical_why": "Bacteremia/sepsis require urgent intervention.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-fc-12",
+      "front": "-penia",
+      "back": "deficiency",
+      "category": "suffix",
+      "clinical_why": "Leukopenia → neutropenic precautions.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-fc-13",
+      "front": "dys-",
+      "back": "difficult, painful, abnormal",
+      "category": "prefix",
+      "clinical_why": "Dysphagia increases aspiration risk.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-fc-14",
+      "front": "poly-",
+      "back": "many, much",
+      "category": "prefix",
+      "clinical_why": "Polyuria classic sign of hyperglycemia.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-fc-15",
+      "front": "a-/an-",
+      "back": "without, not",
+      "category": "prefix",
+      "clinical_why": "Anuria/oliguria signal renal emergency.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-fc-16",
+      "front": "intra-",
+      "back": "within",
+      "category": "prefix",
+      "clinical_why": "IV route — verify 5 Rights.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-fc-17",
+      "front": "sub-",
+      "back": "under",
+      "category": "prefix",
+      "clinical_why": "Subcutaneous insulin — rotate sites.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-fc-18",
+      "front": "hemat",
+      "back": "blood",
+      "category": "root",
+      "clinical_why": "Hematuria, anemia, hematology panels.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-fc-19",
+      "front": "oste",
+      "back": "bone",
+      "category": "root",
+      "clinical_why": "Osteoporosis — fall prevention.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-fc-20",
+      "front": "-scopy",
+      "back": "visual examination",
+      "category": "suffix",
+      "clinical_why": "NPO and consent before endoscopy.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-fc-21",
+      "front": "-ostomy",
+      "back": "surgical opening",
+      "category": "suffix",
+      "clinical_why": "Stoma assessment and patient teaching.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "term-fc-22",
+      "front": "-pathy",
+      "back": "disease",
+      "category": "suffix",
+      "clinical_why": "Diabetic neuropathy — foot exams.",
+      "source": {
+        "title": "Medical Terminology for Health Professions",
+        "citation": "Ehrlich & Schroeder, 8th Ed.",
+        "verified_date": "2026-06"
+      }
+    }
+  ],
+  "source": {
+    "title": "Medical Terminology for Health Professions",
+    "citation": "Ehrlich & Schroeder, 8th Ed.",
+    "verified_date": "2026-06"
+  }
+}

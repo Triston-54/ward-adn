@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="The Ward — ADN Nursing Study Suite (Static)">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="/static/manifest.json">
+    <link rel="icon" type="image/svg+xml" href="/static/images/ward-icon.svg">
+    <link rel="icon" type="image/png" sizes="192x192" href="/static/images/ward-icon-192.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/static/images/ward-icon-192.png">
+    <title>Medical Terminology — ADN Study Suite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ward: {
+                            950: '#0a0f1a',
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                            600: '#475569',
+                            500: '#64748b',
+                            400: '#94a3b8',
+                            300: '#cbd5e1',
+                            200: '#e2e8f0',
+                            accent: '#38bdf8',
+                            success: '#34d399',
+                            warning: '#fbbf24',
+                            danger: '#f87171',
+                            purple: '#a78bfa',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/ward.css">
+    
+    
+<link rel="stylesheet" href="/static/css/terminology.css">
+
+</head>
+<body class="h-full bg-ward-950 text-ward-200 font-sans antialiased">
+    <div id="sidebar-backdrop" class="sidebar-backdrop hidden" onclick="closeSidebar()"></div>
+
+    <div id="command-palette" class="hidden fixed inset-0 z-50 flex items-start justify-center pt-[12vh] sm:pt-[15vh] bg-black/60 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-label="Command palette">
+        <div class="w-full max-w-lg bg-ward-800 border border-ward-600 rounded-xl shadow-2xl overflow-hidden">
+            <div class="flex items-center gap-2 px-4 py-3 border-b border-ward-700">
+                <svg class="w-4 h-4 text-ward-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                <input type="text" id="cmd-input" placeholder="Search modules, actions… (Ctrl+K)"
+                       aria-label="Search modules and actions"
+                       class="flex-1 bg-transparent text-ward-200 placeholder-ward-500 focus:outline-none text-sm">
+                <kbd class="text-xs text-ward-600 bg-ward-900 px-1.5 py-0.5 rounded hidden sm:inline">Esc</kbd>
+            </div>
+            <div id="cmd-results" class="cmd-results-list overflow-y-auto py-2"></div>
+        </div>
+    </div>
+
+    <div id="source-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-labelledby="source-modal-title">
+        <div class="w-full max-w-lg bg-ward-800 border border-ward-600 rounded-xl shadow-2xl overflow-hidden">
+            <div class="flex justify-between items-center px-6 py-4 border-b border-ward-700 bg-ward-900/50">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-ward-accent/10 border border-ward-accent/30 flex items-center justify-center">
+                        <svg class="w-4 h-4 text-ward-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <div>
+                        <h3 id="source-modal-title" class="text-base font-semibold text-ward-accent">Verify Source</h3>
+                        <p class="text-[10px] text-ward-500 uppercase tracking-wider">Verified nursing content</p>
+                    </div>
+                </div>
+                <button onclick="closeSourceModal()" class="text-ward-500 hover:text-ward-200 text-xl leading-none p-1" aria-label="Close">&times;</button>
+            </div>
+            <div id="source-content" class="px-6 py-4 max-h-[70vh] overflow-y-auto"></div>
+        </div>
+    </div>
+
+    <div class="app-shell">
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-brand">
+                <a href="/index.html" class="flex items-center gap-3 group">
+                    <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-ward-accent to-ward-purple flex items-center justify-center text-ward-900 font-bold">W</div>
+                    <div>
+                        <div class="font-semibold text-ward-100 group-hover:text-ward-accent transition text-sm">The Ward</div>
+                        <div class="text-[10px] text-ward-500 uppercase tracking-wider">ADN Study Suite</div>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="sidebar-section-label">ADN Curriculum</div>
+                <a href="/index.html" class="sidebar-link" data-nav="dashboard">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+                    Dashboard
+                </a>
+                <a href="/how-to-use.html" class="sidebar-link" data-nav="how_to_use">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    How to Use
+                </a>
+
+                <div class="sidebar-section-label mt-4">Nursing Modules</div>
+                <a href="/modules/terminology.html" class="sidebar-link" data-nav="terminology">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                    Medical Terminology
+                </a>
+                <a href="/modules/microbiology.html" class="sidebar-link" data-nav="microbiology">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                    Microbiology
+                </a>
+                <a href="/modules/dosage.html" class="sidebar-link" data-nav="dosage">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                    Dosage &amp; Pharmacology
+                </a>
+                <a href="/modules/assessment.html" class="sidebar-link" data-nav="assessment">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                    Health Assessment
+                </a>
+                <a href="/modules/pathophysiology.html" class="sidebar-link" data-nav="pathophysiology">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    Pathophysiology
+                </a>
+                <a href="/modules/med_surg.html" class="sidebar-link" data-nav="med_surg">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    Medical-Surgical Nursing
+                </a>
+                <a href="/modules/maternal_newborn.html" class="sidebar-link" data-nav="maternal_newborn">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    Maternal-Newborn
+                </a>
+                <a href="/modules/pediatrics.html" class="sidebar-link" data-nav="pediatrics">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Pediatric Nursing
+                </a>
+                <a href="/modules/mental-health.html" class="sidebar-link" data-nav="mental_health">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    Mental Health
+                </a>
+                <a href="/nclex-prep.html" class="sidebar-link" data-nav="nclex_prep">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                    NCLEX Prep
+                </a>
+
+                <div class="sidebar-section-label mt-4">Tools</div>
+                <button onclick="openCommandPalette()" class="sidebar-link w-full text-left">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    Command Palette
+                    <kbd class="ml-auto text-[10px] text-ward-600 bg-ward-900 px-1 rounded">⌘K</kbd>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="text-[10px] text-ward-600 uppercase tracking-wider mb-1">ADN Program</div>
+                <div class="text-xs text-ward-500">Static · Verified content</div>
+            </div>
+        </aside>
+
+        <div class="main-column">
+            <header class="topbar">
+                <div class="flex items-center gap-3">
+                    <button id="sidebar-toggle" class="topbar-icon-btn lg:hidden" onclick="toggleSidebar()" aria-label="Open menu">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                    <div class="hidden sm:block">
+                        <div class="text-sm font-medium text-ward-200">Medical Terminology</div>
+                        <div class="text-xs text-ward-500">0 verified terms · Word builder · SRS flashcards</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <button onclick="openCommandPalette()" class="topbar-icon-btn hidden sm:flex" title="Command palette (Ctrl+K)">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                        <span class="text-xs text-ward-500 hidden md:inline">Search</span>
+                    </button>
+                    
+<a href="/index.html" class="nursing-return-link hidden sm:inline-flex" title="Back to Nursing Dashboard">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+    Dashboard
+</a>
+
+                </div>
+            </header>
+
+            <main class="main-content">
+                
+<div class="max-w-6xl mx-auto" data-module="terminology">
+    
+<nav class="module-breadcrumb" aria-label="Breadcrumb">
+    <a href="/index.html" class="module-breadcrumb-link">
+        <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        Dashboard
+    </a>
+    <span class="module-breadcrumb-sep" aria-hidden="true">/</span>
+    <span class="module-breadcrumb-current" aria-current="page">Medical Terminology</span>
+    
+    <span class="badge badge-mvp">MVP</span>
+    
+</nav>
+
+
+    <!-- Module header -->
+    <div class="module-header term-module-header">
+        <div>
+            <h1 class="text-xl sm:text-2xl font-bold text-ward-100">Medical Terminology</h1>
+            <p class="text-sm text-ward-500 mt-1">Decode, define, and master the language of nursing</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+            <button onclick="verifySource('terminology')" class="btn-verify text-sm" title="View verified sources with rationale">Verify Source</button>
+            
+        </div>
+    </div>
+
+    <!-- Progress strip -->
+    <div class="progress-bar">
+            <div id="module-progress-bar" class="progress-bar-fill bg-ward-accent" style="width: 0%"></div>
+        </div>
+        <span class="stat-pill">0/220 studied</span>
+        <span class="stat-pill">Due cards: <strong>0</strong></span>
+        <span class="stat-pill">0 terms</span>
+    </div>
+
+    <!-- Tabs -->
+    <div class="term-tabs module-tabs" role="tablist" aria-label="Medical terminology sections">
+        <button class="tab-btn term-tab-btn active" data-tab="builder" onclick="Terminology.switchTab('builder')">Word Builder</button>
+        <button class="tab-btn term-tab-btn" data-tab="database" onclick="Terminology.switchTab('database')">Database</button>
+        <button class="tab-btn term-tab-btn" data-tab="practice" onclick="Terminology.switchTab('practice')">Practice</button>
+        <button class="tab-btn term-tab-btn" data-tab="flashcards" onclick="Terminology.switchTab('flashcards')">Flashcards</button>
+        <button class="tab-btn term-tab-btn" data-tab="myterms" onclick="Terminology.switchTab('myterms')">My Terms</button>
+        <button class="tab-btn term-tab-btn" data-tab="export" onclick="Terminology.switchTab('export')">Export</button>
+    </div>
+
+    <!-- ═══ WORD BUILDER ═══ -->
+    <div id="tab-builder" class="tab-panel term-panel">
+        <div class="grid lg:grid-cols-2 gap-5">
+            <div class="card p-5">
+                <h2 class="text-base font-semibold text-ward-100 mb-1">Interactive Word Builder</h2>
+                <p class="text-xs text-ward-500 mb-4">Select parts — term builds live. Teaching-first: every part shows its meaning.</p>
+
+                <div class="space-y-3">
+                    <div>
+                        <label class="label">Prefix <span class="text-ward-600">(optional)</span></label>
+                        <select id="prefix-select" class="input-field">
+                            <option value="">— None —</option>
+                            
+                            <option value="a-">a- — without, not</option>
+                            
+                            <option value="an-">an- — without, not</option>
+                            
+                            <option value="anti-">anti- — against</option>
+                            
+                            <option value="bi-">bi- — two, double</option>
+                            
+                            <option value="brady-">brady- — slow</option>
+                            
+                            <option value="contra-">contra- — against, opposite</option>
+                            
+                            <option value="de-">de- — down, removal</option>
+                            
+                            <option value="dia-">dia- — through, across</option>
+                            
+                            <option value="dis-">dis- — apart, reversal</option>
+                            
+                            <option value="dys-">dys- — difficult, painful, abnormal</option>
+                            
+                            <option value="ecto-">ecto- — outside</option>
+                            
+                            <option value="endo-">endo- — within, inner</option>
+                            
+                            <option value="epi-">epi- — upon, over</option>
+                            
+                            <option value="hemi-">hemi- — half</option>
+                            
+                            <option value="hyper-">hyper- — excessive, above</option>
+                            
+                            <option value="hypo-">hypo- — deficient, below</option>
+                            
+                            <option value="intra-">intra- — within</option>
+                            
+                            <option value="macro-">macro- — large</option>
+                            
+                            <option value="micro-">micro- — small</option>
+                            
+                            <option value="neo-">neo- — new</option>
+                            
+                            <option value="peri-">peri- — around, surrounding</option>
+                            
+                            <option value="poly-">poly- — many, much</option>
+                            
+                            <option value="post-">post- — after</option>
+                            
+                            <option value="pre-">pre- — before</option>
+                            
+                            <option value="sub-">sub- — under, below</option>
+                            
+                            <option value="super-">super- — above, excessive</option>
+                            
+                            <option value="tachy-">tachy- — fast, rapid</option>
+                            
+                            <option value="trans-">trans- — across, through</option>
+                            
+                            <option value="uni-">uni- — one</option>
+                            
+                        </select>
+                    </div>
+                    <div>
+                        <label class="label">Root <span class="text-ward-danger">*</span></label>
+                        <select id="root-select" class="input-field">
+                            <option value="">— Select root —</option>
+                            
+                            <option value="cardi">cardi — heart</option>
+                            
+                            <option value="cerebr">cerebr — brain</option>
+                            
+                            <option value="col">col — colon</option>
+                            
+                            <option value="crani">crani — skull</option>
+                            
+                            <option value="cyan">cyan — blue</option>
+                            
+                            <option value="derm">derm — skin</option>
+                            
+                            <option value="enter">enter — intestine</option>
+                            
+                            <option value="gastr">gastr — stomach</option>
+                            
+                            <option value="hemat">hemat — blood</option>
+                            
+                            <option value="hepat">hepat — liver</option>
+                            
+                            <option value="laryng">laryng — larynx (voice box)</option>
+                            
+                            <option value="leuk">leuk — white</option>
+                            
+                            <option value="mening">mening — membrane (often meninges)</option>
+                            
+                            <option value="my/o">my/o — muscle</option>
+                            
+                            <option value="nephr">nephr — kidney</option>
+                            
+                            <option value="neur">neur — nerve</option>
+                            
+                            <option value="onc">onc — tumor, mass</option>
+                            
+                            <option value="oste">oste — bone</option>
+                            
+                            <option value="path">path — disease</option>
+                            
+                            <option value="phleb">phleb — vein</option>
+                            
+                            <option value="pneumon">pneumon — lung</option>
+                            
+                            <option value="psych">psych — mind</option>
+                            
+                            <option value="pulmon">pulmon — lung</option>
+                            
+                            <option value="ren">ren — kidney</option>
+                            
+                            <option value="rhin">rhin — nose</option>
+                            
+                            <option value="thorac">thorac — chest</option>
+                            
+                            <option value="thromb">thromb — clot</option>
+                            
+                            <option value="trache">trache — trachea</option>
+                            
+                            <option value="ur">ur — urine, urinary</option>
+                            
+                            <option value="vas">vas — vessel</option>
+                            
+                        </select>
+                    </div>
+                    <div>
+                        <label class="label">Suffix <span class="text-ward-600">(optional)</span></label>
+                        <select id="suffix-select" class="input-field">
+                            <option value="">— None —</option>
+                            
+                            <option value="-algia">-algia — pain</option>
+                            
+                            <option value="-cele">-cele — hernia, swelling, sac</option>
+                            
+                            <option value="-centesis">-centesis — surgical puncture to remove fluid</option>
+                            
+                            <option value="-ectomy">-ectomy — surgical removal</option>
+                            
+                            <option value="-emia">-emia — blood condition</option>
+                            
+                            <option value="-genic">-genic — producing, originating</option>
+                            
+                            <option value="-gram">-gram — record, image</option>
+                            
+                            <option value="-graphy">-graphy — process of recording</option>
+                            
+                            <option value="-itis">-itis — inflammation</option>
+                            
+                            <option value="-logy">-logy — study of</option>
+                            
+                            <option value="-lysis">-lysis — breakdown, separation, destruction</option>
+                            
+                            <option value="-malacia">-malacia — softening</option>
+                            
+                            <option value="-oma">-oma — tumor, mass</option>
+                            
+                            <option value="-osis">-osis — condition, disease process</option>
+                            
+                            <option value="-ostomy">-ostomy — surgical opening</option>
+                            
+                            <option value="-otomy">-otomy — surgical incision</option>
+                            
+                            <option value="-pathy">-pathy — disease</option>
+                            
+                            <option value="-penia">-penia — deficiency</option>
+                            
+                            <option value="-pexy">-pexy — surgical fixation</option>
+                            
+                            <option value="-plasty">-plasty — surgical repair</option>
+                            
+                            <option value="-rrhage">-rrhage — bursting forth (hemorrhage)</option>
+                            
+                            <option value="-rrhea">-rrhea — flow, discharge</option>
+                            
+                            <option value="-scope">-scope — instrument for viewing</option>
+                            
+                            <option value="-scopy">-scopy — visual examination</option>
+                            
+                            <option value="-stasis">-stasis — stopping, standing still</option>
+                            
+                            <option value="-tomy">-tomy — incision, cutting</option>
+                            
+                        </select>
+                    </div>
+                </div>
+
+                <div class="builder-preview-box mt-4">
+                    <div class="text-xs text-ward-500 uppercase tracking-wide">Live Preview</div>
+                    <div id="term-preview" class="builder-preview-term">—</div>
+                    <div id="builder-chips" class="builder-parts"></div>
+                </div>
+                <button onclick="Terminology.buildTerm()" class="btn-primary w-full mt-4">Analyze Term</button>
+            </div>
+
+            <div class="card p-5">
+                <h2 class="text-base font-semibold text-ward-100 mb-4">Analysis &amp; Clinical Relevance</h2>
+                <div id="build-result" class="text-sm text-ward-400">
+                    <p class="mb-4">Build a term to see its breakdown, definition, and why it matters for RN practice.</p>
+                    <div class="clinical-callout">
+                        <div class="clinical-callout-label">Why this matters for nursing</div>
+                        Medical terminology is the language of healthcare. ADN students must decode unfamiliar terms to read charts, understand orders, and communicate with the care team.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ DATABASE ═══ -->
+    <div id="tab-database" class="tab-panel term-panel hidden">
+        <div class="card p-5">
+            <div class="flex flex-col sm:flex-row gap-3 mb-4">
+                <input type="search" id="term-search" placeholder="Search 0 terms…"
+                       class="input-field flex-1" oninput="Terminology.debounceSearch()">
+                <select id="category-filter" class="input-field sm:w-44" onchange="Terminology.searchTerms()">
+                    <option value="">All categories</option>
+                    <option value="anatomy">Anatomy</option>
+                    <option value="disease">Disease</option>
+                    <option value="procedure">Procedure</option>
+                    <option value="pharmacology">Pharmacology</option>
+                </select>
+            </div>
+            <div class="flex justify-between items-center mb-3">
+                <span id="search-count" class="text-xs text-ward-500">0 terms available</span>
+                <span class="text-xs text-ward-600">Click a term to expand · Verify sources</span>
+            </div>
+            <div id="search-results" class="space-y-2 max-h-[65vh] overflow-y-auto">
+                <p class="text-ward-500 text-sm py-4">Loading term database…</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ PRACTICE ═══ -->
+    <div id="tab-practice" class="tab-panel term-panel hidden">
+        <div class="max-w-2xl mx-auto card p-5 sm:p-6">
+            <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
+                <h2 class="text-base font-semibold text-ward-100">Practice Mode</h2>
+                <span id="practice-score" class="text-sm font-mono text-ward-500">0/0</span>
+            </div>
+
+            <div class="practice-mode-pills mb-4">
+                <button class="mode-pill active" data-mode="mixed" onclick="Terminology.setPracticeMode('mixed')">Mixed</button>
+                <button class="mode-pill" data-mode="mc" onclick="Terminology.setPracticeMode('mc')">Multiple Choice</button>
+                <button class="mode-pill" data-mode="type" onclick="Terminology.setPracticeMode('type')">Type the Term</button>
+            </div>
+
+            <div id="practice-question-area">
+                <p class="text-ward-500 text-sm">Choose a mode and start practicing.</p>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mt-4">
+                <button onclick="Terminology.startPractice(10)" class="btn-primary text-sm">Start (10)</button>
+                <button onclick="Terminology.startPractice(20)" class="btn-secondary text-sm">Extended (20)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ FLASHCARDS ═══ -->
+    <div id="tab-flashcards" class="tab-panel term-panel hidden">
+        <div class="max-w-lg mx-auto">
+            <div class="flex flex-wrap justify-center gap-2 mb-4" id="fc-stats">
+                <span class="stat-pill">Due: <strong>0</strong></span>
+                <span class="stat-pill">Mastered: <strong>0</strong></span>
+            </div>
+
+            <div id="flashcard-stage" class="flashcard-stage">
+                <div id="flashcard-inner" class="flashcard-inner" onclick="Terminology.flipCard()">
+                    <div id="fc-front-view">
+                        <p class="text-xs text-ward-500 mb-2">Tap to reveal definition</p>
+                        <p id="fc-front" class="flashcard-front-text">Loading…</p>
+                    </div>
+                    <div id="fc-back-view" class="hidden w-full">
+                        <p id="fc-back-def" class="flashcard-back-text"></p>
+                        <p id="fc-breakdown" class="text-xs text-ward-500 mt-2"></p>
+                        <p id="fc-back-clinical" class="text-xs text-ward-accent mt-2"></p>
+                        <button id="fc-verify-source" type="button" class="btn-verify text-xs mt-3 hidden" onclick="event.stopPropagation()">Verify Source</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="srs-buttons">
+                <button class="srs-btn srs-again" disabled onclick="Terminology.rateCard(0)">Again<br><span class="text-[10px] opacity-70">1 day</span></button>
+                <button class="srs-btn srs-hard" disabled onclick="Terminology.rateCard(1)">Hard<br><span class="text-[10px] opacity-70">shorter</span></button>
+                <button class="srs-btn srs-good" disabled onclick="Terminology.rateCard(2)">Good<br><span class="text-[10px] opacity-70">+interval</span></button>
+                <button class="srs-btn srs-easy" disabled onclick="Terminology.rateCard(3)">Easy<br><span class="text-[10px] opacity-70">longer</span></button>
+            </div>
+
+            <div class="flex justify-between items-center mt-4">
+                <button onclick="Terminology.prevCard()" class="btn-secondary text-sm">Prev</button>
+                <span id="flashcard-counter" class="text-sm text-ward-500 font-mono">0 / 0</span>
+                <button onclick="Terminology.nextCard()" class="btn-secondary text-sm">Next</button>
+            </div>
+            <div class="flex justify-center gap-2 mt-3">
+                <button onclick="Terminology.loadFlashcards(20, true)" class="btn-primary text-sm">Due Cards</button>
+                <button onclick="Terminology.loadFlashcards(30, false)" class="btn-secondary text-sm">Random 30</button>
+            </div>
+            <p class="text-center text-xs text-ward-600 mt-3">Spaced repetition — cards reschedule based on your rating</p>
+        </div>
+    </div>
+
+    <!-- ═══ MY TERMS ═══ -->
+    <div id="tab-myterms" class="tab-panel term-panel hidden">
+        <div class="grid lg:grid-cols-2 gap-5 max-w-5xl mx-auto">
+            <div class="card p-5">
+                <h2 class="text-base font-semibold text-ward-100 mb-1">Create Custom Term</h2>
+                <p class="text-xs text-ward-500 mb-4">Build your personal glossary — saved locally in SQLite. Include prefix/root/suffix for word-building practice.</p>
+                <form id="custom-term-form" class="space-y-3" onsubmit="Terminology.submitCustomTerm(event)">
+                    <div>
+                        <label class="label" for="custom-term">Term <span class="text-ward-danger">*</span></label>
+                        <input type="text" id="custom-term" class="input-field" placeholder="e.g. leukocytosis" required autocomplete="off" oninput="Terminology.updateCustomPreview()">
+                    </div>
+                    <div>
+                        <label class="label" for="custom-definition">Definition <span class="text-ward-danger">*</span></label>
+                        <textarea id="custom-definition" class="input-field min-h-[72px]" placeholder="Clinical definition…" required></textarea>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                        <div>
+                            <label class="label" for="custom-prefix">Prefix</label>
+                            <input type="text" id="custom-prefix" class="input-field text-sm" placeholder="leuk/o" oninput="Terminology.updateCustomPreview()">
+                        </div>
+                        <div>
+                            <label class="label" for="custom-root">Root</label>
+                            <input type="text" id="custom-root" class="input-field text-sm" placeholder="cyt" oninput="Terminology.updateCustomPreview()">
+                        </div>
+                        <div>
+                            <label class="label" for="custom-suffix">Suffix</label>
+                            <input type="text" id="custom-suffix" class="input-field text-sm" placeholder="-osis" oninput="Terminology.updateCustomPreview()">
+                        </div>
+                    </div>
+                    <div id="custom-breakdown-preview" class="custom-breakdown-preview hidden">
+                        <span class="text-[10px] text-ward-500 uppercase tracking-wider">Breakdown preview</span>
+                        <p id="custom-breakdown-text" class="text-sm text-ward-accent font-mono mt-1"></p>
+                    </div>
+                    <div>
+                        <label class="label" for="custom-clinical">Clinical Note</label>
+                        <textarea id="custom-clinical" class="input-field min-h-[56px]" placeholder="Why this matters for nursing practice…"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-full min-h-[44px]">Save Term</button>
+                </form>
+                <p id="custom-term-status" class="text-xs text-ward-500 mt-3 hidden"></p>
+            </div>
+
+            <div class="card p-5">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-base font-semibold text-ward-100">My Terms</h2>
+                    <span id="custom-term-count" class="text-xs text-ward-500">0 saved</span>
+                </div>
+                <div id="custom-terms-list" class="custom-terms-list">
+                    <p class="text-ward-500 text-sm py-4">No custom terms yet — add one to get started.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ EXPORT ═══ -->
+    <div id="tab-export" class="tab-panel term-panel hidden" data-term-count="0">
+        <div class="card p-5 max-w-3xl mx-auto">
+            <h2 class="text-base font-semibold text-ward-100 mb-1">Export Study Materials</h2>
+            <p class="text-xs text-ward-500 mb-5">Download or copy verified terminology for offline study</p>
+            <div class="export-grid">
+                    <div class="export-card" onclick="Terminology.exportPDF(50)">
+                        <div class="export-card-icon">📄</div>
+                        <div class="export-card-title">PDF Study Sheet</div>
+                        <div class="export-card-desc">50 terms — Print → Save as PDF</div>
+                    </div>
+                    <div class="export-card export-card-accent" onclick="Terminology.exportPDF(0)">
+                        <div class="export-card-icon">📄</div>
+                        <div class="export-card-title">PDF — Export All</div>
+                        <div class="export-card-desc">All 0 verified terms</div>
+                    </div>
+                    <div class="export-card" onclick="Terminology.copyToClipboard(50)">
+                        <div class="export-card-icon">📋</div>
+                        <div class="export-card-title">Copy to Clipboard</div>
+                        <div class="export-card-desc">50 terms with definitions</div>
+                    </div>
+                    <div class="export-card export-card-accent" onclick="Terminology.copyToClipboard(0)">
+                        <div class="export-card-icon">📋</div>
+                        <div class="export-card-title">Copy All (0)</div>
+                        <div class="export-card-desc">Full database to clipboard</div>
+                    </div>
+                    <div class="export-card" onclick="Terminology.exportMarkdown(50)">
+                        <div class="export-card-icon">📝</div>
+                        <div class="export-card-title">Flashcard Markdown</div>
+                        <div class="export-card-desc">50 cards for Anki or notes</div>
+                    </div>
+                    <div class="export-card export-card-accent" onclick="Terminology.exportMarkdown(0)">
+                        <div class="export-card-icon">📝</div>
+                        <div class="export-card-title">Markdown — Export All</div>
+                        <div class="export-card-desc">All 0 terms as .md</div>
+                    </div>
+                    <div class="export-card" onclick="Terminology.exportJSON()">
+                        <div class="export-card-icon">📦</div>
+                        <div class="export-card-title">All Terms JSON</div>
+                        <div class="export-card-desc">Full 0-term database</div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            </main>
+
+            <footer class="main-footer">
+                Static ADN Study Resource · Deployable
+            </footer>
+        </div>
+    </div>
+
+    <script src="/static/js/export-utils.js"></script>
+    <script src="/static/js/ward-tabs.js"></script>
+    <script src="/static/js/data-api.js"></script>
+    <script src="/static/js/ward.js"></script>
+    <script src="/static/js/ward-static.js"></script>
+    
+    
+<script src="/static/js/terminology.js"></script>
+
+</body>
+</html>

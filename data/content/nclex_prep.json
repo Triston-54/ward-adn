@@ -1,0 +1,3245 @@
+{
+  "title": "NCLEX-RN Prep Center",
+  "description": "Aggregated clinical judgment practice across ADN curriculum",
+  "ncj_steps": [
+    "Recognize Cues",
+    "Analyze Cues",
+    "Prioritize Hypotheses",
+    "Generate Solutions",
+    "Take Action",
+    "Evaluate Outcomes"
+  ],
+  "categories": [
+    {
+      "id": "cardiovascular",
+      "name": "Cardiovascular",
+      "count": 7
+    },
+    {
+      "id": "endocrine",
+      "name": "Endocrine",
+      "count": 5
+    },
+    {
+      "id": "gastrointestinal",
+      "name": "Gastrointestinal",
+      "count": 5
+    },
+    {
+      "id": "hematologic",
+      "name": "Hematologic",
+      "count": 4
+    },
+    {
+      "id": "infection-control",
+      "name": "Infection Control",
+      "count": 6
+    },
+    {
+      "id": "leadership",
+      "name": "Leadership",
+      "count": 1
+    },
+    {
+      "id": "maternal-newborn",
+      "name": "Maternal-Newborn",
+      "count": 9
+    },
+    {
+      "id": "musculoskeletal",
+      "name": "Musculoskeletal",
+      "count": 3
+    },
+    {
+      "id": "neurological",
+      "name": "Neurological",
+      "count": 4
+    },
+    {
+      "id": "pediatric-nursing",
+      "name": "Pediatric Nursing",
+      "count": 4
+    },
+    {
+      "id": "pharmacological-therapies",
+      "name": "Pharmacological Therapies",
+      "count": 8
+    },
+    {
+      "id": "prioritization",
+      "name": "Prioritization",
+      "count": 5
+    },
+    {
+      "id": "psychosocial-integrity",
+      "name": "Psychosocial Integrity",
+      "count": 10
+    },
+    {
+      "id": "renal",
+      "name": "Renal",
+      "count": 6
+    },
+    {
+      "id": "respiratory",
+      "name": "Respiratory",
+      "count": 5
+    },
+    {
+      "id": "safety-and-infection-control",
+      "name": "Safety & Infection Control",
+      "count": 8
+    }
+  ],
+  "questions_by_category": {
+    "Cardiovascular": [
+      {
+        "id": "ms-q1",
+        "question": "Left-sided heart failure — which finding is most consistent?",
+        "options": [
+          "JVD and peripheral edema",
+          "Crackles and pink frothy sputum",
+          "Hepatomegaly and ascites",
+          "Bounding peripheral pulses"
+        ],
+        "correct_index": 1,
+        "rationale": "Left-sided HF reduces LV output, causing blood to back up into pulmonary circulation — crackles, orthopnea, pink frothy sputum, and S₃ gallop. JVD and peripheral edema suggest right-sided failure.",
+        "category": "Cardiovascular",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "medium",
+        "source_module": "med_surg",
+        "clinical_judgment_focus": "Differentiate left- versus right-sided failure by identifying where congestion backs up — lungs vs. systemic circulation.",
+        "clinical_why": "Differentiating left vs right HF guides diuretic use, positioning (high Fowler's), and monitoring (daily weights, I&O)."
+      },
+      {
+        "id": "ms-q12",
+        "question": "Most important warfarin teaching?",
+        "options": [
+          "Consistent vitamin K intake",
+          "Take with NSAIDs",
+          "Double dose if missed",
+          "Avoid all lab draws"
+        ],
+        "correct_index": 0,
+        "rationale": "Warfarin inhibits vitamin K-dependent clotting factors — consistent dietary vitamin K prevents INR swings; teach bleeding precautions and avoid NSAIDs without provider approval.",
+        "category": "Cardiovascular",
+        "ncj_step": "Evaluate Outcomes",
+        "difficulty": "easy",
+        "source_module": "med_surg",
+        "clinical_judgment_focus": "Patient education on warfarin must address dietary consistency, not just medication timing.",
+        "clinical_why": "Supratherapeutic INR causes GI and intracranial bleeding — subtherapeutic INR fails anticoagulation."
+      },
+      {
+        "id": "patho-q1",
+        "question": "Which shock type presents with warm flushed skin early then hypotension?",
+        "options": [
+          "Distributive (septic)",
+          "Cardiogenic",
+          "Hypovolemic",
+          "Neurogenic only"
+        ],
+        "correct_index": 0,
+        "rationale": "Septic (distributive) shock causes massive vasodilation, producing warm, flushed skin in early phases. As shock progresses, compensatory mechanisms fail and hypotension develops despite warm extremities initially. Cardiogenic shock presents with cool, clammy skin; hypovolemic shock shows pale, diaphoretic extremities.",
+        "category": "Cardiovascular",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "medium",
+        "source_module": "pathophysiology",
+        "clinical_judgment_focus": "Early septic shock may look 'warm' — do not be reassured by flushed skin in a febrile patient."
+      },
+      {
+        "id": "patho-q6",
+        "question": "Refractory hypotension in septic shock after fluids — next:",
+        "options": [
+          "Large fluid bolus only",
+          "Vasopressor per protocol",
+          "Immediate discharge",
+          "Oral hydration"
+        ],
+        "correct_index": 1,
+        "rationale": "When septic shock remains hypotensive after adequate fluid resuscitation, vasopressor support is indicated. Norepinephrine is often first-line to achieve MAP ≥65 mmHg and restore organ perfusion. Additional fluid boluses alone without vasopressors in refractory shock delay critical perfusion support.",
+        "category": "Cardiovascular",
+        "ncj_step": "Take Action",
+        "difficulty": "hard",
+        "source_module": "pathophysiology",
+        "clinical_judgment_focus": "Escalate from fluids to vasopressors when septic shock does not respond to volume resuscitation."
+      },
+      {
+        "id": "patho-q10",
+        "question": "Daily weight gain of 2 lb in CHF signals:",
+        "options": [
+          "Improved nutrition",
+          "Fluid retention",
+          "Muscle gain",
+          "Dry weight loss"
+        ],
+        "correct_index": 1,
+        "rationale": "Daily weight is the most sensitive early indicator of fluid retention in heart failure — 2 lb gain in 24 hours signals 1 liter of retained fluid. Patients should weigh daily at the same time; report gains of 2–3 lb in a day or 5 lb in a week. Catching fluid retention early prevents hospitalization for acute decompensated HF.",
+        "category": "Cardiovascular",
+        "ncj_step": "Recognize Cues",
+        "difficulty": "easy",
+        "source_module": "pathophysiology",
+        "clinical_judgment_focus": "Daily weights catch fluid retention before crackles and dyspnea develop."
+      },
+      {
+        "id": "aq-03",
+        "question": "Orthostatic hypotension is defined as:",
+        "options": [
+          "SBP drop ≥20 mmHg or DBP ≥10 mmHg with symptoms on standing",
+          "Any BP change lying to standing",
+          "HR increase only",
+          "SBP increase 20 mmHg"
+        ],
+        "correct_index": 0,
+        "rationale": "Orthostatic hypotension is defined as a drop in SBP ≥20 mmHg or DBP ≥10 mmHg within 3 minutes of standing, often with symptoms. This indicates inadequate cerebral perfusion on position change and increases fall risk. Any BP change or HR increase alone does not meet the clinical definition.",
+        "category": "Cardiovascular",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "easy",
+        "source_module": "assessment",
+        "clinical_judgment_focus": "Orthostatic vital signs detect volume depletion and autonomic dysfunction before falls occur."
+      },
+      {
+        "id": "term-q01",
+        "question": "The prefix 'brady-' in bradycardia means:",
+        "options": [
+          "Fast",
+          "Slow",
+          "Irregular",
+          "Absent"
+        ],
+        "correct_index": 1,
+        "rationale": "The prefix 'brady-' means slow — bradycardia is a resting heart rate below 60 bpm in adults. Symptomatic bradycardia (hypotension, altered mental status, chest pain) may require atropine per ACLS protocol. Not all bradycardia requires treatment; athletes may have normal resting rates below 60.",
+        "category": "Cardiovascular",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "easy",
+        "source_module": "terminology",
+        "clinical_judgment_focus": "Medical terminology decoding supports accurate communication and safer care."
+      }
+    ],
+    "Respiratory": [
+      {
+        "id": "ms-q2",
+        "question": "Appropriate SpO2 target for COPD on supplemental O2?",
+        "options": [
+          "98–100%",
+          "94–98%",
+          "88–92%",
+          "Below 85%"
+        ],
+        "correct_index": 2,
+        "rationale": "COPD patients are chronic CO₂ retainers; hypoxic drive maintains ventilation. Target SpO₂ 88–92% to prevent CO₂ narcosis while treating exacerbation.",
+        "category": "Respiratory",
+        "ncj_step": "Generate Solutions",
+        "difficulty": "medium",
+        "source_module": "med_surg",
+        "clinical_judgment_focus": "Balance oxygenation with ventilation risk — chronic retainers need lower SpO2 targets than acute patients.",
+        "clinical_why": "Titrate O₂ to lowest saturation meeting target — ABG confirms pH and PaCO₂ trends."
+      },
+      {
+        "id": "ms-q13",
+        "question": "Asthma with silent chest and exhaustion indicates?",
+        "options": [
+          "Improving bronchospasm",
+          "Impending respiratory failure",
+          "Successful treatment",
+          "Mild exacerbation"
+        ],
+        "correct_index": 1,
+        "rationale": "Silent chest in asthma means minimal air movement despite obstruction — exhaustion and impending respiratory failure, not improvement. Prepare epinephrine, assisted ventilation.",
+        "category": "Respiratory",
+        "ncj_step": "Recognize Cues",
+        "difficulty": "hard",
+        "source_module": "med_surg",
+        "clinical_judgment_focus": "Silent chest in asthma is a danger sign — do not interpret absence of wheeze as improvement.",
+        "clinical_why": "Wheezing may decrease as patient fatigues — worsening obstruction, not resolution."
+      },
+      {
+        "id": "patho-q5",
+        "question": "COPD chronic baseline may include:",
+        "options": [
+          "Compensated respiratory acidosis",
+          "Primary metabolic alkalosis only",
+          "Normal PaCO₂ always",
+          "Metabolic acidosis only"
+        ],
+        "correct_index": 0,
+        "rationale": "Chronic COPD patients retain CO2 and compensate with renal bicarbonate retention, producing compensated respiratory acidosis. Their baseline PaCO2 is elevated with near-normal pH — this is their compensated 'normal.' Over-oxygenating these patients can shift this fragile balance and cause acute CO2 narcosis.",
+        "category": "Respiratory",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "hard",
+        "source_module": "pathophysiology",
+        "clinical_judgment_focus": "Know the compensated baseline in COPD — their 'abnormal' ABG may be their normal."
+      },
+      {
+        "id": "patho-q12",
+        "question": "ARDS P/F ratio Berlin definition uses PEEP:",
+        "options": [
+          "≥5 cm H₂O",
+          "0 only",
+          "≥15 only",
+          "Not part of criteria"
+        ],
+        "correct_index": 0,
+        "rationale": "Berlin ARDS criteria require bilateral infiltrates, P/F ratio <300, and PEEP ≥5 cm H2O not fully explained by cardiac failure. ARDS severity is classified by P/F ratio: mild 200–300, moderate 100–200, severe <100. Lung-protective ventilation with low tidal volumes (6 mL/kg) is the cornerstone of management.",
+        "category": "Respiratory",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "hard",
+        "source_module": "pathophysiology",
+        "clinical_judgment_focus": "ARDS requires lung-protective strategies — understand Berlin criteria for severity."
+      },
+      {
+        "id": "aq-01",
+        "question": "Which finding requires immediate notification?",
+        "options": [
+          "BP 142/88",
+          "SpO₂ 88% with RR 32 and accessory use",
+          "Pain 4/10",
+          "Temp 37.2°C"
+        ],
+        "correct_index": 1,
+        "rationale": "SpO2 88% with respiratory rate 32 and accessory muscle use indicates acute respiratory distress requiring immediate action. The nurse must assess the airway, apply oxygen, position the patient, and notify the provider promptly. Mildly elevated BP, moderate pain, and normal temperature are not acute threats to airway or breathing.",
+        "category": "Respiratory",
+        "ncj_step": "Prioritize Hypotheses",
+        "difficulty": "medium",
+        "source_module": "assessment",
+        "clinical_judgment_focus": "Accessory muscle use with hypoxia signals respiratory failure — act on breathing before other findings."
+      }
+    ],
+    "Neurological": [
+      {
+        "id": "ms-q3",
+        "question": "Suspected stroke within 45 minutes — first priority?",
+        "options": [
+          "Give tPA immediately",
+          "IV access and blood glucose",
+          "Carotid endarterectomy",
+          "Insert NG tube"
+        ],
+        "correct_index": 1,
+        "rationale": "Stroke protocol: establish last known well, ABCs, IV access, blood glucose (hypoglycemia mimics stroke), CT head, then consider tPA if ischemic and within window.",
+        "category": "Neurological",
+        "ncj_step": "Recognize Cues",
+        "difficulty": "hard",
+        "source_module": "med_surg",
+        "clinical_judgment_focus": "Time-critical stroke care still requires glucose verification and imaging before thrombolytics.",
+        "clinical_why": "Giving tPA before ruling out hemorrhage or hypoglycemia causes catastrophic harm."
+      },
+      {
+        "id": "ms-q14",
+        "question": "SCI T4: pounding headache, BP 210/118 — first action?",
+        "options": [
+          "Sit upright, loosen clothing",
+          "Rapid IV fluid bolus",
+          "Trendelenburg",
+          "Tight abdominal binder"
+        ],
+        "correct_index": 0,
+        "rationale": "Autonomic dysreflexia (T6 and above): pounding headache, hypertension, bradycardia — sit upright, loosen constrictive clothing, identify trigger (full bladder, fecal impaction), notify provider.",
+        "category": "Neurological",
+        "ncj_step": "Take Action",
+        "difficulty": "hard",
+        "source_module": "med_surg",
+        "clinical_judgment_focus": "Autonomic dysreflexia in SCI above T6 requires immediate upright positioning and trigger removal.",
+        "clinical_why": "BP can exceed 300 mmHg causing stroke — never place flat (increases cerebral perfusion pressure)."
+      },
+      {
+        "id": "patho-q8",
+        "question": "Before thrombolytics in suspected stroke:",
+        "options": [
+          "MRI only",
+          "CT head to rule out hemorrhage",
+          "Lumbar puncture first",
+          "Start heparin drip"
+        ],
+        "correct_index": 1,
+        "rationale": "Thrombolytics (tPA) are contraindicated in hemorrhagic stroke — they would worsen bleeding catastrophically. Non-contrast CT head is the emergent imaging study to rule out hemorrhage before thrombolytic consideration. Time is critical, but ruling out bleed takes priority over administering tPA.",
+        "category": "Neurological",
+        "ncj_step": "Generate Solutions",
+        "difficulty": "hard",
+        "source_module": "pathophysiology",
+        "clinical_judgment_focus": "Rule out hemorrhagic stroke before thrombolytics — CT is non-negotiable."
+      },
+      {
+        "id": "aq-05",
+        "question": "FAST assessment includes:",
+        "options": [
+          "Face, Arm, Speech, Time",
+          "Fever, Airway, Skin, Temperature",
+          "Fluid, Activity, Strength, Tone",
+          "Focus, Assess, Support, Treat"
+        ],
+        "correct_index": 0,
+        "rationale": "FAST is the stroke screening mnemonic: Face drooping, Arm weakness, Speech difficulty, Time to call emergency services. Rapid recognition and activation of the stroke team maximizes the window for thrombolytic therapy. Early identification directly impacts functional outcomes and mortality.",
+        "category": "Neurological",
+        "ncj_step": "Recognize Cues",
+        "difficulty": "easy",
+        "source_module": "assessment",
+        "clinical_judgment_focus": "FAST enables community and bedside stroke recognition — time activation saves brain tissue."
+      }
+    ],
+    "Gastrointestinal": [
+      {
+        "id": "ms-q4",
+        "question": "Cirrhosis with confusion and asterixis — priority intervention?",
+        "options": [
+          "Administer lactulose",
+          "Restrict all protein permanently",
+          "Insert urinary catheter",
+          "Abdominal binder"
+        ],
+        "correct_index": 0,
+        "rationale": "Hepatic encephalopathy from ammonia accumulation — lactulose acidifies colon, traps ammonia, increases bowel movements. Protein restriction is temporary, not permanent.",
+        "category": "Gastrointestinal",
+        "ncj_step": "Take Action",
+        "difficulty": "medium",
+        "source_module": "med_surg",
+        "clinical_judgment_focus": "Connect neuro changes in liver disease to ammonia accumulation and initiate targeted treatment.",
+        "clinical_why": "Asterixis and confusion can progress to coma — monitor mental status and hold sedatives that worsen encephalopathy."
+      },
+      {
+        "id": "ms-q15",
+        "question": "Acute pancreatitis initial management?",
+        "options": [
+          "NPO with IV fluids",
+          "Clear liquid diet ad lib",
+          "High-fat enteral feeds",
+          "Encourage eating"
+        ],
+        "correct_index": 0,
+        "rationale": "Acute pancreatitis: NPO to rest pancreas, aggressive IV fluids (third-spacing), pain control, monitor for ARDS and hypocalcemia. Oral intake resumes when lipase trends down and pain resolves.",
+        "category": "Gastrointestinal",
+        "ncj_step": "Generate Solutions",
+        "difficulty": "easy",
+        "source_module": "med_surg",
+        "clinical_judgment_focus": "Bowel rest and hydration are foundational in acute pancreatitis before nutrition is reintroduced.",
+        "clinical_why": "Early feeding in severe pancreatitis can worsen inflammation — follow enteral protocol when stable."
+      },
+      {
+        "id": "aq-02",
+        "question": "Best technique order for abdominal assessment?",
+        "options": [
+          "Palpate then auscultate",
+          "Auscultate then palpate",
+          "Percuss then palpate only",
+          "Inspect last"
+        ],
+        "correct_index": 1,
+        "rationale": "Abdominal assessment follows the order: inspect, auscultate, percuss, then palpate (IAPPP). Auscultation must occur before palpation because palpation can alter bowel sounds and lead to inaccurate findings. Palpating before auscultating is a common error that compromises assessment accuracy.",
+        "category": "Gastrointestinal",
+        "ncj_step": "Take Action",
+        "difficulty": "easy",
+        "source_module": "assessment",
+        "clinical_judgment_focus": "Assessment technique order prevents altering the very findings you need to detect."
+      },
+      {
+        "id": "aq-15",
+        "question": "Bowel sounds absent for 5 minutes in a post-op abdomen may indicate:",
+        "options": [
+          "Ileus or obstruction — correlate with nausea, distension, flatus",
+          "Always normal after surgery",
+          "Diarrhea",
+          "Appendicitis only"
+        ],
+        "correct_index": 0,
+        "rationale": "Absent bowel sounds after abdominal surgery may indicate postoperative ileus or developing obstruction. Correlate with nausea, abdominal distension, absence of flatus, and pain to differentiate expected ileus from complication. Notify the provider when bowel sounds remain absent with worsening distension or no flatus — obstruction can progress to ischemia.",
+        "category": "Gastrointestinal",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "medium",
+        "source_module": "assessment",
+        "clinical_judgment_focus": "Post-op abdominal assessment integrates bowel sounds with flatus, distension, and nausea."
+      },
+      {
+        "id": "term-q02",
+        "question": "Which suffix means inflammation?",
+        "options": [
+          "-osis",
+          "-itis",
+          "-emia",
+          "-logy"
+        ],
+        "correct_index": 1,
+        "rationale": "The suffix '-itis' means inflammation of the attached structure — gastritis is stomach inflammation, meningitis is meningeal inflammation. Recognizing suffixes allows nurses to decode unfamiliar terms and anticipate clinical presentations. -osis means abnormal condition, -emia means blood condition, and -logy means study of.",
+        "category": "Gastrointestinal",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "easy",
+        "source_module": "terminology",
+        "clinical_judgment_focus": "Suffix recognition predicts condition type — inflammation, blood disorder, or disease state."
+      }
+    ],
+    "Renal": [
+      {
+        "id": "ms-q5",
+        "question": "K+ 6.8 with peaked T waves — prepare first?",
+        "options": [
+          "Calcium gluconate IV",
+          "Kayexalate oral",
+          "Furosemide IV",
+          "Insulin with D50"
+        ],
+        "correct_index": 0,
+        "rationale": "Severe hyperkalemia (K⁺ >6.5 with ECG changes): calcium gluconate IV first to stabilize myocardium — does not lower K⁺ but protects against arrhythmia while insulin/D50, kayexalate, or dialysis are prepared.",
+        "category": "Renal",
+        "ncj_step": "Take Action",
+        "difficulty": "hard",
+        "source_module": "med_surg",
+        "clinical_judgment_focus": "Sequence hyperkalemia treatment: stabilize the myocardium first, then lower serum potassium.",
+        "clinical_why": "Peaked T waves progress to widened QRS and sine wave arrest — continuous tele required."
+      },
+      {
+        "id": "ms-q16",
+        "question": "ESRD on hemodialysis — which finding is urgent?",
+        "options": [
+          "Absent thrill and bruit at fistula",
+          "Weight gain 1 kg",
+          "Mild itching",
+          "Post-dialysis fatigue"
+        ],
+        "correct_index": 0,
+        "rationale": "Hemodialysis fistula requires thrill (palpable vibration) and bruit (audible whoosh) — absent both suggests thrombosis. Never BP or venipuncture on fistula arm.",
+        "category": "Renal",
+        "ncj_step": "Recognize Cues",
+        "difficulty": "medium",
+        "source_module": "med_surg",
+        "clinical_judgment_focus": "The dialysis fistula is the patient's lifeline — assess thrill and bruit every shift.",
+        "clinical_why": "Clotted fistula loses dialysis access — surgical thrombectomy time-sensitive."
+      },
+      {
+        "id": "ms-q19",
+        "question": "Post-op urine 15 mL/hr × 3 hr, BP 88/54, HR 118 — suspect?",
+        "options": [
+          "Hypovolemia",
+          "Fluid overload",
+          "Urinary retention",
+          "Normal diuresis"
+        ],
+        "correct_index": 0,
+        "rationale": "Oliguria (<30 mL/hr) with hypotension and tachycardia post-op indicates hypovolemia — assess bleeding, IV access, fluid bolus per order, trend hemoglobin.",
+        "category": "Renal",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "medium",
+        "source_module": "med_surg",
+        "clinical_judgment_focus": "Cluster oliguria with hemodynamic instability to identify hypovolemia early.",
+        "clinical_why": "Undetected hemorrhage leads to shock and cardiac arrest — I&O and VS every 15 min early post-op."
+      },
+      {
+        "id": "patho-q7",
+        "question": "Prerenal AKI BUN:Cr ratio typically:",
+        "options": [
+          ">20:1",
+          "<10:1",
+          "Exactly 1:1",
+          "Not useful"
+        ],
+        "correct_index": 0,
+        "rationale": "Prerenal AKI results from decreased renal perfusion (dehydration, heart failure, sepsis) with intact kidney tissue. BUN rises disproportionately to creatinine, producing a BUN:Cr ratio >20:1. Intrinsic renal injury shows a ratio closer to 10:1; the distinction guides whether fluids will restore function.",
+        "category": "Renal",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "medium",
+        "source_module": "pathophysiology",
+        "clinical_judgment_focus": "BUN:Cr ratio helps distinguish prerenal from intrinsic renal injury at the bedside."
+      },
+      {
+        "id": "term-q03",
+        "question": "Hematuria means:",
+        "options": [
+          "Blood in urine",
+          "Excess protein in urine",
+          "Scant urine output",
+          "Painful urination"
+        ],
+        "correct_index": 0,
+        "rationale": "Hematuria combines 'hemat/o' (blood) and '-uria' (urine condition) — blood present in the urine. Gross hematuria is visible; microscopic hematuria is detected on dipstick or microscopy. Both require provider notification to rule out infection, stones, trauma, or malignancy.",
+        "category": "Renal",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "easy",
+        "source_module": "terminology",
+        "clinical_judgment_focus": "Hematuria always warrants investigation — never normalize blood in urine."
+      },
+      {
+        "id": "term-q04",
+        "question": "The root 'nephr' refers to the:",
+        "options": [
+          "Liver",
+          "Kidney",
+          "Lung",
+          "Heart"
+        ],
+        "correct_index": 1,
+        "rationale": "The root 'nephr/o' refers to the kidney — seen in nephrology, nephritis, and nephrectomy. Understanding word roots builds vocabulary for renal assessment, medications, and patient education. Hepat- is liver, pulmon- is lung, and cardi- is heart.",
+        "category": "Renal",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "easy",
+        "source_module": "terminology",
+        "clinical_judgment_focus": "Word roots link terminology to body systems for faster clinical reasoning."
+      }
+    ],
+    "Endocrine": [
+      {
+        "id": "ms-q6",
+        "question": "Type 1 diabetic BG 42 mg/dL, alert but confused — first action?",
+        "options": [
+          "4 oz orange juice",
+          "10 units NPH insulin",
+          "Normal saline bolus",
+          "Urine ketones first"
+        ],
+        "correct_index": 0,
+        "rationale": "Conscious hypoglycemia (Rule of 15): 15 g fast carbohydrate (4 oz juice, glucose tabs), recheck in 15 min, repeat if still <70; glucagon or IV dextrose if unable to swallow.",
+        "category": "Endocrine",
+        "ncj_step": "Take Action",
+        "difficulty": "easy",
+        "source_module": "med_surg",
+        "clinical_judgment_focus": "Apply the Rule of 15 for conscious hypoglycemia — treat fast, recheck, repeat as needed.",
+        "clinical_why": "Never give insulin to hypoglycemic patient — seizure and death risk within minutes."
+      },
+      {
+        "id": "ms-q10",
+        "question": "DKA: pH 7.18, K+ 3.2, glucose 480 — before insulin drip?",
+        "options": [
+          "Replace potassium",
+          "Sodium bicarbonate routinely",
+          "Hold all IV fluids",
+          "Subcutaneous insulin only"
+        ],
+        "correct_index": 0,
+        "rationale": "DKA: total body K⁺ depleted despite serum level — insulin drives K⁺ intracellularly. Replace K⁺ to ≥3.3 mEq/L before insulin infusion to prevent life-threatening hypokalemia.",
+        "category": "Endocrine",
+        "ncj_step": "Generate Solutions",
+        "difficulty": "hard",
+        "source_module": "med_surg",
+        "clinical_judgment_focus": "Anticipate insulin's effect on potassium before starting DKA protocol — prevent iatrogenic arrhythmia.",
+        "clinical_why": "Insulin without K⁺ replacement can cause cardiac arrest from hypokalemia."
+      },
+      {
+        "id": "ms-q20",
+        "question": "Highest lactic acidosis risk pair?",
+        "options": [
+          "Metformin with IV contrast",
+          "Lisinopril with HCTZ",
+          "Statin with aspirin",
+          "Levothyroxine with calcium"
+        ],
+        "correct_index": 0,
+        "rationale": "Metformin with IV iodinated contrast increases lactic acidosis risk — hold metformin 48 hr before and after contrast, verify renal function (eGFR).",
+        "category": "Endocrine",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "medium",
+        "source_module": "med_surg",
+        "clinical_judgment_focus": "Know high-risk drug-contrast interactions — metformin plus IV contrast risks lactic acidosis.",
+        "clinical_why": "Contrast-induced nephropathy plus metformin accumulation causes lethal lactic acidosis."
+      },
+      {
+        "id": "patho-q11",
+        "question": "DKA vs HHNS: ketones are prominent in:",
+        "options": [
+          "DKA",
+          "HHNS",
+          "Both equally",
+          "Neither"
+        ],
+        "correct_index": 0,
+        "rationale": "DKA features significant ketone production with metabolic acidosis (pH <7.3, anion gap elevated). HHS (hyperosmolar hyperglycemic state) presents with extreme hyperglycemia but minimal ketosis and less acidosis. Both are emergencies, but ketone prominence distinguishes DKA and guides insulin urgency.",
+        "category": "Endocrine",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "medium",
+        "source_module": "pathophysiology",
+        "clinical_judgment_focus": "Ketone presence differentiates DKA from HHS — both need treatment but pathways differ."
+      },
+      {
+        "id": "term-q05",
+        "question": "Hyperglycemia indicates:",
+        "options": [
+          "Low blood sugar",
+          "High blood sugar",
+          "Low blood pressure",
+          "High heart rate"
+        ],
+        "correct_index": 1,
+        "rationale": "Hyperglycemia means blood glucose above normal limits — hyper- (excessive) + glyc (glucose) + -emia (blood condition). Sustained hyperglycemia can progress to DKA (type 1) or HHS (type 2) and requires insulin or protocol-driven treatment. Always verify glucose before administering insulin to prevent hypoglycemic events.",
+        "category": "Endocrine",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "easy",
+        "source_module": "terminology",
+        "clinical_judgment_focus": "Hyperglycemia terminology connects to actionable nursing assessment and insulin safety."
+      }
+    ],
+    "Musculoskeletal": [
+      {
+        "id": "ms-q7",
+        "question": "Post total hip arthroplasty — which finding needs immediate action?",
+        "options": [
+          "Pain 6/10",
+          "SOB and tachycardia",
+          "Serous incision drainage",
+          "Temp 99.1°F"
+        ],
+        "correct_index": 1,
+        "rationale": "Sudden SOB and tachycardia after orthopedic surgery suggests pulmonary embolism — immobilization and hypercoagulability. Assess SpO₂, prepare heparin/CT angiography per order.",
+        "category": "Musculoskeletal",
+        "ncj_step": "Recognize Cues",
+        "difficulty": "medium",
+        "source_module": "med_surg",
+        "clinical_judgment_focus": "Recognize post-op SOB as PE until ruled out — a silent killer after orthopedic surgery.",
+        "clinical_why": "PE is a leading cause of post-op death — don't attribute SOB to pain alone."
+      },
+      {
+        "id": "ms-q11",
+        "question": "Cast pain unrelieved by opioids with passive toe pain — suspect?",
+        "options": [
+          "Compartment syndrome",
+          "Normal discomfort",
+          "Cast infection",
+          "DVT"
+        ],
+        "correct_index": 0,
+        "rationale": "Compartment syndrome: pain out of proportion, pain with passive stretch of toes, paresthesia, pallor, pulselessness (late). Elevate cast to heart level, bivalve cast, notify surgeon immediately.",
+        "category": "Musculoskeletal",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "medium",
+        "source_module": "med_surg",
+        "clinical_judgment_focus": "Pain out of proportion to injury is the cardinal cue for compartment syndrome.",
+        "clinical_why": "Fasciotomy within 6 hours prevents permanent nerve and muscle necrosis."
+      },
+      {
+        "id": "aq-17",
+        "question": "A positive Homans sign (calf pain on dorsiflexion) is:",
+        "options": [
+          "Not reliable alone for DVT — use Wells criteria and ultrasound",
+          "Definitive DVT diagnosis",
+          "Normal in all post-op patients",
+          "Contraindication to ambulation"
+        ],
+        "correct_index": 0,
+        "rationale": "Homans sign (calf pain on dorsiflexion) is neither sensitive nor specific enough to diagnose DVT alone. Assess for unilateral calf swelling, warmth, erythema, and pain while applying Wells criteria and ordering ultrasound. Missed DVT is a leading cause of preventable pulmonary embolism in hospitalized patients.",
+        "category": "Musculoskeletal",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "medium",
+        "source_module": "assessment",
+        "clinical_judgment_focus": "Never rely on a single physical exam maneuver for DVT — use validated clinical decision tools."
+      }
+    ],
+    "Hematologic": [
+      {
+        "id": "ms-q8",
+        "question": "Neutropenic patient temp 100.8°F — priority?",
+        "options": [
+          "Blood cultures and notify for antibiotics",
+          "Cooling blanket only",
+          "Fluids and recheck in 4 hours",
+          "Influenza vaccine"
+        ],
+        "correct_index": 0,
+        "rationale": "Febrile neutropenia (ANC <500 with temp ≥38.3°C): medical emergency — blood cultures ×2, broad-spectrum antibiotics within 1 hour, avoid rectal temps and fresh flowers.",
+        "category": "Hematologic",
+        "ncj_step": "Take Action",
+        "difficulty": "hard",
+        "source_module": "med_surg",
+        "clinical_judgment_focus": "Neutropenic fever is a 'treat first, diagnose second' emergency — do not wait for culture results to start antibiotics.",
+        "clinical_why": "Neutropenic patients lack inflammatory response — fever may be only sign of sepsis."
+      },
+      {
+        "id": "ms-q18",
+        "question": "Sickle cell: chest pain, fever, hypoxia — priority?",
+        "options": [
+          "Oxygen and notify provider",
+          "Cold compresses to joints",
+          "Vigorous exercise",
+          "Withhold fluids"
+        ],
+        "correct_index": 0,
+        "rationale": "Acute chest syndrome in sickle cell: new pulmonary infiltrate, chest pain, fever, hypoxia — O₂, fluids, antibiotics, exchange transfusion may be needed. Mimics pneumonia.",
+        "category": "Hematologic",
+        "ncj_step": "Take Action",
+        "difficulty": "medium",
+        "source_module": "med_surg",
+        "clinical_judgment_focus": "Acute chest syndrome in sickle cell is an emergency — oxygen, fluids, and provider notification.",
+        "clinical_why": "Leading cause of death in sickle cell adults — early recognition reduces respiratory failure."
+      },
+      {
+        "id": "ms-q21",
+        "question": "Transfusion: chills, fever, back pain — nurse should?",
+        "options": [
+          "Stop transfusion, notify provider",
+          "Slow rate and continue",
+          "Antihistamine and resume",
+          "Document and continue"
+        ],
+        "correct_index": 0,
+        "rationale": "Acute hemolytic transfusion reaction: fever, chills, flank/back pain, hypotension during transfusion — stop immediately, keep IV open with NS, return blood to lab, notify provider.",
+        "category": "Hematologic",
+        "ncj_step": "Take Action",
+        "difficulty": "medium",
+        "source_module": "med_surg",
+        "clinical_judgment_focus": "Any transfusion reaction with fever and back pain demands immediate cessation and investigation.",
+        "clinical_why": "Continuing transfusion causes DIC, renal failure, and death — verify patient ID and blood unit at bedside."
+      },
+      {
+        "id": "patho-q13",
+        "question": "HIT on heparin — priority action:",
+        "options": [
+          "Continue heparin",
+          "Stop heparin and notify provider",
+          "Increase heparin rate",
+          "Platelet transfusion always"
+        ],
+        "correct_index": 1,
+        "rationale": "Heparin-induced thrombocytopenia (HIT) is an immune-mediated paradox: platelets drop but thrombosis risk soars. All heparin products must be stopped immediately when HIT is suspected — continuing causes arterial and venous clots. Alternative anticoagulation (argatroban, bivalirudin) is needed; platelet transfusion is contraindicated unless bleeding.",
+        "category": "Hematologic",
+        "ncj_step": "Take Action",
+        "difficulty": "hard",
+        "source_module": "pathophysiology",
+        "clinical_judgment_focus": "HIT is a clotting disorder disguised as low platelets — stop heparin immediately."
+      }
+    ],
+    "Prioritization": [
+      {
+        "id": "ms-q9",
+        "question": "Which patient should the nurse see first?",
+        "options": [
+          "Post-op pain 5/10",
+          "CHF with new dyspnea SpO2 89%",
+          "Routine BG check due in 30 min",
+          "Discharge teaching stable patient"
+        ],
+        "correct_index": 1,
+        "rationale": "Prioritize unstable over stable: new dyspnea with SpO₂ 89% in CHF patient risks respiratory failure; post-op pain 5/10 and routine tasks can wait.",
+        "category": "Prioritization",
+        "ncj_step": "Prioritize Hypotheses",
+        "difficulty": "medium",
+        "source_module": "med_surg",
+        "clinical_judgment_focus": "Use ABC framework and instability to rank which patient needs the nurse first.",
+        "clinical_why": "NCLEX and clinical practice use ABCs and acute vs chronic/unstable vs stable frameworks."
+      },
+      {
+        "id": "nclex-prio-02",
+        "question": "Four patients call the nurse simultaneously. Who should be assessed first?",
+        "options": [
+          "Post-op day 1 requesting pain medication rated 6/10",
+          "Client with new onset chest pain and diaphoresis",
+          "Client awaiting discharge teaching for insulin injection",
+          "Client with a medication due in 30 minutes"
+        ],
+        "correct_index": 1,
+        "rationale": "New chest pain with diaphoresis suggests acute coronary syndrome — a potential life threat requiring immediate assessment (ABCs, ECG, vitals, provider notification). Pain medication, discharge teaching, and a medication due in 30 minutes are important but not emergent compared to possible myocardial infarction.",
+        "category": "Prioritization",
+        "ncj_step": "Prioritize Hypotheses",
+        "difficulty": "medium",
+        "source_module": "med_surg",
+        "clinical_judgment_focus": "Unstable vs. stable — acute cardiac symptoms outrank comfort and routine tasks."
+      },
+      {
+        "id": "nclex-prio-03",
+        "question": "After receiving report, which client should the nurse see first?",
+        "options": [
+          "Diabetic client whose breakfast tray just arrived",
+          "Client with COPD whose SpO2 dropped from 94% to 88% with increased work of breathing",
+          "Client requesting assistance to the bathroom",
+          "Client scheduled for physical therapy at 1000"
+        ],
+        "correct_index": 1,
+        "rationale": "Declining oxygen saturation with increased work of breathing signals respiratory compromise — assess airway, position, O₂ delivery, and notify provider. Meal timing, toileting, and scheduled therapy are lower priority than potential respiratory failure.",
+        "category": "Prioritization",
+        "ncj_step": "Recognize Cues",
+        "difficulty": "medium",
+        "source_module": "med_surg",
+        "clinical_judgment_focus": "Trending vital sign changes trump scheduled activities."
+      },
+      {
+        "id": "nclex-prio-04",
+        "question": "The nurse has 15 minutes left in shift. Which task is best delegated to an unlicensed assistive personnel (UAP)?",
+        "options": [
+          "Ambulating a post-op client day 1 after abdominal surgery",
+          "Feeding an alert stroke client with mild dysphagia",
+          "Obtaining routine vital signs on stable clients",
+          "Reinforcing discharge teaching about wound care"
+        ],
+        "correct_index": 2,
+        "rationale": "Routine vital signs on stable clients are within UAP scope when no unstable findings are expected. Post-op ambulation, dysphagia feeding, and discharge teaching require nursing assessment and judgment — inappropriate to delegate.",
+        "category": "Prioritization",
+        "ncj_step": "Generate Solutions",
+        "difficulty": "medium",
+        "source_module": "med_surg",
+        "clinical_judgment_focus": "Delegation requires matching task stability with caregiver scope."
+      },
+      {
+        "id": "nclex-prio-05",
+        "question": "Which finding requires immediate nursing intervention?",
+        "options": [
+          "Report of dry mouth after starting antihistamine",
+          "Urine output 35 mL/hr for the past 2 hours",
+          "New onset confusion and slurred speech",
+          "Incisional pain rated 4/10 after analgesic given 1 hour ago"
+        ],
+        "correct_index": 2,
+        "rationale": "Acute confusion and slurred speech may indicate stroke, hypoglycemia, sepsis, or medication toxicity — all require immediate assessment (glucose, neuro checks, vitals). Dry mouth is an expected antihistamine effect; 35 mL/hr meets minimum adult output; mild pain after recent analgesic is monitored but not emergent.",
+        "category": "Prioritization",
+        "ncj_step": "Recognize Cues",
+        "difficulty": "hard",
+        "source_module": "assessment",
+        "clinical_judgment_focus": "Neurological acute changes are always high priority."
+      }
+    ],
+    "Infection Control": [
+      {
+        "id": "ms-q17",
+        "question": "C. difficile care — nurse should?",
+        "options": [
+          "Soap and water hand hygiene",
+          "Alcohol rub only",
+          "Airborne isolation",
+          "N95 for all contact"
+        ],
+        "correct_index": 0,
+        "rationale": "C. difficile spores resist alcohol-based hand rub — soap and water with friction removes spores. Contact precautions, dedicated equipment, bleach cleaning.",
+        "category": "Infection Control",
+        "ncj_step": "Take Action",
+        "difficulty": "easy",
+        "source_module": "med_surg",
+        "clinical_judgment_focus": "Match hand hygiene method to the pathogen — spore-forming organisms require soap and water.",
+        "clinical_why": "Alcohol gel gives false security — spores spread room-to-room causing outbreaks."
+      },
+      {
+        "id": "micro-q02",
+        "question": "Which precaution type is required for pulmonary tuberculosis?",
+        "options": [
+          "Contact",
+          "Droplet",
+          "Airborne",
+          "Protective environment"
+        ],
+        "correct_index": 2,
+        "rationale": "Pulmonary tuberculosis spreads via airborne droplet nuclei that remain suspended in room air for hours. Airborne precautions require a negative-pressure AIIR and N95 respirator (or PAPR) for all room entry. Droplet precautions are insufficient because TB particles are smaller than droplet transmission thresholds.",
+        "category": "Infection Control",
+        "ncj_step": "Take Action",
+        "difficulty": "medium",
+        "source_module": "microbiology",
+        "clinical_judgment_focus": "Match isolation type to transmission — TB requires airborne, not droplet, precautions."
+      },
+      {
+        "id": "micro-q03",
+        "question": "The nurse breaks which chain link by performing hand hygiene before patient care?",
+        "options": [
+          "Infectious agent",
+          "Mode of transmission",
+          "Portal of entry",
+          "Reservoir"
+        ],
+        "correct_index": 1,
+        "rationale": "Hand hygiene before patient contact breaks the chain of infection at the mode of transmission link. Pathogens on healthcare worker hands are the most common vehicle for nosocomial spread between patients. The infectious agent, reservoir, and portal of entry are not directly interrupted by hand washing alone.",
+        "category": "Infection Control",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "easy",
+        "source_module": "microbiology",
+        "clinical_judgment_focus": "Hand hygiene is the single most effective action to break nosocomial transmission."
+      },
+      {
+        "id": "micro-q04",
+        "question": "Varicella (chickenpox) requires:",
+        "options": [
+          "Airborne precautions only",
+          "Contact precautions only",
+          "Both airborne and contact precautions until lesions crusted",
+          "Droplet precautions only"
+        ],
+        "correct_index": 2,
+        "rationale": "Varicella is transmitted both by airborne droplet nuclei and direct contact with vesicle fluid. CDC requires airborne isolation plus contact precautions until all lesions are crusted over. Droplet or contact precautions alone do not provide adequate protection for this dual-mode pathogen.",
+        "category": "Infection Control",
+        "ncj_step": "Take Action",
+        "difficulty": "medium",
+        "source_module": "microbiology",
+        "clinical_judgment_focus": "Some pathogens require combined precaution types — varicella needs airborne plus contact."
+      },
+      {
+        "id": "micro-q05",
+        "question": "Vaccination primarily targets which chain link?",
+        "options": [
+          "Agent",
+          "Reservoir",
+          "Transmission",
+          "Susceptible host"
+        ],
+        "correct_index": 3,
+        "rationale": "Vaccination targets the susceptible host link by stimulating adaptive immunity before pathogen exposure. Herd immunity reduces transmission by shrinking the pool of susceptible individuals in a population. Vaccines do not eliminate the agent or reservoir — they prepare the host defense.",
+        "category": "Infection Control",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "easy",
+        "source_module": "microbiology",
+        "clinical_judgment_focus": "Vaccination is primary prevention targeting host susceptibility in the chain of infection."
+      },
+      {
+        "id": "micro-q09",
+        "question": "Gram stain of Gram-negative organisms shows:",
+        "options": [
+          "Purple cocci in clusters",
+          "Pink/red rod-shaped bacteria",
+          "Acid-fast bacilli",
+          "No cell wall"
+        ],
+        "correct_index": 1,
+        "rationale": "Gram-negative bacteria have a thin peptidoglycan layer and lipopolysaccharide outer membrane that does not retain crystal violet. They appear pink/red after the counterstain (safranin) in the Gram stain procedure. Purple cocci in clusters describe Gram-positive Staphylococcus; acid-fast staining identifies mycobacteria.",
+        "category": "Infection Control",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "medium",
+        "source_module": "microbiology",
+        "clinical_judgment_focus": "Gram stain results guide empiric antibiotic selection while cultures are pending."
+      }
+    ],
+    "Leadership": [
+      {
+        "id": "ms-q22",
+        "question": "Appropriate task to delegate to UAP?",
+        "options": [
+          "Ambulate stable post-op with PT clearance",
+          "Assess new chest pain",
+          "Teach insulin administration",
+          "CHF discharge planning"
+        ],
+        "correct_index": 0,
+        "rationale": "Delegate stable, routine tasks with clear parameters to UAP — ambulation after PT clearance. Never delegate assessment, teaching, evaluation, or unstable patients.",
+        "category": "Leadership",
+        "ncj_step": "Generate Solutions",
+        "difficulty": "easy",
+        "source_module": "med_surg",
+        "clinical_judgment_focus": "Apply delegation rules: right task, right person, right circumstance, right direction, right supervision.",
+        "clinical_why": "RN retains accountability — inappropriate delegation is a leading cause of nursing malpractice."
+      }
+    ],
+    "Psychosocial Integrity": [
+      {
+        "id": "mh-q01",
+        "question": "Therapeutic response to 'I want to die':",
+        "options": [
+          "You'll feel better tomorrow",
+          "Are you having thoughts of killing yourself right now?",
+          "Don't say that",
+          "I'll get back to you"
+        ],
+        "correct_index": 1,
+        "rationale": "Any statement suggesting suicidal intent requires direct, nonjudgmental assessment of active ideation and plan. Asking 'Are you having thoughts of killing yourself right now?' is the standard therapeutic and safety approach. Dismissing, delaying, or offering false reassurance fails to assess risk and may increase isolation.",
+        "category": "Psychosocial Integrity",
+        "ncj_step": "Recognize Cues",
+        "difficulty": "hard",
+        "source_module": "mental_health",
+        "clinical_judgment_focus": "Suicidal statements always warrant direct assessment — never avoid the question out of discomfort."
+      },
+      {
+        "id": "mh-q02",
+        "question": "Non-therapeutic communication is:",
+        "options": [
+          "Reflection",
+          "Giving false reassurance",
+          "Open-ended questions",
+          "Offering self"
+        ],
+        "correct_index": 1,
+        "rationale": "Therapeutic communication validates the patient's experience without minimizing or correcting feelings. Giving false reassurance ('You'll feel better tomorrow') dismisses the patient's reality and shuts down dialogue. Reflection, open-ended questions, and offering self are therapeutic techniques that build trust.",
+        "category": "Psychosocial Integrity",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "medium",
+        "source_module": "mental_health",
+        "clinical_judgment_focus": "Distinguish therapeutic from non-therapeutic responses — validation beats correction."
+      },
+      {
+        "id": "mh-q03",
+        "question": "CIWA-Ar score 22 indicates:",
+        "options": [
+          "Mild withdrawal",
+          "Moderate withdrawal",
+          "Severe withdrawal requiring urgent treatment",
+          "No withdrawal"
+        ],
+        "correct_index": 2,
+        "rationale": "A CIWA-Ar score ≥20 indicates severe alcohol withdrawal with risk of seizures and delirium tremens. Benzodiazepine protocol per facility guidelines is required urgently to prevent life-threatening complications. Scores 8–15 are moderate; below 8 may need monitoring only — but ≥20 demands immediate pharmacologic treatment.",
+        "category": "Psychosocial Integrity",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "medium",
+        "source_module": "mental_health",
+        "clinical_judgment_focus": "CIWA-Ar scores guide benzodiazepine dosing urgency in alcohol withdrawal."
+      },
+      {
+        "id": "mh-q04",
+        "question": "Priority for command hallucinations to harm others:",
+        "options": [
+          "Safety assessment and 1:1",
+          "Ignore until acted on",
+          "Argue voices are unreal",
+          "Discharge"
+        ],
+        "correct_index": 0,
+        "rationale": "Command hallucinations directing harm to others require immediate safety assessment and 1:1 observation. The nurse must determine whether the patient can resist the commands and whether means and opportunity exist. Ignoring hallucinations or arguing about their reality does not address the imminent safety risk.",
+        "category": "Psychosocial Integrity",
+        "ncj_step": "Take Action",
+        "difficulty": "hard",
+        "source_module": "mental_health",
+        "clinical_judgment_focus": "Command hallucinations with violence potential require immediate safety intervention."
+      },
+      {
+        "id": "mh-q05",
+        "question": "PHQ-9 item 9 positive requires:",
+        "options": [
+          "Routine follow-up in month",
+          "Immediate suicide risk assessment",
+          "Ignore if mood improved",
+          "Discharge"
+        ],
+        "correct_index": 1,
+        "rationale": "PHQ-9 item 9 specifically screens for active suicidal ideation in the past two weeks. A positive response mandates immediate suicide risk assessment — not routine follow-up or discharge. Suicidal ideation can exist even when mood appears improved; always assess directly.",
+        "category": "Psychosocial Integrity",
+        "ncj_step": "Recognize Cues",
+        "difficulty": "hard",
+        "source_module": "mental_health",
+        "clinical_judgment_focus": "PHQ-9 item 9 is a dedicated suicide screen — a positive answer triggers full risk assessment."
+      },
+      {
+        "id": "mh-q07",
+        "question": "Least restrictive intervention means:",
+        "options": [
+          "Restraint first",
+          "Start with verbal de-escalation and milieu management",
+          "Seclusion for all agitation",
+          "Chemical restraint without assessment"
+        ],
+        "correct_index": 1,
+        "rationale": "The least restrictive environment principle requires starting with verbal de-escalation and milieu management. Restraint and seclusion are last resorts after less restrictive interventions have been attempted and documented. CMS regulations and nursing ethics mandate this hierarchy to protect patient dignity and safety.",
+        "category": "Psychosocial Integrity",
+        "ncj_step": "Generate Solutions",
+        "difficulty": "medium",
+        "source_module": "mental_health",
+        "clinical_judgment_focus": "Least restrictive intervention preserves dignity while maintaining safety."
+      },
+      {
+        "id": "mh-q09",
+        "question": "Trauma-informed care emphasizes:",
+        "options": [
+          "Safety, trust, choice, collaboration",
+          "Confrontation of trauma details immediately",
+          "Punishment for behaviors",
+          "Isolation"
+        ],
+        "correct_index": 0,
+        "rationale": "Trauma-informed care prioritizes safety, trustworthiness, choice, collaboration, and empowerment. Forcing confrontation of trauma details or using punitive approaches can retraumatize the patient. Building a predictable, respectful environment supports recovery and therapeutic engagement.",
+        "category": "Psychosocial Integrity",
+        "ncj_step": "Generate Solutions",
+        "difficulty": "easy",
+        "source_module": "mental_health",
+        "clinical_judgment_focus": "Trauma-informed principles reshape how nurses approach behavior and build therapeutic alliances."
+      },
+      {
+        "id": "mh-q11",
+        "question": "Restraint/seclusion requires:",
+        "options": [
+          "Provider order, least restrictive alternatives attempted, continuous monitoring",
+          "Nurse discretion alone indefinitely",
+          "No documentation",
+          "PRN without face-to-face eval"
+        ],
+        "correct_index": 0,
+        "rationale": "Restraint and seclusion require a provider order, documented least-restrictive alternatives, and continuous face-to-face monitoring. Regulatory standards (CMS, Joint Commission) mandate time-limited orders and debriefing after release. Nurses cannot apply restraints indefinitely without reassessment and a valid order.",
+        "category": "Psychosocial Integrity",
+        "ncj_step": "Take Action",
+        "difficulty": "medium",
+        "source_module": "mental_health",
+        "clinical_judgment_focus": "Restraint use is regulated — documentation and monitoring are as important as the intervention itself."
+      },
+      {
+        "id": "nclex-mh-1",
+        "question": "A patient states 'Nobody cares about me.' Which response uses therapeutic communication?",
+        "options": [
+          "You feel alone right now.",
+          "That's not true — your family visits.",
+          "Why would you think that?",
+          "You should try to be more positive."
+        ],
+        "correct_index": 0,
+        "rationale": "Reflection ('You feel alone right now') validates emotion without arguing or minimizing — builds trust for further suicide and depression assessment.",
+        "category": "Psychosocial Integrity",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "medium",
+        "source_module": "mental_health",
+        "clinical_judgment_focus": "Therapeutic communication prioritizes patient feelings over correction.",
+        "clinical_why": "Correcting or dismissing feelings shuts down disclosure of suicidal ideation."
+      },
+      {
+        "id": "nclex-mh-02",
+        "question": "A client states, 'I have a plan to overdose tonight with my pills at home.' What is the nurse's priority response?",
+        "options": [
+          "Stay with client, remove means, initiate suicide precautions per protocol, notify provider",
+          "Schedule follow-up outpatient appointment next week",
+          "Ask client to sign a no-harm contract and document",
+          "Encourage client to think about family impact"
+        ],
+        "correct_index": 0,
+        "rationale": "Active suicidal ideation with plan, means, and timeline is a psychiatric emergency. Constant observation, environmental safety (remove pills/sharps), provider notification, and possible inpatient care take priority. No-harm contracts are not substitutes for safety precautions.",
+        "category": "Psychosocial Integrity",
+        "ncj_step": "Take Action",
+        "difficulty": "hard",
+        "source_module": "mental_health",
+        "clinical_judgment_focus": "Suicide risk with plan and means requires immediate safety intervention."
+      }
+    ],
+    "Pharmacological Therapies": [
+      {
+        "id": "mh-q06",
+        "question": "Serotonin syndrome includes:",
+        "options": [
+          "Hyperreflexia, clonus, agitation",
+          "Bradycardia only",
+          "Hypothermia only",
+          "No autonomic changes"
+        ],
+        "correct_index": 0,
+        "rationale": "Serotonin syndrome results from excess serotonergic activity, often from combining SSRIs, SNRIs, MAOIs, or linezolid. Hyperreflexia, clonus (especially inducible ankle clonus), agitation, and autonomic instability are hallmark signs. This is a medical emergency — stop offending agents and notify the provider for cyproheptadine or supportive care.",
+        "category": "Pharmacological Therapies",
+        "ncj_step": "Recognize Cues",
+        "difficulty": "hard",
+        "source_module": "mental_health",
+        "clinical_judgment_focus": "Recognize serotonin syndrome early — clonus and hyperreflexia distinguish it from other causes of agitation."
+      },
+      {
+        "id": "mh-q08",
+        "question": "Lithium teaching includes:",
+        "options": [
+          "Maintain consistent sodium and fluid intake",
+          "Skip doses when thirsty",
+          "Double dose if missed",
+          "No level monitoring needed"
+        ],
+        "correct_index": 0,
+        "rationale": "Lithium has a narrow therapeutic index and is excreted renally — dehydration and sodium loss increase toxicity. Patients must maintain consistent fluid intake and sodium consumption; illness with vomiting/diarrhea needs urgent evaluation. Therapeutic drug levels require regular monitoring; missed doses should not be doubled.",
+        "category": "Pharmacological Therapies",
+        "ncj_step": "Evaluate Outcomes",
+        "difficulty": "medium",
+        "source_module": "mental_health",
+        "clinical_judgment_focus": "Lithium toxicity is preventable with consistent sodium, fluid intake, and level monitoring."
+      },
+      {
+        "id": "mh-q10",
+        "question": "Antipsychotic monitoring includes:",
+        "options": [
+          "Weight, glucose, lipids for metabolic syndrome",
+          "Only BP",
+          "No monitoring",
+          "TSH only"
+        ],
+        "correct_index": 0,
+        "rationale": "Second-generation antipsychotics carry significant metabolic risks including weight gain, hyperglycemia, and dyslipidemia. Baseline and ongoing monitoring of weight, BMI, fasting glucose, and lipids is standard of care. Failure to monitor can result in new-onset diabetes and cardiovascular disease in psychiatric patients.",
+        "category": "Pharmacological Therapies",
+        "ncj_step": "Evaluate Outcomes",
+        "difficulty": "medium",
+        "source_module": "mental_health",
+        "clinical_judgment_focus": "Metabolic monitoring is essential with antipsychotics — psychiatric medications affect physical health."
+      },
+      {
+        "id": "micro-q10",
+        "question": "Antimicrobial stewardship prioritizes:",
+        "options": [
+          "Broadest spectrum for all infections",
+          "Shortest effective course per culture/guideline",
+          "Completing saved antibiotics at home",
+          "Prophylactic antibiotics for all surgical patients indefinitely"
+        ],
+        "correct_index": 1,
+        "rationale": "Antimicrobial stewardship promotes the shortest effective antibiotic course guided by culture results and clinical guidelines. Broad-spectrum empiric therapy should be de-escalated once the pathogen is identified to reduce resistance and C. diff risk. Saving leftover antibiotics and indefinite surgical prophylaxis promote resistance and adverse outcomes.",
+        "category": "Pharmacological Therapies",
+        "ncj_step": "Evaluate Outcomes",
+        "difficulty": "medium",
+        "source_module": "microbiology",
+        "clinical_judgment_focus": "Stewardship protects future patients by limiting resistance and C. difficile."
+      },
+      {
+        "id": "term-q06",
+        "question": "An antibiotic is best defined as:",
+        "options": [
+          "Against life (etymology only)",
+          "A drug that inhibits or destroys bacteria",
+          "A drug that widens bronchi",
+          "A drug that promotes urination"
+        ],
+        "correct_index": 1,
+        "rationale": "Antibiotics are agents that inhibit or destroy bacteria — anti- (against) + bio (life) + -tic (pertaining to). They are ineffective against viruses; inappropriate use drives antimicrobial resistance. Culture and sensitivity guides selection of the narrowest effective spectrum.",
+        "category": "Pharmacological Therapies",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "easy",
+        "source_module": "terminology",
+        "clinical_judgment_focus": "Antibiotic knowledge prevents misuse and supports stewardship conversations."
+      },
+      {
+        "id": "nclex-pharm-1",
+        "question": "Order: Digoxin 0.125 mg PO daily. Apical pulse 52/min. Nurse should?",
+        "options": [
+          "Hold dose and notify provider",
+          "Administer as ordered",
+          "Give half the dose",
+          "Switch to IV route"
+        ],
+        "correct_index": 0,
+        "rationale": "Digoxin has narrow therapeutic index — hold if apical pulse <60 bpm (adult) or per facility policy, assess for toxicity (nausea, vision changes, arrhythmias), notify provider.",
+        "category": "Pharmacological Therapies",
+        "ncj_step": "Take Action",
+        "difficulty": "medium",
+        "source_module": "dosage",
+        "clinical_judgment_focus": "Medication safety requires assessment before administration.",
+        "clinical_why": "Bradycardia may worsen to heart block — hypokalemia increases digoxin toxicity risk."
+      },
+      {
+        "id": "nclex-pharm-2",
+        "question": "Before administering insulin from a vial, the nurse's priority safety action is:",
+        "options": [
+          "Independent double-check with second RN",
+          "Administer immediately to avoid delay",
+          "Dilute in normal saline",
+          "Give IM for faster absorption"
+        ],
+        "correct_index": 0,
+        "rationale": "Insulin is an ISMP high-alert medication requiring an independent double-check before administration. Only regular insulin may be given IV; other formulations are for subcutaneous use only. Wrong insulin type or dose is a leading cause of preventable hypoglycemic injury and death.",
+        "category": "Pharmacological Therapies",
+        "ncj_step": "Take Action",
+        "difficulty": "medium",
+        "source_module": "dosage",
+        "clinical_judgment_focus": "High-alert medications demand independent double-checks and route verification."
+      },
+      {
+        "id": "nclex-pharm-3",
+        "question": "Post-op patient received IV morphine 4 mg. RR 10/min, difficult to arouse. Nurse should:",
+        "options": [
+          "Stop opioid, stimulate patient, apply O2, prepare naloxone",
+          "Administer next scheduled dose",
+          "Place in Trendelenburg",
+          "Document and recheck in 4 hours"
+        ],
+        "correct_index": 0,
+        "rationale": "Opioid-induced respiratory depression is signaled by RR <12/min, sedation, and pinpoint pupils. Hold the opioid, stimulate the patient, apply oxygen, and prepare naloxone per protocol. Never leave a sedated patient unattended after opioid administration — continuous respiratory assessment is required.",
+        "category": "Pharmacological Therapies",
+        "ncj_step": "Take Action",
+        "difficulty": "hard",
+        "source_module": "dosage",
+        "clinical_judgment_focus": "Opioid safety requires respiratory assessment before and after every dose."
+      }
+    ],
+    "Maternal-Newborn": [
+      {
+        "id": "mc-q01",
+        "question": "Late decelerations during labor — first action?",
+        "options": [
+          "Stop oxytocin and intrauterine resuscitation",
+          "Increase oxytocin",
+          "Prepare for immediate discharge",
+          "Turn off monitor"
+        ],
+        "correct_index": 0,
+        "rationale": "Late decelerations indicate uteroplacental insufficiency — the fetus is not receiving adequate oxygen during contractions. Stop oxytocin if infusing, perform intrauterine resuscitation (position change, O2, IV fluids), and notify the provider. Increasing oxytocin or ignoring the monitor worsens fetal hypoxia and risks fetal demise.",
+        "category": "Maternal-Newborn",
+        "ncj_step": "Take Action",
+        "difficulty": "hard",
+        "source_module": "maternal_child",
+        "clinical_judgment_focus": "Late decels = fetal hypoxia — intrauterine resuscitation is the nurse's immediate role."
+      },
+      {
+        "id": "mc-q02",
+        "question": "Postpartum fundus boggy — intervene with:",
+        "options": [
+          "Fundal massage",
+          "Ice pack only",
+          "Encourage bed rest 24 hr",
+          "Discharge"
+        ],
+        "correct_index": 0,
+        "rationale": "A boggy, deviated uterus after delivery indicates uterine atony — the leading cause of postpartum hemorrhage. Fundal massage is first-line to stimulate contraction and reduce bleeding. Ice packs and bed rest do not address atony; prompt massage can prevent hemorrhagic shock.",
+        "category": "Maternal-Newborn",
+        "ncj_step": "Take Action",
+        "difficulty": "medium",
+        "source_module": "maternal_child",
+        "clinical_judgment_focus": "Boggy fundus = atony = hemorrhage risk — massage before medications when possible."
+      },
+      {
+        "id": "mc-q03",
+        "question": "Preeclampsia severe feature includes:",
+        "options": [
+          "RUQ epigastric pain",
+          "Mild ankle edema only",
+          "Braxton Hicks",
+          "Fetal hiccups"
+        ],
+        "correct_index": 0,
+        "rationale": "RUQ/epigastric pain in preeclampsia suggests liver capsule distension and possible HELLP syndrome. This is a severe feature requiring immediate provider notification and likely magnesium sulfate and delivery planning. Mild ankle edema and Braxton Hicks contractions are common and not severe features.",
+        "category": "Maternal-Newborn",
+        "ncj_step": "Recognize Cues",
+        "difficulty": "hard",
+        "source_module": "maternal_child",
+        "clinical_judgment_focus": "RUQ pain in preeclampsia signals severe disease — do not dismiss as heartburn."
+      },
+      {
+        "id": "mc-q04",
+        "question": "Shoulder dystocia maneuver:",
+        "options": [
+          "McRoberts + suprapubic pressure",
+          "Fundal pressure",
+          "Trendelenburg",
+          "Forceps from abdomen"
+        ],
+        "correct_index": 0,
+        "rationale": "Shoulder dystocia requires McRoberts maneuver (hyperflex thighs) plus suprapubic pressure to free the anterior shoulder. Fundal pressure pushes the baby further into impaction and is contraindicated. This is an obstetric emergency — call for help and document time of maneuvers.",
+        "category": "Maternal-Newborn",
+        "ncj_step": "Take Action",
+        "difficulty": "hard",
+        "source_module": "maternal_child",
+        "clinical_judgment_focus": "Shoulder dystocia has a defined maneuver sequence — fundal pressure makes it worse."
+      },
+      {
+        "id": "mc-q05",
+        "question": "Newborn APGAR 4 at 1 minute — nurse:",
+        "options": [
+          "Continue resuscitation per NRP and reassess at 5 min",
+          "Stop all intervention",
+          "Discharge to mother only",
+          "Document only"
+        ],
+        "correct_index": 0,
+        "rationale": "An APGAR of 4 at 1 minute indicates the newborn needs active resuscitation per Neonatal Resuscitation Program (NRP) algorithm. Continue ventilation, warming, and stimulation; reassess at 5 minutes. Never stop intervention or discharge a compromised newborn without full resuscitation efforts.",
+        "category": "Maternal-Newborn",
+        "ncj_step": "Take Action",
+        "difficulty": "medium",
+        "source_module": "maternal_child",
+        "clinical_judgment_focus": "Low APGAR triggers NRP algorithm — reassess at 5 minutes, never abandon resuscitation early."
+      },
+      {
+        "id": "mc-q06",
+        "question": "Magnesium toxicity sign:",
+        "options": [
+          "Absent deep tendon reflexes",
+          "Increased reflexes",
+          "Hypertension",
+          "Tachycardia only"
+        ],
+        "correct_index": 0,
+        "rationale": "Absent deep tendon reflexes are the earliest sign of magnesium sulfate toxicity. Also monitor respiratory rate (>12/min) and urine output (>25–30 mL/hr) before each dose. Calcium gluconate is the antidote for severe toxicity; report absent reflexes immediately.",
+        "category": "Maternal-Newborn",
+        "ncj_step": "Recognize Cues",
+        "difficulty": "medium",
+        "source_module": "maternal_child",
+        "clinical_judgment_focus": "Magnesium toxicity presents with lost reflexes before respiratory arrest — monitor before each dose."
+      },
+      {
+        "id": "mc-q08",
+        "question": "Cord prolapse nursing action:",
+        "options": [
+          "Knee-chest, elevate presenting part, notify for emergency delivery",
+          "Push cord back into vagina repeatedly",
+          "Place patient supine flat only",
+          "Stop monitoring FHR"
+        ],
+        "correct_index": 0,
+        "rationale": "Cord prolapse compresses the umbilical cord and cuts off fetal oxygen supply — an obstetric emergency. Knee-chest or Trendelenburg position relieves pressure while the nurse elevates the presenting part manually. Never attempt to push the cord back into the vagina; prepare for emergency cesarean delivery.",
+        "category": "Maternal-Newborn",
+        "ncj_step": "Take Action",
+        "difficulty": "hard",
+        "source_module": "maternal_child",
+        "clinical_judgment_focus": "Cord prolapse is a time-critical obstetric emergency — relieve compression while awaiting delivery."
+      },
+      {
+        "id": "mc-q10",
+        "question": "Postpartum psychosis requires:",
+        "options": [
+          "Immediate psychiatric care and infant safety measures",
+          "Routine outpatient follow-up only",
+          "Ignore unless violent",
+          "Sedation at home without supervision"
+        ],
+        "correct_index": 0,
+        "rationale": "Postpartum psychosis is a psychiatric emergency occurring within days to 4 weeks after delivery. It requires immediate psychiatric care, possible hospitalization, and infant safety measures including supervised contact. Outpatient follow-up alone is insufficient — the mother may have delusions commanding harm to self or infant.",
+        "category": "Maternal-Newborn",
+        "ncj_step": "Take Action",
+        "difficulty": "hard",
+        "source_module": "maternal_child",
+        "clinical_judgment_focus": "Postpartum psychosis requires emergency psychiatric intervention and infant protection."
+      },
+      {
+        "id": "nclex-ob-1",
+        "question": "A pregnant patient at 32 weeks reports sudden severe headache and visual changes. Priority action?",
+        "options": [
+          "Assess BP and notify provider immediately",
+          "Encourage rest and dim lights",
+          "Administer PRN acetaminophen",
+          "Schedule routine prenatal appointment"
+        ],
+        "correct_index": 0,
+        "rationale": "Sudden headache and visual changes at 32 weeks suggest severe preeclampsia — assess BP, proteinuria, reflexes; magnesium and delivery planning may be needed.",
+        "category": "Maternal-Newborn",
+        "ncj_step": "Recognize Cues",
+        "difficulty": "hard",
+        "source_module": "maternal_child",
+        "clinical_judgment_focus": "Maternal and fetal safety — preeclampsia is life-threatening.",
+        "clinical_why": "Eclampsia risk rises with severe features — maternal seizure and placental abruption threaten both lives."
+      }
+    ],
+    "Pediatric Nursing": [
+      {
+        "id": "mc-q07",
+        "question": "14-day-old with 38.3°C fever — priority:",
+        "options": [
+          "Full sepsis evaluation per neonatal protocol",
+          "Acetaminophen and home",
+          "Wait 24 hours",
+          "Cool bath only"
+        ],
+        "correct_index": 0,
+        "rationale": "Fever ≥38°C (100.4°F) in an infant under 28–60 days is a medical emergency due to immature immune function. Full sepsis workup (blood culture, UA, LP per protocol) and empiric antibiotics are required — not outpatient management. Young infants can deteriorate rapidly from occult bacteremia or meningitis.",
+        "category": "Pediatric Nursing",
+        "ncj_step": "Take Action",
+        "difficulty": "hard",
+        "source_module": "maternal_child",
+        "clinical_judgment_focus": "Neonatal fever is always serious — young infants need sepsis evaluation, not outpatient care."
+      },
+      {
+        "id": "mc-q09",
+        "question": "Physiologic jaundice typically appears:",
+        "options": [
+          "Day 2–3 in term newborn",
+          "First hour of life",
+          "Never in breastfed infants",
+          "Only in preterm"
+        ],
+        "correct_index": 0,
+        "rationale": "Physiologic jaundice in term newborns typically appears on days 2–3 as fetal RBC breakdown increases bilirubin load. Jaundice within the first 24 hours is pathologic and requires immediate evaluation for hemolysis or infection. Breastfed infants can have prolonged physiologic jaundice but still follow the typical onset pattern.",
+        "category": "Pediatric Nursing",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "medium",
+        "source_module": "maternal_child",
+        "clinical_judgment_focus": "Jaundice timing distinguishes physiologic from pathologic hyperbilirubinemia."
+      },
+      {
+        "id": "nclex-peds-1",
+        "question": "A 4-month-old should achieve which developmental milestone?",
+        "options": [
+          "Rolls from back to side",
+          "Walks independently",
+          "Uses two-word phrases",
+          "Ties shoelaces"
+        ],
+        "correct_index": 0,
+        "rationale": "At 4 months, infants roll back to side, hold head steady, reach for objects, and social smile — walking (12 mo) and two-word phrases (18–24 mo) are much later.",
+        "category": "Pediatric Nursing",
+        "ncj_step": "Analyze Cues",
+        "difficulty": "easy",
+        "source_module": "pediatrics",
+        "clinical_judgment_focus": "Age-appropriate expectations guide assessment and parent teaching.",
+        "clinical_why": "Developmental delay screening at well-child visits triggers early intervention for motor and cognitive deficits."
+      },
+      {
+        "id": "nclex-peds-02",
+        "question": "A 2-year-old is admitted with suspected ingestion. Which assessment finding is most urgent?",
+        "options": [
+          "Tearful when parent leaves the room",
+          "Drooling and inability to swallow with stridor",
+          "Weight at 50th percentile",
+          "Last immunizations at 18 months"
+        ],
+        "correct_index": 1,
+        "rationale": "Drooling, inability to swallow, and stridor suggest airway edema or obstruction from caustic or foreign body ingestion — immediate airway assessment and escalation. Separation anxiety is expected; growth and immunization history are not emergent.",
+        "category": "Pediatric Nursing",
+        "ncj_step": "Prioritize Hypotheses",
+        "difficulty": "hard",
+        "source_module": "pediatrics",
+        "clinical_judgment_focus": "Pediatric airway compromise is always first priority."
+      }
+    ],
+    "Safety & Infection Control": [
+      {
+        "id": "micro-q06",
+        "question": "First action when entering room of patient on contact precautions?",
+        "options": [
+          "Don mask",
+          "Perform hand hygiene and don gown/gloves",
+          "Don N95",
+          "Remove all equipment from room"
+        ],
+        "correct_index": 1,
+        "rationale": "Contact precautions require hand hygiene before donning gown and gloves on room entry. PPE is donned before contact and doffed inside the room to prevent environmental contamination. An N95 is not required for contact precautions — it is reserved for airborne pathogens like TB.",
+        "category": "Safety & Infection Control",
+        "ncj_step": "Take Action",
+        "difficulty": "easy",
+        "source_module": "microbiology",
+        "clinical_judgment_focus": "Correct PPE sequence prevents self-contamination during donning and doffing."
+      },
+      {
+        "id": "micro-q07",
+        "question": "CLABSI prevention includes:",
+        "options": [
+          "Daily chlorhexidine baths only",
+          "Central line bundle: hand hygiene, maximal barrier, chlorhexidine prep, review necessity",
+          "Prophylactic IV antibiotics for all lines",
+          "Changing dressings daily without indication"
+        ],
+        "correct_index": 1,
+        "rationale": "The central line bundle combines hand hygiene, maximal sterile barrier, chlorhexidine skin prep, optimal site selection, and daily necessity review. This evidence-based bundle significantly reduces CLABSI rates in ICU and acute care settings. Routine prophylactic antibiotics and daily dressing changes without indication are not bundle components.",
+        "category": "Safety & Infection Control",
+        "ncj_step": "Generate Solutions",
+        "difficulty": "medium",
+        "source_module": "microbiology",
+        "clinical_judgment_focus": "Evidence-based bundles standardize best practices and reduce preventable infections."
+      },
+      {
+        "id": "micro-q08",
+        "question": "A nurse with influenza should:",
+        "options": [
+          "Continue working with surgical mask",
+          "Receive prophylactic antibiotics and work",
+          "Stay home until fever-free per policy; antivirals if indicated",
+          "Wear N95 and continue all assignments"
+        ],
+        "correct_index": 2,
+        "rationale": "Healthcare workers with influenza must stay home per occupational health policy to prevent nosocomial transmission. Influenza is contagious before symptoms peak and vulnerable patients (elderly, immunocompromised) face high mortality. Working with a surgical mask still exposes patients; antivirals are treatment, not a substitute for exclusion.",
+        "category": "Safety & Infection Control",
+        "ncj_step": "Take Action",
+        "difficulty": "easy",
+        "source_module": "microbiology",
+        "clinical_judgment_focus": "Ill healthcare workers are a patient safety hazard — occupational health policies protect vulnerable patients."
+      },
+      {
+        "id": "nclex-safe-1",
+        "question": "Fire response — nurse's first action when smoke is seen in a patient room?",
+        "options": [
+          "Rescue patients in immediate danger",
+          "Activate fire alarm",
+          "Confine fire by closing doors",
+          "Extinguish fire if small"
+        ],
+        "correct_index": 0,
+        "rationale": "RACE protocol: Rescue patients in immediate danger first, then pull Alarm, Contain fire/smoke by closing doors, Extinguish if trained and fire is small, Evacuate vertically per facility plan.",
+        "category": "Safety & Infection Control",
+        "ncj_step": "Take Action",
+        "difficulty": "easy",
+        "source_module": "assessment",
+        "clinical_judgment_focus": "Life safety protocols prioritize human rescue.",
+        "clinical_why": "Horizontal evacuation may be impossible — rescue prevents smoke inhalation deaths before fire spreads."
+      },
+      {
+        "id": "nclex-safe-02",
+        "question": "Before administering a scheduled opioid, the nurse notes respirations 8/min and the client is difficult to arouse. What is the priority action?",
+        "options": [
+          "Administer the opioid as scheduled and recheck in 30 minutes",
+          "Hold the opioid, assess further, and notify provider — consider naloxone per protocol",
+          "Document and continue routine care",
+          "Offer a snack to stimulate the client"
+        ],
+        "correct_index": 1,
+        "rationale": "Respiratory depression (RR <10) with decreased level of consciousness indicates opioid toxicity — hold further opioids, maintain airway, stimulate/support respirations, notify provider, and prepare naloxone per facility protocol. Administering another dose could cause arrest.",
+        "category": "Safety & Infection Control",
+        "ncj_step": "Take Action",
+        "difficulty": "hard",
+        "source_module": "dosage",
+        "clinical_judgment_focus": "Medication safety — assess before administering sedating drugs."
+      },
+      {
+        "id": "nclex-safe-03",
+        "question": "A nurse discovers a client on the floor beside the bed, alert and complaining of hip pain. What is the first action?",
+        "options": [
+          "Help client back to bed immediately",
+          "Assess client and call for help per fall protocol",
+          "Complete incident report before assessment",
+          "Obtain x-ray order before moving client"
+        ],
+        "correct_index": 1,
+        "rationale": "After a fall, assess for injury and neurological status before moving the client. Call for help and follow facility fall protocol — do not lift alone if hip fracture suspected. Incident reporting follows assessment and stabilization, not before.",
+        "category": "Safety & Infection Control",
+        "ncj_step": "Take Action",
+        "difficulty": "medium",
+        "source_module": "assessment",
+        "clinical_judgment_focus": "Client safety — assess injury before movement or documentation tasks."
+      },
+      {
+        "id": "nclex-safe-04",
+        "question": "Which action prevents central line-associated bloodstream infection (CLABSI)?",
+        "options": [
+          "Change transparent dressing every 7 days per policy and use chlorhexidine scrub",
+          "Flush with heparin only when line is used",
+          "Remove cap and leave hub open during transport",
+          "Administer prophylactic IV antibiotics daily"
+        ],
+        "correct_index": 0,
+        "rationale": "CLABSI bundles include hand hygiene, maximal barrier precautions on insertion, chlorhexidine skin prep, appropriate dressing changes, and hub disinfection before access. Open hubs and routine prophylactic antibiotics are not evidence-based and increase risk.",
+        "category": "Safety & Infection Control",
+        "ncj_step": "Generate Solutions",
+        "difficulty": "medium",
+        "source_module": "microbiology",
+        "clinical_judgment_focus": "Infection prevention bundles are high-yield NCLEX Safety items."
+      },
+      {
+        "id": "nclex-safe-05",
+        "question": "A nurse is preparing to hang IV potassium chloride 10 mEq in 100 mL over 1 hour. Which verification step is essential?",
+        "options": [
+          "Confirm concentration and maximum infusion rate per policy; use pump",
+          "Administer as IV push if client is symptomatic",
+          "Dilute in D5W only without checking current fluids",
+          "Double the rate if K+ is critically low"
+        ],
+        "correct_index": 0,
+        "rationale": "IV potassium is never given IV push — it causes cardiac arrest. Concentration, dilution, and infusion rate must match policy (typically ≤10 mEq/hr peripheral, higher central with monitoring). Always verify against current fluids and renal status.",
+        "category": "Safety & Infection Control",
+        "ncj_step": "Take Action",
+        "difficulty": "hard",
+        "source_module": "dosage",
+        "clinical_judgment_focus": "High-alert medication safety — KCl errors are lethal."
+      }
+    ]
+  },
+  "all_questions": [
+    {
+      "id": "ms-q1",
+      "question": "Left-sided heart failure — which finding is most consistent?",
+      "options": [
+        "JVD and peripheral edema",
+        "Crackles and pink frothy sputum",
+        "Hepatomegaly and ascites",
+        "Bounding peripheral pulses"
+      ],
+      "correct_index": 1,
+      "rationale": "Left-sided HF reduces LV output, causing blood to back up into pulmonary circulation — crackles, orthopnea, pink frothy sputum, and S₃ gallop. JVD and peripheral edema suggest right-sided failure.",
+      "category": "Cardiovascular",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "medium",
+      "source_module": "med_surg",
+      "clinical_judgment_focus": "Differentiate left- versus right-sided failure by identifying where congestion backs up — lungs vs. systemic circulation.",
+      "clinical_why": "Differentiating left vs right HF guides diuretic use, positioning (high Fowler's), and monitoring (daily weights, I&O)."
+    },
+    {
+      "id": "ms-q2",
+      "question": "Appropriate SpO2 target for COPD on supplemental O2?",
+      "options": [
+        "98–100%",
+        "94–98%",
+        "88–92%",
+        "Below 85%"
+      ],
+      "correct_index": 2,
+      "rationale": "COPD patients are chronic CO₂ retainers; hypoxic drive maintains ventilation. Target SpO₂ 88–92% to prevent CO₂ narcosis while treating exacerbation.",
+      "category": "Respiratory",
+      "ncj_step": "Generate Solutions",
+      "difficulty": "medium",
+      "source_module": "med_surg",
+      "clinical_judgment_focus": "Balance oxygenation with ventilation risk — chronic retainers need lower SpO2 targets than acute patients.",
+      "clinical_why": "Titrate O₂ to lowest saturation meeting target — ABG confirms pH and PaCO₂ trends."
+    },
+    {
+      "id": "ms-q3",
+      "question": "Suspected stroke within 45 minutes — first priority?",
+      "options": [
+        "Give tPA immediately",
+        "IV access and blood glucose",
+        "Carotid endarterectomy",
+        "Insert NG tube"
+      ],
+      "correct_index": 1,
+      "rationale": "Stroke protocol: establish last known well, ABCs, IV access, blood glucose (hypoglycemia mimics stroke), CT head, then consider tPA if ischemic and within window.",
+      "category": "Neurological",
+      "ncj_step": "Recognize Cues",
+      "difficulty": "hard",
+      "source_module": "med_surg",
+      "clinical_judgment_focus": "Time-critical stroke care still requires glucose verification and imaging before thrombolytics.",
+      "clinical_why": "Giving tPA before ruling out hemorrhage or hypoglycemia causes catastrophic harm."
+    },
+    {
+      "id": "ms-q4",
+      "question": "Cirrhosis with confusion and asterixis — priority intervention?",
+      "options": [
+        "Administer lactulose",
+        "Restrict all protein permanently",
+        "Insert urinary catheter",
+        "Abdominal binder"
+      ],
+      "correct_index": 0,
+      "rationale": "Hepatic encephalopathy from ammonia accumulation — lactulose acidifies colon, traps ammonia, increases bowel movements. Protein restriction is temporary, not permanent.",
+      "category": "Gastrointestinal",
+      "ncj_step": "Take Action",
+      "difficulty": "medium",
+      "source_module": "med_surg",
+      "clinical_judgment_focus": "Connect neuro changes in liver disease to ammonia accumulation and initiate targeted treatment.",
+      "clinical_why": "Asterixis and confusion can progress to coma — monitor mental status and hold sedatives that worsen encephalopathy."
+    },
+    {
+      "id": "ms-q5",
+      "question": "K+ 6.8 with peaked T waves — prepare first?",
+      "options": [
+        "Calcium gluconate IV",
+        "Kayexalate oral",
+        "Furosemide IV",
+        "Insulin with D50"
+      ],
+      "correct_index": 0,
+      "rationale": "Severe hyperkalemia (K⁺ >6.5 with ECG changes): calcium gluconate IV first to stabilize myocardium — does not lower K⁺ but protects against arrhythmia while insulin/D50, kayexalate, or dialysis are prepared.",
+      "category": "Renal",
+      "ncj_step": "Take Action",
+      "difficulty": "hard",
+      "source_module": "med_surg",
+      "clinical_judgment_focus": "Sequence hyperkalemia treatment: stabilize the myocardium first, then lower serum potassium.",
+      "clinical_why": "Peaked T waves progress to widened QRS and sine wave arrest — continuous tele required."
+    },
+    {
+      "id": "ms-q6",
+      "question": "Type 1 diabetic BG 42 mg/dL, alert but confused — first action?",
+      "options": [
+        "4 oz orange juice",
+        "10 units NPH insulin",
+        "Normal saline bolus",
+        "Urine ketones first"
+      ],
+      "correct_index": 0,
+      "rationale": "Conscious hypoglycemia (Rule of 15): 15 g fast carbohydrate (4 oz juice, glucose tabs), recheck in 15 min, repeat if still <70; glucagon or IV dextrose if unable to swallow.",
+      "category": "Endocrine",
+      "ncj_step": "Take Action",
+      "difficulty": "easy",
+      "source_module": "med_surg",
+      "clinical_judgment_focus": "Apply the Rule of 15 for conscious hypoglycemia — treat fast, recheck, repeat as needed.",
+      "clinical_why": "Never give insulin to hypoglycemic patient — seizure and death risk within minutes."
+    },
+    {
+      "id": "ms-q7",
+      "question": "Post total hip arthroplasty — which finding needs immediate action?",
+      "options": [
+        "Pain 6/10",
+        "SOB and tachycardia",
+        "Serous incision drainage",
+        "Temp 99.1°F"
+      ],
+      "correct_index": 1,
+      "rationale": "Sudden SOB and tachycardia after orthopedic surgery suggests pulmonary embolism — immobilization and hypercoagulability. Assess SpO₂, prepare heparin/CT angiography per order.",
+      "category": "Musculoskeletal",
+      "ncj_step": "Recognize Cues",
+      "difficulty": "medium",
+      "source_module": "med_surg",
+      "clinical_judgment_focus": "Recognize post-op SOB as PE until ruled out — a silent killer after orthopedic surgery.",
+      "clinical_why": "PE is a leading cause of post-op death — don't attribute SOB to pain alone."
+    },
+    {
+      "id": "ms-q8",
+      "question": "Neutropenic patient temp 100.8°F — priority?",
+      "options": [
+        "Blood cultures and notify for antibiotics",
+        "Cooling blanket only",
+        "Fluids and recheck in 4 hours",
+        "Influenza vaccine"
+      ],
+      "correct_index": 0,
+      "rationale": "Febrile neutropenia (ANC <500 with temp ≥38.3°C): medical emergency — blood cultures ×2, broad-spectrum antibiotics within 1 hour, avoid rectal temps and fresh flowers.",
+      "category": "Hematologic",
+      "ncj_step": "Take Action",
+      "difficulty": "hard",
+      "source_module": "med_surg",
+      "clinical_judgment_focus": "Neutropenic fever is a 'treat first, diagnose second' emergency — do not wait for culture results to start antibiotics.",
+      "clinical_why": "Neutropenic patients lack inflammatory response — fever may be only sign of sepsis."
+    },
+    {
+      "id": "ms-q9",
+      "question": "Which patient should the nurse see first?",
+      "options": [
+        "Post-op pain 5/10",
+        "CHF with new dyspnea SpO2 89%",
+        "Routine BG check due in 30 min",
+        "Discharge teaching stable patient"
+      ],
+      "correct_index": 1,
+      "rationale": "Prioritize unstable over stable: new dyspnea with SpO₂ 89% in CHF patient risks respiratory failure; post-op pain 5/10 and routine tasks can wait.",
+      "category": "Prioritization",
+      "ncj_step": "Prioritize Hypotheses",
+      "difficulty": "medium",
+      "source_module": "med_surg",
+      "clinical_judgment_focus": "Use ABC framework and instability to rank which patient needs the nurse first.",
+      "clinical_why": "NCLEX and clinical practice use ABCs and acute vs chronic/unstable vs stable frameworks."
+    },
+    {
+      "id": "ms-q10",
+      "question": "DKA: pH 7.18, K+ 3.2, glucose 480 — before insulin drip?",
+      "options": [
+        "Replace potassium",
+        "Sodium bicarbonate routinely",
+        "Hold all IV fluids",
+        "Subcutaneous insulin only"
+      ],
+      "correct_index": 0,
+      "rationale": "DKA: total body K⁺ depleted despite serum level — insulin drives K⁺ intracellularly. Replace K⁺ to ≥3.3 mEq/L before insulin infusion to prevent life-threatening hypokalemia.",
+      "category": "Endocrine",
+      "ncj_step": "Generate Solutions",
+      "difficulty": "hard",
+      "source_module": "med_surg",
+      "clinical_judgment_focus": "Anticipate insulin's effect on potassium before starting DKA protocol — prevent iatrogenic arrhythmia.",
+      "clinical_why": "Insulin without K⁺ replacement can cause cardiac arrest from hypokalemia."
+    },
+    {
+      "id": "ms-q11",
+      "question": "Cast pain unrelieved by opioids with passive toe pain — suspect?",
+      "options": [
+        "Compartment syndrome",
+        "Normal discomfort",
+        "Cast infection",
+        "DVT"
+      ],
+      "correct_index": 0,
+      "rationale": "Compartment syndrome: pain out of proportion, pain with passive stretch of toes, paresthesia, pallor, pulselessness (late). Elevate cast to heart level, bivalve cast, notify surgeon immediately.",
+      "category": "Musculoskeletal",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "medium",
+      "source_module": "med_surg",
+      "clinical_judgment_focus": "Pain out of proportion to injury is the cardinal cue for compartment syndrome.",
+      "clinical_why": "Fasciotomy within 6 hours prevents permanent nerve and muscle necrosis."
+    },
+    {
+      "id": "ms-q12",
+      "question": "Most important warfarin teaching?",
+      "options": [
+        "Consistent vitamin K intake",
+        "Take with NSAIDs",
+        "Double dose if missed",
+        "Avoid all lab draws"
+      ],
+      "correct_index": 0,
+      "rationale": "Warfarin inhibits vitamin K-dependent clotting factors — consistent dietary vitamin K prevents INR swings; teach bleeding precautions and avoid NSAIDs without provider approval.",
+      "category": "Cardiovascular",
+      "ncj_step": "Evaluate Outcomes",
+      "difficulty": "easy",
+      "source_module": "med_surg",
+      "clinical_judgment_focus": "Patient education on warfarin must address dietary consistency, not just medication timing.",
+      "clinical_why": "Supratherapeutic INR causes GI and intracranial bleeding — subtherapeutic INR fails anticoagulation."
+    },
+    {
+      "id": "ms-q13",
+      "question": "Asthma with silent chest and exhaustion indicates?",
+      "options": [
+        "Improving bronchospasm",
+        "Impending respiratory failure",
+        "Successful treatment",
+        "Mild exacerbation"
+      ],
+      "correct_index": 1,
+      "rationale": "Silent chest in asthma means minimal air movement despite obstruction — exhaustion and impending respiratory failure, not improvement. Prepare epinephrine, assisted ventilation.",
+      "category": "Respiratory",
+      "ncj_step": "Recognize Cues",
+      "difficulty": "hard",
+      "source_module": "med_surg",
+      "clinical_judgment_focus": "Silent chest in asthma is a danger sign — do not interpret absence of wheeze as improvement.",
+      "clinical_why": "Wheezing may decrease as patient fatigues — worsening obstruction, not resolution."
+    },
+    {
+      "id": "ms-q14",
+      "question": "SCI T4: pounding headache, BP 210/118 — first action?",
+      "options": [
+        "Sit upright, loosen clothing",
+        "Rapid IV fluid bolus",
+        "Trendelenburg",
+        "Tight abdominal binder"
+      ],
+      "correct_index": 0,
+      "rationale": "Autonomic dysreflexia (T6 and above): pounding headache, hypertension, bradycardia — sit upright, loosen constrictive clothing, identify trigger (full bladder, fecal impaction), notify provider.",
+      "category": "Neurological",
+      "ncj_step": "Take Action",
+      "difficulty": "hard",
+      "source_module": "med_surg",
+      "clinical_judgment_focus": "Autonomic dysreflexia in SCI above T6 requires immediate upright positioning and trigger removal.",
+      "clinical_why": "BP can exceed 300 mmHg causing stroke — never place flat (increases cerebral perfusion pressure)."
+    },
+    {
+      "id": "ms-q15",
+      "question": "Acute pancreatitis initial management?",
+      "options": [
+        "NPO with IV fluids",
+        "Clear liquid diet ad lib",
+        "High-fat enteral feeds",
+        "Encourage eating"
+      ],
+      "correct_index": 0,
+      "rationale": "Acute pancreatitis: NPO to rest pancreas, aggressive IV fluids (third-spacing), pain control, monitor for ARDS and hypocalcemia. Oral intake resumes when lipase trends down and pain resolves.",
+      "category": "Gastrointestinal",
+      "ncj_step": "Generate Solutions",
+      "difficulty": "easy",
+      "source_module": "med_surg",
+      "clinical_judgment_focus": "Bowel rest and hydration are foundational in acute pancreatitis before nutrition is reintroduced.",
+      "clinical_why": "Early feeding in severe pancreatitis can worsen inflammation — follow enteral protocol when stable."
+    },
+    {
+      "id": "ms-q16",
+      "question": "ESRD on hemodialysis — which finding is urgent?",
+      "options": [
+        "Absent thrill and bruit at fistula",
+        "Weight gain 1 kg",
+        "Mild itching",
+        "Post-dialysis fatigue"
+      ],
+      "correct_index": 0,
+      "rationale": "Hemodialysis fistula requires thrill (palpable vibration) and bruit (audible whoosh) — absent both suggests thrombosis. Never BP or venipuncture on fistula arm.",
+      "category": "Renal",
+      "ncj_step": "Recognize Cues",
+      "difficulty": "medium",
+      "source_module": "med_surg",
+      "clinical_judgment_focus": "The dialysis fistula is the patient's lifeline — assess thrill and bruit every shift.",
+      "clinical_why": "Clotted fistula loses dialysis access — surgical thrombectomy time-sensitive."
+    },
+    {
+      "id": "ms-q17",
+      "question": "C. difficile care — nurse should?",
+      "options": [
+        "Soap and water hand hygiene",
+        "Alcohol rub only",
+        "Airborne isolation",
+        "N95 for all contact"
+      ],
+      "correct_index": 0,
+      "rationale": "C. difficile spores resist alcohol-based hand rub — soap and water with friction removes spores. Contact precautions, dedicated equipment, bleach cleaning.",
+      "category": "Infection Control",
+      "ncj_step": "Take Action",
+      "difficulty": "easy",
+      "source_module": "med_surg",
+      "clinical_judgment_focus": "Match hand hygiene method to the pathogen — spore-forming organisms require soap and water.",
+      "clinical_why": "Alcohol gel gives false security — spores spread room-to-room causing outbreaks."
+    },
+    {
+      "id": "ms-q18",
+      "question": "Sickle cell: chest pain, fever, hypoxia — priority?",
+      "options": [
+        "Oxygen and notify provider",
+        "Cold compresses to joints",
+        "Vigorous exercise",
+        "Withhold fluids"
+      ],
+      "correct_index": 0,
+      "rationale": "Acute chest syndrome in sickle cell: new pulmonary infiltrate, chest pain, fever, hypoxia — O₂, fluids, antibiotics, exchange transfusion may be needed. Mimics pneumonia.",
+      "category": "Hematologic",
+      "ncj_step": "Take Action",
+      "difficulty": "medium",
+      "source_module": "med_surg",
+      "clinical_judgment_focus": "Acute chest syndrome in sickle cell is an emergency — oxygen, fluids, and provider notification.",
+      "clinical_why": "Leading cause of death in sickle cell adults — early recognition reduces respiratory failure."
+    },
+    {
+      "id": "ms-q19",
+      "question": "Post-op urine 15 mL/hr × 3 hr, BP 88/54, HR 118 — suspect?",
+      "options": [
+        "Hypovolemia",
+        "Fluid overload",
+        "Urinary retention",
+        "Normal diuresis"
+      ],
+      "correct_index": 0,
+      "rationale": "Oliguria (<30 mL/hr) with hypotension and tachycardia post-op indicates hypovolemia — assess bleeding, IV access, fluid bolus per order, trend hemoglobin.",
+      "category": "Renal",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "medium",
+      "source_module": "med_surg",
+      "clinical_judgment_focus": "Cluster oliguria with hemodynamic instability to identify hypovolemia early.",
+      "clinical_why": "Undetected hemorrhage leads to shock and cardiac arrest — I&O and VS every 15 min early post-op."
+    },
+    {
+      "id": "ms-q20",
+      "question": "Highest lactic acidosis risk pair?",
+      "options": [
+        "Metformin with IV contrast",
+        "Lisinopril with HCTZ",
+        "Statin with aspirin",
+        "Levothyroxine with calcium"
+      ],
+      "correct_index": 0,
+      "rationale": "Metformin with IV iodinated contrast increases lactic acidosis risk — hold metformin 48 hr before and after contrast, verify renal function (eGFR).",
+      "category": "Endocrine",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "medium",
+      "source_module": "med_surg",
+      "clinical_judgment_focus": "Know high-risk drug-contrast interactions — metformin plus IV contrast risks lactic acidosis.",
+      "clinical_why": "Contrast-induced nephropathy plus metformin accumulation causes lethal lactic acidosis."
+    },
+    {
+      "id": "ms-q21",
+      "question": "Transfusion: chills, fever, back pain — nurse should?",
+      "options": [
+        "Stop transfusion, notify provider",
+        "Slow rate and continue",
+        "Antihistamine and resume",
+        "Document and continue"
+      ],
+      "correct_index": 0,
+      "rationale": "Acute hemolytic transfusion reaction: fever, chills, flank/back pain, hypotension during transfusion — stop immediately, keep IV open with NS, return blood to lab, notify provider.",
+      "category": "Hematologic",
+      "ncj_step": "Take Action",
+      "difficulty": "medium",
+      "source_module": "med_surg",
+      "clinical_judgment_focus": "Any transfusion reaction with fever and back pain demands immediate cessation and investigation.",
+      "clinical_why": "Continuing transfusion causes DIC, renal failure, and death — verify patient ID and blood unit at bedside."
+    },
+    {
+      "id": "ms-q22",
+      "question": "Appropriate task to delegate to UAP?",
+      "options": [
+        "Ambulate stable post-op with PT clearance",
+        "Assess new chest pain",
+        "Teach insulin administration",
+        "CHF discharge planning"
+      ],
+      "correct_index": 0,
+      "rationale": "Delegate stable, routine tasks with clear parameters to UAP — ambulation after PT clearance. Never delegate assessment, teaching, evaluation, or unstable patients.",
+      "category": "Leadership",
+      "ncj_step": "Generate Solutions",
+      "difficulty": "easy",
+      "source_module": "med_surg",
+      "clinical_judgment_focus": "Apply delegation rules: right task, right person, right circumstance, right direction, right supervision.",
+      "clinical_why": "RN retains accountability — inappropriate delegation is a leading cause of nursing malpractice."
+    },
+    {
+      "id": "mh-q01",
+      "question": "Therapeutic response to 'I want to die':",
+      "options": [
+        "You'll feel better tomorrow",
+        "Are you having thoughts of killing yourself right now?",
+        "Don't say that",
+        "I'll get back to you"
+      ],
+      "correct_index": 1,
+      "rationale": "Any statement suggesting suicidal intent requires direct, nonjudgmental assessment of active ideation and plan. Asking 'Are you having thoughts of killing yourself right now?' is the standard therapeutic and safety approach. Dismissing, delaying, or offering false reassurance fails to assess risk and may increase isolation.",
+      "category": "Psychosocial Integrity",
+      "ncj_step": "Recognize Cues",
+      "difficulty": "hard",
+      "source_module": "mental_health",
+      "clinical_judgment_focus": "Suicidal statements always warrant direct assessment — never avoid the question out of discomfort."
+    },
+    {
+      "id": "mh-q02",
+      "question": "Non-therapeutic communication is:",
+      "options": [
+        "Reflection",
+        "Giving false reassurance",
+        "Open-ended questions",
+        "Offering self"
+      ],
+      "correct_index": 1,
+      "rationale": "Therapeutic communication validates the patient's experience without minimizing or correcting feelings. Giving false reassurance ('You'll feel better tomorrow') dismisses the patient's reality and shuts down dialogue. Reflection, open-ended questions, and offering self are therapeutic techniques that build trust.",
+      "category": "Psychosocial Integrity",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "medium",
+      "source_module": "mental_health",
+      "clinical_judgment_focus": "Distinguish therapeutic from non-therapeutic responses — validation beats correction."
+    },
+    {
+      "id": "mh-q03",
+      "question": "CIWA-Ar score 22 indicates:",
+      "options": [
+        "Mild withdrawal",
+        "Moderate withdrawal",
+        "Severe withdrawal requiring urgent treatment",
+        "No withdrawal"
+      ],
+      "correct_index": 2,
+      "rationale": "A CIWA-Ar score ≥20 indicates severe alcohol withdrawal with risk of seizures and delirium tremens. Benzodiazepine protocol per facility guidelines is required urgently to prevent life-threatening complications. Scores 8–15 are moderate; below 8 may need monitoring only — but ≥20 demands immediate pharmacologic treatment.",
+      "category": "Psychosocial Integrity",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "medium",
+      "source_module": "mental_health",
+      "clinical_judgment_focus": "CIWA-Ar scores guide benzodiazepine dosing urgency in alcohol withdrawal."
+    },
+    {
+      "id": "mh-q04",
+      "question": "Priority for command hallucinations to harm others:",
+      "options": [
+        "Safety assessment and 1:1",
+        "Ignore until acted on",
+        "Argue voices are unreal",
+        "Discharge"
+      ],
+      "correct_index": 0,
+      "rationale": "Command hallucinations directing harm to others require immediate safety assessment and 1:1 observation. The nurse must determine whether the patient can resist the commands and whether means and opportunity exist. Ignoring hallucinations or arguing about their reality does not address the imminent safety risk.",
+      "category": "Psychosocial Integrity",
+      "ncj_step": "Take Action",
+      "difficulty": "hard",
+      "source_module": "mental_health",
+      "clinical_judgment_focus": "Command hallucinations with violence potential require immediate safety intervention."
+    },
+    {
+      "id": "mh-q05",
+      "question": "PHQ-9 item 9 positive requires:",
+      "options": [
+        "Routine follow-up in month",
+        "Immediate suicide risk assessment",
+        "Ignore if mood improved",
+        "Discharge"
+      ],
+      "correct_index": 1,
+      "rationale": "PHQ-9 item 9 specifically screens for active suicidal ideation in the past two weeks. A positive response mandates immediate suicide risk assessment — not routine follow-up or discharge. Suicidal ideation can exist even when mood appears improved; always assess directly.",
+      "category": "Psychosocial Integrity",
+      "ncj_step": "Recognize Cues",
+      "difficulty": "hard",
+      "source_module": "mental_health",
+      "clinical_judgment_focus": "PHQ-9 item 9 is a dedicated suicide screen — a positive answer triggers full risk assessment."
+    },
+    {
+      "id": "mh-q06",
+      "question": "Serotonin syndrome includes:",
+      "options": [
+        "Hyperreflexia, clonus, agitation",
+        "Bradycardia only",
+        "Hypothermia only",
+        "No autonomic changes"
+      ],
+      "correct_index": 0,
+      "rationale": "Serotonin syndrome results from excess serotonergic activity, often from combining SSRIs, SNRIs, MAOIs, or linezolid. Hyperreflexia, clonus (especially inducible ankle clonus), agitation, and autonomic instability are hallmark signs. This is a medical emergency — stop offending agents and notify the provider for cyproheptadine or supportive care.",
+      "category": "Pharmacological Therapies",
+      "ncj_step": "Recognize Cues",
+      "difficulty": "hard",
+      "source_module": "mental_health",
+      "clinical_judgment_focus": "Recognize serotonin syndrome early — clonus and hyperreflexia distinguish it from other causes of agitation."
+    },
+    {
+      "id": "mh-q07",
+      "question": "Least restrictive intervention means:",
+      "options": [
+        "Restraint first",
+        "Start with verbal de-escalation and milieu management",
+        "Seclusion for all agitation",
+        "Chemical restraint without assessment"
+      ],
+      "correct_index": 1,
+      "rationale": "The least restrictive environment principle requires starting with verbal de-escalation and milieu management. Restraint and seclusion are last resorts after less restrictive interventions have been attempted and documented. CMS regulations and nursing ethics mandate this hierarchy to protect patient dignity and safety.",
+      "category": "Psychosocial Integrity",
+      "ncj_step": "Generate Solutions",
+      "difficulty": "medium",
+      "source_module": "mental_health",
+      "clinical_judgment_focus": "Least restrictive intervention preserves dignity while maintaining safety."
+    },
+    {
+      "id": "mh-q08",
+      "question": "Lithium teaching includes:",
+      "options": [
+        "Maintain consistent sodium and fluid intake",
+        "Skip doses when thirsty",
+        "Double dose if missed",
+        "No level monitoring needed"
+      ],
+      "correct_index": 0,
+      "rationale": "Lithium has a narrow therapeutic index and is excreted renally — dehydration and sodium loss increase toxicity. Patients must maintain consistent fluid intake and sodium consumption; illness with vomiting/diarrhea needs urgent evaluation. Therapeutic drug levels require regular monitoring; missed doses should not be doubled.",
+      "category": "Pharmacological Therapies",
+      "ncj_step": "Evaluate Outcomes",
+      "difficulty": "medium",
+      "source_module": "mental_health",
+      "clinical_judgment_focus": "Lithium toxicity is preventable with consistent sodium, fluid intake, and level monitoring."
+    },
+    {
+      "id": "mh-q09",
+      "question": "Trauma-informed care emphasizes:",
+      "options": [
+        "Safety, trust, choice, collaboration",
+        "Confrontation of trauma details immediately",
+        "Punishment for behaviors",
+        "Isolation"
+      ],
+      "correct_index": 0,
+      "rationale": "Trauma-informed care prioritizes safety, trustworthiness, choice, collaboration, and empowerment. Forcing confrontation of trauma details or using punitive approaches can retraumatize the patient. Building a predictable, respectful environment supports recovery and therapeutic engagement.",
+      "category": "Psychosocial Integrity",
+      "ncj_step": "Generate Solutions",
+      "difficulty": "easy",
+      "source_module": "mental_health",
+      "clinical_judgment_focus": "Trauma-informed principles reshape how nurses approach behavior and build therapeutic alliances."
+    },
+    {
+      "id": "mh-q10",
+      "question": "Antipsychotic monitoring includes:",
+      "options": [
+        "Weight, glucose, lipids for metabolic syndrome",
+        "Only BP",
+        "No monitoring",
+        "TSH only"
+      ],
+      "correct_index": 0,
+      "rationale": "Second-generation antipsychotics carry significant metabolic risks including weight gain, hyperglycemia, and dyslipidemia. Baseline and ongoing monitoring of weight, BMI, fasting glucose, and lipids is standard of care. Failure to monitor can result in new-onset diabetes and cardiovascular disease in psychiatric patients.",
+      "category": "Pharmacological Therapies",
+      "ncj_step": "Evaluate Outcomes",
+      "difficulty": "medium",
+      "source_module": "mental_health",
+      "clinical_judgment_focus": "Metabolic monitoring is essential with antipsychotics — psychiatric medications affect physical health."
+    },
+    {
+      "id": "mh-q11",
+      "question": "Restraint/seclusion requires:",
+      "options": [
+        "Provider order, least restrictive alternatives attempted, continuous monitoring",
+        "Nurse discretion alone indefinitely",
+        "No documentation",
+        "PRN without face-to-face eval"
+      ],
+      "correct_index": 0,
+      "rationale": "Restraint and seclusion require a provider order, documented least-restrictive alternatives, and continuous face-to-face monitoring. Regulatory standards (CMS, Joint Commission) mandate time-limited orders and debriefing after release. Nurses cannot apply restraints indefinitely without reassessment and a valid order.",
+      "category": "Psychosocial Integrity",
+      "ncj_step": "Take Action",
+      "difficulty": "medium",
+      "source_module": "mental_health",
+      "clinical_judgment_focus": "Restraint use is regulated — documentation and monitoring are as important as the intervention itself."
+    },
+    {
+      "id": "patho-q1",
+      "question": "Which shock type presents with warm flushed skin early then hypotension?",
+      "options": [
+        "Distributive (septic)",
+        "Cardiogenic",
+        "Hypovolemic",
+        "Neurogenic only"
+      ],
+      "correct_index": 0,
+      "rationale": "Septic (distributive) shock causes massive vasodilation, producing warm, flushed skin in early phases. As shock progresses, compensatory mechanisms fail and hypotension develops despite warm extremities initially. Cardiogenic shock presents with cool, clammy skin; hypovolemic shock shows pale, diaphoretic extremities.",
+      "category": "Cardiovascular",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "medium",
+      "source_module": "pathophysiology",
+      "clinical_judgment_focus": "Early septic shock may look 'warm' — do not be reassured by flushed skin in a febrile patient."
+    },
+    {
+      "id": "patho-q5",
+      "question": "COPD chronic baseline may include:",
+      "options": [
+        "Compensated respiratory acidosis",
+        "Primary metabolic alkalosis only",
+        "Normal PaCO₂ always",
+        "Metabolic acidosis only"
+      ],
+      "correct_index": 0,
+      "rationale": "Chronic COPD patients retain CO2 and compensate with renal bicarbonate retention, producing compensated respiratory acidosis. Their baseline PaCO2 is elevated with near-normal pH — this is their compensated 'normal.' Over-oxygenating these patients can shift this fragile balance and cause acute CO2 narcosis.",
+      "category": "Respiratory",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "hard",
+      "source_module": "pathophysiology",
+      "clinical_judgment_focus": "Know the compensated baseline in COPD — their 'abnormal' ABG may be their normal."
+    },
+    {
+      "id": "patho-q6",
+      "question": "Refractory hypotension in septic shock after fluids — next:",
+      "options": [
+        "Large fluid bolus only",
+        "Vasopressor per protocol",
+        "Immediate discharge",
+        "Oral hydration"
+      ],
+      "correct_index": 1,
+      "rationale": "When septic shock remains hypotensive after adequate fluid resuscitation, vasopressor support is indicated. Norepinephrine is often first-line to achieve MAP ≥65 mmHg and restore organ perfusion. Additional fluid boluses alone without vasopressors in refractory shock delay critical perfusion support.",
+      "category": "Cardiovascular",
+      "ncj_step": "Take Action",
+      "difficulty": "hard",
+      "source_module": "pathophysiology",
+      "clinical_judgment_focus": "Escalate from fluids to vasopressors when septic shock does not respond to volume resuscitation."
+    },
+    {
+      "id": "patho-q7",
+      "question": "Prerenal AKI BUN:Cr ratio typically:",
+      "options": [
+        ">20:1",
+        "<10:1",
+        "Exactly 1:1",
+        "Not useful"
+      ],
+      "correct_index": 0,
+      "rationale": "Prerenal AKI results from decreased renal perfusion (dehydration, heart failure, sepsis) with intact kidney tissue. BUN rises disproportionately to creatinine, producing a BUN:Cr ratio >20:1. Intrinsic renal injury shows a ratio closer to 10:1; the distinction guides whether fluids will restore function.",
+      "category": "Renal",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "medium",
+      "source_module": "pathophysiology",
+      "clinical_judgment_focus": "BUN:Cr ratio helps distinguish prerenal from intrinsic renal injury at the bedside."
+    },
+    {
+      "id": "patho-q8",
+      "question": "Before thrombolytics in suspected stroke:",
+      "options": [
+        "MRI only",
+        "CT head to rule out hemorrhage",
+        "Lumbar puncture first",
+        "Start heparin drip"
+      ],
+      "correct_index": 1,
+      "rationale": "Thrombolytics (tPA) are contraindicated in hemorrhagic stroke — they would worsen bleeding catastrophically. Non-contrast CT head is the emergent imaging study to rule out hemorrhage before thrombolytic consideration. Time is critical, but ruling out bleed takes priority over administering tPA.",
+      "category": "Neurological",
+      "ncj_step": "Generate Solutions",
+      "difficulty": "hard",
+      "source_module": "pathophysiology",
+      "clinical_judgment_focus": "Rule out hemorrhagic stroke before thrombolytics — CT is non-negotiable."
+    },
+    {
+      "id": "patho-q10",
+      "question": "Daily weight gain of 2 lb in CHF signals:",
+      "options": [
+        "Improved nutrition",
+        "Fluid retention",
+        "Muscle gain",
+        "Dry weight loss"
+      ],
+      "correct_index": 1,
+      "rationale": "Daily weight is the most sensitive early indicator of fluid retention in heart failure — 2 lb gain in 24 hours signals 1 liter of retained fluid. Patients should weigh daily at the same time; report gains of 2–3 lb in a day or 5 lb in a week. Catching fluid retention early prevents hospitalization for acute decompensated HF.",
+      "category": "Cardiovascular",
+      "ncj_step": "Recognize Cues",
+      "difficulty": "easy",
+      "source_module": "pathophysiology",
+      "clinical_judgment_focus": "Daily weights catch fluid retention before crackles and dyspnea develop."
+    },
+    {
+      "id": "patho-q11",
+      "question": "DKA vs HHNS: ketones are prominent in:",
+      "options": [
+        "DKA",
+        "HHNS",
+        "Both equally",
+        "Neither"
+      ],
+      "correct_index": 0,
+      "rationale": "DKA features significant ketone production with metabolic acidosis (pH <7.3, anion gap elevated). HHS (hyperosmolar hyperglycemic state) presents with extreme hyperglycemia but minimal ketosis and less acidosis. Both are emergencies, but ketone prominence distinguishes DKA and guides insulin urgency.",
+      "category": "Endocrine",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "medium",
+      "source_module": "pathophysiology",
+      "clinical_judgment_focus": "Ketone presence differentiates DKA from HHS — both need treatment but pathways differ."
+    },
+    {
+      "id": "patho-q12",
+      "question": "ARDS P/F ratio Berlin definition uses PEEP:",
+      "options": [
+        "≥5 cm H₂O",
+        "0 only",
+        "≥15 only",
+        "Not part of criteria"
+      ],
+      "correct_index": 0,
+      "rationale": "Berlin ARDS criteria require bilateral infiltrates, P/F ratio <300, and PEEP ≥5 cm H2O not fully explained by cardiac failure. ARDS severity is classified by P/F ratio: mild 200–300, moderate 100–200, severe <100. Lung-protective ventilation with low tidal volumes (6 mL/kg) is the cornerstone of management.",
+      "category": "Respiratory",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "hard",
+      "source_module": "pathophysiology",
+      "clinical_judgment_focus": "ARDS requires lung-protective strategies — understand Berlin criteria for severity."
+    },
+    {
+      "id": "patho-q13",
+      "question": "HIT on heparin — priority action:",
+      "options": [
+        "Continue heparin",
+        "Stop heparin and notify provider",
+        "Increase heparin rate",
+        "Platelet transfusion always"
+      ],
+      "correct_index": 1,
+      "rationale": "Heparin-induced thrombocytopenia (HIT) is an immune-mediated paradox: platelets drop but thrombosis risk soars. All heparin products must be stopped immediately when HIT is suspected — continuing causes arterial and venous clots. Alternative anticoagulation (argatroban, bivalirudin) is needed; platelet transfusion is contraindicated unless bleeding.",
+      "category": "Hematologic",
+      "ncj_step": "Take Action",
+      "difficulty": "hard",
+      "source_module": "pathophysiology",
+      "clinical_judgment_focus": "HIT is a clotting disorder disguised as low platelets — stop heparin immediately."
+    },
+    {
+      "id": "aq-01",
+      "question": "Which finding requires immediate notification?",
+      "options": [
+        "BP 142/88",
+        "SpO₂ 88% with RR 32 and accessory use",
+        "Pain 4/10",
+        "Temp 37.2°C"
+      ],
+      "correct_index": 1,
+      "rationale": "SpO2 88% with respiratory rate 32 and accessory muscle use indicates acute respiratory distress requiring immediate action. The nurse must assess the airway, apply oxygen, position the patient, and notify the provider promptly. Mildly elevated BP, moderate pain, and normal temperature are not acute threats to airway or breathing.",
+      "category": "Respiratory",
+      "ncj_step": "Prioritize Hypotheses",
+      "difficulty": "medium",
+      "source_module": "assessment",
+      "clinical_judgment_focus": "Accessory muscle use with hypoxia signals respiratory failure — act on breathing before other findings."
+    },
+    {
+      "id": "aq-02",
+      "question": "Best technique order for abdominal assessment?",
+      "options": [
+        "Palpate then auscultate",
+        "Auscultate then palpate",
+        "Percuss then palpate only",
+        "Inspect last"
+      ],
+      "correct_index": 1,
+      "rationale": "Abdominal assessment follows the order: inspect, auscultate, percuss, then palpate (IAPPP). Auscultation must occur before palpation because palpation can alter bowel sounds and lead to inaccurate findings. Palpating before auscultating is a common error that compromises assessment accuracy.",
+      "category": "Gastrointestinal",
+      "ncj_step": "Take Action",
+      "difficulty": "easy",
+      "source_module": "assessment",
+      "clinical_judgment_focus": "Assessment technique order prevents altering the very findings you need to detect."
+    },
+    {
+      "id": "aq-03",
+      "question": "Orthostatic hypotension is defined as:",
+      "options": [
+        "SBP drop ≥20 mmHg or DBP ≥10 mmHg with symptoms on standing",
+        "Any BP change lying to standing",
+        "HR increase only",
+        "SBP increase 20 mmHg"
+      ],
+      "correct_index": 0,
+      "rationale": "Orthostatic hypotension is defined as a drop in SBP ≥20 mmHg or DBP ≥10 mmHg within 3 minutes of standing, often with symptoms. This indicates inadequate cerebral perfusion on position change and increases fall risk. Any BP change or HR increase alone does not meet the clinical definition.",
+      "category": "Cardiovascular",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "easy",
+      "source_module": "assessment",
+      "clinical_judgment_focus": "Orthostatic vital signs detect volume depletion and autonomic dysfunction before falls occur."
+    },
+    {
+      "id": "aq-05",
+      "question": "FAST assessment includes:",
+      "options": [
+        "Face, Arm, Speech, Time",
+        "Fever, Airway, Skin, Temperature",
+        "Fluid, Activity, Strength, Tone",
+        "Focus, Assess, Support, Treat"
+      ],
+      "correct_index": 0,
+      "rationale": "FAST is the stroke screening mnemonic: Face drooping, Arm weakness, Speech difficulty, Time to call emergency services. Rapid recognition and activation of the stroke team maximizes the window for thrombolytic therapy. Early identification directly impacts functional outcomes and mortality.",
+      "category": "Neurological",
+      "ncj_step": "Recognize Cues",
+      "difficulty": "easy",
+      "source_module": "assessment",
+      "clinical_judgment_focus": "FAST enables community and bedside stroke recognition — time activation saves brain tissue."
+    },
+    {
+      "id": "aq-15",
+      "question": "Bowel sounds absent for 5 minutes in a post-op abdomen may indicate:",
+      "options": [
+        "Ileus or obstruction — correlate with nausea, distension, flatus",
+        "Always normal after surgery",
+        "Diarrhea",
+        "Appendicitis only"
+      ],
+      "correct_index": 0,
+      "rationale": "Absent bowel sounds after abdominal surgery may indicate postoperative ileus or developing obstruction. Correlate with nausea, abdominal distension, absence of flatus, and pain to differentiate expected ileus from complication. Notify the provider when bowel sounds remain absent with worsening distension or no flatus — obstruction can progress to ischemia.",
+      "category": "Gastrointestinal",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "medium",
+      "source_module": "assessment",
+      "clinical_judgment_focus": "Post-op abdominal assessment integrates bowel sounds with flatus, distension, and nausea."
+    },
+    {
+      "id": "aq-17",
+      "question": "A positive Homans sign (calf pain on dorsiflexion) is:",
+      "options": [
+        "Not reliable alone for DVT — use Wells criteria and ultrasound",
+        "Definitive DVT diagnosis",
+        "Normal in all post-op patients",
+        "Contraindication to ambulation"
+      ],
+      "correct_index": 0,
+      "rationale": "Homans sign (calf pain on dorsiflexion) is neither sensitive nor specific enough to diagnose DVT alone. Assess for unilateral calf swelling, warmth, erythema, and pain while applying Wells criteria and ordering ultrasound. Missed DVT is a leading cause of preventable pulmonary embolism in hospitalized patients.",
+      "category": "Musculoskeletal",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "medium",
+      "source_module": "assessment",
+      "clinical_judgment_focus": "Never rely on a single physical exam maneuver for DVT — use validated clinical decision tools."
+    },
+    {
+      "id": "mc-q01",
+      "question": "Late decelerations during labor — first action?",
+      "options": [
+        "Stop oxytocin and intrauterine resuscitation",
+        "Increase oxytocin",
+        "Prepare for immediate discharge",
+        "Turn off monitor"
+      ],
+      "correct_index": 0,
+      "rationale": "Late decelerations indicate uteroplacental insufficiency — the fetus is not receiving adequate oxygen during contractions. Stop oxytocin if infusing, perform intrauterine resuscitation (position change, O2, IV fluids), and notify the provider. Increasing oxytocin or ignoring the monitor worsens fetal hypoxia and risks fetal demise.",
+      "category": "Maternal-Newborn",
+      "ncj_step": "Take Action",
+      "difficulty": "hard",
+      "source_module": "maternal_child",
+      "clinical_judgment_focus": "Late decels = fetal hypoxia — intrauterine resuscitation is the nurse's immediate role."
+    },
+    {
+      "id": "mc-q02",
+      "question": "Postpartum fundus boggy — intervene with:",
+      "options": [
+        "Fundal massage",
+        "Ice pack only",
+        "Encourage bed rest 24 hr",
+        "Discharge"
+      ],
+      "correct_index": 0,
+      "rationale": "A boggy, deviated uterus after delivery indicates uterine atony — the leading cause of postpartum hemorrhage. Fundal massage is first-line to stimulate contraction and reduce bleeding. Ice packs and bed rest do not address atony; prompt massage can prevent hemorrhagic shock.",
+      "category": "Maternal-Newborn",
+      "ncj_step": "Take Action",
+      "difficulty": "medium",
+      "source_module": "maternal_child",
+      "clinical_judgment_focus": "Boggy fundus = atony = hemorrhage risk — massage before medications when possible."
+    },
+    {
+      "id": "mc-q03",
+      "question": "Preeclampsia severe feature includes:",
+      "options": [
+        "RUQ epigastric pain",
+        "Mild ankle edema only",
+        "Braxton Hicks",
+        "Fetal hiccups"
+      ],
+      "correct_index": 0,
+      "rationale": "RUQ/epigastric pain in preeclampsia suggests liver capsule distension and possible HELLP syndrome. This is a severe feature requiring immediate provider notification and likely magnesium sulfate and delivery planning. Mild ankle edema and Braxton Hicks contractions are common and not severe features.",
+      "category": "Maternal-Newborn",
+      "ncj_step": "Recognize Cues",
+      "difficulty": "hard",
+      "source_module": "maternal_child",
+      "clinical_judgment_focus": "RUQ pain in preeclampsia signals severe disease — do not dismiss as heartburn."
+    },
+    {
+      "id": "mc-q04",
+      "question": "Shoulder dystocia maneuver:",
+      "options": [
+        "McRoberts + suprapubic pressure",
+        "Fundal pressure",
+        "Trendelenburg",
+        "Forceps from abdomen"
+      ],
+      "correct_index": 0,
+      "rationale": "Shoulder dystocia requires McRoberts maneuver (hyperflex thighs) plus suprapubic pressure to free the anterior shoulder. Fundal pressure pushes the baby further into impaction and is contraindicated. This is an obstetric emergency — call for help and document time of maneuvers.",
+      "category": "Maternal-Newborn",
+      "ncj_step": "Take Action",
+      "difficulty": "hard",
+      "source_module": "maternal_child",
+      "clinical_judgment_focus": "Shoulder dystocia has a defined maneuver sequence — fundal pressure makes it worse."
+    },
+    {
+      "id": "mc-q05",
+      "question": "Newborn APGAR 4 at 1 minute — nurse:",
+      "options": [
+        "Continue resuscitation per NRP and reassess at 5 min",
+        "Stop all intervention",
+        "Discharge to mother only",
+        "Document only"
+      ],
+      "correct_index": 0,
+      "rationale": "An APGAR of 4 at 1 minute indicates the newborn needs active resuscitation per Neonatal Resuscitation Program (NRP) algorithm. Continue ventilation, warming, and stimulation; reassess at 5 minutes. Never stop intervention or discharge a compromised newborn without full resuscitation efforts.",
+      "category": "Maternal-Newborn",
+      "ncj_step": "Take Action",
+      "difficulty": "medium",
+      "source_module": "maternal_child",
+      "clinical_judgment_focus": "Low APGAR triggers NRP algorithm — reassess at 5 minutes, never abandon resuscitation early."
+    },
+    {
+      "id": "mc-q06",
+      "question": "Magnesium toxicity sign:",
+      "options": [
+        "Absent deep tendon reflexes",
+        "Increased reflexes",
+        "Hypertension",
+        "Tachycardia only"
+      ],
+      "correct_index": 0,
+      "rationale": "Absent deep tendon reflexes are the earliest sign of magnesium sulfate toxicity. Also monitor respiratory rate (>12/min) and urine output (>25–30 mL/hr) before each dose. Calcium gluconate is the antidote for severe toxicity; report absent reflexes immediately.",
+      "category": "Maternal-Newborn",
+      "ncj_step": "Recognize Cues",
+      "difficulty": "medium",
+      "source_module": "maternal_child",
+      "clinical_judgment_focus": "Magnesium toxicity presents with lost reflexes before respiratory arrest — monitor before each dose."
+    },
+    {
+      "id": "mc-q07",
+      "question": "14-day-old with 38.3°C fever — priority:",
+      "options": [
+        "Full sepsis evaluation per neonatal protocol",
+        "Acetaminophen and home",
+        "Wait 24 hours",
+        "Cool bath only"
+      ],
+      "correct_index": 0,
+      "rationale": "Fever ≥38°C (100.4°F) in an infant under 28–60 days is a medical emergency due to immature immune function. Full sepsis workup (blood culture, UA, LP per protocol) and empiric antibiotics are required — not outpatient management. Young infants can deteriorate rapidly from occult bacteremia or meningitis.",
+      "category": "Pediatric Nursing",
+      "ncj_step": "Take Action",
+      "difficulty": "hard",
+      "source_module": "maternal_child",
+      "clinical_judgment_focus": "Neonatal fever is always serious — young infants need sepsis evaluation, not outpatient care."
+    },
+    {
+      "id": "mc-q08",
+      "question": "Cord prolapse nursing action:",
+      "options": [
+        "Knee-chest, elevate presenting part, notify for emergency delivery",
+        "Push cord back into vagina repeatedly",
+        "Place patient supine flat only",
+        "Stop monitoring FHR"
+      ],
+      "correct_index": 0,
+      "rationale": "Cord prolapse compresses the umbilical cord and cuts off fetal oxygen supply — an obstetric emergency. Knee-chest or Trendelenburg position relieves pressure while the nurse elevates the presenting part manually. Never attempt to push the cord back into the vagina; prepare for emergency cesarean delivery.",
+      "category": "Maternal-Newborn",
+      "ncj_step": "Take Action",
+      "difficulty": "hard",
+      "source_module": "maternal_child",
+      "clinical_judgment_focus": "Cord prolapse is a time-critical obstetric emergency — relieve compression while awaiting delivery."
+    },
+    {
+      "id": "mc-q09",
+      "question": "Physiologic jaundice typically appears:",
+      "options": [
+        "Day 2–3 in term newborn",
+        "First hour of life",
+        "Never in breastfed infants",
+        "Only in preterm"
+      ],
+      "correct_index": 0,
+      "rationale": "Physiologic jaundice in term newborns typically appears on days 2–3 as fetal RBC breakdown increases bilirubin load. Jaundice within the first 24 hours is pathologic and requires immediate evaluation for hemolysis or infection. Breastfed infants can have prolonged physiologic jaundice but still follow the typical onset pattern.",
+      "category": "Pediatric Nursing",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "medium",
+      "source_module": "maternal_child",
+      "clinical_judgment_focus": "Jaundice timing distinguishes physiologic from pathologic hyperbilirubinemia."
+    },
+    {
+      "id": "mc-q10",
+      "question": "Postpartum psychosis requires:",
+      "options": [
+        "Immediate psychiatric care and infant safety measures",
+        "Routine outpatient follow-up only",
+        "Ignore unless violent",
+        "Sedation at home without supervision"
+      ],
+      "correct_index": 0,
+      "rationale": "Postpartum psychosis is a psychiatric emergency occurring within days to 4 weeks after delivery. It requires immediate psychiatric care, possible hospitalization, and infant safety measures including supervised contact. Outpatient follow-up alone is insufficient — the mother may have delusions commanding harm to self or infant.",
+      "category": "Maternal-Newborn",
+      "ncj_step": "Take Action",
+      "difficulty": "hard",
+      "source_module": "maternal_child",
+      "clinical_judgment_focus": "Postpartum psychosis requires emergency psychiatric intervention and infant protection."
+    },
+    {
+      "id": "micro-q02",
+      "question": "Which precaution type is required for pulmonary tuberculosis?",
+      "options": [
+        "Contact",
+        "Droplet",
+        "Airborne",
+        "Protective environment"
+      ],
+      "correct_index": 2,
+      "rationale": "Pulmonary tuberculosis spreads via airborne droplet nuclei that remain suspended in room air for hours. Airborne precautions require a negative-pressure AIIR and N95 respirator (or PAPR) for all room entry. Droplet precautions are insufficient because TB particles are smaller than droplet transmission thresholds.",
+      "category": "Infection Control",
+      "ncj_step": "Take Action",
+      "difficulty": "medium",
+      "source_module": "microbiology",
+      "clinical_judgment_focus": "Match isolation type to transmission — TB requires airborne, not droplet, precautions."
+    },
+    {
+      "id": "micro-q03",
+      "question": "The nurse breaks which chain link by performing hand hygiene before patient care?",
+      "options": [
+        "Infectious agent",
+        "Mode of transmission",
+        "Portal of entry",
+        "Reservoir"
+      ],
+      "correct_index": 1,
+      "rationale": "Hand hygiene before patient contact breaks the chain of infection at the mode of transmission link. Pathogens on healthcare worker hands are the most common vehicle for nosocomial spread between patients. The infectious agent, reservoir, and portal of entry are not directly interrupted by hand washing alone.",
+      "category": "Infection Control",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "easy",
+      "source_module": "microbiology",
+      "clinical_judgment_focus": "Hand hygiene is the single most effective action to break nosocomial transmission."
+    },
+    {
+      "id": "micro-q04",
+      "question": "Varicella (chickenpox) requires:",
+      "options": [
+        "Airborne precautions only",
+        "Contact precautions only",
+        "Both airborne and contact precautions until lesions crusted",
+        "Droplet precautions only"
+      ],
+      "correct_index": 2,
+      "rationale": "Varicella is transmitted both by airborne droplet nuclei and direct contact with vesicle fluid. CDC requires airborne isolation plus contact precautions until all lesions are crusted over. Droplet or contact precautions alone do not provide adequate protection for this dual-mode pathogen.",
+      "category": "Infection Control",
+      "ncj_step": "Take Action",
+      "difficulty": "medium",
+      "source_module": "microbiology",
+      "clinical_judgment_focus": "Some pathogens require combined precaution types — varicella needs airborne plus contact."
+    },
+    {
+      "id": "micro-q05",
+      "question": "Vaccination primarily targets which chain link?",
+      "options": [
+        "Agent",
+        "Reservoir",
+        "Transmission",
+        "Susceptible host"
+      ],
+      "correct_index": 3,
+      "rationale": "Vaccination targets the susceptible host link by stimulating adaptive immunity before pathogen exposure. Herd immunity reduces transmission by shrinking the pool of susceptible individuals in a population. Vaccines do not eliminate the agent or reservoir — they prepare the host defense.",
+      "category": "Infection Control",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "easy",
+      "source_module": "microbiology",
+      "clinical_judgment_focus": "Vaccination is primary prevention targeting host susceptibility in the chain of infection."
+    },
+    {
+      "id": "micro-q06",
+      "question": "First action when entering room of patient on contact precautions?",
+      "options": [
+        "Don mask",
+        "Perform hand hygiene and don gown/gloves",
+        "Don N95",
+        "Remove all equipment from room"
+      ],
+      "correct_index": 1,
+      "rationale": "Contact precautions require hand hygiene before donning gown and gloves on room entry. PPE is donned before contact and doffed inside the room to prevent environmental contamination. An N95 is not required for contact precautions — it is reserved for airborne pathogens like TB.",
+      "category": "Safety & Infection Control",
+      "ncj_step": "Take Action",
+      "difficulty": "easy",
+      "source_module": "microbiology",
+      "clinical_judgment_focus": "Correct PPE sequence prevents self-contamination during donning and doffing."
+    },
+    {
+      "id": "micro-q07",
+      "question": "CLABSI prevention includes:",
+      "options": [
+        "Daily chlorhexidine baths only",
+        "Central line bundle: hand hygiene, maximal barrier, chlorhexidine prep, review necessity",
+        "Prophylactic IV antibiotics for all lines",
+        "Changing dressings daily without indication"
+      ],
+      "correct_index": 1,
+      "rationale": "The central line bundle combines hand hygiene, maximal sterile barrier, chlorhexidine skin prep, optimal site selection, and daily necessity review. This evidence-based bundle significantly reduces CLABSI rates in ICU and acute care settings. Routine prophylactic antibiotics and daily dressing changes without indication are not bundle components.",
+      "category": "Safety & Infection Control",
+      "ncj_step": "Generate Solutions",
+      "difficulty": "medium",
+      "source_module": "microbiology",
+      "clinical_judgment_focus": "Evidence-based bundles standardize best practices and reduce preventable infections."
+    },
+    {
+      "id": "micro-q08",
+      "question": "A nurse with influenza should:",
+      "options": [
+        "Continue working with surgical mask",
+        "Receive prophylactic antibiotics and work",
+        "Stay home until fever-free per policy; antivirals if indicated",
+        "Wear N95 and continue all assignments"
+      ],
+      "correct_index": 2,
+      "rationale": "Healthcare workers with influenza must stay home per occupational health policy to prevent nosocomial transmission. Influenza is contagious before symptoms peak and vulnerable patients (elderly, immunocompromised) face high mortality. Working with a surgical mask still exposes patients; antivirals are treatment, not a substitute for exclusion.",
+      "category": "Safety & Infection Control",
+      "ncj_step": "Take Action",
+      "difficulty": "easy",
+      "source_module": "microbiology",
+      "clinical_judgment_focus": "Ill healthcare workers are a patient safety hazard — occupational health policies protect vulnerable patients."
+    },
+    {
+      "id": "micro-q09",
+      "question": "Gram stain of Gram-negative organisms shows:",
+      "options": [
+        "Purple cocci in clusters",
+        "Pink/red rod-shaped bacteria",
+        "Acid-fast bacilli",
+        "No cell wall"
+      ],
+      "correct_index": 1,
+      "rationale": "Gram-negative bacteria have a thin peptidoglycan layer and lipopolysaccharide outer membrane that does not retain crystal violet. They appear pink/red after the counterstain (safranin) in the Gram stain procedure. Purple cocci in clusters describe Gram-positive Staphylococcus; acid-fast staining identifies mycobacteria.",
+      "category": "Infection Control",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "medium",
+      "source_module": "microbiology",
+      "clinical_judgment_focus": "Gram stain results guide empiric antibiotic selection while cultures are pending."
+    },
+    {
+      "id": "micro-q10",
+      "question": "Antimicrobial stewardship prioritizes:",
+      "options": [
+        "Broadest spectrum for all infections",
+        "Shortest effective course per culture/guideline",
+        "Completing saved antibiotics at home",
+        "Prophylactic antibiotics for all surgical patients indefinitely"
+      ],
+      "correct_index": 1,
+      "rationale": "Antimicrobial stewardship promotes the shortest effective antibiotic course guided by culture results and clinical guidelines. Broad-spectrum empiric therapy should be de-escalated once the pathogen is identified to reduce resistance and C. diff risk. Saving leftover antibiotics and indefinite surgical prophylaxis promote resistance and adverse outcomes.",
+      "category": "Pharmacological Therapies",
+      "ncj_step": "Evaluate Outcomes",
+      "difficulty": "medium",
+      "source_module": "microbiology",
+      "clinical_judgment_focus": "Stewardship protects future patients by limiting resistance and C. difficile."
+    },
+    {
+      "id": "term-q01",
+      "question": "The prefix 'brady-' in bradycardia means:",
+      "options": [
+        "Fast",
+        "Slow",
+        "Irregular",
+        "Absent"
+      ],
+      "correct_index": 1,
+      "rationale": "The prefix 'brady-' means slow — bradycardia is a resting heart rate below 60 bpm in adults. Symptomatic bradycardia (hypotension, altered mental status, chest pain) may require atropine per ACLS protocol. Not all bradycardia requires treatment; athletes may have normal resting rates below 60.",
+      "category": "Cardiovascular",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "easy",
+      "source_module": "terminology",
+      "clinical_judgment_focus": "Medical terminology decoding supports accurate communication and safer care."
+    },
+    {
+      "id": "term-q02",
+      "question": "Which suffix means inflammation?",
+      "options": [
+        "-osis",
+        "-itis",
+        "-emia",
+        "-logy"
+      ],
+      "correct_index": 1,
+      "rationale": "The suffix '-itis' means inflammation of the attached structure — gastritis is stomach inflammation, meningitis is meningeal inflammation. Recognizing suffixes allows nurses to decode unfamiliar terms and anticipate clinical presentations. -osis means abnormal condition, -emia means blood condition, and -logy means study of.",
+      "category": "Gastrointestinal",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "easy",
+      "source_module": "terminology",
+      "clinical_judgment_focus": "Suffix recognition predicts condition type — inflammation, blood disorder, or disease state."
+    },
+    {
+      "id": "term-q03",
+      "question": "Hematuria means:",
+      "options": [
+        "Blood in urine",
+        "Excess protein in urine",
+        "Scant urine output",
+        "Painful urination"
+      ],
+      "correct_index": 0,
+      "rationale": "Hematuria combines 'hemat/o' (blood) and '-uria' (urine condition) — blood present in the urine. Gross hematuria is visible; microscopic hematuria is detected on dipstick or microscopy. Both require provider notification to rule out infection, stones, trauma, or malignancy.",
+      "category": "Renal",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "easy",
+      "source_module": "terminology",
+      "clinical_judgment_focus": "Hematuria always warrants investigation — never normalize blood in urine."
+    },
+    {
+      "id": "term-q04",
+      "question": "The root 'nephr' refers to the:",
+      "options": [
+        "Liver",
+        "Kidney",
+        "Lung",
+        "Heart"
+      ],
+      "correct_index": 1,
+      "rationale": "The root 'nephr/o' refers to the kidney — seen in nephrology, nephritis, and nephrectomy. Understanding word roots builds vocabulary for renal assessment, medications, and patient education. Hepat- is liver, pulmon- is lung, and cardi- is heart.",
+      "category": "Renal",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "easy",
+      "source_module": "terminology",
+      "clinical_judgment_focus": "Word roots link terminology to body systems for faster clinical reasoning."
+    },
+    {
+      "id": "term-q05",
+      "question": "Hyperglycemia indicates:",
+      "options": [
+        "Low blood sugar",
+        "High blood sugar",
+        "Low blood pressure",
+        "High heart rate"
+      ],
+      "correct_index": 1,
+      "rationale": "Hyperglycemia means blood glucose above normal limits — hyper- (excessive) + glyc (glucose) + -emia (blood condition). Sustained hyperglycemia can progress to DKA (type 1) or HHS (type 2) and requires insulin or protocol-driven treatment. Always verify glucose before administering insulin to prevent hypoglycemic events.",
+      "category": "Endocrine",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "easy",
+      "source_module": "terminology",
+      "clinical_judgment_focus": "Hyperglycemia terminology connects to actionable nursing assessment and insulin safety."
+    },
+    {
+      "id": "term-q06",
+      "question": "An antibiotic is best defined as:",
+      "options": [
+        "Against life (etymology only)",
+        "A drug that inhibits or destroys bacteria",
+        "A drug that widens bronchi",
+        "A drug that promotes urination"
+      ],
+      "correct_index": 1,
+      "rationale": "Antibiotics are agents that inhibit or destroy bacteria — anti- (against) + bio (life) + -tic (pertaining to). They are ineffective against viruses; inappropriate use drives antimicrobial resistance. Culture and sensitivity guides selection of the narrowest effective spectrum.",
+      "category": "Pharmacological Therapies",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "easy",
+      "source_module": "terminology",
+      "clinical_judgment_focus": "Antibiotic knowledge prevents misuse and supports stewardship conversations."
+    },
+    {
+      "id": "nclex-mh-1",
+      "question": "A patient states 'Nobody cares about me.' Which response uses therapeutic communication?",
+      "options": [
+        "You feel alone right now.",
+        "That's not true — your family visits.",
+        "Why would you think that?",
+        "You should try to be more positive."
+      ],
+      "correct_index": 0,
+      "rationale": "Reflection ('You feel alone right now') validates emotion without arguing or minimizing — builds trust for further suicide and depression assessment.",
+      "category": "Psychosocial Integrity",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "medium",
+      "source_module": "mental_health",
+      "clinical_judgment_focus": "Therapeutic communication prioritizes patient feelings over correction.",
+      "clinical_why": "Correcting or dismissing feelings shuts down disclosure of suicidal ideation."
+    },
+    {
+      "id": "nclex-ob-1",
+      "question": "A pregnant patient at 32 weeks reports sudden severe headache and visual changes. Priority action?",
+      "options": [
+        "Assess BP and notify provider immediately",
+        "Encourage rest and dim lights",
+        "Administer PRN acetaminophen",
+        "Schedule routine prenatal appointment"
+      ],
+      "correct_index": 0,
+      "rationale": "Sudden headache and visual changes at 32 weeks suggest severe preeclampsia — assess BP, proteinuria, reflexes; magnesium and delivery planning may be needed.",
+      "category": "Maternal-Newborn",
+      "ncj_step": "Recognize Cues",
+      "difficulty": "hard",
+      "source_module": "maternal_child",
+      "clinical_judgment_focus": "Maternal and fetal safety — preeclampsia is life-threatening.",
+      "clinical_why": "Eclampsia risk rises with severe features — maternal seizure and placental abruption threaten both lives."
+    },
+    {
+      "id": "nclex-peds-1",
+      "question": "A 4-month-old should achieve which developmental milestone?",
+      "options": [
+        "Rolls from back to side",
+        "Walks independently",
+        "Uses two-word phrases",
+        "Ties shoelaces"
+      ],
+      "correct_index": 0,
+      "rationale": "At 4 months, infants roll back to side, hold head steady, reach for objects, and social smile — walking (12 mo) and two-word phrases (18–24 mo) are much later.",
+      "category": "Pediatric Nursing",
+      "ncj_step": "Analyze Cues",
+      "difficulty": "easy",
+      "source_module": "pediatrics",
+      "clinical_judgment_focus": "Age-appropriate expectations guide assessment and parent teaching.",
+      "clinical_why": "Developmental delay screening at well-child visits triggers early intervention for motor and cognitive deficits."
+    },
+    {
+      "id": "nclex-pharm-1",
+      "question": "Order: Digoxin 0.125 mg PO daily. Apical pulse 52/min. Nurse should?",
+      "options": [
+        "Hold dose and notify provider",
+        "Administer as ordered",
+        "Give half the dose",
+        "Switch to IV route"
+      ],
+      "correct_index": 0,
+      "rationale": "Digoxin has narrow therapeutic index — hold if apical pulse <60 bpm (adult) or per facility policy, assess for toxicity (nausea, vision changes, arrhythmias), notify provider.",
+      "category": "Pharmacological Therapies",
+      "ncj_step": "Take Action",
+      "difficulty": "medium",
+      "source_module": "dosage",
+      "clinical_judgment_focus": "Medication safety requires assessment before administration.",
+      "clinical_why": "Bradycardia may worsen to heart block — hypokalemia increases digoxin toxicity risk."
+    },
+    {
+      "id": "nclex-safe-1",
+      "question": "Fire response — nurse's first action when smoke is seen in a patient room?",
+      "options": [
+        "Rescue patients in immediate danger",
+        "Activate fire alarm",
+        "Confine fire by closing doors",
+        "Extinguish fire if small"
+      ],
+      "correct_index": 0,
+      "rationale": "RACE protocol: Rescue patients in immediate danger first, then pull Alarm, Contain fire/smoke by closing doors, Extinguish if trained and fire is small, Evacuate vertically per facility plan.",
+      "category": "Safety & Infection Control",
+      "ncj_step": "Take Action",
+      "difficulty": "easy",
+      "source_module": "assessment",
+      "clinical_judgment_focus": "Life safety protocols prioritize human rescue.",
+      "clinical_why": "Horizontal evacuation may be impossible — rescue prevents smoke inhalation deaths before fire spreads."
+    },
+    {
+      "id": "nclex-pharm-2",
+      "question": "Before administering insulin from a vial, the nurse's priority safety action is:",
+      "options": [
+        "Independent double-check with second RN",
+        "Administer immediately to avoid delay",
+        "Dilute in normal saline",
+        "Give IM for faster absorption"
+      ],
+      "correct_index": 0,
+      "rationale": "Insulin is an ISMP high-alert medication requiring an independent double-check before administration. Only regular insulin may be given IV; other formulations are for subcutaneous use only. Wrong insulin type or dose is a leading cause of preventable hypoglycemic injury and death.",
+      "category": "Pharmacological Therapies",
+      "ncj_step": "Take Action",
+      "difficulty": "medium",
+      "source_module": "dosage",
+      "clinical_judgment_focus": "High-alert medications demand independent double-checks and route verification."
+    },
+    {
+      "id": "nclex-pharm-3",
+      "question": "Post-op patient received IV morphine 4 mg. RR 10/min, difficult to arouse. Nurse should:",
+      "options": [
+        "Stop opioid, stimulate patient, apply O2, prepare naloxone",
+        "Administer next scheduled dose",
+        "Place in Trendelenburg",
+        "Document and recheck in 4 hours"
+      ],
+      "correct_index": 0,
+      "rationale": "Opioid-induced respiratory depression is signaled by RR <12/min, sedation, and pinpoint pupils. Hold the opioid, stimulate the patient, apply oxygen, and prepare naloxone per protocol. Never leave a sedated patient unattended after opioid administration — continuous respiratory assessment is required.",
+      "category": "Pharmacological Therapies",
+      "ncj_step": "Take Action",
+      "difficulty": "hard",
+      "source_module": "dosage",
+      "clinical_judgment_focus": "Opioid safety requires respiratory assessment before and after every dose."
+    },
+    {
+      "id": "nclex-prio-02",
+      "question": "Four patients call the nurse simultaneously. Who should be assessed first?",
+      "options": [
+        "Post-op day 1 requesting pain medication rated 6/10",
+        "Client with new onset chest pain and diaphoresis",
+        "Client awaiting discharge teaching for insulin injection",
+        "Client with a medication due in 30 minutes"
+      ],
+      "correct_index": 1,
+      "rationale": "New chest pain with diaphoresis suggests acute coronary syndrome — a potential life threat requiring immediate assessment (ABCs, ECG, vitals, provider notification). Pain medication, discharge teaching, and a medication due in 30 minutes are important but not emergent compared to possible myocardial infarction.",
+      "category": "Prioritization",
+      "ncj_step": "Prioritize Hypotheses",
+      "difficulty": "medium",
+      "source_module": "med_surg",
+      "clinical_judgment_focus": "Unstable vs. stable — acute cardiac symptoms outrank comfort and routine tasks."
+    },
+    {
+      "id": "nclex-prio-03",
+      "question": "After receiving report, which client should the nurse see first?",
+      "options": [
+        "Diabetic client whose breakfast tray just arrived",
+        "Client with COPD whose SpO2 dropped from 94% to 88% with increased work of breathing",
+        "Client requesting assistance to the bathroom",
+        "Client scheduled for physical therapy at 1000"
+      ],
+      "correct_index": 1,
+      "rationale": "Declining oxygen saturation with increased work of breathing signals respiratory compromise — assess airway, position, O₂ delivery, and notify provider. Meal timing, toileting, and scheduled therapy are lower priority than potential respiratory failure.",
+      "category": "Prioritization",
+      "ncj_step": "Recognize Cues",
+      "difficulty": "medium",
+      "source_module": "med_surg",
+      "clinical_judgment_focus": "Trending vital sign changes trump scheduled activities."
+    },
+    {
+      "id": "nclex-prio-04",
+      "question": "The nurse has 15 minutes left in shift. Which task is best delegated to an unlicensed assistive personnel (UAP)?",
+      "options": [
+        "Ambulating a post-op client day 1 after abdominal surgery",
+        "Feeding an alert stroke client with mild dysphagia",
+        "Obtaining routine vital signs on stable clients",
+        "Reinforcing discharge teaching about wound care"
+      ],
+      "correct_index": 2,
+      "rationale": "Routine vital signs on stable clients are within UAP scope when no unstable findings are expected. Post-op ambulation, dysphagia feeding, and discharge teaching require nursing assessment and judgment — inappropriate to delegate.",
+      "category": "Prioritization",
+      "ncj_step": "Generate Solutions",
+      "difficulty": "medium",
+      "source_module": "med_surg",
+      "clinical_judgment_focus": "Delegation requires matching task stability with caregiver scope."
+    },
+    {
+      "id": "nclex-prio-05",
+      "question": "Which finding requires immediate nursing intervention?",
+      "options": [
+        "Report of dry mouth after starting antihistamine",
+        "Urine output 35 mL/hr for the past 2 hours",
+        "New onset confusion and slurred speech",
+        "Incisional pain rated 4/10 after analgesic given 1 hour ago"
+      ],
+      "correct_index": 2,
+      "rationale": "Acute confusion and slurred speech may indicate stroke, hypoglycemia, sepsis, or medication toxicity — all require immediate assessment (glucose, neuro checks, vitals). Dry mouth is an expected antihistamine effect; 35 mL/hr meets minimum adult output; mild pain after recent analgesic is monitored but not emergent.",
+      "category": "Prioritization",
+      "ncj_step": "Recognize Cues",
+      "difficulty": "hard",
+      "source_module": "assessment",
+      "clinical_judgment_focus": "Neurological acute changes are always high priority."
+    },
+    {
+      "id": "nclex-safe-02",
+      "question": "Before administering a scheduled opioid, the nurse notes respirations 8/min and the client is difficult to arouse. What is the priority action?",
+      "options": [
+        "Administer the opioid as scheduled and recheck in 30 minutes",
+        "Hold the opioid, assess further, and notify provider — consider naloxone per protocol",
+        "Document and continue routine care",
+        "Offer a snack to stimulate the client"
+      ],
+      "correct_index": 1,
+      "rationale": "Respiratory depression (RR <10) with decreased level of consciousness indicates opioid toxicity — hold further opioids, maintain airway, stimulate/support respirations, notify provider, and prepare naloxone per facility protocol. Administering another dose could cause arrest.",
+      "category": "Safety & Infection Control",
+      "ncj_step": "Take Action",
+      "difficulty": "hard",
+      "source_module": "dosage",
+      "clinical_judgment_focus": "Medication safety — assess before administering sedating drugs."
+    },
+    {
+      "id": "nclex-safe-03",
+      "question": "A nurse discovers a client on the floor beside the bed, alert and complaining of hip pain. What is the first action?",
+      "options": [
+        "Help client back to bed immediately",
+        "Assess client and call for help per fall protocol",
+        "Complete incident report before assessment",
+        "Obtain x-ray order before moving client"
+      ],
+      "correct_index": 1,
+      "rationale": "After a fall, assess for injury and neurological status before moving the client. Call for help and follow facility fall protocol — do not lift alone if hip fracture suspected. Incident reporting follows assessment and stabilization, not before.",
+      "category": "Safety & Infection Control",
+      "ncj_step": "Take Action",
+      "difficulty": "medium",
+      "source_module": "assessment",
+      "clinical_judgment_focus": "Client safety — assess injury before movement or documentation tasks."
+    },
+    {
+      "id": "nclex-safe-04",
+      "question": "Which action prevents central line-associated bloodstream infection (CLABSI)?",
+      "options": [
+        "Change transparent dressing every 7 days per policy and use chlorhexidine scrub",
+        "Flush with heparin only when line is used",
+        "Remove cap and leave hub open during transport",
+        "Administer prophylactic IV antibiotics daily"
+      ],
+      "correct_index": 0,
+      "rationale": "CLABSI bundles include hand hygiene, maximal barrier precautions on insertion, chlorhexidine skin prep, appropriate dressing changes, and hub disinfection before access. Open hubs and routine prophylactic antibiotics are not evidence-based and increase risk.",
+      "category": "Safety & Infection Control",
+      "ncj_step": "Generate Solutions",
+      "difficulty": "medium",
+      "source_module": "microbiology",
+      "clinical_judgment_focus": "Infection prevention bundles are high-yield NCLEX Safety items."
+    },
+    {
+      "id": "nclex-safe-05",
+      "question": "A nurse is preparing to hang IV potassium chloride 10 mEq in 100 mL over 1 hour. Which verification step is essential?",
+      "options": [
+        "Confirm concentration and maximum infusion rate per policy; use pump",
+        "Administer as IV push if client is symptomatic",
+        "Dilute in D5W only without checking current fluids",
+        "Double the rate if K+ is critically low"
+      ],
+      "correct_index": 0,
+      "rationale": "IV potassium is never given IV push — it causes cardiac arrest. Concentration, dilution, and infusion rate must match policy (typically ≤10 mEq/hr peripheral, higher central with monitoring). Always verify against current fluids and renal status.",
+      "category": "Safety & Infection Control",
+      "ncj_step": "Take Action",
+      "difficulty": "hard",
+      "source_module": "dosage",
+      "clinical_judgment_focus": "High-alert medication safety — KCl errors are lethal."
+    },
+    {
+      "id": "nclex-peds-02",
+      "question": "A 2-year-old is admitted with suspected ingestion. Which assessment finding is most urgent?",
+      "options": [
+        "Tearful when parent leaves the room",
+        "Drooling and inability to swallow with stridor",
+        "Weight at 50th percentile",
+        "Last immunizations at 18 months"
+      ],
+      "correct_index": 1,
+      "rationale": "Drooling, inability to swallow, and stridor suggest airway edema or obstruction from caustic or foreign body ingestion — immediate airway assessment and escalation. Separation anxiety is expected; growth and immunization history are not emergent.",
+      "category": "Pediatric Nursing",
+      "ncj_step": "Prioritize Hypotheses",
+      "difficulty": "hard",
+      "source_module": "pediatrics",
+      "clinical_judgment_focus": "Pediatric airway compromise is always first priority."
+    },
+    {
+      "id": "nclex-mh-02",
+      "question": "A client states, 'I have a plan to overdose tonight with my pills at home.' What is the nurse's priority response?",
+      "options": [
+        "Stay with client, remove means, initiate suicide precautions per protocol, notify provider",
+        "Schedule follow-up outpatient appointment next week",
+        "Ask client to sign a no-harm contract and document",
+        "Encourage client to think about family impact"
+      ],
+      "correct_index": 0,
+      "rationale": "Active suicidal ideation with plan, means, and timeline is a psychiatric emergency. Constant observation, environmental safety (remove pills/sharps), provider notification, and possible inpatient care take priority. No-harm contracts are not substitutes for safety precautions.",
+      "category": "Psychosocial Integrity",
+      "ncj_step": "Take Action",
+      "difficulty": "hard",
+      "source_module": "mental_health",
+      "clinical_judgment_focus": "Suicide risk with plan and means requires immediate safety intervention."
+    }
+  ],
+  "total_questions": 90
+}

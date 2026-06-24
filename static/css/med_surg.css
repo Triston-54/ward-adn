@@ -1,0 +1,200 @@
+/* Medical-Surgical Nursing module — sky blue accent */
+
+.ms-module-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.ms-stats-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1rem;
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(51, 65, 85, 0.6);
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.ms-callout {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    background: rgba(56, 189, 248, 0.06);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-left: 3px solid #38bdf8;
+    border-radius: 0.625rem;
+    margin-bottom: 1.25rem;
+}
+
+.ms-callout-icon {
+    font-size: 1.25rem;
+    color: #38bdf8;
+    flex-shrink: 0;
+    font-weight: 700;
+}
+
+.ms-panel { animation: msFadeIn 0.2s ease; }
+@keyframes msFadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+.ms-select {
+    background: #0f172a;
+    border: 1px solid #334155;
+    color: #e2e8f0;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+}
+
+.ms-system-card {
+    background: rgba(30, 41, 59, 0.6);
+    border: 1px solid rgba(51, 65, 85, 0.5);
+    border-left: 3px solid #38bdf8;
+    border-radius: 0.625rem;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+}
+
+.ms-system-card summary {
+    padding: 0.875rem 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: #f1f5f9;
+    list-style: none;
+}
+
+.ms-system-card summary::-webkit-details-marker { display: none; }
+
+.ms-system-body {
+    padding: 0 1rem 1rem;
+    border-top: 1px solid rgba(51, 65, 85, 0.4);
+}
+
+.ms-section-label {
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #38bdf8;
+    font-weight: 600;
+    margin-top: 0.75rem;
+    margin-bottom: 0.375rem;
+}
+
+.ms-list { list-style: disc; padding-left: 1.25rem; }
+.ms-list li { font-size: 0.8125rem; color: #cbd5e1; margin-bottom: 0.25rem; }
+
+.ms-procedure-card {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(51, 65, 85, 0.5);
+    border-radius: 0.625rem;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.ms-procedure-phase {
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 0.25rem;
+}
+
+.ms-concept-card {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(51, 65, 85, 0.5);
+    border-radius: 0.625rem;
+    margin-bottom: 0.5rem;
+}
+
+.ms-concept-card summary {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    color: #e2e8f0;
+}
+
+.ms-priority-card {
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(51, 65, 85, 0.6);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+}
+
+.ms-priority-option {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid #334155;
+    border-radius: 0.5rem;
+    color: #e2e8f0;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+}
+
+.ms-priority-option:hover { border-color: #38bdf8; background: rgba(56, 189, 248, 0.05); }
+.ms-priority-option.correct { border-color: #34d399; background: rgba(52, 211, 153, 0.1); }
+.ms-priority-option.incorrect { border-color: #f87171; background: rgba(248, 113, 113, 0.1); }
+
+.ms-flashcard-stage { perspective: 1000px; }
+.ms-flashcard-inner {
+    min-height: 200px;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9));
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 0.75rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.ms-flashcard-front { font-size: 1rem; font-weight: 500; color: #f1f5f9; }
+.ms-flashcard-back { font-size: 0.9375rem; color: #cbd5e1; }
+.ms-fc-category {
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    color: #38bdf8;
+    padding: 0.125rem 0.5rem;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 9999px;
+}
+
+.ms-practice-q { margin-bottom: 1rem; }
+.ms-practice-option {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.625rem 0.875rem;
+    margin-bottom: 0.375rem;
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid #334155;
+    border-radius: 0.5rem;
+    color: #e2e8f0;
+    font-size: 0.8125rem;
+    cursor: pointer;
+}
+
+.ms-practice-option:hover { border-color: #475569; }
+.ms-practice-option.selected { border-color: #38bdf8; }
+.ms-practice-option.correct { border-color: #34d399; }
+.ms-practice-option.incorrect { border-color: #f87171; }
+
+.ms-rationale {
+    margin-top: 1rem;
+    padding: 0.875rem;
+    background: rgba(56, 189, 248, 0.06);
+    border-left: 3px solid #38bdf8;
+    border-radius: 0.375rem;
+    font-size: 0.8125rem;
+    color: #cbd5e1;
+}

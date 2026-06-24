@@ -1,0 +1,10 @@
+{
+  "med_surg": {"title": "Open RN — Nursing Pharmacology & Med-Surg", "citation": "Open RN OER; NCSBN Physiological Integrity", "verified_date": "2026-06"},
+  "maternal_child": {"title": "Open RN — Maternal-Newborn Nursing", "citation": "Open RN OER — Maternal-Newborn; NCSBN Health Promotion", "verified_date": "2026-06"},
+  "pathophysiology": {"title": "Open RN — Pathophysiology", "citation": "Open RN OER Ch. 2–10", "verified_date": "2026-06"},
+  "mental_health": {"title": "Open RN — Mental Health", "citation": "Open RN OER Psychosocial Integrity", "verified_date": "2026-06"},
+  "terminology": {"title": "Medical Terminology for Health Professions", "citation": "Ehrlich & Schroeder, 8th Ed.", "verified_date": "2026-06"},
+  "microbiology": {"title": "Open RN — Microbiology", "citation": "Open RN OER Infection Control", "verified_date": "2026-06"},
+  "dosage": {"title": "Open RN — Nursing Pharmacology", "citation": "Open RN OER Dosage Calculations", "verified_date": "2026-06"},
+  "assessment": {"title": "Open RN — Health Assessment", "citation": "Open RN OER Assessment Techniques", "verified_date": "2026-06"}
+}

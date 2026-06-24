@@ -1,0 +1,70 @@
+{
+  "agent": "Sub-Agent 3 — Assessment Final Cleanup — 2026-06-24",
+  "generated_at": "2026-06-24T16:02:34.652645+00:00",
+  "summary": "Resolved remaining assessment audit flags: differentiated scenario an-09 from an-07 and removed soap-02 Plan duplication. Audit catalog updated to verified.",
+  "changes": [
+    {
+      "item_key": "scenario:an-09",
+      "module": "assessment",
+      "issue": "Pedagogically redundant with scenario:an-07 (both early tracheostomy airway management)",
+      "resolution": "differentiated",
+      "files_modified": [
+        "data/content/assessment.json",
+        "data/content/assessment_phase2_interactive.json"
+      ],
+      "before": {
+        "title": "New Tracheostomy — Priority Assessment",
+        "setup": "58-year-old male is 2 hours post percutaneous tracheostomy placement. He is restless, pulling at linens, and SpO₂ has drifted from 96% to 91% on trach collar at 40% FiO₂.",
+        "correct_action": "Trach patency, secretions, cuff pressure, and inner cannula — suction if indicated and increase O₂ per protocol"
+      },
+      "after": {
+        "title": "Tracheostomy — Suspected Mucus Plug",
+        "setup": "58-year-old male is 3 days post percutaneous tracheostomy. During routine suctioning, the catheter meets resistance at 10 cm and cannot advance. SpO₂ has dropped from 94% to 86% on trach collar. Patient appears panicked with accessory muscle use; breath sounds are markedly diminished bilaterally.",
+        "correct_action": "Assess inner cannula for obstruction, instill sterile saline per protocol if ordered, have replacement trach and ambu bag at bedside, and notify RT/provider immediately"
+      },
+      "pedagogical_distinction": "an-07 teaches routine secretion clearance (gurgling, accessory muscles, SpO₂ 89%); an-09 teaches acute mucus plug/obstructed inner cannula recognition (catheter resistance, sudden desaturation, diminished breath sounds)."
+    },
+    {
+      "item_key": "soap:soap-02",
+      "module": "assessment",
+      "issue": "Plan section listed incentive spirometry twice",
+      "resolution": "editorial_dedup",
+      "files_modified": [
+        "data/content/assessment.json"
+      ],
+      "before": {
+        "plan": "Administer PRN analgesic per order; reassess pain in 30 min. Encourage IS q1h while awake. Advance diet as tolerated per surgeon order. Monitor temp q4h. Incentive spirometry, early ambulation. Notify provider if temp >101.5°F or pain unrelieved."
+      },
+      "after": {
+        "plan": "Administer PRN analgesic per order; reassess pain in 30 min. Encourage IS q1h while awake. Advance diet as tolerated per surgeon order. Monitor temp q4h. Early ambulation. Notify provider if temp >101.5°F or pain unrelieved."
+      }
+    }
+  ],
+  "audit_updates": {
+    "script": "scripts/verify_audit_fixes.py",
+    "items_moved_to_verified": [
+      {"module_id": "assessment", "item_key": "scenario:an-09"},
+      {"module_id": "assessment", "item_key": "soap:soap-02"}
+    ],
+    "needs_review_remaining": 0,
+    "verify_notes": {
+      "scenario:an-09": "Fixed 2026-06: Differentiated from an-07 — mucus plug/obstructed inner cannula with catheter resistance and acute desaturation vs routine secretion clearance.",
+      "soap:soap-02": "Fixed 2026-06: Removed duplicate incentive spirometry entry from Plan section."
+    }
+  },
+  "ancillary_script_updates": [
+    "scripts/audit_assessment_interactive.py — ANCILLARY_NOTES updated to reflect verified fixes"
+  ],
+  "tests": {
+    "test_startup.py": "passed",
+    "message": "All startup checks passed — DB, routers, assessment exports (10 steps, 20 flags), all modules OK"
+  },
+  "editorial_scan": {
+    "scope": "assessment module final pass",
+    "additional_issues_found": 0,
+    "notes": [
+      "No other duplicate Plan entries or redundant trach scenarios found in assessment.json.",
+      "assessment_phase2_interactive.json an-09 synced with main content file."
+    ]
+  }
+}

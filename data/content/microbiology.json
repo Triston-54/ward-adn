@@ -1,0 +1,1111 @@
+{
+  "module_id": "microbiology",
+  "title": "Microbiology & Infection Control",
+  "infection_chain": [
+    {
+      "id": "agent",
+      "name": "Infectious Agent",
+      "description": "Pathogen capable of causing disease — bacteria, virus, fungus, parasite, prion.",
+      "intervention": "Antimicrobial therapy when indicated; sterilization/disinfection; proper specimen handling",
+      "nursing_priority": "Identify organism and susceptibility; apply standard precautions for all patients.",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "reservoir",
+      "name": "Reservoir",
+      "description": "Environment where pathogen lives and multiplies — humans, animals, soil, water, fomites.",
+      "intervention": "Environmental cleaning; food/water safety; source control of colonized patients",
+      "nursing_priority": "Terminal cleaning of rooms; dedicated equipment for MDRO when policy requires.",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "portal_exit",
+      "name": "Portal of Exit",
+      "description": "Route pathogen leaves reservoir — respiratory secretions, blood, GI tract, skin lesions.",
+      "intervention": "Respiratory hygiene; contained wound care; safe handling of body fluids",
+      "nursing_priority": "Gloves/gown when contact with fluids expected; leak-proof waste disposal.",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "transmission",
+      "name": "Mode of Transmission",
+      "description": "Contact, droplet, airborne, vector, or vehicle spread from source to host.",
+      "intervention": "Hand hygiene; transmission-based precautions; safe injection practices",
+      "nursing_priority": "Match precautions to pathogen — contact for C. diff; airborne for TB.",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "portal_entry",
+      "name": "Portal of Entry",
+      "description": "Mucous membranes, respiratory tract, GI tract, broken skin, genitourinary tract.",
+      "intervention": "Skin antisepsis; sterile technique; device bundles (CLABSI, CAUTI prevention)",
+      "nursing_priority": "Minimize invasive devices; maintain closed drainage systems.",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "host",
+      "name": "Susceptible Host",
+      "description": "Person lacking immunity or with compromised defenses — age, illness, immunosuppression.",
+      "intervention": "Vaccination; nutrition/rest; protective and neutropenic precautions when indicated",
+      "nursing_priority": "Assess immune status; reverse isolation for neutropenia per protocol.",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    }
+  ],
+  "chain_interventions": {
+    "agent": [
+      {
+        "id": "sterilize",
+        "label": "Sterilization/disinfection of equipment",
+        "correct": true,
+        "explanation": "Reduces viable pathogens on fomites and instruments.",
+        "clinical_why": "Targets the infectious agent directly on surfaces and devices."
+      },
+      {
+        "id": "antimicrobial",
+        "label": "Appropriate antimicrobial therapy per culture",
+        "correct": true,
+        "explanation": "Treats active infection caused by the pathogen.",
+        "clinical_why": "Stewardship: culture first when possible, shortest effective course."
+      },
+      {
+        "id": "vaccine_host",
+        "label": "Vaccination of exposed staff",
+        "correct": false,
+        "explanation": "Vaccination builds host immunity — it does not eliminate the agent link.",
+        "clinical_why": "Host susceptibility intervention, not agent destruction."
+      }
+    ],
+    "reservoir": [
+      {
+        "id": "clean_env",
+        "label": "Environmental cleaning (EPA-registered disinfectant)",
+        "correct": true,
+        "explanation": "Removes pathogens from surfaces where they survive.",
+        "clinical_why": "C. diff requires bleach; C. auris needs EPA claim against organism."
+      },
+      {
+        "id": "food_safety",
+        "label": "Food safety and water treatment",
+        "correct": true,
+        "explanation": "Prevents reservoir in food/water sources.",
+        "clinical_why": "Norovirus and Salmonella often foodborne."
+      },
+      {
+        "id": "isolation_only",
+        "label": "Patient isolation alone",
+        "correct": false,
+        "explanation": "Isolation primarily breaks transmission, not the reservoir itself.",
+        "clinical_why": "Pair isolation with cleaning and source control."
+      }
+    ],
+    "portal_exit": [
+      {
+        "id": "respiratory_hygiene",
+        "label": "Respiratory hygiene/cough etiquette",
+        "correct": true,
+        "explanation": "Contains pathogens leaving via respiratory tract.",
+        "clinical_why": "Cover coughs; mask patient with respiratory infection."
+      },
+      {
+        "id": "wound_dressing",
+        "label": "Contained wound drainage and dressing changes",
+        "correct": true,
+        "explanation": "Prevents spread from portal of exit.",
+        "clinical_why": "Standard precautions for all body fluids."
+      },
+      {
+        "id": "no_hand_hygiene",
+        "label": "Skip hand hygiene after patient contact",
+        "correct": false,
+        "explanation": "Hand hygiene is essential after touching portals of exit.",
+        "clinical_why": "WHO 5 Moments framework."
+      }
+    ],
+    "transmission": [
+      {
+        "id": "hand_hygiene_tx",
+        "label": "Hand hygiene before/after patient contact",
+        "correct": true,
+        "explanation": "Primary break for contact transmission.",
+        "clinical_why": "Soap-and-water for C. diff spores."
+      },
+      {
+        "id": "ppe",
+        "label": "Appropriate PPE per transmission-based precautions",
+        "correct": true,
+        "explanation": "Blocks droplet, contact, airborne spread.",
+        "clinical_why": "N95 + contact for varicella until lesions crusted."
+      },
+      {
+        "id": "shared_equipment",
+        "label": "Reuse non-cleaned equipment room-to-room",
+        "correct": false,
+        "explanation": "Fomites carry pathogens between patients.",
+        "clinical_why": "Dedicated equipment or disinfection between uses."
+      }
+    ],
+    "portal_entry": [
+      {
+        "id": "skin_prep",
+        "label": "Skin antisepsis before invasive procedures",
+        "correct": true,
+        "explanation": "Reduces portal-of-entry contamination.",
+        "clinical_why": "Chlorhexidine prep reduces CLABSI/SSI."
+      },
+      {
+        "id": "sterile_technique",
+        "label": "Sterile technique for invasive devices",
+        "correct": true,
+        "explanation": "Protects mucous membranes and sterile sites.",
+        "clinical_why": "Central line bundles prevent bloodstream infection."
+      },
+      {
+        "id": "reuse_needles",
+        "label": "Reuse needles between patients",
+        "correct": false,
+        "explanation": "Never reuse sharps — bloodborne pathogen risk.",
+        "clinical_why": "Single-use sharps disposal in puncture-resistant container."
+      }
+    ],
+    "host": [
+      {
+        "id": "vaccination",
+        "label": "Vaccination per schedule",
+        "correct": true,
+        "explanation": "Builds adaptive immunity in susceptible host.",
+        "clinical_why": "Healthcare worker immunizations protect workforce."
+      },
+      {
+        "id": "nutrition_rest",
+        "label": "Nutrition, rest, and chronic disease management",
+        "correct": true,
+        "explanation": "Supports immune competence.",
+        "clinical_why": "Malnutrition and stress increase infection risk."
+      },
+      {
+        "id": "prophylactic_abx_all",
+        "label": "Routine prophylactic antibiotics for all patients",
+        "correct": false,
+        "explanation": "Contributes to resistance and CDI — only specific indications.",
+        "clinical_why": "Surgical prophylaxis is time-limited per protocol."
+      }
+    ]
+  },
+  "microbe_classification": [
+    {
+      "type": "Bacteria",
+      "cell_type": "Prokaryote",
+      "notes": "Most treatable with antibiotics; Gram stain guides empiric therapy.",
+      "examples": [
+        "S. aureus",
+        "E. coli",
+        "M. tuberculosis"
+      ]
+    },
+    {
+      "type": "Viruses",
+      "cell_type": "Acellular",
+      "notes": "Require host cell; antivirals limited; vaccines prevent many.",
+      "examples": [
+        "Influenza",
+        "HIV",
+        "Norovirus"
+      ]
+    },
+    {
+      "type": "Fungi",
+      "cell_type": "Eukaryote",
+      "notes": "Antifungals needed; opportunistic in immunocompromised.",
+      "examples": [
+        "Candida",
+        "Aspergillus",
+        "C. auris"
+      ]
+    },
+    {
+      "type": "Parasites",
+      "cell_type": "Eukaryote",
+      "notes": "Protozoa and helminths; travel and sanitation relevant.",
+      "examples": [
+        "Giardia",
+        "Plasmodium"
+      ]
+    },
+    {
+      "type": "Prions",
+      "cell_type": "Proteinaceous infectious particle",
+      "notes": "No routine sterilization in community settings; CJD precautions for neuro tissue.",
+      "examples": [
+        "CJD"
+      ]
+    }
+  ],
+  "healthcare_pathogens": [
+    {
+      "name": "MRSA",
+      "full_name": "Methicillin-resistant Staphylococcus aureus",
+      "type": "Gram-positive bacteria (MDRO)",
+      "precautions": "Contact precautions; gown and gloves",
+      "nursing_action": "Dedicated equipment; nasal decolonization per protocol; wound care with contact precautions",
+      "clinical_why": "Colonization vs infection — contact precautions prevent spread in facilities.",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "name": "C. diff",
+      "full_name": "Clostridioides difficile",
+      "type": "Gram-positive spore-forming anaerobe",
+      "precautions": "Contact precautions; soap-and-water hand hygiene (alcohol gel ineffective on spores)",
+      "nursing_action": "Bleach environmental cleaning; discontinue inciting antibiotics per order; contact precautions",
+      "clinical_why": "Antibiotic-associated diarrhea — toxin causes pseudomembranous colitis.",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "name": "Influenza",
+      "full_name": "Influenza virus",
+      "type": "RNA virus",
+      "precautions": "Droplet precautions; mask within 3–6 ft",
+      "nursing_action": "Antivirals per order within 48 hr when indicated; droplet PPE; encourage vaccination",
+      "clinical_why": "High mortality in elderly and immunocompromised.",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "name": "TB",
+      "full_name": "Mycobacterium tuberculosis",
+      "type": "Acid-fast bacillus",
+      "precautions": "Airborne precautions; N95 respirator; negative-pressure AIIR",
+      "nursing_action": "Place in AIIR; wear fit-tested N95; initiate airborne precautions until ruled out or noninfectious",
+      "clinical_why": "Airborne spread via droplet nuclei — occupational health priority.",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "name": "Norovirus",
+      "full_name": "Norovirus",
+      "type": "RNA virus",
+      "precautions": "Contact precautions; soap-and-water hand hygiene",
+      "nursing_action": "Contact precautions; environmental cleaning; restrict ill staff from work",
+      "clinical_why": "Highly contagious gastroenteritis — outbreaks in facilities.",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "name": "Pseudomonas",
+      "full_name": "Pseudomonas aeruginosa",
+      "type": "Gram-negative bacillus",
+      "precautions": "Standard precautions; contact if MDR/colonization per policy",
+      "nursing_action": "VAP bundle: HOB 30–45°, oral care, closed suction; avoid moist reservoirs",
+      "clinical_why": "Opportunist in moist environments and ventilated patients.",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "name": "Candida auris",
+      "full_name": "Candida auris",
+      "type": "Fungus (MDRO)",
+      "precautions": "Contact precautions; notify infection control immediately",
+      "nursing_action": "EPA-registered disinfectant with C. auris claim; cohorting/screening per protocol",
+      "clinical_why": "Environmental persistence — many routine disinfectants ineffective.",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "name": "Hepatitis B",
+      "full_name": "Hepatitis B virus",
+      "type": "DNA virus (bloodborne)",
+      "precautions": "Standard precautions; sharps safety",
+      "nursing_action": "Never recap needles; hepatitis B vaccination for healthcare workers",
+      "clinical_why": "Percutaneous exposure risk with sharps injuries.",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    }
+  ],
+  "concepts": [
+    {
+      "id": "standard-precautions",
+      "title": "Standard Precautions",
+      "summary": "Treat all blood/body fluids as potentially infectious",
+      "content": "Hand hygiene, PPE when exposure anticipated, safe sharps handling, respiratory hygiene. Foundation for all patient care regardless of diagnosis.",
+      "clinical_relevance": "Applied to every patient encounter — NCLEX infection control baseline.",
+      "nursing_implications": [
+        "Perform hand hygiene before and after patient contact",
+        "Use gloves for potential fluid contact",
+        "Face protection if splash risk"
+      ],
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "transmission-based-precautions",
+      "title": "Transmission-Based Precautions",
+      "summary": "Contact, droplet, and airborne additions to standard precautions",
+      "content": "Contact: MDRO, C. diff, norovirus. Droplet: influenza, pertussis (~3–6 ft). Airborne: TB, measles, varicella (requires airborne + contact until crusted).",
+      "clinical_relevance": "Varicella needs N95/AIIR AND contact precautions.",
+      "nursing_implications": [
+        "Signage on door",
+        "PPE donning/doffing sequence",
+        "Patient transport minimized"
+      ],
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "antimicrobial-stewardship",
+      "title": "Antimicrobial Stewardship",
+      "summary": "Optimize antibiotic use to reduce resistance and CDI",
+      "content": "Obtain cultures before antibiotics when possible. Use narrowest effective spectrum for shortest effective duration per guideline. Educate patients not to share or save antibiotics.",
+      "clinical_relevance": "Overuse drives C. diff and MDRO emergence.",
+      "nursing_implications": [
+        "Verify indication and duration",
+        "Monitor for CDI with new diarrhea on antibiotics",
+        "Hold and notify if rash/anaphylaxis"
+      ],
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "hai-prevention",
+      "title": "Healthcare-Associated Infections (HAI)",
+      "summary": "CLABSI, CAUTI, VAP, SSI, CDI prevention bundles",
+      "content": "Central line bundle, urinary catheter stewardship, ventilator bundle, surgical antisepsis, and contact precautions for C. diff with soap-and-water hand hygiene.",
+      "clinical_relevance": "Preventable harm — nursing bundles are first-line defense.",
+      "nursing_implications": [
+        "Daily line necessity review",
+        "Remove urinary catheter ASAP",
+        "HOB 30–45° for ventilated patients"
+      ],
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "asepsis-levels",
+      "title": "Medical vs Surgical Asepsis",
+      "summary": "Clean technique vs sterile technique",
+      "content": "Medical asepsis reduces microorganisms (hand hygiene, clean gloves). Surgical asepsis eliminates organisms in sterile field (OR, central line insertion).",
+      "clinical_relevance": "Match technique to procedure invasiveness.",
+      "nursing_implications": [
+        "Never break sterile field 1-inch border",
+        "Clean vs sterile wound care per order"
+      ],
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "immunization-principles",
+      "title": "Immunization Principles",
+      "summary": "Active and passive immunity in infection prevention",
+      "content": "Vaccines stimulate antibody production (active). Immunoglobulins provide temporary passive immunity. Herd immunity protects vulnerable hosts.",
+      "clinical_relevance": "Healthcare workers need hepatitis B, influenza, MMR, varicella per facility policy.",
+      "nursing_implications": [
+        "Document lot number and site",
+        "Observe for 15 min post-vaccine if policy requires",
+        "Screen contraindications"
+      ],
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "mdro-awareness",
+      "title": "Multidrug-Resistant Organisms (MDRO)",
+      "summary": "MRSA, VRE, ESBL, CRE, C. diff, C. auris",
+      "content": "Contact precautions, dedicated equipment, hand hygiene, and environmental cleaning. Antibiotic stewardship limits emergence.",
+      "clinical_relevance": "MDRO spread is preventable with contact precautions and cleaning.",
+      "nursing_implications": [
+        "Gown/gloves on room entry",
+        "Notify infection prevention",
+        "Cohort when necessary"
+      ],
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "specimen-collection",
+      "title": "Specimen Collection & Chain of Custody",
+      "summary": "Accurate culture before antibiotics",
+      "content": "Collect specimens aseptically before starting empiric antibiotics when delay is safe. Label at bedside, transport per policy.",
+      "clinical_relevance": "Contaminated specimens lead to inappropriate therapy.",
+      "nursing_implications": [
+        "Verify order and site",
+        "Use sterile technique for sterile sites",
+        "Document collection time"
+      ],
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    }
+  ],
+  "gram_stain_procedure": [
+    "Fix smear with heat or methanol",
+    "Crystal violet (primary stain) — all cells purple",
+    "Iodine mordant — forms crystal violet-iodine complex",
+    "Alcohol decolorization — Gram- lose purple; Gram+ retain",
+    "Safranin counterstain — Gram- appear pink/red",
+    "Microscopic examination and report"
+  ],
+  "gram_stain_interpretation": {
+    "gram_positive": {
+      "appearance": "Purple/blue cocci or rods",
+      "cell_wall": "Thick peptidoglycan retains crystal violet",
+      "examples": [
+        "Staphylococcus",
+        "Streptococcus",
+        "Clostridioides difficile"
+      ]
+    },
+    "gram_negative": {
+      "appearance": "Pink/red rods or cocci",
+      "cell_wall": "Thin peptidoglycan + outer membrane with LPS",
+      "examples": [
+        "E. coli",
+        "Pseudomonas",
+        "Klebsiella"
+      ]
+    },
+    "clinical_note": "Gram stain guides empiric antibiotics before culture sensitivities return."
+  },
+  "hand_hygiene": {
+    "who_five_moments": [
+      "Before touching a patient",
+      "Before clean/aseptic procedure",
+      "After body fluid exposure risk",
+      "After touching a patient",
+      "After touching patient surroundings"
+    ],
+    "soap_and_water_required": [
+      "C. difficile",
+      "Norovirus",
+      "Visible soil on hands",
+      "After caring for patients with infectious spores"
+    ],
+    "alcohol_rub": "Effective for most routine care when hands not visibly soiled — rub until dry.",
+    "nursing_priority": "Single most effective action to prevent HAI."
+  },
+  "ppe_guide": {
+    "gloves": "When contact with blood/body fluids, mucous membranes, non-intact skin anticipated",
+    "gown": "Contact precautions; substantial splash risk",
+    "mask": "Droplet precautions; surgical mask within 3–6 ft",
+    "eye_protection": "Splash/spray risk to mucous membranes",
+    "n95": "Airborne precautions — fit-tested respirator",
+    "sequence": "Don: gown → mask/respirator → goggles → gloves. Doff inside room avoiding contamination."
+  },
+  "hai_types": [
+    {
+      "id": "clabsi",
+      "name": "CLABSI",
+      "definition": "Central line-associated bloodstream infection",
+      "bundle": [
+        "Hand hygiene",
+        "Maximal barrier on insertion",
+        "Chlorhexidine skin prep",
+        "Daily line necessity review"
+      ]
+    },
+    {
+      "id": "cauti",
+      "name": "CAUTI",
+      "definition": "Catheter-associated UTI",
+      "bundle": [
+        "Insert only when indicated",
+        "Maintain closed drainage",
+        "Remove ASAP",
+        "Perineal care"
+      ]
+    },
+    {
+      "id": "vap",
+      "name": "VAP",
+      "definition": "Ventilator-associated pneumonia",
+      "bundle": [
+        "HOB 30–45°",
+        "Oral care",
+        "Sedation vacation per protocol",
+        "DVT prophylaxis"
+      ]
+    },
+    {
+      "id": "ssi",
+      "name": "SSI",
+      "definition": "Surgical site infection",
+      "bundle": [
+        "Antibiotic prophylaxis per protocol",
+        "Glucose control",
+        "Hair removal with clippers",
+        "Normothermia"
+      ]
+    },
+    {
+      "id": "cdi",
+      "name": "CDI",
+      "definition": "Clostridioides difficile infection",
+      "bundle": [
+        "Antibiotic stewardship",
+        "Contact precautions",
+        "Soap-and-water HH",
+        "Bleach cleaning"
+      ]
+    }
+  ],
+  "break_chain_scenarios": [
+    {
+      "id": "bcs-01",
+      "title": "MRSA Contact Precautions",
+      "scenario": "New admission with MRSA in wound culture.",
+      "target_link": "transmission",
+      "question": "Which intervention best breaks transmission?",
+      "options": [
+        "Gown and gloves on room entry",
+        "Routine prophylactic vancomycin for roommate",
+        "Alcohol gel only after room exit",
+        "No PPE if hands look clean"
+      ],
+      "correct_index": 0,
+      "explanation": "Contact precautions with gown/gloves block contact transmission.",
+      "clinical_why": "Dedicated equipment and hand hygiene complete the bundle.",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "bcs-02",
+      "title": "C. diff Outbreak",
+      "scenario": "Three patients on unit develop watery diarrhea on antibiotics.",
+      "target_link": "transmission",
+      "question": "Priority environmental intervention?",
+      "options": [
+        "Alcohol dispensers at every door",
+        "Bleach-based cleaning of high-touch surfaces",
+        "UV lights only",
+        "Open windows"
+      ],
+      "correct_index": 1,
+      "explanation": "C. diff spores require sporicidal cleaning.",
+      "clinical_why": "Pair with soap-and-water hand hygiene and contact precautions.",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "bcs-03",
+      "title": "Needlestick Injury",
+      "scenario": "Nurse sustains percutaneous injury from used needle.",
+      "target_link": "portal_entry",
+      "question": "Immediate priority?",
+      "options": [
+        "Finish medication administration first",
+        "Wash area, report exposure, initiate PEP per protocol",
+        "Ignore if patient is low-risk",
+        "Apply alcohol only"
+      ],
+      "correct_index": 1,
+      "explanation": "Bloodborne pathogen exposure protocol starts immediately.",
+      "clinical_why": "HBV/HCV/HIV PEP windows are time-sensitive.",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "bcs-04",
+      "title": "Neutropenic Patient",
+      "scenario": "Chemotherapy patient ANC 400/mm³.",
+      "target_link": "host",
+      "question": "Which nursing measure protects susceptible host?",
+      "options": [
+        "Fresh flowers in room",
+        "Protective precautions: cooked food, avoid ill visitors",
+        "Shared nebulizer without cleaning",
+        "Raw vegetable salad from cafeteria"
+      ],
+      "correct_index": 1,
+      "explanation": "Reverse/protective precautions reduce exposure to pathogens.",
+      "clinical_why": "Low ANC — fever is emergency; no live plants.",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "bcs-05",
+      "title": "TB Rule-Out",
+      "scenario": "Patient with chronic cough, night sweats, positive quantiferon.",
+      "target_link": "transmission",
+      "question": "First placement action?",
+      "options": [
+        "Private room with door closed; airborne precautions until ruled out",
+        "Droplet mask only at bedside",
+        "No precautions until sputum returns",
+        "Contact precautions only"
+      ],
+      "correct_index": 0,
+      "explanation": "Suspected TB requires airborne isolation immediately.",
+      "clinical_why": "N95 fit-tested respirator; AIIR when available.",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    }
+  ],
+  "what_if_scenarios": [
+    {
+      "id": "wif-01",
+      "title": "What if alcohol gel is used after C. diff care?",
+      "scenario": "Nurse uses alcohol hand rub leaving C. diff room.",
+      "question": "Expected outcome?",
+      "options": [
+        "Spores eliminated",
+        "Spores remain viable on hands — transmission risk continues",
+        "Contact precautions no longer needed",
+        "Patient develops immunity"
+      ],
+      "correct_index": 1,
+      "explanation": "Alcohol does not kill C. diff spores.",
+      "clinical_why": "Soap-and-water with friction is required.",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "wif-02",
+      "title": "What if urinary catheter stays 10 days without indication?",
+      "scenario": "Indwelling catheter without daily necessity review.",
+      "question": "Primary HAI risk?",
+      "options": [
+        "VAP",
+        "CAUTI",
+        "SSI",
+        "CDI"
+      ],
+      "correct_index": 1,
+      "explanation": "Prolonged catheterization is leading CAUTI risk.",
+      "clinical_why": "Remove as soon as clinically appropriate.",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "wif-03",
+      "title": "What if broad-spectrum antibiotics continue 14 days without indication?",
+      "scenario": "Patient improves but antibiotics not discontinued.",
+      "question": "Most likely complication?",
+      "options": [
+        "C. difficile infection",
+        "Improved resistance only in patient",
+        "No effect",
+        "Immediate cure"
+      ],
+      "correct_index": 0,
+      "explanation": "Disrupted microbiome allows C. diff overgrowth.",
+      "clinical_why": "Stewardship — shortest effective course.",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "wif-04",
+      "title": "What if ventilated patient supine 24 hours?",
+      "scenario": "HOB kept flat for comfort.",
+      "question": "Aspiration/VAP risk?",
+      "options": [
+        "Decreases",
+        "Increases — aspiration and VAP risk rise",
+        "Unchanged",
+        "Eliminated with sedation"
+      ],
+      "correct_index": 1,
+      "explanation": "Supine position promotes aspiration.",
+      "clinical_why": "HOB 30–45° unless contraindicated.",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    }
+  ],
+  "break_points": [
+    "Hand hygiene before and after every patient contact",
+    "Transmission-based precautions matched to pathogen",
+    "Remove invasive devices as soon as clinically safe",
+    "Antimicrobial stewardship — culture before antibiotics when possible",
+    "Environmental cleaning with organism-appropriate disinfectant"
+  ],
+  "practice_questions": [
+    {
+      "id": "micro-q01",
+      "question": "A patient with C. difficile diarrhea requires which hand hygiene method?",
+      "options": [
+        "Alcohol-based hand rub only",
+        "Soap and water",
+        "No hand hygiene if gloves worn",
+        "Bleach on hands directly"
+      ],
+      "correct_index": 1,
+      "explanation": "Spores are not killed by alcohol gel — soap and water with friction removes spores.",
+      "clinical_why": "Contact precautions plus soap-and-water is mandatory for C. diff.",
+      "nclex_category": "Safety and Infection Control",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "micro-q02",
+      "question": "Which precaution type is required for pulmonary tuberculosis?",
+      "options": [
+        "Contact",
+        "Droplet",
+        "Airborne",
+        "Protective environment"
+      ],
+      "correct_index": 2,
+      "explanation": "TB spreads via droplet nuclei — N95 and AIIR required.",
+      "clinical_why": "TB spreads via droplet nuclei — N95 and AIIR required.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "micro-q03",
+      "question": "The nurse breaks which chain link by performing hand hygiene before patient care?",
+      "options": [
+        "Infectious agent",
+        "Mode of transmission",
+        "Portal of entry",
+        "Reservoir"
+      ],
+      "correct_index": 1,
+      "explanation": "Hand hygiene interrupts contact transmission of pathogens.",
+      "clinical_why": "Hand hygiene interrupts contact transmission of pathogens.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "micro-q04",
+      "question": "Varicella (chickenpox) requires:",
+      "options": [
+        "Airborne precautions only",
+        "Contact precautions only",
+        "Both airborne and contact precautions until lesions crusted",
+        "Droplet precautions only"
+      ],
+      "correct_index": 2,
+      "explanation": "CDC: airborne isolation plus contact until all lesions crusted.",
+      "clinical_why": "CDC: airborne isolation plus contact until all lesions crusted.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "micro-q05",
+      "question": "Vaccination primarily targets which chain link?",
+      "options": [
+        "Agent",
+        "Reservoir",
+        "Transmission",
+        "Susceptible host"
+      ],
+      "correct_index": 3,
+      "explanation": "Vaccines reduce host susceptibility by building immunity.",
+      "clinical_why": "Vaccines reduce host susceptibility by building immunity.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "micro-q06",
+      "question": "First action when entering room of patient on contact precautions?",
+      "options": [
+        "Don mask",
+        "Perform hand hygiene and don gown/gloves",
+        "Don N95",
+        "Remove all equipment from room"
+      ],
+      "correct_index": 1,
+      "explanation": "Don PPE on entry; doff inside room avoiding contamination.",
+      "clinical_why": "Don PPE on entry; doff inside room avoiding contamination.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "micro-q07",
+      "question": "CLABSI prevention includes:",
+      "options": [
+        "Daily chlorhexidine baths only",
+        "Central line bundle: hand hygiene, maximal barrier, chlorhexidine prep, review necessity",
+        "Prophylactic IV antibiotics for all lines",
+        "Changing dressings daily without indication"
+      ],
+      "correct_index": 1,
+      "explanation": "Evidence-based bundle reduces bloodstream infections.",
+      "clinical_why": "Evidence-based bundle reduces bloodstream infections.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "micro-q08",
+      "question": "A nurse with influenza should:",
+      "options": [
+        "Continue working with surgical mask",
+        "Receive prophylactic antibiotics and work",
+        "Stay home until fever-free per policy; antivirals if indicated",
+        "Wear N95 and continue all assignments"
+      ],
+      "correct_index": 2,
+      "explanation": "Work restriction prevents nosocomial spread.",
+      "clinical_why": "Work restriction prevents nosocomial spread.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "micro-q09",
+      "question": "Gram stain of Gram-negative organisms shows:",
+      "options": [
+        "Purple cocci in clusters",
+        "Pink/red rod-shaped bacteria",
+        "Acid-fast bacilli",
+        "No cell wall"
+      ],
+      "correct_index": 1,
+      "explanation": "Gram- bacteria have thin peptidoglycan and lipopolysaccharide outer membrane — stain pink.",
+      "clinical_why": "Gram- bacteria have thin peptidoglycan and lipopolysaccharide outer membrane — stain pink.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "micro-q10",
+      "question": "Antimicrobial stewardship prioritizes:",
+      "options": [
+        "Broadest spectrum for all infections",
+        "Shortest effective course per culture/guideline",
+        "Completing saved antibiotics at home",
+        "Prophylactic antibiotics for all surgical patients indefinitely"
+      ],
+      "correct_index": 1,
+      "explanation": "Stewardship limits resistance and CDI.",
+      "clinical_why": "Stewardship limits resistance and CDI.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    }
+  ],
+  "application_questions": [
+    {
+      "id": "micro-app01",
+      "question": "You enter a room after C. diff care without soap-and-water hand hygiene. What is the risk?",
+      "options": [
+        "No risk if gloves were worn",
+        "Spores may spread to next patient via contact",
+        "Alcohol gel kills spores adequately",
+        "Only airborne spread occurs"
+      ],
+      "correct_index": 1,
+      "explanation": "Gloves do not replace hand hygiene; spores persist on hands.",
+      "clinical_why": "Gloves do not replace hand hygiene; spores persist on hands.",
+      "nclex_category": "Management of Care",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "micro-app02",
+      "question": "Post-op patient develops fever and erythema at IV site with purulent drainage. Priority nursing action?",
+      "options": [
+        "Apply warm compress and continue infusion",
+        "Stop infusion, notify provider, culture site per order",
+        "Start prophylactic vancomycin independently",
+        "Document and reassess next shift"
+      ],
+      "correct_index": 1,
+      "explanation": "Suspected line infection — stop infusion, notify, culture.",
+      "clinical_why": "Suspected line infection — stop infusion, notify, culture.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "micro-app03",
+      "question": "Roommate of patient with new MRSA wound infection should:",
+      "options": [
+        "Share bathroom without precautions",
+        "Be screened/cohorted per policy; contact precautions for index patient",
+        "Receive prophylactic oral antibiotics",
+        "Be discharged immediately"
+      ],
+      "correct_index": 1,
+      "explanation": "Contact precautions for MRSA; screen contacts per facility policy.",
+      "clinical_why": "Contact precautions for MRSA; screen contacts per facility policy.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "micro-app04",
+      "question": "During influenza season, unvaccinated nurse develops fever and myalgia. Best action?",
+      "options": [
+        "Wear droplet PPE and continue assignments",
+        "Self-isolate and notify occupational health per policy",
+        "Take leftover patient antibiotics",
+        "Administer influenza vaccine therapeutically only"
+      ],
+      "correct_index": 1,
+      "explanation": "Ill HCP should not care for high-risk patients.",
+      "clinical_why": "Ill HCP should not care for high-risk patients.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "micro-app05",
+      "question": "Patient on ventilator — which intervention reduces VAP risk?",
+      "options": [
+        "Supine flat positioning",
+        "HOB 30–45°, oral care, subglottic suction per protocol",
+        "Sedation to avoid coughing",
+        "Change ventilator circuit hourly"
+      ],
+      "correct_index": 1,
+      "explanation": "Ventilator bundle elements reduce aspiration pneumonia.",
+      "clinical_why": "Ventilator bundle elements reduce aspiration pneumonia.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Microbiology",
+        "citation": "Open RN OER Infection Control",
+        "verified_date": "2026-06"
+      }
+    }
+  ],
+  "source": {
+    "title": "Open RN — Microbiology",
+    "citation": "Open RN OER Infection Control",
+    "verified_date": "2026-06"
+  }
+}

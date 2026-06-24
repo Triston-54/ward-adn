@@ -1,0 +1,185 @@
+{
+  "agent": "Full Assessment Content Correctness Audit \u2014 2026-06",
+  "audit_scope": {
+    "tabs": 12,
+    "tab_names": [
+      "head-to-toe",
+      "systems",
+      "checklists",
+      "assess-next",
+      "soap",
+      "special-pop",
+      "red-flags",
+      "red-flag-drill",
+      "practice",
+      "skills",
+      "documentation",
+      "flashcards"
+    ],
+    "live_content_items": 132,
+    "catalog_items_audited": 198,
+    "interview_techniques_ancillary": 6
+  },
+  "content_counts": {
+    "head_to_toe_sequence": 10,
+    "body_systems": 10,
+    "red_flags_master": 20,
+    "skills": 12,
+    "practice_questions": 40,
+    "special_populations": 6,
+    "assessment_checklists": 8,
+    "soap_exercises": 10,
+    "assess_next_scenarios": 16,
+    "sbar_exercises": 6,
+    "flashcards": 60,
+    "interview_techniques": 6
+  },
+  "verified": 185,
+  "flagged": 13,
+  "breakdown_by_tab": {
+    "head-to-toe": {
+      "total": 10,
+      "verified": 9,
+      "flagged": 1
+    },
+    "systems": {
+      "total": 10,
+      "verified": 8,
+      "flagged": 2
+    },
+    "red-flags": {
+      "total": 20,
+      "verified": 17,
+      "flagged": 3
+    },
+    "practice": {
+      "total": 40,
+      "verified": 40,
+      "flagged": 0
+    },
+    "soap": {
+      "total": 10,
+      "verified": 9,
+      "flagged": 1
+    },
+    "documentation": {
+      "total": 6,
+      "verified": 6,
+      "flagged": 0
+    },
+    "assess-next": {
+      "total": 16,
+      "verified": 15,
+      "flagged": 1
+    },
+    "checklists": {
+      "total": 8,
+      "verified": 8,
+      "flagged": 0
+    },
+    "special-pop": {
+      "total": 6,
+      "verified": 4,
+      "flagged": 2
+    },
+    "skills": {
+      "total": 12,
+      "verified": 10,
+      "flagged": 2
+    },
+    "flashcards": {
+      "total": 60,
+      "verified": 59,
+      "flagged": 1
+    }
+  },
+  "flagged_items": [
+    {
+      "item_key": "sequence:9",
+      "tab": "head-to-toe",
+      "review_note": "[Head-to-Toe] Title includes 'Rectal (as indicated)' but description covers only urinary/genital assessment. Mismatch omits when rectal exam is indicated (GI bleeding, prostate symptoms, neuro deficits) and consent/chaperone requirements. Fix: add rectal assessment bullet 'as indicated per scope/consent' or remove 'Rectal' from the step title."
+    },
+    {
+      "item_key": "system:heent",
+      "tab": "systems",
+      "review_note": "[HEENT] Red flag bundles exophthalmos with headache/vision changes as 'thyroid storm/Graves orbitopathy.' Thyroid storm presents primarily with fever, extreme tachycardia, agitation, and GI symptoms\u2014not exophthalmos. Exophthalmos with acute vision changes suggests Graves orbitopathy/compressive optic neuropathy requiring urgent provider/ophthalmology escalation. Fix: split into two red flags: (1) thyroid storm systemic signs, (2) exophthalmos with vision changes \u2192 urgent Graves orbitopathy/optic nerve compression concern."
+    },
+    {
+      "item_key": "system:respiratory",
+      "tab": "systems",
+      "review_note": "[Respiratory] Normal finding 'SpO\u2082 \u226594% on room air' lacks context for patients with chronic lung disease or ordered SpO\u2082 targets (often 88\u201392% in COPD per provider protocol). Risk: students may inappropriately escalate O\u2082 in chronically hypoxemic patients. Fix: add clinical_reasoning caveat\u2014compare to patient baseline and prescribed oxygenation target before labeling abnormal."
+    },
+    {
+      "item_key": "skill:orthostatic_vitals",
+      "tab": "skills",
+      "review_note": "[Orthostatic vitals] Positive orthostatics defined as 'SBP drop \u226520 mmHg, DBP drop \u226510 mmHg' using a comma without OR, implying both drops are required. Standard criterion (Open RN, CDC STEADI) is SBP decrease \u226520 mmHg OR DBP decrease \u226510 mmHg within 3 minutes of standing. Fix: rewrite as 'SBP drop \u226520 mmHg OR DBP drop \u226510 mmHg (with position change); symptomatic HR increase \u226520 bpm supports but does not alone define orthostatic hypotension.'"
+    },
+    {
+      "item_key": "skill:fast_stroke",
+      "tab": "skills",
+      "review_note": "[FAST stroke] 'Time to call 911' is community-EMS language and may mislead inpatient nurses who must activate internal stroke protocol/RRT and notify provider\u2014not call 911 for in-hospital stroke symptoms. Fix: 'Time to activate emergency response (call 911 in community settings; activate stroke code/RRT per facility protocol when symptoms occur in hospital).'"
+    },
+    {
+      "item_key": "redflag:temperature-103-f-39-4-c-or-95-f-35-c",
+      "tab": "red-flags",
+      "review_note": "[Red flag] Action omits explicit immediate provider notification present in nearly all other master red flags. Extreme hyperthermia (>103\u00b0F/39.4\u00b0C) and moderate hypothermia (<95\u00b0F/35\u00b0C) in acute care require urgent escalation, continuous monitoring, and sepsis/hypothermia protocol activation\u2014not only conditional blood cultures and supportive measures. Fix: add 'notify provider immediately, continuous vitals/SpO\u2082 monitoring, initiate sepsis bundle/hypothermia rewarming per protocol'; consider upgrading priority from urgent to immediate for hospitalized patients."
+    },
+    {
+      "item_key": "redflag:stridor-muffled-voice-or-drooling-with-sore-thro",
+      "tab": "red-flags",
+      "review_note": "[Red flag] Airway actions are strong but miss a critical safety contraindication for epiglottitis/supraglottitis: do NOT examine the oropharynx (no tongue depressor, throat inspection, or agitating procedures) because this can precipitate complete airway obstruction. Also add 'keep patient upright/in position of comfort; minimize procedures at bedside.' Without this, students may perform routine throat assessment and cause harm."
+    },
+    {
+      "item_key": "redflag:severe-epigastric-ruq-pain-radiating-to-back-with",
+      "tab": "red-flags",
+      "review_note": "[Red flag] Priority 'urgent' understates time-sensitive abdominal catastrophe (ruptured AAA, hemorrhagic pancreatitis, perforated viscus). Peer GI red flags use priority 'immediate' with shock assessment language. Action says 'notify provider' but not 'immediately' and lacks q5\u201315 vitals, large-bore IV, and hemodynamic instability assessment. Fix: upgrade to immediate priority; add 'notify provider immediately, assess for hypotension/syncope, two large-bore IVs if indicated, type/crossmatch per order, prepare rapid response if unstable.'"
+    },
+    {
+      "item_key": "population:mental-health",
+      "tab": "special-pop",
+      "review_note": "[Special population] CIWA-Ar thresholds are mislabeled in red_flags: 'CIWA-Ar \u226515 (moderate/severe per protocol; \u22658 mild)' conflates severity bands. Standard CIWA-Ar interpretation: \u22648 minimal/mild, 9\u201315 moderate, \u226516 severe (many protocols treat \u226515\u201316 as severe). Fix: 'CIWA-Ar \u226516 severe (urgent provider notification, benzodiazepine per protocol); 9\u201315 moderate; \u22648 mild\u2014continue scheduled scoring. Do not delay treatment at severe threshold.' COWS \u226525 language is acceptable."
+    },
+    {
+      "item_key": "population:newborn",
+      "tab": "special-pop",
+      "review_note": "[Special population] clinical_reasoning states 'Always use axillary temperature, not rectal, for routine screening,' which conflicts with AAP guidance that rectal measurement is the most accurate core-temperature method in young infants and directly conflicts with redflag:infant-3-months-with-rectal-temperature-100-4-f (rectal \u2265100.4\u00b0F threshold). Fix: 'Routine screening may use axillary temperature; any fever concern in neonates/young infants requires rectal confirmation per protocol and immediate provider notification\u2014do not dismiss low-grade axillary readings.' Harmonize across newborn, pediatric, and red_flags_master sections."
+    },
+    {
+      "item_key": "scenario:an-12",
+      "tab": "assess-next",
+      "review_note": "[Assess Next] Stem asks 'assess NEXT' but correct option is primarily intervention (airway, O\u2082, epinephrine prep). In anaphylaxis, stop the triggering infusion and administer epinephrine IM immediately are first-line actions; correct option says only 'prepare for epinephrine' and omits stopping penicillin (mentioned only in explanation). Distractors are clearly wrong, but revise stem to 'What is the priority action?' and update option to include stop infusion + give epinephrine IM per protocol."
+    },
+    {
+      "item_key": "soap:soap-06",
+      "tab": "soap",
+      "review_note": "[SOAP] Orientation documentation is internally inconsistent: findings state patient is 'disoriented to place and time,' but model_soap Objective documents 'disoriented \u00d72 (person, time)'\u2014which implies she IS oriented to time. patient_context also states baseline oriented to person only while Subjective cites family report of orientation to person and place. Align findings, baseline, and oriented-\u00d7 score (likely \u00d71 person only if disoriented to place and time)."
+    },
+    {
+      "item_key": "flashcard:fc-card-02",
+      "tab": "flashcards",
+      "review_note": "[Flashcard] abnormal_action lists 'elevate legs' for pitting edema with JVD\u2014this is unsafe in heart failure/volume overload because leg elevation increases venous return and worsens pulmonary congestion. Replace with high Fowler's positioning, daily weights, strict I&O, sodium/fluid restriction, and diuretics per order (consistent with checklist:cardiac-focused and flashcard:fc-cardio-01 teaching)."
+    }
+  ],
+  "ancillary_verified": [
+    "therapeutic-communication: open-ended questions, active listening \u2014 Open RN verified",
+    "oldcarts: structured symptom analysis \u2014 NCLEX Health Promotion verified",
+    "cultural-linguistic: certified interpreter required \u2014 safe equitable practice verified",
+    "review-of-systems: systematic ROS by body system \u2014 Open RN Ch. 2 verified",
+    "pqrst: pain history mnemonic \u2014 triage/reassessment documentation verified",
+    "safety-abuse-screening: private direct questioning, mandatory reporting \u2014 NCSBN verified"
+  ],
+  "errors": [],
+  "module_audit_summary": {
+    "verified": 191,
+    "needs_review": 13,
+    "unreviewed": 0,
+    "total": 204
+  },
+  "focus_areas_reviewed": [
+    "Clinical accuracy and evidence-based assessment techniques",
+    "Red flag immediate actions and escalation paths",
+    "Special populations (pediatric, geriatric, OB, mental health, newborn)",
+    "NCLEX-RN Test Plan 2023 alignment (ABC priority, unstable before stable)",
+    "Safe nursing practice (no Trendelenburg, no unsafe leg elevation in CHF, epiglottitis precautions)"
+  ]
+}

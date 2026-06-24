@@ -1,0 +1,807 @@
+{
+  "drug_classes": [
+    {
+      "id": "acetaminophen",
+      "name": "Acetaminophen",
+      "category": "Analgesic/Antipyretic",
+      "category_label": "Analgesic/Antipyretic",
+      "mechanism_of_action": "Central inhibition of prostaglandin synthesis — minimal peripheral anti-inflammatory effect",
+      "prototype_drugs": [
+        "Tylenol",
+        "acetaminophen"
+      ],
+      "nursing_implications": [
+        "Max 4 g/day adults; check combination products",
+        "Hepatotoxicity risk — assess alcohol use",
+        "NAC antidote for overdose"
+      ],
+      "monitoring": [
+        "Liver enzymes with chronic use",
+        "Pain and fever response"
+      ],
+      "common_side_effects": [
+        "Hepatotoxicity at overdose",
+        "Rash (rare)"
+      ],
+      "contraindications": [
+        "Severe hepatic impairment"
+      ],
+      "interactions": [
+        "Warfarin may increase INR with chronic high doses"
+      ],
+      "clinical_why": "Max 4 g/day adults; check combination products",
+      "source": {
+        "title": "Open RN — Nursing Pharmacology",
+        "citation": "Open RN OER Dosage Calculations",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "anticoagulants",
+      "name": "Anticoagulants",
+      "category": "Anticoagulant",
+      "category_label": "Anticoagulant",
+      "mechanism_of_action": "Inhibit clotting cascade — warfarin (vitamin K antagonist); heparin/LMWH (antithrombin activation); DOACs target factor Xa or thrombin",
+      "prototype_drugs": [
+        "warfarin",
+        "heparin",
+        "enoxaparin",
+        "apixaban"
+      ],
+      "nursing_implications": [
+        "ISMP high-alert — independent double-check",
+        "Bleeding precautions; fall risk",
+        "Never IM injections with heparin"
+      ],
+      "monitoring": [
+        "INR for warfarin",
+        "aPTT/anti-Xa per protocol",
+        "Signs of bleeding",
+        "Platelets for heparin-induced thrombocytopenia"
+      ],
+      "common_side_effects": [
+        "Bleeding",
+        "HIT with heparin",
+        "Bruising"
+      ],
+      "contraindications": [
+        "Active bleeding",
+        "HIT with heparin"
+      ],
+      "interactions": [
+        "NSAIDs increase bleeding",
+        "Many drug interactions with warfarin"
+      ],
+      "clinical_why": "ISMP high-alert — independent double-check",
+      "source": {
+        "title": "Open RN — Nursing Pharmacology",
+        "citation": "Open RN OER Dosage Calculations",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "insulin",
+      "name": "Insulin",
+      "category": "Antidiabetic",
+      "category_label": "Antidiabetic",
+      "mechanism_of_action": "Allows glucose uptake into cells — lowers blood glucose",
+      "prototype_drugs": [
+        "regular",
+        "NPH",
+        "glargine",
+        "lispro"
+      ],
+      "nursing_implications": [
+        "ISMP high-alert double-check",
+        "Only regular insulin IV",
+        "Rotate injection sites",
+        "Hypoglycemia protocol: 15 g fast carb, recheck 15 min"
+      ],
+      "monitoring": [
+        "Blood glucose before meals and HS",
+        "Onset/peak/duration by type",
+        "Signs of hypoglycemia"
+      ],
+      "common_side_effects": [
+        "Hypoglycemia",
+        "Lipohypertrophy at sites",
+        "Weight gain"
+      ],
+      "contraindications": [
+        "Hypoglycemia unawareness without monitoring plan"
+      ],
+      "interactions": [
+        "Beta-blockers mask tachycardia of hypoglycemia"
+      ],
+      "clinical_why": "ISMP high-alert double-check",
+      "source": {
+        "title": "Open RN — Nursing Pharmacology",
+        "citation": "Open RN OER Dosage Calculations",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "opioid-analgesics",
+      "name": "Opioid Analgesics",
+      "category": "Analgesic",
+      "category_label": "Analgesic",
+      "mechanism_of_action": "Agonize mu receptors — decrease pain perception; respiratory depression",
+      "prototype_drugs": [
+        "morphine",
+        "fentanyl",
+        "oxycodone",
+        "hydromorphone"
+      ],
+      "nursing_implications": [
+        "Assess respiratory rate before each dose",
+        "Naloxone available for overdose",
+        "Bowel regimen for constipation prophylaxis"
+      ],
+      "monitoring": [
+        "RR, sedation, pain score",
+        "Bowel function",
+        "CNS depression"
+      ],
+      "common_side_effects": [
+        "Respiratory depression",
+        "Constipation",
+        "Sedation",
+        "Nausea"
+      ],
+      "contraindications": [
+        "MAOI within 14 days",
+        "Severe respiratory depression"
+      ],
+      "interactions": [
+        "CNS depressants potentiate sedation",
+        "MAOIs — serotonin syndrome risk"
+      ],
+      "clinical_why": "Assess respiratory rate before each dose",
+      "source": {
+        "title": "Open RN — Nursing Pharmacology",
+        "citation": "Open RN OER Dosage Calculations",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "beta-blockers",
+      "name": "Beta-Blockers",
+      "category": "Antihypertensive/Antiarrhythmic",
+      "category_label": "Antihypertensive/Antiarrhythmic",
+      "mechanism_of_action": "Block beta-adrenergic receptors — decrease HR and contractility",
+      "prototype_drugs": [
+        "metoprolol",
+        "atenolol",
+        "propranolol"
+      ],
+      "nursing_implications": [
+        "Never stop abruptly — rebound angina/HTN",
+        "Mask hypoglycemia symptoms",
+        "Hold if HR <60 or SBP low per order"
+      ],
+      "monitoring": [
+        "HR and BP",
+        "Bronchospasm in asthmatics",
+        "Fatigue"
+      ],
+      "common_side_effects": [
+        "Bradycardia",
+        "Hypotension",
+        "Bronchospasm",
+        "Fatigue"
+      ],
+      "contraindications": [
+        "Asthma/COPD severe bronchospasm",
+        "Heart block",
+        "Decompensated HF"
+      ],
+      "interactions": [
+        "Calcium channel blockers — additive bradycardia"
+      ],
+      "clinical_why": "Never stop abruptly — rebound angina/HTN",
+      "source": {
+        "title": "Open RN — Nursing Pharmacology",
+        "citation": "Open RN OER Dosage Calculations",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "ace-inhibitors",
+      "name": "ACE Inhibitors",
+      "category": "Antihypertensive",
+      "category_label": "Antihypertensive",
+      "mechanism_of_action": "Block conversion of angiotensin I to II — vasodilation, reduced aldosterone",
+      "prototype_drugs": [
+        "lisinopril",
+        "enalapril",
+        "ramipril"
+      ],
+      "nursing_implications": [
+        "First-dose hypotension — rise slowly",
+        "Monitor potassium and creatinine",
+        "Angioedema is emergency"
+      ],
+      "monitoring": [
+        "BP",
+        "K+",
+        "creatinine",
+        "Dry cough"
+      ],
+      "common_side_effects": [
+        "Dry cough",
+        "Hyperkalemia",
+        "Angioedema",
+        "Hypotension"
+      ],
+      "contraindications": [
+        "Pregnancy",
+        "Angioedema history",
+        "Bilateral renal artery stenosis"
+      ],
+      "interactions": [
+        "Potassium supplements/NSAIDs increase K+"
+      ],
+      "clinical_why": "First-dose hypotension — rise slowly",
+      "source": {
+        "title": "Open RN — Nursing Pharmacology",
+        "citation": "Open RN OER Dosage Calculations",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "diuretics",
+      "name": "Diuretics",
+      "category": "Diuretic",
+      "category_label": "Diuretic",
+      "mechanism_of_action": "Increase renal excretion of fluid/electrolytes — loops, thiazides, K+-sparing",
+      "prototype_drugs": [
+        "furosemide",
+        "hydrochlorothiazide",
+        "spironolactone"
+      ],
+      "nursing_implications": [
+        "Monitor daily weights and I&O",
+        "Assess orthostatic vitals",
+        "Give morning diuretics to avoid nocturia"
+      ],
+      "monitoring": [
+        "K+",
+        "Na+",
+        "Mg2+",
+        "BUN/creatinine",
+        "Daily weights"
+      ],
+      "common_side_effects": [
+        "Hypokalemia",
+        "Hypotension",
+        "Dehydration",
+        "Ototoxicity (loops)"
+      ],
+      "contraindications": [
+        "Anuria",
+        "Severe electrolyte depletion"
+      ],
+      "interactions": [
+        "NSAIDs reduce diuretic effect",
+        "Digoxin toxicity with hypokalemia"
+      ],
+      "clinical_why": "Monitor daily weights and I&O",
+      "source": {
+        "title": "Open RN — Nursing Pharmacology",
+        "citation": "Open RN OER Dosage Calculations",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "fluoroquinolones",
+      "name": "Fluoroquinolones",
+      "category": "Antibiotic",
+      "category_label": "Antibiotic",
+      "mechanism_of_action": "Inhibit DNA gyrase — bactericidal broad spectrum",
+      "prototype_drugs": [
+        "ciprofloxacin",
+        "levofloxacin",
+        "moxifloxacin"
+      ],
+      "nursing_implications": [
+        "Black box: tendinitis/tendon rupture",
+        "Avoid in children unless no alternative",
+        "QT prolongation risk"
+      ],
+      "monitoring": [
+        "Tendon pain",
+        "QTc if risk factors",
+        "C. diff diarrhea"
+      ],
+      "common_side_effects": [
+        "Tendon rupture",
+        "QT prolongation",
+        "CNS effects",
+        "C. diff"
+      ],
+      "contraindications": [
+        "Myasthenia gravis",
+        "History of tendon rupture with quinolone"
+      ],
+      "interactions": [
+        "Antacids reduce absorption",
+        "QT drugs increase arrhythmia risk"
+      ],
+      "clinical_why": "Black box: tendinitis/tendon rupture",
+      "source": {
+        "title": "Open RN — Nursing Pharmacology",
+        "citation": "Open RN OER Dosage Calculations",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aminoglycosides",
+      "name": "Aminoglycosides",
+      "category": "Antibiotic",
+      "category_label": "Antibiotic",
+      "mechanism_of_action": "Inhibit bacterial protein synthesis — concentration-dependent killing",
+      "prototype_drugs": [
+        "gentamicin",
+        "tobramycin",
+        "amikacin"
+      ],
+      "nursing_implications": [
+        "Narrow therapeutic index — peak/trough levels",
+        "Nephrotoxicity and ototoxicity monitoring",
+        "Once-daily dosing per protocol"
+      ],
+      "monitoring": [
+        "Peak/trough levels",
+        "Creatinine",
+        "Hearing changes"
+      ],
+      "common_side_effects": [
+        "Nephrotoxicity",
+        "Ototoxicity",
+        "Neuromuscular blockade"
+      ],
+      "contraindications": [
+        "Renal failure without dose adjustment"
+      ],
+      "interactions": [
+        "Loop diuretics increase ototoxicity"
+      ],
+      "clinical_why": "Narrow therapeutic index — peak/trough levels",
+      "source": {
+        "title": "Open RN — Nursing Pharmacology",
+        "citation": "Open RN OER Dosage Calculations",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "proton-pump-inhibitors",
+      "name": "Proton Pump Inhibitors",
+      "category": "GI",
+      "category_label": "GI",
+      "mechanism_of_action": "Irreversibly inhibit gastric H+/K+ ATPase — reduce acid secretion",
+      "prototype_drugs": [
+        "omeprazole",
+        "pantoprazole",
+        "esomeprazole"
+      ],
+      "nursing_implications": [
+        "Give before meals for best effect",
+        "Long-term use: B12, Mg, fracture risk",
+        "Do not crush delayed-release"
+      ],
+      "monitoring": [
+        "GI bleeding response",
+        "Magnesium with chronic use"
+      ],
+      "common_side_effects": [
+        "Headache",
+        "Diarrhea",
+        "C. diff risk with prolonged use"
+      ],
+      "contraindications": [
+        "Hypersensitivity"
+      ],
+      "interactions": [
+        "Clopidogrel interaction with omeprazole (variable significance)"
+      ],
+      "clinical_why": "Give before meals for best effect",
+      "source": {
+        "title": "Open RN — Nursing Pharmacology",
+        "citation": "Open RN OER Dosage Calculations",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "benzodiazepines",
+      "name": "Benzodiazepines",
+      "category": "Sedative/Anxiolytic",
+      "category_label": "Sedative/Anxiolytic",
+      "mechanism_of_action": "Enhance GABA-A receptor activity — CNS depression",
+      "prototype_drugs": [
+        "lorazepam",
+        "diazepam",
+        "midazolam"
+      ],
+      "nursing_implications": [
+        "Fall risk in older adults — Beers Criteria",
+        "Avoid abrupt discontinuation — seizure risk",
+        "Reverse with flumazenil only per protocol (seizure risk)"
+      ],
+      "monitoring": [
+        "Sedation",
+        "Respiratory rate",
+        "Fall risk"
+      ],
+      "common_side_effects": [
+        "Sedation",
+        "Confusion",
+        "Dependence",
+        "Respiratory depression with opioids"
+      ],
+      "contraindications": [
+        "Acute narrow-angle glaucoma",
+        "Severe respiratory depression"
+      ],
+      "interactions": [
+        "Opioids — fatal respiratory depression",
+        "CNS depressants additive"
+      ],
+      "clinical_why": "Fall risk in older adults — Beers Criteria",
+      "source": {
+        "title": "Open RN — Nursing Pharmacology",
+        "citation": "Open RN OER Dosage Calculations",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "antipsychotics",
+      "name": "Antipsychotics",
+      "category": "Psychotropic",
+      "category_label": "Psychotropic",
+      "mechanism_of_action": "Block dopamine D2 receptors (typical) and multiple receptors (atypical)",
+      "prototype_drugs": [
+        "haloperidol",
+        "risperidone",
+        "olanzapine",
+        "quetiapine"
+      ],
+      "nursing_implications": [
+        "Monitor for extrapyramidal symptoms",
+        "Metabolic monitoring with atypicals",
+        "Neuroleptic malignant syndrome rare emergency"
+      ],
+      "monitoring": [
+        "Weight, glucose, lipids",
+        "EPS",
+        "QTc"
+      ],
+      "common_side_effects": [
+        "EPS",
+        "Weight gain",
+        "Sedation",
+        "Orthostatic hypotension"
+      ],
+      "contraindications": [
+        "NMS history"
+      ],
+      "interactions": [
+        "QT-prolonging drugs",
+        "CNS depressants"
+      ],
+      "clinical_why": "Monitor for extrapyramidal symptoms",
+      "source": {
+        "title": "Open RN — Nursing Pharmacology",
+        "citation": "Open RN OER Dosage Calculations",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "ssri-antidepressants",
+      "name": "SSRIs",
+      "category": "Antidepressant",
+      "category_label": "Antidepressant",
+      "mechanism_of_action": "Selective serotonin reuptake inhibition — increases synaptic serotonin",
+      "prototype_drugs": [
+        "sertraline",
+        "fluoxetine",
+        "escitalopram"
+      ],
+      "nursing_implications": [
+        "Suicide assessment especially young adults at initiation",
+        "Serotonin syndrome with MAOIs/linezolid",
+        "Do not stop abruptly"
+      ],
+      "monitoring": [
+        "Mood",
+        "Suicidal ideation",
+        "GI tolerance"
+      ],
+      "common_side_effects": [
+        "Nausea",
+        "Sexual dysfunction",
+        "Insomnia",
+        "Serotonin syndrome"
+      ],
+      "contraindications": [
+        "MAOI within 14 days"
+      ],
+      "interactions": [
+        "MAOIs",
+        "Triptans",
+        "Linezolid — serotonin syndrome"
+      ],
+      "clinical_why": "Suicide assessment especially young adults at initiation",
+      "source": {
+        "title": "Open RN — Nursing Pharmacology",
+        "citation": "Open RN OER Dosage Calculations",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "lithium",
+      "name": "Lithium",
+      "category": "Mood stabilizer",
+      "category_label": "Mood stabilizer",
+      "mechanism_of_action": "Alters sodium transport and neurotransmission — narrow therapeutic index",
+      "prototype_drugs": [
+        "lithium carbonate"
+      ],
+      "nursing_implications": [
+        "Maintain consistent sodium and fluid intake",
+        "Therapeutic level 0.6–1.2 mEq/L typically",
+        "Toxicity: coarse tremor, confusion, ataxia"
+      ],
+      "monitoring": [
+        "Lithium levels",
+        "Renal function",
+        "Thyroid"
+      ],
+      "common_side_effects": [
+        "Polyuria",
+        "Tremor",
+        "Weight gain",
+        "Toxicity"
+      ],
+      "contraindications": [
+        "Severe renal impairment",
+        "Dehydration"
+      ],
+      "interactions": [
+        "NSAIDs and diuretics increase levels"
+      ],
+      "clinical_why": "Maintain consistent sodium and fluid intake",
+      "source": {
+        "title": "Open RN — Nursing Pharmacology",
+        "citation": "Open RN OER Dosage Calculations",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "digoxin",
+      "name": "Digoxin",
+      "category": "Cardiac glycoside",
+      "category_label": "Cardiac glycoside",
+      "mechanism_of_action": "Inhibits Na+/K+ ATPase — increases contractility; slows AV conduction",
+      "prototype_drugs": [
+        "digoxin"
+      ],
+      "nursing_implications": [
+        "Hold for HR <60 or PR prolongation per order",
+        "Hypokalemia increases toxicity risk",
+        "Assess apical pulse 1 full minute before oral dose"
+      ],
+      "monitoring": [
+        "HR",
+        "K+",
+        "digoxin level",
+        "Visual changes (yellow-green halos)"
+      ],
+      "common_side_effects": [
+        "Nausea",
+        "Bradycardia",
+        "Arrhythmias",
+        "Visual disturbances"
+      ],
+      "contraindications": [
+        "Ventricular fibrillation",
+        "Heart block",
+        "Digoxin toxicity"
+      ],
+      "interactions": [
+        "Amiodarone increases levels",
+        "Hypokalemia increases toxicity"
+      ],
+      "clinical_why": "Hold for HR <60 or PR prolongation per order",
+      "source": {
+        "title": "Open RN — Nursing Pharmacology",
+        "citation": "Open RN OER Dosage Calculations",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "nitroglycerin",
+      "name": "Nitrates",
+      "category": "Anti-anginal",
+      "category_label": "Anti-anginal",
+      "mechanism_of_action": "Nitric oxide donor — venodilation reduces preload",
+      "prototype_drugs": [
+        "nitroglycerin",
+        "isosorbide"
+      ],
+      "nursing_implications": [
+        "Store in dark glass; replace opened bottle per policy",
+        "SBP must be >90 for NTG",
+        "PDE-5 inhibitors contraindicated 24–48 hr"
+      ],
+      "monitoring": [
+        "BP",
+        "Headache",
+        "Chest pain relief"
+      ],
+      "common_side_effects": [
+        "Headache",
+        "Hypotension",
+        "Reflex tachycardia"
+      ],
+      "contraindications": [
+        "SBP <90",
+        "PDE-5 inhibitor use",
+        "Severe anemia"
+      ],
+      "interactions": [
+        "PDE-5 inhibitors — severe hypotension"
+      ],
+      "clinical_why": "Store in dark glass; replace opened bottle per policy",
+      "source": {
+        "title": "Open RN — Nursing Pharmacology",
+        "citation": "Open RN OER Dosage Calculations",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "antihistamines",
+      "name": "Antihistamines (1st gen)",
+      "category": "Allergy",
+      "category_label": "Allergy",
+      "mechanism_of_action": "Block H1 receptors — sedation and anticholinergic effects",
+      "prototype_drugs": [
+        "diphenhydramine",
+        "hydroxyzine"
+      ],
+      "nursing_implications": [
+        "Sedation and fall risk in older adults",
+        "Anticholinergic: dry mouth, urinary retention",
+        "Avoid driving"
+      ],
+      "monitoring": [
+        "Sedation",
+        "Urinary retention in BPH"
+      ],
+      "common_side_effects": [
+        "Sedation",
+        "Dry mouth",
+        "Urinary retention",
+        "Confusion in elderly"
+      ],
+      "contraindications": [
+        "Narrow-angle glaucoma",
+        "BPH with retention"
+      ],
+      "interactions": [
+        "CNS depressants additive"
+      ],
+      "clinical_why": "Sedation and fall risk in older adults",
+      "source": {
+        "title": "Open RN — Nursing Pharmacology",
+        "citation": "Open RN OER Dosage Calculations",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "bronchodilators",
+      "name": "Bronchodilators",
+      "category": "Respiratory",
+      "category_label": "Respiratory",
+      "mechanism_of_action": "Beta-2 agonists relax bronchial smooth muscle; anticholinergics block muscarinic receptors",
+      "prototype_drugs": [
+        "albuterol",
+        "ipratropium",
+        "salmeterol"
+      ],
+      "nursing_implications": [
+        "Albuterol first-line rescue",
+        "Tremor and tachycardia common",
+        "Teach inhaler technique"
+      ],
+      "monitoring": [
+        "RR",
+        "SpO2",
+        "Peak flow if ordered"
+      ],
+      "common_side_effects": [
+        "Tremor",
+        "Tachycardia",
+        "Hypokalemia with high doses"
+      ],
+      "contraindications": [
+        "Tachyarrhythmia uncontrolled"
+      ],
+      "interactions": [
+        "Beta-blockers may blunt beta-2 effect (cardioselective safer)"
+      ],
+      "clinical_why": "Albuterol first-line rescue",
+      "source": {
+        "title": "Open RN — Nursing Pharmacology",
+        "citation": "Open RN OER Dosage Calculations",
+        "verified_date": "2026-06"
+      }
+    }
+  ],
+  "pharm_categories": [
+    {
+      "id": "analgesics",
+      "label": "Analgesics & Sedatives",
+      "class_ids": [
+        "acetaminophen",
+        "opioid-analgesics",
+        "benzodiazepines"
+      ]
+    },
+    {
+      "id": "cardiovascular",
+      "label": "Cardiovascular",
+      "class_ids": [
+        "anticoagulants",
+        "beta-blockers",
+        "ace-inhibitors",
+        "diuretics",
+        "digoxin",
+        "nitroglycerin"
+      ]
+    },
+    {
+      "id": "endocrine",
+      "label": "Endocrine",
+      "class_ids": [
+        "insulin"
+      ]
+    },
+    {
+      "id": "antiinfectives",
+      "label": "Anti-infectives",
+      "class_ids": [
+        "fluoroquinolones",
+        "aminoglycosides"
+      ]
+    },
+    {
+      "id": "gi",
+      "label": "Gastrointestinal",
+      "class_ids": [
+        "proton-pump-inhibitors"
+      ]
+    },
+    {
+      "id": "psychotropic",
+      "label": "Psychotropic",
+      "class_ids": [
+        "antipsychotics",
+        "ssri-antidepressants",
+        "lithium"
+      ]
+    },
+    {
+      "id": "respiratory",
+      "label": "Respiratory & Allergy",
+      "class_ids": [
+        "bronchodilators",
+        "antihistamines"
+      ]
+    }
+  ],
+  "source": {
+    "title": "Open RN — Nursing Pharmacology",
+    "citation": "Open RN OER Dosage Calculations",
+    "verified_date": "2026-06"
+  }
+}

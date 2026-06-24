@@ -1,0 +1,224 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block page_title %}Dashboard{% endblock %}
+{% block page_subtitle %}Your ADN study command center{% endblock %}
+
+{% block topbar_actions %}
+<button id="sync-btn" onclick="syncProgress()" class="btn-sync" title="Save progress to local database">
+    <svg id="sync-icon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+    <span class="hidden sm:inline">Sync Progress</span>
+</button>
+{% endblock %}
+
+{% block content %}
+<div class="dashboard-page">
+    <!-- Welcome banner -->
+    <div class="welcome-banner">
+        <div>
+            <h1 class="text-xl sm:text-2xl font-bold text-ward-100">
+                Welcome back, {{ stats.user.display_name if stats.user else 'ADN Student' }}
+            </h1>
+            <p class="text-sm text-ward-400 mt-1">
+                {% if stats.current_focus_id != 'terminology' %}
+                Last studied <span class="text-ward-accent">{{ stats.current_focus }}</span> —
+                {% endif %}
+                Teaching-first, verified, built for your entire ADN journey.
+            </p>
+        </div>
+        <div id="sync-status" class="sync-status-badge hidden">
+            <span class="sync-dot"></span>
+            <span id="sync-status-text">Synced</span>
+        </div>
+    </div>
+
+    <!-- Progress overview cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-6">
+        <div class="overview-card overview-card-accent">
+            <div class="overview-card-icon">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            </div>
+            <div class="overview-card-body">
+                <div class="stat-label">Overall Progress</div>
+                <div class="stat-value text-ward-accent">{{ stats.overall_percentage }}%</div>
+                <div class="progress-bar mt-2">
+                    <div class="progress-bar-fill bg-ward-accent" style="width: {{ stats.overall_percentage }}%"></div>
+                </div>
+                <div class="text-xs text-ward-500 mt-1">{{ stats.total_completed }} / {{ stats.total_items }} items</div>
+            </div>
+        </div>
+
+        <div class="overview-card overview-card-warning">
+            <div class="overview-card-icon">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"/></svg>
+            </div>
+            <div class="overview-card-body">
+                <div class="stat-label">Current Streak</div>
+                <div class="stat-value text-ward-warning">{{ stats.max_streak }}<span class="text-base font-normal text-ward-500 ml-1">days</span></div>
+                <div class="text-xs text-ward-500 mt-2">
+                    Longest: {{ stats.user.longest_streak if stats.user else 0 }} days
+                </div>
+            </div>
+        </div>
+
+        <div class="overview-card overview-card-purple">
+            <div class="overview-card-icon">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+            </div>
+            <div class="overview-card-body">
+                <div class="stat-label">Next Milestone</div>
+                <div class="text-sm font-semibold text-ward-purple leading-snug mt-1">{{ stats.next_milestone_label }}</div>
+                <div class="progress-bar mt-2">
+                    <div class="progress-bar-fill bg-ward-purple" style="width: {{ stats.milestone_progress }}%"></div>
+                </div>
+                <div class="text-xs text-ward-500 mt-1">Target: {{ stats.next_milestone_target }}%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pharmacy Track entry -->
+    <a href="/pharmacy" class="pharmacy-track-card mb-6 block">
+        <div class="pharmacy-hero-icon">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+        </div>
+        <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2 mb-0.5">
+                <h3 class="font-semibold text-pharm-primary text-sm sm:text-base">Pharmacy Track</h3>
+                <span class="badge badge-pharm">New</span>
+            </div>
+            <p class="text-xs sm:text-sm text-ward-500 leading-relaxed">CPhT → Licensed Pharmacist — dedicated dashboard with 6-stage pathway to NAPLEX/MPJE</p>
+        </div>
+        <svg class="w-5 h-5 text-pharm-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+    </a>
+
+    <!-- Module launcher -->
+    <div class="section-header">
+        <h2 class="section-title">Nursing Study Modules</h2>
+        <span class="text-xs text-ward-500">Tap a module to continue</span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
+        {% set launcher_modules = [
+            ("terminology", "Medical Terminology", "Word builder, flashcards, NCLEX practice", "/modules/terminology", "border-l-ward-accent", "mvp"),
+            ("microbiology", "Microbiology", "Chain builder, break-chain scenarios, NCLEX practice", "/modules/microbiology", "border-l-ward-success", "starter"),
+            ("dosage", "NURS 145 — Dosage", "Step-by-step calculators with derivations", "/modules/dosage", "border-l-ward-warning", "starter"),
+            ("assessment", "NURS 146 — Health Assessment", "Checklists, SOAP notes, special populations, assess-next scenarios", "/modules/assessment", "border-l-ward-purple", "mvp"),
+            ("mental_health", "NURS 147 — Mental Health", "Therapeutic communication, safety screening, suicide risk drill", "/modules/mental-health", "border-l-ward-purple", "new"),
+            ("pathophysiology", "Pathophysiology", "Disease cascades, compare/contrast, what-breaks-down scenarios, NCLEX practice", "/modules/pathophysiology", "border-l-rose-400", "new"),
+            ("maternal_child", "NURS 148 — Maternal-Child", "OB stages, complications drill, pediatric milestones, NCLEX practice", "/modules/maternal-child", "border-l-pink-400", "new"),
+        ] %}
+        {% for mod_id, name, desc, url, accent, badge in launcher_modules %}
+        {% set mod = stats.modules | selectattr("module_id", "equalto", mod_id) | first %}
+        <a href="{{ url }}" class="module-launcher {{ accent }}">
+            <div class="flex justify-between items-start gap-2 mb-3">
+                <h3 class="font-semibold text-ward-100 text-sm sm:text-base">{{ name }}</h3>
+                {% if badge %}
+                <span class="badge badge-{{ badge }}">{% if badge == 'mvp' %}MVP{% elif badge == 'new' %}New{% else %}{{ badge | capitalize }}{% endif %}</span>
+                {% endif %}
+            </div>
+            <p class="text-xs sm:text-sm text-ward-500 mb-4 leading-relaxed">{{ desc }}</p>
+            {% if mod %}
+            <div class="flex items-center gap-2">
+                <div class="progress-bar flex-1">
+                    <div class="progress-bar-fill bg-ward-accent/70" style="width: {{ mod.percentage }}%"></div>
+                </div>
+                <span class="text-xs font-mono text-ward-400 w-10 text-right">{{ mod.percentage }}%</span>
+            </div>
+            <div class="flex justify-between mt-2 text-[10px] text-ward-600">
+                <span>{{ mod.items_completed }}/{{ mod.items_total }} items</span>
+                {% if mod.streak_days > 0 %}
+                <span class="text-ward-warning">{{ mod.streak_days }}-day streak</span>
+                {% endif %}
+            </div>
+            {% endif %}
+        </a>
+        {% endfor %}
+    </div>
+
+    <!-- Quick actions -->
+    <div class="section-header">
+        <h2 class="section-title">Quick Actions</h2>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
+        <button onclick="location.href='/modules/terminology#practice'" class="quick-action">
+            <span class="quick-action-title text-ward-accent">Practice Quiz</span>
+            <span class="quick-action-desc">NCLEX-style</span>
+        </button>
+        <button onclick="location.href='/modules/terminology#flashcards'" class="quick-action">
+            <span class="quick-action-title text-ward-success">Flashcards</span>
+            <span class="quick-action-desc">Spaced repetition</span>
+        </button>
+        <button onclick="location.href='/modules/dosage'" class="quick-action">
+            <span class="quick-action-title text-ward-warning">Dosage Calc</span>
+            <span class="quick-action-desc">With derivations</span>
+        </button>
+        <button onclick="location.href='/modules/assessment#red-flags'" class="quick-action">
+            <span class="quick-action-title text-ward-purple">Red Flags</span>
+            <span class="quick-action-desc">Critical findings</span>
+        </button>
+        <button onclick="openSocraticMode()" class="quick-action">
+            <span class="quick-action-title text-ward-purple">Socratic Mode</span>
+            <span class="quick-action-desc">Ask me to explain</span>
+        </button>
+    </div>
+
+    <!-- Bottom row -->
+    <div class="grid sm:grid-cols-2 gap-4">
+        <div class="card p-5">
+            <h3 class="font-semibold text-ward-200 mb-1 text-sm">Upload Syllabus</h3>
+            <p class="text-xs text-ward-500 mb-3">Course syllabus or evaluation sheets</p>
+            <form id="upload-form" class="flex flex-col sm:flex-row gap-2">
+                <input type="file" id="syllabus-file" accept=".pdf,.docx,.txt,.xlsx"
+                       class="flex-1 text-xs text-ward-400 file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:bg-ward-700 file:text-ward-200 file:text-xs">
+                <button type="submit" class="btn-secondary text-xs whitespace-nowrap">Upload</button>
+            </form>
+            <div id="upload-status" class="mt-2 text-xs text-ward-500"></div>
+        </div>
+        <div class="card p-5">
+            <h3 class="font-semibold text-ward-200 mb-1 text-sm">Local Database</h3>
+            <p class="text-xs text-ward-500 mb-3">
+                {% if stats.user and stats.user.last_synced_at %}
+                Last synced: {{ stats.user.last_synced_at.strftime('%b %d, %Y %I:%M %p') }}
+                {% else %}
+                Progress not yet synced — click Sync Progress above.
+                {% endif %}
+            </p>
+            <div class="flex gap-2">
+                <button onclick="syncProgress()" class="btn-primary text-xs">Sync Progress</button>
+                <button onclick="exportFlashcards()" class="btn-secondary text-xs">Export Flashcards</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.getElementById('upload-form')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const fileInput = document.getElementById('syllabus-file');
+    const status = document.getElementById('upload-status');
+    if (!fileInput.files[0]) { status.textContent = 'Select a file first.'; return; }
+    const formData = new FormData();
+    formData.append('file', fileInput.files[0]);
+    formData.append('file_type', 'syllabus');
+    try {
+        const res = await fetch('/api/upload', { method: 'POST', body: formData });
+        const data = await res.json();
+        status.textContent = data.message || data.error || 'Upload complete.';
+        status.className = 'mt-2 text-xs ' + (data.error ? 'text-ward-danger' : 'text-ward-success');
+    } catch {
+        status.textContent = 'Upload failed.';
+    }
+});
+
+async function exportFlashcards() {
+    const res = await fetch('/api/terminology/export/flashcards');
+    const data = await res.json();
+    const blob = new Blob([data.content], { type: 'text/markdown' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'ward-terminology-flashcards.md';
+    a.click();
+}
+</script>
+{% endblock %}

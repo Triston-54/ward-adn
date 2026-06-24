@@ -1,0 +1,117 @@
+{
+  "module_id": "maternal_child",
+  "version": "1.0",
+  "status": "module_complete",
+  "tabs": [
+    {
+      "id": "antepartum",
+      "label": "Antepartum",
+      "status": "implemented",
+      "phase": 1
+    },
+    {
+      "id": "intrapartum",
+      "label": "Intrapartum",
+      "status": "implemented",
+      "phase": 1
+    },
+    {
+      "id": "postpartum",
+      "label": "Postpartum & Newborn",
+      "status": "implemented",
+      "phase": 1
+    },
+    {
+      "id": "pediatrics",
+      "label": "Pediatrics",
+      "status": "implemented",
+      "phase": 1
+    },
+    {
+      "id": "safety",
+      "label": "Safety Red Flags",
+      "status": "implemented",
+      "phase": 2
+    },
+    {
+      "id": "drill",
+      "label": "Complications Drill",
+      "status": "implemented",
+      "phase": 2
+    },
+    {
+      "id": "flashcards",
+      "label": "Flashcards",
+      "status": "implemented",
+      "phase": 2
+    },
+    {
+      "id": "practice",
+      "label": "NCLEX Practice",
+      "status": "implemented",
+      "phase": 2
+    }
+  ],
+  "content_inventory": {
+    "pregnancy_stages": {
+      "target": 9,
+      "live_key": "pregnancy_count",
+      "phase": 1,
+      "status": "complete"
+    },
+    "labor_delivery": {
+      "target": 8,
+      "live_key": "labor_count",
+      "phase": 1,
+      "status": "complete"
+    },
+    "postpartum_newborn": {
+      "target": 9,
+      "live_key": "postpartum_count",
+      "phase": 1,
+      "status": "complete"
+    },
+    "pediatric_essentials": {
+      "target": 8,
+      "live_key": "pediatric_count",
+      "phase": 1,
+      "status": "complete"
+    },
+    "safety_red_flags": {
+      "target": 15,
+      "live_key": "safety_flag_count",
+      "phase": 2,
+      "status": "complete"
+    },
+    "complications_drill": {
+      "target": 13,
+      "live_key": "drill_count",
+      "phase": 2,
+      "status": "complete"
+    },
+    "flashcards": {
+      "target": 32,
+      "live_key": "flashcard_count",
+      "phase": 2,
+      "status": "complete"
+    },
+    "practice_questions": {
+      "target": 21,
+      "live_key": "practice_count",
+      "phase": 2,
+      "status": "complete"
+    }
+  },
+  "build_phases": [
+    {
+      "phase": 1,
+      "name": "OB/Peds Reference",
+      "goal": "Pregnancy through pediatric essentials"
+    },
+    {
+      "phase": 2,
+      "name": "Safety & Practice",
+      "goal": "Red flags, drills, flashcards, NCLEX items"
+    }
+  ]
+}

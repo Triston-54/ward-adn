@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="The Ward — ADN Nursing Study Suite (Static)">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="/static/manifest.json">
+    <link rel="icon" type="image/svg+xml" href="/static/images/ward-icon.svg">
+    <link rel="icon" type="image/png" sizes="192x192" href="/static/images/ward-icon-192.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/static/images/ward-icon-192.png">
+    <title>NURS 146 — Health Assessment — ADN Study Suite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ward: {
+                            950: '#0a0f1a',
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                            600: '#475569',
+                            500: '#64748b',
+                            400: '#94a3b8',
+                            300: '#cbd5e1',
+                            200: '#e2e8f0',
+                            accent: '#38bdf8',
+                            success: '#34d399',
+                            warning: '#fbbf24',
+                            danger: '#f87171',
+                            purple: '#a78bfa',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/ward.css">
+    
+    
+<link rel="stylesheet" href="/static/css/assessment.css">
+
+</head>
+<body class="h-full bg-ward-950 text-ward-200 font-sans antialiased">
+    <div id="sidebar-backdrop" class="sidebar-backdrop hidden" onclick="closeSidebar()"></div>
+
+    <div id="command-palette" class="hidden fixed inset-0 z-50 flex items-start justify-center pt-[12vh] sm:pt-[15vh] bg-black/60 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-label="Command palette">
+        <div class="w-full max-w-lg bg-ward-800 border border-ward-600 rounded-xl shadow-2xl overflow-hidden">
+            <div class="flex items-center gap-2 px-4 py-3 border-b border-ward-700">
+                <svg class="w-4 h-4 text-ward-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                <input type="text" id="cmd-input" placeholder="Search modules, actions… (Ctrl+K)"
+                       aria-label="Search modules and actions"
+                       class="flex-1 bg-transparent text-ward-200 placeholder-ward-500 focus:outline-none text-sm">
+                <kbd class="text-xs text-ward-600 bg-ward-900 px-1.5 py-0.5 rounded hidden sm:inline">Esc</kbd>
+            </div>
+            <div id="cmd-results" class="cmd-results-list overflow-y-auto py-2"></div>
+        </div>
+    </div>
+
+    <div id="source-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-labelledby="source-modal-title">
+        <div class="w-full max-w-lg bg-ward-800 border border-ward-600 rounded-xl shadow-2xl overflow-hidden">
+            <div class="flex justify-between items-center px-6 py-4 border-b border-ward-700 bg-ward-900/50">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-ward-accent/10 border border-ward-accent/30 flex items-center justify-center">
+                        <svg class="w-4 h-4 text-ward-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <div>
+                        <h3 id="source-modal-title" class="text-base font-semibold text-ward-accent">Verify Source</h3>
+                        <p class="text-[10px] text-ward-500 uppercase tracking-wider">Verified nursing content</p>
+                    </div>
+                </div>
+                <button onclick="closeSourceModal()" class="text-ward-500 hover:text-ward-200 text-xl leading-none p-1" aria-label="Close">&times;</button>
+            </div>
+            <div id="source-content" class="px-6 py-4 max-h-[70vh] overflow-y-auto"></div>
+        </div>
+    </div>
+
+    <div class="app-shell">
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-brand">
+                <a href="/index.html" class="flex items-center gap-3 group">
+                    <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-ward-accent to-ward-purple flex items-center justify-center text-ward-900 font-bold">W</div>
+                    <div>
+                        <div class="font-semibold text-ward-100 group-hover:text-ward-accent transition text-sm">The Ward</div>
+                        <div class="text-[10px] text-ward-500 uppercase tracking-wider">ADN Study Suite</div>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="sidebar-section-label">ADN Curriculum</div>
+                <a href="/index.html" class="sidebar-link" data-nav="dashboard">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+                    Dashboard
+                </a>
+                <a href="/how-to-use.html" class="sidebar-link" data-nav="how_to_use">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    How to Use
+                </a>
+
+                <div class="sidebar-section-label mt-4">Nursing Modules</div>
+                <a href="/modules/terminology.html" class="sidebar-link" data-nav="terminology">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                    Medical Terminology
+                </a>
+                <a href="/modules/microbiology.html" class="sidebar-link" data-nav="microbiology">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                    Microbiology
+                </a>
+                <a href="/modules/dosage.html" class="sidebar-link" data-nav="dosage">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                    Dosage &amp; Pharmacology
+                </a>
+                <a href="/modules/assessment.html" class="sidebar-link" data-nav="assessment">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                    Health Assessment
+                </a>
+                <a href="/modules/pathophysiology.html" class="sidebar-link" data-nav="pathophysiology">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    Pathophysiology
+                </a>
+                <a href="/modules/med_surg.html" class="sidebar-link" data-nav="med_surg">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    Medical-Surgical Nursing
+                </a>
+                <a href="/modules/maternal_newborn.html" class="sidebar-link" data-nav="maternal_newborn">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    Maternal-Newborn
+                </a>
+                <a href="/modules/pediatrics.html" class="sidebar-link" data-nav="pediatrics">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Pediatric Nursing
+                </a>
+                <a href="/modules/mental-health.html" class="sidebar-link" data-nav="mental_health">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    Mental Health
+                </a>
+                <a href="/nclex-prep.html" class="sidebar-link" data-nav="nclex_prep">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                    NCLEX Prep
+                </a>
+
+                <div class="sidebar-section-label mt-4">Tools</div>
+                <button onclick="openCommandPalette()" class="sidebar-link w-full text-left">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    Command Palette
+                    <kbd class="ml-auto text-[10px] text-ward-600 bg-ward-900 px-1 rounded">⌘K</kbd>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="text-[10px] text-ward-600 uppercase tracking-wider mb-1">ADN Program</div>
+                <div class="text-xs text-ward-500">Static · Verified content</div>
+            </div>
+        </aside>
+
+        <div class="main-column">
+            <header class="topbar">
+                <div class="flex items-center gap-3">
+                    <button id="sidebar-toggle" class="topbar-icon-btn lg:hidden" onclick="toggleSidebar()" aria-label="Open menu">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                    <div class="hidden sm:block">
+                        <div class="text-sm font-medium text-ward-200">NURS 146 — Health Assessment</div>
+                        <div class="text-xs text-ward-500">Head-to-toe · Checklists · SOAP · Special populations · Clinical judgment</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <button onclick="openCommandPalette()" class="topbar-icon-btn hidden sm:flex" title="Command palette (Ctrl+K)">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                        <span class="text-xs text-ward-500 hidden md:inline">Search</span>
+                    </button>
+                    
+<a href="/index.html" class="nursing-return-link hidden sm:inline-flex" title="Back to Nursing Dashboard">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+    Dashboard
+</a>
+
+                </div>
+            </header>
+
+            <main class="main-content">
+                
+<div class="max-w-6xl mx-auto" data-module="assessment">
+    
+<nav class="module-breadcrumb" aria-label="Breadcrumb">
+    <a href="/index.html" class="module-breadcrumb-link">
+        <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        Dashboard
+    </a>
+    <span class="module-breadcrumb-sep" aria-hidden="true">/</span>
+    <span class="module-breadcrumb-current" aria-current="page">NURS 146 — Health Assessment</span>
+    
+    <span class="badge badge-mvp">MVP</span>
+    
+</nav>
+
+
+    <!-- Module header -->
+    <div class="module-header ha-module-header">
+        <div>
+            <h1 class="text-xl sm:text-2xl font-bold text-ward-100">NURS 146 — Health Assessment</h1>
+            <p class="text-sm text-ward-500 mt-1">NURS 146 — head-to-toe sequence, documentation practice, and safety-first clinical judgment</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+            <button onclick="verifySource('assessment')" class="btn-verify text-sm" title="View verified sources with rationale">Verify Source</button>
+            
+        </div>
+    </div>
+
+    <!-- Progress strip -->
+    <div class="progress-bar">
+            <div id="module-progress-bar" class="progress-bar-fill bg-ward-purple" style="width: 0%"></div>
+        </div>
+        <span class="stat-pill">0/132 studied</span>
+        <span class="stat-pill"> steps</span>
+        <span class="stat-pill"> checklists</span>
+        <span class="stat-pill"> SOAP</span>
+        <span class="stat-pill"> SBAR</span>
+        <span class="stat-pill"> cards</span>
+        <span class="stat-pill">Due: <strong>0</strong></span>
+        <span class="stat-pill"> scenarios</span>
+    </div>
+
+    <!-- Safety callout -->
+    <div class="module-banner module-banner--info ha-safety-callout mb-5">
+        <div>
+            <div class="module-banner-label ha-safety-label">NCLEX Focus — Reduction of Risk Potential</div>
+            Know normal before abnormal. When you find a red flag, stop routine assessment and escalate — document objectively and notify the provider immediately.
+        </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="ha-tabs module-tabs" role="tablist" aria-label="Health assessment sections">
+        <button class="tab-btn ha-tab-btn active" data-tab="head-to-toe" onclick="Assessment.switchTab('head-to-toe')">Head-to-Toe</button>
+        <button class="tab-btn ha-tab-btn" data-tab="systems" onclick="Assessment.switchTab('systems')">Systems</button>
+        <button class="tab-btn ha-tab-btn" data-tab="checklists" onclick="Assessment.switchTab('checklists')">Checklists</button>
+        <button class="tab-btn ha-tab-btn" data-tab="assess-next" onclick="Assessment.switchTab('assess-next')">Assess Next</button>
+        <button class="tab-btn ha-tab-btn" data-tab="soap" onclick="Assessment.switchTab('soap')">SOAP Notes</button>
+        <button class="tab-btn ha-tab-btn" data-tab="special-pop" onclick="Assessment.switchTab('special-pop')">Special Pop.</button>
+        <button class="tab-btn ha-tab-btn" data-tab="red-flags" onclick="Assessment.switchTab('red-flags')">Red Flags</button>
+        <button class="tab-btn ha-tab-btn" data-tab="red-flag-drill" onclick="Assessment.switchTab('red-flag-drill')">Red Flag Drill</button>
+        <button class="tab-btn ha-tab-btn" data-tab="practice" onclick="Assessment.switchTab('practice')">Practice</button>
+        <button class="tab-btn ha-tab-btn" data-tab="skills" onclick="Assessment.switchTab('skills')">Skills</button>
+        <button class="tab-btn ha-tab-btn" data-tab="documentation" onclick="Assessment.switchTab('documentation')">Documentation</button>
+        <button class="tab-btn ha-tab-btn" data-tab="flashcards" onclick="Assessment.switchTab('flashcards')">Flashcards</button>
+        <button class="tab-btn ha-tab-btn" data-tab="export" onclick="Assessment.switchTab('export')">Export</button>
+    </div>
+
+    <!-- ═══ HEAD-TO-TOE ═══ -->
+    <div id="tab-head-to-toe" class="tab-panel ha-panel">
+        <div class="grid lg:grid-cols-2 gap-5">
+            <div class="card p-5">
+                <h2 class="text-base font-semibold text-ward-100 mb-4">Assessment Sequence</h2>
+                <p class="text-xs text-ward-500 mb-4">Follow this order for a complete head-to-toe exam. Click each step for rationale.</p>
+                <div id="ha-sequence-list" class="ha-sequence-list"></div>
+            </div>
+            <div class="card p-5">
+                <h2 class="text-base font-semibold text-ward-100 mb-4">Step Detail</h2>
+                <div id="ha-step-detail">
+                    <p class="text-ward-500 text-sm">Select a step from the sequence to see teaching notes.</p>
+                </div>
+                <div id="ha-vitals-panel" class="mt-5 pt-5 border-t border-ward-800">
+                    <h3 class="text-sm font-semibold text-ward-purple mb-3">Vital Sign Norms</h3>
+                    <div id="ha-vitals-table"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ SYSTEMS ═══ -->
+    <div id="tab-systems" class="tab-panel ha-panel hidden">
+        <div class="ha-system-grid" id="ha-system-grid">
+            
+        </div>
+        <div id="ha-system-detail" class="card p-5 mt-5 hidden">
+            <p class="text-ward-500 text-sm">Select a body system above.</p>
+        </div>
+    </div>
+
+    <!-- ═══ CHECKLISTS ═══ -->
+    <div id="tab-checklists" class="tab-panel ha-panel hidden">
+        <div class="grid lg:grid-cols-3 gap-5">
+            <div class="card p-5 lg:col-span-1">
+                <h2 class="text-base font-semibold text-ward-100 mb-3">Assessment Checklists</h2>
+                <p class="text-xs text-ward-500 mb-4">Interactive documentation practice — check off items as you study or simulate clinical assessment.</p>
+                <div id="ha-checklist-list" class="ha-checklist-list">
+                    <p class="text-ward-500 text-sm">Loading checklists…</p>
+                </div>
+            </div>
+            <div class="card p-5 lg:col-span-2">
+                <div id="ha-checklist-detail">
+                    <p class="text-ward-500 text-sm">Select a checklist to begin.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ ASSESS NEXT ═══ -->
+    <div id="tab-assess-next" class="tab-panel ha-panel hidden">
+        <div class="max-w-2xl mx-auto card p-5 sm:p-6">
+            <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
+                <h2 class="text-base font-semibold text-ward-100">What Would You Assess Next?</h2>
+                <span id="assess-next-score" class="text-sm font-mono text-ward-500">0/0</span>
+            </div>
+            <p class="text-xs text-ward-500 mb-4">Scenario-based clinical judgment — choose the priority assessment step given current findings.</p>
+            <div id="assess-next-area">
+                <p class="text-ward-500 text-sm">Loading scenarios…</p>
+            </div>
+            <button onclick="Assessment.loadAssessNextScenarios()" class="btn-secondary w-full mt-4 text-sm">Reload Scenarios</button>
+        </div>
+    </div>
+
+    <!-- ═══ SOAP NOTES ═══ -->
+    <div id="tab-soap" class="tab-panel ha-panel hidden">
+        <div class="grid lg:grid-cols-3 gap-5">
+            <div class="card p-5 lg:col-span-1">
+                <h2 class="text-base font-semibold text-ward-100 mb-3">SOAP Documentation</h2>
+                <p class="text-xs text-ward-500 mb-4">Practice nursing documentation — write your note, then compare to the model answer.</p>
+                <div id="ha-soap-list" class="ha-soap-list">
+                    <p class="text-ward-500 text-sm">Loading exercises…</p>
+                </div>
+            </div>
+            <div class="card p-5 lg:col-span-2">
+                <div id="ha-soap-detail">
+                    <p class="text-ward-500 text-sm">Select an exercise to practice SOAP documentation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ SPECIAL POPULATIONS ═══ -->
+    <div id="tab-special-pop" class="tab-panel ha-panel hidden">
+        <div class="ha-pop-grid" id="ha-pop-grid">
+            <p class="text-ward-500 text-sm col-span-full">Loading special populations…</p>
+        </div>
+        <div id="ha-pop-detail" class="card p-5 mt-5 hidden"></div>
+    </div>
+
+    <!-- ═══ RED FLAGS ═══ -->
+    <div id="tab-red-flags" class="tab-panel ha-panel hidden">
+        <div class="max-w-3xl mx-auto">
+            <div class="clinical-callout ha-red-callout mb-5">
+                <div class="clinical-callout-label text-ward-danger">Critical Findings</div>
+                These findings require immediate nursing action. Do not delay for routine tasks.
+            </div>
+            <div id="ha-red-flags-list" class="ha-red-flags-list">
+                <p class="text-ward-500 text-sm">Loading red flags…</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ RED FLAG DRILL ═══ -->
+    <div id="tab-red-flag-drill" class="tab-panel ha-panel hidden">
+        <div class="max-w-2xl mx-auto card p-5 sm:p-6">
+            <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
+                <h2 class="text-base font-semibold text-ward-100">Red Flag Triage Drill</h2>
+                <span id="red-flag-drill-score" class="text-sm font-mono text-ward-500">0/0</span>
+            </div>
+            <p class="text-xs text-ward-500 mb-4">Given a critical finding, select the correct immediate nursing action and escalation path.</p>
+            <div id="red-flag-drill-area">
+                <p class="text-ward-500 text-sm">Loading drill…</p>
+            </div>
+            <button onclick="Assessment.loadRedFlagDrill()" class="btn-secondary w-full mt-4 text-sm">Reload Drill</button>
+        </div>
+    </div>
+
+    <!-- ═══ PRACTICE ═══ -->
+    <div id="tab-practice" class="tab-panel ha-panel hidden">
+        <div class="max-w-2xl mx-auto card p-5 sm:p-6">
+            <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
+                <h2 class="text-base font-semibold text-ward-100">Practice Mode</h2>
+                <span id="practice-score" class="text-sm font-mono text-ward-500">0/0</span>
+            </div>
+
+            <div class="practice-mode-pills mb-4">
+                <button class="mode-pill ha-mode-pill active" data-mode="mixed" onclick="Assessment.setPracticeMode('mixed')">Mixed</button>
+                <button class="mode-pill ha-mode-pill" data-mode="priority" onclick="Assessment.setPracticeMode('priority')">Priority</button>
+                <button class="mode-pill ha-mode-pill" data-mode="red_flags" onclick="Assessment.setPracticeMode('red_flags')">Red Flags</button>
+            </div>
+
+            <div id="practice-question-area">
+                <p class="text-ward-500 text-sm">Choose a mode and start practicing.</p>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mt-4">
+                <button onclick="Assessment.startPractice(10)" class="btn-primary text-sm">Start (10)</button>
+                <button onclick="Assessment.startPractice(15)" class="btn-secondary text-sm">Extended (15)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ DOCUMENTATION ═══ -->
+    <div id="tab-documentation" class="tab-panel ha-panel hidden">
+        <div class="learn-subtabs ha-learn-subtabs mb-4" role="tablist">
+            <button class="learn-subtab ha-learn-subtab active" data-doc-tab="soap-writer" onclick="Assessment.switchDocTab('soap-writer')">SOAP Writer</button>
+            <button class="learn-subtab ha-learn-subtab" data-doc-tab="sbar" onclick="Assessment.switchDocTab('sbar')">SBAR Handoff</button>
+        </div>
+
+        <div id="ha-doc-soap-writer" class="ha-doc-pane">
+            <div class="grid lg:grid-cols-3 gap-5">
+                <div class="card p-5 lg:col-span-1">
+                    <h2 class="text-base font-semibold text-ward-100 mb-3">SOAP Practice</h2>
+                    <p class="text-xs text-ward-500 mb-4">Write a full SOAP note from the findings, then submit for rubric-based feedback.</p>
+                    <div id="ha-doc-soap-list" class="ha-soap-list">
+                        <p class="text-ward-500 text-sm">Loading exercises…</p>
+                    </div>
+                </div>
+                <div class="card p-5 lg:col-span-2">
+                    <div id="ha-doc-soap-detail">
+                        <p class="text-ward-500 text-sm">Select an exercise to practice structured documentation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="ha-doc-sbar" class="ha-doc-pane hidden">
+            <div class="grid lg:grid-cols-3 gap-5">
+                <div class="card p-5 lg:col-span-1">
+                    <h2 class="text-base font-semibold text-ward-100 mb-3">SBAR Handoff</h2>
+                    <p class="text-xs text-ward-500 mb-4">Read the Situation and Background, then write your Assessment and Recommendation for provider handoff.</p>
+                    <div id="ha-sbar-list" class="ha-sbar-list">
+                        <p class="text-ward-500 text-sm">Loading scenarios…</p>
+                    </div>
+                </div>
+                <div class="card p-5 lg:col-span-2">
+                    <div id="ha-sbar-detail">
+                        <p class="text-ward-500 text-sm">Select a handoff scenario to begin.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ FLASHCARDS ═══ -->
+    <div id="tab-flashcards" class="tab-panel ha-panel hidden">
+        <div class="max-w-lg mx-auto">
+            <div class="flex flex-wrap justify-center gap-2 mb-4" id="ha-fc-stats">
+                <span class="stat-pill">Due: <strong id="ha-fc-due">0</strong></span>
+                <span class="stat-pill">Mastered: <strong id="ha-fc-mastered">0</strong></span>
+                <span class="stat-pill">Need Review: <strong id="ha-fc-review">0</strong></span>
+            </div>
+
+            <div id="ha-fc-complete" class="ha-fc-complete hidden"></div>
+
+            <div id="ha-flashcard-stage" class="ha-flashcard-stage">
+                <div id="ha-flashcard-inner" class="ha-flashcard-inner" onclick="Assessment.flipFlashcard()" role="button" tabindex="0" aria-label="Flip flashcard">
+                    <div id="ha-fc-front-view" class="ha-fc-face">
+                        <p class="text-xs text-ward-500 mb-2">Tap or press Space to reveal</p>
+                        <p id="ha-fc-front" class="ha-flashcard-front">Loading…</p>
+                        <span id="ha-fc-system" class="ha-fc-badge mt-3"></span>
+                    </div>
+                    <div id="ha-fc-back-view" class="ha-fc-face ha-fc-back hidden">
+                        <div class="ha-fc-field">
+                            <span class="ha-fc-label">Normal</span>
+                            <p id="ha-fc-back-normal" class="text-sm text-ward-success"></p>
+                        </div>
+                        <div class="ha-fc-field">
+                            <span class="ha-fc-label">Abnormal</span>
+                            <p id="ha-fc-back-abnormal" class="text-sm text-ward-warning"></p>
+                        </div>
+                        <div class="ha-fc-field">
+                            <span class="ha-fc-label">Nursing Action</span>
+                            <p id="ha-fc-back-action" class="text-xs text-ward-300"></p>
+                        </div>
+                        <p id="ha-fc-back-clinical" class="text-xs text-ward-accent mt-2"></p>
+                        <button type="button" id="ha-fc-verify-btn" class="btn-verify text-xs mt-3 hidden" onclick="event.stopPropagation(); verifySource('assessment')">Verify Source</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="ha-fc-dots" class="ha-fc-dots"></div>
+
+            <div class="ha-fc-rating">
+                <button type="button" class="ha-fc-rate review" disabled id="ha-fc-btn-review" onclick="Assessment.rateFlashcard('review')">Need Review</button>
+                <button type="button" class="ha-fc-rate know" disabled id="ha-fc-btn-know" onclick="Assessment.rateFlashcard('know')">Know It</button>
+            </div>
+
+            <div class="flex justify-between items-center mt-4">
+                <button onclick="Assessment.prevFlashcard()" class="btn-secondary text-sm" aria-label="Previous card">← Prev</button>
+                <span id="ha-flashcard-counter" class="text-sm text-ward-500 font-mono">0 / 0</span>
+                <button onclick="Assessment.nextFlashcard()" class="btn-secondary text-sm" aria-label="Next card">Next →</button>
+            </div>
+            <div class="flex flex-wrap justify-center gap-2 mt-3">
+                <button onclick="Assessment.loadFlashcards(10)" class="btn-primary text-sm">Study 10</button>
+                <button onclick="Assessment.loadFlashcards(10, true)" class="btn-secondary text-sm">Due 10</button>
+                <button onclick="Assessment.loadFlashcards(60)" class="btn-secondary text-sm">Full Deck</button>
+                <button onclick="Assessment.exportFlashcardDeck()" class="btn-secondary text-sm">Export Deck</button>
+            </div>
+            <p class="text-center text-xs text-ward-600 mt-3">← → navigate · Space flips · Rate cards to track spaced repetition</p>
+        </div>
+    </div>
+
+    <!-- ═══ EXPORT ═══ -->
+    <div id="tab-export" class="tab-panel ha-panel hidden">
+        <div class="card p-5 max-w-2xl mx-auto">
+            <h2 class="text-base font-semibold text-ward-100 mb-1">Export Study Materials</h2>
+            <p class="text-xs text-ward-500 mb-5">Print, save as PDF, or download assessment references for offline clinical prep</p>
+            <div class="export-grid">
+                <div class="export-card export-card-accent" onclick="Assessment.exportHeadToToeSheet()">
+                    <div class="export-card-icon">📋</div>
+                    <div class="export-card-title">Head-to-Toe Sequence</div>
+                    <div class="export-card-desc">-step exam order with vital sign norms — Save as PDF</div>
+                </div>
+                <div class="export-card" onclick="Assessment.copyHeadToToeClipboard()">
+                    <div class="export-card-icon">📎</div>
+                    <div class="export-card-title">Copy Head-to-Toe</div>
+                    <div class="export-card-desc">Plain-text sequence for notes, chat, or EMR prep</div>
+                </div>
+                <div class="export-card export-card-accent" onclick="Assessment.exportRedFlagsSheet()">
+                    <div class="export-card-icon">🚩</div>
+                    <div class="export-card-title">Red Flag Quick Reference</div>
+                    <div class="export-card-desc"> critical findings with immediate actions — printable cards</div>
+                </div>
+                <div class="export-card" onclick="Assessment.copyRedFlagsClipboard()">
+                    <div class="export-card-icon">📎</div>
+                    <div class="export-card-title">Copy Red Flags</div>
+                    <div class="export-card-desc">Critical findings &amp; actions as plain text</div>
+                </div>
+                <div class="export-card" onclick="Assessment.exportChecklistsPack()">
+                    <div class="export-card-icon">✅</div>
+                    <div class="export-card-title">Assessment Checklists Pack</div>
+                    <div class="export-card-desc"> checklists with checkbox items for clinical use</div>
+                </div>
+                <div class="export-card" onclick="Assessment.exportFlashcardDeck()">
+                    <div class="export-card-icon">📝</div>
+                    <div class="export-card-title">Flashcard Markdown</div>
+                    <div class="export-card-desc"> cards — download .md for Anki or notes</div>
+                </div>
+            </div>
+            <p class="text-center text-xs text-ward-600 mt-4">PDF exports open in a new window — use <strong>Print → Save as PDF</strong></p>
+        </div>
+    </div>
+
+    <!-- ═══ SKILLS ═══ -->
+    <div id="tab-skills" class="tab-panel ha-panel hidden">
+        <div class="learn-subtabs ha-learn-subtabs mb-4" role="tablist">
+            <button class="learn-subtab ha-learn-subtab active" data-skill-tab="skills" onclick="Assessment.switchSkillTab('skills')">Clinical Skills</button>
+            <button class="learn-subtab ha-learn-subtab" data-skill-tab="pain" onclick="Assessment.switchSkillTab('pain')">Pain (PQRST)</button>
+            <button class="learn-subtab ha-learn-subtab" data-skill-tab="interview" onclick="Assessment.switchSkillTab('interview')">Interview</button>
+        </div>
+        <div id="ha-skills-content">
+            <p class="text-ward-500 text-sm py-4">Open this tab to load skills content.</p>
+        </div>
+    </div>
+</div>
+
+            </main>
+
+            <footer class="main-footer">
+                Static ADN Study Resource · Deployable
+            </footer>
+        </div>
+    </div>
+
+    <script src="/static/js/export-utils.js"></script>
+    <script src="/static/js/ward-tabs.js"></script>
+    <script src="/static/js/data-api.js"></script>
+    <script src="/static/js/ward.js"></script>
+    <script src="/static/js/ward-static.js"></script>
+    
+    
+<script src="/static/js/assessment.js"></script>
+
+</body>
+</html>

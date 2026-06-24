@@ -1,0 +1,139 @@
+{% extends "base_static.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block page_title %}ADN Dashboard{% endblock %}
+{% block page_subtitle %}Curriculum map · Module launcher · NCLEX prep{% endblock %}
+
+{% block content %}
+<div class="dashboard-page">
+    <div class="welcome-banner">
+        <div>
+            <h1 class="text-xl sm:text-2xl font-bold text-ward-100">The Ward — ADN Study Suite</h1>
+            <p class="text-sm text-ward-400 mt-1">
+                Teaching-first, verified nursing content aligned with a traditional 4-semester ADN program.
+                Static deployment — no server required.
+            </p>
+        </div>
+        <span class="badge badge-mvp">Static</span>
+    </div>
+
+    <!-- Curriculum semester map -->
+    <div class="section-header">
+        <h2 class="section-title">ADN Curriculum Map</h2>
+        <span class="text-xs text-ward-500">Traditional 4-semester sequence</span>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+        {% for semester in curriculum.semesters %}
+        <div class="card p-5 border-l-4 {% if semester.number == 1 %}border-l-ward-accent{% elif semester.number == 2 %}border-l-ward-success{% elif semester.number == 3 %}border-l-ward-warning{% else %}border-l-ward-purple{% endif %}">
+            <div class="flex items-center justify-between mb-3">
+                <h3 class="font-semibold text-ward-100">Semester {{ semester.number }}</h3>
+                <span class="text-xs text-ward-500">{{ semester.credits }} credits</span>
+            </div>
+            <p class="text-xs text-ward-500 mb-3">{{ semester.theme }}</p>
+            <ul class="space-y-2">
+                {% for course in semester.courses %}
+                <li class="flex items-start gap-2 text-sm">
+                    <span class="text-ward-600 font-mono text-xs mt-0.5 shrink-0">{{ course.code }}</span>
+                    <div class="min-w-0">
+                        {% if course.module_url %}
+                        <a href="{{ course.module_url }}" class="text-ward-200 hover:text-ward-accent transition">{{ course.name }}</a>
+                        {% else %}
+                        <span class="text-ward-300">{{ course.name }}</span>
+                        {% endif %}
+                        <p class="text-xs text-ward-600">{{ course.description }}</p>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- NCLEX Prep featured card -->
+    <a href="/nclex-prep.html" class="block mb-8">
+        <div class="card p-5 sm:p-6 border border-ward-accent/30 bg-gradient-to-r from-ward-900/80 to-ward-accent/5 hover:border-ward-accent/50 transition group">
+            <div class="flex flex-wrap items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-ward-accent/10 border border-ward-accent/30 flex items-center justify-center shrink-0">
+                    <svg class="w-6 h-6 text-ward-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-center gap-2 mb-1">
+                        <h3 class="font-semibold text-ward-accent text-base sm:text-lg group-hover:text-ward-100 transition">NCLEX-RN Prep Center</h3>
+                        <span class="badge badge-new">New</span>
+                    </div>
+                    <p class="text-sm text-ward-400">Topic-based practice, mixed clinical judgment drills, and detailed rationales across all ADN modules.</p>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="stat-pill">{{ nclex_stats.total_questions }} questions</span>
+                        <span class="stat-pill">{{ nclex_stats.categories }} categories</span>
+                        <span class="stat-pill">Clinical Judgment focus</span>
+                    </div>
+                </div>
+                <svg class="w-5 h-5 text-ward-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </div>
+        </div>
+    </a>
+
+    <!-- Module launcher -->
+    <div class="section-header">
+        <h2 class="section-title">Nursing Study Modules</h2>
+        <span class="text-xs text-ward-500">{{ stats.modules | length }} modules · {{ stats.total_items }} study items</span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
+        {% for mod in stats.modules %}
+        <a href="{{ mod.url }}" class="module-launcher {{ mod.accent }}">
+            <div class="flex justify-between items-start gap-2 mb-3">
+                <h3 class="font-semibold text-ward-100 text-sm sm:text-base">{{ mod.name }}</h3>
+                {% if mod.badge %}
+                <span class="badge badge-{{ mod.badge }}">{% if mod.badge == 'mvp' %}MVP{% elif mod.badge == 'new' %}New{% else %}{{ mod.badge | capitalize }}{% endif %}</span>
+                {% endif %}
+            </div>
+            <p class="text-xs sm:text-sm text-ward-500 mb-4 leading-relaxed">{{ mod.description }}</p>
+            <div class="flex flex-wrap gap-2 text-[10px] text-ward-600">
+                {% for key, val in mod.summary.items() %}
+                {% if key != 'items_total' and val %}
+                <span class="stat-pill">{{ val }} {{ key | replace('_count', '') | replace('_', ' ') }}</span>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+
+    <!-- Student guide -->
+    <a href="/how-to-use.html" class="block mb-8">
+        <div class="card p-5 border border-ward-700/80 hover:border-ward-accent/40 transition group">
+            <div class="flex flex-wrap items-center gap-4">
+                <div class="w-10 h-10 rounded-lg bg-ward-purple/10 border border-ward-purple/30 flex items-center justify-center shrink-0 text-ward-purple">?</div>
+                <div class="flex-1 min-w-0">
+                    <h3 class="font-semibold text-ward-200 text-sm sm:text-base group-hover:text-ward-accent transition">How to Use The Ward</h3>
+                    <p class="text-xs sm:text-sm text-ward-500 mt-1">Study workflow, NCLEX strategy, weekly rhythm, and navigation tips for ADN students.</p>
+                </div>
+                <svg class="w-5 h-5 text-ward-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </div>
+        </div>
+    </a>
+
+    <!-- Quick actions -->
+    <div class="section-header">
+        <h2 class="section-title">Quick Actions</h2>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+        <a href="/modules/terminology.html#practice" class="quick-action">
+            <span class="quick-action-title text-ward-accent">Practice Quiz</span>
+            <span class="quick-action-desc">NCLEX-style</span>
+        </a>
+        <a href="/modules/med_surg.html#flashcards" class="quick-action">
+            <span class="quick-action-title text-ward-success">Med-Surg Cards</span>
+            <span class="quick-action-desc">Body systems</span>
+        </a>
+        <a href="/modules/dosage.html" class="quick-action">
+            <span class="quick-action-title text-ward-warning">Dosage Calc</span>
+            <span class="quick-action-desc">With derivations</span>
+        </a>
+        <a href="/nclex-prep.html" class="quick-action">
+            <span class="quick-action-title text-ward-purple">NCLEX Mixed</span>
+            <span class="quick-action-desc">All topics</span>
+        </a>
+    </div>
+</div>
+{% endblock %}

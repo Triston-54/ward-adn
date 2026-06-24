@@ -1,0 +1,52 @@
+{
+  "program": "Associate Degree in Nursing (ADN)",
+  "institution_style": "Traditional 4-semester program (Valley College / New River CTC model)",
+  "total_semesters": 4,
+  "semesters": [
+    {
+      "number": 1,
+      "theme": "Foundations of nursing practice and sciences",
+      "credits": 16,
+      "courses": [
+        {"code": "NURS 101", "name": "Fundamentals of Nursing", "description": "Nursing process, safety, infection control, basic skills", "module_url": "/modules/assessment.html"},
+        {"code": "BIOL 201", "name": "Anatomy & Physiology I", "description": "Body structure and function", "module_url": "/modules/pathophysiology.html"},
+        {"code": "BIOL 202", "name": "Microbiology", "description": "Infection, immunity, antimicrobial principles", "module_url": "/modules/microbiology.html"},
+        {"code": "ENGL 101", "name": "English Composition", "description": "Written communication for clinical documentation", "module_url": null},
+        {"code": "MEDT 101", "name": "Medical Terminology", "description": "Word parts and clinical vocabulary", "module_url": "/modules/terminology.html"}
+      ]
+    },
+    {
+      "number": 2,
+      "theme": "Pharmacology, assessment, and adult health introduction",
+      "credits": 17,
+      "courses": [
+        {"code": "NURS 145", "name": "Dosage & Pharmacology", "description": "Medication administration and calculations", "module_url": "/modules/dosage.html"},
+        {"code": "NURS 146", "name": "Health Assessment", "description": "Head-to-toe assessment and documentation", "module_url": "/modules/assessment.html"},
+        {"code": "NURS 150", "name": "Adult Health I (Med-Surg)", "description": "Cardiovascular, respiratory, fluid/electrolyte disorders", "module_url": "/modules/med_surg.html"},
+        {"code": "BIOL 203", "name": "Pathophysiology", "description": "Disease processes and physiological adaptation", "module_url": "/modules/pathophysiology.html"},
+        {"code": "PSYC 201", "name": "Human Growth & Development", "description": "Lifespan development", "module_url": "/modules/pediatrics.html"}
+      ]
+    },
+    {
+      "number": 3,
+      "theme": "Complex adult health, mental health, and specialty populations",
+      "credits": 18,
+      "courses": [
+        {"code": "NURS 200", "name": "Adult Health II (Med-Surg)", "description": "Neurological, GI, renal, endocrine, multisystem failure", "module_url": "/modules/med_surg.html"},
+        {"code": "NURS 147", "name": "Mental Health Nursing", "description": "Therapeutic communication and psychosocial integrity", "module_url": "/modules/mental-health.html"},
+        {"code": "NURS 210", "name": "Maternal-Newborn Nursing", "description": "Antepartum through newborn care", "module_url": "/modules/maternal_newborn.html"},
+        {"code": "NURS 215", "name": "Pediatric Nursing", "description": "Growth, milestones, immunizations, safety", "module_url": "/modules/pediatrics.html"}
+      ]
+    },
+    {
+      "number": 4,
+      "theme": "Leadership, management, and NCLEX preparation",
+      "credits": 15,
+      "courses": [
+        {"code": "NURS 220", "name": "Nursing Leadership & Management", "description": "Delegation, prioritization, transition to practice", "module_url": null},
+        {"code": "NURS 225", "name": "Complex Client Care / Capstone", "description": "Multisystem integration and clinical judgment", "module_url": "/modules/med_surg.html"},
+        {"code": "NURS 230", "name": "NCLEX-RN Preparation", "description": "Comprehensive review and test strategies", "module_url": "/nclex-prep.html"}
+      ]
+    }
+  ]
+}

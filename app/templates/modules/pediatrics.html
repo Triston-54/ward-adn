@@ -1,0 +1,132 @@
+{% extends "base_static.html" %}
+{% from "partials/module_breadcrumb.html" import module_breadcrumb %}
+{% block title %}Pediatric Nursing{% endblock %}
+{% block page_title %}Pediatric Nursing{% endblock %}
+{% block page_subtitle %}Growth · Milestones · Immunizations · Safety · NCLEX Health Promotion{% endblock %}
+
+{% block topbar_actions %}
+<a href="/index.html" class="nursing-return-link hidden sm:inline-flex" title="Back to Dashboard">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+    Dashboard
+</a>
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/css/maternal_child.css">
+{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto" data-module="pediatrics" data-nav="pediatrics">
+    {{ module_breadcrumb('Pediatric Nursing', parent_url='/index.html', badge='new') }}
+
+    <div class="module-header mc-module-header">
+        <div>
+            <h1 class="text-xl sm:text-2xl font-bold text-ward-100">Pediatric Nursing</h1>
+            <p class="text-sm text-ward-500 mt-1">Age-specific assessment, development, immunizations, and family-centered care</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+            <button onclick="verifySource('maternal_child')" class="btn-verify text-sm" title="View verified sources">Verify Source</button>
+        </div>
+    </div>
+
+    <div class="mc-stats-strip">
+        <span class="stat-pill">{{ summary.milestone_count }} milestones</span>
+        <span class="stat-pill">{{ summary.growth_count }} growth topics</span>
+        <span class="stat-pill">{{ summary.immunization_count }} immunizations</span>
+        <span class="stat-pill">{{ summary.safety_count }} safety topics</span>
+        <span class="stat-pill">{{ summary.practice_count }} NCLEX items</span>
+    </div>
+
+    <div class="mc-callout">
+        <div class="mc-callout-icon">☺</div>
+        <div>
+            <div class="text-xs font-semibold text-emerald-400 uppercase tracking-wide">NCLEX Focus — Health Promotion</div>
+            <p class="text-sm text-ward-300 mt-0.5">Pediatrics is not mini-adult nursing. Vital sign norms, communication, and medication dosing all change by developmental stage.</p>
+        </div>
+    </div>
+
+    <div class="mc-tabs module-tabs" role="tablist" aria-label="Pediatric nursing sections">
+        <button class="tab-btn mc-tab-btn active" data-tab="milestones" onclick="Pediatrics.switchTab('milestones')">Milestones</button>
+        <button class="tab-btn mc-tab-btn" data-tab="growth" onclick="Pediatrics.switchTab('growth')">Growth &amp; Development</button>
+        <button class="tab-btn mc-tab-btn" data-tab="immunizations" onclick="Pediatrics.switchTab('immunizations')">Immunizations</button>
+        <button class="tab-btn mc-tab-btn" data-tab="safety" onclick="Pediatrics.switchTab('safety')">Safety</button>
+        <button class="tab-btn mc-tab-btn" data-tab="flashcards" onclick="Pediatrics.switchTab('flashcards')">Flashcards</button>
+        <button class="tab-btn mc-tab-btn" data-tab="practice" onclick="Pediatrics.switchTab('practice')">Practice</button>
+    </div>
+
+    <div id="tab-milestones" class="tab-panel mc-panel">
+        <div class="mb-4">
+            <h2 class="text-base font-semibold text-ward-100">Developmental Milestones</h2>
+            <p class="text-xs text-ward-500 mt-1">Gross motor, fine motor, language, and social milestones by age</p>
+        </div>
+        <div id="peds-milestones-container">
+            <div class="loading-state" role="status"><span class="loading-spinner" aria-hidden="true"></span>Loading milestones…</div>
+        </div>
+    </div>
+
+    <div id="tab-growth" class="tab-panel mc-panel hidden">
+        <div class="mb-4">
+            <h2 class="text-base font-semibold text-ward-100">Growth &amp; Development</h2>
+            <p class="text-xs text-ward-500 mt-1">Growth charts, vital sign norms, and age-appropriate communication</p>
+        </div>
+        <div id="peds-growth-container">
+            <div class="loading-state" role="status"><span class="loading-spinner" aria-hidden="true"></span>Loading growth content…</div>
+        </div>
+    </div>
+
+    <div id="tab-immunizations" class="tab-panel mc-panel hidden">
+        <div class="mb-4">
+            <h2 class="text-base font-semibold text-ward-100">Immunization Schedule</h2>
+            <p class="text-xs text-ward-500 mt-1">CDC recommended schedule with nursing considerations</p>
+        </div>
+        <div id="peds-immunizations-container">
+            <div class="loading-state" role="status"><span class="loading-spinner" aria-hidden="true"></span>Loading immunizations…</div>
+        </div>
+    </div>
+
+    <div id="tab-safety" class="tab-panel mc-panel hidden">
+        <div class="mb-4">
+            <h2 class="text-base font-semibold text-ward-100">Pediatric Safety</h2>
+            <p class="text-xs text-ward-500 mt-1">Injury prevention, medication safety, and hospital precautions</p>
+        </div>
+        <div id="peds-safety-container">
+            <div class="loading-state" role="status"><span class="loading-spinner" aria-hidden="true"></span>Loading safety content…</div>
+        </div>
+    </div>
+
+    <div id="tab-flashcards" class="tab-panel mc-panel hidden">
+        <div class="max-w-lg mx-auto">
+            <div id="peds-flashcard-stage" class="mc-flashcard-stage">
+                <div id="peds-flashcard-inner" class="mc-flashcard-inner" onclick="Pediatrics.flipCard()" role="button" tabindex="0">
+                    <p id="pedsfc-front" class="mc-flashcard-front">Loading…</p>
+                    <p id="pedsfc-back" class="mc-flashcard-back hidden"></p>
+                </div>
+            </div>
+            <div class="flex justify-between mt-4">
+                <button onclick="Pediatrics.prevCard()" class="btn-secondary text-sm">← Prev</button>
+                <span id="pedsfc-counter" class="text-xs text-ward-500 font-mono">0/0</span>
+                <button onclick="Pediatrics.nextCard()" class="btn-secondary text-sm">Next →</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab-practice" class="tab-panel mc-panel hidden">
+        <div class="max-w-2xl mx-auto">
+            <div class="flex flex-wrap gap-2 mb-4">
+                <button onclick="Pediatrics.startPractice(5)" class="btn-secondary text-sm">5 Questions</button>
+                <button onclick="Pediatrics.startPractice(10)" class="btn-primary text-sm">10 Questions</button>
+            </div>
+            <div id="peds-practice-area">
+                <p class="text-ward-500 text-sm">Choose a session size above.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script defer src="/static/js/pediatrics.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() { Pediatrics.init(); });
+</script>
+{% endblock %}

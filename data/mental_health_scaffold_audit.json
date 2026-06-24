@@ -1,0 +1,20 @@
+{
+  "agent": "Mental Health Scaffold Audit \u2014 Phase 1 \u2014 2026-06",
+  "catalog_items_reviewed": 29,
+  "verified": 29,
+  "flagged": 0,
+  "breakdown": {
+    "communication": 8,
+    "barriers": 4,
+    "safety_flags": 8,
+    "screening_tools": 4,
+    "safety_drill": 5
+  },
+  "errors": [],
+  "module_summary": {
+    "verified": 29,
+    "needs_review": 0,
+    "unreviewed": 0,
+    "total": 29
+  }
+}

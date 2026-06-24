@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="The Ward — ADN Nursing Study Suite (Static)">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="/static/manifest.json">
+    <link rel="icon" type="image/svg+xml" href="/static/images/ward-icon.svg">
+    <link rel="icon" type="image/png" sizes="192x192" href="/static/images/ward-icon-192.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/static/images/ward-icon-192.png">
+    <title>Dashboard — ADN Study Suite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ward: {
+                            950: '#0a0f1a',
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                            600: '#475569',
+                            500: '#64748b',
+                            400: '#94a3b8',
+                            300: '#cbd5e1',
+                            200: '#e2e8f0',
+                            accent: '#38bdf8',
+                            success: '#34d399',
+                            warning: '#fbbf24',
+                            danger: '#f87171',
+                            purple: '#a78bfa',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/ward.css">
+    
+    
+</head>
+<body class="h-full bg-ward-950 text-ward-200 font-sans antialiased">
+    <div id="sidebar-backdrop" class="sidebar-backdrop hidden" onclick="closeSidebar()"></div>
+
+    <div id="command-palette" class="hidden fixed inset-0 z-50 flex items-start justify-center pt-[12vh] sm:pt-[15vh] bg-black/60 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-label="Command palette">
+        <div class="w-full max-w-lg bg-ward-800 border border-ward-600 rounded-xl shadow-2xl overflow-hidden">
+            <div class="flex items-center gap-2 px-4 py-3 border-b border-ward-700">
+                <svg class="w-4 h-4 text-ward-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                <input type="text" id="cmd-input" placeholder="Search modules, actions… (Ctrl+K)"
+                       aria-label="Search modules and actions"
+                       class="flex-1 bg-transparent text-ward-200 placeholder-ward-500 focus:outline-none text-sm">
+                <kbd class="text-xs text-ward-600 bg-ward-900 px-1.5 py-0.5 rounded hidden sm:inline">Esc</kbd>
+            </div>
+            <div id="cmd-results" class="cmd-results-list overflow-y-auto py-2"></div>
+        </div>
+    </div>
+
+    <div id="source-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-labelledby="source-modal-title">
+        <div class="w-full max-w-lg bg-ward-800 border border-ward-600 rounded-xl shadow-2xl overflow-hidden">
+            <div class="flex justify-between items-center px-6 py-4 border-b border-ward-700 bg-ward-900/50">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-ward-accent/10 border border-ward-accent/30 flex items-center justify-center">
+                        <svg class="w-4 h-4 text-ward-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <div>
+                        <h3 id="source-modal-title" class="text-base font-semibold text-ward-accent">Verify Source</h3>
+                        <p class="text-[10px] text-ward-500 uppercase tracking-wider">Verified nursing content</p>
+                    </div>
+                </div>
+                <button onclick="closeSourceModal()" class="text-ward-500 hover:text-ward-200 text-xl leading-none p-1" aria-label="Close">&times;</button>
+            </div>
+            <div id="source-content" class="px-6 py-4 max-h-[70vh] overflow-y-auto"></div>
+        </div>
+    </div>
+
+    <div class="app-shell">
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-brand">
+                <a href="/index.html" class="flex items-center gap-3 group">
+                    <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-ward-accent to-ward-purple flex items-center justify-center text-ward-900 font-bold">W</div>
+                    <div>
+                        <div class="font-semibold text-ward-100 group-hover:text-ward-accent transition text-sm">The Ward</div>
+                        <div class="text-[10px] text-ward-500 uppercase tracking-wider">ADN Study Suite</div>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="sidebar-section-label">ADN Curriculum</div>
+                <a href="/index.html" class="sidebar-link" data-nav="dashboard">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+                    Dashboard
+                </a>
+                <a href="/how-to-use.html" class="sidebar-link" data-nav="how_to_use">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    How to Use
+                </a>
+
+                <div class="sidebar-section-label mt-4">Nursing Modules</div>
+                <a href="/modules/terminology.html" class="sidebar-link" data-nav="terminology">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                    Medical Terminology
+                </a>
+                <a href="/modules/microbiology.html" class="sidebar-link" data-nav="microbiology">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                    Microbiology
+                </a>
+                <a href="/modules/dosage.html" class="sidebar-link" data-nav="dosage">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                    Dosage &amp; Pharmacology
+                </a>
+                <a href="/modules/assessment.html" class="sidebar-link" data-nav="assessment">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                    Health Assessment
+                </a>
+                <a href="/modules/pathophysiology.html" class="sidebar-link" data-nav="pathophysiology">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    Pathophysiology
+                </a>
+                <a href="/modules/med_surg.html" class="sidebar-link" data-nav="med_surg">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    Medical-Surgical Nursing
+                </a>
+                <a href="/modules/maternal_newborn.html" class="sidebar-link" data-nav="maternal_newborn">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    Maternal-Newborn
+                </a>
+                <a href="/modules/pediatrics.html" class="sidebar-link" data-nav="pediatrics">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Pediatric Nursing
+                </a>
+                <a href="/modules/mental-health.html" class="sidebar-link" data-nav="mental_health">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    Mental Health
+                </a>
+                <a href="/nclex-prep.html" class="sidebar-link" data-nav="nclex_prep">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                    NCLEX Prep
+                </a>
+
+                <div class="sidebar-section-label mt-4">Tools</div>
+                <button onclick="openCommandPalette()" class="sidebar-link w-full text-left">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    Command Palette
+                    <kbd class="ml-auto text-[10px] text-ward-600 bg-ward-900 px-1 rounded">⌘K</kbd>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="text-[10px] text-ward-600 uppercase tracking-wider mb-1">ADN Program</div>
+                <div class="text-xs text-ward-500">Static · Verified content</div>
+            </div>
+        </aside>
+
+        <div class="main-column">
+            <header class="topbar">
+                <div class="flex items-center gap-3">
+                    <button id="sidebar-toggle" class="topbar-icon-btn lg:hidden" onclick="toggleSidebar()" aria-label="Open menu">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                    <div class="hidden sm:block">
+                        <div class="text-sm font-medium text-ward-200">ADN Dashboard</div>
+                        <div class="text-xs text-ward-500">Curriculum map · Module launcher · NCLEX prep</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <button onclick="openCommandPalette()" class="topbar-icon-btn hidden sm:flex" title="Command palette (Ctrl+K)">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                        <span class="text-xs text-ward-500 hidden md:inline">Search</span>
+                    </button>
+                    
+                </div>
+            </header>
+
+            <main class="main-content">
+                
+<div class="dashboard-page">
+    <div class="welcome-banner">
+        <div>
+            <h1 class="text-xl sm:text-2xl font-bold text-ward-100">The Ward — ADN Study Suite</h1>
+            <p class="text-sm text-ward-400 mt-1">
+                Teaching-first, verified nursing content aligned with a traditional 4-semester ADN program.
+                Static deployment — no server required.
+            </p>
+        </div>
+        <span class="badge badge-mvp">Static</span>
+    </div>
+
+    <!-- Curriculum semester map -->
+    <div class="section-header">
+        <h2 class="section-title">ADN Curriculum Map</h2>
+        <span class="text-xs text-ward-500">Traditional 4-semester sequence</span>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+        
+        <div class="card p-5 border-l-4 border-l-ward-accent">
+            <div class="flex items-center justify-between mb-3">
+                <h3 class="font-semibold text-ward-100">Semester 1</h3>
+                <span class="text-xs text-ward-500">16 credits</span>
+            </div>
+            <p class="text-xs text-ward-500 mb-3">Foundations of nursing practice and sciences</p>
+            <ul class="space-y-2">
+                
+                <li class="flex items-start gap-2 text-sm">
+                    <span class="text-ward-600 font-mono text-xs mt-0.5 shrink-0">NURS 101</span>
+                    <div class="min-w-0">
+                        
+                        <a href="/modules/assessment.html" class="text-ward-200 hover:text-ward-accent transition">Fundamentals of Nursing</a>
+                        
+                        <p class="text-xs text-ward-600">Nursing process, safety, infection control, basic skills</p>
+                    </div>
+                </li>
+                
+                <li class="flex items-start gap-2 text-sm">
+                    <span class="text-ward-600 font-mono text-xs mt-0.5 shrink-0">BIOL 201</span>
+                    <div class="min-w-0">
+                        
+                        <a href="/modules/pathophysiology.html" class="text-ward-200 hover:text-ward-accent transition">Anatomy &amp; Physiology I</a>
+                        
+                        <p class="text-xs text-ward-600">Body structure and function</p>
+                    </div>
+                </li>
+                
+                <li class="flex items-start gap-2 text-sm">
+                    <span class="text-ward-600 font-mono text-xs mt-0.5 shrink-0">BIOL 202</span>
+                    <div class="min-w-0">
+                        
+                        <a href="/modules/microbiology.html" class="text-ward-200 hover:text-ward-accent transition">Microbiology</a>
+                        
+                        <p class="text-xs text-ward-600">Infection, immunity, antimicrobial principles</p>
+                    </div>
+                </li>
+                
+                <li class="flex items-start gap-2 text-sm">
+                    <span class="text-ward-600 font-mono text-xs mt-0.5 shrink-0">ENGL 101</span>
+                    <div class="min-w-0">
+                        
+                        <span class="text-ward-300">English Composition</span>
+                        
+                        <p class="text-xs text-ward-600">Written communication for clinical documentation</p>
+                    </div>
+                </li>
+                
+                <li class="flex items-start gap-2 text-sm">
+                    <span class="text-ward-600 font-mono text-xs mt-0.5 shrink-0">MEDT 101</span>
+                    <div class="min-w-0">
+                        
+                        <a href="/modules/terminology.html" class="text-ward-200 hover:text-ward-accent transition">Medical Terminology</a>
+                        
+                        <p class="text-xs text-ward-600">Word parts and clinical vocabulary</p>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+        
+        <div class="card p-5 border-l-4 border-l-ward-success">
+            <div class="flex items-center justify-between mb-3">
+                <h3 class="font-semibold text-ward-100">Semester 2</h3>
+                <span class="text-xs text-ward-500">17 credits</span>
+            </div>
+            <p class="text-xs text-ward-500 mb-3">Pharmacology, assessment, and adult health introduction</p>
+            <ul class="space-y-2">
+                
+                <li class="flex items-start gap-2 text-sm">
+                    <span class="text-ward-600 font-mono text-xs mt-0.5 shrink-0">NURS 145</span>
+                    <div class="min-w-0">
+                        
+                        <a href="/modules/dosage.html" class="text-ward-200 hover:text-ward-accent transition">Dosage &amp; Pharmacology</a>
+                        
+                        <p class="text-xs text-ward-600">Medication administration and calculations</p>
+                    </div>
+                </li>
+                
+                <li class="flex items-start gap-2 text-sm">
+                    <span class="text-ward-600 font-mono text-xs mt-0.5 shrink-0">NURS 146</span>
+                    <div class="min-w-0">
+                        
+                        <a href="/modules/assessment.html" class="text-ward-200 hover:text-ward-accent transition">Health Assessment</a>
+                        
+                        <p class="text-xs text-ward-600">Head-to-toe assessment and documentation</p>
+                    </div>
+                </li>
+                
+                <li class="flex items-start gap-2 text-sm">
+                    <span class="text-ward-600 font-mono text-xs mt-0.5 shrink-0">NURS 150</span>
+                    <div class="min-w-0">
+                        
+                        <a href="/modules/med_surg.html" class="text-ward-200 hover:text-ward-accent transition">Adult Health I (Med-Surg)</a>
+                        
+                        <p class="text-xs text-ward-600">Cardiovascular, respiratory, fluid/electrolyte disorders</p>
+                    </div>
+                </li>
+                
+                <li class="flex items-start gap-2 text-sm">
+                    <span class="text-ward-600 font-mono text-xs mt-0.5 shrink-0">BIOL 203</span>
+                    <div class="min-w-0">
+                        
+                        <a href="/modules/pathophysiology.html" class="text-ward-200 hover:text-ward-accent transition">Pathophysiology</a>
+                        
+                        <p class="text-xs text-ward-600">Disease processes and physiological adaptation</p>
+                    </div>
+                </li>
+                
+                <li class="flex items-start gap-2 text-sm">
+                    <span class="text-ward-600 font-mono text-xs mt-0.5 shrink-0">PSYC 201</span>
+                    <div class="min-w-0">
+                        
+                        <a href="/modules/pediatrics.html" class="text-ward-200 hover:text-ward-accent transition">Human Growth &amp; Development</a>
+                        
+                        <p class="text-xs text-ward-600">Lifespan development</p>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+        
+        <div class="card p-5 border-l-4 border-l-ward-warning">
+            <div class="flex items-center justify-between mb-3">
+                <h3 class="font-semibold text-ward-100">Semester 3</h3>
+                <span class="text-xs text-ward-500">18 credits</span>
+            </div>
+            <p class="text-xs text-ward-500 mb-3">Complex adult health, mental health, and specialty populations</p>
+            <ul class="space-y-2">
+                
+                <li class="flex items-start gap-2 text-sm">
+                    <span class="text-ward-600 font-mono text-xs mt-0.5 shrink-0">NURS 200</span>
+                    <div class="min-w-0">
+                        
+                        <a href="/modules/med_surg.html" class="text-ward-200 hover:text-ward-accent transition">Adult Health II (Med-Surg)</a>
+                        
+                        <p class="text-xs text-ward-600">Neurological, GI, renal, endocrine, multisystem failure</p>
+                    </div>
+                </li>
+                
+                <li class="flex items-start gap-2 text-sm">
+                    <span class="text-ward-600 font-mono text-xs mt-0.5 shrink-0">NURS 147</span>
+                    <div class="min-w-0">
+                        
+                        <a href="/modules/mental-health.html" class="text-ward-200 hover:text-ward-accent transition">Mental Health Nursing</a>
+                        
+                        <p class="text-xs text-ward-600">Therapeutic communication and psychosocial integrity</p>
+                    </div>
+                </li>
+                
+                <li class="flex items-start gap-2 text-sm">
+                    <span class="text-ward-600 font-mono text-xs mt-0.5 shrink-0">NURS 210</span>
+                    <div class="min-w-0">
+                        
+                        <a href="/modules/maternal_newborn.html" class="text-ward-200 hover:text-ward-accent transition">Maternal-Newborn Nursing</a>
+                        
+                        <p class="text-xs text-ward-600">Antepartum through newborn care</p>
+                    </div>
+                </li>
+                
+                <li class="flex items-start gap-2 text-sm">
+                    <span class="text-ward-600 font-mono text-xs mt-0.5 shrink-0">NURS 215</span>
+                    <div class="min-w-0">
+                        
+                        <a href="/modules/pediatrics.html" class="text-ward-200 hover:text-ward-accent transition">Pediatric Nursing</a>
+                        
+                        <p class="text-xs text-ward-600">Growth, milestones, immunizations, safety</p>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+        
+        <div class="card p-5 border-l-4 border-l-ward-purple">
+            <div class="flex items-center justify-between mb-3">
+                <h3 class="font-semibold text-ward-100">Semester 4</h3>
+                <span class="text-xs text-ward-500">15 credits</span>
+            </div>
+            <p class="text-xs text-ward-500 mb-3">Leadership, management, and NCLEX preparation</p>
+            <ul class="space-y-2">
+                
+                <li class="flex items-start gap-2 text-sm">
+                    <span class="text-ward-600 font-mono text-xs mt-0.5 shrink-0">NURS 220</span>
+                    <div class="min-w-0">
+                        
+                        <span class="text-ward-300">Nursing Leadership &amp; Management</span>
+                        
+                        <p class="text-xs text-ward-600">Delegation, prioritization, transition to practice</p>
+                    </div>
+                </li>
+                
+                <li class="flex items-start gap-2 text-sm">
+                    <span class="text-ward-600 font-mono text-xs mt-0.5 shrink-0">NURS 225</span>
+                    <div class="min-w-0">
+                        
+                        <a href="/modules/med_surg.html" class="text-ward-200 hover:text-ward-accent transition">Complex Client Care / Capstone</a>
+                        
+                        <p class="text-xs text-ward-600">Multisystem integration and clinical judgment</p>
+                    </div>
+                </li>
+                
+                <li class="flex items-start gap-2 text-sm">
+                    <span class="text-ward-600 font-mono text-xs mt-0.5 shrink-0">NURS 230</span>
+                    <div class="min-w-0">
+                        
+                        <a href="/nclex-prep.html" class="text-ward-200 hover:text-ward-accent transition">NCLEX-RN Preparation</a>
+                        
+                        <p class="text-xs text-ward-600">Comprehensive review and test strategies</p>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+
+    <!-- NCLEX Prep featured card -->
+    <a href="/nclex-prep.html" class="block mb-8">
+        <div class="card p-5 sm:p-6 border border-ward-accent/30 bg-gradient-to-r from-ward-900/80 to-ward-accent/5 hover:border-ward-accent/50 transition group">
+            <div class="flex flex-wrap items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-ward-accent/10 border border-ward-accent/30 flex items-center justify-center shrink-0">
+                    <svg class="w-6 h-6 text-ward-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-center gap-2 mb-1">
+                        <h3 class="font-semibold text-ward-accent text-base sm:text-lg group-hover:text-ward-100 transition">NCLEX-RN Prep Center</h3>
+                        <span class="badge badge-new">New</span>
+                    </div>
+                    <p class="text-sm text-ward-400">Topic-based practice, mixed clinical judgment drills, and detailed rationales across all ADN modules.</p>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="stat-pill">90 questions</span>
+                        <span class="stat-pill">16 categories</span>
+                        <span class="stat-pill">Clinical Judgment focus</span>
+                    </div>
+                </div>
+                <svg class="w-5 h-5 text-ward-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </div>
+        </div>
+    </a>
+
+    <!-- Module launcher -->
+    <div class="section-header">
+        <h2 class="section-title">Nursing Study Modules</h2>
+        <span class="text-xs text-ward-500">9 modules · 486 study items</span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 mb-8">
+        
+        <a href="/modules/terminology.html" class="module-launcher border-l-ward-accent">
+            <div class="flex justify-between items-start gap-2 mb-3">
+                <h3 class="font-semibold text-ward-100 text-sm sm:text-base">Medical Terminology</h3>
+                
+                <span class="badge badge-mvp">MVP</span>
+                
+            </div>
+            <p class="text-xs sm:text-sm text-ward-500 mb-4 leading-relaxed">Word builder, flashcards, NCLEX practice</p>
+            <div class="flex flex-wrap gap-2 text-[10px] text-ward-600">
+                
+                
+                
+                
+                <span class="stat-pill">29 prefix</span>
+                
+                
+                
+                <span class="stat-pill">26 suffix</span>
+                
+                
+                
+                <span class="stat-pill">18 practice</span>
+                
+                
+                
+                
+            </div>
+        </a>
+        
+        <a href="/modules/microbiology.html" class="module-launcher border-l-ward-success">
+            <div class="flex justify-between items-start gap-2 mb-3">
+                <h3 class="font-semibold text-ward-100 text-sm sm:text-base">Microbiology</h3>
+                
+                <span class="badge badge-starter">Starter</span>
+                
+            </div>
+            <p class="text-xs sm:text-sm text-ward-500 mb-4 leading-relaxed">Chain builder, break-chain scenarios, NCLEX practice</p>
+            <div class="flex flex-wrap gap-2 text-[10px] text-ward-600">
+                
+                
+                <span class="stat-pill">6 chain links</span>
+                
+                
+                
+                <span class="stat-pill">8 pathogens</span>
+                
+                
+                
+                <span class="stat-pill">8 concepts</span>
+                
+                
+                
+                <span class="stat-pill">15 practice</span>
+                
+                
+                
+                
+            </div>
+        </a>
+        
+        <a href="/modules/dosage.html" class="module-launcher border-l-ward-warning">
+            <div class="flex justify-between items-start gap-2 mb-3">
+                <h3 class="font-semibold text-ward-100 text-sm sm:text-base">Dosage &amp; Pharmacology</h3>
+                
+                <span class="badge badge-starter">Starter</span>
+                
+            </div>
+            <p class="text-xs sm:text-sm text-ward-500 mb-4 leading-relaxed">Step-by-step calculators with derivations</p>
+            <div class="flex flex-wrap gap-2 text-[10px] text-ward-600">
+                
+                
+                
+                
+                <span class="stat-pill">18 drug class</span>
+                
+                
+                
+                
+                
+                
+            </div>
+        </a>
+        
+        <a href="/modules/assessment.html" class="module-launcher border-l-ward-purple">
+            <div class="flex justify-between items-start gap-2 mb-3">
+                <h3 class="font-semibold text-ward-100 text-sm sm:text-base">Health Assessment</h3>
+                
+                <span class="badge badge-mvp">MVP</span>
+                
+            </div>
+            <p class="text-xs sm:text-sm text-ward-500 mb-4 leading-relaxed">Checklists, SOAP notes, special populations</p>
+            <div class="flex flex-wrap gap-2 text-[10px] text-ward-600">
+                
+                
+                
+                
+                
+                
+                
+                
+                <span class="stat-pill">40 practice</span>
+                
+                
+                
+                
+            </div>
+        </a>
+        
+        <a href="/modules/pathophysiology.html" class="module-launcher border-l-rose-400">
+            <div class="flex justify-between items-start gap-2 mb-3">
+                <h3 class="font-semibold text-ward-100 text-sm sm:text-base">Pathophysiology</h3>
+                
+                <span class="badge badge-new">New</span>
+                
+            </div>
+            <p class="text-xs sm:text-sm text-ward-500 mb-4 leading-relaxed">Disease cascades, compare/contrast, NCLEX practice</p>
+            <div class="flex flex-wrap gap-2 text-[10px] text-ward-600">
+                
+                
+                <span class="stat-pill">10 concepts</span>
+                
+                
+                
+                <span class="stat-pill">12 disease</span>
+                
+                
+                
+                <span class="stat-pill">5 compare</span>
+                
+                
+                
+                <span class="stat-pill">18 practice</span>
+                
+                
+                
+                
+            </div>
+        </a>
+        
+        <a href="/modules/med_surg.html" class="module-launcher border-l-sky-400">
+            <div class="flex justify-between items-start gap-2 mb-3">
+                <h3 class="font-semibold text-ward-100 text-sm sm:text-base">Medical-Surgical Nursing</h3>
+                
+                <span class="badge badge-new">New</span>
+                
+            </div>
+            <p class="text-xs sm:text-sm text-ward-500 mb-4 leading-relaxed">8 body systems, procedures, priority actions, NCLEX practice</p>
+            <div class="flex flex-wrap gap-2 text-[10px] text-ward-600">
+                
+                
+                <span class="stat-pill">8 body system</span>
+                
+                
+                
+                <span class="stat-pill">6 procedure</span>
+                
+                
+                
+                <span class="stat-pill">5 priority</span>
+                
+                
+                
+                <span class="stat-pill">16 flashcard</span>
+                
+                
+                
+                <span class="stat-pill">22 practice</span>
+                
+                
+                
+                
+            </div>
+        </a>
+        
+        <a href="/modules/maternal_newborn.html" class="module-launcher border-l-pink-400">
+            <div class="flex justify-between items-start gap-2 mb-3">
+                <h3 class="font-semibold text-ward-100 text-sm sm:text-base">Maternal-Newborn</h3>
+                
+                <span class="badge badge-new">New</span>
+                
+            </div>
+            <p class="text-xs sm:text-sm text-ward-500 mb-4 leading-relaxed">Antepartum, intrapartum, postpartum, newborn care</p>
+            <div class="flex flex-wrap gap-2 text-[10px] text-ward-600">
+                
+                
+                <span class="stat-pill">9 antepartum</span>
+                
+                
+                
+                <span class="stat-pill">8 intrapartum</span>
+                
+                
+                
+                <span class="stat-pill">9 postpartum</span>
+                
+                
+                
+                <span class="stat-pill">8 safety</span>
+                
+                
+                
+                <span class="stat-pill">21 practice</span>
+                
+                
+                
+                
+            </div>
+        </a>
+        
+        <a href="/modules/pediatrics.html" class="module-launcher border-l-emerald-400">
+            <div class="flex justify-between items-start gap-2 mb-3">
+                <h3 class="font-semibold text-ward-100 text-sm sm:text-base">Pediatric Nursing</h3>
+                
+                <span class="badge badge-new">New</span>
+                
+            </div>
+            <p class="text-xs sm:text-sm text-ward-500 mb-4 leading-relaxed">Milestones, growth, immunizations, safety</p>
+            <div class="flex flex-wrap gap-2 text-[10px] text-ward-600">
+                
+                
+                <span class="stat-pill">4 milestone</span>
+                
+                
+                
+                <span class="stat-pill">1 growth</span>
+                
+                
+                
+                <span class="stat-pill">13 immunization</span>
+                
+                
+                
+                <span class="stat-pill">1 safety</span>
+                
+                
+                
+                <span class="stat-pill">2 practice</span>
+                
+                
+                
+                
+            </div>
+        </a>
+        
+        <a href="/modules/mental-health.html" class="module-launcher border-l-ward-purple">
+            <div class="flex justify-between items-start gap-2 mb-3">
+                <h3 class="font-semibold text-ward-100 text-sm sm:text-base">Mental Health</h3>
+                
+                <span class="badge badge-new">New</span>
+                
+            </div>
+            <p class="text-xs sm:text-sm text-ward-500 mb-4 leading-relaxed">Therapeutic communication, safety screening</p>
+            <div class="flex flex-wrap gap-2 text-[10px] text-ward-600">
+                
+                
+                <span class="stat-pill">8 communication</span>
+                
+                
+                
+                <span class="stat-pill">8 safety flag</span>
+                
+                
+                
+                
+                
+                
+            </div>
+        </a>
+        
+    </div>
+
+    <!-- Student guide -->
+    <a href="/how-to-use.html" class="block mb-8">
+        <div class="card p-5 border border-ward-700/80 hover:border-ward-accent/40 transition group">
+            <div class="flex flex-wrap items-center gap-4">
+                <div class="w-10 h-10 rounded-lg bg-ward-purple/10 border border-ward-purple/30 flex items-center justify-center shrink-0 text-ward-purple">?</div>
+                <div class="flex-1 min-w-0">
+                    <h3 class="font-semibold text-ward-200 text-sm sm:text-base group-hover:text-ward-accent transition">How to Use The Ward</h3>
+                    <p class="text-xs sm:text-sm text-ward-500 mt-1">Study workflow, NCLEX strategy, weekly rhythm, and navigation tips for ADN students.</p>
+                </div>
+                <svg class="w-5 h-5 text-ward-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </div>
+        </div>
+    </a>
+
+    <!-- Quick actions -->
+    <div class="section-header">
+        <h2 class="section-title">Quick Actions</h2>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
+        <a href="/modules/terminology.html#practice" class="quick-action">
+            <span class="quick-action-title text-ward-accent">Practice Quiz</span>
+            <span class="quick-action-desc">NCLEX-style</span>
+        </a>
+        <a href="/modules/med_surg.html#flashcards" class="quick-action">
+            <span class="quick-action-title text-ward-success">Med-Surg Cards</span>
+            <span class="quick-action-desc">Body systems</span>
+        </a>
+        <a href="/modules/dosage.html" class="quick-action">
+            <span class="quick-action-title text-ward-warning">Dosage Calc</span>
+            <span class="quick-action-desc">With derivations</span>
+        </a>
+        <a href="/nclex-prep.html" class="quick-action">
+            <span class="quick-action-title text-ward-purple">NCLEX Mixed</span>
+            <span class="quick-action-desc">All topics</span>
+        </a>
+    </div>
+</div>
+
+            </main>
+
+            <footer class="main-footer">
+                Static ADN Study Resource · Deployable
+            </footer>
+        </div>
+    </div>
+
+    <script src="/static/js/export-utils.js"></script>
+    <script src="/static/js/ward-tabs.js"></script>
+    <script src="/static/js/data-api.js"></script>
+    <script src="/static/js/ward.js"></script>
+    <script src="/static/js/ward-static.js"></script>
+    
+    
+</body>
+</html>

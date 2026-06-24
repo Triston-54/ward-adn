@@ -1,0 +1,384 @@
+{% extends "base.html" %}
+{% from "partials/module_breadcrumb.html" import module_breadcrumb %}
+{% block title %}NURS 146 — Health Assessment{% endblock %}
+{% block page_title %}NURS 146 — Health Assessment{% endblock %}
+{% block page_subtitle %}Head-to-toe · Checklists · SOAP · Special populations · Clinical judgment{% endblock %}
+
+{% block topbar_actions %}
+<a href="/" class="nursing-return-link hidden sm:inline-flex" title="Back to Nursing Dashboard">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+    Dashboard
+</a>
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/css/assessment.css">
+{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto" data-module="assessment">
+    {{ module_breadcrumb('NURS 146 — Health Assessment', badge='mvp') }}
+
+    <!-- Module header -->
+    <div class="module-header ha-module-header">
+        <div>
+            <h1 class="text-xl sm:text-2xl font-bold text-ward-100">NURS 146 — Health Assessment</h1>
+            <p class="text-sm text-ward-500 mt-1">NURS 146 — head-to-toe sequence, documentation practice, and safety-first clinical judgment</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+            <button onclick="verifySource('assessment')" class="btn-verify text-sm" title="View verified sources with rationale">Verify Source</button>
+            <button onclick="openSocraticMode('assessment', 'assessment_finding')" class="btn-socratic text-sm">Socratic Mode</button>
+        </div>
+    </div>
+
+    <!-- Progress strip -->
+    <div class="module-progress-strip ha-progress-strip">
+        <div class="text-xs text-ward-500 shrink-0">
+            Module Progress
+            <span id="module-progress-pct" class="text-ward-purple font-semibold ml-1">{{ module_progress.percentage if module_progress else 0 }}%</span>
+        </div>
+        <div class="progress-bar">
+            <div id="module-progress-bar" class="progress-bar-fill bg-ward-purple" style="width: {{ module_progress.percentage if module_progress else 0 }}%"></div>
+        </div>
+        <span class="stat-pill">{{ module_progress.items_completed if module_progress else 0 }}/{{ module_progress.items_total if module_progress else 132 }} studied</span>
+        <span class="stat-pill">{{ summary.sequence_steps }} steps</span>
+        <span class="stat-pill">{{ summary.checklists }} checklists</span>
+        <span class="stat-pill">{{ summary.soap_exercises }} SOAP</span>
+        <span class="stat-pill">{{ summary.sbar_exercises }} SBAR</span>
+        <span class="stat-pill">{{ summary.flashcards }} cards</span>
+        <span class="stat-pill">Due: <strong>{{ flashcard_stats.due_today }}</strong></span>
+        <span class="stat-pill">{{ summary.assess_next_scenarios }} scenarios</span>
+    </div>
+
+    <!-- Safety callout -->
+    <div class="module-banner module-banner--info ha-safety-callout mb-5">
+        <div>
+            <div class="module-banner-label ha-safety-label">NCLEX Focus — Reduction of Risk Potential</div>
+            Know normal before abnormal. When you find a red flag, stop routine assessment and escalate — document objectively and notify the provider immediately.
+        </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="ha-tabs module-tabs" role="tablist" aria-label="Health assessment sections">
+        <button class="tab-btn ha-tab-btn active" data-tab="head-to-toe" onclick="Assessment.switchTab('head-to-toe')">Head-to-Toe</button>
+        <button class="tab-btn ha-tab-btn" data-tab="systems" onclick="Assessment.switchTab('systems')">Systems</button>
+        <button class="tab-btn ha-tab-btn" data-tab="checklists" onclick="Assessment.switchTab('checklists')">Checklists</button>
+        <button class="tab-btn ha-tab-btn" data-tab="assess-next" onclick="Assessment.switchTab('assess-next')">Assess Next</button>
+        <button class="tab-btn ha-tab-btn" data-tab="soap" onclick="Assessment.switchTab('soap')">SOAP Notes</button>
+        <button class="tab-btn ha-tab-btn" data-tab="special-pop" onclick="Assessment.switchTab('special-pop')">Special Pop.</button>
+        <button class="tab-btn ha-tab-btn" data-tab="red-flags" onclick="Assessment.switchTab('red-flags')">Red Flags</button>
+        <button class="tab-btn ha-tab-btn" data-tab="red-flag-drill" onclick="Assessment.switchTab('red-flag-drill')">Red Flag Drill</button>
+        <button class="tab-btn ha-tab-btn" data-tab="practice" onclick="Assessment.switchTab('practice')">Practice</button>
+        <button class="tab-btn ha-tab-btn" data-tab="skills" onclick="Assessment.switchTab('skills')">Skills</button>
+        <button class="tab-btn ha-tab-btn" data-tab="documentation" onclick="Assessment.switchTab('documentation')">Documentation</button>
+        <button class="tab-btn ha-tab-btn" data-tab="flashcards" onclick="Assessment.switchTab('flashcards')">Flashcards</button>
+        <button class="tab-btn ha-tab-btn" data-tab="export" onclick="Assessment.switchTab('export')">Export</button>
+    </div>
+
+    <!-- ═══ HEAD-TO-TOE ═══ -->
+    <div id="tab-head-to-toe" class="tab-panel ha-panel">
+        <div class="grid lg:grid-cols-2 gap-5">
+            <div class="card p-5">
+                <h2 class="text-base font-semibold text-ward-100 mb-4">Assessment Sequence</h2>
+                <p class="text-xs text-ward-500 mb-4">Follow this order for a complete head-to-toe exam. Click each step for rationale.</p>
+                <div id="ha-sequence-list" class="ha-sequence-list"></div>
+            </div>
+            <div class="card p-5">
+                <h2 class="text-base font-semibold text-ward-100 mb-4">Step Detail</h2>
+                <div id="ha-step-detail">
+                    <p class="text-ward-500 text-sm">Select a step from the sequence to see teaching notes.</p>
+                </div>
+                <div id="ha-vitals-panel" class="mt-5 pt-5 border-t border-ward-800">
+                    <h3 class="text-sm font-semibold text-ward-purple mb-3">Vital Sign Norms</h3>
+                    <div id="ha-vitals-table"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ SYSTEMS ═══ -->
+    <div id="tab-systems" class="tab-panel ha-panel hidden">
+        <div class="ha-system-grid" id="ha-system-grid">
+            {% for sys in body_systems %}
+            <button type="button" class="ha-system-card" onclick="Assessment.selectSystem('{{ sys.id }}')" data-system="{{ sys.id }}">
+                <div class="ha-system-name">{{ sys.name }}</div>
+                <div class="ha-system-meta">{{ sys.assessment_steps | length }} steps · {{ sys.red_flags | length }} red flags</div>
+            </button>
+            {% endfor %}
+        </div>
+        <div id="ha-system-detail" class="card p-5 mt-5 hidden">
+            <p class="text-ward-500 text-sm">Select a body system above.</p>
+        </div>
+    </div>
+
+    <!-- ═══ CHECKLISTS ═══ -->
+    <div id="tab-checklists" class="tab-panel ha-panel hidden">
+        <div class="grid lg:grid-cols-3 gap-5">
+            <div class="card p-5 lg:col-span-1">
+                <h2 class="text-base font-semibold text-ward-100 mb-3">Assessment Checklists</h2>
+                <p class="text-xs text-ward-500 mb-4">Interactive documentation practice — check off items as you study or simulate clinical assessment.</p>
+                <div id="ha-checklist-list" class="ha-checklist-list">
+                    <p class="text-ward-500 text-sm">Loading checklists…</p>
+                </div>
+            </div>
+            <div class="card p-5 lg:col-span-2">
+                <div id="ha-checklist-detail">
+                    <p class="text-ward-500 text-sm">Select a checklist to begin.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ ASSESS NEXT ═══ -->
+    <div id="tab-assess-next" class="tab-panel ha-panel hidden">
+        <div class="max-w-2xl mx-auto card p-5 sm:p-6">
+            <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
+                <h2 class="text-base font-semibold text-ward-100">What Would You Assess Next?</h2>
+                <span id="assess-next-score" class="text-sm font-mono text-ward-500">0/0</span>
+            </div>
+            <p class="text-xs text-ward-500 mb-4">Scenario-based clinical judgment — choose the priority assessment step given current findings.</p>
+            <div id="assess-next-area">
+                <p class="text-ward-500 text-sm">Loading scenarios…</p>
+            </div>
+            <button onclick="Assessment.loadAssessNextScenarios()" class="btn-secondary w-full mt-4 text-sm">Reload Scenarios</button>
+        </div>
+    </div>
+
+    <!-- ═══ SOAP NOTES ═══ -->
+    <div id="tab-soap" class="tab-panel ha-panel hidden">
+        <div class="grid lg:grid-cols-3 gap-5">
+            <div class="card p-5 lg:col-span-1">
+                <h2 class="text-base font-semibold text-ward-100 mb-3">SOAP Documentation</h2>
+                <p class="text-xs text-ward-500 mb-4">Practice nursing documentation — write your note, then compare to the model answer.</p>
+                <div id="ha-soap-list" class="ha-soap-list">
+                    <p class="text-ward-500 text-sm">Loading exercises…</p>
+                </div>
+            </div>
+            <div class="card p-5 lg:col-span-2">
+                <div id="ha-soap-detail">
+                    <p class="text-ward-500 text-sm">Select an exercise to practice SOAP documentation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ SPECIAL POPULATIONS ═══ -->
+    <div id="tab-special-pop" class="tab-panel ha-panel hidden">
+        <div class="ha-pop-grid" id="ha-pop-grid">
+            <p class="text-ward-500 text-sm col-span-full">Loading special populations…</p>
+        </div>
+        <div id="ha-pop-detail" class="card p-5 mt-5 hidden"></div>
+    </div>
+
+    <!-- ═══ RED FLAGS ═══ -->
+    <div id="tab-red-flags" class="tab-panel ha-panel hidden">
+        <div class="max-w-3xl mx-auto">
+            <div class="clinical-callout ha-red-callout mb-5">
+                <div class="clinical-callout-label text-ward-danger">Critical Findings</div>
+                These findings require immediate nursing action. Do not delay for routine tasks.
+            </div>
+            <div id="ha-red-flags-list" class="ha-red-flags-list">
+                <p class="text-ward-500 text-sm">Loading red flags…</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ RED FLAG DRILL ═══ -->
+    <div id="tab-red-flag-drill" class="tab-panel ha-panel hidden">
+        <div class="max-w-2xl mx-auto card p-5 sm:p-6">
+            <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
+                <h2 class="text-base font-semibold text-ward-100">Red Flag Triage Drill</h2>
+                <span id="red-flag-drill-score" class="text-sm font-mono text-ward-500">0/0</span>
+            </div>
+            <p class="text-xs text-ward-500 mb-4">Given a critical finding, select the correct immediate nursing action and escalation path.</p>
+            <div id="red-flag-drill-area">
+                <p class="text-ward-500 text-sm">Loading drill…</p>
+            </div>
+            <button onclick="Assessment.loadRedFlagDrill()" class="btn-secondary w-full mt-4 text-sm">Reload Drill</button>
+        </div>
+    </div>
+
+    <!-- ═══ PRACTICE ═══ -->
+    <div id="tab-practice" class="tab-panel ha-panel hidden">
+        <div class="max-w-2xl mx-auto card p-5 sm:p-6">
+            <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
+                <h2 class="text-base font-semibold text-ward-100">Practice Mode</h2>
+                <span id="practice-score" class="text-sm font-mono text-ward-500">0/0</span>
+            </div>
+
+            <div class="practice-mode-pills mb-4">
+                <button class="mode-pill ha-mode-pill active" data-mode="mixed" onclick="Assessment.setPracticeMode('mixed')">Mixed</button>
+                <button class="mode-pill ha-mode-pill" data-mode="priority" onclick="Assessment.setPracticeMode('priority')">Priority</button>
+                <button class="mode-pill ha-mode-pill" data-mode="red_flags" onclick="Assessment.setPracticeMode('red_flags')">Red Flags</button>
+            </div>
+
+            <div id="practice-question-area">
+                <p class="text-ward-500 text-sm">Choose a mode and start practicing.</p>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mt-4">
+                <button onclick="Assessment.startPractice(10)" class="btn-primary text-sm">Start (10)</button>
+                <button onclick="Assessment.startPractice(15)" class="btn-secondary text-sm">Extended (15)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ DOCUMENTATION ═══ -->
+    <div id="tab-documentation" class="tab-panel ha-panel hidden">
+        <div class="learn-subtabs ha-learn-subtabs mb-4" role="tablist">
+            <button class="learn-subtab ha-learn-subtab active" data-doc-tab="soap-writer" onclick="Assessment.switchDocTab('soap-writer')">SOAP Writer</button>
+            <button class="learn-subtab ha-learn-subtab" data-doc-tab="sbar" onclick="Assessment.switchDocTab('sbar')">SBAR Handoff</button>
+        </div>
+
+        <div id="ha-doc-soap-writer" class="ha-doc-pane">
+            <div class="grid lg:grid-cols-3 gap-5">
+                <div class="card p-5 lg:col-span-1">
+                    <h2 class="text-base font-semibold text-ward-100 mb-3">SOAP Practice</h2>
+                    <p class="text-xs text-ward-500 mb-4">Write a full SOAP note from the findings, then submit for rubric-based feedback.</p>
+                    <div id="ha-doc-soap-list" class="ha-soap-list">
+                        <p class="text-ward-500 text-sm">Loading exercises…</p>
+                    </div>
+                </div>
+                <div class="card p-5 lg:col-span-2">
+                    <div id="ha-doc-soap-detail">
+                        <p class="text-ward-500 text-sm">Select an exercise to practice structured documentation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="ha-doc-sbar" class="ha-doc-pane hidden">
+            <div class="grid lg:grid-cols-3 gap-5">
+                <div class="card p-5 lg:col-span-1">
+                    <h2 class="text-base font-semibold text-ward-100 mb-3">SBAR Handoff</h2>
+                    <p class="text-xs text-ward-500 mb-4">Read the Situation and Background, then write your Assessment and Recommendation for provider handoff.</p>
+                    <div id="ha-sbar-list" class="ha-sbar-list">
+                        <p class="text-ward-500 text-sm">Loading scenarios…</p>
+                    </div>
+                </div>
+                <div class="card p-5 lg:col-span-2">
+                    <div id="ha-sbar-detail">
+                        <p class="text-ward-500 text-sm">Select a handoff scenario to begin.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ FLASHCARDS ═══ -->
+    <div id="tab-flashcards" class="tab-panel ha-panel hidden">
+        <div class="max-w-lg mx-auto">
+            <div class="flex flex-wrap justify-center gap-2 mb-4" id="ha-fc-stats">
+                <span class="stat-pill">Due: <strong id="ha-fc-due">{{ flashcard_stats.due_today }}</strong></span>
+                <span class="stat-pill">Mastered: <strong id="ha-fc-mastered">{{ flashcard_stats.mastered }}</strong></span>
+                <span class="stat-pill">Need Review: <strong id="ha-fc-review">0</strong></span>
+            </div>
+
+            <div id="ha-fc-complete" class="ha-fc-complete hidden"></div>
+
+            <div id="ha-flashcard-stage" class="ha-flashcard-stage">
+                <div id="ha-flashcard-inner" class="ha-flashcard-inner" onclick="Assessment.flipFlashcard()" role="button" tabindex="0" aria-label="Flip flashcard">
+                    <div id="ha-fc-front-view" class="ha-fc-face">
+                        <p class="text-xs text-ward-500 mb-2">Tap or press Space to reveal</p>
+                        <p id="ha-fc-front" class="ha-flashcard-front">Loading…</p>
+                        <span id="ha-fc-system" class="ha-fc-badge mt-3"></span>
+                    </div>
+                    <div id="ha-fc-back-view" class="ha-fc-face ha-fc-back hidden">
+                        <div class="ha-fc-field">
+                            <span class="ha-fc-label">Normal</span>
+                            <p id="ha-fc-back-normal" class="text-sm text-ward-success"></p>
+                        </div>
+                        <div class="ha-fc-field">
+                            <span class="ha-fc-label">Abnormal</span>
+                            <p id="ha-fc-back-abnormal" class="text-sm text-ward-warning"></p>
+                        </div>
+                        <div class="ha-fc-field">
+                            <span class="ha-fc-label">Nursing Action</span>
+                            <p id="ha-fc-back-action" class="text-xs text-ward-300"></p>
+                        </div>
+                        <p id="ha-fc-back-clinical" class="text-xs text-ward-accent mt-2"></p>
+                        <button type="button" id="ha-fc-verify-btn" class="btn-verify text-xs mt-3 hidden" onclick="event.stopPropagation(); verifySource('assessment')">Verify Source</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="ha-fc-dots" class="ha-fc-dots"></div>
+
+            <div class="ha-fc-rating">
+                <button type="button" class="ha-fc-rate review" disabled id="ha-fc-btn-review" onclick="Assessment.rateFlashcard('review')">Need Review</button>
+                <button type="button" class="ha-fc-rate know" disabled id="ha-fc-btn-know" onclick="Assessment.rateFlashcard('know')">Know It</button>
+            </div>
+
+            <div class="flex justify-between items-center mt-4">
+                <button onclick="Assessment.prevFlashcard()" class="btn-secondary text-sm" aria-label="Previous card">← Prev</button>
+                <span id="ha-flashcard-counter" class="text-sm text-ward-500 font-mono">0 / 0</span>
+                <button onclick="Assessment.nextFlashcard()" class="btn-secondary text-sm" aria-label="Next card">Next →</button>
+            </div>
+            <div class="flex flex-wrap justify-center gap-2 mt-3">
+                <button onclick="Assessment.loadFlashcards(10)" class="btn-primary text-sm">Study 10</button>
+                <button onclick="Assessment.loadFlashcards(10, true)" class="btn-secondary text-sm">Due 10</button>
+                <button onclick="Assessment.loadFlashcards(60)" class="btn-secondary text-sm">Full Deck</button>
+                <button onclick="Assessment.exportFlashcardDeck()" class="btn-secondary text-sm">Export Deck</button>
+            </div>
+            <p class="text-center text-xs text-ward-600 mt-3">← → navigate · Space flips · Rate cards to track spaced repetition</p>
+        </div>
+    </div>
+
+    <!-- ═══ EXPORT ═══ -->
+    <div id="tab-export" class="tab-panel ha-panel hidden">
+        <div class="card p-5 max-w-2xl mx-auto">
+            <h2 class="text-base font-semibold text-ward-100 mb-1">Export Study Materials</h2>
+            <p class="text-xs text-ward-500 mb-5">Print, save as PDF, or download assessment references for offline clinical prep</p>
+            <div class="export-grid">
+                <div class="export-card export-card-accent" onclick="Assessment.exportHeadToToeSheet()">
+                    <div class="export-card-icon">📋</div>
+                    <div class="export-card-title">Head-to-Toe Sequence</div>
+                    <div class="export-card-desc">{{ summary.sequence_steps }}-step exam order with vital sign norms — Save as PDF</div>
+                </div>
+                <div class="export-card" onclick="Assessment.copyHeadToToeClipboard()">
+                    <div class="export-card-icon">📎</div>
+                    <div class="export-card-title">Copy Head-to-Toe</div>
+                    <div class="export-card-desc">Plain-text sequence for notes, chat, or EMR prep</div>
+                </div>
+                <div class="export-card export-card-accent" onclick="Assessment.exportRedFlagsSheet()">
+                    <div class="export-card-icon">🚩</div>
+                    <div class="export-card-title">Red Flag Quick Reference</div>
+                    <div class="export-card-desc">{{ summary.red_flags }} critical findings with immediate actions — printable cards</div>
+                </div>
+                <div class="export-card" onclick="Assessment.copyRedFlagsClipboard()">
+                    <div class="export-card-icon">📎</div>
+                    <div class="export-card-title">Copy Red Flags</div>
+                    <div class="export-card-desc">Critical findings &amp; actions as plain text</div>
+                </div>
+                <div class="export-card" onclick="Assessment.exportChecklistsPack()">
+                    <div class="export-card-icon">✅</div>
+                    <div class="export-card-title">Assessment Checklists Pack</div>
+                    <div class="export-card-desc">{{ summary.checklists }} checklists with checkbox items for clinical use</div>
+                </div>
+                <div class="export-card" onclick="Assessment.exportFlashcardDeck()">
+                    <div class="export-card-icon">📝</div>
+                    <div class="export-card-title">Flashcard Markdown</div>
+                    <div class="export-card-desc">{{ summary.flashcards }} cards — download .md for Anki or notes</div>
+                </div>
+            </div>
+            <p class="text-center text-xs text-ward-600 mt-4">PDF exports open in a new window — use <strong>Print → Save as PDF</strong></p>
+        </div>
+    </div>
+
+    <!-- ═══ SKILLS ═══ -->
+    <div id="tab-skills" class="tab-panel ha-panel hidden">
+        <div class="learn-subtabs ha-learn-subtabs mb-4" role="tablist">
+            <button class="learn-subtab ha-learn-subtab active" data-skill-tab="skills" onclick="Assessment.switchSkillTab('skills')">Clinical Skills</button>
+            <button class="learn-subtab ha-learn-subtab" data-skill-tab="pain" onclick="Assessment.switchSkillTab('pain')">Pain (PQRST)</button>
+            <button class="learn-subtab ha-learn-subtab" data-skill-tab="interview" onclick="Assessment.switchSkillTab('interview')">Interview</button>
+        </div>
+        <div id="ha-skills-content">
+            <p class="text-ward-500 text-sm py-4">Open this tab to load skills content.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/assessment.js"></script>
+{% endblock %}

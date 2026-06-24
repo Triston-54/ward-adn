@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="The Ward — ADN Nursing Study Suite (Static)">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="/static/manifest.json">
+    <link rel="icon" type="image/svg+xml" href="/static/images/ward-icon.svg">
+    <link rel="icon" type="image/png" sizes="192x192" href="/static/images/ward-icon-192.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/static/images/ward-icon-192.png">
+    <title>Microbiology — ADN Study Suite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ward: {
+                            950: '#0a0f1a',
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                            600: '#475569',
+                            500: '#64748b',
+                            400: '#94a3b8',
+                            300: '#cbd5e1',
+                            200: '#e2e8f0',
+                            accent: '#38bdf8',
+                            success: '#34d399',
+                            warning: '#fbbf24',
+                            danger: '#f87171',
+                            purple: '#a78bfa',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/ward.css">
+    
+    
+<link rel="stylesheet" href="/static/css/microbiology.css">
+
+</head>
+<body class="h-full bg-ward-950 text-ward-200 font-sans antialiased">
+    <div id="sidebar-backdrop" class="sidebar-backdrop hidden" onclick="closeSidebar()"></div>
+
+    <div id="command-palette" class="hidden fixed inset-0 z-50 flex items-start justify-center pt-[12vh] sm:pt-[15vh] bg-black/60 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-label="Command palette">
+        <div class="w-full max-w-lg bg-ward-800 border border-ward-600 rounded-xl shadow-2xl overflow-hidden">
+            <div class="flex items-center gap-2 px-4 py-3 border-b border-ward-700">
+                <svg class="w-4 h-4 text-ward-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                <input type="text" id="cmd-input" placeholder="Search modules, actions… (Ctrl+K)"
+                       aria-label="Search modules and actions"
+                       class="flex-1 bg-transparent text-ward-200 placeholder-ward-500 focus:outline-none text-sm">
+                <kbd class="text-xs text-ward-600 bg-ward-900 px-1.5 py-0.5 rounded hidden sm:inline">Esc</kbd>
+            </div>
+            <div id="cmd-results" class="cmd-results-list overflow-y-auto py-2"></div>
+        </div>
+    </div>
+
+    <div id="source-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-labelledby="source-modal-title">
+        <div class="w-full max-w-lg bg-ward-800 border border-ward-600 rounded-xl shadow-2xl overflow-hidden">
+            <div class="flex justify-between items-center px-6 py-4 border-b border-ward-700 bg-ward-900/50">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-ward-accent/10 border border-ward-accent/30 flex items-center justify-center">
+                        <svg class="w-4 h-4 text-ward-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <div>
+                        <h3 id="source-modal-title" class="text-base font-semibold text-ward-accent">Verify Source</h3>
+                        <p class="text-[10px] text-ward-500 uppercase tracking-wider">Verified nursing content</p>
+                    </div>
+                </div>
+                <button onclick="closeSourceModal()" class="text-ward-500 hover:text-ward-200 text-xl leading-none p-1" aria-label="Close">&times;</button>
+            </div>
+            <div id="source-content" class="px-6 py-4 max-h-[70vh] overflow-y-auto"></div>
+        </div>
+    </div>
+
+    <div class="app-shell">
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-brand">
+                <a href="/index.html" class="flex items-center gap-3 group">
+                    <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-ward-accent to-ward-purple flex items-center justify-center text-ward-900 font-bold">W</div>
+                    <div>
+                        <div class="font-semibold text-ward-100 group-hover:text-ward-accent transition text-sm">The Ward</div>
+                        <div class="text-[10px] text-ward-500 uppercase tracking-wider">ADN Study Suite</div>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="sidebar-section-label">ADN Curriculum</div>
+                <a href="/index.html" class="sidebar-link" data-nav="dashboard">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+                    Dashboard
+                </a>
+                <a href="/how-to-use.html" class="sidebar-link" data-nav="how_to_use">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    How to Use
+                </a>
+
+                <div class="sidebar-section-label mt-4">Nursing Modules</div>
+                <a href="/modules/terminology.html" class="sidebar-link" data-nav="terminology">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                    Medical Terminology
+                </a>
+                <a href="/modules/microbiology.html" class="sidebar-link" data-nav="microbiology">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                    Microbiology
+                </a>
+                <a href="/modules/dosage.html" class="sidebar-link" data-nav="dosage">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                    Dosage &amp; Pharmacology
+                </a>
+                <a href="/modules/assessment.html" class="sidebar-link" data-nav="assessment">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                    Health Assessment
+                </a>
+                <a href="/modules/pathophysiology.html" class="sidebar-link" data-nav="pathophysiology">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    Pathophysiology
+                </a>
+                <a href="/modules/med_surg.html" class="sidebar-link" data-nav="med_surg">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    Medical-Surgical Nursing
+                </a>
+                <a href="/modules/maternal_newborn.html" class="sidebar-link" data-nav="maternal_newborn">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    Maternal-Newborn
+                </a>
+                <a href="/modules/pediatrics.html" class="sidebar-link" data-nav="pediatrics">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Pediatric Nursing
+                </a>
+                <a href="/modules/mental-health.html" class="sidebar-link" data-nav="mental_health">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    Mental Health
+                </a>
+                <a href="/nclex-prep.html" class="sidebar-link" data-nav="nclex_prep">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                    NCLEX Prep
+                </a>
+
+                <div class="sidebar-section-label mt-4">Tools</div>
+                <button onclick="openCommandPalette()" class="sidebar-link w-full text-left">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    Command Palette
+                    <kbd class="ml-auto text-[10px] text-ward-600 bg-ward-900 px-1 rounded">⌘K</kbd>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="text-[10px] text-ward-600 uppercase tracking-wider mb-1">ADN Program</div>
+                <div class="text-xs text-ward-500">Static · Verified content</div>
+            </div>
+        </aside>
+
+        <div class="main-column">
+            <header class="topbar">
+                <div class="flex items-center gap-3">
+                    <button id="sidebar-toggle" class="topbar-icon-btn lg:hidden" onclick="toggleSidebar()" aria-label="Open menu">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                    <div class="hidden sm:block">
+                        <div class="text-sm font-medium text-ward-200">Microbiology</div>
+                        <div class="text-xs text-ward-500">Infection chain · Pathogens · NCLEX practice</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <button onclick="openCommandPalette()" class="topbar-icon-btn hidden sm:flex" title="Command palette (Ctrl+K)">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                        <span class="text-xs text-ward-500 hidden md:inline">Search</span>
+                    </button>
+                    
+<a href="/index.html" class="nursing-return-link hidden sm:inline-flex" title="Back to Nursing Dashboard">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+    Dashboard
+</a>
+
+                </div>
+            </header>
+
+            <main class="main-content">
+                
+<div class="max-w-6xl mx-auto" data-module="microbiology">
+    
+<nav class="module-breadcrumb" aria-label="Breadcrumb">
+    <a href="/index.html" class="module-breadcrumb-link">
+        <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        Dashboard
+    </a>
+    <span class="module-breadcrumb-sep" aria-hidden="true">/</span>
+    <span class="module-breadcrumb-current" aria-current="page">Microbiology</span>
+    
+    <span class="badge badge-starter">Starter</span>
+    
+</nav>
+
+
+    <!-- Module header -->
+    <div class="module-header micro-module-header">
+        <div>
+            <h1 class="text-xl sm:text-2xl font-bold text-ward-100">Microbiology for Nursing</h1>
+            <p class="text-sm text-ward-500 mt-1">Pathogens, infection control, immune response &amp; clinical application</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+            <button onclick="verifySource('microbiology')" class="btn-verify text-sm" title="View verified sources with rationale">Verify Source</button>
+            
+        </div>
+    </div>
+
+    <!-- Progress strip -->
+    <div class="progress-bar">
+            <div id="module-progress-bar" class="progress-bar-fill bg-ward-success" style="width: 0%"></div>
+        </div>
+        <span class="stat-pill">0/47 studied</span>
+        <span class="stat-pill">6 chain links</span>
+        <span class="stat-pill">8 pathogens</span>
+        <span class="stat-pill"> questions</span>
+    </div>
+
+    <!-- Clinical callout -->
+    <div class="module-banner module-banner--info clinical-callout mb-5">
+        <div>
+            <div class="module-banner-label clinical-callout-label">NCLEX Focus — Safety &amp; Infection Control</div>
+            Break any link in the chain of infection to prevent transmission. Hand hygiene is the single most effective nursing intervention.
+        </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="micro-tabs module-tabs" role="tablist" aria-label="Microbiology sections">
+        <button class="tab-btn micro-tab-btn active" data-tab="chain" onclick="Microbiology.switchTab('chain')">Chain Builder</button>
+        <button class="tab-btn micro-tab-btn" data-tab="learn" onclick="Microbiology.switchTab('learn')">Learn</button>
+        <button class="tab-btn micro-tab-btn" data-tab="break-chain" onclick="Microbiology.switchTab('break-chain')">Break Chain</button>
+        <button class="tab-btn micro-tab-btn" data-tab="what-if" onclick="Microbiology.switchTab('what-if')">What-If</button>
+        <button class="tab-btn micro-tab-btn" data-tab="flashcards" onclick="Microbiology.switchTab('flashcards')">Flashcards</button>
+        <button class="tab-btn micro-tab-btn" data-tab="practice" onclick="Microbiology.switchTab('practice')">Practice</button>
+        <button class="tab-btn micro-tab-btn" data-tab="export" onclick="Microbiology.switchTab('export')">Export</button>
+    </div>
+
+    <!-- ═══ CHAIN BUILDER ═══ -->
+    <div id="tab-chain" class="tab-panel micro-panel">
+        <div class="grid lg:grid-cols-2 gap-5">
+            <div class="card p-5">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-base font-semibold text-ward-100">Chain of Infection</h2>
+                    <button onclick="Microbiology.resetChainBuilder()" class="btn-secondary text-xs">Reset</button>
+                </div>
+                <p class="text-xs text-ward-500 mb-4">Select a link, then choose the intervention that best breaks it. Green = broken.</p>
+                <div id="chain-flow" class="chain-flow"></div>
+                <div id="chain-link-detail" class="chain-link-detail"></div>
+            </div>
+
+            <div class="card p-5">
+                <h2 class="text-base font-semibold text-ward-100 mb-4">Break the Chain</h2>
+                <div id="chain-builder-area">
+                    <div id="chain-interventions"></div>
+                </div>
+                <div id="chain-feedback" class="mt-4 hidden"></div>
+                <div id="chain-completion" class="chain-completion hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ LEARN ═══ -->
+    <div id="tab-learn" class="tab-panel micro-panel hidden">
+        <div class="learn-subtabs" role="tablist">
+            <button class="learn-subtab active" data-learn="concepts" onclick="Microbiology.switchLearnSubtab('concepts')">Concepts</button>
+            <button class="learn-subtab" data-learn="pathogens" onclick="Microbiology.switchLearnSubtab('pathogens')">Pathogens</button>
+            <button class="learn-subtab" data-learn="classification" onclick="Microbiology.switchLearnSubtab('classification')">Classification</button>
+            <button class="learn-subtab" data-learn="gram" onclick="Microbiology.switchLearnSubtab('gram')">Gram Stain</button>
+            <button class="learn-subtab" data-learn="clinical" onclick="Microbiology.switchLearnSubtab('clinical')">Clinical / PPE</button>
+        </div>
+        <div id="break-points-callout" class="break-points-callout hidden mb-5">
+            <div class="break-points-label">Key Break Points — Chain of Infection</div>
+            <ul id="break-points-list" class="break-points-list"></ul>
+        </div>
+        <div id="learn-content">
+            <p class="text-ward-500 text-sm py-4">Open this tab to load reference content.</p>
+        </div>
+    </div>
+
+    <!-- ═══ BREAK-CHAIN SCENARIOS ═══ -->
+    <div id="tab-break-chain" class="tab-panel micro-panel hidden">
+        <div class="max-w-2xl mx-auto card p-5 sm:p-6">
+            <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
+                <h2 class="text-base font-semibold text-ward-100">Break the Chain — Clinical Scenarios</h2>
+                <span id="break-chain-score" class="text-sm font-mono text-ward-500">0/0</span>
+            </div>
+            <p class="text-xs text-ward-500 mb-4">Read each scenario and select the nursing action that best breaks the target chain link.</p>
+            <div id="break-chain-area">
+                <p class="text-ward-500 text-sm">Loading scenarios…</p>
+            </div>
+            <button onclick="Microbiology.loadBreakChainScenarios()" class="btn-secondary w-full mt-4 text-sm">Reload Scenarios</button>
+        </div>
+    </div>
+
+    <!-- ═══ WHAT-IF SCENARIOS ═══ -->
+    <div id="tab-what-if" class="tab-panel micro-panel hidden">
+        <div class="max-w-2xl mx-auto card p-5 sm:p-6">
+            <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
+                <h2 class="text-base font-semibold text-ward-100">What-If Scenarios</h2>
+                <span id="what-if-score" class="text-sm font-mono text-ward-500">0/0</span>
+            </div>
+            <p class="text-xs text-ward-500 mb-4">Apply infection control judgment to complex clinical situations.</p>
+            <div id="what-if-area">
+                <p class="text-ward-500 text-sm">Loading scenarios…</p>
+            </div>
+            <button onclick="Microbiology.loadWhatIfScenarios()" class="btn-secondary w-full mt-4 text-sm">Reload Scenarios</button>
+        </div>
+    </div>
+
+    <!-- ═══ FLASHCARDS ═══ -->
+    <div id="tab-flashcards" class="tab-panel micro-panel hidden">
+        <div class="max-w-lg mx-auto">
+            <div class="flex flex-wrap justify-center gap-2 mb-4" id="micro-fc-stats">
+                <span class="stat-pill">Known: <strong id="micro-fc-known">0</strong></span>
+                <span class="stat-pill">Review: <strong id="micro-fc-review">0</strong></span>
+            </div>
+
+            <div id="micro-fc-complete" class="micro-fc-complete hidden"></div>
+
+            <div id="micro-flashcard-stage" class="micro-flashcard-stage">
+                <div id="micro-flashcard-inner" class="micro-flashcard-inner" onclick="Microbiology.flipCard()" role="button" tabindex="0" aria-label="Flip flashcard">
+                    <div id="mfc-front-view" class="micro-fc-face">
+                        <p class="text-xs text-ward-500 mb-2">Tap or press Space to reveal</p>
+                        <p id="mfc-front" class="micro-flashcard-front">Loading…</p>
+                        <span id="mfc-type" class="pathogen-badge mt-3"></span>
+                    </div>
+                    <div id="mfc-back-view" class="micro-fc-face micro-fc-back hidden">
+                        <p id="mfc-back-name" class="text-sm font-semibold text-ward-success mb-2"></p>
+                        <div class="micro-fc-field">
+                            <span class="micro-fc-label">Precautions</span>
+                            <p id="mfc-back-precautions" class="text-sm text-ward-300"></p>
+                        </div>
+                        <div class="micro-fc-field">
+                            <span class="micro-fc-label">Nursing Action</span>
+                            <p id="mfc-back-nursing" class="text-xs text-ward-400"></p>
+                        </div>
+                        <p id="mfc-back-clinical" class="text-xs text-ward-accent mt-2"></p>
+                        <button type="button" id="mfc-verify-btn" class="btn-verify text-xs mt-3 hidden" onclick="event.stopPropagation(); verifySource('microbiology')">Verify Source</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="micro-fc-dots" class="micro-fc-dots"></div>
+
+            <div class="micro-fc-rating">
+                <button type="button" class="micro-fc-rate review" disabled id="mfc-btn-review" onclick="Microbiology.rateCard('review')">Need Review</button>
+                <button type="button" class="micro-fc-rate know" disabled id="mfc-btn-know" onclick="Microbiology.rateCard('know')">Know It</button>
+            </div>
+
+            <div class="flex justify-between items-center mt-4">
+                <button onclick="Microbiology.prevCard()" class="btn-secondary text-sm" aria-label="Previous card">← Prev</button>
+                <span id="micro-flashcard-counter" class="text-sm text-ward-500 font-mono">0 / 0</span>
+                <button onclick="Microbiology.nextCard()" class="btn-secondary text-sm" aria-label="Next card">Next →</button>
+            </div>
+            <div class="flex flex-wrap justify-center gap-2 mt-3">
+                <button onclick="Microbiology.loadFlashcards(8)" class="btn-primary text-sm">Study 8</button>
+                <button onclick="Microbiology.loadFlashcards(8, true)" class="btn-secondary text-sm">Shuffle 8</button>
+                <button onclick="Microbiology.loadFlashcards()" class="btn-secondary text-sm">All Pathogens</button>
+                <button onclick="Microbiology.exportCurrentDeck()" class="btn-secondary text-sm">Export Deck</button>
+            </div>
+            <p class="text-center text-xs text-ward-600 mt-3">← → navigate · Space flips · Dots jump to card · Rate to track progress</p>
+        </div>
+    </div>
+
+    <!-- ═══ PRACTICE ═══ -->
+    <div id="tab-practice" class="tab-panel micro-panel hidden">
+        <div class="max-w-2xl mx-auto card p-5 sm:p-6">
+            <div class="flex flex-wrap justify-between items-center gap-3 mb-4">
+                <h2 class="text-base font-semibold text-ward-100">Practice Mode</h2>
+                <span id="practice-score" class="text-sm font-mono text-ward-500">0/0</span>
+            </div>
+
+            <div class="practice-mode-pills mb-4">
+                <button class="mode-pill active" data-mode="mixed" onclick="Microbiology.setPracticeMode('mixed')">Mixed</button>
+                <button class="mode-pill" data-mode="nclex" onclick="Microbiology.setPracticeMode('nclex')">NCLEX-Style</button>
+                <button class="mode-pill" data-mode="application" onclick="Microbiology.setPracticeMode('application')">Application</button>
+            </div>
+
+            <div id="practice-question-area">
+                <p class="text-ward-500 text-sm">Choose a mode and start practicing.</p>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mt-4">
+                <button onclick="Microbiology.startPractice(10)" class="btn-primary text-sm">Start (10)</button>
+                <button onclick="Microbiology.startPractice(15)" class="btn-secondary text-sm">Extended (15)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ EXPORT ═══ -->
+    <div id="tab-export" class="tab-panel micro-panel hidden">
+        <div class="card p-5 max-w-2xl mx-auto">
+            <h2 class="text-base font-semibold text-ward-100 mb-1">Export Study Materials</h2>
+            <p class="text-xs text-ward-500 mb-5">Copy, print, or download infection control references for offline review</p>
+            <div class="export-grid">
+                <div class="export-card" onclick="Microbiology.exportStudySheet()">
+                    <div class="export-card-icon">📄</div>
+                    <div class="export-card-title">PDF Study Sheet</div>
+                    <div class="export-card-desc">Chain, break points &amp; pathogens — Save as PDF</div>
+                </div>
+                <div class="export-card" onclick="Microbiology.copyToClipboard()">
+                    <div class="export-card-icon">📋</div>
+                    <div class="export-card-title">Copy to Clipboard</div>
+                    <div class="export-card-desc">Chain links + break points + pathogens</div>
+                </div>
+                <div class="export-card" onclick="Microbiology.exportMarkdown()">
+                    <div class="export-card-icon">📝</div>
+                    <div class="export-card-title">Flashcard Markdown</div>
+                    <div class="export-card-desc">Download .md for Anki or notes</div>
+                </div>
+                <div class="export-card export-card-accent" onclick="Microbiology.exportFlashcardsPDF()">
+                    <div class="export-card-icon">🃏</div>
+                    <div class="export-card-title">Flashcard PDF</div>
+                    <div class="export-card-desc">Printable pathogen flashcards</div>
+                </div>
+                <div class="export-card" onclick="Microbiology.exportPathogenCheatSheet()">
+                    <div class="export-card-icon">🦠</div>
+                    <div class="export-card-title">Pathogen Cheat Sheet</div>
+                    <div class="export-card-desc">Transmission, precautions &amp; nursing actions</div>
+                </div>
+                <div class="export-card" onclick="Microbiology.exportInfectionChainSheet()">
+                    <div class="export-card-icon">🔗</div>
+                    <div class="export-card-title">Infection Chain</div>
+                    <div class="export-card-desc">Six links with break-the-chain interventions</div>
+                </div>
+                <div class="export-card" onclick="Microbiology.exportPathogenJSON()">
+                    <div class="export-card-icon">📦</div>
+                    <div class="export-card-title">Pathogens JSON</div>
+                    <div class="export-card-desc">Full pathogen database for offline import</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            </main>
+
+            <footer class="main-footer">
+                Static ADN Study Resource · Deployable
+            </footer>
+        </div>
+    </div>
+
+    <script src="/static/js/export-utils.js"></script>
+    <script src="/static/js/ward-tabs.js"></script>
+    <script src="/static/js/data-api.js"></script>
+    <script src="/static/js/ward.js"></script>
+    <script src="/static/js/ward-static.js"></script>
+    
+    
+<script src="/static/js/microbiology.js"></script>
+
+</body>
+</html>

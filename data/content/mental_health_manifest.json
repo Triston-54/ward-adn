@@ -1,0 +1,105 @@
+{
+  "module_id": "mental_health",
+  "version": "1.0",
+  "status": "module_complete",
+  "tabs": [
+    {
+      "id": "communication",
+      "label": "Therapeutic Communication",
+      "status": "implemented",
+      "phase": 1
+    },
+    {
+      "id": "safety",
+      "label": "Safety & Screening",
+      "status": "implemented",
+      "phase": 1
+    },
+    {
+      "id": "disorders",
+      "label": "Disorders",
+      "status": "implemented",
+      "phase": 2
+    },
+    {
+      "id": "deescalation",
+      "label": "De-escalation",
+      "status": "implemented",
+      "phase": 2
+    },
+    {
+      "id": "practice",
+      "label": "Practice",
+      "status": "implemented",
+      "phase": 2
+    }
+  ],
+  "content_inventory": {
+    "therapeutic_communication": {
+      "target": 8,
+      "live_key": "communication_count",
+      "phase": 1,
+      "status": "complete"
+    },
+    "communication_barriers": {
+      "target": 4,
+      "live_key": "barrier_count",
+      "phase": 1,
+      "status": "complete"
+    },
+    "communication_scenarios": {
+      "target": 5,
+      "live_key": "communication_scenario_count",
+      "phase": 2,
+      "status": "complete"
+    },
+    "safety_risk_flags": {
+      "target": 8,
+      "live_key": "safety_flag_count",
+      "phase": 1,
+      "status": "complete"
+    },
+    "screening_tools": {
+      "target": 4,
+      "live_key": "screening_tool_count",
+      "phase": 1,
+      "status": "complete"
+    },
+    "safety_drill": {
+      "target": 5,
+      "live_key": "safety_drill_count",
+      "phase": 1,
+      "status": "complete"
+    },
+    "disorders": {
+      "target": 6,
+      "live_key": "disorder_count",
+      "phase": 2,
+      "status": "complete"
+    },
+    "de_escalation": {
+      "target": 4,
+      "live_key": "de_escalation_count",
+      "phase": 2,
+      "status": "complete"
+    },
+    "practice_questions": {
+      "target": 11,
+      "live_key": "practice_count",
+      "phase": 2,
+      "status": "complete"
+    }
+  },
+  "build_phases": [
+    {
+      "phase": 1,
+      "name": "Psychosocial Foundations",
+      "goal": "Communication, barriers, safety flags, screening, drills"
+    },
+    {
+      "phase": 2,
+      "name": "Clinical Expansion",
+      "goal": "Disorders, de-escalation, scenarios, practice"
+    }
+  ]
+}

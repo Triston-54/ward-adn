@@ -1,0 +1,45 @@
+{
+  "version": 2,
+  "name": "ward-adn-static",
+  "buildCommand": "python scripts/build_static_html.py",
+  "outputDirectory": ".",
+  "installCommand": "pip install -r requirements-build.txt",
+  "rewrites": [
+    { "source": "/modules/terminology", "destination": "/modules/terminology.html" },
+    { "source": "/modules/microbiology", "destination": "/modules/microbiology.html" },
+    { "source": "/modules/dosage", "destination": "/modules/dosage.html" },
+    { "source": "/modules/assessment", "destination": "/modules/assessment.html" },
+    { "source": "/modules/mental-health", "destination": "/modules/mental-health.html" },
+    { "source": "/modules/pathophysiology", "destination": "/modules/pathophysiology.html" },
+    { "source": "/modules/maternal-child", "destination": "/modules/maternal-child.html" },
+    { "source": "/modules/med_surg", "destination": "/modules/med_surg.html" },
+    { "source": "/modules/maternal_newborn", "destination": "/modules/maternal_newborn.html" },
+    { "source": "/modules/pediatrics", "destination": "/modules/pediatrics.html" },
+    { "source": "/nclex-prep", "destination": "/nclex-prep.html" },
+    { "source": "/how-to-use", "destination": "/how-to-use.html" },
+    { "source": "/", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/data/content/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Content-Type", "value": "application/json; charset=utf-8" }
+      ]
+    },
+    {
+      "source": "/static/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    },
+    {
+      "source": "/sw.js",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
+        { "key": "Service-Worker-Allowed", "value": "/" }
+      ]
+    }
+  ]
+}

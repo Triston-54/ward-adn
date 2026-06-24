@@ -1,0 +1,122 @@
+{
+  "agent": "Sub-Agent 4 — Bug Fixing & Stabilization",
+  "generated_at": "2026-06-24",
+  "summary": {
+    "bugs_found": 9,
+    "bugs_fixed": 9,
+    "severity_breakdown": {
+      "critical": 1,
+      "high": 1,
+      "medium": 4,
+      "low": 3
+    },
+    "test_startup_extended": true,
+    "all_startup_checks_passing": true
+  },
+  "bugs": [
+    {
+      "id": "BUG-001",
+      "severity": "critical",
+      "component": "app/services/pharmacy_progress_service.py",
+      "description": "Pharmacy dashboard crashed with NameError: MODULES and PHARMACY_TRACK_ID were referenced but not imported/defined. All /pharmacy routes returned HTTP 500.",
+      "status": "fixed",
+      "fix": "Import MODULES from progress_service; filter module_catalog by track == 'pharmacy'."
+    },
+    {
+      "id": "BUG-002",
+      "severity": "high",
+      "component": "static/js/mental_health.js",
+      "description": "reportProgress() called refreshProgressBar() which was never defined, causing ReferenceError after safety drill completion and blocking progress UI updates.",
+      "status": "fixed",
+      "fix": "Added refreshProgressBar() that fetches /api/mental-health/stats and updates the progress bar DOM."
+    },
+    {
+      "id": "BUG-003",
+      "severity": "medium",
+      "component": "app/routers/microbiology.py",
+      "description": "API stats fallback hardcoded items_total=46 while MODULES catalog was updated to 47, causing stale progress totals for new DB rows.",
+      "status": "fixed",
+      "fix": "Use MODULES[MODULE_ID]['total'] fallback; added ITEMS_TOTAL=47 to microbiology_service."
+    },
+    {
+      "id": "BUG-004",
+      "severity": "medium",
+      "component": "app/routers/dosage.py",
+      "description": "API stats fallback hardcoded items_total=53 instead of reading MODULES catalog, risking drift if totals change.",
+      "status": "fixed",
+      "fix": "Use MODULES[MODULE_ID]['total'] as the stats fallback."
+    },
+    {
+      "id": "BUG-005",
+      "severity": "medium",
+      "component": "app/services/* (7 modules)",
+      "description": "random.sample() in practice/drill/scenario endpoints raised ValueError when content pools were empty (scaffold builds or count=0 edge cases).",
+      "status": "fixed",
+      "fix": "Added safe_sample() in content_loader.py; migrated assessment, maternal_child, mental_health, microbiology, pathophysiology, and terminology services."
+    },
+    {
+      "id": "BUG-006",
+      "severity": "medium",
+      "component": "static/js/assessment.js, terminology.js, microbiology.js, maternal_child.js",
+      "description": "Practice and drill completion screens computed score % as correct/total without guarding empty question arrays, yielding NaN% in UI when API returned zero items.",
+      "status": "fixed",
+      "fix": "Added length checks before division (consistent with mental_health.js and pathophysiology.js patterns)."
+    },
+    {
+      "id": "BUG-007",
+      "severity": "low",
+      "component": "app/routers/* (9 routers)",
+      "description": "ModuleProgressReport Pydantic model duplicated identically across every module router, creating drift risk for progress API contracts.",
+      "status": "fixed",
+      "fix": "Centralized ModuleProgressReport in app/models.py; all routers import the shared schema."
+    },
+    {
+      "id": "BUG-008",
+      "severity": "low",
+      "component": "app/routers/mental_health.py, maternal_child.py, pathophysiology.py, pharmacy.py",
+      "description": "Stats endpoints used per-service ITEMS_TOTAL constants instead of MODULES catalog, inconsistent with dosage/microbiology pattern.",
+      "status": "fixed",
+      "fix": "Standardized items_total fallback to MODULES[module_id]['total'] across all module stats routes."
+    },
+    {
+      "id": "BUG-009",
+      "severity": "low",
+      "component": "test_startup.py",
+      "description": "Duplicate check_maternal_child() function and double invocation in main() caused redundant test output and import clutter.",
+      "status": "fixed",
+      "fix": "Merged into single comprehensive maternal-child check; added safe_sample edge-case tests and 6 additional FastAPI smoke routes."
+    }
+  ],
+  "verified_ok": [
+    "python test_startup.py — DB, terminology, dosage, pathophysiology, assessment, maternal-child, mental health, microbiology, pharmacy, safe_sample, socratic registry, 18 FastAPI routes",
+    "python test_socratic.py — registry, chat flow, topic detection",
+    "python test_socratic_http.py — /health, /api/socratic/chat, detect-module",
+    "Pharmacy track: /pharmacy 200, /api/pharmacy/stats 200, /api/pharmacy/manifest 200, module_catalog non-empty",
+    "Export endpoints: /api/pathophysiology/export/flashcards, /api/maternal-child/export/flashcards",
+    "Tab navigation: WardTabs.register/init on all 9 module JS files; goToModuleTab() in ward.js",
+    "MODULES totals aligned: terminology=220, microbiology=47, dosage=53, assessment=132, mental_health=29, pathophysiology=76, maternal_child=115, pharmacy_calculations=48"
+  ],
+  "remaining_risks": [
+    {
+      "severity": "low",
+      "risk": "Pharmacy calculations module is scaffold-only (0 live practice problems in JSON); progress reflects catalog total, not interactive drills.",
+      "mitigation": "Tracked in pharmacy manifest build phases."
+    },
+    {
+      "severity": "low",
+      "risk": "Dosage module has 13 practice problems but MODULES total is 53 (calc types, drug classes, safety cards). Progress % reflects catalog total — by design but may confuse users.",
+      "mitigation": "Document progress semantics on module UI."
+    },
+    {
+      "severity": "low",
+      "risk": "Socratic AI tutor depends on external provider configuration; placeholder mode verified but live Ollama/API not covered by startup tests.",
+      "mitigation": "Manual smoke test with configured API key before production demo."
+    }
+  ],
+  "test_results": {
+    "test_startup_py": "PASS — extended with safe_sample, maternal-child manifest/drill, pharmacy manifest, export routes (18 routes)",
+    "test_socratic_py": "PASS",
+    "test_socratic_http_py": "PASS",
+    "pharmacy_routes_after_fix": "PASS"
+  }
+}

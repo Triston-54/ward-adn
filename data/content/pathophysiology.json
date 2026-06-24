@@ -1,0 +1,1147 @@
+{
+  "module_id": "pathophysiology",
+  "title": "Pathophysiology",
+  "core_concepts": [
+    {
+      "id": "homeostasis",
+      "title": "Homeostasis & Feedback",
+      "summary": "Dynamic equilibrium maintained by negative feedback loops",
+      "content": "The body regulates temperature, glucose, fluid, and pH through sensors, control centers, and effectors. Disease begins when feedback fails or set points shift.",
+      "clinical_relevance": "Nursing supports compensatory mechanisms until treatment restores balance.",
+      "nursing_implications": [
+        "Monitor trends not single values",
+        "Anticipate decompensation when compensation exhausts"
+      ],
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "inflammation-stages",
+      "title": "Inflammation & Immune Response",
+      "summary": "Vascular and cellular phases — cardinal signs",
+      "content": "Inflammation is protective response to injury/infection. Sepsis-3 defines sepsis as infection with organ dysfunction — not SIRS alone.",
+      "clinical_relevance": "Fever, tachycardia, and hypotension may signal sepsis — hour-1 bundle.",
+      "nursing_implications": [
+        "Lactate and cultures per protocol",
+        "Monitor urine output and mentation"
+      ],
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "fluid-balance",
+      "title": "Fluid & Electrolyte Balance",
+      "summary": "Intravascular vs interstitial vs intracellular compartments",
+      "content": "Starling forces and RAAS regulate volume. Third-spacing in burns, sepsis, and pancreatitis reduces effective circulating volume.",
+      "clinical_relevance": "Daily weights and I&O detect fluid shifts before hypotension.",
+      "nursing_implications": [
+        "Assess edema, lung sounds, JVD",
+        "Match fluid type to deficit type"
+      ],
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "electrolyte-balance",
+      "title": "Electrolyte Balance",
+      "summary": "Na⁺, K⁺, Ca²⁺ roles in nerve, muscle, and cardiac function",
+      "content": "Hypokalemia increases digoxin toxicity risk. Hyperkalemia causes peaked T waves progressing to sine wave — never IV K⁺ push.",
+      "clinical_relevance": "ECG changes precede cardiac arrest in severe K⁺ abnormalities.",
+      "nursing_implications": [
+        "Continuous cardiac monitoring for K⁺ >6.0",
+        "Replace K⁺ orally/IV drip per order only"
+      ],
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "acid-base-abg",
+      "title": "Acid-Base & ABG Interpretation",
+      "summary": "pH, PaCO₂, HCO₃⁻ — respiratory vs metabolic disorders",
+      "content": "Interpret: pH → primary disorder (PaCO₂ vs HCO₃⁻) → compensation → anion gap if metabolic acidosis (MUDPILES). COPD may have compensated chronic respiratory acidosis baseline.",
+      "clinical_relevance": "Kussmaul respirations in metabolic acidosis; COPD retain CO₂ — titrate O₂.",
+      "nursing_implications": [
+        "ABG sample handling",
+        "Report acute changes in mental status with ABG shifts"
+      ],
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "compensation-decompensation",
+      "title": "Compensation & Decompensation",
+      "summary": "RAAS, SNS, and respiratory compensation maintain perfusion until failure",
+      "content": "Heart failure compensation: RAAS activation, vasoconstriction, fluid retention — eventually pulmonary edema. Septic shock: warm phase then cold shock with decompensation.",
+      "clinical_relevance": "Daily weights in CHF; lactate in sepsis.",
+      "nursing_implications": [
+        "Recognize when compensatory mechanisms fail",
+        "Escalate early"
+      ],
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "clotting-hemostasis",
+      "title": "Clotting & Hemostasis",
+      "summary": "Primary platelet plug and secondary coagulation cascade",
+      "content": "Anticoagulants block cascade steps. HIT: thrombocytopenia with thrombosis despite low platelets — stop heparin.",
+      "clinical_relevance": "Bleeding vs clotting risk with anticoagulation.",
+      "nursing_implications": [
+        "Bleeding precautions",
+        "Monitor platelets on heparin"
+      ],
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "immune-response",
+      "title": "Innate vs Adaptive Immunity",
+      "summary": "Neutrophils/macrophages vs lymphocytes and antibodies",
+      "content": "Innate is immediate; adaptive provides memory (vaccines). Neutropenia requires protective precautions.",
+      "clinical_relevance": "ANC <500 — neutropenic precautions.",
+      "nursing_implications": [
+        "Avoid fresh flowers/raw foods when neutropenic",
+        "Strict hand hygiene"
+      ],
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "oxygen-transport",
+      "title": "Oxygenation & Perfusion",
+      "summary": "O₂ delivery = CO × CaO₂; utilization at cellular level",
+      "content": "Hypoxemia from V/Q mismatch, shunt, hypoventilation, or diffusion defect. Anemia reduces O₂ carrying capacity despite normal SpO₂.",
+      "clinical_relevance": "SpO₂ does not replace hemoglobin assessment in hemorrhage.",
+      "nursing_implications": [
+        "Position for lung expansion",
+        "Transfuse per order when indicated"
+      ],
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "pain-pathway",
+      "title": "Pain Pathophysiology",
+      "summary": "Nociception, inflammation, and central sensitization",
+      "content": "Acute pain warns of injury; chronic pain involves maladaptive CNS changes. Opioids modulate perception — respiratory depression is priority adverse effect.",
+      "clinical_relevance": "Assess RR before each opioid dose.",
+      "nursing_implications": [
+        "Multimodal analgesia",
+        "Non-pharmacologic measures"
+      ],
+      "source_ref": "pathophysiology"
+    }
+  ],
+  "disease_processes": [
+    {
+      "id": "chf",
+      "name": "Heart Failure",
+      "category": "Cardiovascular",
+      "pathophysiology": "Pump failure → RAAS activation → sodium/water retention → increased preload → pulmonary congestion (left) or systemic edema/JVD (right).",
+      "manifestations": [
+        "Crackles, orthopnea, S3",
+        "Peripheral edema, JVD",
+        "Fatigue, decreased exercise tolerance"
+      ],
+      "nursing_priorities": [
+        "Daily weights",
+        "Diuretics and I&O",
+        "High Fowler's for dyspnea",
+        "Limit sodium/fluids per order"
+      ],
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "copd",
+      "name": "COPD",
+      "category": "Respiratory",
+      "pathophysiology": "Chronic inflammation and airflow limitation → air trapping → chronic hypercapnia with compensated respiratory acidosis baseline.",
+      "manifestations": [
+        "Barrel chest, prolonged expiration",
+        "Chronic cough, sputum",
+        "Hypoxemia with hypercapnia in exacerbation"
+      ],
+      "nursing_priorities": [
+        "SpO₂ target 88–92%",
+        "ABG baseline monitoring",
+        "Avoid high-flow O₂ if CO₂ retainer",
+        "Energy conservation"
+      ],
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "pneumonia",
+      "name": "Pneumonia",
+      "category": "Respiratory",
+      "pathophysiology": "Alveolar consolidation impairs gas exchange → hypoxemia, fever, leukocytosis.",
+      "manifestations": [
+        "Crackles, dullness to percussion",
+        "Productive cough, fever",
+        "Tachypnea"
+      ],
+      "nursing_priorities": [
+        "O₂, incentive spirometry",
+        "Antibiotics per culture",
+        "Reposition q2h — affected-side-up only for abscess/effusion per order"
+      ],
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "hypovolemic-shock",
+      "name": "Hypovolemic Shock",
+      "category": "Shock",
+      "pathophysiology": "Volume loss → decreased preload → decreased CO → compensatory tachycardia then hypotension and organ hypoperfusion.",
+      "manifestations": [
+        "Flat neck veins early",
+        "Tachycardia, hypotension",
+        "Cool clammy skin, oliguria"
+      ],
+      "nursing_priorities": [
+        "IV access",
+        "Fluid resuscitation per order",
+        "Monitor urine output and lactate",
+        "Identify source of loss"
+      ],
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "cardiogenic-shock",
+      "name": "Cardiogenic Shock",
+      "category": "Shock",
+      "pathophysiology": "Pump failure → decreased forward flow → pulmonary congestion and hypotension despite adequate volume.",
+      "manifestations": [
+        "JVD, crackles",
+        "Hypotension, tachycardia",
+        "Oliguria from poor forward flow"
+      ],
+      "nursing_priorities": [
+        "Continuous monitoring",
+        "Inotropes per order — fluids cautiously",
+        "Prepare for advanced support"
+      ],
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "sepsis",
+      "name": "Sepsis / Septic Shock",
+      "category": "Shock",
+      "pathophysiology": "Dysregulated host response to infection → vasodilation, capillary leak, microthrombi → distributive shock and organ dysfunction.",
+      "manifestations": [
+        "Fever or hypothermia",
+        "Tachycardia, hypotension",
+        "Altered mentation, oliguria"
+      ],
+      "nursing_priorities": [
+        "Hour-1 bundle: cultures, antibiotics, fluids, lactate",
+        "MAP ≥65 with vasopressors if needed",
+        "qSOFA screening"
+      ],
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "dka",
+      "name": "Diabetic Ketoacidosis",
+      "category": "Endocrine",
+      "pathophysiology": "Insulin deficiency → hyperglycemia, lipolysis, ketogenesis → metabolic acidosis. Total body K⁺ depleted despite serum K⁺ may be normal/high.",
+      "manifestations": [
+        "Polyuria, polydipsia",
+        "Kussmaul respirations",
+        "Fruity breath, dehydration"
+      ],
+      "nursing_priorities": [
+        "Fluids first",
+        "Insulin infusion per protocol after K⁺ ≥3.3",
+        "Never IV K⁺ push",
+        "Monitor glucose and K⁺ hourly initially"
+      ],
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "dm-type2",
+      "name": "Type 2 Diabetes Mellitus",
+      "category": "Endocrine",
+      "pathophysiology": "Insulin resistance and relative insulin deficiency → chronic hyperglycemia → microvascular (retinopathy, nephropathy, neuropathy) and macrovascular complications.",
+      "manifestations": [
+        "Polyuria, fatigue",
+        "Slow wound healing",
+        "HHNS if severe hyperglycemia without ketosis"
+      ],
+      "nursing_priorities": [
+        "Hypoglycemia 15/15 rule",
+        "Foot exams",
+        "Medication adherence teaching"
+      ],
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "renal-failure",
+      "name": "Acute & Chronic Renal Failure",
+      "category": "Renal",
+      "pathophysiology": "Prerenal (hypoperfusion), intrarenal (ATN), postrenal (obstruction) → decreased GFR → fluid overload, hyperkalemia, metabolic acidosis, uremia.",
+      "manifestations": [
+        "Oliguria/anuria",
+        "Edema, hypertension",
+        "Hyperkalemia ECG changes"
+      ],
+      "nursing_priorities": [
+        "Strict I&O",
+        "Dialysis access care",
+        "Renal dose medications",
+        "K⁺ restriction"
+      ],
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "ards",
+      "name": "ARDS",
+      "category": "Respiratory",
+      "pathophysiology": "Diffuse alveolar damage → increased permeability → non-cardiogenic pulmonary edema → refractory hypoxemia. Berlin: P/F <300 with PEEP ≥5 and bilateral infiltrates.",
+      "manifestations": [
+        "Severe hypoxemia",
+        "Bilateral infiltrates",
+        "Decreased compliance"
+      ],
+      "nursing_priorities": [
+        "Low tidal volume per ARDSnet",
+        "Prone positioning if ordered",
+        "Minimize sedation for vent synchrony"
+      ],
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "stroke",
+      "name": "Stroke (CVA)",
+      "category": "Neurological",
+      "pathophysiology": "Ischemic (thrombus/embolus) or hemorrhagic rupture → focal deficit by vascular territory. Penumbra is salvageable tissue in ischemic stroke.",
+      "manifestations": [
+        "Unilateral weakness",
+        "Aphasia",
+        "Sudden vision change"
+      ],
+      "nursing_priorities": [
+        "Last known well time",
+        "CT before thrombolytics",
+        "NPO until swallow eval",
+        "HOB 30°"
+      ],
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "asthma-exacerbation",
+      "name": "Asthma Exacerbation",
+      "category": "Respiratory",
+      "pathophysiology": "Bronchospasm, inflammation, mucus plugging → increased airway resistance and air trapping.",
+      "manifestations": [
+        "Wheezes, tachypnea",
+        "Silent chest if severe",
+        "Hypoxemia"
+      ],
+      "nursing_priorities": [
+        "Bronchodilators",
+        "O₂",
+        "Recognize silent chest as emergency"
+      ],
+      "source_ref": "pathophysiology"
+    }
+  ],
+  "compare_contrast_pairs": [
+    {
+      "id": "shock-hypo-vs-cardio",
+      "title": "Hypovolemic vs Cardiogenic Shock",
+      "condition_a": "Hypovolemic",
+      "condition_b": "Cardiogenic",
+      "key_differences": [
+        "Flat JVD vs JVD elevated",
+        "Dry lungs vs crackles",
+        "Fluid bolus helps vs may worsen"
+      ],
+      "clinical_pearls": [
+        "Assess JVD and lung sounds before aggressive fluids",
+        "Cardiogenic needs inotropes not large fluid bolus"
+      ],
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "dka-vs-hhns",
+      "title": "DKA vs HHNS",
+      "condition_a": "DKA",
+      "condition_b": "HHNS",
+      "key_differences": [
+        "Ketones and acidosis present in DKA",
+        "HHNS: extreme hyperglycemia, hyperosmolarity, minimal ketones",
+        "DKA more common type 1; HHNS type 2"
+      ],
+      "clinical_pearls": [
+        "Both need fluids and insulin protocol",
+        "K⁺ replacement before insulin if low"
+      ],
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "prerenal-vs-intrarenal",
+      "title": "Prerenal vs Intrarenal AKI",
+      "condition_a": "Prerenal",
+      "condition_b": "Intrarenal",
+      "key_differences": [
+        "BUN:Cr >20:1 prerenal",
+        "Urine Na <20 prerenal; muddy brown casts intrarenal",
+        "Responds to fluids vs may need dialysis"
+      ],
+      "clinical_pearls": [
+        "Diuretics and GI bleed confound BUN:Cr",
+        "FENa helps differentiate"
+      ],
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "left-vs-right-hf",
+      "title": "Left-Sided vs Right-Sided Heart Failure",
+      "condition_a": "Left-sided",
+      "condition_b": "Right-sided",
+      "key_differences": [
+        "Pulmonary congestion vs peripheral edema/JVD",
+        "Orthopnea, crackles vs hepatomegaly, ascites"
+      ],
+      "clinical_pearls": [
+        "Both may need diuretics",
+        "Position: high Fowler's for pulmonary edema"
+      ],
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "ischemic-vs-hemorrhagic-stroke",
+      "title": "Ischemic vs Hemorrhagic Stroke",
+      "condition_a": "Ischemic",
+      "condition_b": "Hemorrhagic",
+      "key_differences": [
+        "Thrombolytics for ischemic if within window",
+        "Anticoagulation contraindicated in hemorrhagic",
+        "HTN control critical in hemorrhagic"
+      ],
+      "clinical_pearls": [
+        "CT distinguishes type before treatment",
+        "NPO and swallow eval for both"
+      ],
+      "source_ref": "pathophysiology"
+    }
+  ],
+  "what_breaks_down_scenarios": [
+    {
+      "id": "wb-na-k-pump",
+      "title": "Na⁺/K⁺-ATPase Failure Post-Arrest",
+      "trigger": "Cardiac arrest with prolonged ischemia",
+      "normal_function": "Na⁺/K⁺-ATPase maintains cellular electrochemical gradient",
+      "breakdown": "Pump failure → intracellular Na⁺ and K⁺ leak → depolarization",
+      "cascade": [
+        "Peaked T waves",
+        "Widened QRS",
+        "Ventricular arrhythmias"
+      ],
+      "clinical_signs": [
+        "ECG changes",
+        "Muscle weakness"
+      ],
+      "nursing_response": "Continuous cardiac monitoring; K⁺ replacement per lab and protocol — never IV push",
+      "question": "Which ECG change appears first with rising serum K⁺?",
+      "options": [
+        "Peaked T waves",
+        "ST elevation",
+        "U waves",
+        "Prolonged PR only"
+      ],
+      "correct_index": 0,
+      "explanation": "Peaked T waves are early hyperkalemia sign.",
+      "source_ref": "pathophysiology",
+      "clinical_why": "Hyperkalemia depolarizes cardiac cells — peaked T waves are earliest tele sign before lethal arrhythmias."
+    },
+    {
+      "id": "wb-insulin-deficiency",
+      "title": "Insulin Deficiency in DKA",
+      "trigger": "Infection stress with missed insulin",
+      "normal_function": "Insulin drives glucose into cells and suppresses ketogenesis",
+      "breakdown": "Lipolysis → free fatty acids → ketone bodies → metabolic acidosis",
+      "cascade": [
+        "Hyperglycemia",
+        "Osmotic diuresis",
+        "Dehydration",
+        "Kussmaul breathing"
+      ],
+      "clinical_signs": [
+        "Glucose >250",
+        "Anion gap acidosis",
+        "K⁺ may appear normal despite depletion"
+      ],
+      "nursing_response": "Fluids, insulin per protocol after K⁺ ≥3.3 mEq/L",
+      "question": "Why may serum K⁺ be normal/high in DKA despite total body depletion?",
+      "options": [
+        "H+/K+ shift out of cells in acidosis",
+        "Renal retention only",
+        "Insulin excess",
+        "No shift occurs"
+      ],
+      "correct_index": 0,
+      "explanation": "Acidosis shifts K⁺ extracellularly — drops with insulin treatment.",
+      "source_ref": "pathophysiology",
+      "clinical_why": "Acidosis drives H⁺ into cells exchanging K⁺ out — serum K⁺ falsely normal until insulin and correction of acidosis."
+    },
+    {
+      "id": "wb-capillary-permeability",
+      "title": "Capillary Leak in Septic Shock",
+      "trigger": "Gram-negative sepsis",
+      "normal_function": "Intact endothelium retains fluid and protein in vasculature",
+      "breakdown": "Cytokine-mediated leak → third-spacing and relative hypovolemia",
+      "cascade": [
+        "Warm flushed skin early",
+        "Hypotension despite fluids",
+        "Oliguria",
+        "Cold shock late"
+      ],
+      "clinical_signs": [
+        "Fever, tachycardia",
+        "Hypotension",
+        "Lactate elevation"
+      ],
+      "nursing_response": "Early antibiotics, fluids, vasopressors for MAP ≥65",
+      "question": "Septic shock is classified as which shock type?",
+      "options": [
+        "Distributive",
+        "Hypovolemic",
+        "Cardiogenic",
+        "Obstructive only"
+      ],
+      "correct_index": 0,
+      "explanation": "Vasodilation and maldistribution define distributive shock.",
+      "source_ref": "pathophysiology",
+      "clinical_why": "Septic shock is distributive — fluid leaks to interstitium despite adequate volume resuscitation."
+    },
+    {
+      "id": "wb-raas-chf",
+      "title": "RAAS Activation in CHF",
+      "trigger": "Decreased cardiac output",
+      "normal_function": "RAAS maintains BP through sodium and water retention",
+      "breakdown": "Compensation becomes maladaptive → volume overload → pulmonary edema",
+      "cascade": [
+        "Increased preload",
+        "Crackles",
+        "Dyspnea",
+        "Decompensation"
+      ],
+      "clinical_signs": [
+        "Weight gain 2 lb/day",
+        "Crackles",
+        "Orthopnea"
+      ],
+      "nursing_response": "Daily weights, diuretics, sodium restriction, notify for acute dyspnea",
+      "question": "Which daily finding best tracks fluid status in CHF?",
+      "options": [
+        "Daily weight",
+        "Single BP reading",
+        "Pain score",
+        "Temperature"
+      ],
+      "correct_index": 0,
+      "explanation": "2–3 lb gain in days signals fluid retention.",
+      "source_ref": "pathophysiology",
+      "clinical_why": "Daily weight detects 1–2 L fluid gain before pulmonary symptoms — cornerstone of CHF self-management teaching."
+    },
+    {
+      "id": "wb-copd-co2",
+      "title": "CO₂ Retention in COPD",
+      "trigger": "Exacerbation with excessive O₂",
+      "normal_function": "Hypoxic drive maintains ventilation in chronic CO₂ retainers",
+      "breakdown": "Over-oxygenation may suppress drive → rising PaCO₂ and acidosis",
+      "cascade": [
+        "Somnolence",
+        "CO₂ narcosis",
+        "Respiratory failure"
+      ],
+      "clinical_signs": [
+        "Decreased RR despite hypoxemia history",
+        "Headache, confusion"
+      ],
+      "nursing_response": "Titrate O₂ to SpO₂ 88–92%; ABG monitoring",
+      "question": "Target SpO₂ for COPD exacerbation is typically:",
+      "options": [
+        "88–92%",
+        "100%",
+        "70%",
+        "95–100%"
+      ],
+      "correct_index": 0,
+      "explanation": "Avoid over-oxygenation in chronic retainers.",
+      "source_ref": "pathophysiology",
+      "clinical_why": "Titrate O₂ to SpO₂ 88–92% — prevents CO₂ narcosis from blunted hypoxic ventilatory drive."
+    },
+    {
+      "id": "wb-aki-prerenal",
+      "title": "Prerenal AKI from Dehydration",
+      "trigger": "Vomiting and diarrhea in elderly",
+      "normal_function": "Kidneys autoregulate perfusion via RAAS",
+      "breakdown": "Hypoperfusion → GFR drop → BUN rises disproportionately",
+      "cascade": [
+        "Oliguria",
+        "BUN:Cr >20:1",
+        "Responds to fluids"
+      ],
+      "clinical_signs": [
+        "Dry mucosa",
+        "Orthostasis",
+        "Oliguria"
+      ],
+      "nursing_response": "IV fluids per order; strict I&O; hold nephrotoxic drugs",
+      "question": "Prerenal AKI often improves with:",
+      "options": [
+        "Volume restoration",
+        "Immediate dialysis always",
+        "High-dose diuretics alone",
+        "NPO only"
+      ],
+      "correct_index": 0,
+      "explanation": "Restore renal perfusion if intrinsic kidney intact.",
+      "source_ref": "pathophysiology",
+      "clinical_why": "Prerenal AKI reverses with perfusion restoration — BUN:Cr >20:1 and concentrated urine support diagnosis."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fc-1",
+      "front": "Left-sided heart failure",
+      "back": "Pulmonary congestion — crackles, orthopnea, pink frothy sputum",
+      "category": "Cardiovascular",
+      "clinical_why": "Pulmonary congestion — crackles, orthopnea, pink frothy sputum",
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "fc-2",
+      "front": "Right-sided heart failure",
+      "back": "Peripheral edema, JVD, hepatomegaly",
+      "category": "Cardiovascular",
+      "clinical_why": "Peripheral edema, JVD, hepatomegaly",
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "fc-3",
+      "front": "Hypovolemic shock",
+      "back": "Flat JVD early, tachycardia, responds to fluid bolus",
+      "category": "Shock",
+      "clinical_why": "Flat JVD early, tachycardia, responds to fluid bolus",
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "fc-4",
+      "front": "Cardiogenic shock",
+      "back": "JVD, crackles, poor forward flow — fluids cautious",
+      "category": "Shock",
+      "clinical_why": "JVD, crackles, poor forward flow — fluids cautious",
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "fc-5",
+      "front": "Septic shock",
+      "back": "Distributive — warm then cold; MAP ≥65 goal",
+      "category": "Shock",
+      "clinical_why": "Distributive — warm then cold; MAP ≥65 goal",
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "fc-6",
+      "front": "DKA",
+      "back": "Hyperglycemia + ketones + metabolic acidosis",
+      "category": "Endocrine",
+      "clinical_why": "Hyperglycemia + ketones + metabolic acidosis",
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "fc-7",
+      "front": "COPD O₂ target",
+      "back": "SpO₂ 88–92%; monitor ABG baseline — avoid over-O₂",
+      "category": "Respiratory",
+      "clinical_why": "SpO₂ 88–92%; monitor ABG baseline — avoid over-O₂",
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "fc-8",
+      "front": "ARDS Berlin criteria",
+      "back": "P/F <300 with PEEP ≥5 and bilateral infiltrates",
+      "category": "Respiratory",
+      "clinical_why": "P/F <300 with PEEP ≥5 and bilateral infiltrates",
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "fc-9",
+      "front": "Prerenal AKI",
+      "back": "BUN:Cr >20:1, urine Na <20, responds to fluids",
+      "category": "Renal",
+      "clinical_why": "BUN:Cr >20:1, urine Na <20, responds to fluids",
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "fc-10",
+      "front": "Late decelerations (OB crossover)",
+      "back": "Uteroplacental insufficiency — stop oxytocin, resuscitation",
+      "category": "Perfusion",
+      "clinical_why": "Uteroplacental insufficiency — stop oxytocin, resuscitation",
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "fc-11",
+      "front": "DKA insulin hold",
+      "back": "Hold insulin if K⁺ <3.3 mEq/L until replaced",
+      "category": "Endocrine",
+      "clinical_why": "Hold insulin if K⁺ <3.3 mEq/L until replaced",
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "fc-12",
+      "front": "Stroke priority",
+      "back": "Last known well; CT before thrombolytics; NPO",
+      "category": "Neurological",
+      "clinical_why": "Last known well; CT before thrombolytics; NPO",
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "fc-13",
+      "front": "HIT",
+      "back": "Low platelets + thrombosis on heparin — stop heparin",
+      "category": "Hematology",
+      "clinical_why": "Low platelets + thrombosis on heparin — stop heparin",
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "fc-14",
+      "front": "Metabolic acidosis",
+      "back": "Kussmaul respirations; anion gap if MUDPILES",
+      "category": "Acid-Base",
+      "clinical_why": "Kussmaul respirations; anion gap if MUDPILES",
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "fc-15",
+      "front": "Hyperkalemia ECG",
+      "back": "Peaked T → wide QRS → sine wave",
+      "category": "Electrolytes",
+      "clinical_why": "Peaked T → wide QRS → sine wave",
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "fc-16",
+      "front": "Hypokalemia",
+      "back": "U waves, flat T, digoxin toxicity risk",
+      "category": "Electrolytes",
+      "clinical_why": "U waves, flat T, digoxin toxicity risk",
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "fc-17",
+      "front": "HHNS",
+      "back": "Extreme hyperglycemia, hyperosmolarity, minimal ketones",
+      "category": "Endocrine",
+      "clinical_why": "Extreme hyperglycemia, hyperosmolarity, minimal ketones",
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "fc-18",
+      "front": "Pneumonia",
+      "back": "Alveolar consolidation — O₂, antibiotics, IS",
+      "category": "Respiratory",
+      "clinical_why": "Alveolar consolidation — O₂, antibiotics, IS",
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "fc-19",
+      "front": "ARDS management",
+      "back": "Low tidal volume; prone positioning if ordered",
+      "category": "Respiratory",
+      "clinical_why": "Low tidal volume; prone positioning if ordered",
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "fc-20",
+      "front": "Sepsis screening",
+      "back": "qSOFA: RR ≥22, altered mentation, SBP ≤100",
+      "category": "Shock",
+      "clinical_why": "qSOFA: RR ≥22, altered mentation, SBP ≤100",
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "fc-21",
+      "front": "Compensation",
+      "back": "RAAS retains Na/H₂O in low CO states",
+      "category": "Cardiovascular",
+      "clinical_why": "RAAS retains Na/H₂O in low CO states",
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "fc-22",
+      "front": "Intranrenal AKI",
+      "back": "Muddy brown casts; may need dialysis",
+      "category": "Renal",
+      "clinical_why": "Muddy brown casts; may need dialysis",
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "fc-23",
+      "front": "qSOFA use",
+      "back": "Screening tool — not sole sepsis diagnosis",
+      "category": "Shock",
+      "clinical_why": "Screening tool — not sole sepsis diagnosis",
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "fc-24",
+      "front": "Asthma silent chest",
+      "back": "Impending respiratory failure — not improvement",
+      "category": "Respiratory",
+      "clinical_why": "Impending respiratory failure — not improvement",
+      "source_ref": "pathophysiology"
+    },
+    {
+      "id": "fc-25",
+      "front": "Anemia effect on O₂",
+      "back": "Reduced CaO₂ despite normal SpO₂ possible",
+      "category": "Oxygenation",
+      "clinical_why": "Reduced CaO₂ despite normal SpO₂ possible",
+      "source_ref": "pathophysiology"
+    }
+  ],
+  "practice_questions": [
+    {
+      "id": "patho-q1",
+      "question": "Which shock type presents with warm flushed skin early then hypotension?",
+      "options": [
+        "Distributive (septic)",
+        "Cardiogenic",
+        "Hypovolemic",
+        "Neurogenic only"
+      ],
+      "correct_index": 0,
+      "explanation": "Septic shock begins with vasodilation and warm periphery; cold shock and hypotension follow as compensation fails.",
+      "clinical_why": "Early recognition drives sepsis hour-1 bundle: cultures, antibiotics, fluids, lactate.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Pathophysiology",
+        "citation": "Open RN OER Ch. 2–10",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "patho-q2",
+      "question": "JVD and bilateral crackles suggest:",
+      "options": [
+        "Cardiogenic shock/left HF",
+        "Hypovolemic shock",
+        "Isolated pneumonia only",
+        "DKA"
+      ],
+      "correct_index": 0,
+      "explanation": "JVD reflects elevated CVP; crackles indicate pulmonary edema from left-sided backup — diurese cautiously and monitor output.",
+      "clinical_why": "Giving rapid fluids worsens pulmonary edema in cardiogenic shock.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Pathophysiology",
+        "citation": "Open RN OER Ch. 2–10",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "patho-q3",
+      "question": "First intervention in DKA after IV access:",
+      "options": [
+        "Regular insulin bolus before fluids",
+        "IV fluid resuscitation",
+        "IV K⁺ push",
+        "Oral fluids only"
+      ],
+      "correct_index": 1,
+      "explanation": "DKA causes profound dehydration from osmotic diuresis — isotonic fluids restore perfusion before insulin lowers glucose and shifts K⁺.",
+      "clinical_why": "Fluids reduce mortality; insulin without volume resuscitation worsens hypotension.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Pathophysiology",
+        "citation": "Open RN OER Ch. 2–10",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "patho-q4",
+      "question": "Hold insulin in DKA when K⁺ is:",
+      "options": [
+        "5.0 mEq/L",
+        "4.0 mEq/L",
+        "<3.3 mEq/L",
+        "6.5 mEq/L"
+      ],
+      "correct_index": 2,
+      "explanation": "Insulin drives K⁺ into cells — starting insulin when K⁺ <3.3 mEq/L can cause fatal arrhythmia.",
+      "clinical_why": "Total body K⁺ is depleted in DKA despite normal/high serum levels.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Pathophysiology",
+        "citation": "Open RN OER Ch. 2–10",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "patho-q5",
+      "question": "COPD chronic baseline may include:",
+      "options": [
+        "Compensated respiratory acidosis",
+        "Primary metabolic alkalosis only",
+        "Normal PaCO₂ always",
+        "Metabolic acidosis only"
+      ],
+      "correct_index": 0,
+      "explanation": "Chronic CO₂ retention leads kidneys to retain HCO₃⁻ compensating metabolic component — pH may be near normal.",
+      "clinical_why": "Acute O₂ overdose can unmask uncompensated respiratory acidosis.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Pathophysiology",
+        "citation": "Open RN OER Ch. 2–10",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "patho-q6",
+      "question": "Refractory hypotension in septic shock after fluids — next:",
+      "options": [
+        "Large fluid bolus only",
+        "Vasopressor per protocol",
+        "Immediate discharge",
+        "Oral hydration"
+      ],
+      "correct_index": 1,
+      "explanation": "After 30 mL/kg crystalloid, persistent hypotension needs vasopressors — norepinephrine first-line for septic shock per Surviving Sepsis.",
+      "clinical_why": "Delaying vasopressors prolongs organ hypoperfusion and lactate elevation.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Pathophysiology",
+        "citation": "Open RN OER Ch. 2–10",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "patho-q7",
+      "question": "Prerenal AKI BUN:Cr ratio typically:",
+      "options": [
+        ">20:1",
+        "<10:1",
+        "Exactly 1:1",
+        "Not useful"
+      ],
+      "correct_index": 0,
+      "explanation": "Prerenal azotemia from hypoperfusion concentrates BUN disproportionately — improves with fluid resuscitation.",
+      "clinical_why": "BUN:Cr >20:1 with low urine Na⁺ supports prerenal cause before starting nephrotoxins.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Pathophysiology",
+        "citation": "Open RN OER Ch. 2–10",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "patho-q8",
+      "question": "Before thrombolytics in suspected stroke:",
+      "options": [
+        "MRI only",
+        "CT head to rule out hemorrhage",
+        "Lumbar puncture first",
+        "Start heparin drip"
+      ],
+      "correct_index": 1,
+      "explanation": "Non-contrast CT head rules out hemorrhage before thrombolytics — IV tPA contraindicated in bleed.",
+      "clinical_why": "Time from symptom onset determines tPA eligibility — CT must not delay unnecessarily.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Pathophysiology",
+        "citation": "Open RN OER Ch. 2–10",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "patho-q9",
+      "question": "Hyperkalemia ECG progression includes:",
+      "options": [
+        "Peaked T waves",
+        "U waves only",
+        "ST elevation MI pattern only",
+        "Normal ECG until arrest"
+      ],
+      "correct_index": 0,
+      "explanation": "Hyperkalemia ECG progression: peaked T → flattened P → wide QRS → sine wave → VF/asystole.",
+      "clinical_why": "Calcium stabilizes membrane while K⁺ lowering therapies take effect.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Pathophysiology",
+        "citation": "Open RN OER Ch. 2–10",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "patho-q10",
+      "question": "Daily weight gain of 2 lb in CHF signals:",
+      "options": [
+        "Improved nutrition",
+        "Fluid retention",
+        "Muscle gain",
+        "Dry weight loss"
+      ],
+      "correct_index": 1,
+      "explanation": "2–3 lb weight gain in 24–48 hr equals ~1–1.5 L fluid retention — notify before crackles and orthopnea worsen.",
+      "clinical_why": "Daily weights are more sensitive than single lung auscultation for early CHF decompensation.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Pathophysiology",
+        "citation": "Open RN OER Ch. 2–10",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "patho-q11",
+      "question": "DKA vs HHNS: ketones are prominent in:",
+      "options": [
+        "DKA",
+        "HHNS",
+        "Both equally",
+        "Neither"
+      ],
+      "correct_index": 0,
+      "explanation": "DKA (type 1): insulin deficiency → ketogenesis and metabolic acidosis. HHNS (type 2): profound hyperglycemia >600 mg/dL with osmotic diuresis but minimal ketones.",
+      "clinical_why": "DKA needs insulin urgently after fluids and K⁺ check; HHNS needs aggressive fluids first — both are emergencies.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Pathophysiology",
+        "citation": "Open RN OER Ch. 2–10",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "patho-q12",
+      "question": "ARDS P/F ratio Berlin definition uses PEEP:",
+      "options": [
+        "≥5 cm H₂O",
+        "0 only",
+        "≥15 only",
+        "Not part of criteria"
+      ],
+      "correct_index": 0,
+      "explanation": "Berlin ARDS definition: P/F ratio <300 with bilateral infiltrates not fully explained by cardiac failure, on PEEP ≥5 cm H₂O within 7 days of insult.",
+      "clinical_why": "ARDS management is lung-protective ventilation — low tidal volume 6 mL/kg IBW and plateau pressure <30.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Pathophysiology",
+        "citation": "Open RN OER Ch. 2–10",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "patho-q13",
+      "question": "HIT on heparin — priority action:",
+      "options": [
+        "Continue heparin",
+        "Stop heparin and notify provider",
+        "Increase heparin rate",
+        "Platelet transfusion always"
+      ],
+      "correct_index": 1,
+      "explanation": "Heparin-induced thrombocytopenia (HIT): platelets drop 30–50% on heparin with paradoxical thrombosis — stop all heparin including flushes, start alternative anticoagulant.",
+      "clinical_why": "Continuing heparin in HIT causes limb loss and PE — 4T score guides suspicion before antibody testing.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Pathophysiology",
+        "citation": "Open RN OER Ch. 2–10",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "patho-q14",
+      "question": "Left-sided HF classic finding:",
+      "options": [
+        "Peripheral pitting edema only",
+        "Pulmonary crackles and orthopnea",
+        "JVD without lung findings",
+        "Isolated hepatomegaly"
+      ],
+      "correct_index": 1,
+      "explanation": "Left ventricular failure backs blood into pulmonary circulation — crackles, S₃, orthopnea, paroxysmal nocturnal dyspnea, pink frothy sputum in acute pulmonary edema.",
+      "clinical_why": "Right-sided failure shows JVD and peripheral edema — many patients have biventricular failure.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Pathophysiology",
+        "citation": "Open RN OER Ch. 2–10",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "patho-q15",
+      "question": "Metabolic acidosis compensation:",
+      "options": [
+        "Increased respiratory rate (Kussmaul)",
+        "Bradypnea",
+        "Metabolic alkalosis always",
+        "No compensation possible"
+      ],
+      "correct_index": 0,
+      "explanation": "Metabolic acidosis triggers compensatory hyperventilation (Kussmaul respirations) to blow off CO₂ and raise pH — check ABG for pH, PaCO₂, HCO₃⁻.",
+      "clinical_why": "DKA and sepsis cause metabolic acidosis — treat underlying cause, not only compensation.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Pathophysiology",
+        "citation": "Open RN OER Ch. 2–10",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "patho-q16",
+      "question": "Sepsis-3 definition emphasizes:",
+      "options": [
+        "SIRS criteria only",
+        "Infection with organ dysfunction",
+        "WBC >15000 only",
+        "Temperature spike alone"
+      ],
+      "correct_index": 1,
+      "explanation": "Sepsis-3 defines sepsis as suspected infection plus acute organ dysfunction (SOFA/qSOFA score change) — SIRS alone is insufficient.",
+      "clinical_why": "Hour-1 bundle: lactate, blood cultures, broad antibiotics, fluids 30 mL/kg if hypotensive.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Pathophysiology",
+        "citation": "Open RN OER Ch. 2–10",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "patho-q17",
+      "question": "Stroke penumbra is:",
+      "options": [
+        "Irreversibly infarcted tissue",
+        "Potentially salvageable ischemic tissue",
+        "Hemorrhagic cavity",
+        "Normal tissue"
+      ],
+      "correct_index": 1,
+      "explanation": "Ischemic penumbra surrounds infarct core — hypoperfused but viable tissue salvageable with reperfusion (tPA, thrombectomy) within time windows.",
+      "clinical_why": "Every 15-minute delay in stroke treatment worsens disability — 'time is brain.'",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Pathophysiology",
+        "citation": "Open RN OER Ch. 2–10",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "patho-q18",
+      "question": "K⁺ 6.8 mEq/L — priority nursing action:",
+      "options": [
+        "IV K⁺ push",
+        "Continuous cardiac monitoring and notify provider",
+        "Oral K⁺ only without assessment",
+        "Discharge"
+      ],
+      "correct_index": 1,
+      "explanation": "K⁺ 6.8 mEq/L is life-threatening — continuous tele, notify provider, prepare calcium gluconate for ECG changes; never IV K⁺ push.",
+      "clinical_why": "ECG changes precede arrest — peaked T, widened QRS, sine wave pattern requires immediate treatment.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Pathophysiology",
+        "citation": "Open RN OER Ch. 2–10",
+        "verified_date": "2026-06"
+      }
+    }
+  ],
+  "source": {
+    "title": "Open RN — Pathophysiology",
+    "citation": "Open RN OER Ch. 2–10",
+    "verified_date": "2026-06"
+  }
+}

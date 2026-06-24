@@ -1,0 +1,118 @@
+{
+  "agent": "Sub-Agent 2 \u2014 Medical Terminology Clinical & Practice",
+  "terms_reviewed": 220,
+  "terms_verified": 197,
+  "terms_flagged": 23,
+  "practice_questions_reviewed": 11,
+  "practice_questions_verified": 10,
+  "practice_questions_flagged": 0,
+  "flashcards_note": "217 flashcards are generated from term front/back pairs; clinical accuracy inherits from audited term definitions and clinical_relevance fields.",
+  "flagged_items": [
+    {
+      "item_key": "term:antibiotic",
+      "review_note": "[Word parts] Breakdown correct; definition is etymology not drug class. Fix: 'Drug that inhibits or destroys bacteria.'"
+    },
+    {
+      "item_key": "term:anuria",
+      "review_note": "[Word parts] Parts correct (an + ur + ia); clinical definition too literal. Fix: <50\u2013100 mL/24 h, not complete absence."
+    },
+    {
+      "item_key": "term:bronchodilator",
+      "review_note": "[Word parts] Definition describes process not agent class. Fix: 'Medication that causes bronchodilation.'"
+    },
+    {
+      "item_key": "term:diaphragm",
+      "review_note": "[Word parts] Breakdown wrongly uses phren (mind). Fix: diaphragma (partition) \u2014 respiration muscle."
+    },
+    {
+      "item_key": "term:diuretic",
+      "review_note": "[Word parts] Omits dia-; definition is action not agent. [Clinical] Add loop/thiazide examples and K+/I&O monitoring in clinical_relevance."
+    },
+    {
+      "item_key": "term:etiology",
+      "review_note": "[Word parts] Definition describes the study, not the cause. Fix: 'Cause or origin of a disease.'"
+    },
+    {
+      "item_key": "term:fowler-s",
+      "review_note": "[Clinical] Angle ranges conflate Semi-Fowler (30\u201345\u00b0), Fowler (45\u201360\u00b0), High Fowler (60\u201390\u00b0). Add aspiration-risk and dyspnea nursing application."
+    },
+    {
+      "item_key": "term:gastroenterology",
+      "review_note": "[Word parts] Fields swapped \u2014 breakdown in clinical_relevance. [Clinical] Replace with GI nursing context: bowel prep, endoscopy recovery, nutrition."
+    },
+    {
+      "item_key": "term:hypodermic",
+      "review_note": "[Word parts] Prefix should be hyp- not hypo- per Ehrlich."
+    },
+    {
+      "item_key": "term:ketoacidosis",
+      "review_note": "[Word parts] Breakdown omits acid combining form."
+    },
+    {
+      "item_key": "term:laparotomy",
+      "review_note": "[Word parts] Root field set to -tomy suffix."
+    },
+    {
+      "item_key": "term:lateral",
+      "review_note": "[Word parts] Definition conflates anatomical lateral with side-lying position."
+    },
+    {
+      "item_key": "term:leukocytosis",
+      "review_note": "[Word parts] Breakdown omits cyt (cell)."
+    },
+    {
+      "item_key": "term:nephrectomy",
+      "review_note": "[Word parts] Breakdown typo nephrr."
+    },
+    {
+      "item_key": "term:quarantine",
+      "review_note": "[Clinical] Definition conflates quarantine (exposed persons) with isolation (confirmed infection). Fix per CDC public-health distinction."
+    },
+    {
+      "item_key": "term:thrombocytopenia",
+      "review_note": "[Word parts] Breakdown omits cyt/o (platelet/cell)."
+    },
+    {
+      "item_key": "term:vasoconstrictor",
+      "review_note": "[Word parts] Definition describes process not agent."
+    },
+    {
+      "item_key": "term:vasodilator",
+      "review_note": "[Word parts] Definition describes process not agent."
+    },
+    {
+      "item_key": "term:hypotension",
+      "review_note": "[Clinical] Definition and clinical_relevance lack actionable thresholds. Add SBP <90 mmHg (adult shock concern), orthostatic drop criteria (\u226520/\u226510 mmHg), and nursing actions: reassess vitals, fluids per order, supine positioning \u2014 not Trendelenburg."
+    },
+    {
+      "item_key": "term:carcinoma",
+      "review_note": "[Clinical] clinical_relevance 'Most common cancer type overall' is misleading. Carcinoma = malignant epithelial tumor; many cancer types exist. Fix: note epithelial origin, staging, and treatment side-effect monitoring for nurses."
+    },
+    {
+      "item_key": "term:sign",
+      "review_note": "[Clinical] Example 'Fever is a sign' oversimplifies \u2014 fever is measured (objective) but patients also report feeling feverish (subjective). Clarify: signs are objective observable/measurable findings; symptoms are subjective."
+    },
+    {
+      "item_key": "term:contraindication",
+      "review_note": "[Clinical] clinical_relevance too generic ('always check before administering'). Add concrete nursing examples: e.g., morphine contraindicated with respiratory depression; metformin held before contrast studies."
+    },
+    {
+      "item_key": "term:carotid",
+      "review_note": "[Clinical] clinical_relevance only mentions bruit. Expand: palpate carotid pulse (never both sides simultaneously), stroke/TIA risk, auscultation technique, and post-carotid endarterectomy monitoring."
+    }
+  ],
+  "new_clinical_flags": [
+    "term:hypotension",
+    "term:carcinoma",
+    "term:sign",
+    "term:contraindication",
+    "term:carotid"
+  ],
+  "errors": [],
+  "module_summary": {
+    "verified": 197,
+    "needs_review": 23,
+    "unreviewed": 0,
+    "total": 220
+  }
+}

@@ -1,0 +1,3142 @@
+{
+  "module_id": "assessment",
+  "title": "NURS 146 — Health Assessment",
+  "head_to_toe_sequence": [
+    {
+      "order": 1,
+      "step": "General Survey",
+      "description": "Observe appearance, hygiene, distress, and ABCs from doorway.",
+      "technique": "Inspection",
+      "tips": [
+        "Note work of breathing before approaching",
+        "Introduce self and verify identity"
+      ]
+    },
+    {
+      "order": 2,
+      "step": "Vital Signs",
+      "description": "Temperature, pulse, respirations, BP, SpO₂, pain score.",
+      "technique": "Measurement",
+      "tips": [
+        "Orthostatics if fall risk or diuretics",
+        "Pain is fifth vital sign"
+      ]
+    },
+    {
+      "order": 3,
+      "step": "HEENT",
+      "description": "Head, eyes, ears, nose, throat systematic exam.",
+      "technique": "Inspection, palpation, auscultation",
+      "tips": [
+        "PERRLA",
+        "Oral mucosa and dentition"
+      ]
+    },
+    {
+      "order": 4,
+      "step": "Neck",
+      "description": "Trachea midline, thyroid, lymph nodes, JVD, carotid bruits.",
+      "technique": "Palpation, auscultation",
+      "tips": [
+        "JVD assessed at 45°"
+      ]
+    },
+    {
+      "order": 5,
+      "step": "Chest & Lungs",
+      "description": "Respiratory inspection, palpation, percussion, auscultation.",
+      "technique": "Full respiratory exam",
+      "tips": [
+        "Compare apical to basal sounds",
+        "Note SpO₂ with exertion if ordered"
+      ]
+    },
+    {
+      "order": 6,
+      "step": "Cardiovascular",
+      "description": "Apical pulse, heart sounds, peripheral perfusion.",
+      "technique": "Auscultation, palpation",
+      "tips": [
+        "Apical pulse 1 full minute if irregular"
+      ]
+    },
+    {
+      "order": 7,
+      "step": "Abdomen",
+      "description": "Inspect, auscultate bowel sounds, palpate quadrants.",
+      "technique": "Auscultate before palpate",
+      "tips": [
+        "Light palpation first",
+        "Note last BM"
+      ]
+    },
+    {
+      "order": 8,
+      "step": "Musculoskeletal",
+      "description": "ROM, strength, gait, spine.",
+      "technique": "Active/passive ROM",
+      "tips": [
+        "Compare bilaterally",
+        "Fall risk screening"
+      ]
+    },
+    {
+      "order": 9,
+      "step": "Neurological",
+      "description": "LOC, cranial nerves, motor/sensory, reflexes as indicated.",
+      "technique": "Serial neuro checks",
+      "tips": [
+        "Baseline for comparison",
+        "Stroke protocol if acute deficit"
+      ]
+    },
+    {
+      "order": 10,
+      "step": "Skin & Psychosocial",
+      "description": "Integument, pressure injury risk, mental status, safety screening.",
+      "technique": "Inspection, therapeutic communication",
+      "tips": [
+        "Braden scale",
+        "Suicide screening when indicated"
+      ]
+    }
+  ],
+  "body_systems": [
+    {
+      "id": "neurological",
+      "name": "Neurological",
+      "overview": "Systematic neurological assessment integrates inspection, palpation, auscultation, and patient-reported data.",
+      "assessment_steps": [
+        "Mental status and level of consciousness",
+        "Cranial nerves II–XII",
+        "Motor strength and sensation",
+        "Cerebellar function and gait",
+        "Pupils PERRLA"
+      ],
+      "normal_findings": [
+        "Alert, oriented, coherent speech",
+        "Equal strength 5/5",
+        "Steady coordinated gait"
+      ],
+      "abnormal_findings": [
+        "Confusion, slurred speech, word-finding difficulty",
+        "Unilateral weakness or numbness",
+        "Unsteady gait, inability to move extremity"
+      ],
+      "red_flags": [
+        "Full neuro assessment; stroke protocol if focal deficit"
+      ],
+      "nursing_implications": [
+        "Document objective neurological findings in flowsheet.",
+        "Compare to baseline and report changes."
+      ],
+      "source_ref": "assessment"
+    },
+    {
+      "id": "cardiovascular",
+      "name": "Cardiovascular",
+      "overview": "Systematic cardiovascular assessment integrates inspection, palpation, auscultation, and patient-reported data.",
+      "assessment_steps": [
+        "Apical pulse rate and rhythm",
+        "Heart sounds S1/S2",
+        "Peripheral pulses and cap refill",
+        "JVD and edema assessment",
+        "Blood pressure both arms if indicated"
+      ],
+      "normal_findings": [
+        "Regular rate 60–100; S1/S2 only",
+        "No edema; no JVD",
+        "Stable vitals; good perfusion"
+      ],
+      "abnormal_findings": [
+        "Irregular rhythm, murmur, gallop S3/S4",
+        "Pitting edema, JVD at 45°",
+        "SBP <90 with symptoms, HR <40 or >150"
+      ],
+      "red_flags": [
+        "ECG if symptomatic; continuous monitoring if ordered"
+      ],
+      "nursing_implications": [
+        "Document objective cardiovascular findings in flowsheet.",
+        "Compare to baseline and report changes."
+      ],
+      "source_ref": "assessment"
+    },
+    {
+      "id": "respiratory",
+      "name": "Respiratory",
+      "overview": "Systematic respiratory assessment integrates inspection, palpation, auscultation, and patient-reported data.",
+      "assessment_steps": [
+        "Inspect chest symmetry and effort",
+        "Palpate expansion and fremitus",
+        "Auscultate all lung fields",
+        "Percussion for dullness/hyperresonance",
+        "SpO₂ and respiratory rate"
+      ],
+      "normal_findings": [
+        "Symmetric expansion; clear lungs",
+        "SpO₂ ≥94% RA; RR 12–20",
+        "No productive cough"
+      ],
+      "abnormal_findings": [
+        "Accessory muscle use, asymmetric expansion",
+        "SpO₂ <94%, tachypnea",
+        "Productive cough with colored sputum, hemoptysis"
+      ],
+      "red_flags": [
+        "Position upright, O₂, notify provider"
+      ],
+      "nursing_implications": [
+        "Document objective respiratory findings in flowsheet.",
+        "Compare to baseline and report changes."
+      ],
+      "source_ref": "assessment"
+    },
+    {
+      "id": "gastrointestinal",
+      "name": "Gastrointestinal",
+      "overview": "Systematic gastrointestinal assessment integrates inspection, palpation, auscultation, and patient-reported data.",
+      "assessment_steps": [
+        "Inspect abdomen contour",
+        "Auscultate bowel sounds all quadrants",
+        "Palpate light then deep",
+        "Assess last BM and nausea",
+        "Liver/spleen span if indicated"
+      ],
+      "normal_findings": [
+        "Soft, non-tender; active bowel sounds",
+        "Regular elimination; no NV",
+        "Non-tender abdomen"
+      ],
+      "abnormal_findings": [
+        "Distension, absent/hyperactive BS, guarding",
+        "Diarrhea, melena, hematochezia",
+        "Rebound tenderness, rigid abdomen"
+      ],
+      "red_flags": [
+        "NPO if surgical concern; notify provider"
+      ],
+      "nursing_implications": [
+        "Document objective gastrointestinal findings in flowsheet.",
+        "Compare to baseline and report changes."
+      ],
+      "source_ref": "assessment"
+    },
+    {
+      "id": "genitourinary",
+      "name": "Genitourinary",
+      "overview": "Systematic genitourinary assessment integrates inspection, palpation, auscultation, and patient-reported data.",
+      "assessment_steps": [
+        "Inspect external genitalia per policy",
+        "Bladder scan or suprapubic palpation",
+        "Urine color, odor, clarity",
+        "Flank/CVA tenderness",
+        "Strict I&O"
+      ],
+      "normal_findings": [
+        "Normal voiding pattern",
+        "No bladder distension",
+        "Adequate urine output"
+      ],
+      "abnormal_findings": [
+        "Oliguria, dysuria, hematuria",
+        "Palpable distended bladder",
+        "Anuria or <30 mL/hr"
+      ],
+      "red_flags": [
+        "Strict I&O; notify provider"
+      ],
+      "nursing_implications": [
+        "Document objective genitourinary findings in flowsheet.",
+        "Compare to baseline and report changes."
+      ],
+      "source_ref": "assessment"
+    },
+    {
+      "id": "musculoskeletal",
+      "name": "Musculoskeletal",
+      "overview": "Systematic musculoskeletal assessment integrates inspection, palpation, auscultation, and patient-reported data.",
+      "assessment_steps": [
+        "Inspect joints and posture",
+        "ROM active then passive",
+        "Muscle strength 0–5 scale",
+        "Gait and balance",
+        "Spine alignment"
+      ],
+      "normal_findings": [
+        "Full painless ROM",
+        "Strength 5/5",
+        "Steady gait"
+      ],
+      "abnormal_findings": [
+        "Limited ROM, pain with movement",
+        "Weakness grade <5",
+        "Unable to bear weight after fall"
+      ],
+      "red_flags": [
+        "Immobilize if trauma; pain management"
+      ],
+      "nursing_implications": [
+        "Document objective musculoskeletal findings in flowsheet.",
+        "Compare to baseline and report changes."
+      ],
+      "source_ref": "assessment"
+    },
+    {
+      "id": "integumentary",
+      "name": "Integumentary (Skin)",
+      "overview": "Systematic integumentary (skin) assessment integrates inspection, palpation, auscultation, and patient-reported data.",
+      "assessment_steps": [
+        "Inspect color, turgor, lesions",
+        "Palpate temperature and moisture",
+        "Pressure injury risk (Braden)",
+        "Nail and hair assessment",
+        "Document wounds with measurements"
+      ],
+      "normal_findings": [
+        "Intact skin; turgor <2 sec",
+        "Even coloration; intact skin",
+        "Intact skin over bony prominences"
+      ],
+      "abnormal_findings": [
+        "Poor turgor, tenting",
+        "Pallor, cyanosis, jaundice, mottling",
+        "Stageable pressure injury"
+      ],
+      "red_flags": [
+        "Encourage fluids; monitor I&O"
+      ],
+      "nursing_implications": [
+        "Document objective integumentary (skin) findings in flowsheet.",
+        "Compare to baseline and report changes."
+      ],
+      "source_ref": "assessment"
+    },
+    {
+      "id": "heent",
+      "name": "HEENT",
+      "overview": "Systematic heent assessment integrates inspection, palpation, auscultation, and patient-reported data.",
+      "assessment_steps": [
+        "Head/scalp inspection",
+        "Eyes: acuity, pupils, conjunctiva",
+        "Ears: canal and tympanic membrane",
+        "Nose and sinuses",
+        "Throat, oral mucosa, dentition"
+      ],
+      "normal_findings": [
+        "PERRLA; pink conjunctiva",
+        "Moist mucous membranes",
+        "Facial symmetry"
+      ],
+      "abnormal_findings": [
+        "Unequal pupils, sluggish reactivity",
+        "Dry cracked lips, thrush",
+        "Unilateral facial droop"
+      ],
+      "red_flags": [
+        "Neuro check; notify provider"
+      ],
+      "nursing_implications": [
+        "Document objective heent findings in flowsheet.",
+        "Compare to baseline and report changes."
+      ],
+      "source_ref": "assessment"
+    },
+    {
+      "id": "psychosocial",
+      "name": "Psychosocial",
+      "overview": "Systematic psychosocial assessment integrates inspection, palpation, auscultation, and patient-reported data.",
+      "assessment_steps": [
+        "Mood and affect",
+        "Thought process and content",
+        "Suicide/homicide screening",
+        "Coping and support systems",
+        "Cultural/spiritual preferences"
+      ],
+      "normal_findings": [
+        "Appropriate affect; denies self-harm",
+        "Coherent, goal-directed",
+        "Support system identified"
+      ],
+      "abnormal_findings": [
+        "Hopelessness, SI with plan",
+        "Disorganized thought, hallucinations",
+        "Signs of neglect or abuse"
+      ],
+      "red_flags": [
+        "Suicide screening; 1:1 per protocol"
+      ],
+      "nursing_implications": [
+        "Document objective psychosocial findings in flowsheet.",
+        "Compare to baseline and report changes."
+      ],
+      "source_ref": "assessment"
+    },
+    {
+      "id": "endocrine-immune",
+      "name": "Endocrine & Immune",
+      "overview": "Systematic endocrine & immune assessment integrates inspection, palpation, auscultation, and patient-reported data.",
+      "assessment_steps": [
+        "Thyroid palpation",
+        "Lymph node survey",
+        "Blood glucose if indicated",
+        "Signs of infection/inflammation",
+        "Fatigue and weight change history"
+      ],
+      "normal_findings": [
+        "Non-palpable smooth thyroid",
+        "Small mobile nodes",
+        "Intact healing skin"
+      ],
+      "abnormal_findings": [
+        "Goiter, exophthalmos, tremor",
+        "Hard fixed nodes",
+        "Frequent infections, poor healing"
+      ],
+      "red_flags": [
+        "Vitals; TSH per order; notify provider"
+      ],
+      "nursing_implications": [
+        "Document objective endocrine & immune findings in flowsheet.",
+        "Compare to baseline and report changes."
+      ],
+      "source_ref": "assessment"
+    }
+  ],
+  "red_flags_master": [
+    {
+      "finding": "Sudden unilateral weakness and slurred speech",
+      "system": "neurological",
+      "priority": "immediate",
+      "action": "Activate stroke protocol; note last known well; notify provider; NPO until swallow eval"
+    },
+    {
+      "finding": "GCS decrease ≥2 points",
+      "system": "neurological",
+      "priority": "immediate",
+      "action": "Neuro checks q15min; notify provider; prepare for imaging"
+    },
+    {
+      "finding": "Chest pain with diaphoresis and ST elevation on monitor",
+      "system": "cardiovascular",
+      "priority": "immediate",
+      "action": "12-lead ECG; aspirin per protocol; notify provider; continuous monitoring"
+    },
+    {
+      "finding": "SBP <90 mmHg with altered mental status",
+      "system": "cardiovascular",
+      "priority": "immediate",
+      "action": "IV access; fluids per order; notify provider; assess perfusion"
+    },
+    {
+      "finding": "SpO₂ <90% with increased work of breathing",
+      "system": "respiratory",
+      "priority": "immediate",
+      "action": "Airway assessment; O₂; high Fowler's; notify provider"
+    },
+    {
+      "finding": "Stridor at rest",
+      "system": "respiratory",
+      "priority": "immediate",
+      "action": "Airway equipment to bedside; notify provider/rapid response"
+    },
+    {
+      "finding": "Silent chest in asthma with exhaustion",
+      "system": "respiratory",
+      "priority": "immediate",
+      "action": "Rapid response; continuous bronchodilator per order; prepare for escalation"
+    },
+    {
+      "finding": "Rigid abdomen with rebound tenderness",
+      "system": "gastrointestinal",
+      "priority": "immediate",
+      "action": "NPO; IV access; notify surgeon/provider; vitals q15min"
+    },
+    {
+      "finding": "Hematemesis or melena with hypotension",
+      "system": "gastrointestinal",
+      "priority": "immediate",
+      "action": "IV access; fluids; type and crossmatch per order; notify provider"
+    },
+    {
+      "finding": "Oliguria <30 mL/hr in adult with hypotension",
+      "system": "genitourinary",
+      "priority": "urgent",
+      "action": "Assess volume status; notify provider; strict I&O"
+    },
+    {
+      "finding": "Temperature >38.3°C (101°F) in neutropenic patient",
+      "system": "endocrine-immune",
+      "priority": "immediate",
+      "action": "Blood cultures per order; broad-spectrum antibiotics per protocol; notify provider"
+    },
+    {
+      "finding": "Active suicidal ideation with plan and means",
+      "system": "psychosocial",
+      "priority": "immediate",
+      "action": "1:1 observation; remove means; notify provider/charge nurse; document quotes"
+    },
+    {
+      "finding": "New onset confusion with fever and stiff neck",
+      "system": "neurological",
+      "priority": "immediate",
+      "action": "Sepsis/meningitis workup; notify provider; prepare for LP/CT per order"
+    },
+    {
+      "finding": "Exophthalmos, fever, tachycardia in hyperthyroid patient",
+      "system": "endocrine-immune",
+      "priority": "immediate",
+      "action": "Notify provider — thyroid storm concern; cooling, beta-blocker per order"
+    },
+    {
+      "finding": "Epigastric pain radiating to back, rigid abdomen (pancreatitis concern)",
+      "system": "gastrointestinal",
+      "priority": "immediate",
+      "action": "NPO; IV fluids; pain management per order; notify provider"
+    },
+    {
+      "finding": "COPD patient SpO₂ 98% on high-flow O₂ with somnolence",
+      "system": "respiratory",
+      "priority": "urgent",
+      "action": "Titrate O₂ to target SpO₂ 88–92%; ABG per order; notify provider"
+    },
+    {
+      "finding": "Orthostatic SBP drop ≥20 mmHg with fall",
+      "system": "cardiovascular",
+      "priority": "urgent",
+      "action": "Fall precautions; fluids per order; medication review"
+    },
+    {
+      "finding": "Unilateral calf swelling, warmth, Homan sign unreliable",
+      "system": "cardiovascular",
+      "priority": "urgent",
+      "action": "Do not massage; notify provider; anticoagulation/imaging per order"
+    },
+    {
+      "finding": "Purpura + fever in immunocompromised patient",
+      "system": "integumentary",
+      "priority": "immediate",
+      "action": "Blood cultures; notify provider; sepsis protocol"
+    },
+    {
+      "finding": "Infant <28 days with rectal temp ≥38°C (100.4°F)",
+      "system": "vital_signs",
+      "priority": "immediate",
+      "action": "Full sepsis workup per protocol; notify provider; NPO for procedures"
+    }
+  ],
+  "vital_signs": {
+    "adult_norms": {
+      "temp": "97.8–99°F (36.5–37.2°C)",
+      "hr": "60–100 bpm",
+      "rr": "12–20/min",
+      "bp": "~120/80 mmHg (varies)",
+      "spo2": "≥94% on room air"
+    },
+    "pediatric_note": "Pediatric norms vary by age — always use age-specific charts.",
+    "orthostatic_criteria": "SBP decrease ≥20 mmHg or DBP ≥10 mmHg within 3 min of standing with symptoms.",
+    "source": {
+      "title": "Open RN — Health Assessment",
+      "citation": "Open RN OER Assessment Techniques",
+      "verified_date": "2026-06"
+    }
+  },
+  "pain_assessment": {
+    "scales": [
+      "0–10 numeric (adults)",
+      "FACES (pediatric)",
+      "FLACC (infants)",
+      "PQRST interview"
+    ],
+    "nursing_priority": "Assess respiratory rate and sedation before additional opioids.",
+    "source": {
+      "title": "Open RN — Health Assessment",
+      "citation": "Open RN OER Assessment Techniques",
+      "verified_date": "2026-06"
+    }
+  },
+  "skills": [
+    {
+      "id": "skill-vitals",
+      "title": "Vital Signs Measurement",
+      "steps": [
+        "Verify patient identity",
+        "Temperature route per policy",
+        "Pulse apical/radial 1 min if irregular",
+        "RR count full minute",
+        "BP proper cuff size",
+        "SpO₂ and pain score"
+      ],
+      "clinical_why": "Baseline for all clinical decisions.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "skill-orthostatic_vitals",
+      "title": "Orthostatic Vital Signs",
+      "steps": [
+        "Supine 2 min — BP and HR",
+        "Stand 1 min — repeat",
+        "Stand 3 min — repeat",
+        "Note symptoms",
+        "Criteria: SBP drop ≥20 or DBP ≥10 with symptoms"
+      ],
+      "clinical_why": "Detects volume depletion and medication effects.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "skill-lung_auscultation",
+      "title": "Lung Auscultation",
+      "steps": [
+        "Anterior/posterior/lateral fields",
+        "Compare side to side",
+        "Note adventitious sounds",
+        "Assess after cough/deep breath"
+      ],
+      "clinical_why": "Crackles/wheezes guide oxygen and bronchodilator therapy.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "skill-abdominal_assessment",
+      "title": "Abdominal Assessment",
+      "steps": [
+        "Inspect contour",
+        "Auscultate BS four quadrants",
+        "Light palpation all quadrants",
+        "Deep palpation if tolerated",
+        "Document tenderness/guarding"
+      ],
+      "clinical_why": "Auscultate before palpate to avoid altering bowel sounds.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "skill-neuro_check",
+      "title": "Focused Neurological Check",
+      "steps": [
+        "LOC/GCS",
+        "Pupils",
+        "Motor strength",
+        "Speech",
+        "Compare to baseline"
+      ],
+      "clinical_why": "Serial checks detect deterioration in stroke/TBI.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "skill-fast_stroke",
+      "title": "FAST Stroke Screening",
+      "steps": [
+        "Face droop",
+        "Arm drift",
+        "Speech slurred",
+        "Time last known well",
+        "Inpatient: notify provider/stroke team per protocol"
+      ],
+      "clinical_why": "Time is brain — thrombolysis windows are limited.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "skill-pain_assessment",
+      "title": "Pain Assessment (PQRST)",
+      "steps": [
+        "Provocation/palliation",
+        "Quality",
+        "Region/radiation",
+        "Severity 0–10",
+        "Timing"
+      ],
+      "clinical_why": "Pain is subjective — believe the patient.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "skill-skin_inspection",
+      "title": "Skin & Pressure Injury Inspection",
+      "steps": [
+        "Inspect bony prominences",
+        "Stage pressure injuries",
+        "Measure wounds",
+        "Braden scale",
+        "Reposition q2h"
+      ],
+      "clinical_why": "Prevention is easier than treatment of Stage 3–4 injuries.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "skill-iv_site",
+      "title": "Peripheral IV Site Assessment",
+      "steps": [
+        "Inspect for redness, swelling, pain",
+        "Palpate for warmth",
+        "Check patency and dressing",
+        "Rotate sites per policy"
+      ],
+      "clinical_why": "Early phlebitis detection prevents infiltration.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "skill-suicide_screen",
+      "title": "Suicide Risk Screening",
+      "steps": [
+        "Ask directly about SI",
+        "Assess plan and means",
+        "Prior attempts",
+        "Protective factors",
+        "Escalate per protocol"
+      ],
+      "clinical_why": "Asking does not increase risk — it enables safety planning.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "skill-pediatric_vitals",
+      "title": "Pediatric Vital Signs",
+      "steps": [
+        "Use age-appropriate norms",
+        "Count RR on infant 1 full minute",
+        "Axillary temp infants",
+        "Pain scale by developmental age"
+      ],
+      "clinical_why": "Pediatric decompensation is rapid — assess work of breathing.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "skill-sbar",
+      "title": "SBAR Handoff Communication",
+      "steps": [
+        "Situation",
+        "Background",
+        "Assessment",
+        "Recommendation"
+      ],
+      "clinical_why": "Structured communication reduces errors during transitions.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    }
+  ],
+  "interview_techniques": [
+    {
+      "id": "open-ended",
+      "technique": "Open-Ended Questions",
+      "example": "Tell me what brought you in today.",
+      "purpose": "Elicits patient narrative without leading.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "closed",
+      "technique": "Closed-Ended Questions",
+      "example": "Is the pain worse at night?",
+      "purpose": "Clarifies specific yes/no data.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "reflection",
+      "technique": "Reflection",
+      "example": "You sound frustrated about the wait.",
+      "purpose": "Validates feelings and builds rapport.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "clarification",
+      "technique": "Clarification",
+      "example": "When you say dizzy, do you mean the room spins?",
+      "purpose": "Ensures accurate understanding.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "summarization",
+      "technique": "Summarization",
+      "example": "So your pain started 2 days ago after lifting...",
+      "purpose": "Confirms data before documentation.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "silence",
+      "technique": "Therapeutic Silence",
+      "example": "Pause after emotional statement.",
+      "purpose": "Allows patient time to process and continue.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    }
+  ],
+  "special_populations": [
+    {
+      "id": "older-adult",
+      "name": "Older Adults",
+      "age_range": "≥65 years",
+      "considerations": [
+        "Polypharmacy and Beers Criteria",
+        "Fall risk and orthostatics",
+        "Atypical MI presentation",
+        "Sensory deficits affect teaching"
+      ],
+      "assessment_modifications": [
+        "Allow extra time",
+        "Ensure hearing aids/glasses",
+        "Include caregiver in teaching when appropriate"
+      ],
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "pediatric",
+      "name": "Pediatric Patients",
+      "age_range": "Infancy through adolescence",
+      "considerations": [
+        "Developmental milestones",
+        "Family-centered care",
+        "Weight-based dosing",
+        "Parental consent"
+      ],
+      "assessment_modifications": [
+        "Use age-appropriate pain scales",
+        "Observe parent-child interaction",
+        "Axillary temp in infants"
+      ],
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "pregnancy",
+      "name": "Pregnant Patients",
+      "age_range": "Antepartum",
+      "considerations": [
+        "Supine hypotension after 20 weeks — left lateral tilt",
+        "FHR monitoring when indicated",
+        "Avoid teratogenic exposures"
+      ],
+      "assessment_modifications": [
+        "Include fundal height and FHR when appropriate",
+        "Assess for preeclampsia symptoms"
+      ],
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "mental-health",
+      "name": "Behavioral Health",
+      "age_range": "All ages",
+      "considerations": [
+        "Trauma-informed approach",
+        "Suicide/homicide screening",
+        "CIWA-Ar for alcohol withdrawal (scores ≥20 severe)"
+      ],
+      "assessment_modifications": [
+        "Low stimulation environment",
+        "Clear simple questions",
+        "1:1 if acute risk"
+      ],
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "non-english",
+      "name": "Limited English Proficiency",
+      "age_range": "All ages",
+      "considerations": [
+        "Professional interpreter — not family for clinical consent",
+        "Teach-back method",
+        "Cultural humility"
+      ],
+      "assessment_modifications": [
+        "Interpreter present before sensitive questions",
+        "Document language preference"
+      ],
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "newborn",
+      "name": "Newborn",
+      "age_range": "0–28 days",
+      "considerations": [
+        "Thermoregulation — axillary temp",
+        "Fever ≥38°C is emergency",
+        "APGAR at 1 and 5 minutes"
+      ],
+      "assessment_modifications": [
+        "Keep warm during exam",
+        "Assess feeding and voiding/stooling"
+      ],
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    }
+  ],
+  "assessment_checklists": [
+    {
+      "id": "chk-admission",
+      "title": "Admission Assessment Checklist",
+      "items": [
+        "Identity verification",
+        "Allergies",
+        "Vital signs",
+        "Pain score",
+        "Fall risk",
+        "Skin inspection",
+        "Medication reconciliation",
+        "Advance directives"
+      ],
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "chk-shift",
+      "title": "Shift Assessment Checklist",
+      "items": [
+        "Compare to prior shift report",
+        "Focused systems per acuity",
+        "Lines and drains",
+        "Safety precautions",
+        "Patient goals for shift"
+      ],
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "chk-neuro",
+      "title": "Neurological Serial Checklist",
+      "items": [
+        "GCS/LOC",
+        "Pupils",
+        "Motor/speech",
+        "Headache/vomiting",
+        "Notify threshold documented"
+      ],
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "chk-respiratory",
+      "title": "Respiratory Distress Checklist",
+      "items": [
+        "RR and effort",
+        "SpO₂",
+        "Lung sounds",
+        "O₂ device and flow",
+        "Positioning",
+        "Notify provider criteria"
+      ],
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "chk-gi",
+      "title": "GI Assessment Checklist",
+      "items": [
+        "Bowel sounds",
+        "Last BM",
+        "Abdominal tenderness",
+        "Nausea/vomiting",
+        "NG tube placement verified"
+      ],
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "chk-pain",
+      "title": "Pain Reassessment Checklist",
+      "items": [
+        "Pain score before/after intervention",
+        "Non-pharm and pharm measures",
+        "Sedation/respiratory rate if opioids",
+        "Patient goal for pain"
+      ],
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "chk-discharge",
+      "title": "Discharge Teaching Checklist",
+      "items": [
+        "Medications explained",
+        "Follow-up appointments",
+        "Red flags to report",
+        "Teach-back completed",
+        "Written instructions provided"
+      ],
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "chk-pediatric",
+      "title": "Pediatric Admission Checklist",
+      "items": [
+        "Weight in kg",
+        "Immunization status",
+        "Caregiver presence",
+        "Developmental assessment",
+        "Pain scale by age"
+      ],
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    }
+  ],
+  "soap_exercises": [
+    {
+      "id": "soap-01",
+      "title": "Dyspnea with Crackles",
+      "chief_complaint": "Dyspnea with Crackles",
+      "findings": {
+        "subjective": "Patient reports worsening shortness of breath x2 days, worse lying flat.",
+        "objective": "RR 28, SpO₂ 89% RA, bilateral crackles bases, BP 158/92, HR 104.",
+        "assessment": "Impaired gas exchange r/t pulmonary edema secondary to fluid overload.",
+        "plan": "High Fowler's, O₂ 2L NC titrate, daily weight, I&O, notify provider, reassess SpO₂ q1h."
+      },
+      "model_soap": {
+        "subjective": "Patient reports worsening shortness of breath x2 days, worse lying flat.",
+        "objective": "RR 28, SpO₂ 89% RA, bilateral crackles bases, BP 158/92, HR 104.",
+        "assessment": "Impaired gas exchange r/t pulmonary edema secondary to fluid overload.",
+        "plan": "High Fowler's, O₂ 2L NC titrate, daily weight, I&O, notify provider, reassess SpO₂ q1h."
+      },
+      "documentation_tips": [
+        "Separate subjective quotes from objective measurements",
+        "Link assessment to NANDA-I style diagnosis",
+        "Plan includes independent nursing actions and provider notification"
+      ],
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "soap-02",
+      "title": "Post-op Pain",
+      "chief_complaint": "Post-op Pain",
+      "findings": {
+        "subjective": "Patient rates incision pain 7/10, sharp, worse with movement.",
+        "objective": "Abdominal incision clean/dry/intact, mild guarding, BP 118/76, HR 88.",
+        "assessment": "Acute pain r/t surgical incision.",
+        "plan": "Analgesic per order, reposition, splint incision, reassess pain 30 min post med."
+      },
+      "model_soap": {
+        "subjective": "Patient rates incision pain 7/10, sharp, worse with movement.",
+        "objective": "Abdominal incision clean/dry/intact, mild guarding, BP 118/76, HR 88.",
+        "assessment": "Acute pain r/t surgical incision.",
+        "plan": "Analgesic per order, reposition, splint incision, reassess pain 30 min post med."
+      },
+      "documentation_tips": [
+        "Separate subjective quotes from objective measurements",
+        "Link assessment to NANDA-I style diagnosis",
+        "Plan includes independent nursing actions and provider notification"
+      ],
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "soap-03",
+      "title": "Confusion in Older Adult",
+      "chief_complaint": "Confusion in Older Adult",
+      "findings": {
+        "subjective": "Family states patient more confused since last night.",
+        "objective": "Oriented ×1 person only, temp 38.4°C, WBC elevated per chart.",
+        "assessment": "Acute confusion r/t possible infection (UTI/pneumonia).",
+        "plan": "Urinalysis and CXR per order, fall precautions, orient frequently, notify provider."
+      },
+      "model_soap": {
+        "subjective": "Family states patient more confused since last night.",
+        "objective": "Oriented ×1 person only, temp 38.4°C, WBC elevated per chart.",
+        "assessment": "Acute confusion r/t possible infection (UTI/pneumonia).",
+        "plan": "Urinalysis and CXR per order, fall precautions, orient frequently, notify provider."
+      },
+      "documentation_tips": [
+        "Separate subjective quotes from objective measurements",
+        "Link assessment to NANDA-I style diagnosis",
+        "Plan includes independent nursing actions and provider notification"
+      ],
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "soap-04",
+      "title": "Hypoglycemia",
+      "chief_complaint": "Hypoglycemia",
+      "findings": {
+        "subjective": "Patient reports shakiness and sweating before lunch.",
+        "objective": "Fingerstick 54 mg/dL, diaphoretic, alert but tremulous.",
+        "assessment": "Risk for injury r/t hypoglycemia.",
+        "plan": "15 g fast carb, recheck 15 min, notify provider if <70 persists, educate on s/s."
+      },
+      "model_soap": {
+        "subjective": "Patient reports shakiness and sweating before lunch.",
+        "objective": "Fingerstick 54 mg/dL, diaphoretic, alert but tremulous.",
+        "assessment": "Risk for injury r/t hypoglycemia.",
+        "plan": "15 g fast carb, recheck 15 min, notify provider if <70 persists, educate on s/s."
+      },
+      "documentation_tips": [
+        "Separate subjective quotes from objective measurements",
+        "Link assessment to NANDA-I style diagnosis",
+        "Plan includes independent nursing actions and provider notification"
+      ],
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "soap-05",
+      "title": "Chest Pain",
+      "chief_complaint": "Chest Pain",
+      "findings": {
+        "subjective": "Patient describes substernal pressure 8/10 started 30 min ago.",
+        "objective": "Diaphoretic, BP 148/90, HR 96, 12-lead ST depression V4–V6 per monitor.",
+        "assessment": "Acute pain r/t myocardial ischemia.",
+        "plan": "Continuous monitoring, aspirin/nitro per protocol, IV access, notify provider, NPO."
+      },
+      "model_soap": {
+        "subjective": "Patient describes substernal pressure 8/10 started 30 min ago.",
+        "objective": "Diaphoretic, BP 148/90, HR 96, 12-lead ST depression V4–V6 per monitor.",
+        "assessment": "Acute pain r/t myocardial ischemia.",
+        "plan": "Continuous monitoring, aspirin/nitro per protocol, IV access, notify provider, NPO."
+      },
+      "documentation_tips": [
+        "Separate subjective quotes from objective measurements",
+        "Link assessment to NANDA-I style diagnosis",
+        "Plan includes independent nursing actions and provider notification"
+      ],
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "soap-06",
+      "title": "Fall with Head Strike",
+      "chief_complaint": "Fall with Head Strike",
+      "findings": {
+        "subjective": "Patient fell getting out of bed, hit head on floor.",
+        "objective": "2 cm scalp laceration, GCS 14 (confused), pupils equal reactive.",
+        "assessment": "Risk for injury r/t fall; altered LOC r/t head trauma.",
+        "plan": "Neuro checks q15min, CT head per trauma protocol, wound care, fall precautions."
+      },
+      "model_soap": {
+        "subjective": "Patient fell getting out of bed, hit head on floor.",
+        "objective": "2 cm scalp laceration, GCS 14 (confused), pupils equal reactive.",
+        "assessment": "Risk for injury r/t fall; altered LOC r/t head trauma.",
+        "plan": "Neuro checks q15min, CT head per trauma protocol, wound care, fall precautions."
+      },
+      "documentation_tips": [
+        "Separate subjective quotes from objective measurements",
+        "Link assessment to NANDA-I style diagnosis",
+        "Plan includes independent nursing actions and provider notification"
+      ],
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "soap-07",
+      "title": "UTI Symptoms",
+      "chief_complaint": "UTI Symptoms",
+      "findings": {
+        "subjective": "Dysuria and urgency x3 days.",
+        "objective": "Temp 37.9°C, suprapubic tenderness, urine cloudy and odorous.",
+        "assessment": "Impaired urinary elimination r/t UTI.",
+        "plan": "Urine culture, antibiotics per order, fluids, pain management, hygiene teaching."
+      },
+      "model_soap": {
+        "subjective": "Dysuria and urgency x3 days.",
+        "objective": "Temp 37.9°C, suprapubic tenderness, urine cloudy and odorous.",
+        "assessment": "Impaired urinary elimination r/t UTI.",
+        "plan": "Urine culture, antibiotics per order, fluids, pain management, hygiene teaching."
+      },
+      "documentation_tips": [
+        "Separate subjective quotes from objective measurements",
+        "Link assessment to NANDA-I style diagnosis",
+        "Plan includes independent nursing actions and provider notification"
+      ],
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "soap-08",
+      "title": "Anxiety Pre-Procedure",
+      "chief_complaint": "Anxiety Pre-Procedure",
+      "findings": {
+        "subjective": "Patient states 'I'm terrified something bad will happen' before colonoscopy.",
+        "objective": "HR 108, BP 142/88, tremulous hands, tearful.",
+        "assessment": "Anxiety r/t unfamiliar procedure.",
+        "plan": "Therapeutic communication, explain steps, anxiolytic per order, NPO verified."
+      },
+      "model_soap": {
+        "subjective": "Patient states 'I'm terrified something bad will happen' before colonoscopy.",
+        "objective": "HR 108, BP 142/88, tremulous hands, tearful.",
+        "assessment": "Anxiety r/t unfamiliar procedure.",
+        "plan": "Therapeutic communication, explain steps, anxiolytic per order, NPO verified."
+      },
+      "documentation_tips": [
+        "Separate subjective quotes from objective measurements",
+        "Link assessment to NANDA-I style diagnosis",
+        "Plan includes independent nursing actions and provider notification"
+      ],
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "soap-09",
+      "title": "Wound Infection",
+      "chief_complaint": "Wound Infection",
+      "findings": {
+        "subjective": "Increased drainage and odor from surgical wound.",
+        "objective": "Wound erythema 2 cm, purulent drainage, temp 38.1°C.",
+        "assessment": "Risk for infection r/t surgical site.",
+        "plan": "Wound culture, antibiotics per order, dressing change per protocol, notify surgeon."
+      },
+      "model_soap": {
+        "subjective": "Increased drainage and odor from surgical wound.",
+        "objective": "Wound erythema 2 cm, purulent drainage, temp 38.1°C.",
+        "assessment": "Risk for infection r/t surgical site.",
+        "plan": "Wound culture, antibiotics per order, dressing change per protocol, notify surgeon."
+      },
+      "documentation_tips": [
+        "Separate subjective quotes from objective measurements",
+        "Link assessment to NANDA-I style diagnosis",
+        "Plan includes independent nursing actions and provider notification"
+      ],
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "soap-10",
+      "title": "Hypertensive Urgency",
+      "chief_complaint": "Hypertensive Urgency",
+      "findings": {
+        "subjective": "Headache 6/10, denies chest pain.",
+        "objective": "BP 198/112, HR 82, neuro intact, lungs clear.",
+        "assessment": "Ineffective health maintenance r/t uncontrolled hypertension.",
+        "plan": "Recheck BP both arms, antihypertensive per order, neuro checks, notify provider, education."
+      },
+      "model_soap": {
+        "subjective": "Headache 6/10, denies chest pain.",
+        "objective": "BP 198/112, HR 82, neuro intact, lungs clear.",
+        "assessment": "Ineffective health maintenance r/t uncontrolled hypertension.",
+        "plan": "Recheck BP both arms, antihypertensive per order, neuro checks, notify provider, education."
+      },
+      "documentation_tips": [
+        "Separate subjective quotes from objective measurements",
+        "Link assessment to NANDA-I style diagnosis",
+        "Plan includes independent nursing actions and provider notification"
+      ],
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    }
+  ],
+  "sbar_exercises": [
+    {
+      "id": "sbar-01",
+      "title": "Rapid Response — Hypoxemia",
+      "situation": "Mr. Lee, room 412, SpO₂ dropped to 84% on 2L NC.",
+      "background": "Admitted 2 days ago for pneumonia, history COPD.",
+      "assessment": "RR 32, accessory muscle use, diminished bases, anxious.",
+      "recommendation": "Request provider evaluation, increase O₂ per protocol, possible transfer to higher acuity.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "sbar-02",
+      "title": "Handoff — New Confusion",
+      "situation": "Mrs. Brown became acutely confused this shift.",
+      "background": "88 y/o, hip repair yesterday, opioid analgesia.",
+      "assessment": "Oriented ×1, new compared to morning, pupils equal, vitals stable.",
+      "recommendation": "Suggest pain regimen review, UA, neuro checks q4h, fall precautions.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    }
+  ],
+  "assess_next_scenarios": [
+    {
+      "id": "an-01",
+      "title": "New Tracheostomy",
+      "scenario": "You note thick secretions and decreased breath sounds right lung.",
+      "options": [
+        "Suction tracheostomy per protocol",
+        "Complete dressing change only",
+        "Discharge teaching"
+      ],
+      "correct_index": 0,
+      "explanation": "Airway patency first — suction when secretions impair ventilation.",
+      "clinical_why": "NCLEX prioritization: unstable before stable, acute before chronic.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "an-02",
+      "title": "Chemotherapy Infusion",
+      "scenario": "Patient develops flushing, wheezing, BP 86/50 during infusion.",
+      "options": [
+        "Stop infusion, notify provider, epinephrine per anaphylaxis protocol",
+        "Slow infusion rate",
+        "Apply warm blanket only"
+      ],
+      "correct_index": 0,
+      "explanation": "Anaphylaxis — stop infusion and treat immediately.",
+      "clinical_why": "NCLEX prioritization: unstable before stable, acute before chronic.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "an-03",
+      "title": "Diabetic Patient NPO",
+      "scenario": "Morning surgery — glucose 220 mg/dL.",
+      "options": [
+        "Notify provider and verify insulin/IV fluid orders",
+        "Give routine breakfast insulin",
+        "Ignore — NPO covers it"
+      ],
+      "correct_index": 0,
+      "explanation": "Perioperative glucose management requires provider orders.",
+      "clinical_why": "NCLEX prioritization: unstable before stable, acute before chronic.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "an-04",
+      "title": "Post-op Day 1",
+      "scenario": "Patient has not voided 10 hours, bladder scan 450 mL.",
+      "options": [
+        "Perform straight catheter per order",
+        "Encourage more oral fluids only",
+        "Wait until tomorrow"
+      ],
+      "correct_index": 0,
+      "explanation": "Retention requires intervention to prevent AKI.",
+      "clinical_why": "NCLEX prioritization: unstable before stable, acute before chronic.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "an-05",
+      "title": "Chest Tube",
+      "scenario": "Sudden increase in bright red drainage 200 mL/hr.",
+      "options": [
+        "Notify provider immediately, vitals, monitor output",
+        "Clamp chest tube",
+        "Document and continue routine care"
+      ],
+      "correct_index": 0,
+      "explanation": "Hemorrhage concern — notify provider, never clamp without order.",
+      "clinical_why": "NCLEX prioritization: unstable before stable, acute before chronic.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "an-06",
+      "title": "Clinical Scenario 6",
+      "scenario": "Patient develops acute shortness of breath and SpO₂ 88%.",
+      "options": [
+        "Assess airway and apply O₂ per protocol",
+        "Complete scheduled bath",
+        "Document and reassess next shift"
+      ],
+      "correct_index": 0,
+      "explanation": "ABCs first — respiratory compromise takes priority.",
+      "clinical_why": "NCLEX prioritization: unstable before stable, acute before chronic.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "an-07",
+      "title": "Clinical Scenario 7",
+      "scenario": "Patient develops acute shortness of breath and SpO₂ 88%.",
+      "options": [
+        "Assess airway and apply O₂ per protocol",
+        "Complete scheduled bath",
+        "Document and reassess next shift"
+      ],
+      "correct_index": 0,
+      "explanation": "ABCs first — respiratory compromise takes priority.",
+      "clinical_why": "NCLEX prioritization: unstable before stable, acute before chronic.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "an-08",
+      "title": "Clinical Scenario 8",
+      "scenario": "Patient develops acute shortness of breath and SpO₂ 88%.",
+      "options": [
+        "Assess airway and apply O₂ per protocol",
+        "Complete scheduled bath",
+        "Document and reassess next shift"
+      ],
+      "correct_index": 0,
+      "explanation": "ABCs first — respiratory compromise takes priority.",
+      "clinical_why": "NCLEX prioritization: unstable before stable, acute before chronic.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "an-09",
+      "title": "Clinical Scenario 9",
+      "scenario": "Patient develops acute shortness of breath and SpO₂ 88%.",
+      "options": [
+        "Assess airway and apply O₂ per protocol",
+        "Complete scheduled bath",
+        "Document and reassess next shift"
+      ],
+      "correct_index": 0,
+      "explanation": "ABCs first — respiratory compromise takes priority.",
+      "clinical_why": "NCLEX prioritization: unstable before stable, acute before chronic.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "an-10",
+      "title": "Clinical Scenario 10",
+      "scenario": "Patient develops acute shortness of breath and SpO₂ 88%.",
+      "options": [
+        "Assess airway and apply O₂ per protocol",
+        "Complete scheduled bath",
+        "Document and reassess next shift"
+      ],
+      "correct_index": 0,
+      "explanation": "ABCs first — respiratory compromise takes priority.",
+      "clinical_why": "NCLEX prioritization: unstable before stable, acute before chronic.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "an-11",
+      "title": "Clinical Scenario 11",
+      "scenario": "Patient develops acute shortness of breath and SpO₂ 88%.",
+      "options": [
+        "Assess airway and apply O₂ per protocol",
+        "Complete scheduled bath",
+        "Document and reassess next shift"
+      ],
+      "correct_index": 0,
+      "explanation": "ABCs first — respiratory compromise takes priority.",
+      "clinical_why": "NCLEX prioritization: unstable before stable, acute before chronic.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "an-12",
+      "title": "Clinical Scenario 12",
+      "scenario": "Patient develops acute shortness of breath and SpO₂ 88%.",
+      "options": [
+        "Assess airway and apply O₂ per protocol",
+        "Complete scheduled bath",
+        "Document and reassess next shift"
+      ],
+      "correct_index": 0,
+      "explanation": "ABCs first — respiratory compromise takes priority.",
+      "clinical_why": "NCLEX prioritization: unstable before stable, acute before chronic.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "an-13",
+      "title": "Clinical Scenario 13",
+      "scenario": "Patient develops acute shortness of breath and SpO₂ 88%.",
+      "options": [
+        "Assess airway and apply O₂ per protocol",
+        "Complete scheduled bath",
+        "Document and reassess next shift"
+      ],
+      "correct_index": 0,
+      "explanation": "ABCs first — respiratory compromise takes priority.",
+      "clinical_why": "NCLEX prioritization: unstable before stable, acute before chronic.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "an-14",
+      "title": "Clinical Scenario 14",
+      "scenario": "Patient develops acute shortness of breath and SpO₂ 88%.",
+      "options": [
+        "Assess airway and apply O₂ per protocol",
+        "Complete scheduled bath",
+        "Document and reassess next shift"
+      ],
+      "correct_index": 0,
+      "explanation": "ABCs first — respiratory compromise takes priority.",
+      "clinical_why": "NCLEX prioritization: unstable before stable, acute before chronic.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "an-15",
+      "title": "Clinical Scenario 15",
+      "scenario": "Patient develops acute shortness of breath and SpO₂ 88%.",
+      "options": [
+        "Assess airway and apply O₂ per protocol",
+        "Complete scheduled bath",
+        "Document and reassess next shift"
+      ],
+      "correct_index": 0,
+      "explanation": "ABCs first — respiratory compromise takes priority.",
+      "clinical_why": "NCLEX prioritization: unstable before stable, acute before chronic.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "an-16",
+      "title": "Clinical Scenario 16",
+      "scenario": "Patient develops acute shortness of breath and SpO₂ 88%.",
+      "options": [
+        "Assess airway and apply O₂ per protocol",
+        "Complete scheduled bath",
+        "Document and reassess next shift"
+      ],
+      "correct_index": 0,
+      "explanation": "ABCs first — respiratory compromise takes priority.",
+      "clinical_why": "NCLEX prioritization: unstable before stable, acute before chronic.",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fc-neuro-01",
+      "system": "neurological",
+      "system_name": "Neurological",
+      "type": "normal_vs_abnormal",
+      "front": "Neurological — Pupils 3 mm bilaterally, equal, briskly reactive. Normal or abnormal?",
+      "normal": "PERRLA — pupils 2–6 mm, equal, reactive.",
+      "abnormal": "Unequal or non-reactive pupils, new anisocoria.",
+      "abnormal_action": "Full neuro check; stroke protocol if focal deficit.",
+      "clinical_why": "Pupil changes may signal ICP or stroke."
+    },
+    {
+      "id": "fc-cardio-01",
+      "system": "cardiovascular",
+      "system_name": "Cardiovascular",
+      "type": "normal_vs_abnormal",
+      "front": "Cardiovascular — Cap refill 4 sec, cool pale toes, weak pedal pulses. Normal or abnormal?",
+      "normal": "Cap refill <2 sec; strong equal pulses.",
+      "abnormal": "Delayed refill, weak pulses — perfusion concern.",
+      "abnormal_action": "Vitals, IV access per order; do NOT Trendelenburg for CHF.",
+      "clinical_why": "Perfusion reflects cardiac output."
+    },
+    {
+      "id": "fc-resp-01",
+      "system": "respiratory",
+      "system_name": "Respiratory",
+      "type": "normal_vs_abnormal",
+      "front": "Respiratory — Crackles at bases, SpO₂ 89%, RR 28. Normal or abnormal?",
+      "normal": "Clear lungs; SpO₂ ≥94% RA; RR 12–20.",
+      "abnormal": "Crackles + hypoxemia + tachypnea.",
+      "abnormal_action": "High Fowler's, O₂, notify provider.",
+      "clinical_why": "Hypoxemia is priority — ABCs first."
+    },
+    {
+      "id": "fc-neur-01",
+      "system": "neurological",
+      "system_name": "Neurological",
+      "type": "normal_vs_abnormal",
+      "front": "Neurological — GCS 15, oriented ×4, speech clear. Normal or abnormal?",
+      "normal": "Alert, oriented, coherent speech",
+      "abnormal": "Confusion, slurred speech, word-finding difficulty",
+      "abnormal_action": "Full neuro assessment; stroke protocol if focal deficit",
+      "clinical_why": "Acute neuro change requires immediate escalation."
+    },
+    {
+      "id": "fc-neur-02",
+      "system": "neurological",
+      "system_name": "Neurological",
+      "type": "normal_vs_abnormal",
+      "front": "Neurological — Strength 5/5 all extremities bilaterally. Normal or abnormal?",
+      "normal": "Equal strength 5/5",
+      "abnormal": "Unilateral weakness or numbness",
+      "abnormal_action": "FAST screen; notify provider",
+      "clinical_why": "Unilateral weakness suggests stroke until ruled out."
+    },
+    {
+      "id": "fc-neur-03",
+      "system": "neurological",
+      "system_name": "Neurological",
+      "type": "normal_vs_abnormal",
+      "front": "Neurological — Steady gait, no assistive device needed. Normal or abnormal?",
+      "normal": "Steady coordinated gait",
+      "abnormal": "Unsteady gait, inability to move extremity",
+      "abnormal_action": "Fall precautions; neuro checks",
+      "clinical_why": "Gait change may reflect weakness or orthostasis."
+    },
+    {
+      "id": "fc-neur-04",
+      "system": "neurological",
+      "system_name": "Neurological",
+      "type": "normal_vs_abnormal",
+      "front": "Neurological — No seizure activity observed. Normal or abnormal?",
+      "normal": "No seizure activity",
+      "abnormal": "Active seizure or post-ictal confusion",
+      "abnormal_action": "Protect airway, time seizure, notify provider",
+      "clinical_why": "Seizure = airway and safety priority."
+    },
+    {
+      "id": "fc-card-01",
+      "system": "cardiovascular",
+      "system_name": "Cardiovascular",
+      "type": "normal_vs_abnormal",
+      "front": "Cardiovascular — Apical pulse regular 78/min, S1/S2 without extra sounds. Normal or abnormal?",
+      "normal": "Regular rate 60–100; S1/S2 only",
+      "abnormal": "Irregular rhythm, murmur, gallop S3/S4",
+      "abnormal_action": "ECG if symptomatic; continuous monitoring if ordered",
+      "clinical_why": "New arrhythmia may reduce cardiac output."
+    },
+    {
+      "id": "fc-card-02",
+      "system": "cardiovascular",
+      "system_name": "Cardiovascular",
+      "type": "normal_vs_abnormal",
+      "front": "Cardiovascular — No pitting edema; JVD not visible at 45°. Normal or abnormal?",
+      "normal": "No edema; no JVD",
+      "abnormal": "Pitting edema, JVD at 45°",
+      "abnormal_action": "Daily weights, strict I&O, notify provider",
+      "clinical_why": "Edema + JVD suggest fluid overload/heart failure."
+    },
+    {
+      "id": "fc-card-03",
+      "system": "cardiovascular",
+      "system_name": "Cardiovascular",
+      "type": "normal_vs_abnormal",
+      "front": "Cardiovascular — BP 118/72, HR 72, warm pink extremities. Normal or abnormal?",
+      "normal": "Stable vitals; good perfusion",
+      "abnormal": "SBP <90 with symptoms, HR <40 or >150",
+      "abnormal_action": "IV fluids per order; notify provider",
+      "clinical_why": "Hypotension with symptoms = perfusion emergency."
+    },
+    {
+      "id": "fc-card-04",
+      "system": "cardiovascular",
+      "system_name": "Cardiovascular",
+      "type": "normal_vs_abnormal",
+      "front": "Cardiovascular — Chest pain absent; denies SOB. Normal or abnormal?",
+      "normal": "No chest pain",
+      "abnormal": "Chest pain + diaphoresis + SOB",
+      "abnormal_action": "12-lead ECG, notify provider immediately",
+      "clinical_why": "ACS requires time-sensitive intervention."
+    },
+    {
+      "id": "fc-respiratory-01",
+      "system": "respiratory",
+      "system_name": "Respiratory",
+      "type": "normal_vs_abnormal",
+      "front": "Respiratory — Symmetric chest rise; clear breath sounds. Normal or abnormal?",
+      "normal": "Symmetric expansion; clear lungs",
+      "abnormal": "Accessory muscle use, asymmetric expansion",
+      "abnormal_action": "Position upright, O₂, notify provider",
+      "clinical_why": "Increased work of breathing signals distress."
+    },
+    {
+      "id": "fc-resp-02",
+      "system": "respiratory",
+      "system_name": "Respiratory",
+      "type": "normal_vs_abnormal",
+      "front": "Respiratory — SpO₂ 97% on room air, RR 16. Normal or abnormal?",
+      "normal": "SpO₂ ≥94% RA; RR 12–20",
+      "abnormal": "SpO₂ <94%, tachypnea",
+      "abnormal_action": "Apply O₂, reassess, notify if not improving",
+      "clinical_why": "Hypoxemia needs correction before routine care."
+    },
+    {
+      "id": "fc-resp-03",
+      "system": "respiratory",
+      "system_name": "Respiratory",
+      "type": "normal_vs_abnormal",
+      "front": "Respiratory — No cough; sputum clear/white if present. Normal or abnormal?",
+      "normal": "No productive cough",
+      "abnormal": "Productive cough with colored sputum, hemoptysis",
+      "abnormal_action": "Culture per order; notify provider",
+      "clinical_why": "Purulent sputum suggests infection."
+    },
+    {
+      "id": "fc-resp-04",
+      "system": "respiratory",
+      "system_name": "Respiratory",
+      "type": "normal_vs_abnormal",
+      "front": "Respiratory — No wheezes; good air entry all fields. Normal or abnormal?",
+      "normal": "Clear breath sounds",
+      "abnormal": "Wheezes, diminished sounds, silent chest",
+      "abnormal_action": "Bronchodilator per order; prepare for escalation",
+      "clinical_why": "Silent chest in asthma = impending failure."
+    },
+    {
+      "id": "fc-gast-01",
+      "system": "gastrointestinal",
+      "system_name": "Gastrointestinal",
+      "type": "normal_vs_abnormal",
+      "front": "Gastrointestinal — Abdomen soft, non-tender; active BS ×4. Normal or abnormal?",
+      "normal": "Soft, non-tender; active bowel sounds",
+      "abnormal": "Distension, absent/hyperactive BS, guarding",
+      "abnormal_action": "NPO if surgical concern; notify provider",
+      "clinical_why": "Absent BS + distension suggests obstruction."
+    },
+    {
+      "id": "fc-gast-02",
+      "system": "gastrointestinal",
+      "system_name": "Gastrointestinal",
+      "type": "normal_vs_abnormal",
+      "front": "Gastrointestinal — Regular BM pattern; no nausea. Normal or abnormal?",
+      "normal": "Regular elimination; no NV",
+      "abnormal": "Diarrhea, melena, hematochezia",
+      "abnormal_action": "Monitor H&H; GI bleed protocol if indicated",
+      "clinical_why": "GI bleeding can cause hemodynamic collapse."
+    },
+    {
+      "id": "fc-gast-03",
+      "system": "gastrointestinal",
+      "system_name": "Gastrointestinal",
+      "type": "normal_vs_abnormal",
+      "front": "Gastrointestinal — No rebound tenderness or rigidity. Normal or abnormal?",
+      "normal": "Non-tender abdomen",
+      "abnormal": "Rebound tenderness, rigid abdomen",
+      "abnormal_action": "NPO, IV access, notify surgeon",
+      "clinical_why": "Rigid abdomen = surgical emergency."
+    },
+    {
+      "id": "fc-gast-04",
+      "system": "gastrointestinal",
+      "system_name": "Gastrointestinal",
+      "type": "normal_vs_abnormal",
+      "front": "Gastrointestinal — Last BM yesterday, soft brown stool. Normal or abnormal?",
+      "normal": "Normal elimination",
+      "abnormal": "Projectile vomiting, coffee-ground emesis",
+      "abnormal_action": "NPO, NG decompression per order",
+      "clinical_why": "Coffee-ground emesis suggests upper GI bleed."
+    },
+    {
+      "id": "fc-geni-01",
+      "system": "genitourinary",
+      "system_name": "Genitourinary",
+      "type": "normal_vs_abnormal",
+      "front": "Genitourinary — Voiding without difficulty; urine clear yellow. Normal or abnormal?",
+      "normal": "Normal voiding pattern",
+      "abnormal": "Oliguria, dysuria, hematuria",
+      "abnormal_action": "Strict I&O; notify provider",
+      "clinical_why": "Oliguria may signal AKI."
+    },
+    {
+      "id": "fc-geni-02",
+      "system": "genitourinary",
+      "system_name": "Genitourinary",
+      "type": "normal_vs_abnormal",
+      "front": "Genitourinary — No suprapubic fullness. Normal or abnormal?",
+      "normal": "No bladder distension",
+      "abnormal": "Palpable distended bladder",
+      "abnormal_action": "Bladder scan; catheter per order",
+      "clinical_why": "Retention can cause AKI."
+    },
+    {
+      "id": "fc-geni-03",
+      "system": "genitourinary",
+      "system_name": "Genitourinary",
+      "type": "normal_vs_abnormal",
+      "front": "Genitourinary — Urine output 50 mL/hr. Normal or abnormal?",
+      "normal": "Adequate urine output",
+      "abnormal": "Anuria or <30 mL/hr",
+      "abnormal_action": "Assess hydration; notify provider",
+      "clinical_why": "Anuria with pain suggests obstruction."
+    },
+    {
+      "id": "fc-geni-04",
+      "system": "genitourinary",
+      "system_name": "Genitourinary",
+      "type": "normal_vs_abnormal",
+      "front": "Genitourinary — No flank pain or fever. Normal or abnormal?",
+      "normal": "No GU pain",
+      "abnormal": "Flank pain + fever + CVA tenderness",
+      "abnormal_action": "Urine culture; notify provider",
+      "clinical_why": "Pyelonephritis requires prompt treatment."
+    },
+    {
+      "id": "fc-musc-01",
+      "system": "musculoskeletal",
+      "system_name": "Musculoskeletal",
+      "type": "normal_vs_abnormal",
+      "front": "Musculoskeletal — Full ROM all joints without pain. Normal or abnormal?",
+      "normal": "Full painless ROM",
+      "abnormal": "Limited ROM, pain with movement",
+      "abnormal_action": "Immobilize if trauma; pain management",
+      "clinical_why": "Pain-limited ROM after injury needs evaluation."
+    },
+    {
+      "id": "fc-musc-02",
+      "system": "musculoskeletal",
+      "system_name": "Musculoskeletal",
+      "type": "normal_vs_abnormal",
+      "front": "Musculoskeletal — Strength 5/5 major muscle groups. Normal or abnormal?",
+      "normal": "Strength 5/5",
+      "abnormal": "Weakness grade <5",
+      "abnormal_action": "Compare bilaterally; neuro checks",
+      "clinical_why": "New weakness may be neuro emergency."
+    },
+    {
+      "id": "fc-musc-03",
+      "system": "musculoskeletal",
+      "system_name": "Musculoskeletal",
+      "type": "normal_vs_abnormal",
+      "front": "Musculoskeletal — Steady gait, independent ambulation. Normal or abnormal?",
+      "normal": "Steady gait",
+      "abnormal": "Unable to bear weight after fall",
+      "abnormal_action": "Fall precautions; imaging per protocol",
+      "clinical_why": "Hip fracture common in older adult falls."
+    },
+    {
+      "id": "fc-musc-04",
+      "system": "musculoskeletal",
+      "system_name": "Musculoskeletal",
+      "type": "normal_vs_abnormal",
+      "front": "Musculoskeletal — No swelling or deformity at joints. Normal or abnormal?",
+      "normal": "No joint deformity",
+      "abnormal": "Hot swollen joint with fever",
+      "abnormal_action": "Notify provider; infection workup",
+      "clinical_why": "Septic arthritis is emergency."
+    },
+    {
+      "id": "fc-inte-01",
+      "system": "integumentary",
+      "system_name": "Integumentary (Skin)",
+      "type": "normal_vs_abnormal",
+      "front": "Integumentary (Skin) — Skin warm, dry, intact; turgor elastic. Normal or abnormal?",
+      "normal": "Intact skin; turgor <2 sec",
+      "abnormal": "Poor turgor, tenting",
+      "abnormal_action": "Encourage fluids; monitor I&O",
+      "clinical_why": "Poor turgor signals dehydration."
+    },
+    {
+      "id": "fc-inte-02",
+      "system": "integumentary",
+      "system_name": "Integumentary (Skin)",
+      "type": "normal_vs_abnormal",
+      "front": "Integumentary (Skin) — Even skin color; no open areas. Normal or abnormal?",
+      "normal": "Even coloration; intact skin",
+      "abnormal": "Pallor, cyanosis, jaundice, mottling",
+      "abnormal_action": "Assess perfusion and O₂",
+      "clinical_why": "Acute cyanosis = oxygenation problem."
+    },
+    {
+      "id": "fc-inte-03",
+      "system": "integumentary",
+      "system_name": "Integumentary (Skin)",
+      "type": "normal_vs_abnormal",
+      "front": "Integumentary (Skin) — No pressure injury present. Normal or abnormal?",
+      "normal": "Intact skin over bony prominences",
+      "abnormal": "Stageable pressure injury",
+      "abnormal_action": "Reposition q2h; wound consult",
+      "clinical_why": "Pressure injuries worsen quickly."
+    },
+    {
+      "id": "fc-inte-04",
+      "system": "integumentary",
+      "system_name": "Integumentary (Skin)",
+      "type": "normal_vs_abnormal",
+      "front": "Integumentary (Skin) — Small bruise 1 cm, non-tender. Normal or abnormal?",
+      "normal": "Expected minor ecchymosis",
+      "abnormal": "Rapidly spreading petechiae + fever",
+      "abnormal_action": "Notify provider; monitor LOC",
+      "clinical_why": "Purpura + fever may indicate serious infection."
+    },
+    {
+      "id": "fc-heen-01",
+      "system": "heent",
+      "system_name": "HEENT",
+      "type": "normal_vs_abnormal",
+      "front": "HEENT — PERRLA; conjunctiva pink; sclera white. Normal or abnormal?",
+      "normal": "PERRLA; pink conjunctiva",
+      "abnormal": "Unequal pupils, sluggish reactivity",
+      "abnormal_action": "Neuro check; notify provider",
+      "clinical_why": "New anisocoria with LOC change = neuro emergency."
+    },
+    {
+      "id": "fc-heen-02",
+      "system": "heent",
+      "system_name": "HEENT",
+      "type": "normal_vs_abnormal",
+      "front": "HEENT — Moist pink oral mucosa. Normal or abnormal?",
+      "normal": "Moist mucous membranes",
+      "abnormal": "Dry cracked lips, thrush",
+      "abnormal_action": "Oral care; hydration",
+      "clinical_why": "Dry mucosa reflects hydration status."
+    },
+    {
+      "id": "fc-heen-03",
+      "system": "heent",
+      "system_name": "HEENT",
+      "type": "normal_vs_abnormal",
+      "front": "HEENT — Face symmetric at rest and with smile. Normal or abnormal?",
+      "normal": "Facial symmetry",
+      "abnormal": "Unilateral facial droop",
+      "abnormal_action": "FAST stroke screen; notify provider",
+      "clinical_why": "Facial droop is stroke sign."
+    },
+    {
+      "id": "fc-heen-04",
+      "system": "heent",
+      "system_name": "HEENT",
+      "type": "normal_vs_abnormal",
+      "front": "HEENT — Nares patent bilaterally; no drainage. Normal or abnormal?",
+      "normal": "Patent nares",
+      "abnormal": "Purulent drainage, uncontrolled epistaxis",
+      "abnormal_action": "Notify provider; airway watch",
+      "clinical_why": "Uncontrolled epistaxis threatens airway."
+    },
+    {
+      "id": "fc-psyc-01",
+      "system": "psychosocial",
+      "system_name": "Psychosocial",
+      "type": "normal_vs_abnormal",
+      "front": "Psychosocial — Mood appropriate; denies SI/HI. Normal or abnormal?",
+      "normal": "Appropriate affect; denies self-harm",
+      "abnormal": "Hopelessness, SI with plan",
+      "abnormal_action": "Suicide screening; 1:1 per protocol",
+      "clinical_why": "Active SI with plan requires immediate safety."
+    },
+    {
+      "id": "fc-psyc-02",
+      "system": "psychosocial",
+      "system_name": "Psychosocial",
+      "type": "normal_vs_abnormal",
+      "front": "Psychosocial — Coherent thought process; engaged. Normal or abnormal?",
+      "normal": "Coherent, goal-directed",
+      "abnormal": "Disorganized thought, hallucinations",
+      "abnormal_action": "Therapeutic communication; notify provider",
+      "clinical_why": "Psychosis may impair participation in care."
+    },
+    {
+      "id": "fc-psyc-03",
+      "system": "psychosocial",
+      "system_name": "Psychosocial",
+      "type": "normal_vs_abnormal",
+      "front": "Psychosocial — Identifies support persons. Normal or abnormal?",
+      "normal": "Support system identified",
+      "abnormal": "Signs of neglect or abuse",
+      "abnormal_action": "Mandatory reporting per state law",
+      "clinical_why": "Abuse disclosure triggers legal obligations."
+    },
+    {
+      "id": "fc-psyc-04",
+      "system": "psychosocial",
+      "system_name": "Psychosocial",
+      "type": "normal_vs_abnormal",
+      "front": "Psychosocial — Calm, cooperative with care. Normal or abnormal?",
+      "normal": "Calm cooperative behavior",
+      "abnormal": "Severe agitation with violence risk",
+      "abnormal_action": "De-escalation; 1:1 observation",
+      "clinical_why": "Agitation threatens safety."
+    },
+    {
+      "id": "fc-endo-01",
+      "system": "endocrine-immune",
+      "system_name": "Endocrine & Immune",
+      "type": "normal_vs_abnormal",
+      "front": "Endocrine & Immune — Thyroid non-palpable; no tremor. Normal or abnormal?",
+      "normal": "Non-palpable smooth thyroid",
+      "abnormal": "Goiter, exophthalmos, tremor",
+      "abnormal_action": "Vitals; TSH per order; notify provider",
+      "clinical_why": "Thyroid storm/myxedema are emergencies."
+    },
+    {
+      "id": "fc-endo-02",
+      "system": "endocrine-immune",
+      "system_name": "Endocrine & Immune",
+      "type": "normal_vs_abnormal",
+      "front": "Endocrine & Immune — Lymph nodes small, mobile, non-tender. Normal or abnormal?",
+      "normal": "Small mobile nodes",
+      "abnormal": "Hard fixed nodes",
+      "abnormal_action": "Document; notify provider",
+      "clinical_why": "Fixed supraclavicular node suggests malignancy."
+    },
+    {
+      "id": "fc-endo-03",
+      "system": "endocrine-immune",
+      "system_name": "Endocrine & Immune",
+      "type": "normal_vs_abnormal",
+      "front": "Endocrine & Immune — Skin intact; wounds healing normally. Normal or abnormal?",
+      "normal": "Intact healing skin",
+      "abnormal": "Frequent infections, poor healing",
+      "abnormal_action": "Infection precautions; glucose if diabetic",
+      "clinical_why": "Immunocompromise blunts inflammation signs."
+    },
+    {
+      "id": "fc-endo-04",
+      "system": "endocrine-immune",
+      "system_name": "Endocrine & Immune",
+      "type": "normal_vs_abnormal",
+      "front": "Endocrine & Immune — Fingerstick glucose 110 mg/dL, alert. Normal or abnormal?",
+      "normal": "Euglycemia with normal LOC",
+      "abnormal": "Glucose <70 or >400 with altered LOC",
+      "abnormal_action": "Hypoglycemia protocol; notify for crisis",
+      "clinical_why": "Hypoglycemia causes confusion and falls."
+    },
+    {
+      "id": "fc-rf-01",
+      "system": "neurological",
+      "system_name": "Neurological",
+      "type": "red_flag",
+      "front": "RED FLAG — Sudden worst headache + stiff neck + fever. Priority action?",
+      "normal": "Context-dependent stable baseline.",
+      "abnormal": "Thunderclap headache — meningitis/SAH concern.",
+      "abnormal_action": "Neuro/vitals stat; notify provider.",
+      "clinical_why": "Immediate escalation protects patient safety."
+    },
+    {
+      "id": "fc-rf-02",
+      "system": "cardiovascular",
+      "system_name": "Cardiovascular",
+      "type": "red_flag",
+      "front": "RED FLAG — Sudden unilateral leg swelling, warmth, pain. Priority action?",
+      "normal": "Context-dependent stable baseline.",
+      "abnormal": "DVT until ruled out.",
+      "abnormal_action": "Do not massage; notify provider.",
+      "clinical_why": "Immediate escalation protects patient safety."
+    },
+    {
+      "id": "fc-rf-03",
+      "system": "respiratory",
+      "system_name": "Respiratory",
+      "type": "red_flag",
+      "front": "RED FLAG — Stridor at rest, SpO₂ 90%. Priority action?",
+      "normal": "Context-dependent stable baseline.",
+      "abnormal": "Upper airway narrowing.",
+      "abnormal_action": "Airway equipment; notify rapid response.",
+      "clinical_why": "Immediate escalation protects patient safety."
+    },
+    {
+      "id": "fc-rf-04",
+      "system": "gastrointestinal",
+      "system_name": "Gastrointestinal",
+      "type": "red_flag",
+      "front": "RED FLAG — Rigid board-like abdomen with rebound. Priority action?",
+      "normal": "Context-dependent stable baseline.",
+      "abnormal": "Peritoneal signs.",
+      "abnormal_action": "NPO, IV access, notify surgeon.",
+      "clinical_why": "Immediate escalation protects patient safety."
+    },
+    {
+      "id": "fc-rf-05",
+      "system": "genitourinary",
+      "system_name": "Genitourinary",
+      "type": "red_flag",
+      "front": "RED FLAG — Post-op anuric 10 hr, suprapubic distension. Priority action?",
+      "normal": "Context-dependent stable baseline.",
+      "abnormal": "Acute retention.",
+      "abnormal_action": "Bladder scan; catheter per order.",
+      "clinical_why": "Immediate escalation protects patient safety."
+    },
+    {
+      "id": "fc-rf-06",
+      "system": "musculoskeletal",
+      "system_name": "Musculoskeletal",
+      "type": "red_flag",
+      "front": "RED FLAG — Cast pain with passive toe extension, cool toes. Priority action?",
+      "normal": "Context-dependent stable baseline.",
+      "abnormal": "Compartment syndrome.",
+      "abnormal_action": "Notify immediately; do not elevate leg.",
+      "clinical_why": "Immediate escalation protects patient safety."
+    },
+    {
+      "id": "fc-rf-07",
+      "system": "integumentary",
+      "system_name": "Integumentary",
+      "type": "red_flag",
+      "front": "RED FLAG — Wound with exposed bone on coccyx. Priority action?",
+      "normal": "Context-dependent stable baseline.",
+      "abnormal": "Stage 4 pressure injury.",
+      "abnormal_action": "Wound consult; pressure redistribution.",
+      "clinical_why": "Immediate escalation protects patient safety."
+    },
+    {
+      "id": "fc-rf-08",
+      "system": "heent",
+      "system_name": "Heent",
+      "type": "red_flag",
+      "front": "RED FLAG — Battle sign + clear fluid from nose post trauma. Priority action?",
+      "normal": "Context-dependent stable baseline.",
+      "abnormal": "Basilar skull fracture.",
+      "abnormal_action": "C-spine precautions; NPO.",
+      "clinical_why": "Immediate escalation protects patient safety."
+    },
+    {
+      "id": "fc-rf-09",
+      "system": "psychosocial",
+      "system_name": "Psychosocial",
+      "type": "red_flag",
+      "front": "RED FLAG — Suicide plan with pills in room. Priority action?",
+      "normal": "Context-dependent stable baseline.",
+      "abnormal": "Imminent suicide risk.",
+      "abnormal_action": "1:1; remove means; notify provider.",
+      "clinical_why": "Immediate escalation protects patient safety."
+    },
+    {
+      "id": "fc-rf-10",
+      "system": "endocrine-immune",
+      "system_name": "Endocrine-Immune",
+      "type": "red_flag",
+      "front": "RED FLAG — Glucose 42 mg/dL, diaphoresis, confusion. Priority action?",
+      "normal": "Context-dependent stable baseline.",
+      "abnormal": "Symptomatic hypoglycemia.",
+      "abnormal_action": "15 g fast carb if able; recheck 15 min.",
+      "clinical_why": "Immediate escalation protects patient safety."
+    },
+    {
+      "id": "fc-rf-11",
+      "system": "respiratory",
+      "system_name": "Respiratory",
+      "type": "red_flag",
+      "front": "RED FLAG — Asthma: silent chest, exhausted, SpO₂ 88%. Priority action?",
+      "normal": "Context-dependent stable baseline.",
+      "abnormal": "Impending respiratory failure.",
+      "abnormal_action": "Rapid response; continuous nebs per order.",
+      "clinical_why": "Immediate escalation protects patient safety."
+    },
+    {
+      "id": "fc-rf-12",
+      "system": "cardiovascular",
+      "system_name": "Cardiovascular",
+      "type": "red_flag",
+      "front": "RED FLAG — HR 168 irregular, BP 86/50, dizzy. Priority action?",
+      "normal": "Context-dependent stable baseline.",
+      "abnormal": "Unstable tachyarrhythmia.",
+      "abnormal_action": "Monitor; notify provider; ACLS per protocol.",
+      "clinical_why": "Immediate escalation protects patient safety."
+    },
+    {
+      "id": "fc-rf-13",
+      "system": "gastrointestinal",
+      "system_name": "Gastrointestinal",
+      "type": "red_flag",
+      "front": "RED FLAG — Absent BS, distension, feculent vomiting. Priority action?",
+      "normal": "Context-dependent stable baseline.",
+      "abnormal": "Obstruction/ileus.",
+      "abnormal_action": "NPO, NG per order, notify surgeon.",
+      "clinical_why": "Immediate escalation protects patient safety."
+    },
+    {
+      "id": "fc-rf-14",
+      "system": "neurological",
+      "system_name": "Neurological",
+      "type": "red_flag",
+      "front": "RED FLAG — GCS 15→12 over 2 hr post head injury. Priority action?",
+      "normal": "Context-dependent stable baseline.",
+      "abnormal": "Expanding intracranial lesion.",
+      "abnormal_action": "Neuro checks q15min; CT per protocol.",
+      "clinical_why": "Immediate escalation protects patient safety."
+    },
+    {
+      "id": "fc-rf-15",
+      "system": "vital_signs",
+      "system_name": "Vital Signs",
+      "type": "red_flag",
+      "front": "RED FLAG — Infant RR 65, nasal flaring, retractions, SpO₂ 91%. Priority action?",
+      "normal": "Context-dependent stable baseline.",
+      "abnormal": "Respiratory distress.",
+      "abnormal_action": "Position; O₂; notify provider.",
+      "clinical_why": "Immediate escalation protects patient safety."
+    },
+    {
+      "id": "fc-vitals-01",
+      "system": "vital_signs",
+      "system_name": "Vital Signs",
+      "type": "normal_vs_abnormal",
+      "front": "Temp 101.8°F, HR 112, BP 102/64. Normal or abnormal?",
+      "normal": "Afebrile; HR 60–100; stable BP.",
+      "abnormal": "Fever + tachycardia + relative hypotension.",
+      "abnormal_action": "Sepsis screening; cultures; notify provider.",
+      "clinical_why": "Early sepsis recognition saves lives."
+    },
+    {
+      "id": "fc-vitals-02",
+      "system": "vital_signs",
+      "system_name": "Vital Signs",
+      "type": "normal_vs_abnormal",
+      "front": "Orthostatics: lying 120/80 → standing 100/70 with dizziness.",
+      "normal": "SBP drop <20 mmHg without symptoms.",
+      "abnormal": "Orthostatic hypotension ≥20 SBP drop with symptoms.",
+      "abnormal_action": "Fall precautions; fluids per order.",
+      "clinical_why": "Orthostasis increases fall risk."
+    }
+  ],
+  "practice_questions": [
+    {
+      "id": "aq-01",
+      "question": "Which finding requires immediate notification?",
+      "options": [
+        "BP 142/88",
+        "SpO₂ 88% with RR 32 and accessory use",
+        "Pain 4/10",
+        "Temp 37.2°C"
+      ],
+      "correct_index": 1,
+      "explanation": "SpO₂ 88% with tachypnea and accessory muscle use signals respiratory compromise — assess airway, position for breathing, apply O₂ per protocol, and notify the provider immediately.",
+      "clinical_why": "Hypoxemia with increased work of breathing is an ABC priority that can progress to respiratory failure within minutes.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      },
+      "system": "respiratory"
+    },
+    {
+      "id": "aq-02",
+      "question": "Best technique order for abdominal assessment?",
+      "options": [
+        "Palpate then auscultate",
+        "Auscultate then palpate",
+        "Percuss then palpate only",
+        "Inspect last"
+      ],
+      "correct_index": 1,
+      "explanation": "Inspect, auscultate, percuss, then palpate (IAPPA). Auscultate bowel sounds before palpation so palpation does not alter sound quality.",
+      "clinical_why": "Altered bowel sounds from palpation can mask true peristaltic activity and delay recognition of ileus or obstruction.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      },
+      "system": "gastrointestinal"
+    },
+    {
+      "id": "aq-03",
+      "question": "Orthostatic hypotension is defined as:",
+      "options": [
+        "SBP drop ≥20 mmHg or DBP ≥10 mmHg with symptoms on standing",
+        "Any BP change lying to standing",
+        "HR increase only",
+        "SBP increase 20 mmHg"
+      ],
+      "correct_index": 0,
+      "explanation": "Orthostatic hypotension is defined as a drop in SBP ≥20 mmHg or DBP ≥10 mmHg within 3 minutes of standing, often with dizziness or syncope.",
+      "clinical_why": "Orthostatic changes identify volume depletion, autonomic dysfunction, and fall risk — especially in older adults on antihypertensives.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      },
+      "system": "cardiovascular"
+    },
+    {
+      "id": "aq-04",
+      "question": "COPD patient O₂ target SpO₂ is typically:",
+      "options": [
+        "100%",
+        "88–92%",
+        "70%",
+        "95–100%"
+      ],
+      "correct_index": 1,
+      "explanation": "Chronic CO₂ retainers depend on hypoxic drive; target SpO₂ 88–92% to avoid suppressing ventilation and causing CO₂ narcosis.",
+      "clinical_why": "Over-oxygenating COPD patients can precipitate respiratory acidosis, somnolence, and need for mechanical ventilation.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      },
+      "system": "respiratory"
+    },
+    {
+      "id": "aq-05",
+      "question": "FAST assessment includes:",
+      "options": [
+        "Face, Arm, Speech, Time",
+        "Fever, Airway, Skin, Temperature",
+        "Fluid, Activity, Strength, Tone",
+        "Focus, Assess, Support, Treat"
+      ],
+      "correct_index": 0,
+      "explanation": "FAST (Face drooping, Arm weakness, Speech difficulty, Time to call) is a community and bedside stroke screening tool — time last known well is critical for thrombolytic eligibility.",
+      "clinical_why": "Every minute of untreated stroke loses ~1.9 million neurons; rapid recognition drives door-to-needle times.",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      },
+      "system": "neurological"
+    },
+    {
+      "id": "aq-06",
+      "question": "During head-to-toe assessment, which sequence is correct?",
+      "options": [
+        "Head-to-toe general survey, then focused systems",
+        "Random order by patient preference",
+        "Pain assessment last only",
+        "Vitals after discharge teaching"
+      ],
+      "correct_index": 0,
+      "explanation": "Begin with a general survey (appearance, ABCs), then proceed systematically head-to-toe or by priority when instability is present.",
+      "clinical_why": "A structured sequence ensures no system is skipped and unstable findings are caught early.",
+      "system": "general",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-07",
+      "question": "A patient has unequal pupils with a fixed dilated right pupil after head trauma. Priority action?",
+      "options": [
+        "Notify provider immediately; continue neuro checks",
+        "Document and recheck next shift",
+        "Apply warm compress to eye",
+        "Dim lights and discharge"
+      ],
+      "correct_index": 0,
+      "explanation": "Unilateral fixed dilated pupil (blown pupil) after trauma suggests expanding intracranial pressure or herniation — escalate immediately.",
+      "clinical_why": "Pupil changes may be the earliest sign of uncal herniation before altered LOC.",
+      "system": "neurological",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-08",
+      "question": "When auscultating heart sounds, the nurse should:",
+      "options": [
+        "Use the diaphragm at four primary valve areas with patient supine and left lateral",
+        "Auscultate only over the apex",
+        "Use bell only at the carotid",
+        "Skip auscultation if pulse is regular"
+      ],
+      "correct_index": 0,
+      "explanation": "Systematic auscultation at aortic, pulmonic, tricuspid, and mitral areas (and Erb's point) with appropriate patient positions improves murmur detection.",
+      "clinical_why": "Murmurs and extra heart sounds are location-specific; incomplete auscultation misses valvular pathology.",
+      "system": "cardiovascular",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-09",
+      "question": "Crackles heard on lung auscultation most often indicate:",
+      "options": [
+        "Fluid in alveoli or small airways",
+        "Large airway obstruction only",
+        "Pneumothorax",
+        "Normal finding in all adults"
+      ],
+      "correct_index": 0,
+      "explanation": "Fine crackles (rales) suggest alveolar fluid — CHF, pneumonia, or atelectasis; assess O₂ saturation and work of breathing.",
+      "clinical_why": "Crackles plus hypoxemia may signal pulmonary edema requiring diuretics and O₂ before cardiac arrest.",
+      "system": "respiratory",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-10",
+      "question": "The best pain assessment approach for a nonverbal intubated ICU patient is:",
+      "options": [
+        "Behavioral scale (CPOT or BPS)",
+        "Assume no pain if patient cannot speak",
+        "Numeric 0–10 scale only",
+        "Wait until extubation"
+      ],
+      "correct_index": 0,
+      "explanation": "Critical-Care Pain Observation Tool (CPOT) and Behavioral Pain Scale use facial expression, body movement, and ventilator compliance.",
+      "clinical_why": "Untreated pain increases sympathetic drive, delirium, and ventilator days in ICU patients.",
+      "system": "general",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-11",
+      "question": "Capillary refill >3 seconds in an adult with cool extremities suggests:",
+      "options": [
+        "Decreased peripheral perfusion",
+        "Normal variant",
+        "Hypervolemia",
+        "Fever response"
+      ],
+      "correct_index": 0,
+      "explanation": "Delayed cap refill with cool skin indicates poor peripheral perfusion — shock, dehydration, or peripheral vascular disease.",
+      "clinical_why": "Perfusion assessment complements vital signs when hypotension is not yet present.",
+      "system": "cardiovascular",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-12",
+      "question": "Pitting edema rated 3+ means:",
+      "options": [
+        "Indentation 4–6 mm, rebounds in 10–30 seconds",
+        "No indentation",
+        "Indentation 2 mm only",
+        "Non-pitting hard swelling"
+      ],
+      "correct_index": 0,
+      "explanation": "3+ pitting is moderate — 4–6 mm depth; 4+ is severe (>6 mm, >30 sec rebound). Document location and bilateral comparison.",
+      "clinical_why": "Quantified edema tracks fluid overload in heart failure, renal disease, and liver failure.",
+      "system": "cardiovascular",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-13",
+      "question": "A Glasgow Coma Scale score of 8 indicates:",
+      "options": [
+        "Severe brain injury — airway protection priority",
+        "Mild concussion",
+        "Normal alert state",
+        "Moderate injury only"
+      ],
+      "correct_index": 0,
+      "explanation": "GCS ≤8 is severe TBI — intubation may be needed to protect airway; trend GCS q1h or per protocol.",
+      "clinical_why": "Declining GCS by ≥2 points warrants repeat imaging and neurosurgical consult.",
+      "system": "neurological",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-14",
+      "question": "When assessing jugular venous distension (JVD), the nurse should:",
+      "options": [
+        "Elevate HOB 30–45° and measure vertical distance above sternal angle",
+        "Assess with patient flat only",
+        "Press firmly over carotid",
+        "Ignore if BP normal"
+      ],
+      "correct_index": 0,
+      "explanation": "JVD >3–4 cm above sternal angle at 45° suggests increased central venous pressure — right heart failure or fluid overload.",
+      "clinical_why": "JVD distinguishes right-sided heart failure from isolated peripheral edema.",
+      "system": "cardiovascular",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-15",
+      "question": "Bowel sounds absent for 5 minutes in a post-op abdomen may indicate:",
+      "options": [
+        "Ileus or obstruction — correlate with nausea, distension, flatus",
+        "Always normal after surgery",
+        "Diarrhea",
+        "Appendicitis only"
+      ],
+      "correct_index": 0,
+      "explanation": "Absent sounds plus distension, pain, or no flatus warrant provider notification; post-op ileus is common but must be monitored.",
+      "clinical_why": "Complete obstruction or paralytic ileus can cause bowel ischemia and perforation if unrecognized.",
+      "system": "gastrointestinal",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-16",
+      "question": "The correct technique for palpating the thyroid is:",
+      "options": [
+        "Stand behind patient, displace trachea, palpate lobes during swallow",
+        "Palpate only from anterior without swallow",
+        "Auscultate thyroid for bruits first always",
+        "Skip if patient has no symptoms"
+      ],
+      "correct_index": 0,
+      "explanation": "Posterior approach with swallowing helps distinguish thyroid nodules from other neck masses.",
+      "clinical_why": "Thyromegaly, nodules, and tenderness guide hyper/hypothyroid and thyroiditis workup.",
+      "system": "endocrine",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-17",
+      "question": "A positive Homans sign (calf pain on dorsiflexion) is:",
+      "options": [
+        "Not reliable alone for DVT — use Wells criteria and ultrasound",
+        "Definitive DVT diagnosis",
+        "Normal in all post-op patients",
+        "Contraindication to ambulation"
+      ],
+      "correct_index": 0,
+      "explanation": "Homans sign has low sensitivity and specificity; assess unilateral swelling, warmth, Homan's only as one cue.",
+      "clinical_why": "Missed DVT leads to pulmonary embolism — the leading preventable cause of hospital death.",
+      "system": "musculoskeletal",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-18",
+      "question": "When assessing skin turgor in an older adult, the nurse knows:",
+      "options": [
+        "Turgor is less reliable — check mucous membranes and axillae",
+        "Turgor always accurate",
+        "Pinch forehead only",
+        "Turgor replaces I&O"
+      ],
+      "correct_index": 0,
+      "explanation": "Aging reduces skin elasticity; assess tongue, mucosa, and recent weight/I&O for hydration in elders.",
+      "clinical_why": "Dehydration in older adults causes confusion, orthostasis, and AKI.",
+      "system": "integumentary",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-19",
+      "question": "Korotkoff phase V (disappearance of sound) is used for:",
+      "options": [
+        "Diastolic blood pressure in adults",
+        "Systolic only",
+        "Pediatric BP always",
+        "MAP calculation only"
+      ],
+      "correct_index": 0,
+      "explanation": "In adults, diastolic is the point sounds disappear (phase V); in children, phase IV (muffling) may be used per policy.",
+      "clinical_why": "Consistent technique prevents false hypertension diagnosis and unnecessary treatment.",
+      "system": "cardiovascular",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-20",
+      "question": "The most accurate core temperature route in critical care is:",
+      "options": [
+        "Pulmonary artery or urinary bladder (continuous)",
+        "Tympanic after exercise",
+        "Axillary after cold drink",
+        "Forehead scanner only"
+      ],
+      "correct_index": 0,
+      "explanation": "Core temps reflect hypothalamic set point; pulmonary artery is gold standard; bladder acceptable with good urine flow.",
+      "clinical_why": "Fever in neutropenia or post-op sepsis requires accurate trending for antibiotic timing.",
+      "system": "general",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-21",
+      "question": "During abdominal palpation, the nurse should:",
+      "options": [
+        "Start light palpation away from painful quadrant, then deep if tolerated",
+        "Deep palpate painful area first",
+        "Skip palpation if patient ate",
+        "Use one finger maximum pressure always"
+      ],
+      "correct_index": 0,
+      "explanation": "Light palpation first; guard against pain by starting away from tenderness; note rebound and rigidity as peritoneal signs.",
+      "clinical_why": "Rebound tenderness and rigidity suggest surgical abdomen — NPO and surgical consult.",
+      "system": "gastrointestinal",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-22",
+      "question": "A patient with new unilateral leg swelling and erythema — priority assessment includes:",
+      "options": [
+        "Measure calf circumference, pulse, cap refill, and pain",
+        "Apply heat and massage",
+        "Ignore if ambulating",
+        "Discharge with NSAIDs only"
+      ],
+      "correct_index": 0,
+      "explanation": "Unilateral swelling suggests DVT, cellulitis, or compartment syndrome — compare limbs and check pulses.",
+      "clinical_why": "DVT prophylaxis failure and PE risk require prompt diagnostic imaging.",
+      "system": "musculoskeletal",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-23",
+      "question": "When using the ophthalmoscope, the nurse assesses:",
+      "options": [
+        "Red reflex, optic disc, vessels, and macula",
+        "Tympanic membrane",
+        "Nasal turbinates",
+        "Carotid bruit"
+      ],
+      "correct_index": 0,
+      "explanation": "Fundoscopic exam detects papilledema, hemorrhages, and diabetic retinopathy changes.",
+      "clinical_why": "Papilledema indicates increased ICP — pair with headache and neuro exam.",
+      "system": "neurological",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-24",
+      "question": "The Weber test lateralizes sound to the deaf ear in:",
+      "options": [
+        "Conductive hearing loss",
+        "Sensorineural loss only",
+        "Normal hearing",
+        "Bilateral deafness always"
+      ],
+      "correct_index": 0,
+      "explanation": "Weber: conductive loss lateralizes to affected ear; sensorineural lateralizes to better ear.",
+      "clinical_why": "Differentiating conductive vs sensorineural loss guides cerumen impaction vs acoustic neuroma workup.",
+      "system": "neurological",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-25",
+      "question": "A respiratory rate of 28 with shallow breathing and use of accessory muscles indicates:",
+      "options": [
+        "Increased work of breathing — assess SpO₂ and airway",
+        "Normal anxiety only",
+        "Bradypnea",
+        "Hyperventilation always alkalotic"
+      ],
+      "correct_index": 0,
+      "explanation": "Tachypnea with accessory use signals respiratory distress — position upright, assess patency, apply O₂, prepare for escalation.",
+      "clinical_why": "Fatigue from increased work leads to CO₂ retention and respiratory arrest.",
+      "system": "respiratory",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-26",
+      "question": "When assessing an older adult's cognition, the nurse should:",
+      "options": [
+        "Use validated screen (Mini-Cog, MMSE) and compare baseline",
+        "Assume confusion is normal aging",
+        "Skip if family present",
+        "Test only at discharge"
+      ],
+      "correct_index": 0,
+      "explanation": "Acute confusion differs from dementia — screen for delirium triggers: infection, meds, hypoxia, pain, constipation.",
+      "clinical_why": "Delirium increases falls, length of stay, and mortality — treat cause, not only symptom.",
+      "system": "neurological",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-27",
+      "question": "Pediatric apical pulse is best counted:",
+      "options": [
+        "At apex with stethoscope for full 60 seconds (1 min)",
+        "Radial for 15 seconds ×4",
+        "Carotid during crying",
+        "Femoral only"
+      ],
+      "correct_index": 0,
+      "explanation": "Apical count for full minute in infants/children — radial is inaccurate with tachycardia and arrhythmias.",
+      "clinical_why": "Undetected tachycardia in dehydration or fever can precede shock in infants.",
+      "system": "pediatric",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-28",
+      "question": "A Braden score of 14 indicates:",
+      "options": [
+        "Moderate pressure injury risk — implement turning schedule",
+        "No risk",
+        "Only nutrition problem",
+        "Risk only if incontinent"
+      ],
+      "correct_index": 0,
+      "explanation": "Braden ≤18 is at risk; 15–18 mild, 13–14 moderate, 10–12 high, ≤9 very high — initiate prevention bundle.",
+      "clinical_why": "Hospital-acquired pressure injuries are largely preventable with repositioning and moisture management.",
+      "system": "integumentary",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-29",
+      "question": "During breast examination, the nurse teaches:",
+      "options": [
+        "Monthly self-exam after menses; report new lumps, discharge, skin changes",
+        "No self-exam needed",
+        "Exam only if family history",
+        "Mammogram replaces clinical exam"
+      ],
+      "correct_index": 0,
+      "explanation": "Clinical breast exam complements mammography; teach BSE timing and what changes to report.",
+      "clinical_why": "Early breast cancer detection improves survival — patient education extends assessment beyond the hospital.",
+      "system": "general",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-30",
+      "question": "When documenting assessment findings, the nurse should:",
+      "options": [
+        "Record objective data separately from subjective quotes",
+        "Chart only abnormal findings",
+        "Use vague terms like 'good' without specifics",
+        "Document before assessment"
+      ],
+      "correct_index": 0,
+      "explanation": "Objective (measurable) vs subjective (patient report) supports legal defensibility and care continuity.",
+      "clinical_why": "Accurate documentation is communication — vague notes delay treatment and increase liability.",
+      "system": "general",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-31",
+      "question": "A patient reports chest pain 8/10. Before giving nitroglycerin, the nurse assesses:",
+      "options": [
+        "Blood pressure and recent PDE-5 inhibitor use",
+        "Bowel sounds only",
+        "Deep tendon reflexes",
+        "Gag reflex only"
+      ],
+      "correct_index": 0,
+      "explanation": "Nitroglycerin contraindicated if SBP <90 or sildenafil/tadalafil within 24–48 hr — can cause severe hypotension.",
+      "clinical_why": "ACS assessment includes 12-lead ECG, aspirin per protocol, and serial troponins — not pain med alone.",
+      "system": "cardiovascular",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-32",
+      "question": "The nurse hears a systolic murmur loudest at the apex radiating to the axilla. This suggests:",
+      "options": [
+        "Mitral regurgitation",
+        "Aortic stenosis only",
+        "Normal physiologic murmur always",
+        "Tricuspid stenosis only"
+      ],
+      "correct_index": 0,
+      "explanation": "Mitral regurgitation: holosystolic murmur at apex → axilla; assess for CHF symptoms and history of rheumatic fever.",
+      "clinical_why": "New murmur with fever may indicate endocarditis — blood cultures before antibiotics.",
+      "system": "cardiovascular",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-33",
+      "question": "When assessing peripheral pulses, absent dorsalis pedis bilaterally with cool feet requires:",
+      "options": [
+        "Compare to baseline, check cap refill, notify if acute change",
+        "Immediate amputation prep",
+        "Ignore if posterior tibial present",
+        "Heat packs only"
+      ],
+      "correct_index": 0,
+      "explanation": "Absent DP pulses may be chronic (PVD) or acute (embolus) — compare sides, skin color, temperature, pain.",
+      "clinical_why": "Acute limb ischemia (6 P's) is a surgical emergency within 6 hours.",
+      "system": "cardiovascular",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-34",
+      "question": "A patient with COPD has barrel chest and prolonged expiration. The nurse expects:",
+      "options": [
+        "Decreased breath sounds and pursed-lip breathing",
+        "Kussmaul respirations",
+        "Stridor at rest normally",
+        "Crackles only on expiration never"
+      ],
+      "correct_index": 0,
+      "explanation": "COPD hyperinflation causes barrel chest, wheezes, diminished air movement, and pursed-lip breathing to prolong expiratory phase.",
+      "clinical_why": "Baseline differs from acute exacerbation — sudden change in sputum or SpO₂ needs treatment escalation.",
+      "system": "respiratory",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-35",
+      "question": "During mental status exam, the nurse assesses orientation by asking:",
+      "options": [
+        "Person, place, time, and situation",
+        "Only name",
+        "Medication names only",
+        "Insurance provider"
+      ],
+      "correct_index": 0,
+      "explanation": "Orientation ×4 is standard; also assess attention, memory, mood, and thought content.",
+      "clinical_why": "Acute disorientation suggests delirium, stroke, hypoglycemia, or hypoxia — not always dementia.",
+      "system": "neurological",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-36",
+      "question": "The nurse notes clubbing of fingers. This is associated with:",
+      "options": [
+        "Chronic hypoxemia (COPD, CF, lung cancer)",
+        "Acute allergic reaction",
+        "Hypoglycemia",
+        "UTI"
+      ],
+      "correct_index": 0,
+      "explanation": "Digital clubbing (increased nail angle) develops over months with chronic hypoxia or inflammatory conditions.",
+      "clinical_why": "New clubbing warrants chest imaging — may be first sign of lung malignancy.",
+      "system": "respiratory",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-37",
+      "question": "When measuring a wound, the nurse documents:",
+      "options": [
+        "Length × width × depth, tunneling, odor, drainage type",
+        "Only 'small wound'",
+        "Color of patient gown",
+        "Dressing brand only"
+      ],
+      "correct_index": 0,
+      "explanation": "Standard wound measurement in cm; note undermining, sinus tracts, periwound skin, and infection signs.",
+      "clinical_why": "Trending wound size guides dressing selection and surgical vs conservative management.",
+      "system": "integumentary",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-38",
+      "question": "A pregnant patient at 28 weeks — appropriate fundal height expectation is:",
+      "options": [
+        "Approximately 28 cm (±2–3 cm) from symphysis to fundus",
+        "Always 10 cm",
+        "Fundal height not measured",
+        "50 cm standard"
+      ],
+      "correct_index": 0,
+      "explanation": "After 20 weeks, fundal height in cm roughly equals gestational age — discrepancy suggests IUGR, twins, or polyhydramnios.",
+      "clinical_why": "Fundal height discordance triggers ultrasound for fetal growth assessment.",
+      "system": "obstetric",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-39",
+      "question": "The nurse performing a focused musculoskeletal exam after fall assesses:",
+      "options": [
+        "Range of motion, strength, alignment, and neurovascular status distal to injury",
+        "Only ask if pain present",
+        "X-ray before any touch",
+        "Heat to joint immediately"
+      ],
+      "correct_index": 0,
+      "explanation": "Compare bilateral limbs; check pulses, sensation, movement before and after splinting.",
+      "clinical_why": "Compartment syndrome and neurovascular compromise are time-sensitive complications of fractures.",
+      "system": "musculoskeletal",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    },
+    {
+      "id": "aq-40",
+      "question": "Which finding during shift handoff requires the receiving nurse to assess first?",
+      "options": [
+        "New oxygen requirement with SpO₂ 90% on room air",
+        "Scheduled bath at 1400",
+        "Discharge paperwork pending",
+        "Visitor waiting in lobby"
+      ],
+      "correct_index": 0,
+      "explanation": "Handoff prioritization follows ABCs — new hypoxemia indicates potential deterioration requiring immediate assessment.",
+      "clinical_why": "SBAR handoff must highlight unstable trends so the oncoming nurse can intervene before decompensation.",
+      "system": "general",
+      "nclex_category": "Physiological Integrity",
+      "source": {
+        "title": "Open RN — Health Assessment",
+        "citation": "Open RN OER Assessment Techniques",
+        "verified_date": "2026-06"
+      }
+    }
+  ],
+  "source": {
+    "title": "Open RN — Health Assessment",
+    "citation": "Open RN OER Assessment Techniques",
+    "verified_date": "2026-06"
+  }
+}

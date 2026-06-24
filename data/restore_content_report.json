@@ -1,0 +1,106 @@
+{
+  "files": [
+    "terminology.json",
+    "microbiology.json",
+    "dosage.json",
+    "dosage_drug_classes.json",
+    "assessment.json",
+    "pathophysiology.json",
+    "pathophysiology_manifest.json",
+    "mental_health.json",
+    "mental_health_manifest.json",
+    "maternal_child.json",
+    "maternal_child_manifest.json"
+  ],
+  "counts": {
+    "terminology.json": {
+      "prefixes": 29,
+      "roots": 30,
+      "suffixes": 26,
+      "practice_questions": 18,
+      "flashcards": 22
+    },
+    "microbiology.json": {
+      "infection_chain": 6,
+      "chain_interventions": 6,
+      "healthcare_pathogens": 8,
+      "concepts": 8,
+      "gram_stain_procedure": 6,
+      "hand_hygiene": 1,
+      "ppe_guide": 1,
+      "hai_types": 5,
+      "break_chain_scenarios": 5,
+      "what_if_scenarios": 4,
+      "practice_questions": 10,
+      "application_questions": 5,
+      "break_points": 5
+    },
+    "dosage.json": {
+      "calc_types": 7,
+      "first_principles": 7,
+      "practice_problems": 15,
+      "error_traps": 8,
+      "pharmacology_safety": 6,
+      "drug_classes": 18
+    },
+    "dosage_drug_classes.json": {
+      "drug_classes": 18,
+      "pharm_categories": 7
+    },
+    "assessment.json": {
+      "head_to_toe_sequence": 10,
+      "body_systems": 10,
+      "red_flags_master": 20,
+      "skills": 12,
+      "practice_questions": 40,
+      "special_populations": 6,
+      "assessment_checklists": 8,
+      "soap_exercises": 10,
+      "sbar_exercises": 2,
+      "assess_next_scenarios": 16,
+      "flashcards": 60,
+      "interview_techniques": 6
+    },
+    "pathophysiology.json": {
+      "core_concepts": 10,
+      "disease_processes": 12,
+      "compare_contrast_pairs": 5,
+      "what_breaks_down_scenarios": 6,
+      "flashcards": 25,
+      "practice_questions": 18
+    },
+    "pathophysiology_manifest.json": {
+      "content_inventory_sections": 6,
+      "tabs": 6
+    },
+    "mental_health.json": {
+      "therapeutic_communication": 8,
+      "communication_barriers": 4,
+      "communication_scenarios": 5,
+      "safety_risk_flags": 8,
+      "screening_tools": 4,
+      "disorders": 6,
+      "de_escalation": 4,
+      "safety_drill": 5,
+      "practice_questions": 11
+    },
+    "mental_health_manifest.json": {
+      "content_inventory_sections": 9,
+      "tabs": 5
+    },
+    "maternal_child.json": {
+      "pregnancy_stages": 9,
+      "labor_delivery": 8,
+      "postpartum_newborn": 9,
+      "pediatric_essentials": 8,
+      "safety_red_flags": 15,
+      "complications_drill": 13,
+      "flashcards": 32,
+      "practice_questions": 21
+    },
+    "maternal_child_manifest.json": {
+      "content_inventory_sections": 8,
+      "tabs": 8
+    }
+  }
+}

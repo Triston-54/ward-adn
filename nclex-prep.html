@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="The Ward — ADN Nursing Study Suite (Static)">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="/static/manifest.json">
+    <link rel="icon" type="image/svg+xml" href="/static/images/ward-icon.svg">
+    <link rel="icon" type="image/png" sizes="192x192" href="/static/images/ward-icon-192.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/static/images/ward-icon-192.png">
+    <title>NCLEX Prep — ADN Study Suite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ward: {
+                            950: '#0a0f1a',
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                            600: '#475569',
+                            500: '#64748b',
+                            400: '#94a3b8',
+                            300: '#cbd5e1',
+                            200: '#e2e8f0',
+                            accent: '#38bdf8',
+                            success: '#34d399',
+                            warning: '#fbbf24',
+                            danger: '#f87171',
+                            purple: '#a78bfa',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/ward.css">
+    
+    
+<link rel="stylesheet" href="/static/css/nclex_prep.css">
+
+</head>
+<body class="h-full bg-ward-950 text-ward-200 font-sans antialiased">
+    <div id="sidebar-backdrop" class="sidebar-backdrop hidden" onclick="closeSidebar()"></div>
+
+    <div id="command-palette" class="hidden fixed inset-0 z-50 flex items-start justify-center pt-[12vh] sm:pt-[15vh] bg-black/60 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-label="Command palette">
+        <div class="w-full max-w-lg bg-ward-800 border border-ward-600 rounded-xl shadow-2xl overflow-hidden">
+            <div class="flex items-center gap-2 px-4 py-3 border-b border-ward-700">
+                <svg class="w-4 h-4 text-ward-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                <input type="text" id="cmd-input" placeholder="Search modules, actions… (Ctrl+K)"
+                       aria-label="Search modules and actions"
+                       class="flex-1 bg-transparent text-ward-200 placeholder-ward-500 focus:outline-none text-sm">
+                <kbd class="text-xs text-ward-600 bg-ward-900 px-1.5 py-0.5 rounded hidden sm:inline">Esc</kbd>
+            </div>
+            <div id="cmd-results" class="cmd-results-list overflow-y-auto py-2"></div>
+        </div>
+    </div>
+
+    <div id="source-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" role="dialog" aria-modal="true" aria-labelledby="source-modal-title">
+        <div class="w-full max-w-lg bg-ward-800 border border-ward-600 rounded-xl shadow-2xl overflow-hidden">
+            <div class="flex justify-between items-center px-6 py-4 border-b border-ward-700 bg-ward-900/50">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-ward-accent/10 border border-ward-accent/30 flex items-center justify-center">
+                        <svg class="w-4 h-4 text-ward-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <div>
+                        <h3 id="source-modal-title" class="text-base font-semibold text-ward-accent">Verify Source</h3>
+                        <p class="text-[10px] text-ward-500 uppercase tracking-wider">Verified nursing content</p>
+                    </div>
+                </div>
+                <button onclick="closeSourceModal()" class="text-ward-500 hover:text-ward-200 text-xl leading-none p-1" aria-label="Close">&times;</button>
+            </div>
+            <div id="source-content" class="px-6 py-4 max-h-[70vh] overflow-y-auto"></div>
+        </div>
+    </div>
+
+    <div class="app-shell">
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-brand">
+                <a href="/index.html" class="flex items-center gap-3 group">
+                    <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-ward-accent to-ward-purple flex items-center justify-center text-ward-900 font-bold">W</div>
+                    <div>
+                        <div class="font-semibold text-ward-100 group-hover:text-ward-accent transition text-sm">The Ward</div>
+                        <div class="text-[10px] text-ward-500 uppercase tracking-wider">ADN Study Suite</div>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="sidebar-section-label">ADN Curriculum</div>
+                <a href="/index.html" class="sidebar-link" data-nav="dashboard">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+                    Dashboard
+                </a>
+                <a href="/how-to-use.html" class="sidebar-link" data-nav="how_to_use">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    How to Use
+                </a>
+
+                <div class="sidebar-section-label mt-4">Nursing Modules</div>
+                <a href="/modules/terminology.html" class="sidebar-link" data-nav="terminology">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                    Medical Terminology
+                </a>
+                <a href="/modules/microbiology.html" class="sidebar-link" data-nav="microbiology">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                    Microbiology
+                </a>
+                <a href="/modules/dosage.html" class="sidebar-link" data-nav="dosage">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                    Dosage &amp; Pharmacology
+                </a>
+                <a href="/modules/assessment.html" class="sidebar-link" data-nav="assessment">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                    Health Assessment
+                </a>
+                <a href="/modules/pathophysiology.html" class="sidebar-link" data-nav="pathophysiology">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    Pathophysiology
+                </a>
+                <a href="/modules/med_surg.html" class="sidebar-link" data-nav="med_surg">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    Medical-Surgical Nursing
+                </a>
+                <a href="/modules/maternal_newborn.html" class="sidebar-link" data-nav="maternal_newborn">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    Maternal-Newborn
+                </a>
+                <a href="/modules/pediatrics.html" class="sidebar-link" data-nav="pediatrics">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    Pediatric Nursing
+                </a>
+                <a href="/modules/mental-health.html" class="sidebar-link" data-nav="mental_health">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    Mental Health
+                </a>
+                <a href="/nclex-prep.html" class="sidebar-link" data-nav="nclex_prep">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                    NCLEX Prep
+                </a>
+
+                <div class="sidebar-section-label mt-4">Tools</div>
+                <button onclick="openCommandPalette()" class="sidebar-link w-full text-left">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    Command Palette
+                    <kbd class="ml-auto text-[10px] text-ward-600 bg-ward-900 px-1 rounded">⌘K</kbd>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="text-[10px] text-ward-600 uppercase tracking-wider mb-1">ADN Program</div>
+                <div class="text-xs text-ward-500">Static · Verified content</div>
+            </div>
+        </aside>
+
+        <div class="main-column">
+            <header class="topbar">
+                <div class="flex items-center gap-3">
+                    <button id="sidebar-toggle" class="topbar-icon-btn lg:hidden" onclick="toggleSidebar()" aria-label="Open menu">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                    <div class="hidden sm:block">
+                        <div class="text-sm font-medium text-ward-200">NCLEX-RN Prep Center</div>
+                        <div class="text-xs text-ward-500">Clinical judgment · Topic practice · Detailed rationales</div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <button onclick="openCommandPalette()" class="topbar-icon-btn hidden sm:flex" title="Command palette (Ctrl+K)">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                        <span class="text-xs text-ward-500 hidden md:inline">Search</span>
+                    </button>
+                    
+<a href="/index.html" class="nursing-return-link hidden sm:inline-flex" title="Back to Dashboard">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+    Dashboard
+</a>
+
+                </div>
+            </header>
+
+            <main class="main-content">
+                
+<div class="max-w-6xl mx-auto" data-nav="nclex_prep">
+    <div class="nclex-header">
+        <div>
+            <h1 class="text-xl sm:text-2xl font-bold text-ward-100">NCLEX-RN Prep Center</h1>
+            <p class="text-sm text-ward-500 mt-1">Aggregated practice across all ADN modules with clinical judgment rationales</p>
+        </div>
+        <div class="nclex-stats-row">
+            <span class="stat-pill">90 questions</span>
+            <span class="stat-pill">16 categories</span>
+            <span class="stat-pill">6 NCJ steps</span>
+        </div>
+    </div>
+
+    <div class="nclex-ncj-banner">
+        <div class="nclex-ncj-icon">◈</div>
+        <div>
+            <div class="text-xs font-semibold text-ward-accent uppercase tracking-wide">NCSBN Clinical Judgment Model</div>
+            <p class="text-sm text-ward-300 mt-0.5">Recognize Cues → Analyze Cues → Prioritize Hypotheses → Generate Solutions → Take Action → Evaluate Outcomes</p>
+        </div>
+    </div>
+
+    <div class="nclex-layout">
+        <aside class="nclex-sidebar card p-4">
+            <h2 class="text-sm font-semibold text-ward-200 mb-3">Practice Mode</h2>
+            <div class="space-y-2 mb-6">
+                <button id="mode-topic" class="nclex-mode-btn active" onclick="NclexPrep.setMode('topic')">By Topic</button>
+                <button id="mode-mixed" class="nclex-mode-btn" onclick="NclexPrep.setMode('mixed')">Mixed Practice</button>
+                <button id="mode-weak" class="nclex-mode-btn" onclick="NclexPrep.setMode('weak')">Review Missed</button>
+            </div>
+
+            <h2 class="text-sm font-semibold text-ward-200 mb-3">Topic Categories</h2>
+            <div id="nclex-topic-list" class="nclex-topic-list">
+                <div class="loading-state text-xs"><span class="loading-spinner" aria-hidden="true"></span>Loading topics…</div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-ward-700">
+                <h2 class="text-sm font-semibold text-ward-200 mb-3">Session Size</h2>
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="NclexPrep.setSessionSize(10)" class="btn-secondary text-xs nclex-size-btn" data-size="10">10</button>
+                    <button onclick="NclexPrep.setSessionSize(25)" class="btn-secondary text-xs nclex-size-btn active" data-size="25">25</button>
+                    <button onclick="NclexPrep.setSessionSize(50)" class="btn-secondary text-xs nclex-size-btn" data-size="50">50</button>
+                </div>
+            </div>
+        </aside>
+
+        <main class="nclex-main">
+            <div class="nclex-session-bar">
+                <div class="flex items-center gap-4">
+                    <span id="nclex-progress" class="text-sm text-ward-400">Question 0 of 0</span>
+                    <div class="progress-bar flex-1 max-w-xs">
+                        <div id="nclex-progress-bar" class="progress-bar-fill bg-ward-accent" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span id="nclex-score" class="text-sm font-mono text-ward-500">Score: 0/0</span>
+                    <button onclick="NclexPrep.startSession()" class="btn-primary text-sm">Start Session</button>
+                </div>
+            </div>
+
+            <div id="nclex-question-area" class="nclex-question-card card p-5 sm:p-6">
+                <p class="text-ward-500 text-sm">Select a topic or mixed practice, then click <strong>Start Session</strong>.</p>
+            </div>
+
+            <div id="nclex-rationale-panel" class="nclex-rationale-panel hidden card p-5 sm:p-6 mt-4">
+                <h3 class="text-sm font-semibold text-ward-accent mb-2">Rationale &amp; Clinical Judgment</h3>
+                <div id="nclex-rationale-content"></div>
+            </div>
+        </main>
+    </div>
+</div>
+
+            </main>
+
+            <footer class="main-footer">
+                Static ADN Study Resource · Deployable
+            </footer>
+        </div>
+    </div>
+
+    <script src="/static/js/export-utils.js"></script>
+    <script src="/static/js/ward-tabs.js"></script>
+    <script src="/static/js/data-api.js"></script>
+    <script src="/static/js/ward.js"></script>
+    <script src="/static/js/ward-static.js"></script>
+    
+    
+<script defer src="/static/js/nclex_prep.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() { NclexPrep.init(); });
+</script>
+
+</body>
+</html>
