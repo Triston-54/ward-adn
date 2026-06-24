@@ -218,50 +218,77 @@
   "microbe_classification": [
     {
       "type": "Bacteria",
+      "icon": "🦠",
       "cell_type": "Prokaryote",
+      "structure": "Prokaryotic cells with peptidoglycan cell wall; classified by Gram stain (Gram-positive vs Gram-negative) and shape (cocci, bacilli).",
+      "treatment": "Antibiotics guided by culture/sensitivity and Gram stain; supportive care; antimicrobial stewardship — shortest effective course.",
       "notes": "Most treatable with antibiotics; Gram stain guides empiric therapy.",
       "examples": [
-        "S. aureus",
-        "E. coli",
-        "M. tuberculosis"
-      ]
+        "Staphylococcus aureus (MRSA)",
+        "Escherichia coli",
+        "Mycobacterium tuberculosis",
+        "Streptococcus pyogenes"
+      ],
+      "clinical_why": "Gram stain guides empiric antibiotics before culture results return — nurses monitor for allergy, C. diff risk, and MDRO transmission."
     },
     {
       "type": "Viruses",
+      "icon": "🧬",
       "cell_type": "Acellular",
+      "structure": "Acellular particles with protein capsid (and envelope in some); obligate intracellular parasites requiring host cells to replicate.",
+      "treatment": "Antivirals when available (e.g., influenza, HIV, HSV); supportive care; vaccination for prevention; antibiotics are ineffective.",
       "notes": "Require host cell; antivirals limited; vaccines prevent many.",
       "examples": [
         "Influenza",
         "HIV",
-        "Norovirus"
-      ]
+        "RSV",
+        "Norovirus",
+        "SARS-CoV-2"
+      ],
+      "clinical_why": "Isolation precautions and symptom management are nursing priorities — droplet for influenza, contact for norovirus, standard plus transmission-based per pathogen."
     },
     {
       "type": "Fungi",
+      "icon": "🍄",
       "cell_type": "Eukaryote",
+      "structure": "Eukaryotic organisms with chitin cell walls; include yeasts (single-celled) and molds (filamentous).",
+      "treatment": "Antifungals matched to organism (azole, echinocandin, amphotericin); remove indwelling devices when Candida involved; environmental cleaning for mold.",
       "notes": "Antifungals needed; opportunistic in immunocompromised.",
       "examples": [
-        "Candida",
+        "Candida albicans",
         "Aspergillus",
-        "C. auris"
-      ]
+        "Cryptococcus",
+        "Candida auris"
+      ],
+      "clinical_why": "Opportunistic in immunocompromised, ICU, and broad-spectrum antibiotic recipients — C. auris requires contact precautions and EPA-registered disinfectant."
     },
     {
       "type": "Parasites",
+      "icon": "🔬",
       "cell_type": "Eukaryote",
+      "structure": "Eukaryotic — protozoa (single-celled) and helminths (multicellular worms); life cycles may involve multiple hosts.",
+      "treatment": "Antiparasitic agents specific to organism (metronidazole, ivermectin, antimalarials); fluid/electrolyte support; prevention via sanitation and safe water.",
       "notes": "Protozoa and helminths; travel and sanitation relevant.",
       "examples": [
-        "Giardia",
-        "Plasmodium"
-      ]
+        "Giardia lamblia",
+        "Plasmodium (malaria)",
+        "Enterobius (pinworm)",
+        "Toxoplasma gondii"
+      ],
+      "clinical_why": "Travel history, water exposure, and sanitation guide suspicion — stool ova/parasite exams and travel screening support diagnosis."
     },
     {
       "type": "Prions",
+      "icon": "⚠️",
       "cell_type": "Proteinaceous infectious particle",
+      "structure": "Misfolded proteins (no DNA/RNA); resist heat and standard chemical disinfection — not living cells.",
+      "treatment": "No curative treatment; palliative and supportive care; strict instrument reprocessing and notification for neurosurgical exposure.",
       "notes": "No routine sterilization in community settings; CJD precautions for neuro tissue.",
       "examples": [
-        "CJD"
-      ]
+        "Creutzfeldt-Jakob disease (CJD)",
+        "Variant CJD"
+      ],
+      "clinical_why": "Standard steam sterilization may not inactivate prions — notify infection control immediately for neuro tissue or high-risk instrument exposure."
     }
   ],
   "healthcare_pathogens": [

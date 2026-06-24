@@ -339,18 +339,28 @@ const Microbiology = (() => {
         </div>`;
     }
 
+    function formatClassificationExamples(examples) {
+        if (Array.isArray(examples)) return examples.join(', ');
+        return examples || '—';
+    }
+
     function renderClassification() {
         return `<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            ${learnData.classification.map(t => `
+            ${learnData.classification.map(t => {
+                const structure = t.structure || t.cell_type || '';
+                const treatment = t.treatment || t.notes || '';
+                const examples = formatClassificationExamples(t.examples);
+                const clinicalWhy = t.clinical_why || '';
+                return `
                 <div class="classification-card">
                     <div class="classification-icon">${t.icon || '🦠'}</div>
                     <div class="classification-type">${t.type}</div>
-                    <p class="text-xs text-ward-500 mt-2">${t.structure}</p>
-                    <p class="text-xs text-ward-400 mt-2"><strong>Treatment:</strong> ${t.treatment}</p>
-                    <p class="text-xs text-ward-500 mt-1">Examples: ${t.examples}</p>
-                    <p class="text-xs text-ward-accent mt-2">${t.clinical_why}</p>
-                </div>
-            `).join('')}
+                    ${structure ? `<p class="text-xs text-ward-500 mt-2">${structure}</p>` : ''}
+                    ${treatment ? `<p class="text-xs text-ward-400 mt-2"><strong>Treatment:</strong> ${treatment}</p>` : ''}
+                    <p class="text-xs text-ward-500 mt-1"><strong>Examples:</strong> ${examples}</p>
+                    ${clinicalWhy ? `<p class="text-xs text-ward-accent mt-2">${clinicalWhy}</p>` : ''}
+                </div>`;
+            }).join('')}
         </div>`;
     }
 
