@@ -25,4 +25,6 @@ Desktop.ini
 
 # Generated (optional — ward.db is recreated by legacy server)
 data/ward.db
+data/ward.db-shm
+data/ward.db-wal
 *.db-journal
