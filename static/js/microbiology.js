@@ -68,15 +68,68 @@ const Microbiology = (() => {
     }
 
     // ── Chain Builder ─────────────────────────────────────────────────────────
-    async function loadChainBuilder() {
+    function getChainInterventionsEl() {
         const area = document.getElementById('chain-builder-area');
-        if (area) area.innerHTML = '<p class="text-ward-500 text-sm">Loading infection chain…</p>';
+        let el = document.getElementById('chain-interventions');
+        if (!el && area) {
+            el = document.createElement('div');
+            el.id = 'chain-interventions';
+            area.appendChild(el);
+        }
+        return el;
+    }
+
+    function setChainLoadingState() {
+        const flow = document.getElementById('chain-flow');
+        const interventions = getChainInterventionsEl();
+        if (flow) flow.innerHTML = '<p class="text-ward-500 text-sm">Loading infection chain…</p>';
+        if (interventions) interventions.innerHTML = '<p class="text-ward-500 text-sm">Loading intervention options…</p>';
+    }
+
+    function showChainLoadError(message) {
+        const flow = document.getElementById('chain-flow');
+        const interventions = getChainInterventionsEl();
+        const text = message || 'Failed to load infection chain. Refresh to try again.';
+        if (flow) flow.innerHTML = `<p class="text-ward-danger text-sm">${text}</p>`;
+        if (interventions) interventions.innerHTML = '';
+    }
+
+    async function loadInfectionChainData() {
+        if (window.WardData?.Microbiology?.infectionChain) {
+            try {
+                const data = await WardData.Microbiology.infectionChain();
+                if (data?.links?.length) return data;
+            } catch (err) {
+                console.warn('[Microbiology] WardData infection chain failed, trying fetch:', err);
+            }
+        }
 
         const res = await fetch('/api/microbiology/infection-chain');
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        chainData = { links: data.links, interventions: data.interventions };
-        renderChainFlow();
-        if (chainData.links.length) selectChainLink(chainData.links[0].id);
+        if (data?.error) throw new Error(data.error);
+        return data;
+    }
+
+    async function loadChainBuilder() {
+        setChainLoadingState();
+
+        try {
+            const data = await loadInfectionChainData();
+            chainData = {
+                links: data.links || [],
+                interventions: data.interventions || {},
+            };
+            renderChainFlow();
+            if (chainData.links.length) {
+                selectChainLink(chainData.links[0].id);
+            } else {
+                showChainLoadError('No infection chain data available.');
+            }
+        } catch (err) {
+            console.error('[Microbiology] Failed to load infection chain:', err);
+            showChainLoadError();
+        }
     }
 
     function renderChainFlow() {
@@ -134,7 +187,7 @@ const Microbiology = (() => {
     }
 
     function renderInterventions() {
-        const el = document.getElementById('chain-interventions');
+        const el = getChainInterventionsEl();
         if (!el) return;
         const options = chainData.interventions[selectedLinkId] || [];
         if (!options.length) {
@@ -158,15 +211,41 @@ const Microbiology = (() => {
         return chainData.links.find(l => l.id === linkId)?.name || LINK_NAMES[linkId] || linkId;
     }
 
-    async function submitChainBreak(interventionId) {
-        if (!selectedLinkId) return;
+    async function evaluateChainBreak(linkId, interventionId) {
+        if (window.WardData?.Microbiology?.evaluateChainBreak) {
+            try {
+                return await WardData.Microbiology.evaluateChainBreak(linkId, interventionId);
+            } catch (err) {
+                console.warn('[Microbiology] WardData chain-break failed, trying fetch:', err);
+            }
+        }
 
         const res = await fetch('/api/microbiology/chain-break', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ link_id: selectedLinkId, intervention_id: interventionId }),
+            body: JSON.stringify({ link_id: linkId, intervention_id: interventionId }),
         });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
+        if (data?.error) throw new Error(data.error);
+        return data;
+    }
+
+    async function submitChainBreak(interventionId) {
+        if (!selectedLinkId) return;
+
+        let data;
+        try {
+            data = await evaluateChainBreak(selectedLinkId, interventionId);
+        } catch (err) {
+            console.error('[Microbiology] Chain break evaluation failed:', err);
+            const feedback = document.getElementById('chain-feedback');
+            if (feedback) {
+                feedback.classList.remove('hidden');
+                feedback.innerHTML = '<p class="text-ward-danger text-sm">Could not check that answer. Refresh and try again.</p>';
+            }
+            return;
+        }
 
         document.querySelectorAll('#chain-interventions .intervention-btn').forEach(btn => {
             btn.disabled = true;
