@@ -23,9 +23,12 @@
     _nativeFetch = global.fetch.bind(global);
     global.fetch = async function wardFetch(input, init = {}) {
       const url = typeof input === 'string' ? input : input.url;
-      let pathname = url;
-      try { pathname = new URL(url, global.location?.origin || 'http://localhost').pathname; } catch { /* */ }
-      if (pathname.startsWith('/api/')) return WardData.handleApiRequest(pathname, init);
+      try {
+        const parsed = new URL(url, global.location?.origin || 'http://localhost');
+        if (parsed.pathname.startsWith('/api/')) {
+          return WardData.handleApiRequest(parsed.pathname + parsed.search, init);
+        }
+      } catch { /* relative or opaque URL — fall through to native fetch */ }
       return _nativeFetch(input, init);
     };
   }

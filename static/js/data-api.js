@@ -55,13 +55,26 @@
   const _contentCache = new Map();
   let _nativeFetch = global.fetch.bind(global);
 
+  function contentBasePath() {
+    const base = (global.WARD_BASE_PATH || '').replace(/\/$/, '');
+    return `${base}/data/content/`;
+  }
+
   async function loadContent(filename) {
     if (_contentCache.has(filename)) return _contentCache.get(filename);
-    const res = await _nativeFetch(`/data/content/${filename}`);
-    if (!res.ok) { _contentCache.set(filename, {}); return {}; }
-    const data = await res.json();
-    _contentCache.set(filename, data);
-    return data;
+    const res = await _nativeFetch(`${contentBasePath()}${filename}`);
+    if (!res.ok) {
+      console.error(`[WardData] Failed to load ${filename}: HTTP ${res.status}`);
+      return {};
+    }
+    try {
+      const data = await res.json();
+      _contentCache.set(filename, data);
+      return data;
+    } catch (err) {
+      console.error(`[WardData] Invalid JSON in ${filename}:`, err);
+      return {};
+    }
   }
   function preloadContent(filenames) { return Promise.all(filenames.map(loadContent)); }
 
@@ -309,10 +322,10 @@
 
   const Assessment = {
     data: () => loadContent('assessment.json'), source: () => getSource('assessment'),
-    headToToe: async () => [...((await this.data()).head_to_toe_sequence||[])].sort((a,b)=>(a.order||0)-(b.order||0)),
-    bodySystems: async () => (await this.data()).body_systems||[],
+    headToToe: async () => [...((await Assessment.data()).head_to_toe_sequence||[])].sort((a,b)=>(a.order||0)-(b.order||0)),
+    bodySystems: async () => (await Assessment.data()).body_systems||[],
     bodySystem: async (id) => (await Assessment.bodySystems()).find((s)=>s.id===id)||null,
-    redFlags: async () => (await this.data()).red_flags_master||[],
+    redFlags: async () => (await Assessment.data()).red_flags_master||[],
     redFlagsWithIds: async () => (await Assessment.redFlags()).map((f,i)=>({...f,id:f.id||`rf-${String(i).padStart(3,'0')}`})),
     async redFlagDrill(n, sys) {
       let pool = await Assessment.redFlagsWithIds(); if(sys){const f=pool.filter((x)=>x.system===sys); if(f.length>=4)pool=f;}
@@ -330,26 +343,26 @@
       return {correct,feedback:correct?'Correct — appropriate immediate nursing action!':`Incorrect. Immediate action: ${ans}`,explanation:`**${flag.finding}** (${flag.system}). Action: ${ans}`,clinical_why:'Immediate escalation protects patient safety.',correct_answer:ans,escalation_path:`Escalation: ${ans}`,finding:flag.finding,system:flag.system,priority:flag.priority};
     },
     async practice(n,mode,sys) {
-      const d=await this.data(); let pool=[...(d.practice_questions||[])];
+      const d=await Assessment.data(); let pool=[...(d.practice_questions||[])];
       if(sys) pool=pool.filter((q)=>q.system===sys);
       if(mode==='priority'){pool=pool.filter((q)=>/priority|first|immediate/i.test(q.question||'')); if(!pool.length)pool=[...(d.practice_questions||[])];}
       else if(mode==='red_flags') pool=pool.filter((q)=>['neurological','cardiovascular','respiratory','gastrointestinal'].includes(q.system));
       return safeSample(pool,n).map((q)=>{const item={...q}; if(item.options)Object.assign(item,shuffleMcOptions(item.options,item.correct_index)); return item;});
     },
     async checkPractice(qid,idx,opt) {
-      const q=(await this.data()).practice_questions?.find((x)=>x.id===qid); if(!q) return {correct:false,feedback:'Question not found.',explanation:'',clinical_why:''};
+      const q=(await Assessment.data()).practice_questions?.find((x)=>x.id===qid); if(!q) return {correct:false,feedback:'Question not found.',explanation:'',clinical_why:''};
       const ans=q.options[q.correct_index]; let ok=idx===q.correct_index; if(opt!=null) ok=String(opt).trim()===String(ans).trim();
       return {correct:ok,feedback:ok?'Correct!':`Incorrect. Best answer: ${ans}`,explanation:q.explanation||'',clinical_why:q.clinical_why||'',correct_answer:ans,nclex_category:q.nclex_category,system:q.system};
     },
-    specialPopulations: async () => (await this.data()).special_populations||[],
+    specialPopulations: async () => (await Assessment.data()).special_populations||[],
     specialPopulation: async (id) => (await Assessment.specialPopulations()).find((p)=>p.id===id)||null,
-    checklists: async () => (await this.data()).assessment_checklists||[],
+    checklists: async () => (await Assessment.data()).assessment_checklists||[],
     checklist: async (id) => (await Assessment.checklists()).find((c)=>c.id===id)||null,
-    soapExercises: async () => (await this.data()).soap_exercises||[],
+    soapExercises: async () => (await Assessment.data()).soap_exercises||[],
     soapExercise: async (id) => (await Assessment.soapExercises()).find((e)=>e.id===id)||null,
-    sbarExercises: async () => (await this.data()).sbar_exercises||[],
+    sbarExercises: async () => (await Assessment.data()).sbar_exercises||[],
     sbarExercise: async (id) => (await Assessment.sbarExercises()).find((e)=>e.id===id)||null,
-    flashcards: async () => (await this.data()).flashcards||[],
+    flashcards: async () => (await Assessment.data()).flashcards||[],
     async getDueFlashcards(n,sys,dueOnly) {
       let pool=await Assessment.flashcards(); if(sys) pool=pool.filter((c)=>c.system===sys); shuffleArray(pool);
       const today=todayISO(); const enriched=pool.map((card)=>{const st=getSrsState(LS_ASSESSMENT_SRS,card.id); const due=!st.next_review||st.next_review<=today; return {id:card.id,front:card.front||'',system:card.system||'',system_name:card.system_name||'',type:card.type||'normal_vs_abnormal',normal:card.normal||'',abnormal:card.abnormal||'',abnormal_action:card.abnormal_action||'',clinical_why:card.clinical_why||'',due,repetitions:st.repetitions,interval_days:st.interval_days,next_review:st.next_review};}).filter((c)=>!dueOnly||c.due);
@@ -361,9 +374,9 @@
       return {total:cards.length,due_today:due,mastered,new:Math.max(0,cards.length-Object.keys(all).length)};
     },
     async recordFlashcardReview(cid,q) { const cards=await Assessment.flashcards(); if(!cards.find((c)=>c.id===cid)) return {error:'Card not found',card_id:cid}; const r=recordSrsReview(LS_ASSESSMENT_SRS,cid,q); return {card_id:cid,...r}; },
-    assessNextScenarios: async (n) => safeSample((await this.data()).assess_next_scenarios||[],n).map((s)=>{const item={...s}; if(item.options)Object.assign(item,shuffleMcOptions(item.options,item.correct_index)); return item;}),
+    assessNextScenarios: async (n) => safeSample((await Assessment.data()).assess_next_scenarios||[],n).map((s)=>{const item={...s}; if(item.options)Object.assign(item,shuffleMcOptions(item.options,item.correct_index)); return item;}),
     async checkAssessNext(sid,idx,opt) {
-      const s=(await this.data()).assess_next_scenarios?.find((x)=>x.id===sid); if(!s) return {correct:false,feedback:'Scenario not found.',explanation:'',clinical_why:''};
+      const s=(await Assessment.data()).assess_next_scenarios?.find((x)=>x.id===sid); if(!s) return {correct:false,feedback:'Scenario not found.',explanation:'',clinical_why:''};
       const ans=s.options[s.correct_index]; let ok=idx===s.correct_index; if(opt!=null) ok=String(opt).trim()===String(ans).trim();
       return {correct:ok,feedback:ok?'Correct!':`Priority: ${ans}`,explanation:s.explanation||'',clinical_why:s.clinical_why||'',correct_answer:ans,scenario_title:s.title};
     },
@@ -386,7 +399,7 @@
       const overall=Math.round(Object.values(scores).reduce((a,b)=>a+b,0)/4*10)/10; const passed=overall>=70;
       return {valid:true,exercise_id:eid,exercise_title:ex.title,overall_score:overall,passed,pass_threshold:70,section_scores:scores,feedback:allFb,strengths:allSt,rubric,documentation_tips:ex.documentation_tips||[],model_soap:passed?ex.model_soap:null};
     },
-    async summary() { const d=await this.data(); return {sequence_steps:(d.head_to_toe_sequence||[]).length,body_systems:(d.body_systems||[]).length,red_flags:(d.red_flags_master||[]).length,skills:(d.skills||[]).length,practice_total:(d.practice_questions||[]).length,interview_techniques:(d.interview_techniques||[]).length,special_populations:(d.special_populations||[]).length,checklists:(d.assessment_checklists||[]).length,soap_exercises:(d.soap_exercises||[]).length,sbar_exercises:(d.sbar_exercises||[]).length,flashcards:(d.flashcards||[]).length,assess_next_scenarios:(d.assess_next_scenarios||[]).length,items_total:132}; },
+    async summary() { const d=await Assessment.data(); return {sequence_steps:(d.head_to_toe_sequence||[]).length,body_systems:(d.body_systems||[]).length,red_flags:(d.red_flags_master||[]).length,skills:(d.skills||[]).length,practice_total:(d.practice_questions||[]).length,interview_techniques:(d.interview_techniques||[]).length,special_populations:(d.special_populations||[]).length,checklists:(d.assessment_checklists||[]).length,soap_exercises:(d.soap_exercises||[]).length,sbar_exercises:(d.sbar_exercises||[]).length,flashcards:(d.flashcards||[]).length,assess_next_scenarios:(d.assess_next_scenarios||[]).length,items_total:132}; },
     async manifest() { const m=await loadContent('assessment_manifest.json'); return {manifest:m,topic_outline:m.topic_outline||[],planned_tabs:(m.tabs||[]).filter((t)=>t.status==='planned'),interactive_roadmap:m.interactive_elements||[],source:await Assessment.source()}; },
     async buildStatus() { const [m,live,sc]=await Promise.all([loadContent('assessment_manifest.json'),Assessment.summary(),loadContent('assessment_scaffold.json')]); const inv=m.content_inventory||{}; const map={head_to_toe_sequence:'sequence_steps',body_systems:'body_systems',red_flags_master:'red_flags',practice_questions:'practice_total',assessment_checklists:'checklists',soap_exercises:'soap_exercises',assess_next_scenarios:'assess_next_scenarios',special_populations:'special_populations',skills:'skills',interview_techniques:'interview_techniques',flashcards:'flashcards',sbar_exercises:'sbar_exercises'};
       const sections=Object.entries(inv).filter(([,v])=>typeof v==='object').map(([k,spec])=>({section:k,current:map[k]?(live[map[k]]||0):0,target:spec.target||0,gap:0,scaffold_queued:Array.isArray(sc[k])?sc[k].length:0,phase:spec.phase||1,status:spec.status||'unknown'}));
@@ -456,9 +469,11 @@
     saveRecord(mid,key,patch) { const all=lsGet(LS_AUDIT,{}); const k=`${mid}:${key}`; all[k]={...all[k],...patch,updated_at:new Date().toISOString()}; lsSet(LS_AUDIT,all); return all[k]; },
   };
 
-  async function handleApiRequest(pathname, init = {}) {
+  async function handleApiRequest(pathWithQuery, init = {}) {
     const method = (init.method || 'GET').toUpperCase();
-    const params = new URL(pathname, 'http://localhost').searchParams;
+    const parsed = new URL(pathWithQuery, 'http://localhost');
+    const pathname = parsed.pathname;
+    const params = parsed.searchParams;
     const body = parseBody(init);
     try {
       if (pathname.startsWith('/api/socratic/')) return notFound('Socratic tutor not available in static mode');
@@ -654,9 +669,12 @@
     _nativeFetch = global.fetch.bind(global);
     global.fetch = async function wardFetch(input, init = {}) {
       const url = typeof input === 'string' ? input : input.url;
-      let pathname = url;
-      try { pathname = new URL(url, global.location?.origin || 'http://localhost').pathname; } catch { /* */ }
-      if (pathname.startsWith('/api/')) return WardData.handleApiRequest(pathname, init);
+      try {
+        const parsed = new URL(url, global.location?.origin || 'http://localhost');
+        if (parsed.pathname.startsWith('/api/')) {
+          return WardData.handleApiRequest(parsed.pathname + parsed.search, init);
+        }
+      } catch { /* relative or opaque URL — fall through to native fetch */ }
       return _nativeFetch(input, init);
     };
   }

@@ -55,13 +55,26 @@
   const _contentCache = new Map();
   let _nativeFetch = global.fetch.bind(global);
 
+  function contentBasePath() {
+    const base = (global.WARD_BASE_PATH || '').replace(/\/$/, '');
+    return `${base}/data/content/`;
+  }
+
   async function loadContent(filename) {
     if (_contentCache.has(filename)) return _contentCache.get(filename);
-    const res = await _nativeFetch(`/data/content/${filename}`);
-    if (!res.ok) { _contentCache.set(filename, {}); return {}; }
-    const data = await res.json();
-    _contentCache.set(filename, data);
-    return data;
+    const res = await _nativeFetch(`${contentBasePath()}${filename}`);
+    if (!res.ok) {
+      console.error(`[WardData] Failed to load ${filename}: HTTP ${res.status}`);
+      return {};
+    }
+    try {
+      const data = await res.json();
+      _contentCache.set(filename, data);
+      return data;
+    } catch (err) {
+      console.error(`[WardData] Invalid JSON in ${filename}:`, err);
+      return {};
+    }
   }
   function preloadContent(filenames) { return Promise.all(filenames.map(loadContent)); }
 

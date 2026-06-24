@@ -566,6 +566,24 @@ const Terminology = (() => {
     }
 
     // ── Init ──────────────────────────────────────────────────────────────────
+    async function refreshTermCounts() {
+        try {
+            const res = await fetch('/api/terminology/stats');
+            const data = await res.json();
+            const count = data.term_count ?? data.flashcards?.total_cards;
+            if (!count) return;
+            document.querySelectorAll('[data-term-count]').forEach(el => { el.dataset.termCount = String(count); });
+            const search = document.getElementById('term-search');
+            if (search) search.placeholder = `Search ${count} terms…`;
+            const searchCount = document.getElementById('search-count');
+            if (searchCount && !document.querySelector('.term-card')) {
+                searchCount.textContent = `${count} terms available`;
+            }
+            const pill = document.querySelector('.term-progress-strip .stat-pill:last-child');
+            if (pill) pill.textContent = `${count} terms`;
+        } catch { /* static counts remain as fallback */ }
+    }
+
     function init() {
         ['prefix-select', 'root-select', 'suffix-select'].forEach(id => {
             document.getElementById(id)?.addEventListener('change', scheduleLiveBuild);
@@ -573,6 +591,7 @@ const Terminology = (() => {
         updateLivePreview();
         WardTabs.register('/modules/terminology', { validTabs: VALID_TABS, defaultTab: DEFAULT_TAB, switchTab });
         WardTabs.init('/modules/terminology');
+        refreshTermCounts();
     }
 
     return {

@@ -1,7 +1,9 @@
 
-  async function handleApiRequest(pathname, init = {}) {
+  async function handleApiRequest(pathWithQuery, init = {}) {
     const method = (init.method || 'GET').toUpperCase();
-    const params = new URL(pathname, 'http://localhost').searchParams;
+    const parsed = new URL(pathWithQuery, 'http://localhost');
+    const pathname = parsed.pathname;
+    const params = parsed.searchParams;
     const body = parseBody(init);
     try {
       if (pathname.startsWith('/api/socratic/')) return notFound('Socratic tutor not available in static mode');
@@ -154,6 +156,13 @@
       if (pathname === '/api/maternal-child/flashcards') { const cards=await MaternalChild.flashcards(params.has('count')?qInt(params,'count',20):null); return jsonResponse({cards,count:cards.length,source:await getSource('maternal_child')}); }
       if (pathname === '/api/maternal-child/export/flashcards') return jsonResponse({format:'markdown',content:await MaternalChild.exportFlashcardsMarkdown()});
       if (pathname === '/api/maternal-child/practice') { const qs=await MaternalChild.practice(qInt(params,'count',10)); return jsonResponse({questions:qs,count:qs.length,source:await getSource('maternal_child')}); }
+
+      // Med-Surg
+      if (pathname === '/api/med-surg/content') { const d=await loadContent('med_surg.json'); return jsonResponse(d); }
+      if (pathname === '/api/med-surg/practice') { const d=await loadContent('med_surg.json'); const qs=safeSample(d.practice_questions||[],qInt(params,'count',10)); return jsonResponse({questions:qs,count:qs.length,source:await getSource('assessment')}); }
+
+      // NCLEX Prep
+      if (pathname === '/api/nclex-prep/content') { const d=await loadContent('nclex_prep.json'); return jsonResponse(d); }
 
       // Generic module progress/stats
       m = pathname.match(/^\/api\/([^/]+)\/progress$/); if (m && method === 'POST') return jsonResponse(noopProgress());

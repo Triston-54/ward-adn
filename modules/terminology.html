@@ -174,7 +174,7 @@
                     </button>
                     <div class="hidden sm:block">
                         <div class="text-sm font-medium text-ward-200">Medical Terminology</div>
-                        <div class="text-xs text-ward-500">0 verified terms · Word builder · SRS flashcards</div>
+                        <div class="text-xs text-ward-500">217 verified terms · Word builder · SRS flashcards</div>
                     </div>
                 </div>
 
@@ -227,7 +227,7 @@
         </div>
         <span class="stat-pill">0/220 studied</span>
         <span class="stat-pill">Due cards: <strong>0</strong></span>
-        <span class="stat-pill">0 terms</span>
+        <span class="stat-pill">217 terms</span>
     </div>
 
     <!-- Tabs -->
@@ -466,7 +466,7 @@
     <div id="tab-database" class="tab-panel term-panel hidden">
         <div class="card p-5">
             <div class="flex flex-col sm:flex-row gap-3 mb-4">
-                <input type="search" id="term-search" placeholder="Search 0 terms…"
+                <input type="search" id="term-search" placeholder="Search 217 terms…"
                        class="input-field flex-1" oninput="Terminology.debounceSearch()">
                 <select id="category-filter" class="input-field sm:w-44" onchange="Terminology.searchTerms()">
                     <option value="">All categories</option>
@@ -477,7 +477,7 @@
                 </select>
             </div>
             <div class="flex justify-between items-center mb-3">
-                <span id="search-count" class="text-xs text-ward-500">0 terms available</span>
+                <span id="search-count" class="text-xs text-ward-500">217 terms available</span>
                 <span class="text-xs text-ward-600">Click a term to expand · Verify sources</span>
             </div>
             <div id="search-results" class="space-y-2 max-h-[65vh] overflow-y-auto">
@@ -609,7 +609,7 @@
     </div>
 
     <!-- ═══ EXPORT ═══ -->
-    <div id="tab-export" class="tab-panel term-panel hidden" data-term-count="0">
+    <div id="tab-export" class="tab-panel term-panel hidden" data-term-count="217">
         <div class="card p-5 max-w-3xl mx-auto">
             <h2 class="text-base font-semibold text-ward-100 mb-1">Export Study Materials</h2>
             <p class="text-xs text-ward-500 mb-5">Download or copy verified terminology for offline study</p>
@@ -619,19 +619,19 @@
                         <div class="export-card-title">PDF Study Sheet</div>
                         <div class="export-card-desc">50 terms — Print → Save as PDF</div>
                     </div>
-                    <div class="export-card export-card-accent" onclick="Terminology.exportPDF(0)">
+                    <div class="export-card export-card-accent" onclick="Terminology.exportPDF(217)">
                         <div class="export-card-icon">📄</div>
                         <div class="export-card-title">PDF — Export All</div>
-                        <div class="export-card-desc">All 0 verified terms</div>
+                        <div class="export-card-desc">All 217 verified terms</div>
                     </div>
                     <div class="export-card" onclick="Terminology.copyToClipboard(50)">
                         <div class="export-card-icon">📋</div>
                         <div class="export-card-title">Copy to Clipboard</div>
                         <div class="export-card-desc">50 terms with definitions</div>
                     </div>
-                    <div class="export-card export-card-accent" onclick="Terminology.copyToClipboard(0)">
+                    <div class="export-card export-card-accent" onclick="Terminology.copyToClipboard(217)">
                         <div class="export-card-icon">📋</div>
-                        <div class="export-card-title">Copy All (0)</div>
+                        <div class="export-card-title">Copy All (217)</div>
                         <div class="export-card-desc">Full database to clipboard</div>
                     </div>
                     <div class="export-card" onclick="Terminology.exportMarkdown(50)">
@@ -639,15 +639,15 @@
                         <div class="export-card-title">Flashcard Markdown</div>
                         <div class="export-card-desc">50 cards for Anki or notes</div>
                     </div>
-                    <div class="export-card export-card-accent" onclick="Terminology.exportMarkdown(0)">
+                    <div class="export-card export-card-accent" onclick="Terminology.exportMarkdown(217)">
                         <div class="export-card-icon">📝</div>
                         <div class="export-card-title">Markdown — Export All</div>
-                        <div class="export-card-desc">All 0 terms as .md</div>
+                        <div class="export-card-desc">All 217 terms as .md</div>
                     </div>
                     <div class="export-card" onclick="Terminology.exportJSON()">
                         <div class="export-card-icon">📦</div>
                         <div class="export-card-title">All Terms JSON</div>
-                        <div class="export-card-desc">Full 0-term database</div>
+                        <div class="export-card-desc">Full 217-term database</div>
                     </div>
             </div>
         </div>

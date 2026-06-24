@@ -34,15 +34,29 @@ def count_items(*values: int) -> int:
 
 # ── Module summaries from JSON ───────────────────────────────────────────────
 
+def count_terminology_terms() -> int:
+    """Merge terminology.json + terminology_terms.json (same logic as data-api.js)."""
+    base = load_json("terminology.json")
+    extra = load_json("terminology_terms.json")
+    seen: set[str] = set()
+    count = 0
+    for t in base.get("terms", []) + extra.get("terms", []):
+        key = str(t.get("term", "")).lower()
+        if key and key not in seen:
+            seen.add(key)
+            count += 1
+    return count
+
+
 def summary_terminology() -> dict[str, Any]:
     d = load_json("terminology.json")
-    terms = d.get("terms", [])
+    term_count = count_terminology_terms()
     return {
-        "term_count": len(terms),
+        "term_count": term_count,
         "prefix_count": len(d.get("prefixes", [])),
         "suffix_count": len(d.get("suffixes", [])),
         "practice_count": len(d.get("practice_questions", [])),
-        "items_total": len(terms) + len(d.get("flashcards", [])),
+        "items_total": term_count + len(d.get("flashcards", [])),
     }
 
 
@@ -74,9 +88,9 @@ def summary_dosage() -> dict[str, Any]:
 def summary_assessment() -> dict[str, Any]:
     d = load_json("assessment.json")
     return {
-        "system_count": len(d.get("head_to_toe_systems", d.get("systems", []))),
-        "red_flag_count": len(d.get("red_flags", [])),
-        "checklist_count": len(d.get("checklists", [])),
+        "system_count": len(d.get("body_systems", d.get("head_to_toe_systems", d.get("systems", [])))),
+        "red_flag_count": len(d.get("red_flags_master", d.get("red_flags", []))),
+        "checklist_count": len(d.get("assessment_checklists", d.get("checklists", []))),
         "practice_count": len(d.get("practice_questions", [])),
         "items_total": 132,
     }
@@ -193,14 +207,14 @@ def build_module_context(module_id: str) -> dict[str, Any]:
             "prefixes": d.get("prefixes", []),
             "roots": d.get("roots", []),
             "suffixes": d.get("suffixes", []),
-            "term_count": len(d.get("terms", [])),
+            "term_count": count_terminology_terms(),
         })
     elif module_id == "assessment":
         d = load_json("assessment.json")
         ctx.update({
             "head_to_toe": d.get("head_to_toe_sequence", d.get("head_to_toe", [])),
-            "body_systems": d.get("head_to_toe_systems", d.get("systems", [])),
-            "red_flag_count": len(d.get("red_flags", [])),
+            "body_systems": d.get("body_systems", d.get("head_to_toe_systems", d.get("systems", []))),
+            "red_flag_count": len(d.get("red_flags_master", d.get("red_flags", []))),
         })
     elif module_id == "mental_health":
         manifest = load_json("mental_health_manifest.json")

@@ -1,5 +1,5 @@
 /* The Ward — Service Worker (static ADN site) */
-const CACHE = 'ward-static-v2';
+const CACHE = 'ward-static-v3';
 const SHELL = [
     '/',
     '/index.html',
